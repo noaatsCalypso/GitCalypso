@@ -1,3 +1,5 @@
 *.psd filter=lfs diff=lfs merge=lfs -text
 custom-extensions filter=lfs diff=lfs merge=lfs -text
 *.jar filter=lfs diff=lfs merge=lfs -text
+client filter=lfs diff=lfs merge=lfs -text
+client/javaee-api-7.0.jar filter=lfs diff=lfs merge=lfs -text
