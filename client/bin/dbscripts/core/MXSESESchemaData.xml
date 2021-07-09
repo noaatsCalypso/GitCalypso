@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+		<row cat="SWIFT MX SESE">
+			<column name="name">MX.Templates</column>
+			<column name="value">SecuritiesSettlementTransactionInstruction.selector</column>
+		</row>
+		<row cat="SWIFT MX SESE">
+			<column name="name">MX.Templates</column>
+			<column name="value">SecuritiesSettlementTransactionInstructionT2S.selector</column>
+		</row>
+		<row cat="SWIFT MX SESE">
+			<column name="name">MX.Templates</column>
+			<column name="value">sese.020.001</column>
+		</row>
+		<row cat="SWIFT MX SESE">
+			<column name="name">MX.Templates</column>
+			<column name="value">sese.023.001</column>
+		</row>
+		<row cat="SWIFT MX SESE">
+			<column name="name">MX.Templates</column>
+			<column name="value">sese.023.001.T2S</column>
+		</row>
+		<row cat="SWIFT MX SESE">
+			<column name="name">MX.Templates</column>
+			<column name="value">sese.030.001.T2S</column>
+		</row>
+		<row cat="SWIFT MX SESE">
+			<column name="name">MX.Templates</column>
+			<column name="value">INCOMING_SESE025</column>
+		</row>
+		<row cat="SWIFT MX SESE">
+			<column name="name">MX.Templates</column>
+			<column name="value">INCOMING_SESE028</column>
+		</row>
+		<row cat="SWIFT MX SESE">
+			<column name="name">MX.Templates</column>
+			<column name="value">INCOMING_SESE029</column>
+		</row>
+		<row cat="SWIFT MX SESE">
+			<column name="name">MX.Templates</column>
+			<column name="value">INCOMING_SEMT020</column>
+		</row>						
+		<row cat="SWIFT MX SESE">
+			<column name="name">MX.Versions</column>
+			<column name="value">sese.020.001</column>
+			<column name="description">04</column>
+		</row>
+		<row cat="SWIFT MX SESE">
+			<column name="name">MX.Versions</column>
+			<column name="value">sese.023.001</column>
+			<column name="description">05</column>
+		</row>
+		<row cat="SWIFT MX SESE">
+			<column name="name">MX.Versions</column>
+			<column name="value">sese.023.001.T2S</column>
+			<column name="description">07</column>
+		</row>
+		<row cat="SWIFT MX SESE">
+			<column name="name">MX.Versions</column>
+			<column name="value">sese.030.001.T2S</column>
+			<column name="description">07</column>
+		</row>
+		<row cat="SWIFT MX SEMT">
+			<column name="name">MX.Versions</column>
+			<column name="value">semt.020.001</column>
+			<column name="description">04</column>
+		</row>
+		<row cat="SWIFT MX SESE">
+			<column name="name">ExternalMessageField.MessageMapper</column>
+			<column name="value">SESE023</column>
+		</row>
+		<row cat="SWIFT MX SESE">
+			<column name="name">ExternalMessageField.MessageMapper</column>
+			<column name="value">SESE028</column>
+		</row>
+<!--
+		<row cat="SWIFT MX SESE Demo">
+			<column name="name">messageType</column>
+			<column name="value">SESE_DELIVERY</column>
+		</row>
+		<row cat="SWIFT MX SESE Demo">
+			<column name="name">messageType</column>
+			<column name="value">SESE_RECEIPT</column>
+		</row>
+		<row cat="SWIFT MX SESE Demo">
+			<column name="name">messageType</column>
+			<column name="value">SESE_INCOMING</column>
+		</row>
+		<row cat="SWIFT MX SESE Demo">
+			<column name="name">incomingType</column>
+			<column name="value">SESE025</column>
+			<column name="description">SESE_INCOMING</column>
+		</row>
+-->
+	</table>
+<!--
+	<table name="advice_config" xmlns="">
+		<row cat="SWIFT MX SESE Demo">
+			<column name="advice_config_id">200220501</column>
+			<column name="po_id">0</column>
+			<column name="event_type">CANCELED_SEC_DELIVERY</column>
+			<column name="product_type">Bond</column>
+			<column name="message_type">SESE_DELIVERY</column>
+			<column name="send_contact_type">Default</column>
+			<column name="receiver_role">Agent</column>
+			<column name="rec_contact_type">Default</column>
+			<column name="default_language">English</column>
+			<column name="address_method">SWIFT</column>
+			<column name="gateway">MX</column>
+			<column name="always_send">0</column>
+			<column name="template_name">SecuritiesSettlementTransactionInstruction.selector</column>
+			<column name="matching">0</column>
+			<column name="inactive">0</column>
+			<column name="format_type">MX</column>
+			<column name="sd_filter">NONE</column>
+			<column name="receiver_id">0</column>
+		</row>
+		<row cat="SWIFT MX SESE Demo">
+			<column name="advice_config_id">200220502</column>
+			<column name="po_id">0</column>
+			<column name="event_type">VERIFIED_SEC_DELIVERY</column>
+			<column name="product_type">Bond</column>
+			<column name="message_type">SESE_DELIVERY</column>
+			<column name="send_contact_type">Default</column>
+			<column name="receiver_role">Agent</column>
+			<column name="rec_contact_type">Default</column>
+			<column name="default_language">English</column>
+			<column name="address_method">SWIFT</column>
+			<column name="gateway">MX</column>
+			<column name="always_send">0</column>
+			<column name="template_name">SecuritiesSettlementTransactionInstruction.selector</column>
+			<column name="matching">0</column>
+			<column name="inactive">0</column>
+			<column name="format_type">MX</column>
+			<column name="sd_filter">NONE</column>
+			<column name="receiver_id">0</column>
+		</row>
+		<row cat="SWIFT MX SESE Demo">
+			<column name="advice_config_id">200220503</column>
+			<column name="po_id">0</column>
+			<column name="event_type">CANCELED_SEC_RECEIPT</column>
+			<column name="product_type">Bond</column>
+			<column name="message_type">SESE_RECEIPT</column>
+			<column name="send_contact_type">Default</column>
+			<column name="receiver_role">Agent</column>
+			<column name="rec_contact_type">Default</column>
+			<column name="default_language">English</column>
+			<column name="address_method">SWIFT</column>
+			<column name="gateway">MX</column>
+			<column name="always_send">0</column>
+			<column name="template_name">SecuritiesSettlementTransactionInstruction.selector</column>
+			<column name="matching">0</column>
+			<column name="inactive">0</column>
+			<column name="format_type">MX</column>
+			<column name="sd_filter">NONE</column>
+			<column name="receiver_id">0</column>
+		</row>
+		<row cat="SWIFT MX SESE Demo">
+			<column name="advice_config_id">200220504</column>
+			<column name="po_id">0</column>
+			<column name="event_type">VERIFIED_SEC_RECEIPT</column>
+			<column name="product_type">Bond</column>
+			<column name="message_type">SESE_RECEIPT</column>
+			<column name="send_contact_type">Default</column>
+			<column name="receiver_role">Agent</column>
+			<column name="rec_contact_type">Default</column>
+			<column name="default_language">English</column>
+			<column name="address_method">SWIFT</column>
+			<column name="gateway">MX</column>
+			<column name="always_send">0</column>
+			<column name="template_name">SecuritiesSettlementTransactionInstruction.selector</column>
+			<column name="matching">0</column>
+			<column name="inactive">0</column>
+			<column name="format_type">MX</column>
+			<column name="sd_filter">NONE</column>
+			<column name="receiver_id">0</column>
+		</row>
+	</table>
+-->
+</database>

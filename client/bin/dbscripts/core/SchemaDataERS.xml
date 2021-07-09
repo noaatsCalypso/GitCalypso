@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	
+	<table name="ers_measure_config" xmlns="">
+		<row cat="limitinstall">
+			<column name="service">CreditRisk</column>
+			<column name="measure">MTM AddOn</column>
+			<column name="risk_type">Credit Risk</column>
+			<column name="display_name">Credit Exposure</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">CreditRisk</column>
+			<column name="measure">Notional</column>
+			<column name="risk_type">Credit Risk</column>
+			<column name="display_name">Notional</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">CreditRisk</column>
+			<column name="measure">Issuer</column>
+			<column name="risk_type">Issuer Risk</column>
+			<column name="display_name">Issuer Notional</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">CreditRisk</column>
+			<column name="measure">AbsIssuer</column>
+			<column name="risk_type">Issuer Risk</column>
+			<column name="display_name">Issuer AbsNotional</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">CreditRisk</column>
+			<column name="measure">Settlement</column>
+			<column name="risk_type">Credit Risk</column>
+			<column name="display_name">Settlement</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">CreditRisk</column>
+			<column name="measure">Loan Equivalent</column>
+			<column name="risk_type">Credit Risk</column>
+			<column name="display_name">PercNotional</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">CreditRisk</column>
+			<column name="measure">MTM</column>
+			<column name="risk_type">Credit Risk</column>
+			<column name="display_name">MTM</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">CreditRisk</column>
+			<column name="measure">AbsNotional</column>
+			<column name="risk_type">Credit Risk</column>
+			<column name="display_name">AbsNotional</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">CreditRisk</column>
+			<column name="measure">Issuer Market Value</column>
+			<column name="risk_type">Issuer Risk</column>
+			<column name="display_name">Issuer Market Value</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">MarketRisk</column>
+			<column name="measure">IRDelta</column>
+			<column name="risk_type">ERS Risk</column>
+			<column name="display_name">IRDelta</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">MarketRisk</column>
+			<column name="measure">CSDelta</column>
+			<column name="risk_type">ERS Risk</column>
+			<column name="display_name">CSDelta</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">MarketRisk</column>
+			<column name="measure">IRGamma</column>
+			<column name="risk_type">ERS Risk</column>
+			<column name="display_name">IRGamma</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">MarketRisk</column>
+			<column name="measure">IRVega</column>
+			<column name="risk_type">ERS Risk</column>
+			<column name="display_name">IRVega</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">MarketRisk</column>
+			<column name="measure">HistVaR</column>
+			<column name="risk_type">ERS Risk</column>
+			<column name="display_name">HistVaR</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">MarketRisk</column>
+			<column name="measure">ProfitLoss</column>
+			<column name="risk_type">ERS Risk</column>
+			<column name="display_name">ProfitLoss</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">MarketRisk</column>
+			<column name="measure">Scenario</column>
+			<column name="risk_type">ERS Risk</column>
+			<column name="display_name">Scenario</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">MarketRisk</column>
+			<column name="measure">Scenario.Credit_View</column>
+			<column name="risk_type">ERS Risk</column>
+			<column name="display_name">Scenario.Credit_View</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name"> </column>
+			<column name="issuer_measure_name"> </column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">TotalRisk</column>
+			<column name="measure">Total Notional</column>
+			<column name="risk_type">Total Risk</column>
+			<column name="display_name">Total Notional</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name">Notional</column>
+			<column name="issuer_measure_name">Issuer</column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">TotalRisk</column>
+			<column name="measure">Total Notional Exposure</column>
+			<column name="risk_type">Total Risk</column>
+			<column name="display_name">Total Notional Exposure</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name">MTM AddOn</column>
+			<column name="issuer_measure_name">Issuer</column>
+			<column name="use_profile">0</column>
+	        </row>
+		<row cat="limitinstall">
+			<column name="service">TotalRisk</column>
+			<column name="measure">Total Market Value Exposure</column>
+			<column name="risk_type">Total Risk</column>
+			<column name="display_name">Total Market Value Exposure</column>
+			<column name="netting_calculator">Default</column>
+			<column name="product_breach_rule">Default</column>
+			<column name="legal_agreement_type">Default</column>
+			<column name="cpty_measure_name">MTM AddOn</column>
+			<column name="issuer_measure_name">Issuer Market Value</column>
+			<column name="use_profile">0</column>
+		</row>
+    </table>
+	<table name="ers_addon_buckets" xmlns="">
+	<row cat="limitinstall"><column name="bucket">1M</column></row>
+	<row cat="limitinstall"><column name="bucket">2M</column></row>
+	<row cat="limitinstall"><column name="bucket">3M</column></row>
+	<row cat="limitinstall"><column name="bucket">4M</column></row>
+	<row cat="limitinstall"><column name="bucket">5M</column></row>
+	<row cat="limitinstall"><column name="bucket">6M</column></row>
+	<row cat="limitinstall"><column name="bucket">7M</column></row>
+	<row cat="limitinstall"><column name="bucket">8M</column></row>
+	<row cat="limitinstall"><column name="bucket">9M</column></row>
+	<row cat="limitinstall"><column name="bucket">10M</column></row>
+	<row cat="limitinstall"><column name="bucket">11M</column></row>
+	<row cat="limitinstall"><column name="bucket">12M</column></row>
+	<row cat="limitinstall"><column name="bucket">13M</column></row>
+	<row cat="limitinstall"><column name="bucket">14M</column></row>
+	<row cat="limitinstall"><column name="bucket">15M</column></row>
+	<row cat="limitinstall"><column name="bucket">16M</column></row>
+	<row cat="limitinstall"><column name="bucket">17M</column></row>
+	<row cat="limitinstall"><column name="bucket">18M</column></row>
+	<row cat="limitinstall"><column name="bucket">1Y</column></row>
+	<row cat="limitinstall"><column name="bucket">2Y</column></row>
+	<row cat="limitinstall"><column name="bucket">3Y</column></row>
+	<row cat="limitinstall"><column name="bucket">4Y</column></row>
+	<row cat="limitinstall"><column name="bucket">5Y</column></row>
+	<row cat="limitinstall"><column name="bucket">6Y</column></row>
+	<row cat="limitinstall"><column name="bucket">7Y</column></row>
+	<row cat="limitinstall"><column name="bucket">8Y</column></row>
+	<row cat="limitinstall"><column name="bucket">9Y</column></row>
+	<row cat="limitinstall"><column name="bucket">10Y</column></row>
+	<row cat="limitinstall"><column name="bucket">11Y</column></row>
+	<row cat="limitinstall"><column name="bucket">12Y</column></row>
+	<row cat="limitinstall"><column name="bucket">13Y</column></row>
+	<row cat="limitinstall"><column name="bucket">14Y</column></row>
+	<row cat="limitinstall"><column name="bucket">15Y</column></row>
+	<row cat="limitinstall"><column name="bucket">16Y</column></row>
+	<row cat="limitinstall"><column name="bucket">17Y</column></row>
+	<row cat="limitinstall"><column name="bucket">18Y</column></row>
+	<row cat="limitinstall"><column name="bucket">19Y</column></row>
+	<row cat="limitinstall"><column name="bucket">20Y</column></row>
+	<row cat="limitinstall"><column name="bucket">25Y</column></row>
+	<row cat="limitinstall"><column name="bucket">30Y</column></row>
+	<row cat="limitinstall"><column name="bucket">*</column></row>
+       </table>
+
+	<table name="ers_product_groups" xmlns="">
+	<row cat="limitinstall">
+		<column name="product_group">FX</column>
+		<column name="product_type">FX</column>
+        </row>
+	<row cat="limitinstall">
+		<column name="product_group">FX</column>
+		<column name="product_type">FXCash</column>
+        </row>
+	<row cat="limitinstall">
+		<column name="product_group">FX</column>
+		<column name="product_type">FXForward</column>
+        </row>
+	<row cat="limitinstall">
+		<column name="product_group">FX</column>
+		<column name="product_type">FXSwap</column>
+        </row>
+	</table>
+	<table name="ers_addon" xmlns="">
+		<row cat="limitinstall">
+			<column name="addon_setname">default</column>
+			<column name="addon_key">Default.default.default</column>
+			<column name="addon_amount">0.1</column>
+			<column name="seq_id">0</column>
+			<column name="sheet_name">Main</column>
+			<column name="range_name"> </column>
+			<column name="order_id">0</column>
+        </row>		
+    </table>
+	<table name="ers_measure_parms" xmlns="">
+	<row cat="limitinstall">
+		<column name="measure">Settlement</column>
+		<column name="parameter_name">Flow Types</column>
+		<column name="parameter_value">PRINCIPAL</column>
+        </row>
+	<row cat="limitinstall">
+		<column name="measure">Settlement</column>
+		<column name="parameter_name">Ignore CLS</column>
+		<column name="parameter_value">No</column>
+        </row>
+	</table>	
+	<table name="ers_notional_pricers" xmlns="">
+	<row cat="limitinstall">
+		<column name="product_type">Warrant</column>
+		<column name="product_subtype">Vanilla</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>
+	<row cat="limitinstall">
+		<column name="product_type">CorrelationSwap</column>
+		<column name="product_subtype">CorrelationSwap</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>
+	<row cat="limitinstall">
+		<column name="product_type">DividendSwap</column>
+		<column name="product_subtype">Equity</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>
+	<row cat="limitinstall">
+		<column name="product_type">EquityForward</column>
+		<column name="product_subtype">Equity</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>
+	<row cat="limitinstall">
+		<column name="product_type">CFDDirectional</column>
+		<column name="product_subtype">CFDDirectional</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>
+	<row cat="limitinstall">
+		<column name="product_type">OTCEquityOption</column>
+		<column name="product_subtype">European Basket</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>
+	<row cat="limitinstall">
+		<column name="product_type">EquityStructuredOption</column>
+		<column name="product_subtype">BARRIER</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>
+	<row cat="limitinstall">
+		<column name="product_type">EquityStructuredOption</column>
+		<column name="product_subtype">ASIAN</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>
+	<row cat="limitinstall">
+		<column name="product_type">EquityStructuredOption</column>
+		<column name="product_subtype">DIGITAL</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>	
+	<row cat="limitinstall">
+		<column name="product_type">EquityStructuredOption</column>
+		<column name="product_subtype">European</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>
+	<row cat="limitinstall">
+		<column name="product_type">EquityStructuredOption</column>
+		<column name="product_subtype">American</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>		
+	<row cat="limitinstall">
+		<column name="product_type">EquityStructuredOption</column>
+		<column name="product_subtype">BEST_OF</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>	
+	<row cat="limitinstall">
+		<column name="product_type">EquityStructuredOption</column>
+		<column name="product_subtype">FWDSTART</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>	
+	<row cat="limitinstall">
+		<column name="product_type">EquityStructuredOption</column>
+		<column name="product_subtype">RAINBOW</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>			
+	<row cat="limitinstall">
+		<column name="product_type">EquityStructuredOption</column>
+		<column name="product_subtype">LOOKBACK</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>
+	<row cat="limitinstall">
+		<column name="product_type">EquityStructuredOption</column>
+		<column name="product_subtype">CLIQUET</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>
+	<row cat="limitinstall">
+		<column name="product_type">EquityStructuredOption</column>
+		<column name="product_subtype">CHOOSER</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>
+	<row cat="limitinstall">
+		<column name="product_type">EquityStructuredOption</column>
+		<column name="product_subtype">COMPOUND</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>		
+	<row cat="limitinstall">
+		<column name="product_type">FutureOptionBond</column>
+		<column name="product_subtype">BondFutureOpt</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+        </row>				
+	<row cat="limitinstall">
+		<column name="product_type">FutureOptionCommodity</column>
+		<column name="product_subtype">NYMEX Gold American Option OG</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+		</row>
+	<row cat="limitinstall">
+		<column name="product_type">Commodity</column>
+		<column name="product_subtype">Commodity</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+		</row>
+	<row cat="limitinstall">
+		<column name="product_type">CommodityForward</column>
+		<column name="product_subtype">Commodity</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+		</row>
+	<row cat="limitinstall">
+		<column name="product_type">FutureOptionMM</column>
+		<column name="product_subtype">MMContractOption</column>
+		<column name="buy_sell"> </column>
+		<column name="pricer">NOTIONAL</column>
+		<column name="reverse">0</column>
+		<column name="sign">0</column>
+		<column name="absolute">0</column>
+		</row>		
+	</table>	
+	
+  	<table name="ers_limit_groups" xmlns="">
+        <row cat="limitinstall">
+            <column name="group_type">ViolationTypes</column>
+            <column name="group_name">Trade Related</column>
+            <column name="group_value">New Trade</column>
+        </row>
+        <row cat="limitinstall">
+            <column name="group_type">ViolationTypes</column>
+            <column name="group_name">Trade Related</column>
+            <column name="group_value">Amend Trade</column>
+        </row>
+        <row cat="limitinstall">
+            <column name="group_type">ViolationTypes</column>
+            <column name="group_name">Non-Trade Related</column>
+            <column name="group_value">Limit Event</column>
+        </row>
+        <row cat="limitinstall">
+            <column name="group_type">ViolationTypes</column>
+            <column name="group_name">Non-Trade Related</column>
+            <column name="group_value">Technical Online Reval</column>
+        </row>
+        <row cat="limitinstall">
+            <column name="group_type">ViolationTypes</column>
+            <column name="group_name">Non-Trade Related</column>
+            <column name="group_value">Technical-Batch</column>
+        </row>
+    </table>
+	<table name="ers_meta_regex" xmlns="">
+		<row cat="limitinstall">
+			<column name="netting_key">RM Currency</column>
+			<column name="grouping_type">Currency.Curve</column>
+			<column name="value">[a-zA-Z0-9\s]*</column>
+        </row>
+		<row cat="limitinstall">
+			<column name="netting_key">RM Currency</column>
+			<column name="grouping_type">Currency.ISIN.ISIN*</column>
+			<column name="value">[a-zA-Z0-9\s]*</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="netting_key">RM ISIN</column>
+			<column name="grouping_type">Currency.ISIN.ISIN*</column>
+			<column name="value">\.[a-zA-Z0-9\s]*\.</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="netting_key">RM ISIN*</column>
+			<column name="grouping_type">Currency.ISIN.ISIN*</column>
+			<column name="value">\.[a-zA-Z0-9\s]*$</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="netting_key">RM Currency Pair</column>
+			<column name="grouping_type">CurrencyPair.ISIN.ISIN*</column>
+			<column name="value">[a-zA-Z0-9\s]*</column>
+		</row>
+    </table>
+       
+    <table name="calypso_seed" xmlns="">
+        <row cat="Required">
+			<column name="last_id">1</column>
+			<column name="seed_name">greeks</column>
+			<column name="seed_alloc_size">1</column>
+		</row>
+    </table>   
+       
+   <table name="domain_values" xmlns="">
+   <!-- start engine server database configuration -->
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">SIMM_GREEKS</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">engineName</column>
+			<column name="value">ERSWebServiceEngine</column>
+			<column name="description"> </column>
+		</row>
+		<row cat="Required">
+			<column name="name">eventClass</column>
+			<column name="value">PSEventRiskRequest</column>
+			<column name="description"> </column>
+		</row>
+		<row cat="Required">
+			<column name="name">eventClass</column>
+			<column name="value">PSEventRiskEngineLogMsg</column>
+			<column name="description"> </column>
+		</row>
+				
+   		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">ERSLimitServer.engines</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">ERSRiskServer.engines</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">ERSLimitServer.instances</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">ERSRiskServer.instances</column>
+			<column name="description"></column>
+		</row>
+   		<row cat="Required">
+			<column name="name">engineserver.types</column>
+			<column name="value">ERSLimitServer</column>
+			<column name="description">ERS Limit Server Engine Container</column>
+		</row>
+		<row cat="Required">
+			<column name="name">engineserver.types</column>
+			<column name="value">ERSRiskServer</column>
+			<column name="description">ERS Risk Server Engine Container</column>
+		</row>
+		<row cat="Required">
+			<column name="name">ERSRiskServer.engines</column>
+			<column name="value">RiskEngineBroker</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+		<column name="name">ERSRiskServer.engines</column>
+		<column name="value">DataWareHouseRiskEngine</column>
+		<column name="description"></column>
+		</row>
+
+        <!-- Limits Functions -->
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitView</column>
+			<column name="description">permission to View Limit definitions in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitTenorLimitEdit</column>
+			<column name="description">permission to Edit Tenor Limit definitions in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitAuthorise</column>
+			<column name="description">permission to Authorise Limit definition changes in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitEdit</column>
+			<column name="description">permission to Make Limit definition changes in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitAdmin</column>
+			<column name="description">permission to be Admin in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitUser</column>
+			<column name="description">permission to be a user in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitFrontOfficeUser</column>
+			<column name="description">permission to be a ERS Limits Front Office User</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitAudit</column>
+			<column name="description">permission to View Audit in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitReportsView</column>
+			<column name="description">permission to View Uploaded Reports in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitReportsUpload</column>
+			<column name="description">permission to Upload and View Report in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitAdjustmentAuthorise</column>
+			<column name="description">permission to Authorise Limit adjustments in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitAdjustmentEdit</column>
+			<column name="description">permission to Make Limit adjustments in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitEntitlementView</column>
+			<column name="description">permission to View Limit Entitlement in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitEntitlementEdit</column>
+			<column name="description">permission to Edit Limit Entitlement in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitOperationalView</column>
+			<column name="description">permission to View Operational elements in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitOperationalEdit</column>
+			<column name="description">permission to Edit Operational elements in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitBatchView</column>
+			<column name="description">permission to View Limit Batches in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitBatchEdit</column>
+			<column name="description">permission to Edit Limit Batches in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitWorkFlow</column>
+			<column name="description">permission to Acknowledge violations ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitNewMeasure</column>
+			<column name="description">permission to Add New measure type not from template in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitBookEntitlementEdit</column>
+			<column name="description">permission to Edit Book Entitlement in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitTradePanel</column>
+			<column name="description">permission to View Trade panels in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimitLEDashboard</column>
+			<column name="description">permission to View LE Dashboard in ERS Limits</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">function</column>
+			<column name="value">ERSLimit4EyesOverride</column>
+			<column name="description">permission to Authorise Limit definition changes in ERS Limits overriding any 4 eyes limitation</column>
+		</row>
+
+        <!-- Limits Workflow Rules -->
+		<row cat="limitinstall">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">CheckLimit</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">CheckLimitBreach</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">CheckLimitViolation</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">CheckLimitWarningOrViolation</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">CheckWhatIfLimits</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">CheckLimitViolationHard</column>
+			<column name="description"></column>
+		</row>
+
+        <!-- Limits Scheduled Tasks -->
+		<row cat="limitinstall">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_LIMIT_DATA_CONSISTENCY_CHECK</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_LIMIT_USAGE_UPDATE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_LIMIT_FWDLADDER_USAGE_UPDATE</column>
+			<column name="description"></column>
+		</row>
+
+        <!-- Limits Trade Keywords -->
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_IN_BREACH</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_BREACH_COMMENT</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_BREACH_TYPE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_MISSING_MEASURES</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_IN_WARNING</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_IN_VIOLATION</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_VIOLATION_COMMENT</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_CHECKED_PERFORMED</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_VIOLATION_IDS</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_RESERVED_KEYWORD</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_MAX_SEVERITY</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_MAX_NET_CHANGE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_MAX_TRIAL_USAGE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_CHECK_ERROR</column>
+			<column name="description"></column>
+		</row>
+
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_WHATIF_HIERARCHY</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_WHATIF_PORTFOLIO</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_WHATIF_CHECK_ERROR</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_WHATIF_CHECK_ERROR_MSG</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_WHATIF_RISK_USAGE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_WHATIF_LIMIT_MAX</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LIMIT_WHATIF_CHECK_PASS</column>
+			<column name="description"></column>
+		</row>
+
+        <!-- Limits Domain Names -->
+		<row cat="limitinstall">
+			<column name="name">domainName</column>
+			<column name="value">ERSWhatIfHierarchyName</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">domainName</column>
+			<column name="value">ERSWhatIfColumnName</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">domainName</column>
+			<column name="value">ERSWhatIfCheckMirror</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">domainName</column>
+			<column name="value">ERSWhatIfActualDomain</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">domainName</column>
+			<column name="value">ERSWhatIfMarginType</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">domainName</column>
+			<column name="value">limit.disableReservations</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">domainName</column>
+			<column name="value">limit.products</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">domainName</column>
+			<column name="value">limit.useCustomPredealChanges</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">domainName</column>
+			<column name="value">limit.customPredealChangeCalcFields</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">domainName</column>
+			<column name="value">limit.customPredealChangeHighlighting</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">domainName</column>
+			<column name="value">limit.customPredealChangeRemoval</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">domainName</column>
+			<column name="value">limit.ignoreLimitTypeCptyBreach</column>
+			<column name="description">Limit types that can be ignored for counterparty breaches</column>
+		</row>
+
+        <!-- Limits Domain Values -->
+		<row cat="limitinstall">
+			<column name="name">ERSWhatIfCheckMirror</column>
+			<column name="value">false</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">ERSWhatIfActualDomain</column>
+			<column name="value">TYPEB</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">ERSWhatIfMarginType</column>
+			<column name="value">FICCOTCMargin</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">limit.disableReservations</column>
+			<column name="value">false</column>
+			<column name="description"></column>
+		</row>
+		<row cat="limitinstall">
+			<column name="name">limit.useCustomPredealChanges</column>
+			<column name="value">false</column>
+			<column name="description"></column>
+		</row>
+
+
+
+        <!-- Compliance Domain Names -->
+		<row cat="complianceinstall">
+			<column name="name">domainName</column>
+			<column name="value">ComplianceLimit.products</column>
+			<column name="description"></column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">domainName</column>
+			<column name="value">ComplianceLimit.hardLimitLevel</column>
+			<column name="description"></column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">domainName</column>
+			<column name="value">ComplianceLimit.hardLimitLevel</column>
+			<column name="description"></column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">domainName</column>
+			<column name="value">compliance.customPredealChangeCalcFields</column>
+			<column name="description"></column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">domainName</column>
+			<column name="value">compliance.customPredealChangeHighlighting</column>
+			<column name="description"></column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">domainName</column>
+			<column name="value">compliance.customPredealChangeRemoval</column>
+			<column name="description"></column>
+		</row>
+
+        <!-- Compliance Domain Values -->
+		<row cat="complianceinstall">
+			<column name="name">ComplianceLimit.hardLimitLevel</column>
+			<column name="value">5</column>
+			<column name="description"></column>
+		</row>
+		
+        <row cat="Required">
+            <column name="name">engineName</column>
+            <column name="value">LimitEngine</column>
+            <column name="description"></column>
+        </row>
+
+   </table>
+
+    <table name="group_access" xmlns="">
+		<row cat="limitinstall">
+			<column name="group_name">calypso_group</column>
+			<column name="access_id">1</column>
+			<column name="access_value">ERSLimitAdmin</column>
+			<column name="read_only_b">0</column>
+		</row>
+    </table>
+   
+    <table name="ers_rating_list" xmlns="">
+		<row cat="limitinstall">
+			<column name="rating_key">Rating1</column>
+			<column name="rating_name">S&amp;P</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="rating_key">Rating2</column>
+			<column name="rating_name">Moody</column>
+		</row>
+		<row cat="limitinstall">
+			<column name="rating_key">Rating3</column>
+			<column name="rating_name">Fitch</column>
+		</row>
+    </table>
+
+</database>

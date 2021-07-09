@@ -1,0 +1,164 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+
+<head>
+    <title>Confirmation Notice</title>
+    <style type="text/css">
+    <!--
+        body, td, th, a, p {
+            font-size: 8pt;
+            font-family:arial,sans-serif;
+        }
+        body {
+            width: 600;
+        } 
+        p.indented {
+            text-indent: 3em;
+        }
+        td, tr, th {
+            padding: 2;
+            vertical-align: top;
+            text-align: left;
+        }
+        table {
+            width: 100%;
+        }
+        th {
+            font-weight: bold;
+        }
+        .smallfont {
+            font-size: 7pt;
+        }
+        .header1 {
+            font-size: 12pt;
+            font-weight: bold;
+            text-decoration: underline;
+            text-align: center;
+        }
+        .header2 {
+            font-size: 10pt;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    //-->
+    </style>
+</head>
+
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Price Fixing Advice</TITLE>
+<STYLE type="text/css"></STYLE></HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BGCOLOR="#ffffff">
+
+<p><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN"><!--------Return address table--></p>
+<TABLE CELLSPACING=0 BORDER=0>
+<TR><TD WIDTH=330 VALIGN="TOP">
+<p><div CLASS="c-cell"><IMG SRC="logo.gif" WIDTH=247 HEIGHT=75></div></TD>
+<TD VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>|SENDER_FULL_NAME|</ADDRESS>
+<ADDRESS>|SENDER_CONTACT_NAME|</ADDRESS>
+<ADDRESS>|SENDER_TITLE|</ADDRESS>
+<ADDRESS>|SENDER_ADDRESS|</ADDRESS>
+<ADDRESS>|SENDER_CITY| |SENDER_STATE|</ADDRESS>
+<ADDRESS>|SENDER_ZIPCODE| |SENDER_COUNTRY|</ADDRESS>
+<ADDRESS>E-mail : |SENDER_EMAIL|</ADDRESS>
+<ADDRESS>Phone: |SENDER_PHONE|</ADDRESS>
+<ADDRESS>Fax: |SENDER_FAX|</ADDRESS>
+<ADDRESS>Telex:|SENDER_TELEX|</ADDRESS>
+<ADDRESS>Swift: |SENDER_SWIFT|</ADDRESS></FONT></TD>
+</TR>
+</TABLE>
+
+<p><HR></p>
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=622>
+<TR><TD WIDTH="17%" VALIGN="MIDDLE">
+<ADDRESS><FONT SIZE=2>Date</ADDRESS></FONT></TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>:&nbsp;</ADDRESS></FONT></TD>
+<TD WIDTH="73%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>|DATE|</ADDRESS></FONT></TD>
+</TR>
+<TR><TD WIDTH="17%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>To</ADDRESS></FONT></TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>:&nbsp;&nbsp;</ADDRESS></FONT></TD>
+<TD WIDTH="73%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>|RECEIVER_FULL_NAME|</ADDRESS></FONT></TD>
+</TR>
+<TR><TD WIDTH="17%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>Address</ADDRESS></FONT></TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>:&nbsp;&nbsp;&nbsp;&nbsp;</ADDRESS></FONT></TD>
+<TD WIDTH="73%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>|RECEIVER_ADDRESS|</ADDRESS>
+<ADDRESS>|RECEIVER_CITY| |RECEIVER_STATE|</ADDRESS>
+<ADDRESS>|RECEIVER_ZIPCODE| |RECEIVER_COUNTRY|</ADDRESS></FONT></TD>
+</TR>
+<TR><TD WIDTH="17%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>Fax</ADDRESS></FONT></TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>:&nbsp;&nbsp;</ADDRESS></FONT></TD>
+<TD WIDTH="73%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>|RECEIVER_FAX|</ADDRESS></FONT></TD>
+</TR>
+<TR><TD WIDTH="17%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>Attention</ADDRESS></FONT></TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>:</ADDRESS></FONT></TD>
+<TD WIDTH="73%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>|RECEIVER_CONTACT_NAME|</ADDRESS></FONT></TD>
+</TR>
+<TR><TD WIDTH="17%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>Our Reference</ADDRESS></FONT></TD>
+<TD WIDTH="10%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>:</ADDRESS></FONT></TD>
+<TD WIDTH="73%" VALIGN="MIDDLE">
+<FONT SIZE=2><ADDRESS>|TRADE_ID| / |MESSAGE_ID|</ADDRESS></FONT></TD>
+</TR>
+</TABLE>
+
+<p><!---End Fax-To Table--></p>
+<b><u><FONT SIZE=2><p ALIGN="CENTER">|PRODUCT_TYPE| Price Fixing Notice</p>
+</u></b><p>Dear&nbsp; |SALUTATION|, </p>
+<p>I am pleased to |MESSAGE_ACTION|&nbsp; the price fixing for the&nbsp; |PRODUCT_TYPE| trade, reference |TRADE_ID| (|PRODUCT_DESCRIPTION|), traded |TRADE_DATE|.&nbsp;The details of the price fixing are the following: <br />
+&nbsp; <div CLASS="c-indent"></div></p>
+<b><u><p>Price Fixing Details: </p>
+</u></b></FONT>
+
+<!--calypso>
+	inline "
+        <table><tr><th>Type</th>
+	    <th>Start Date</th>
+	    <th>End Date</th>
+	    <th>Product Description</th>
+	    <th>Start Price</th>
+	    <th>Start Notional</th>
+	    <th>End Price</th>
+	    <th>End Notional</th>
+	    <th>Ccy</th>
+	    <th>Amount</th>
+	</tr>";
+	   iterator ("PriceFixingFlows")
+	     inline "
+<tr>
+    <td class='smallfont'>|CASHFLOW_TYPE|</td>
+    <td class='smallfont'>|CASHFLOW_START_DATE|</td>
+    <td class='smallfont'>|CASHFLOW_END_DATE|</td>
+    <td class='smallfont'>|CASHFLOW_PRODUCTDESCRIPTION|</td>
+    <td class='smallfont'>|CASHFLOW_STARTPRICE|</td>
+    <td class='smallfont'>|CASHFLOW_STARTNOTIONAL|</td>
+    <td class='smallfont'>|CASHFLOW_ENDPRICE|</td>
+    <td class='smallfont'>|CASHFLOW_ENDNOTIONAL|</td>
+    <td class='smallfont'>|CASHFLOW_CURRENCY|</td>
+    <td class='smallfont'>|CASHFLOW_AMOUNT|</td>
+</tr>
+    ";
+inline "</table>";
+</calypso-->
+
+<p> Thank you very much. Please refer to our trade number&nbsp; |TRADE_ID| in your correspondence concerning this trade. </p>
+</FONT><PRE>Regards, </PRE>
+<FONT SIZE=2><p>|SENDER_CONTACT_NAME| <br />
+|SENDER_TITLE| </p>
+<p>|SENDER_FULL_NAME| </p></FONT></BODY>
+</HTML>

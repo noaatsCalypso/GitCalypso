@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+	<contents>
+		<element name="FIToFIPmtCxlReq">
+			<contents>
+				<element name="Assgnmt">
+					<contents>
+						<element name="Id">
+							<contents>
+								<report>
+									<column>MESSAGE_ID</column>
+								</report>
+							</contents>
+						</element>
+						<element name="Assgnr">
+							<contents>
+								<element name="Agt">
+									<contents>
+										<element name="FinInstnId">
+											<contents>
+												<element name="BIC">
+													<condition>
+                                               			<expression>isEmpty(getReportValue("PO_CLEARING_MEMBER_ID"))</expression>
+                                          		  	</condition>
+													<contents>
+														<report>
+															<column>Sender.Swift</column>
+															<transformations>
+																<transformation type="function">
+																	<to>completeSwiftBranch</to>
+																</transformation>
+															</transformations>
+														</report>
+													</contents>
+												</element>
+												<element name="ClrSysMmbId" hideifempty="true">
+													<contents>
+														<element name="ClrSysId">
+															<contents>
+																<element name="Cd">
+																	<contents>
+																		<report>
+																			<column>PO_CLEARING_SYS_ID</column>
+																		</report>
+																	</contents>
+																</element>
+															</contents>
+														</element>
+														<element name="MmbId">
+															<contents>
+																<report>
+																	<column>PO_CLEARING_MEMBER_ID</column>
+																</report>
+															</contents>
+														</element>
+													</contents>
+												</element>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="Assgne">
+							<contents>
+								<element name="Agt">
+									<contents>
+										<element name="FinInstnId">
+											<contents>
+												<element name="BIC">
+													<condition>
+                                               			<expression>isEmpty(getReportValue("CPTY_AGENT_CLEARING_MEMBER_ID"))</expression>
+                                          		  	</condition>
+													<contents>
+														<report>
+															<column>Receiver.Swift</column>
+															<transformations>
+																<transformation type="function">
+																	<to>completeSwiftBranch</to>
+																</transformation>
+															</transformations>
+														</report>
+													</contents>
+												</element>
+												<element name="ClrSysMmbId" hideifempty="true">
+													<contents>
+														<element name="ClrSysId">
+															<contents>
+																<element name="Cd">
+																	<contents>
+																		<report>
+																			<column>CPTY_AGENT_CLEARING_SYS_ID</column>
+																		</report>
+																	</contents>
+																</element>
+															</contents>
+														</element>
+														<element name="MmbId">
+															<contents>
+																<report>
+																	<column>CPTY_AGENT_CLEARING_MEMBER_ID</column>
+																</report>
+															</contents>
+														</element>
+													</contents>
+												</element>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="CreDtTm">
+							<contents>
+								<report>
+									<column>CREATION_SYSTEM_DATE_ISOVERSION</column>
+								</report>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="Undrlyg">
+					<contents>
+						<element name="TxInf">
+							<contents>
+								<element name="CxlId">
+									<contents>
+										<report>
+											<column>MESSAGE_ID</column>
+										</report>
+									</contents>
+								</element>
+								<element name="OrgnlGrpInf">
+									<contents>
+										<element name="OrgnlMsgId">
+											<contents>
+												<report>
+													<column>RELATED_MSG_ID</column>
+												</report>
+											</contents>
+										</element>
+										<element name="OrgnlMsgNmId">
+											<contents>
+												<report>
+													<column>RELATED_MSG_TEMPLATE</column>
+													<transformations>
+														<transformation type="regexp">
+															<from>.SIX</from>
+															<to></to>
+														</transformation>
+														<transformation type="regexp">
+															<from>.COV</from>
+															<to></to>
+														</transformation>
+													</transformations>
+												</report>
+											</contents>
+										</element>
+									</contents>
+								</element>
+								<element name="OrgnlInstrId">
+									<contents>
+										<report>
+											<column>RELATED_MSG_INSTRID</column>
+										</report>
+									</contents>
+								</element>
+								<element name="OrgnlEndToEndId">
+									<contents>
+										<report>
+											<column>RELATED_MSG_ENDTOENDID</column>
+										</report>
+									</contents>
+								</element>
+								<element name="OrgnlTxId">
+									<contents>
+										<report>
+											<column>RELATED_MSG_TXID</column>
+										</report>
+									</contents>
+								</element>
+								<element name="OrgnlIntrBkSttlmAmt">
+									<attributes>
+										<attribute name="Ccy">
+											<value>
+												<report>
+													<column>RELATED_MSG_INTERBKSTTLCCY</column>
+												</report>
+											</value>
+										</attribute>
+									</attributes>
+									<contents>
+										<report format="######.######">
+											<column>RELATED_MSG_INTERBKSTTLAMOUNT</column>
+										</report>
+									</contents>
+								</element>
+								<element name="OrgnlIntrBkSttlmDt">
+									<contents>
+										<report format="yyyy-MM-dd">
+											<column>RELATED_MSG_INTERBKSTTLDATE</column>
+										</report>
+									</contents>
+								</element>
+								<element name="CxlRsnInf">
+									<contents>
+										<element name="Orgtr">
+											<contents>
+												<element name="Id">
+													<contents>
+														<element name="OrgId">
+															<contents>
+																<element name="BICOrBEI">
+																	<condition>
+                                               							<expression>isEmpty(getReportValue("PO_CLEARING_MEMBER_ID"))</expression>
+                                          		  					</condition>
+																	<contents>
+																		<report>
+																			<column>Sender.Swift</column>
+						                                                    <transformations>
+						                                                        <transformation type="function">
+						                                                            <to>completeSwiftBranch</to>
+						                                                        </transformation>
+						                                                    </transformations>
+																		</report>
+																	</contents>
+																</element>
+																<element name="Othr">
+																	<contents>
+																		<element name="Id">
+																			<contents>
+																				<report>
+																					<column>PO_CLEARING_MEMBER_ID</column>
+																				</report>
+																			</contents>
+																		</element>
+																	</contents>
+																</element>
+															</contents>
+														</element>
+													</contents>
+												</element>
+											</contents>
+										</element>
+										<element name="Rsn">
+											<contents>
+												<element name="Cd">
+													<contents>
+														<report>
+															<column>XferAttributes.CancellationReason</column>
+														</report>
+													</contents>
+												</element>
+												<element name="Prtry">
+													<condition>
+														<expression>isEmpty(getReportValue("XferAttributes.CancellationReason"))</expression>
+													</condition>
+													<contents>
+														<report>
+															<column>XferAttributes.CancellationReasonProp</column>
+														</report>
+													</contents>
+												</element>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+			</contents>
+		</element>
+	</contents>
+</template>

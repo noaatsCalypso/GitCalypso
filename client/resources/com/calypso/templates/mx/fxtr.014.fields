@@ -1,0 +1,7 @@
+Trade\ Date=//Document/FXTradInstr/TradInf/TradDt/text()
+Trading\ Side\ Buy\ Amount=//Document/FXTradInstr/TradAmts/TradgSdBuyAmt/text()
+Trading\ Side\ Sell\ Amount=//Document/FXTradInstr/TradAmts/TradgSdSellAmt/text()
+Trading\ Side\ Buy\ Currency=//Document/FXTradInstr/TradAmts/TradgSdBuyAmt/@Ccy
+Trading\ Side\ Sell\ Currency=//Document/FXTradInstr/TradAmts/TradgSdSellAmt/@Ccy
+Exchange\ Rate=//Document/FXTradInstr/AgrdRate/XchgRate/text()
+Settlement\ Date=//Document/FXTradInstr/TradAmts/SttlmDt/text()

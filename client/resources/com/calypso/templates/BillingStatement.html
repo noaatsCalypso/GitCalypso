@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <title>Billing Statement Confirmation Notice</title>
+  <style type="text/css">
+    p {
+      color: rgb(0, 0, 0);
+      font: small/1.5 "Tahoma", "Bitstream Vera Sans", Verdana, Helvetica, sans-serif;
+    }
+    p.title {
+      color: rgb(0, 0, 0);
+      font: large/1.5 "Tahoma", "Bitstream Vera Sans", Verdana, Helvetica, sans-serif;
+    }
+    p.sub_title {
+      color: rgb(0, 0, 0);
+      font: medium/1.5 "Tahoma", "Bitstream Vera Sans", Verdana, Helvetica, sans-serif;
+    }
+    table,
+    td {
+      border: 1px solid #CCC;
+      border-collapse: collapse;
+      font: small/1.5 "Tahoma", "Bitstream Vera Sans", Verdana, Helvetica, sans-serif;
+    }
+    table {
+      border: none;
+      border: 1px solid #CCC;
+    }
+    thead th,
+    tbody th {
+      background: #FFF url(th_bck.gif) repeat-x;
+      color: #666;
+      padding: 5px 10px;
+      border-left: 1px solid #CCC;
+    }
+    tbody th {
+      background: #fafafb;
+      border-top: 1px solid #CCC;
+      text-align: left;
+      font-weight: normal;
+    }
+    tbody tr td {
+      padding: 5px 10px;
+      color: #666;
+    }
+    tbody tr:hover {
+      background: #FFF url(tr_bck.gif) repeat;
+    }
+    tbody tr:hover td {
+      color: #454545;
+    }
+    tfoot td,
+    tfoot th {
+      border-left: none;
+      border-top: 1px solid #CCC;
+      padding: 4px;
+      background: #FFF url(foot_bck.gif) repeat;
+      color: #666;
+    }
+    caption {
+      text-align: left;
+      font-size: 120%;
+      padding: 10px 0;
+      color: #666;
+    }
+    table a:link {
+      color: #666;
+    }
+    table a:visited {
+      color: #666;
+    }
+    table a:hover {
+      color: #003366;
+      text-decoration: none;
+    }
+    table a:active {
+      color: #003366;
+    }
+  </style>
+</head>
+
+<body bgcolor="#fafafb">
+  <table summary="" width="100%">
+    <tr>
+      <td align="left" bgcolor="#aaaaaa">
+        <img src="http://www.calypso.com/images/calypso_logo.png" alt="Calypso" width="178" height="42" />
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table width="100%" bgcolor="#FFFFFF" border="0">
+    <tr>
+      <td>
+        <p align="left">|MESSAGE_CREATIONDATE|</p>
+        <table summary="" width="100%">
+          <tr>
+            <td align="center" bgcolor="#fafafb">
+              <p class="title">Billing Statement Confirmation Notice</p>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <table summary="" width="100%">
+          <tr>
+            <td><b>To:</b>
+            </td>
+            <td>|RECEIVER_CONTACT_NAME|
+              <br>|RECEIVER_TITLE|</td>
+            <td><b>From:</b>
+            </td>
+            <td>|SENDER_CONTACT_NAME|
+              <br>|SENDER_TITLE|</td>
+          </tr>
+          <tr>
+            <td><b>Company:</b>
+            </td>
+            <td>|RECEIVER_FULL_NAME|</td>
+            <td><b>Company:</b>
+            </td>
+            <td>|SENDER_FULL_NAME|</td>
+          </tr>
+          <tr>
+            <td><b>Phone:</b>
+            </td>
+            <td>|RECEIVER_PHONE|</td>
+            <td><b>Phone:</b>
+            </td>
+            <td>|SENDER_PHONE|</td>
+          </tr>
+          <tr>
+            <td><b>Fax:</b>
+            </td>
+            <td>|RECEIVER_FAX|</td>
+            <td><b>Fax:</b>
+            </td>
+            <td>|SENDER_FAX|</td>
+          </tr>
+          <tr>
+            <td><b>E-Mail:</b>
+            </td>
+            <td>|RECEIVER_EMAIL|</td>
+            <td><b>E-Mail:</b>
+            </td>
+            <td>|SENDER_EMAIL|</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table width="100%">
+    <tr>
+      <td>
+        <!--START T31_MC_SUMMARY_TITLE-->
+        <table width="100%">
+          <tr>
+            <td>
+              <p class="sub_title">Summary</p>
+            </td>
+          </tr>
+        </table>
+        <table summary="" width="100%">
+          <tr>
+            <td><b>Counterparty</b>
+            </td>
+            <td>|REPORT#Counterparty|</td>
+          </tr>
+          <tr>
+            <td><b>Statement Date</b>
+            </td>
+            <td>|REPORT#Statement Date|</td>
+          </tr>
+          <tr>
+            <td><b>Start Date</b>
+            </td>
+            <td>|REPORT#Start Date|</td>
+          </tr>
+          <tr>
+            <td><b>End Date</b>
+            </td>
+            <td>|REPORT#End Date|</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <!--END T3_MC_SUMMARY-->
+  <br>
+  <table width="100%" bgcolor="#FFFFFF" border="0">
+    <tr>
+      <td>
+        <table summary="" width="100%">
+          <tr>
+            <td bgcolor="#fafafb">
+              <p class="sub_title">Billing Details</p>
+            </td>
+          </tr>
+        </table>
+        <p>|STATEMENT_ENTRY_DETAIL_REPORT#default|</p>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <br>
+</body>
+
+</html>

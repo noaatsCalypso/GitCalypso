@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="domain_values" xmlns="">
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">MARGIN_IMPORT_SCENARIO_SHIFTS</column>
+			<column name="description"/>
+		</row>
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">MARGIN_INPUT</column>
+            <column name="description"/>
+        </row>
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">MARGIN_SIMULATION</column>
+            <column name="description"/>
+        </row>
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">MARGIN_IA_INPUT</column>
+            <column name="description"/>
+        </row>
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">MARGIN_CALCULATOR</column>
+            <column name="description"/>
+        </row>
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">MARGIN_IA_CALCULATOR</column>
+            <column name="description"/>
+        </row>
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">CREATE_CAPATM_SURFACE</column>
+            <column name="description"/>
+        </row>
+
+		<row cat="Required">
+			<column name="name">securityCode</column>
+			<column name="value">ISDA_SIMM_QUALIFIER</column>
+			<column name="description"></column>
+		</row>
+
+		<row cat="Required">
+		    <column name="name">securityCode</column>
+		    <column name="value">ISDA_SIMM_BUCKET</column>
+		    <column name="description"></column>
+		</row>
+		<row cat="Required">
+		    <column name="name">leAttributeType</column>
+		    <column name="value">ISDA_SIMM_BUCKET</column>
+		    <column name="description"></column>
+		</row>
+		<row cat="Required">
+		    <column name="name">domainName</column>
+		    <column name="value">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="description"></column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">1</column>
+		    <column name="description">1</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">2</column>
+		    <column name="description">2</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">Residual</column>
+		    <column name="description">Residual</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">3</column>
+		    <column name="description">3</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">4</column>
+		    <column name="description">4</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">5</column>
+		    <column name="description">5</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">6</column>
+		    <column name="description">6</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">7</column>
+		    <column name="description">7</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">8</column>
+		    <column name="description">8</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">9</column>
+		    <column name="description">9</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">10</column>
+		    <column name="description">10</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">11</column>
+		    <column name="description">11</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">12</column>
+		    <column name="description">12</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">13</column>
+		    <column name="description">13</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">14</column>
+		    <column name="description">14</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">15</column>
+		    <column name="description">15</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">16</column>
+		    <column name="description">16</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">securityCode.ISDA_SIMM_BUCKET</column>
+		    <column name="value">17</column>
+		    <column name="description">17</column>
+		</row>
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">IM_MODEL</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">UMR_TAGGING</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">systemKeyword</column>
+            <column name="value">UMR_TAGGING_TRADE_VERSION</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">nonCopiableKeyword</column>
+            <column name="value">UMR_TAGGING_TRADE_VERSION</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">PricingSheetKeywordsToClearUponCopy</column>
+            <column name="value">UMR_TAGGING_TRADE_VERSION</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">keyword.UMR_TAGGING</column>
+            <column name="value">false</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">IM_ISDA_PRODUCT_TYPE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="domain">
+            <column name="name">domainName</column>
+            <column name="value">keyword.IM_MODEL</column>
+            <column name="description">SIMM</column>
+        </row>
+        <row cat="domain">
+            <column name="name">keyword.IM_MODEL</column>
+            <column name="value">SIMM</column>
+            <column name="description">SCHEDULE</column>
+        </row>
+        <row cat="domain">
+            <column name="name">keyword.IM_MODEL</column>
+            <column name="value">SCHEDULE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+        	<column name="name">domainName</column>
+        	<column name="value">ISDASIMM.treatIRCurveAsXccyBasis.Currencies</column>
+        	<column name="description">List of currencies for which to treat as XCcyBasis risk during MSA</column>
+        </row>
+        <row cat="Required">
+        	<column name="name">domainName</column>
+        	<column name="value">ISDASIMM.flipXccyBasisRisk.Currencies</column>
+        	<column name="description">List of currencies for which to treat as XCcyBasis risk during MSA</column>
+        </row>
+        <row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Margin.UMR.TradeTaggingEligibleStatus</column>
+			<column name="description">Trade Status for which the UMR Tagging will be attempted</column>
+		</row>
+		<row cat="Required">
+		    <column name="name">domainName</column>
+		    <column name="value">MarginInput.Inflation.Subtype</column>
+		    <column name="description"></column>
+		</row>
+		<row cat="Required">
+		    <column name="name">domainName</column>
+		    <column name="value">MarginInput.ProductFamily.Ignore</column>
+		    <column name="description"></column>
+		</row>
+        <row cat="domain">
+            <column name="name">Margin</column>
+            <column name="value">ExportTemplate.AcadiaExposure</column>
+            <column name="description">MarginExporter-_-TIMEHORIZON-_-ACCOUNTGROUP-_-VALDATE</column>
+        </row>
+        <row cat="domain">
+            <column name="name">Margin</column>
+            <column name="value">ExportTemplate.CalypsoExposure</column>
+            <column name="description">MarginExporter-_-TIMEHORIZON-_-BilateralMargin-_-TIMESTAMP</column>
+        </row>
+        <row cat="domain">
+            <column name="name">Margin</column>
+            <column name="value">ExportTemplate.AcadiaRiskFactor</column>
+            <column name="description">ACCOUNTGROUP-IMRISK-_-VALDATE-_-ACADIA</column>
+        </row>
+        <row cat="domain">
+            <column name="name">Margin</column>
+            <column name="value">ExportTemplate.CalypsoRiskFactor</column>
+            <column name="description">ACCOUNTGROUP-IMRISK-_-VALDATE</column>
+        </row>
+		<row cat="domain">
+			<column name="name">Margin</column>
+			<column name="value">ExportTemplate.MarginAccount</column>
+			<column name="description">MarginAccount-_-ACCOUNTGROUP-_-VALDATE</column>
+		</row>
+        <row cat="domain">
+            <column name="name">volUsages</column>
+            <column name="value">SIMM</column>
+            <column name="description"></column>
+        </row>
+    </table>
+</database>

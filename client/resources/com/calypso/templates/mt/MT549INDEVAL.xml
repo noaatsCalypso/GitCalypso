@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MT 549 Request for Statement / Status Advice -->
+<SwiftMsgDef>
+	<Name>MT549</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="GENL" value="GENL" modes="MMM"/>
+		<SwiftField name="Sender's Reference" tag=":20C:" format=":4!c//16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Function of the Message" tag=":23G:" format="4!c[/4!c]" value="MESSAGE_SUBACTION" modes="MMM"/>
+		<SwiftField name="Statement Date/Time" tag=":98A:" format=":4!c//8!n" value="MT549RequestDate" modes="OOO"/>
+		<SwiftField name="Number Identification" tag=":13A:" format=":4!c//3!c" value="NUMBER_IDENTIFICATION_MT549" modes="OOO"/>
+		<SwiftField name="Safekeeping Account" tag=":97A:" format=":4!c//35x" value="SAFEKEEP_ACCOUNT" modes="OOO"/>
+		<SwiftField name="End of Block" tag=":16S:" format="GENL" value="GENL" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Repetitive Optional Sequence B by Status/Reason and/or by Financial Instrument" iterator="MT549StatusReasonIterator" modes="OOO">
+		<SwiftField name="Start of Block" tag=":16R:" format="BYSTAREA" value="BYSTAREA" modes="MMM"/>
+		<SwiftField name="Status" tag=":25D:" format=":4!c/[8c]/4!c" value="STATUS_MT549" modes="OOO"/>
+		<SwiftField name="Reason" tag=":24B:" format=":4!c/[8c]/4!c" value="REASON_MT549" modes="OOO"/>
+		<SwiftField name="Identification of the Financial Instrument" tag=":35B:" format="[ISIN1!e12!c][\n][4*35x]" value="SECURITY_DESCRIPTION" modes="OOO"/>
+		<SwiftField name="End of Block" tag=":16S:" format="BYSTAREA" value="BYSTAREA" modes="MMM"/>
+	</SwiftSequence>
+</SwiftMsgDef>

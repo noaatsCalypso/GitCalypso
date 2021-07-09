@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><module target-version="7.1.0" name="margin-simm" min-version="1.0.0">
+  <schema filename="MarginSIMMSchemaBase.xml"/>
+  <schema filename="MarginSIMMSchemaData.xml"/>
+  <upgrade version="5.0.0">
+    <step name="MGNC-1021" version="1"/>
+  </upgrade>
+  <upgrade version="5.1.0">
+    <step name="MGNC-1204-SIMM" version="1"/>
+    <step name="MGNC-1207" version="1"/>
+  </upgrade>
+  <upgrade version="6.9.0">
+    <step name="CMGNB-189" version="1"/>
+  </upgrade>
+</module>

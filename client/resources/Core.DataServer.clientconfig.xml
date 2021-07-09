@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+  	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+	
+	<bean id="clientDisconnectListenerInterceptor"
+			class="com.calypso.tk.service.handler.aop.ClientDisconnectListnerInvocationHandler" />
+				
+ 	<bean id="DSConnection" class="com.calypso.tk.service.DSConnection" lazy-init="true" init-method="init" destroy-method="stopSession" depends-on="HASingleton,clientContextInitializer">
+ 		<property name="instanceName" value="${DATA_SERVER_NAME}" />
+ 		<property name="serviceURL" value="${DATASERVER_NAMING_PROVIDER_URL}" />
+ 		
+ 		<!-- defined in PropertyConfiguration.xml -->
+ 		<property name="jndiPattern" value="${JNDI_PATTERN}"/>
+ 		
+ 		<property name="rmiProxyProps">
+ 			<bean parent="rmiClientProperties">
+ 				<property name="deployedServerName" value="Data Server" />
+		 		<property name="clientProxyBeans">
+		 			<list merge="true">
+		 				<ref bean="clientDisconnectListenerInterceptor"/>
+		 			</list>
+		 		</property>
+ 			</bean>		
+ 		</property>
+ 		<property name="remoteInvocationFactory">
+ 			<bean class="com.calypso.infra.authentication.context.rmi.ContextPropagatingRemoteInvocationFactory">
+ 				<property name="tokenRetriever">
+ 					<bean class="com.calypso.infra.authentication.context.rmi.StaticTokenRetriever">
+ 						<property name="tokenFactory" ref="tokenFactory" />
+ 					</bean>
+ 				</property>
+ 			</bean>
+ 		</property>
+	</bean>
+	
+	 <bean id="HASingleton" class="com.calypso.tk.lock.CalypsoGlobalLock"  lazy-init="false" init-method="startHAMonitoring" destroy-method="stopHAMonitoring" />
+	
+	<!-- To enable MSAD, uncomment the enableMSAD bean and add it to the first entry in the depends-on for 
+	     bean DSConnection. I.e. make depends-on of bean DSConnection (in this file as well) looks like:
+	     <bean id="DSConnection" class=... depends-on="enableMSAD,tokenFactory,messagingCo
+	     
+	<bean id="enableMSAD" class="com.calypso.security.auth.callback.CalypsoClientCallbackHandler">
+                <property name="msadEnabled" value="true" />
+    </bean>
+    -->
+
+	<beans profile="default">
+		<bean id="clientContextInitializer"
+			class="com.calypso.apps.ejb.jboss.JBossClientContextInitializer"
+			init-method="init" destroy-method="destroy">
+		</bean>
+	</beans>
+
+	<beans profile="jboss">
+		<bean id="clientContextInitializer"
+			class="com.calypso.apps.ejb.jboss.JBossClientContextInitializer"
+			init-method="init" destroy-method="destroy">
+		</bean>
+	</beans>
+    
+</beans>

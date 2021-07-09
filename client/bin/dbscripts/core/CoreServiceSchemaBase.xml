@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="core_account_attribute" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="account_id" type="string" nullable="false" scale="36"/>
+        <column name="name" type="string" nullable="false" scale="255"/>
+        <column name="value" type="string" nullable="false" scale="255"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>account_id</on>
+            <on>name</on>
+        </index>
+    </table>
+    <table name="core_account_interest_config" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="currency" type="string" nullable="false" scale="255"/>
+        <column name="instance" type="string" nullable="true" scale="255"/>
+        <column name="quote_set_name" type="string" nullable="true" scale="255"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="core_bond" xmlns="">
+        <column name="acc_daycount" type="string" nullable="true" scale="255"/>
+        <column name="accrual_rounding" type="int" nullable="true" scale="1"/>
+        <column name="acr_rounding_mthd" type="string" nullable="true" scale="255"/>
+        <column name="active_date" type="int" nullable="true" scale="1"/>
+        <column name="amort_amount" type="float" nullable="true" scale="1"/>
+        <column name="amort_rate" type="float" nullable="true" scale="1"/>
+        <column name="amort_structure" type="string" nullable="true" scale="10"/>
+        <column name="announce_date" type="int" nullable="true" scale="1"/>
+        <column name="auction_date" type="int" nullable="true" scale="1"/>
+        <column name="bond_name" type="string" nullable="true" scale="64"/>
+        <column name="bond_status" type="string" nullable="true" scale="32"/>
+        <column name="bond_type" type="string" nullable="true" scale="32"/>
+        <column name="call_date" type="int" nullable="true" scale="1"/>
+        <column name="cap_strike" type="float" nullable="true" scale="1"/>
+        <column name="cmp_frequency" type="string" nullable="true" scale="255"/>
+        <column name="comments" type="string" nullable="true" scale="512"/>
+        <column name="country" type="string" nullable="true" scale="32"/>
+        <column name="coupon" type="float" nullable="true" scale="1"/>
+        <column name="coupon_currency" type="string" nullable="true" scale="3"/>
+        <column name="coupon_date_roll" type="string" nullable="true" scale="255"/>
+        <column name="coupon_date_rule" type="int" nullable="true" scale="1"/>
+        <column name="coupon_frequency" type="string" nullable="true" scale="255"/>
+        <column name="coupon_holidays" type="string" nullable="true" scale="128"/>
+        <column name="coupon_offset" type="int" nullable="true" scale="1"/>
+        <column name="coupon_payment_type" type="string" nullable="true" scale="16"/>
+        <column name="coupon_rounding_mthd" type="string" nullable="true" scale="255"/>
+        <column name="dated_date" type="int" nullable="true" scale="1"/>
+        <column name="daycount" type="string" nullable="true" scale="255"/>
+        <column name="default_date" type="int" nullable="true" scale="1"/>
+        <column name="disc_method" type="int" nullable="true" scale="1"/>
+        <column name="face_value" type="float" nullable="true" scale="1"/>
+        <column name="first_coupon_date" type="int" nullable="true" scale="1"/>
+        <column name="flip_frequency" type="string" nullable="true" scale="255"/>
+        <column name="flipper_date" type="int" nullable="true" scale="1"/>
+        <column name="floor_strike" type="float" nullable="true" scale="1"/>
+        <column name="fx_rate" type="float" nullable="true" scale="1"/>
+        <column name="has_odd_first_coupon" type="int" nullable="true" scale="1"/>
+        <column name="has_odd_last_coupon" type="int" nullable="true" scale="1"/>
+        <column name="inactive_date" type="int" nullable="true" scale="1"/>
+        <column name="ipa_le_id" type="string" nullable="true" scale="36"/>
+        <column name="is_amortizing" type="int" nullable="true" scale="1"/>
+        <column name="is_cpn_off_bus_day" type="int" nullable="true" scale="1"/>
+        <column name="is_fixed" type="int" nullable="true" scale="1"/>
+        <column name="is_floater" type="int" nullable="true" scale="1"/>
+        <column name="is_reset_bus_lag" type="int" nullable="true" scale="1"/>
+        <column name="is_reset_cutoff_bus_day" type="int" nullable="true" scale="1"/>
+        <column name="is_reset_in_arrears" type="int" nullable="true" scale="1"/>
+        <column name="issue_date" type="int" nullable="true" scale="1"/>
+        <column name="issue_price" type="float" nullable="true" scale="1"/>
+        <column name="issue_yield" type="float" nullable="true" scale="1"/>
+        <column name="deliverable_lot_size" type="float" nullable="true" scale="1"/>
+        <column name="issuer_le_id" type="string" nullable="true" scale="36"/>
+        <column name="maturity_date" type="int" nullable="true" scale="1"/>
+        <column name="maturity_tenor" type="string" nullable="true" scale="255"/>
+        <column name="min_purchase_amt" type="float" nullable="true" scale="1"/>
+        <column name="nominal_decimals" type="int" nullable="true" scale="1"/>
+        <column name="option_type" type="string" nullable="true" scale="32"/>
+        <column name="penult_cpn_date" type="int" nullable="true" scale="1"/>
+        <column name="price_decimals" type="int" nullable="true" scale="1"/>
+        <column name="price_rnd_mthd" type="string" nullable="true" scale="255"/>
+        <column name="quote_type" type="string" nullable="true" scale="64"/>
+        <column name="quoting_currency" type="string" nullable="true" scale="3"/>
+        <column name="rate_index" type="string" nullable="true" scale="128"/>
+        <column name="rate_index_factor" type="float" nullable="true" scale="1"/>
+        <column name="rate_index_id" type="string" nullable="true" scale="36"/>
+        <column name="rate_index_spread" type="float" nullable="true" scale="1"/>
+        <column name="record_days" type="int" nullable="true" scale="1"/>
+        <column name="redeem_days" type="int" nullable="true" scale="1"/>
+        <column name="redem_currency" type="string" nullable="true" scale="3"/>
+        <column name="redem_fx_rate" type="float" nullable="true" scale="1"/>
+        <column name="redemption_price" type="float" nullable="true" scale="1"/>
+        <column name="reset_avg_method" type="string" nullable="true" scale="18"/>
+        <column name="reset_cmp_mthd" type="string" nullable="true" scale="32"/>
+        <column name="reset_cutoff" type="int" nullable="true" scale="1"/>
+        <column name="reset_days" type="int" nullable="true" scale="1"/>
+        <column name="reset_frequency" type="string" nullable="true" scale="255"/>
+        <column name="reset_holidays" type="string" nullable="true" scale="128"/>
+        <column name="rolling_day" type="int" nullable="true" scale="1"/>
+        <column name="rounding_unit" type="int" nullable="true" scale="1"/>
+        <column name="sample_weekday" type="int" nullable="true" scale="1"/>
+        <column name="settlement_days" type="int" nullable="true" scale="1"/>
+        <column name="tick_size" type="string" nullable="true" scale="10"/>
+        <column name="total_issued" type="float" nullable="true" scale="1"/>
+        <column name="trustee_le_id" type="string" nullable="true" scale="36"/>
+        <column name="value_days" type="int" nullable="true" scale="1"/>
+        <column name="withholding_tax" type="float" nullable="true" scale="1"/>
+        <column name="yield_decimals" type="int" nullable="true" scale="1"/>
+        <column name="yield_method" type="string" nullable="true" scale="15"/>
+        <column name="yield_rnd_mthd" type="string" nullable="true" scale="255"/>
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="maturity_tenor_days" type="int" nullable="true" scale="1"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="core_country" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="code" type="string" nullable="false" scale="255"/>
+        <column name="name" type="string" nullable="false" scale="255"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>code</on>
+        </index>
+    </table>
+    <table name="core_currency" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="code" type="string" nullable="false" scale="255"/>
+        <column name="country" type="string" nullable="true" scale="255"/>
+        <column name="description" type="string" nullable="true" scale="255"/>
+        <column name="rounding_decimal" type="int" nullable="false" scale="1"/>
+        <column name="rounding_method" type="string" nullable="false" scale="255"/>
+        <column name="data_source_id" type="string" nullable="true" scale="36"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>code</on>
+        </index>
+    </table>
+    <table name="core_currencypair" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="primary_currency" type="string" nullable="false" scale="255"/>
+        <column name="quoting_currency" type="string" nullable="false" scale="255"/>
+        <column name="data_source_id" type="string" nullable="true" scale="36"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>primary_currency</on>
+            <on>quoting_currency</on>
+        </index>
+    </table>
+    <table name="core_data_policy" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="data_type" type="string" nullable="false" scale="255"/>
+        <column name="policy" type="string" nullable="false" scale="255"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>data_type</on>
+        </index>
+    </table>
+    <table name="core_equity" xmlns="">
+        <column name="active_date" type="int" nullable="true" scale="1"/>
+        <column name="comments" type="string" nullable="true" scale="255"/>
+        <column name="corporate" type="string" nullable="true" scale="64"/>
+        <column name="country" type="string" nullable="true" scale="32"/>
+        <column name="dividend_currency" type="string" nullable="true" scale="3"/>
+        <column name="dividend_date_rule" type="int" nullable="true" scale="1"/>
+        <column name="dividend_decimals" type="int" nullable="true" scale="1"/>
+        <column name="dividend_frequency" type="string" nullable="true" scale="255"/>
+        <column name="equity_name" type="string" nullable="true" scale="32"/>
+        <column name="equity_status" type="string" nullable="true" scale="32"/>
+        <column name="exchange_code" type="string" nullable="true" scale="128"/>
+        <column name="exchange_id" type="string" nullable="true" scale="36"/>
+        <column name="fixing_type" type="string" nullable="true" scale="32"/>
+        <column name="inactive_date" type="int" nullable="true" scale="1"/>
+        <column name="is_pay_dividend" type="int" nullable="true" scale="1"/>
+        <column name="nominal_decimals" type="int" nullable="true" scale="1"/>
+        <column name="par_value" type="float" nullable="true" scale="1"/>
+        <column name="quote_type" type="string" nullable="true" scale="64"/>
+        <column name="subtype" type="string" nullable="true" scale="32"/>
+        <column name="total_issued" type="float" nullable="true" scale="1"/>
+        <column name="trading_country" type="string" nullable="true" scale="255"/>
+        <column name="issuer_le_id" type="string" nullable="true" scale="36"/>
+        <column name="trading_size" type="float" nullable="true" scale="1"/>
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>equity_name</on>
+        </index>
+    </table>
+    <table name="core_holiday" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="code" type="string" nullable="false" scale="255"/>
+        <column name="data_source_id" type="string" nullable="false" scale="36"/>
+        <column name="name" type="string" nullable="false" scale="255"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>data_source_id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>code</on>
+        </index>
+    </table>
+    <table name="core_holiday_event" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="hol_date" type="int" nullable="false" scale="1"/>
+        <column name="description" type="string" nullable="true" scale="255"/>
+        <column name="holiday_id" type="string" nullable="false" scale="36"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>hol_date</on>
+            <on>holiday_id</on>
+            <on>description</on>
+        </index>
+    </table>
+    <table name="core_index" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="currency" type="string" nullable="false" scale="255"/>
+        <column name="name" type="string" nullable="false" scale="255"/>
+        <column name="data_source_id" type="string" nullable="true" scale="36"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="core_inflation_index" xmlns="">
+        <column name="publication_lag" type="int" nullable="false" scale="1"/>
+        <column name="reference_day" type="int" nullable="false" scale="1"/>
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="core_interest_config" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="effective_date" type="int" nullable="false" scale="1"/>
+        <column name="fixed_rate" type="float" nullable="true" scale="1"/>
+        <column name="rate_index_id" type="string" nullable="true" scale="36"/>
+        <column name="rate_type" type="string" nullable="false" scale="255"/>
+        <column name="spread" type="float" nullable="true" scale="1"/>
+        <column name="day_count" type="string" nullable="false" scale="255" default="DC_30_360"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="core_junc_interest_config" xmlns="">
+        <column name="account_interest_config_id0" type="string" nullable="false" scale="255"/>
+        <column name="interest_config_id1" type="string" nullable="false" scale="255"/>
+        <index primary="false">
+            <on>interest_config_id1</on>
+        </index>
+    </table>
+    <table name="core_le_address" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="address_line" type="string" nullable="true" scale="255"/>
+        <column name="city" type="string" nullable="true" scale="255"/>
+        <column name="country" type="string" nullable="false" scale="255"/>
+        <column name="postal_code" type="string" nullable="true" scale="255"/>
+        <column name="state" type="string" nullable="true" scale="255"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="core_le_contact" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="data_source_id" type="string" nullable="true" scale="36"/>
+        <column name="email" type="string" nullable="false" scale="255"/>
+        <column name="first_name" type="string" nullable="false" scale="255"/>
+        <column name="last_name" type="string" nullable="false" scale="255"/>
+        <column name="legal_entity_id" type="string" nullable="false" scale="36"/>
+        <column name="phone_number" type="string" nullable="false" scale="255"/>
+        <column name="type" type="string" nullable="false" scale="255"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>legal_entity_id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>last_name</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>email</on>
+        </index>
+    </table>
+    <table name="core_legal_entity" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="data_source_id" type="string" nullable="true" scale="36"/>
+        <column name="financial" type="int" nullable="true" scale="1"/>
+        <column name="legal_name" type="string" nullable="false" scale="255"/>
+        <column name="legal_short_name" type="string" nullable="false" scale="255"/>
+        <column name="lei" type="string" nullable="true" scale="255"/>
+        <column name="parent_id" type="string" nullable="true" scale="255"/>
+        <column name="ultimate_parent_id" type="string" nullable="true" scale="255"/>
+        <column name="legaladdress_id" type="string" nullable="false" scale="36"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>legal_name</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>legal_short_name</on>
+        </index>
+        <index primary="false">
+            <on>legaladdress_id</on>
+        </index>
+    </table>
+    <table name="core_legal_entity_roles" xmlns="">
+        <column name="le_id" type="string" nullable="false" scale="36"/>
+        <column name="legal_role" type="string" nullable="true" scale="255"/>
+    </table>
+    <table name="core_pf_from_to" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="exclude_from" type="int" nullable="false" scale="1"/>
+        <column name="exclude_to" type="int" nullable="false" scale="1"/>
+        <column name="from_field" type="string" nullable="true" scale="255"/>
+        <column name="from_long" type="bigint" nullable="true" scale="1"/>
+        <column name="from_tenor" type="string" nullable="true" scale="255"/>
+        <column name="name" type="string" nullable="false" scale="255"/>
+        <column name="to_field" type="string" nullable="true" scale="255"/>
+        <column name="to_long" type="bigint" nullable="true" scale="1"/>
+        <column name="to_tenor" type="string" nullable="true" scale="255"/>
+        <column name="to_tenor_days" type="int" nullable="true" scale="1"/>
+        <column name="from_tenor_days" type="int" nullable="true" scale="1"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="core_pf_from_to_map" xmlns="">
+        <column name="pf_criterion_from_to_id" type="string" nullable="false" scale="255"/>
+        <column name="pf_id" type="string" nullable="false" scale="36"/>
+        <index primary="false">
+            <on>pf_criterion_from_to_id</on>
+        </index>
+        <index primary="false">
+            <on>pf_id</on>
+        </index>
+    </table>
+    <table name="core_pf_multi_value" xmlns="">
+        <column name="pf_multiple_values_id" type="string" nullable="false" scale="36"/>
+        <column name="multiple_values" type="string" nullable="true" scale="4000"/>
+        <column name="multiple_values_order" type="int" nullable="false" scale="1"/>
+        <index primary="true">
+            <on>pf_multiple_values_id</on>
+            <on>multiple_values_order</on>
+        </index>
+    </table>
+    <table name="core_pf_multi_values" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="included" type="int" nullable="false" scale="1"/>
+        <column name="name" type="string" nullable="false" scale="255"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="core_pf_multi_values_map" xmlns="">
+        <column name="pf_criterion_multi_val_id" type="string" nullable="false" scale="255"/>
+        <column name="pf_id" type="string" nullable="false" scale="36"/>
+        <index primary="false">
+            <on>pf_criterion_multi_val_id</on>
+        </index>
+        <index primary="false">
+            <on>pf_id</on>
+        </index>
+    </table>
+    <table name="core_product" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="currency" type="string" nullable="true" scale="3"/>
+        <column name="description" type="string" nullable="true" scale="255"/>
+        <column name="type" type="string" nullable="false" scale="64"/>
+        <column name="subtype" type="string" nullable="false" scale="64"/>
+        <column name="product_type" type="string" nullable="true" scale="64"/>
+        <column name="quote_name" type="string" nullable="true" scale="64"/>
+        <column name="source" type="string" nullable="true" scale="64"/>
+        <column name="data_source_id" type="string" nullable="true" scale="36"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="core_product_filter" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="name" type="string" nullable="false" scale="255"/>
+        <column name="sub_filter_id" type="string" nullable="true" scale="36"/>
+        <column name="product_type" type="string" nullable="true" scale="255"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="core_product_put_call_schedule" xmlns="">
+        <column name="bond_id0" type="string" nullable="false" scale="255"/>
+        <column name="put_call_date_id1" type="string" nullable="false" scale="255"/>
+        <index primary="false">
+            <on>put_call_date_id1</on>
+        </index>
+    </table>
+    <table name="core_product_sec_attribute" xmlns="">
+        <column name="product_id2" type="string" nullable="false" scale="255"/>
+        <column name="security_attribute_id3" type="string" nullable="false" scale="255"/>
+        <index primary="false">
+            <on>security_attribute_id3</on>
+        </index>
+    </table>
+    <table name="core_product_sec_id" xmlns="">
+        <column name="security_id0" type="string" nullable="false" scale="255"/>
+        <column name="security_identifier_id1" type="string" nullable="false" scale="255"/>
+        <index primary="false">
+            <on>security_identifier_id1</on>
+        </index>
+    </table>
+    <table name="core_put_call_date" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="exercise_style" type="string" nullable="false" scale="255"/>
+        <column name="expiry_date" type="int" nullable="false" scale="1"/>
+        <column name="first_exercise_date" type="int" nullable="true" scale="1"/>
+        <column name="option_type" type="string" nullable="false" scale="255"/>
+        <column name="strike" type="float" nullable="false" scale="1"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="core_quote_definition" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="market_quote_type" type="string" nullable="false" scale="255"/>
+        <column name="quote_name" type="string" nullable="false" scale="255"/>
+        <column name="source_quotable_id" type="string" nullable="false" scale="36"/>
+        <column name="source_quotable_type" type="string" nullable="false" scale="255"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>quote_name</on>
+        </index>
+    </table>
+    <table name="core_quote_set" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="description" type="string" nullable="false" scale="255"/>
+        <column name="quote_set_name" type="string" nullable="false" scale="255"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>quote_set_name</on>
+        </index>
+    </table>
+    <table name="core_rate_index" xmlns="">
+        <column name="date_roll" type="string" nullable="false" scale="255"/>
+        <column name="day_count" type="string" nullable="false" scale="255"/>
+        <column name="reset_days" type="int" nullable="false" scale="1"/>
+        <column name="source" type="string" nullable="false" scale="255"/>
+        <column name="tenor" type="string" nullable="false" scale="255"/>
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="tenor_days" type="int" nullable="true" scale="1"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="core_rateindexresetholidays" xmlns="">
+        <column name="rate_idx_id" type="string" nullable="false" scale="36"/>
+        <column name="reset_holidays_ids" type="string" nullable="true" scale="255"/>
+    </table>
+    <table name="core_rating" xmlns="">
+        <column name="rating_agn_id" type="string" nullable="false" scale="36"/>
+        <column name="available_ratings" type="string" nullable="true" scale="255"/>
+        <column name="available_ratings_order" type="int" nullable="false" scale="1"/>
+        <index primary="true">
+            <on>rating_agn_id</on>
+            <on>available_ratings_order</on>
+        </index>
+    </table>
+    <table name="core_rating_agency" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="name" type="string" nullable="false" scale="255"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="core_rating_le" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="agency_id" type="string" nullable="false" scale="36"/>
+        <column name="effective_date" type="int" nullable="false" scale="1"/>
+        <column name="legal_entity_id" type="string" nullable="false" scale="36"/>
+        <column name="seniority" type="string" nullable="false" scale="255"/>
+        <column name="value" type="string" nullable="false" scale="255"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>agency_id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>seniority</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>legal_entity_id</on>
+        </index>
+    </table>
+
+    <table name="core_security" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="country" type="string" nullable="true" scale="36"/>
+        <column name="source" type="string" nullable="true" scale="36"/>
+        <column name="regulatory_id" type="string" nullable="true" scale="36"/>
+    </table>
+
+    <table name="core_regulatory" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="esma" type="string" nullable="true" scale="4"/>
+        <column name="ftc" type="string" nullable="true" scale="4"/>
+        <column name="jfa" type="string" nullable="true" scale="4"/>
+    </table>
+    
+    <table name="core_security_attribute" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="name" type="string" nullable="false" scale="255"/>
+        <column name="value" type="string" nullable="false" scale="32"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="core_security_identifier" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="type" type="string" nullable="false" scale="255"/>
+        <column name="value" type="string" nullable="false" scale="32"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="core_settlement_account" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="account_identifier" type="string" nullable="false" scale="255"/>
+        <column name="agent_id" type="string" nullable="false" scale="36"/>
+        <column name="currency" type="string" nullable="false" scale="255"/>
+        <column name="name" type="string" nullable="false" scale="255"/>
+        <column name="settle_type" type="string" nullable="false" scale="255"/>
+        <column name="data_source_id" type="string" nullable="true" scale="36"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>name</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>account_identifier</on>
+        </index>
+    </table>
+    <table name="core_split_currency" xmlns="">
+        <column name="id" type="string" nullable="false" scale="36"/>
+        <column name="creation_date" type="bigint" nullable="true" scale="1"/>
+        <column name="creation_user" type="string" nullable="true" scale="255"/>
+        <column name="creation_user_type" type="string" nullable="true" scale="255"/>
+        <column name="tenant_id" type="int" nullable="false" scale="1"/>
+        <column name="last_update_date" type="bigint" nullable="true" scale="1"/>
+        <column name="last_update_user" type="string" nullable="true" scale="255"/>
+        <column name="last_update_user_type" type="string" nullable="true" scale="255"/>
+        <column name="version" type="int" nullable="false" scale="1"/>
+        <column name="primary_currency" type="string" nullable="false" scale="255"/>
+        <column name="quoting_currency" type="string" nullable="false" scale="255"/>
+        <column name="split_currency" type="string" nullable="false" scale="255"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>primary_currency</on>
+            <on>quoting_currency</on>
+        </index>
+    </table>
+    
+</database>

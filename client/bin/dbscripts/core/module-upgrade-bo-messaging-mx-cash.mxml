@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module target-version="1.21.13" name="bo-messaging-mx-cash" min-version="1.12.00">
+	<schema filename="MXCashSchemaData.xml"/>
+	<schema filename="MXCashSchemaBase.xml"/>
+	<upgrade version="1.20.1">
+		<step name="BOMSG-661" version="1"/>
+	</upgrade>
+	<upgrade version="1.21.13">
+    	<step name="BOMSG-1008" version="1"/>
+    </upgrade>
+</module>

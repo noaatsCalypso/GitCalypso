@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="perf_external_portfolio" xmlns="">
+		<column name="plconfig_id" nullable="false" scale="1" type="int" />
+		<column name="fund_id" nullable="false" scale="1" type="int" />
+		<column name="strategy_id" nullable="false" scale="1" type="int" />
+		<column name="benchmark_id" nullable="false" scale="1" type="int" />
+		<column name="record_date" nullable="false" scale="1" type="timestamp" />
+		<column name="return_value" nullable="true" scale="1" type="float"/>
+		<column name="index_value" nullable="true" scale="1" type="float"/>
+		<index primary="true"><on>plconfig_id</on><on>fund_id</on><on>strategy_id</on><on>benchmark_id</on><on>record_date</on></index>
+	</table>
+	<table name="perf_histo_position" xmlns="">
+		<column name="plconfig_id" nullable="false" scale="1" type="int" />
+		<column name="position_id" nullable="false" scale="1" type="int" />
+		<column name="position_type" nullable="false" scale="1" type="int" />
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="product_leg" nullable="false" scale="16" type="string" />
+		<column name="book_id" nullable="false" scale="1" type="int" />
+		<column name="strategy_id" nullable="false" scale="1" type="int" />
+		<column name="currency" nullable="false" scale="8" type="string" />
+		<column name="asset_value" nullable="true" scale="1" type="float"/>
+		<column name="cash_value" nullable="true" scale="1" type="float"/>
+		<column name="settled_cash_value" nullable="true" scale="1" type="float"/>
+		<column name="exposure_value" nullable="true" scale="1" type="float"/>
+		<column name="notional_value" nullable="true" scale="1" type="float"/>
+		<column name="pnl_value" nullable="true" scale="1" type="float"/>
+		<column name="transfer_value" nullable="true" scale="1" type="float"/>
+		<column name="record_date" nullable="false" scale="1" type="timestamp" />
+		<column name="record_creation_time" nullable="false" scale="1" type="timestamp" />
+		<column name="record_update_time" nullable="true" scale="1" type="timestamp" />
+		<column name="status" nullable="false" scale="1" type="int" />
+		<column name="locked" nullable="false" scale="1" type="int" />
+		<column name="plmark_error" nullable="false" scale="1" type="int" />
+		<column name="plmark_adjusted" nullable="false" scale="1" type="int" />
+		<column name="plmark_inactive" nullable="false" scale="1" type="int" />
+		<index primary="true"><on>plconfig_id</on><on>record_date</on><on>position_type</on><on>position_id</on><on>product_id</on><on>product_leg</on><on>currency</on></index>
+		<index primary="false"><on>plconfig_id</on><on>record_date</on><on>book_id</on><on>strategy_id</on></index>
+	</table>
+	<table name="perf_histo_campisi_position" xmlns="">
+		<column name="plconfig_id" nullable="false" scale="1" type="int" />
+		<column name="position_id" nullable="false" scale="1" type="int" />
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="book_id" nullable="false" scale="1" type="int" />
+		<column name="strategy_id" nullable="false" scale="1" type="int" />
+		<column name="record_date" nullable="false" scale="1" type="timestamp" />
+		<column name="dirty_price" nullable="true" scale="1" type="float"/>
+		<column name="accrual" nullable="true" scale="1" type="float"/>
+		<column name="cash" nullable="true" scale="1" type="float"/>
+		<column name="fees_all" nullable="true" scale="1" type="float"/>
+		<column name="notional" nullable="true" scale="1" type="float"/>
+		<column name="current_coupon" nullable="true" scale="1" type="float"/>
+		<column name="duration" nullable="true" scale="1" type="float"/>
+		<column name="modified_duration" nullable="true" scale="1" type="float"/>
+		<column name="price_discount_curve" nullable="true" scale="1" type="float"/>
+		<column name="expected_fx_rate" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_5Y" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_10Y" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_15Y" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_20Y" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_25Y" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_30Y" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_50Y" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_duration" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_mod_duration" nullable="true" scale="1" type="float"/>
+		<column name="clean_price" nullable="true" scale="1" type="float"/>
+		<index primary="true"><on>plconfig_id</on><on>position_id</on><on>product_id</on><on>book_id</on><on>strategy_id</on><on>record_date</on></index>
+	</table>
+	<table name="perf_measure_position" xmlns="">
+		<column name="position_id" nullable="false" scale="1" type="int" />
+		<column name="book_id" nullable="false" scale="1" type="int" />
+		<column name="strategy_id" nullable="false" scale="1" type="int" />
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="liq_aggregation_id" nullable="false" scale="1" type="int" />
+		<column name="liq_config_id" nullable="false" scale="1" type="int" />
+		<column name="currency" nullable="false" scale="8" type="string" />
+		<column name="product_family" nullable="true" scale="64" type="string" />
+		<column name="product_type" nullable="true" scale="64" type="string" />
+		<column name="product_sub_type" nullable="true" scale="64" type="string" />
+		<column name="product_desc" nullable="true" scale="255" type="string" />
+		<column name="fx_hedge" nullable="false" scale="1" type="int" />
+		<column name="entered_date" nullable="true" scale="1" type="timestamp" />
+		<column name="trade_date" nullable="true" scale="1" type="timestamp" />
+		<column name="settle_date" nullable="true" scale="1" type="timestamp" />
+		<column name="maturity_date" nullable="true" scale="1" type="timestamp" />
+		<column name="position_type" nullable="false" scale="1" type="int" />
+		<index primary="true"><on>position_id</on></index>
+		<index primary="false"><on>book_id</on><on>strategy_id</on></index>
+	</table>
+	<table name="perf_benchmark_position" xmlns="">
+		<column name="item_id" nullable="false" scale="1" type="int" />
+		<column name="benchmark_id" nullable="false" scale="1" type="int" />
+		<column name="strategy_id" nullable="false" scale="1" type="int" />
+		<column name="currency" nullable="false" scale="8" type="string" />
+		<column name="product_type" nullable="false" scale="8" type="string" />
+		<column name="entry_date" nullable="false" scale="1" type="timestamp" />
+		<index primary="true">
+			<on>item_id</on>
+			<on>benchmark_id</on>
+			<on>strategy_id</on>
+			<on>currency</on>
+		</index>
+		<index primary="false">
+			<on>entry_date</on>
+			<on>strategy_id</on>
+		</index>
+	</table>
+	<table name="perf_benchmark_histo_value" xmlns="">
+		<column name="plconfig_id" nullable="false" scale="1" type="int" />
+		<column name="item_id" nullable="false" scale="1" type="int" />
+		<column name="benchmark_id" nullable="false" scale="1" type="int" />
+		<column name="strategy_id" nullable="false" scale="1" type="int" />
+		<column name="currency" nullable="false" scale="8" type="string" />
+		<column name="asset_value" nullable="true" scale="1" type="float"/>
+		<column name="cash_value" nullable="true" scale="1" type="float"/>
+		<column name="pnl_value" nullable="true" scale="1" type="float"/>
+		<column name="notional_value" nullable="true" scale="1" type="float"/>
+		<column name="record_date" nullable="false" scale="1" type="timestamp" />
+		<index primary="true">
+			<on>plconfig_id</on>
+			<on>item_id</on>
+			<on>record_date</on>
+			<on>benchmark_id</on>
+			<on>strategy_id</on>
+			<on>currency</on>
+		</index>
+		<index primary="false">
+			<on>record_date</on>
+			<on>strategy_id</on>
+		</index>
+	</table>
+	<table name="perf_benchmark_histo_campisi" xmlns="">
+		<column name="benchmark_id" nullable="false" scale="1" type="int" />
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="strategy_id" nullable="false" scale="1" type="int" />
+		<column name="record_date" nullable="false" scale="1" type="timestamp" />
+		<column name="dirty_price" nullable="true" scale="1" type="float"/>
+		<column name="accrual" nullable="true" scale="1" type="float"/>
+		<column name="cash" nullable="true" scale="1" type="float"/>
+		<column name="fees_all" nullable="true" scale="1" type="float"/>
+		<column name="notional" nullable="true" scale="1" type="float"/>
+		<column name="current_coupon" nullable="true" scale="1" type="float"/>
+		<column name="duration" nullable="true" scale="1" type="float"/>
+		<column name="modified_duration" nullable="true" scale="1" type="float"/>
+		<column name="price_discount_curve" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_5Y" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_10Y" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_15Y" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_20Y" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_25Y" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_30Y" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_50Y" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_duration" nullable="true" scale="1" type="float"/>
+		<column name="curv_pt_mod_duration" nullable="true" scale="1" type="float"/>
+		<column name="clean_price" nullable="true" scale="1" type="float"/>
+		<index primary="true"><on>benchmark_id</on><on>product_id</on><on>strategy_id</on><on>record_date</on></index>
+	</table>		
+	<table name="perf_histo_conversion_factor" xmlns="">
+		<column name="plconfig_id" nullable="false" scale="1" type="int" />
+		<column name="from_currency" nullable="false" scale="8" type="string" />
+		<column name="value" nullable="true" scale="1" type="float"/>
+		<column name="record_date" nullable="false" scale="1" type="timestamp" />
+		<column name="record_creation_time" nullable="false" scale="1" type="timestamp" />
+		<column name="record_update_time" nullable="true" scale="1" type="timestamp" />
+		<index primary="true">
+			<on>plconfig_id</on>
+			<on>from_currency</on>
+			<on>record_date</on>
+		</index>
+	</table>
+	<table name="perf_histo_conversion_fa_exp" xmlns="">
+		<column name="plconfig_id" nullable="false" scale="1" type="int" />
+		<column name="from_currency" nullable="false" scale="8" type="string" />
+		<column name="value" nullable="true" scale="1" type="float"/>
+		<column name="record_date" nullable="false" scale="1" type="timestamp" />
+		<column name="record_creation_time" nullable="false" scale="1" type="timestamp" />
+		<column name="record_update_time" nullable="true" scale="1" type="timestamp" />
+		<index primary="true">
+			<on>plconfig_id</on>
+			<on>from_currency</on>
+			<on>record_date</on>
+		</index>
+	</table>
+	<table name="perf_benchmark_histo_fx_spot" xmlns="">
+		<column name="plconfig_id" nullable="false" scale="1" type="int" />
+		<column name="from_currency" nullable="false" scale="8" type="string" />
+		<column name="to_currency" nullable="false" scale="8" type="string" />
+		<column name="spot_fx_value" nullable="true" scale="1" type="float"/>
+		<column name="record_date" nullable="false" scale="1" type="timestamp" />
+		<index primary="true">
+			<on>plconfig_id</on>
+			<on>from_currency</on>
+			<on>to_currency</on>
+			<on>record_date</on>
+		</index>
+	</table>
+	<table name="perf_benchmark_histo_fx_exp" xmlns="">
+		<column name="plconfig_id" nullable="false" scale="1" type="int" />
+		<column name="from_currency" nullable="false" scale="8" type="string" />
+		<column name="to_currency" nullable="false" scale="8" type="string" />
+		<column name="spot_fx_value" nullable="true" scale="1" type="float"/>
+		<column name="record_date" nullable="false" scale="1" type="timestamp" />
+		<index primary="true">
+			<on>plconfig_id</on>
+			<on>from_currency</on>
+			<on>to_currency</on>
+			<on>record_date</on>
+		</index>
+	</table>
+</database>

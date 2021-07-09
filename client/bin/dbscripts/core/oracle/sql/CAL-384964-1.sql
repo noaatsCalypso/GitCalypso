@@ -1,0 +1,1 @@
+/* script is not required, only for sybase */

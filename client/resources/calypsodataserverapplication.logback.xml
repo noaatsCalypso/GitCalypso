@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SYSTEM  [
+<!ENTITY appenders SYSTEM "appenders.logback.xml">
+]>
+<configuration>
+	&appenders;
+	<include resource="calypsodataservermonitoring.logback.xml"/>
+
+  <logger name="com.calypso" additivity="false">
+	   	<level value="error"/>
+  	  	<appender-ref ref="default"/>
+    	<appender-ref ref="event"/>
+    	<appender-ref ref="ElasticSearch_APPENDER"/>
+  </logger>
+
+  <logger name="com.calypso.cloud" additivity="false">
+  	<level value="error"/>
+  	<appender-ref ref="default"/>
+    	<appender-ref ref="event"/>
+    	<appender-ref ref="ElasticSearch_APPENDER"/>
+  </logger>
+
+  	<logger name="com.calypso.alert" additivity="false">
+		<level value="info" />
+		<appender-ref ref="alert_APPENDER" />
+	</logger>
+
+	<logger name="com.calypso.SYSTEM" level="info" additivity="false">
+		<appender-ref ref="default" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+
+
+	<logger name="com.calypso.microservice" level="error">
+	</logger>
+
+	<logger name="com.calypso.bean" level="error">
+	</logger>
+	
+	<logger name="com.calypso.liquibase" level="error">
+	</logger>
+	
+	<logger name="com.calypso.microservices" level="error">
+	</logger>
+	
+	<logger name="com.calypso.rest" level="error">
+	</logger>
+	
+	<logger name="com.calypso.persistence" level="error">
+	</logger>
+
+	<logger
+		name="org.springframework.data.repository.config.RepositoryConfigurationDelegate"
+		level="error" >
+	</logger>
+
+	<root level="info">
+		<appender-ref ref="default" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="ThirdParty" />
+	</root>
+
+</configuration>
+

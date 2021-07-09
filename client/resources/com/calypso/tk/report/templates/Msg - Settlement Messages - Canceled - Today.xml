@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<reportTemplates>
+    <reportTemplate>
+        <reportType>Message</reportType>
+        <name>Msg - Settlement Messages - Canceled - Today</name>
+        <isHidden>false</isHidden>
+        <isPrivate>false</isPrivate>
+        <user>calypso_user</user>
+        <attributes>
+            <attribute>
+                <attributeName>AggregatedFlag</attributeName>
+                <attributeValue>false</attributeValue>
+                <attributeClass>Boolean</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>AttrJoinQuery</attributeName>
+                <attributeValue> mess_attributes.message_id = bo_message.message_id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>AttrNameColumn</attributeName>
+                <attributeValue>mess_attributes.attr_name</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>AttrValueColumn</attributeName>
+                <attributeValue>mess_attributes.attr_value</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>CaseInsensitiveTextSort</attributeName>
+                <attributeValue>false</attributeValue>
+                <attributeClass>Boolean</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_ACTION</attributeName>
+                <attributeValue>Action</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_CPTY Full Name</attributeName>
+                <attributeValue>Counterparty</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_CounterParty</attributeName>
+                <attributeValue>Counterparty</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_MESSAGE_DATE</attributeName>
+                <attributeValue>Outgoing Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_MESSAGE_ID</attributeName>
+                <attributeValue>Message ID</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_MESSAGE_TYPE</attributeName>
+                <attributeValue>Message Type</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Nominal</attributeName>
+                <attributeValue>Nominal</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Product Description</attributeName>
+                <attributeValue>Product Description</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Product Type</attributeName>
+                <attributeValue>Product Type</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Quantity</attributeName>
+                <attributeValue>Quantity</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Receiver SWIFT</attributeName>
+                <attributeValue>Receiver</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Settle Cur.</attributeName>
+                <attributeValue>Ccy</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Settle Date</attributeName>
+                <attributeValue>Settle Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_TEMPLATE_NAME</attributeName>
+                <attributeValue>SWIFT Message</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Trade Currency</attributeName>
+                <attributeValue>Currency</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Trade Id</attributeName>
+                <attributeValue>Trade Id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Trade Short Date</attributeName>
+                <attributeValue>Trade Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Transfer Amount</attributeName>
+                <attributeValue>Amount</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Value Date</attributeName>
+                <attributeValue>Value Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Xfer Their Agent Account</attributeName>
+                <attributeValue>Their Agent Account</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Xfer Their Agent Full Name</attributeName>
+                <attributeValue>Their Agent</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns0</attributeName>
+                <attributeValue>Value Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns1</attributeName>
+                <attributeValue>Receiver SWIFT</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns10</attributeName>
+                <attributeValue>Trade Id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns11</attributeName>
+                <attributeValue>MESSAGE_ID</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns2</attributeName>
+                <attributeValue>TEMPLATE_NAME</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns3</attributeName>
+                <attributeValue>MESSAGE_TYPE</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns4</attributeName>
+                <attributeValue>Settle Cur.</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns5</attributeName>
+                <attributeValue>Transfer Amount</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns6</attributeName>
+                <attributeValue>CPTY Full Name</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns7</attributeName>
+                <attributeValue>Xfer Their Agent Full Name</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns8</attributeName>
+                <attributeValue>Xfer Their Agent Account</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns9</attributeName>
+                <attributeValue>Product Description</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns_COUNT</attributeName>
+                <attributeValue>12</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>DateType</attributeName>
+                <attributeValue>CreationDate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Description</attributeName>
+                <attributeValue>Settlement Messages - Canceled - Today</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>EndPlus</attributeName>
+                <attributeValue>+</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>EndTenor</attributeName>
+                <attributeValue>0D</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Message From</attributeName>
+                <attributeValue>BOTH</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SettleMethod</attributeName>
+                <attributeValue>SWIFT</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns0</attributeName>
+                <attributeValue>Value Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns1</attributeName>
+                <attributeValue>Receiver SWIFT</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns2</attributeName>
+                <attributeValue>MESSAGE_TYPE</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns3</attributeName>
+                <attributeValue>TEMPLATE_NAME</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns4</attributeName>
+                <attributeValue>Product Type</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns5</attributeName>
+                <attributeValue>Trade Id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns_COUNT</attributeName>
+                <attributeValue>6</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders0</attributeName>
+                <attributeValue>0.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders1</attributeName>
+                <attributeValue>1.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders2</attributeName>
+                <attributeValue>2.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders3</attributeName>
+                <attributeValue>3.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders4</attributeName>
+                <attributeValue>4.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders5</attributeName>
+                <attributeValue>5.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders_COUNT</attributeName>
+                <attributeValue>6</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>StartPlus</attributeName>
+                <attributeValue>+</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>StartTenor</attributeName>
+                <attributeValue>0D</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Status</attributeName>
+                <attributeValue>CANCELED</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Subheadings0</attributeName>
+                <attributeValue>Value Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Subheadings_COUNT</attributeName>
+                <attributeValue>1</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>TransferType</attributeName>
+                <attributeValue>PAYMENTMSG,RECEIPTMSG,SEC_DELIVERYMSG,SEC_RECEIPTMSG</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+        </attributes>
+    </reportTemplate>
+</reportTemplates>
+

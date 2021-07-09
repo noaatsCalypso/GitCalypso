@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+<table name="re_quote_rule_definition" xmlns="">
+<row cat="RateEngine">
+	<column name="rule_name">StaleRate</column>
+    <column name="rule_type">Validation</column>
+	<column name="class_name">tk.marketdata.validationrule.StaleRateValidation</column>
+    <column name="comments">StaleRate</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">BidAskCheck</column>
+    <column name="rule_type">Validation</column>
+	<column name="class_name">tk.marketdata.validationrule.BidAskCheckValidation</column>
+    <column name="comments">BidAskCheck</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">PercentDeviation</column>
+    <column name="rule_type">Validation</column>
+	<column name="class_name">tk.marketdata.validationrule.PercentDeviationValidation</column>
+    <column name="comments">PercentDeviation</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">PointsDeviation</column>
+    <column name="rule_type">Validation</column>
+	<column name="class_name">tk.marketdata.validationrule.PointsDeviationValidation</column>
+    <column name="comments">PointsDeviation</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">RepeatedRate</column>
+    <column name="rule_type">Validation</column>
+	<column name="class_name">tk.marketdata.validationrule.RepeatedRateValidation</column>
+    <column name="comments">RepeatedRate</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">VolMovingAvgPercentDeviation</column>
+    <column name="rule_type">Validation</column>
+	<column name="class_name">tk.marketdata.validationrule.VolMovingAvgPercentDeviationValidation</column>
+    <column name="comments">VolMovingAvgPercentDeviation</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">VolMovingAvgPointsDeviation</column>
+    <column name="rule_type">Validation</column>
+	<column name="class_name">tk.marketdata.validationrule.VolMovingAvgPointsDeviationValidation</column>
+    <column name="comments">VolMovingAvgPointsDeviation</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">VolPercentDeviation</column>
+    <column name="rule_type">Validation</column>
+	<column name="class_name">tk.marketdata.validationrule.VolPercentDeviationValidation</column>
+    <column name="comments">VolPercentDeviation</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">VolPointsDeviation</column>
+    <column name="rule_type">Validation</column>
+	<column name="class_name">tk.marketdata.validationrule.VolPointsDeviationValidation</column>
+    <column name="comments">VolPointsDeviation</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">NegativeRateValidation</column>
+    <column name="rule_type">Validation</column>
+	<column name="class_name">tk.marketdata.validationrule.NegativeRateValidation</column>
+    <column name="comments">NegativeRateValidation</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">SingleSrc</column>
+    <column name="rule_type">Blending</column>
+	<column name="class_name">tk.marketdata.blendingrule.SingleSrcBlending</column>
+    <column name="comments">Single Source Blending</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">HierarchySrc</column>
+    <column name="rule_type">Blending</column>
+	<column name="class_name">tk.marketdata.blendingrule.HierarchySrcBlending</column>
+    <column name="comments">Hierarchy Source Blending</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">MultipleSrcBestBidOffer</column>
+    <column name="rule_type">Blending</column>
+	<column name="class_name">tk.marketdata.blendingrule.MultipleSrcBestBidOfferBlending</column>
+    <column name="comments">Rule that gives the Best Bid (bid price) and Lowest Offer (ask price) from multiple sources</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">MultipleSrcAverage</column>
+    <column name="rule_type">Blending</column>
+	<column name="class_name">tk.marketdata.blendingrule.MultipleSrcAverageBlending</column>
+    <column name="comments">Multiple Source Average</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">MultipleSrcWeightedAvg</column>
+    <column name="rule_type">Blending</column>
+	<column name="class_name">tk.marketdata.blendingrule.MultipleSrcWeightedAvgBlending</column>
+    <column name="comments">Multiple Source Weighted Average</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">MultipleSrcMedianBidOffer</column>
+    <column name="rule_type">Blending</column>
+	<column name="class_name">tk.marketdata.blendingrule.MultipleSrcMedianBidOfferBlending</column>
+    <column name="comments">Multiple Source Median Best Bid Offer</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">MultipleSrcNthBidOffer</column>
+    <column name="rule_type">Blending</column>
+	<column name="class_name">tk.marketdata.blendingrule.MultipleSrcNthBidOfferBlending</column>
+    <column name="comments">Multiple Source Nth Best Bid Offer</column>
+</row>
+<row cat="RateEngine">
+	<column name="rule_name">MultipleSrcWorstBidHighestOffer</column>
+    <column name="rule_type">Blending</column>
+	<column name="class_name">tk.marketdata.blendingrule.MultipleSrcWorstBidHighestOfferBlending</column>
+    <column name="comments">Rule that gives the Worst Bid (bid price) and Highest Offer (ask price) from multiple sources</column>
+</row>
+
+</table>
+<table name="domain_values" xmlns="">
+<row cat="RateEngine">
+    <column name="name">feedType</column>
+    <column name="value">RateEngine</column>
+    <column name="description">Rate Engine Feed</column>
+</row>
+<row cat="RateEngine">
+    <column name="name">feedType</column>
+    <column name="value">ManualSet</column>
+    <column name="description">Manual Quote Set Feed</column>
+</row>
+<row cat="RateEngine">
+    <column name="name">function</column>
+    <column name="value">ViewRateEngineRuleConfig</column>
+    <column name="description">Access permission to view rate engine rule config</column>
+</row>
+<row cat="RateEngine">
+    <column name="name">function</column>
+    <column name="value">CreateModifyRateEngineRuleConfig</column>
+    <column name="description">Access permission to create/modify rate engine rule config</column>
+</row>
+<row cat="RateEngine">
+    <column name="name">function</column>
+    <column name="value">CreateModifyRateEngineQuoteList</column>
+    <column name="description">Access permission to create/modify rate engine quote list</column>
+</row>
+<row cat="RateEngine">
+    <column name="name">function</column>
+    <column name="value">RemoveRateEngineQuoteList</column>
+    <column name="description">Access permission to remove rate engine quote list</column>
+</row>
+</table>
+</database>

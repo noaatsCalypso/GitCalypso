@@ -1,0 +1,21 @@
+<module name = "marketrisk" min-version="9.0.0.001" target-version="16.1.0.75">
+<schema filename="SchemaBaseMR.xml"/>
+<schema filename="SchemaDataMR.xml"/>
+
+<upgrade version="16.1.0.034">
+<step name="CAL-375662" version="1"/>
+</upgrade>
+
+<upgrade version="16.1.0.054">
+	<step name="CAL-388538" version="1"/>
+</upgrade>
+
+<upgrade version="16.1.0.063">
+	<step name="CAL-385959" version="1"/>
+</upgrade>
+
+<upgrade version="16.1.0.70">
+	<step name="CAL-388809" version="1"/>
+</upgrade>
+
+</module>

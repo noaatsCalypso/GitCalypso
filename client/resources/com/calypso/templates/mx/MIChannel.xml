@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    <contents>
+        <element name="SwMsg:Message">
+            <attributes>
+                <attribute name="xmlns:SwMsg">
+                    <value>
+                        <text>
+                            <value>urn:swift:snl:ns.SwMsg</value>
+                        </text>
+                    </value>
+                </attribute>
+            </attributes>
+            <contents>
+                <element name="SwMsg:TransferHeader">
+                    <contents>
+                        <element name="SwMsg:Responder">
+                            <include>
+                                <context>
+                                    <to>SenderContact</to>
+                                </context>
+                                <path>ResponderDN.xml</path>
+                            </include>
+                        </element>
+                        <element name="SwMsg:RequestType">
+                            <contents>
+                                <report>
+                                    <column>MessageIdentifier</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="SwMsg:MessageRef">
+                            <contents>
+                                <report>
+                                    <column>MESSAGE_ID</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="SwMsg:BatchClass">
+                            <contents>
+                                <text>
+                                    <value>Low</value>
+                                </text>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="SwMsg:RequestPayload">
+                    <contents>
+                        <include>
+                            <path>Body.xml</path>
+                        </include>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

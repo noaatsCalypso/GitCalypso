@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="triparty_allocation_records" xmlns="">
+        <column name="repo_type" nullable="false" scale="10" type="string"/>
+        <column default="0" name="trade_id" nullable="false" scale="1" type="int"/>
+        <column name="generic_cusip" nullable="true" scale="9" type="string"/>
+        <column name="agent_id" nullable="false" scale="1" type="int"/>
+        <column name="agent_account_id" nullable="false" scale="64" type="string"/>
+        <column name="coll_date" nullable="false" type="timestamp"/>
+        <column name="cusip" nullable="true" scale="9" type="string"/>
+        <column name="isin" nullable="false" scale="15" type="string"/>
+        <column name="coll_par_amount" nullable="true" scale="1" type="float"/>
+        <column name="clean_price" nullable="true" scale="1" type="float"/>
+        <column name="clean_mkt_value" nullable="true" scale="1" type="float"/>
+        <column name="accrued_interest" nullable="true" scale="1" type="float"/>
+        <column name="dirty_mkt_value" nullable="true" scale="1" type="float"/>
+        <column name="coll_value" nullable="true" scale="1" type="float"/>
+        <column name="margin_value" nullable="true" scale="1" type="float"/>
+		<column name="pledge_id" nullable="false" scale="1" type="int"/>
+        <column name="book_id" nullable="false" scale="1" type="int"/>
+		<column name="intended_transaction_amount" nullable="true" scale="1" type="float"/>
+		<column name="actual_transaction_amount" nullable="true" scale="1" type="float"/>
+		<column name="pricing_rate" nullable="true" scale="1" type="float"/>
+		<column name="fx_rate" nullable="true" scale="1" type="float"/>
+		<column name="margin" nullable="true" scale="1" type="float"/>
+		<column name="coupon" nullable="true" scale="1" type="float"/>
+		<column name="year_basis" nullable="true" scale="25" type="string"/>
+		<column name="collateral_taker" nullable="false" scale="64" type="string"/>
+		<column name="collateral_giver" nullable="false" scale="64" type="string"/>
+		<column name="transaction_currency" nullable="true" scale="3" type="string"/>
+		<column name="security_currency" nullable="true" scale="3" type="string"/>
+		<column name="inscat" nullable="true" scale="6" type="string"/>
+		<column name="depository" nullable="true" scale="4" type="string"/>
+		<column name="maturity" nullable="true" type="timestamp"/>
+		<column name="repo_start_date" nullable="true" type="timestamp"/>
+		<column name="repo_end_date" nullable="true" type="timestamp"/>
+		<column name="dirty_price" nullable="true" scale="1" type="float"/>
+		<column name="transaction_id" nullable="true" scale="32" type="string"/>
+		<column name="transaction_status" nullable="true" scale="25" type="string"/>
+		<column name="contract_type" nullable="true" scale="10" type="string"/>
+		<column name="margining_mode" nullable="true" scale="3" type="string"/>
+		<column name="coverage" nullable="true" scale="10" type="string"/>
+		<column name="security_role" nullable="true" scale="25" type="string"/>
+		<column name="insnat" nullable="true" scale="3" type="string"/>
+		<column name="issuer_name" nullable="true" scale="64" type="string"/>
+		<column name="triparty_rating" nullable="true" scale="35" type="string"/>
+		<column name="sec_quotation_date" nullable="true" type="timestamp"/>
+		<column name="agg_margined_value" nullable="true" scale="1" type="float"/>
+		<column name="transaction_margin" nullable="true" scale="1" type="float"/>
+		<column name="transaction_margin_prct" nullable="true" scale="1" type="float"/>
+		<column name="market_value" nullable="true" scale="1" type="float"/>
+		<column name="margin_call_contract" nullable="true" scale="1" type="int"/>
+		<column name="mkt_val_before_fact_txccy" nullable="true" scale="1" type="float"/>
+		<column name="mkt_val_post_fact_txccy" nullable="true" scale="1" type="float"/>
+		<column name="mkt_val_before_fact_colccy" nullable="true" scale="1" type="float"/>
+		<column name="mkt_val_post_fact_colccy" nullable="true" scale="1" type="float"/>
+		<column name="valuation_factor" nullable="true" scale="1" type="float"/>
+		<column name="current_b" nullable="false" type="int" scale="1"/>
+		<column name="generic_identifier" nullable="true" scale="25" type="string"/>
+		<column name="coll_rec_pay" nullable="true" scale="25" type="string"/>
+		<column name="exposure" nullable="true" scale="1" type="float"/>
+		<column name="collateral_held" nullable="true" scale="1" type="float"/>
+		<column name="collateral_held_ccy" nullable="false" scale="3" type="string"/>
+		<column name="margin_ccy" nullable="true" scale="3" type="string"/>
+		<column name="margin_pct" nullable="true" scale="1" type="float"/>
+		<column name="collateral_type" nullable="false" scale="8" type="string"/>
+		<column name="security_id" nullable="true" scale="1" type="float"/>
+		<column name="security_description" nullable="false" scale="255" type="string"/>
+		<column name="coll_amount_codifier" nullable="true" scale="4" type="string"/>
+		<column name="coll_val_price" nullable="true" scale="1" type="float"/>
+		<column name="coll_val_price_ccy" nullable="true" scale="3" type="string"/>
+		<column name="coll_value_exp_ccy" nullable="true" scale="3" type="string"/>
+		<column name="coll_value_in_exp_ccy" nullable="true" scale="1" type="float"/>
+		<column name="message_id" nullable="true" scale="1" type="float"/>
+	    <column name="parent_pl_group" nullable="true" scale="10" type="string"/>
+	    <column name="exposure_type" nullable="false" scale="10" type="string"/>
+
+		<index primary="false">
+			<on>repo_type</on>
+            <on>coll_date</on>
+            <on>trade_id</on>
+            <on>isin</on>
+			<on>agent_account_id</on>
+        </index>
+        <index primary="false">
+            <on>pledge_id</on>
+        </index>
+        <index primary="false">
+            <on>trade_id</on>
+            <on>current_b</on>
+        </index>
+        <index primary="false">
+            <on>generic_identifier</on>
+            <on>current_b</on>
+        </index>
+    </table>
+    <table name="triparty_allocation_attributes" xmlns="">
+        <column name="entity_id" nullable="false" scale="1" type="int"/>
+        <column name="entity_type" nullable="false" scale="32" type="string"/>
+        <column name="attr_name" nullable="false" scale="255" type="string"/>
+        <column default="String" name="attr_type" nullable="false" scale="50" type="string"/>
+        <column name="attr_value" nullable="true" scale="255" type="string"/>
+        <column name="attr_blob" nullable="true" type="binary"/>
+        <column name="attr_date_value" nullable="true" type="timestamp"/>
+        <column name="attr_numeric_value" nullable="true" scale="1" type="float"/>
+        <index primary="true">
+            <on>entity_id</on>
+            <on>entity_type</on>
+            <on>attr_name</on>
+        </index>
+    </table>
+   	<table name="triparty_alloc_records_hist" xmlns="">
+        <column name="repo_type" nullable="false" scale="10" type="string"/>
+        <column default="0" name="trade_id" nullable="false" scale="1" type="int"/>
+        <column name="generic_cusip" nullable="true" scale="9" type="string"/>
+        <column name="agent_id" nullable="false" scale="1" type="int"/>
+        <column name="agent_account_id" nullable="false" scale="64" type="string"/>
+        <column name="coll_date" nullable="false" type="timestamp"/>
+        <column name="cusip" nullable="true" scale="9" type="string"/>
+        <column name="isin" nullable="false" scale="15" type="string"/>
+        <column name="coll_par_amount" nullable="true" scale="1" type="float"/>
+        <column name="clean_price" nullable="true" scale="1" type="float"/>
+        <column name="clean_mkt_value" nullable="true" scale="1" type="float"/>
+        <column name="accrued_interest" nullable="true" scale="1" type="float"/>
+        <column name="dirty_mkt_value" nullable="true" scale="1" type="float"/>
+        <column name="coll_value" nullable="true" scale="1" type="float"/>
+        <column name="margin_value" nullable="true" scale="1" type="float"/>
+		<column name="pledge_id" nullable="false" scale="1" type="int"/>
+        <column name="book_id" nullable="false" scale="1" type="int"/>
+		<column name="intended_transaction_amount" nullable="true" scale="1" type="float"/>
+		<column name="actual_transaction_amount" nullable="true" scale="1" type="float"/>
+		<column name="pricing_rate" nullable="true" scale="1" type="float"/>
+		<column name="fx_rate" nullable="true" scale="1" type="float"/>
+		<column name="margin" nullable="true" scale="1" type="float"/>
+		<column name="coupon" nullable="true" scale="1" type="float"/>
+		<column name="year_basis" nullable="true" scale="25" type="string"/>
+		<column name="collateral_taker" nullable="false" scale="64" type="string"/>
+		<column name="collateral_giver" nullable="false" scale="64" type="string"/>
+		<column name="transaction_currency" nullable="true" scale="3" type="string"/>
+		<column name="security_currency" nullable="true" scale="3" type="string"/>
+		<column name="inscat" nullable="true" scale="6" type="string"/>
+		<column name="depository" nullable="true" scale="4" type="string"/>
+		<column name="maturity" nullable="true" type="timestamp"/>
+		<column name="repo_start_date" nullable="true" type="timestamp"/>
+		<column name="repo_end_date" nullable="true" type="timestamp"/>
+		<column name="dirty_price" nullable="true" scale="1" type="float"/>
+		<column name="transaction_id" nullable="true" scale="32" type="string"/>
+		<column name="transaction_status" nullable="true" scale="25" type="string"/>
+		<column name="contract_type" nullable="true" scale="10" type="string"/>
+		<column name="margining_mode" nullable="true" scale="3" type="string"/>
+		<column name="coverage" nullable="true" scale="10" type="string"/>
+		<column name="security_role" nullable="true" scale="25" type="string"/>
+		<column name="insnat" nullable="true" scale="3" type="string"/>
+		<column name="issuer_name" nullable="true" scale="64" type="string"/>
+		<column name="triparty_rating" nullable="true" scale="35" type="string"/>
+		<column name="sec_quotation_date" nullable="true" type="timestamp"/>
+		<column name="agg_margined_value" nullable="true" scale="1" type="float"/>
+		<column name="transaction_margin" nullable="true" scale="1" type="float"/>
+		<column name="transaction_margin_prct" nullable="true" scale="1" type="float"/>
+		<column name="market_value" nullable="true" scale="1" type="float"/>
+		<column name="margin_call_contract" nullable="true" scale="1" type="int"/>
+		<column name="mkt_val_before_fact_txccy" nullable="true" scale="1" type="float"/>
+		<column name="mkt_val_post_fact_txccy" nullable="true" scale="1" type="float"/>
+		<column name="mkt_val_before_fact_colccy" nullable="true" scale="1" type="float"/>
+		<column name="mkt_val_post_fact_colccy" nullable="true" scale="1" type="float"/>
+		<column name="valuation_factor" nullable="true" scale="1" type="float"/>
+		<column name="current_b" nullable="false" type="int" scale="1"/>
+		<column name="generic_identifier" nullable="true" scale="25" type="string"/>
+		<column name="coll_rec_pay" nullable="true" scale="25" type="string"/>
+		<column name="exposure" nullable="true" scale="1" type="float"/>
+		<column name="collateral_held" nullable="true" scale="1" type="float"/>
+		<column name="collateral_held_ccy" nullable="false" scale="3" type="string"/>
+		<column name="margin_ccy" nullable="true" scale="3" type="string"/>
+		<column name="margin_pct" nullable="true" scale="1" type="float"/>
+		<column name="collateral_type" nullable="false" scale="8" type="string"/>
+		<column name="security_id" nullable="true" scale="1" type="float"/>
+		<column name="security_description" nullable="false" scale="255" type="string"/>
+		<column name="coll_amount_codifier" nullable="true" scale="4" type="string"/>
+		<column name="coll_val_price" nullable="true" scale="1" type="float"/>
+		<column name="coll_val_price_ccy" nullable="true" scale="3" type="string"/>
+		<column name="coll_value_exp_ccy" nullable="true" scale="3" type="string"/>
+		<column name="coll_value_in_exp_ccy" nullable="true" scale="1" type="float"/>
+		<column name="message_id" nullable="true" scale="1" type="float"/>
+	    <column name="parent_pl_group" nullable="true" scale="10" type="string"/>
+	    <column name="exposure_type" nullable="false" scale="10" type="string"/>
+		<column name="archived_date" nullable="true" type="timestamp"/>
+
+		<index primary="false">
+			<on>repo_type</on>
+            <on>coll_date</on>
+            <on>trade_id</on>
+            <on>isin</on>
+			<on>agent_account_id</on>
+        </index>
+        <index primary="false">
+            <on>pledge_id</on>
+        </index>
+        <index primary="false">
+            <on>trade_id</on>
+            <on>current_b</on>
+        </index>
+        <index primary="false">
+            <on>generic_identifier</on>
+            <on>current_b</on>
+        </index>
+    </table>
+    <table name="triparty_alloc_attributes_hist" xmlns="">
+        <column name="entity_id" nullable="false" scale="1" type="int"/>
+        <column name="entity_type" nullable="false" scale="32" type="string"/>
+        <column name="attr_name" nullable="false" scale="255" type="string"/>
+        <column default="String" name="attr_type" nullable="false" scale="50" type="string"/>
+        <column name="attr_value" nullable="true" scale="255" type="string"/>
+        <column name="attr_blob" nullable="true" type="binary"/>
+        <column name="attr_date_value" nullable="true" type="timestamp"/>
+        <column name="attr_numeric_value" nullable="true" scale="1" type="float"/>
+		<column name="archived_date" nullable="true" type="timestamp"/>
+        <index primary="true">
+            <on>entity_id</on>
+            <on>entity_type</on>
+            <on>attr_name</on>
+        </index>
+    </table>
+	<table name="triparty_agent_mapping" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int"/>
+        <column name="name" nullable="false" scale="32" type="string"/>
+        <column name="agent_name" nullable="false" scale="64" type="string"/>
+        <column name="internal_value" nullable="false" scale="64" type="string"/>
+		<column name="external_value" nullable="false" scale="64" type="string"/>
+		<column default="0" name="version" nullable="false" scale="1" type="int"/>
+        <column name="entered_user" nullable="true" scale="32" type="string"/>
+		<index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>name</on>
+            <on>agent_name</on>
+			<on>internal_value</on>
+        </index>
+    </table>
+    <table name="triparty_allocation_parameter" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int"/>
+        <column name="agent_name" nullable="false" scale="64" type="string"/>
+        <column name="legal_entity_id" nullable="false" scale="1" type="int"/>
+        <column name="exposure_type" nullable="false" scale="32" type="string"/>
+		<column name="equity_cusip" nullable="true" scale="15" type="string"/>
+		<column name="bond_cusip" nullable="true" scale="15" type="string"/>
+		<column name="cash_cusip" nullable="true" scale="15" type="string"/>
+		<column name="trade_type" nullable="true" scale="32" type="string"/>
+		<column name="alternate_identifier" nullable="true" scale="128" type="string"/>
+		<column name="under_threshold" nullable="true" type="float"/>
+		<column name="over_threshold" nullable="true" type="float"/>
+		<column name="allocation_booking_time" nullable="true" type="timestamp"/>
+		<column name="allocation_booking_date_tag" nullable="true" scale="16" type="string"/>
+		<column default="0" name="version" nullable="false" scale="1" type="int"/>
+        <column name="entered_user" nullable="true" scale="32" type="string"/>
+		<index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>agent_name</on>
+            <on>exposure_type</on>
+        </index>
+    </table>
+    <table name="triparty_gcf_repo_coll" xmlns="">
+        <column name="repo_type" nullable="false" scale="10" type="string"/>
+        <column default="0" name="trade_id" nullable="false" scale="1" type="int"/>
+        <column name="generic_cusip" nullable="false" scale="9" type="string"/>
+        <column name="agent_id" nullable="false" scale="1" type="int"/>
+        <column name="agent_account_id" nullable="false" scale="64" type="string"/>
+        <column name="coll_date" nullable="false" type="timestamp"/>
+        <column name="cusip" nullable="false" scale="9" type="string"/>
+        <column name="isin" nullable="true" scale="15" type="string"/>
+        <column default="0" name="coll_par_amount" nullable="false" scale="1" type="float"/>
+        <column default="0" name="clean_price" nullable="false" scale="1" type="float"/>
+        <column default="0" name="clean_mkt_value" nullable="false" scale="1" type="float"/>
+        <column default="0" name="accrued_interest" nullable="false" scale="1" type="float"/>
+        <column default="0" name="dirty_mkt_value" nullable="false" scale="1" type="float"/>
+        <column default="0" name="coll_value" nullable="false" scale="1" type="float"/>
+        <column default="0" name="margin_value" nullable="false" scale="1" type="float"/>
+		<column default="0" name="pledge_id" nullable="false" scale="1" type="int"/>
+        <column default="0" name="book_id" nullable="false" scale="1" type="int"/>
+		<column default="0" name="intended_transaction_amount" nullable="false" scale="1" type="float"/>
+		<column default="0" name="actual_transaction_amount" nullable="false" scale="1" type="float"/>
+		<column default="0" name="pricing_rate" nullable="false" scale="1" type="float"/>
+		<column default="0" name="fx_rate" nullable="false" scale="1" type="float"/>
+		<column default="0" name="margin" nullable="false" scale="1" type="float"/>
+		<column default="0" name="coupon" nullable="false" scale="1" type="float"/>
+		<column name="year_basis" nullable="true" scale="25" type="string"/>
+		<column name="collateral_taker" nullable="false" scale="64" type="string"/>
+		<column name="collateral_giver" nullable="false" scale="64" type="string"/>
+		<column name="transaction_currency" nullable="true" scale="3" type="string"/>
+		<column name="security_currency" nullable="true" scale="3" type="string"/>
+		<column name="inscat" nullable="true" scale="6" type="string"/>
+		<column name="depository" nullable="true" scale="4" type="string"/>
+		<column name="maturity" nullable="true" type="timestamp"/>
+		<column name="repo_start_date" nullable="true" type="timestamp"/>
+		<column name="repo_end_date" nullable="true" type="timestamp"/>
+		<column default="0" name="dirty_price" nullable="false" scale="1" type="float"/>
+		<column default="0" name="margin_call_contract" nullable="true" scale="1" type="int"/>
+		<index primary="false">
+			<on>repo_type</on>
+            <on>coll_date</on>
+            <on>trade_id</on>
+            <on>cusip</on>
+			<on>agent_account_id</on>
+        </index>
+    </table>
+</database>

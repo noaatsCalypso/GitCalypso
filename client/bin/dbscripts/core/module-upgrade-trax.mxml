@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><module target-version="3.5.12" name="trax" min-version="1.00.00">
+  <schema filename="TRAXSchemaBase.xml"/>
+  <schema filename="TRAXSchemaData.xml"/>
+  <upgrade version="3.00.00">
+    <step name="TRAX-162" version="1"/>
+  </upgrade>
+</module>

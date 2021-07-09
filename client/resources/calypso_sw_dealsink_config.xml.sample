@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<calypso-sw-dealsink-pool-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sw-server>https://mw.uat.api.markit.com</sw-server>
+	<sw-login-attempts>1</sw-login-attempts>
+	<sw-login-interval>10000</sw-login-interval>
+	<sw-reconnect-attempts>1</sw-reconnect-attempts>
+	<sw-reconnect-interval>10000</sw-reconnect-interval>
+	<sw-api-init-file></sw-api-init-file>
+	<calypso-sw-dealsink-pool>
+		<master-dealsink-user bidir="true">master_dealsink1</master-dealsink-user>
+		<master-dealsink-password>password</master-dealsink-password>
+		<dealsink>
+			<user>pool_dealsink1</user>
+			<password>password</password>
+		</dealsink>
+		<dealsink>
+			<user>pool_dealsink2</user>
+			<password>password</password>
+		</dealsink>
+		<dealsink>
+			<user>pool_dealsink3</user>
+			<password>password</password>
+		</dealsink>
+	</calypso-sw-dealsink-pool>
+	<calypso-sw-dealsink-pool>
+		<master-dealsink-user bidir="false">master_dealsink2</master-dealsink-user>
+		<master-dealsink-password>password</master-dealsink-password>
+		<dealsink>
+			<user>pool_dealsink4</user>
+			<password>password</password>
+		</dealsink>
+		<dealsink>
+			<user>pool_dealsink5</user>
+			<password>password</password>
+		</dealsink>
+		<dealsink>
+			<user>pool_dealsink6</user>
+			<password>password</password>
+		</dealsink>
+		<dealsink>
+			<user>pool_dealsink7</user>
+			<password>password</password>
+		</dealsink>
+	</calypso-sw-dealsink-pool>
+</calypso-sw-dealsink-pool-config>

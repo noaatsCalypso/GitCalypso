@@ -1,0 +1,27 @@
+<!-- Defines a default view (categories, selected fields for each). The field 
+	and category labels are defined in the .properties resource file with the 
+	same name. -->
+<config>
+	<view>
+		<category>
+			<categoryId>DEFAULT</categoryId>
+			<fieldId>DIRECTION</fieldId>
+			<fieldId>PRODUCT</fieldId>
+			<fieldId>PRODUCT_CURRENCY</fieldId>
+			<fieldId>BOOK</fieldId>
+			<fieldId>INPUT_TYPE</fieldId>
+			<fieldId>SETTLEMENT_CURRENCY</fieldId>
+			<fieldId>SETTLEMENT_AMOUNT</fieldId>
+			<fieldId>FX_RATE</fieldId>
+			<fieldId>PRODUCT_CCY_AMOUNT</fieldId>
+			<fieldId>NUMBER_OF_SHARES</fieldId>
+			<fieldId>NAV_DATE</fieldId>
+			<fieldId>NAV_PER_SHARE</fieldId>
+			<fieldId>TRADE_DATE</fieldId>
+			<fieldId>SETTLE_DATE</fieldId>
+			<fieldId>MIRROR</fieldId>
+			<fieldId>MIRROR_BOOK</fieldId>
+			<fieldId>MIRROR_TRADE_ID</fieldId>
+		</category>
+	</view>
+</config>

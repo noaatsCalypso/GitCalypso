@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="ers_credit_measure_config" xmlns="">
+		<column name="identifier" nullable="false" type="string" scale="255"/>
+		<column name="measure" nullable="false" type="string" scale="64"/>
+		<column name="is_formula" nullable="false" type="int" scale="1"/>
+		<column name="is_display" nullable="false" type="int" scale="1"/>
+		<column name="is_rolled" nullable="false" type="int" scale="1"/>
+		<column name="is_divisable" nullable="false" type="int" scale="1"/>
+		<column name="pricer_name" nullable="true" type="string" scale="255"/>
+		<column name="formula" nullable="true" type="string" scale="255"/>
+		<column name="start_date_type" nullable="true" type="string" scale="64"/>
+		<column name="start_date_adjust" nullable="false" type="int" scale="1"/>
+		<column name="start_date_adjust_type" nullable="true" type="string" scale="3"/>
+		<column name="end_date_type" nullable="true" type="string" scale="64"/>
+		<column name="end_date_adjust" nullable="true" type="int" scale="1"/>
+		<column name="end_date_adjust_type" nullable="true" type="string" scale="3"/>
+		<column name="use_addon" nullable="false" type="int" scale="1" default="0"/>
+		<index primary="true">
+			<on>identifier</on>
+			<on>measure</on>
+		</index>
+	</table>
+	<table name="ers_exposure_regrisk_position" xmlns="">
+		<column name="element_type" nullable="false" type="string" scale="255"/>
+		<column name="element_id" nullable="false" type="string" scale="255"/>
+		<column name="source_system" nullable="false" type="string" scale="64" default="Calypso"/>
+		<column name="julian_offset" nullable="false" type="int" scale="1"/>
+		<column name="meta_data" nullable="false" type="string" scale="255" default=" "/>
+		<column name="po_name" nullable="false" type="string" scale="255"/>
+		<column name="cpty_name" nullable="true" type="string" scale="255"/>
+		<column name="la_name" nullable="true" type="string" scale="255"/>
+		<column name="csa_name" nullable="true" type="string" scale="255"/>
+		<column name="run_id" nullable="true" type="string" scale="255"/>
+		<index primary="false">
+			<on>julian_offset</on>
+			<on>element_type</on>
+			<on>element_id</on>
+			<on>source_system</on>
+		</index>
+	</table>
+	<table name="ers_exposure_regrisk_measure" xmlns="">
+		<column name="element_type" nullable="false" type="string" scale="255"/>
+		<column name="element_id" nullable="false" type="string" scale="255"/>
+		<column name="source_system" nullable="false" type="string" scale="64" default="Calypso"/>
+		<column name="julian_offset" nullable="false" type="int" scale="1"/>
+		<column name="measure" nullable="false" type="string" scale="255"/>
+		<column name="exposure_julian_offset" nullable="true" type="int" scale="1"/>
+		<column name="ccy" nullable="false" type="string" scale="3"/>
+		<column name="amount" nullable="true" type="float" scale="1"/>
+		<index primary="false">
+			<on>julian_offset</on>
+			<on>element_type</on>
+			<on>source_system</on>
+			<on>measure</on>
+		</index>
+	</table>
+	<table name="ers_limit_regrisk_drilldown" xmlns="">
+		<column name="limit_id" nullable="true" type="int" scale="1"/>
+		<column name="element_type" nullable="false" type="string" scale="255"/>
+		<column name="element_id" nullable="false" type="string" scale="255"/>
+		<column name="source_system" nullable="true" type="string" scale="64" default="Calypso"/>
+		<column name="julian_offset" nullable="false" type="int" scale="1"/>
+		<column name="exposure_julian_offset" nullable="true" type="int" scale="1"/>
+		<index primary="false">
+			<on>limit_id</on>
+		</index>
+	</table>
+	
+</database>

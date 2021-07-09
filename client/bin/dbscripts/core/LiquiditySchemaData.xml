@@ -1,0 +1,1269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="calypso_seed" xmlns="">
+        <row cat="Required">
+            <column name="last_id">1000</column>
+            <column name="seed_name">FTPPaymentSchedule</column>
+            <column name="seed_alloc_size">10</column>
+        </row>
+        <row cat="Required">
+            <column name="last_id">1000</column>
+            <column name="seed_name">FTPCostComponentRule</column>
+            <column name="seed_alloc_size">10</column>
+        </row>
+        <row cat="Required">
+            <column name="last_id">1000</column>
+            <column name="seed_name">FTPRateRetrievalConfig</column>
+            <column name="seed_alloc_size">10</column>
+        </row>
+        <row cat="Required">
+            <column name="last_id">1000</column>
+            <column name="seed_name">LIQUIDITY_RULE</column>
+            <column name="seed_alloc_size">1</column>
+        </row>
+        <row cat="Required">
+            <column name="last_id">1000</column>
+            <column name="seed_name">LIQUIDITY_EXTERNAL_MOVEMENT</column>
+            <column name="seed_alloc_size">1000</column>
+        </row>        
+	</table>
+	<table name="domain_values" xmlns="">
+	 	<row cat="Required">
+            <column name="name">SimpleTransfer.subtype</column>
+            <column name="value">FTP_RTL_OVERNIGHT_FND</column>
+            <column name="description">Fund Transfer Pricing Retail Overnight Fund</column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">BankingFlows.extendedType</column>
+            <column name="description">Domain Name that defines BankingFlows Extended Type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">BankingFlows.extendedType</column>
+            <column name="value">ACCOUNT</column>
+            <column name="description">Extended Type ACCOUNT</column>
+        </row>
+        <row cat="Required">
+            <column name="name">BankingFlows.extendedType</column>
+            <column name="value">DEPOSIT</column>
+            <column name="description">Extended Type DEPOSIT</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">BankingFlows.extendedType</column>
+            <column name="value">LOAN</column>
+            <column name="description">Extended Type LOAN</column>
+        </row>  
+        <row cat="Required">
+            <column name="name">accountProperty</column>
+            <column name="value">isLABPosition</column>
+            <column name="description">Property that helps to identify if account positions are to processed for LAB</column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">timeBucket</column>
+            <column name="description">Domain Name that defines Time Buckets</column>
+        </row>
+        <row cat="Required">
+            <column name="name">timeBucket</column>
+            <column name="value">800</column>
+            <column name="description">Time bucket defined for 8:00 AM</column>
+        </row>
+        <row cat="Required">
+            <column name="name">timeBucket</column>
+            <column name="value">900</column>
+            <column name="description">Time bucket defined for 9:00 AM</column>
+        </row>
+        <row cat="Required">
+            <column name="name">timeBucket</column>
+            <column name="value">1000</column>
+            <column name="description">Time bucket defined for 10:00 AM</column>
+        </row>
+        <row cat="Required">
+            <column name="name">timeBucket</column>
+            <column name="value">1100</column>
+            <column name="description">Time bucket defined for 11:00 AM</column>
+        </row>
+        <row cat="Required">
+            <column name="name">timeBucket</column>
+            <column name="value">1200</column>
+            <column name="description">Time bucket defined for 12:00 PM</column>
+        </row>
+        <row cat="Required">
+            <column name="name">timeBucket</column>
+            <column name="value">1300</column>
+            <column name="description">Time bucket defined for 1:00 PM</column>
+        </row>
+        <row cat="Required">
+            <column name="name">timeBucket</column>
+            <column name="value">1400</column>
+            <column name="description">Time bucket defined for 2:00 AM</column>
+        </row>
+        <row cat="Required">
+            <column name="name">timeBucket</column>
+            <column name="value">1500</column>
+            <column name="description">Time bucket defined for 3:00 PM</column>
+        </row>
+        <row cat="Required">
+            <column name="name">timeBucket</column>
+            <column name="value">1600</column>
+            <column name="description">Time bucket defined for 4:00 PM</column>
+        </row>
+        <row cat="Required">
+            <column name="name">timeBucket</column>
+            <column name="value">1700</column>
+            <column name="description">Time bucket defined for 5:00 PM</column>
+        </row>
+        <row cat="Required">
+            <column name="name">timeBucket</column>
+            <column name="value">1800</column>
+            <column name="description">Time bucket defined for 6:00 PM</column>
+        </row>
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">REBUILD_LIQUIDITY_POSITIONS</column>
+            <column name="description">Scheduled Task for rebuilding positions for liquidity management</column>
+        </row>
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">EOD_CONTEXT_POSITION</column>
+            <column name="description">EOD activities for maintaining context positions.</column>
+        </row>                
+        <row cat="Required">
+            <column name="name">currencyDefaultAttribute</column>
+            <column name="value">SwiftMessage205AccountId</column>
+            <column name="description">Currency Attribute to identify Account for an MT205 message</column>
+        </row>
+        <row cat="Required">
+            <column name="name">customCriterion</column>
+            <column name="value">Liquidity</column>
+            <column name="description">Enable custom TradeFilter criterion for Liquidity</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">RESET_FLOATING_RATE_NOTES</column>
+            <column name="description">Reset Liquidity Floating Rate Notes</column>
+        </row>
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">LIQUIDITY_UPGRADE_TASK</column>
+            <column name="description">Liquidity Program based Upgrade tasks</column>
+        </row>
+        <row cat="Required">
+            <column name="name">sdiAttribute</column>
+            <column name="value">LiquidityReportingCurrency</column>
+            <column name="description">To specify the default SDI to use for Liquidity Reporting</column>
+        </row>     
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">AddModifyCashLiquidityManagerRegionalPreference</column>
+            <column name="description">AccessPermission for ability to Add or Modify Cash Liquidity Manager Regional Preferences</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">AddModifyClassificationItem</column>
+            <column name="description">Access Permission for ability to Add or Modify any Classification Item like Factor, Attribute, Criterion, Classification, Level, NamedList, Remaps</column>
+        </row>   
+        <row cat="Required">
+            <column name="name">classAccessMode</column>
+	    	<column name="value">ClassificationFactors</column>
+	    	<column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">classAccessMode</column>
+	    	<column name="value">ClassificationAttributes</column>
+	    	<column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">classAccessMode</column>
+	    	<column name="value">ClassificationCriteria</column>
+	    	<column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">classAccessMode</column>
+	    	<column name="value">Classifications</column>
+	    	<column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">classAccessMode</column>
+	    	<column name="value">ClassificationLevels</column>
+	    	<column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">classAccessMode</column>
+	    	<column name="value">ClassificationRemaps</column>
+	    	<column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">classAccessMode</column>
+	    	<column name="value">ClassificationNamedLists</column>
+	    	<column name="description"></column>
+        </row>
+	    <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">FtpCostComponentNames</column>
+            <column name="description">FTP Cost Component names</column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">SWAP_COST</column>
+            <column name="description">Swap Cost</column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">BASIS_COST</column>
+            <column name="description">Basis Cost</column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">LIQUIDITY_PREMIUM</column>
+            <column name="description">Liquidity Premium</column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">ADMINISTRATIVE_COST</column>
+            <column name="description">Administrative Cost</column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">LAB_COST</column>
+            <column name="description">LAB Cost</column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">FUNDING_PRINCIPAL_COST</column>
+            <column name="description">Funding Risk</column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">THEORETICAL_BASIS_COST</column>
+            <column name="description">Basis Cost at trade inception</column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">THEORETICAL_LIQUIDITY_PREMIUM</column>
+            <column name="description">Liquidity premium at trade inception</column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">THEORETICAL_REFERENCE_COST</column>
+            <column name="description">Reference Cost at trade inception</column>
+        </row>          
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">MANAGEMENT_OVERLAY_COST</column>
+            <column name="description">Management Overlay Cost</column>
+        </row>    
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">CREDIT_COST</column>
+            <column name="description">Credit Cost</column>
+        </row>            
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">HEDGING_BM_SPREAD_COST</column>
+            <column name="description">Hedging Benchmark Spread Risk</column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">FUNDING_BM_SPREAD_COST</column>
+            <column name="description">Funding Benchmark Spread Risk</column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">COLL_LIQUIDITY_PREMIUM</column>
+            <column name="description">Collateralized Liquidity Premium</column>
+        </row>
+        <!--
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">OVERNIGHT_CASH_SWEEP_COST</column>
+            <column name="description">Overnight Cash Sweep Cost</column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">OVERNIGHT_CASH_INTEREST_COST</column>
+            <column name="description">Overnight CASH INTEREST Cost</column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">SECURITIZED_FUNDING_CASH_SWEEP_COST</column>
+            <column name="description">Securitized Funding Cash Sweep Cost</column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">SECURITIZED_FUNDING_INTEREST_COST</column>
+            <column name="description">Securitized Funding Interest Cost</column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">SECURITIZED_FUNDING_SECURITY_SWEEP_COST</column>
+            <column name="description">Securitized Funding Security Sweep Cost</column>
+        </row> 
+        -->
+        <row cat="Required">
+            <column name="name">FtpCostComponentNames</column>
+            <column name="value">RETAIL_OVERNIGHT_FUNDING_COST</column>
+            <column name="description">Retail Overnight Funding Cost</column>
+        </row>
+        <row cat="Required">
+            <column name="name">workflowRuleTrade</column>
+            <column name="value">TradeFTP</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">workflowRuleTransfer</column>
+            <column name="value">CostAllocationFTP</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventFilter</column>
+            <column name="value">FTPEngineEventFilter</column>
+            <column name="description">Event filter for FTP Engine.</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">engineName</column>
+            <column name="value">FTPEngine</column>
+            <column name="description">FTP engine</column>
+        </row>    
+        <row cat="Required">
+            <column name="name">tradeAction</column>
+            <column name="value">FTP_TRADE_UPDATE</column>
+            <column name="description">Action applied on trades processed and saved by the FTP engine</column>
+        </row>                    
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">EOD_FTP_COST_ACCRUAL</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">EOD_FTP_RETAIL_COST_ACCRUAL</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">EOD_GENERATE_FTP_TRADE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">GEN_LIQUIDITY_PREM_INDEX_QUOTES</column>
+            <column name="description"></column>
+        </row>        
+ <!-- <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">GEN_FUNDING_FTP_ACCRUALS</column>
+            <column name="description"></column>
+        </row> -->
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">EOD_THEO_MARGIN</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">EOD_GEN_RETAIL_COST_ACCRUALS</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">EX_EOD_FTP_COST_ACCRUAL_SUCCESS</column>
+            <column name="description">The FTP cost accrual scheduled task was successful.</column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">EX_EOD_FTP_COST_ACCRUAL_FAILURE</column>
+            <column name="description">The FTP cost accrual scheduled task was not successful.</column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">EX_EOD_FTP_RETAIL_COST_ACCRUAL_SUCCESS</column>
+            <column name="description">The Retail FTP cost accrual scheduled task was successful.</column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">EX_EOD_FTP_RETAIL_COST_ACCRUAL_FAILURE</column>
+            <column name="description">The Retail FTP cost accrual scheduled task was not successful.</column>
+        </row>
+        <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">GEN_LIQUIDITY_PREM_INDEX_QUOTES_FAILURE</column>
+            <column name="description"></column>
+        </row>        
+        <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">EOD_FTP_COST_ACCRUAL_SUCCESS</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">EOD_FTP_COST_ACCRUAL_FAILURE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">EOD_FTP_RETAIL_COST_ACCRUAL_SUCCESS</column>
+            <column name="description">The task to calculate Retail Account Cost Accrual was successful</column>
+        </row>
+        <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">EOD_FTP_RETAIL_COST_ACCRUAL_FAILURE</column>
+            <column name="description">The task to calculate Retail Account Cost Accrual was not successful</column>
+        </row>   
+        <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">EOD_GENERATE_RETAIL_COST_ACCRUALS_FAILURE</column>
+            <column name="description">The task to generate Retail Account Cost Accrual was not successful</column>
+        </row>
+		<row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">EOD_GENERATE_RETAIL_COST_ACCRUALS_SUCCESS</column>
+            <column name="description">The task to generate Retail Account Cost Accrual was successful</column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">EX_EOD_GENERATE_FTP_TRADE_SUCCESS</column>
+            <column name="description">The FTP trade generation scheduled task was successful.</column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">EX_EOD_GENERATE_FTP_TRADE_FAILURE</column>
+            <column name="description">The FTP trade generation scheduled task was not successful.</column>
+        </row>
+        <row cat="domain">
+            <column name="name">domainName</column>
+        	<column name="value">bookAttribute.TreasuryBankingBook</column>
+        </row>
+		<row cat="domain">
+            <column name="name">bookAttribute.TreasuryBankingBook</column>
+            <column name="value">true</column>
+        </row>
+		<row cat="domain">
+            <column name="name">bookAttribute.TreasuryBankingBook</column>
+            <column name="value">false</column>
+        </row>        
+        <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">EOD_GENERATE_FTP_TRADE_SUCCESS</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">EOD_GENERATE_FTP_TRADE_FAILURE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">FTP_ACCRUAL_GENERATION</column>
+            <column name="description">Exception while generating accruals for a Trade.</column>
+        </row>
+        <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">FTP_COST_CONVERSION_CALCULATION</column>
+            <column name="description">Exception while converting rate into index conventions for a Trade.</column>
+        </row>
+         <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">FTP_COST_CALCULATION</column>
+            <column name="description">Exception while calculating the cost for a trade cost component.</column>
+        </row>
+         <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">FTP_SYNTHETIC_TRADE_EXPLODE</column>
+            <column name="description">Exception while creating/publishing synthetic trades.</column>
+        </row>  
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">REPAIR_FTPTRADECOST_AUDIT</column>
+            <column name="description">Repair BO Audits for FTP Trade Costs.</column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">REPAIR_FTPTRADECOST_AUDIT_SUCCESS</column>
+            <column name="description">Repair BO Audits for FTP Trade Costs was successful.</column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">REPAIR_FTPTRADECOST_AUDIT_FAILURE</column>
+            <column name="description">Repair BO Audits for FTP Trade Costs failed.</column>
+        </row>                                      
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_COST</column>
+            <column name="description">FTP Cost flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FUNDING_RISK</column>
+            <column name="description">Funding Principal Cost flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">ModifyFTPRule</column>
+            <column name="description">Access permission to modify FTP rules</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">ViewFTPRule</column>
+            <column name="description">Access permission to view FTP rules</column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">CashMenuItemNames</column>
+            <column name="description">Cash product specific MenuItem names</column>
+        </row>
+        <row cat="Required">
+            <column name="name">CashMenuItemNames</column>
+            <column name="value">FTPCostComponent</column>
+            <column name="description">FTP Cost Component menu item</column>
+        </row>
+        <row cat="Required">
+            <column name="name">CashMenuItemNames</column>
+            <column name="value">FTPRefreshRule</column>
+            <column name="description">FTP Refresh Rule menu item</column>
+        </row>
+        <!-- Liquidation Configuration -->                       
+	    <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">FtpLiquidationConfig</column>
+            <column name="description">FTP Liquidation Config</column>
+        </row>
+	    <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">FtpPositionAggregation</column>
+            <column name="description">FTP Position Aggregation</column>
+        </row>
+	    <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">FTPFeeType.SWAP_COST</column>
+            <column name="description">Fee types that will carried over to the Reference cost synthetic hedge trade</column>
+        </row>
+	    <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">FTPFeeType.BASIS_COST</column>
+            <column name="description">Fee types that will carried over to the Basis cost synthetic hedge trade</column>
+        </row>
+	    <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">FTPFeeType.LIQUIDITY_PREMIUM</column>
+            <column name="description">Fee types that will carried over to the Liquidity Premium cost synthetic hedge trade</column>
+        </row>
+	    <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">FTPFeeType.COLL_LIQUIDITY_PREMIUM</column>
+            <column name="description">Fee types that will carried over to the Collateralized Liquidity Premium cost synthetic hedge trade</column>
+        </row>         
+	    <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">FTP.ValidMergeToFeeType.SWAP_COST</column>
+            <column name="description">Valid fee types that the original fee type will be converted to, on the Reference cost synthetic hedge trade</column>
+        </row>
+	    <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">FTP.ValidMergeToFeeType.BASIS_COST</column>
+            <column name="description">Valid fee types that the original fee type will be converted to, on the Basis cost synthetic hedge trade</column>
+        </row>
+	    <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">FTP.ValidMergeToFeeType.LIQUIDITY_PREMIUM</column>
+            <column name="description">Valid fee types that the original fee type will be converted to, on the Liquidity Premium synthetic hedge trade</column>
+        </row>
+	    <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">FTP.ValidMergeToFeeType.COLL_LIQUIDITY_PREMIUM</column>
+            <column name="description">Valid fee types that the original fee type will be converted to, on the Coll Liquidity Premium synthetic hedge trade</column>
+        </row>         
+	    <row cat="Required">
+            <column name="name">FtpLiquidationConfig</column>
+            <column name="value">DEFAULT</column>
+            <column name="description">FTP Liquidation Config value</column>
+        </row>  
+        <!-- FTP Engine Processing statuses -->
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">FtpEngineProcessingStatus</column>
+            <column name="description">Trade statuses accepted by FTP Engine</column>
+        </row>  
+        <row cat="Required">
+            <column name="name">FtpEngineProcessingStatus</column>
+            <column name="value">VERIFIED</column>
+            <column name="description"></column>
+        </row> 
+        <row cat="Required">
+            <column name="name">FtpEngineProcessingStatus</column>
+            <column name="value">CANCELED</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpEngineProcessingStatus</column>
+            <column name="value">TERMINATED</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">FtpEngineProcessingStatus</column>
+            <column name="value">MATURED</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_ADMINISTRATIVE_COST</column>
+            <column name="description">FTP Cost flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_BASIS_COST</column>
+            <column name="description">FTP Cost flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_LAB_COST</column>
+            <column name="description">FTP Cost flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_SWAP_COST</column>
+            <column name="description">FTP Reference Cost flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_LIQUIDITY_PREMIUM</column>
+            <column name="description">FTP Cost flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_FUNDING_PRINCIPAL_COST</column>
+            <column name="description">FTP Funding Cost flow type</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_MANAGEMENT_OVERLAY_COST</column>
+            <column name="description">FTP Cost flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_CREDIT_COST</column>
+            <column name="description">FTP Cost flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_HEDGING_BM_SPREAD_COST</column>
+            <column name="description">FTP Cost flow type for HEDGING_BM_SPREAD_COST</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_FUNDING_BM_SPREAD_COST</column>
+            <column name="description">FTP Cost flow type for FUNDING_BM_SPREAD_COST</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_COLL_LIQUIDITY_PREMIUM</column>
+            <column name="description">FTP Cost flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_ON_CASH_CARRY</column>
+            <column name="description">FTP Cost flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_SEC_SEC_CARRY</column>
+            <column name="description">FTP Cost flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_ON_SWEEP</column>
+            <column name="description">FTP Cost flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_SEC_CASH_SWEEP</column>
+            <column name="description">FTP Cost flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_SEC_SEC_SWEEP</column>
+            <column name="description">FTP Cost flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">FTP_UNREALIZED_PL</column>
+            <column name="description">FTP flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">flowType</column>
+            <column name="value">LIQ_SYS_MVMNT</column>
+            <column name="description">Daily margin flow type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">currencyDefaultAttribute</column>
+            <column name="value">LiquidityPremiumIndex</column>
+            <column name="description">Currency Attribute to identify Liquidity Premium Cost Index Name</column>
+        </row>  
+         <row cat="Required">
+            <column name="name">currencyDefaultAttribute</column>
+            <column name="value">LiquidityPremiumIndexSource</column>
+            <column name="description">Currency Attribute to identify Liquidity Premium Cost Source Name</column>
+        </row>  
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">BehavioralMaturityTenor</column>
+            <column name="description">Trade Behavioral Maturity Tenor</column>
+        </row>
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">FTPReferenceCostHedgeSwapTradeId</column>
+            <column name="description">Hedge Trade Id for Reference Cost</column>
+        </row>
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">FTPSyntheticHedgeIndex</column>
+            <column name="description">Index Name for the Hedge trade to be synthetically created for auto calculation of FTP Costs</column>
+        </row>
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">FTPSyntheticHedgeIndexSource</column>
+            <column name="description">Index Source Name for the Hedge trade to be synthetically created for auto calculation of FTP Costs</column>
+        </row>
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">FTPSyntheticHedgeIndexTenor</column>
+            <column name="description">Index Tenor Name for the Hedge trade to be synthetically created for auto calculation of FTP Costs</column>
+        </row>    
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">FTPAccrualStartDate</column>
+            <column name="description">Trade Keyword for providing the accrual start date for a particular trade that will override the trade start date</column>
+        </row>                                            
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">FTP_HEDGING_LEG</column>
+            <column name="description">Leg type for Swap identifying the Leg that represents the Hedge value as PAY or RECEIVE</column>
+        </row>
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">FTP_FUNDING_LEG</column>
+            <column name="description">Leg type for Swap identifying the Leg that represents the Funded Trade value as PAY or RECEIVE</column>
+        </row>
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">FTP_LIQUIDITY_PREMIUM_RATE_INDEX</column>
+            <column name="description">Liquidity Premium Rate Index to be used for shifting curve when discounting liquidity premium hedge trades or positions</column>
+        </row>
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">ReferenceCostBehavioralMaturityTenor</column>
+            <column name="description">Behavioral Maturity Tenor for Reference cost calculation</column>
+        </row>        
+        <row cat="Required">
+            <column name="name">eventClass</column>
+            <column name="value">PSEventLiquiditySyntheticTrade</column>
+            <column name="description"></column>
+        </row>   
+		<row cat="Required">
+            <column name="name">rateIndexAttributes</column>
+            <column name="value">InputMethod</column>
+            <column name="description"></column>
+        </row>
+		<row cat="Required">
+            <column name="name">rateIndexAttributes</column>
+            <column name="value">MMLiquidTenor</column>
+            <column name="description"></column>
+        </row>
+		<row cat="Required">
+            <column name="name">rateIndexAttributes</column>
+            <column name="value">MMCurve</column>
+            <column name="description"></column>
+        </row>
+		<row cat="Required">
+            <column name="name">rateIndexAttributes</column>
+            <column name="value">MarketCurve</column>
+            <column name="description"></column>
+        </row>
+		<row cat="Required">
+            <column name="name">rateIndexAttributes</column>
+            <column name="value">BaseLiquidityPremium</column>
+            <column name="description"></column>
+        </row>        
+		<row cat="Required">
+            <column name="name">rateIndexAttributes</column>
+            <column name="value">BaseRateIndex</column>
+            <column name="description"></column>
+        </row>
+		<row cat="Required">
+            <column name="name">engineParam</column>
+            <column name="value">MIGRATION_DATE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">rate_index_type</column>
+            <column name="value">Liquidity</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+          <column name="name">currencyDefaultAttribute</column>
+          <column name="value">FtpFundingIndex</column>
+          <column name="description">Funding index that is used when creating the benchmark index for FTP rules.</column>
+        </row>
+        <row cat="Required">
+          <column name="name">currencyDefaultAttribute</column>
+          <column name="value">FtpFundingIndexTenor</column>
+          <column name="description">Funding index tenor that is used when creating the benchmark index for FTP rules.</column>
+        </row>
+		<row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">TreasuryOperatingModel</column>
+            <column name="description">Treasury Operating Model</column>
+        </row>
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">MarketMeasure.LiquidityPremium</column>
+            <column name="description">Keyword to default the Liquidity Premium for the trade</column>
+        </row>
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">MarketMeasure.COFRate</column>
+            <column name="description">Keyword to default the COFRate for the trade</column>
+        </row>
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">MarketMeasure.COFSpread</column>
+            <column name="description">Keyword to default the COFSpread for the trade</column>
+        </row>                        
+        <row cat="Required">
+            <column name="name">engineName</column>
+            <column name="value">LiquidityPositionPersistenceEngine</column>
+            <column name="description">Liquidity Context position persistence engine</column>
+        </row>
+         <row cat="Required">
+            <column name="name">eventClass</column>
+            <column name="value">PSEventExternalMovement</column>
+            <column name="description">Event type for Liquidity External Movement</column>
+        </row> 
+         <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">REINITIALIZE_CONTEXT_POSITIONS</column>
+            <column name="description">Reinitialize context positions.</column>
+        </row>                    
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">CLEAN_UP_CONTEXT_POSITION</column>
+            <column name="description">Scheduled Task to delete all data referenced by selected inactive Context Position Bucket Configs</column>
+        </row> 
+		<row cat="Required">
+            <column name="name">productTypeReportStyle</column>
+            <column name="value">ContextPosition</column>
+            <column name="description">Context Position Report Style</column>
+        </row>
+		<row cat="Required">
+            <column name="name">eventFilter</column>
+            <column name="value">LiquidityContextPositionEventFilter</column>
+            <column name="description">Context Position Persistence engine event filter</column>
+        </row>      
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">LiquidityPositionRetailTrade</column>
+            <column name="description">Trade keyword to identify Retail Trades in Liquidity Server</column>
+        </row>
+        <!-- @deprecated as of CORE.FRONTOFFICE_16.1 as Intraday Liquidity will now move to Cloud solution
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">GEN_LIQ_BCBS_REPORT</column>
+            <column name="description">Generate Daily or Monthly Liquidity BCBS Report</column>
+        </row> 
+		<row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">GENERATE_METRIC_CUBE</column>
+            <column name="description">Generate Metric cube containing BCBS data for the day</column>
+        </row>-->
+		<row cat="Required">
+            <column name="name">messageType</column>
+            <column name="value">CORRESPONDENT_BENEFICIARY_DLY</column>
+            <column name="description">Correspondent Beneficiary BCBS report type for Daily period</column>
+        </row>
+		<row cat="Required">
+            <column name="name">messageType</column>
+            <column name="value">CORRESPONDENT_BENEFICIARY_MTHY</column>
+            <column name="description">Correspondent Beneficiary BCBS report type for Monthly period</column>
+        </row>
+		<row cat="Required">
+            <column name="name">messageType</column>
+            <column name="value">CORRESPONDENT_PROVIDER_DLY</column>
+            <column name="description">Correspondent Provider BCBS report type for Daily period</column>
+        </row>
+		<row cat="Required">
+            <column name="name">messageType</column>
+            <column name="value">CORRESPONDENT_PROVIDER_MTHY</column>
+            <column name="description">Correspondent Provider BCBS report type for Monthly period</column>
+        </row>		
+		<row cat="Required">
+            <column name="name">messageType</column>
+            <column name="value">DIRECT_PARTICIPANT_DLY</column>
+            <column name="description">Direct Participant BCBS report type for Daily period</column>
+        </row>		
+		<row cat="Required">
+            <column name="name">messageType</column>
+            <column name="value">DIRECT_PARTICIPANT_MTHY</column>
+            <column name="description">Direct Participant BCBS report type for Monthly period</column>
+        </row>		
+		<row cat="Required">
+            <column name="name">MESSAGE.Templates</column>
+            <column name="value">DirectParticipant.html</column>
+            <column name="description">Direct Participant BCBS Message Template</column>
+        </row>				
+		<row cat="Required">
+            <column name="name">MESSAGE.Templates</column>
+            <column name="value">CorrespondentBeneficiary.html</column>
+            <column name="description">Correspondent Beneficiary BCBS Message Template</column>
+        </row>				
+		<row cat="Required">
+            <column name="name">MESSAGE.Templates</column>
+            <column name="value">CorrespondentProvider.html</column>
+            <column name="description">Correspondent Provider BCBS Message Template</column>
+        </row>						
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">ContextPosition.subtype</column>
+            <column name="description">ContextPosition subtypes</column>
+        </row>
+        <row cat="Required">
+            <column name="name">ContextPosition.subtype</column>
+            <column name="value">Unknown</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">ContextPosition.subtype</column>
+            <column name="value">TradingCash</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">ContextPosition.subtype</column>
+            <column name="value">TradingSecurity</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">ContextPosition.subtype</column>
+            <column name="value">ReferenceCostCash</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">ContextPosition.subtype</column>
+            <column name="value">LiquidityPremiumCash</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">ContextPosition.subtype</column>
+            <column name="value">SynthReferenceCostCash</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">ContextPosition.subtype</column>
+            <column name="value">SynthBasisCostCash</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">	
+            <column name="name">ContextPosition.subtype</column>
+            <column name="value">SynthLiquidityPremiumCash</column>
+            <column name="description"></column>
+        </row>        
+        <row cat="Required">
+            <column name="name">ContextPosition.subtype</column>
+            <column name="value">SynthCollLiquidityPremiumCash</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">productType</column>
+            <column name="value">ContextPosition</column>
+            <column name="description">Context Position as a product type for registrating cross asset components</column>
+        </row>
+        <row cat="Required">
+            <column name="name">classAccessMode</column>
+	    	<column name="value">ContextPositionFilters</column>
+	    	<column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">AddContextPositionFilters</column>
+            <column name="description">AccessPermission for ability to add ContextPositionFilter</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">ModifyContextPositionFilters</column>
+            <column name="description">AccessPermission for ability to modify ContextPositionFilter</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">RemoveContextPositionFilters</column>
+            <column name="description">AccessPermission for ability to remove ContextPositionFilter</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">AddModifyContextPositionBucketConfigs</column>
+            <column name="description">AccessPermission for ability to Add or Modify ContextPositionBucketConfigs</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">AddModifyContextPositionMovementAttributes</column>
+            <column name="description">AccessPermission for ability to Add or Modify ContextPositionMovementAttributes</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">AddModifyContextPositionBucketScope</column>
+            <column name="description">AccessPermission for ability to Add or Modify ContextPositionBucketScope</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">AddModifyContextPositionReinitializeJob</column>
+            <column name="description">AccessPermission for ability to Add or Modify ContextPositionReinitializeJob</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">ModifyContextPositionUnProcessedEvents</column>
+            <column name="description">AccessPermission for ability to Mark as Processed or Resubmit Context Position Messages</column>
+        </row>
+        <row cat="Required">
+            <column name="name">engineserver.types</column>
+            <column name="value">LiquidityServer</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">engineserver.unmanaged.types</column>
+            <column name="value">LiquidityServer</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">LiquidityServer.instances</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">LiquidityServer.engines</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">LiquidityServer.instances</column>
+            <column name="value">liquidityserver</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">LiquidityServer.engines</column>
+            <column name="value">LiquidityPositionPersistenceEngine</column>
+            <column name="description"></column>
+        </row>
+		<row cat="Required">
+            <column name="name">function</column>
+            <column name="value">AddLiquidityRuleLimit</column>
+            <column name="description">AccessPermission for ability to Add LiquidityLimitRule</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">ModifyLiquidityRuleLimit</column>
+            <column name="description">AccessPermission for ability to Modify LiquidityLimitRule</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">DeleteLiquidityRuleLimit</column>
+            <column name="description">AccessPermission for ability to Delete LiquidityLimitRule</column>
+        </row>                                      
+        <row cat="Required">
+        	<column name="name">tradeKeyword</column>
+        	<column name="value">MVF1MRateIndex</column>
+        	<column name="description"></column>
+        </row>
+        <row cat="Required">
+        	<column name="name">tradeKeyword</column>
+        	<column name="value">MVF2MRateIndex</column>
+        	<column name="description"></column>
+        </row>
+        <row cat="Required">
+        	<column name="name">tradeKeyword</column>
+        	<column name="value">MVF3MRateIndex</column>
+        	<column name="description"></column>
+        </row>
+        <row cat="Required">
+        	<column name="name">tradeKeyword</column>
+        	<column name="value">MVF1MWeight</column>
+        	<column name="description"></column>
+        </row>
+        <row cat="Required">
+        	<column name="name">tradeKeyword</column>
+        	<column name="value">MVF2MWeight</column>
+        	<column name="description"></column>
+        </row>
+        <row cat="Required">
+        	<column name="name">tradeKeyword</column>
+        	<column name="value">MVF3MWeight</column>
+        	<column name="description"></column>
+        </row>
+        <row cat="Required">
+          <column name="name">currencyDefaultAttribute</column>
+          <column name="value">LiquidityPremiumFloor</column>
+          <column name="description">Lower bounds to be used when solving for a break-even rate for Liquidity premium</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">AddModifyBankingProduct</column>
+            <column name="description">Access Permission for ability to Add or Modify Banking Product definition</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">RUN_CREDIT_STRESS</column>
+            <column name="description">Scheduled Task to create downgraded rating all entities, Bond, Equities given a credit downgrade scenario</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">REPAIR_CTXT_POS_OFFICIALPL</column>
+            <column name="description">Scheduled Task to update row with a constant block id for duplicate rows with same position key and multiple block ids</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">LIQUIDITY_TRADE_SNAPSHOT</column>
+            <column name="description">Scheduled Task to takes a snapshot of the trades and stores them in the database</column>
+        </row> 
+		<row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">ALERT_FLANALYSIS_TF_MISMATCH</column>
+            <column name="description">The scheduled task list invalid Analysis Designer Forward Ladder running configurations, for which context position filters are not considered anymore</column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">EX_EOD_CONTEXT_POSITION</column>
+            <column name="description">The task for maintenance of context positions</column>
+        </row>  
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">EX_REINITIALIZE_CONTEXT_POSITIONS</column>
+            <column name="description">task to reinitialize context positions</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">EX_RESET_FLOATING_RATE_NOTES</column>
+            <column name="description">updates floating rate notes that exists</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">EX_REBUILD_LIQUIDITY_POSITIONS</column>
+            <column name="description">position-engine positions that are used for Liquidity management</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">EX_LIQUIDITY_UPGRADE_TASK</column>
+            <column name="description">task to run the various program based upgrade task for Liquidity</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">EX_REPAIR_CTXT_POS_OFFICIALPL</column>
+            <column name="description">Task to update row with a constant block id for duplicate rows with same position key and multiple block ids</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">EOD_CONTEXT_POSITION</column>
+            <column name="description">Exception to be captured on TaskStation when Scheduled task is executed</column>
+        </row>  
+        <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">REINITIALIZE_CONTEXT_POSITIONS</column>
+            <column name="description">Exception to be captured on TaskStation when Scheduled task is executed</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">RESET_FLOATING_RATE_NOTES</column>
+            <column name="description">Exception to be captured while updating floating rate notes that exists</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">REBUILD_LIQUIDITY_POSITIONS</column>
+            <column name="description">Exception to be captured while rebuilding positions for liquidity management</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">LIQUIDITY_UPGRADE_TASK</column>
+            <column name="description">Exception to be captured during Liquidity Program based Upgrade tasks</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">exceptionType</column>
+            <column name="value">REPAIR_CTXT_POS_OFFICIALPL</column>
+            <column name="description">Exception to be captured on TaskStation when Scheduled task is executed</column>
+        </row> 
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">FTP_ACCRUAL_GENERATION</column>
+            <column name="description">Exception while generating accruals for a Trade.</column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">FTP_COST_CONVERSION_CALCULATION</column>
+            <column name="description">Exception while converting rate into index conventions for a Trade</column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">FTP_COST_CALCULATION</column>
+            <column name="description">Exception while calculating the cost for a trade cost component.</column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventType</column>
+            <column name="value">FTP_SYNTHETIC_TRADE_EXPLODE</column>
+            <column name="description">Exception while creating/publishing synthetic trades.</column>
+        </row>     
+    </table>
+    <table name="pricer_measure" xmlns="">
+        <row cat="Required">
+            <column name="measure_name">FTP_ALL_IN_RATE</column>
+            <column name="measure_class_name">tk.pricer.PricerMeasureFTPAllInRate</column>
+            <column name="measure_id">414</column>
+        </row>
+    </table>
+    <table name="calypso_cache" xmlns="">
+		<row cat="Required">
+			<column name="cache_limit">10000</column>
+			<column name="app_name">DefaultClient</column>
+			<column name="limit_name">LiquidityFRNKey</column>
+			<column name="expiration">0</column>
+			<column name="implementation">NonTransactional</column>
+			<column name="eviction">LFU</column>
+		</row>
+		<row cat="Required">
+			<column name="cache_limit">10000</column>
+			<column name="app_name">DefaultClient</column>
+			<column name="limit_name">LiquidityFRNId</column>
+			<column name="expiration">0</column>
+			<column name="implementation">NonTransactional</column>
+			<column name="eviction">LFU</column>
+		</row>
+		<row cat="Required">
+			<column name="cache_limit">10000</column>
+			<column name="app_name">DefaultServer</column>
+			<column name="limit_name">LiquidityFRNId</column>
+			<column name="expiration">0</column>
+			<column name="implementation">Calypso</column>
+			<column name="eviction">LFU</column>
+		</row>
+		<row cat="Required">
+			<column name="cache_limit">10000</column>
+			<column name="app_name">DefaultClient</column>
+			<column name="limit_name">LiquidityTimeDistribution</column>
+			<column name="expiration">0</column>
+			<column name="implementation">NonTransactional</column>
+			<column name="eviction">LFU</column>
+		</row>
+	</table>
+	<table name="referring_object" xmlns="">
+        <row cat="Required">
+            <column name="rfg_obj_id">701</column>
+            <column name="ref_obj_id">1</column>
+            <column name="rfg_tbl_name">ftp_cost_component_rule</column>
+            <column name="rfg_tbl_sel_cols">id</column>
+            <column name="rfg_tbl_sel_types">1</column>
+            <column name="rfg_tbl_join_cols">sd_filter_name</column>
+            <column name="rfg_obj_class_name">CostComponentRule</column>
+            <column name="rfg_obj_window">apps.ftp.FTPConfigurationPanel</column>
+            <column name="rfg_obj_desc">Liquidity FTP Cost Component Rule</column>
+        </row>
+    </table>
+    <table name="book_attribute" xmlns="">
+        <row cat="Required">
+            <column name="attribute_name">TreasuryBankingBook</column>
+            <column name="comments">For specifying if the book is a treasury banking book.</column>
+        </row>
+	</table>            
+</database>

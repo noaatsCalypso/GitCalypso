@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommodityOption_Amendment_RT.xml</column>
+			<column name="description" />
+		</row>
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommodityOption_Amendment_Snapshot.xml</column>
+			<column name="description" />
+		</row>
+
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommodityOption_NewTrade_Confirm.xml</column>
+			<column name="description" />
+		</row>
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommodityOption_NewTrade_PET.xml</column>
+			<column name="description" />
+		</row>
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommodityOption_NewTrade_RT.xml</column>
+			<column name="description" />
+		</row>
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommodityOption_NewTrade_Snapshot.xml</column>
+			<column name="description" />
+		</row>
+
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommodityOption_NovationFee_RT.xml</column>
+			<column name="description" />
+		</row>
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommodityOption_NovationTrade.xml</column>
+			<column name="description" />
+		</row>
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommodityOption_NovationTrade_Confirm.xml</column>
+			<column name="description" />
+		</row>
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommodityOption_NovationTrade_PET.xml</column>
+			<column name="description" />
+		</row>
+
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommodityOption_Termination_Confirm.xml</column>
+			<column name="description" />
+		</row>
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommodityOption_Termination_RT.xml</column>
+			<column name="description" />
+		</row>
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommodityOption_Termination_Snapshot.xml</column>
+			<column name="description" />
+		</row>
+
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommoditySwap_Amendment_RT.xml</column>
+			<column name="description" />
+		</row>
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommoditySwap_Amendment_Snapshot.xml</column>
+			<column name="description" />
+		</row>
+
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommoditySwap_NewTrade_Confirm.xml</column>
+			<column name="description" />
+		</row>
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommoditySwap_NewTrade_PET.xml</column>
+			<column name="description" />
+		</row>
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommoditySwap_NewTrade_RT.xml</column>
+			<column name="description" />
+		</row>
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommoditySwap_NewTrade_Snapshot.xml</column>
+			<column name="description" />
+		</row>
+
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommoditySwap_NovationFee_RT.xml</column>
+			<column name="description" />
+		</row>
+
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommoditySwap_NovationTrade_Confirm.xml</column>
+			<column name="description" />
+		</row>
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommoditySwap_NovationTrade_PET.xml</column>
+			<column name="description" />
+		</row>
+
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommoditySwap_Termination_Confirm.xml</column>
+			<column name="description" />
+		</row>
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommoditySwap_Termination_RT.xml</column>
+			<column name="description" />
+		</row>
+		<row cat="DTCC GTR Domain (required)">
+			<column name="name">DTCCGTR.Templates</column>
+			<column name="value">CommoditySwap_Termination_Snapshot.xml</column>
+			<column name="description" />
+		</row>
+
+	</table>
+
+	<table name="calypso_hierarchy" xmlns="">
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="tree_name">GTR-BASE</column>
+			<column name="tree_type">COMMODITIES</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="tree_name">GTR-ISDA</column>
+			<column name="tree_type">COMMODITIES</column>
+		</row>
+	</table>
+
+	<table name="calypso_hierarchy_node" xmlns="">
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">200</column>
+			<column name="node_name">GTR-ISDA</column>
+			<column name="parent_node_id">0</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">201</column>
+			<column name="node_name">Agricultural</column>
+			<column name="parent_node_id">200</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">202</column>
+			<column name="node_name">Energy</column>
+			<column name="parent_node_id">200</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">203</column>
+			<column name="node_name">Environmental</column>
+			<column name="parent_node_id">200</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">204</column>
+			<column name="node_name">Freight</column>
+			<column name="parent_node_id">200</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">205</column>
+			<column name="node_name">Index</column>
+			<column name="parent_node_id">200</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">206</column>
+			<column name="node_name">Metals</column>
+			<column name="parent_node_id">200</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">207</column>
+			<column name="node_name">MultiCommodityExotic</column>
+			<column name="parent_node_id">200</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">208</column>
+			<column name="node_name">Coal</column>
+			<column name="parent_node_id">202</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">209</column>
+			<column name="node_name">Dairy</column>
+			<column name="parent_node_id">201</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">210</column>
+			<column name="node_name">Elec</column>
+			<column name="parent_node_id">202</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">211</column>
+			<column name="node_name">Emissions</column>
+			<column name="parent_node_id">203</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">212</column>
+			<column name="node_name">Forestry</column>
+			<column name="parent_node_id">201</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">213</column>
+			<column name="node_name">GrainsOilseeds</column>
+			<column name="parent_node_id">201</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">214</column>
+			<column name="node_name">InterEnergy</column>
+			<column name="parent_node_id">202</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">215</column>
+			<column name="node_name">Livestock</column>
+			<column name="parent_node_id">201</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">216</column>
+			<column name="node_name">NatGas</column>
+			<column name="parent_node_id">202</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">217</column>
+			<column name="node_name">NONE</column>
+			<column name="parent_node_id">205</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">218</column>
+			<column name="node_name">NONE</column>
+			<column name="parent_node_id">204</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">219</column>
+			<column name="node_name">NONE</column>
+			<column name="parent_node_id">207</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">220</column>
+			<column name="node_name">NonPrecious</column>
+			<column name="parent_node_id">206</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">221</column>
+			<column name="node_name">Oil</column>
+			<column name="parent_node_id">202</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">222</column>
+			<column name="node_name">Precious</column>
+			<column name="parent_node_id">206</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">223</column>
+			<column name="node_name">Softs</column>
+			<column name="parent_node_id">201</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">504</column>
+			<column name="node_id">224</column>
+			<column name="node_name">Weather</column>
+			<column name="parent_node_id">203</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">300</column>
+			<column name="node_name">GTR-BASE</column>
+			<column name="parent_node_id">0</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">301</column>
+			<column name="node_name">Agricultural</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">302</column>
+			<column name="node_name">Benzene</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">303</column>
+			<column name="node_name">Coal</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">304</column>
+			<column name="node_name">Diesel Fuel</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">305</column>
+			<column name="node_name">Electricity</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">306</column>
+			<column name="node_name">Emissions Allowances</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">307</column>
+			<column name="node_name">Ethanol and Bio Fuels</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">308</column>
+			<column name="node_name">Freight</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">309</column>
+			<column name="node_name">Fuel Oil</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">310</column>
+			<column name="node_name">Gas Oil</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">311</column>
+			<column name="node_name">Gasoline</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">312</column>
+			<column name="node_name">Heating Oil</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">313</column>
+			<column name="node_name">Jet Fuel</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">314</column>
+			<column name="node_name">Kerosene</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">315</column>
+			<column name="node_name">Metals</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">316</column>
+			<column name="node_name">Methanol</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">317</column>
+			<column name="node_name">Naphtha</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">318</column>
+			<column name="node_name">Natural Gas</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">319</column>
+			<column name="node_name">NGL</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">320</column>
+			<column name="node_name">Oil</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">321</column>
+			<column name="node_name">Paper</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">322</column>
+			<column name="node_name">Plastic</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">323</column>
+			<column name="node_name">Weather</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">324</column>
+			<column name="node_name">Bullion</column>
+			<column name="parent_node_id">300</column>
+		</row>
+		<row cat="DTCC GTR Commodity (required)">
+			<column name="tree_id">505</column>
+			<column name="node_id">325</column>
+			<column name="node_name">Composite Commodity Indices</column>
+			<column name="parent_node_id">300</column>
+		</row>
+	</table>
+</database>

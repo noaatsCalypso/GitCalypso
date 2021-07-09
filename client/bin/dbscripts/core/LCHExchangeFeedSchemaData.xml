@@ -1,0 +1,1535 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+		<row cat="exchange_feed_lch">
+			<column name="name">UploadAllowedAmendActions</column>
+			<column name="value">CCP_EXERCISE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">UploadAllowedAmendActions</column>
+			<column name="value">CCP_EXPIRE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">UploadMessageSourceTypes</column>
+			<column name="value">LCH</column>
+			<column name="description">FpML</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">domainName</column>
+			<column name="value">TradeUpdate.LCH.clearingStatus</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">domainName</column>
+			<column name="value">keyword.CCPClassification</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">keyword.CCPClassification</column>
+			<column name="value">CTM</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">keyword.CCPClassification</column>
+			<column name="value">STM</column>
+			<column name="description"></column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="name">domainName</column>
+			<column name="value">keyword.CCPDuoCompression</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">keyword.CCPDuoCompression</column>
+			<column name="value">DuoExcluded</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">keyword.CCPDuoCompression</column>
+			<column name="value">DuoIncluded</column>
+			<column name="description"></column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="name">domainName</column>
+			<column name="value">keyword.CCPNettingCategory</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">keyword.CCPNettingCategory</column>
+			<column name="value">BlendedNettingPermitted</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="exchange_feed_lch">
+			<column name="name">domainName</column>
+			<column name="value">LCHNonEconomicUpdateKeywords</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHNonEconomicUpdateKeywords</column>
+			<column name="value">CCPClassification</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHNonEconomicUpdateKeywords</column>
+			<column name="value">CCPDuoCompression</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHNonEconomicUpdateKeywords</column>
+			<column name="value">CCPNettingCategory</column>
+			<column name="description"></column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="name">TradeUpdate.LCH.clearingStatus</column>
+			<column name="value">BKLWaitingValuation</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">TradeUpdate.LCH.clearingStatus</column>
+			<column name="value">BKLWaitingCollateral</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPClearedDatetime</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">BlockUSIPrefix</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">BlockUSIValue</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">BlockUTIPrefix</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">BlockUTIValue</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPBackLoad</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPStatus</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">domainName</column>
+			<column name="value">MsgAttributes.StateName</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">domainName</column>
+			<column name="value">LCHD2DAcceptStatus</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHD2DAcceptStatus</column>
+			<column name="value">Registered</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHD2DAcceptStatus</column>
+			<column name="value">Parked</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHD2DAcceptStatus</column>
+			<column name="value">Accepted/Pending</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes.StateName</column>
+			<column name="value">Registered</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">MbrMnemonic</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">Party_A_SdMnemonic</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">Party_B_Sdmnemonic</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">Party_A_SdTradeId</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">LchMatchedTradeRef</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">LchRegistrationDateTime</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">StateName</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">GeneratedMessage</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">MatchingService</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">ExternalSourceRef</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">GatewayReceivedDateTime</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">CompressionRunTrade</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">CurrentStatusDateTime</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">PreviousSdTradeId</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TradeGroup</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TradeMarginRun</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">ProductType</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">EID</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">LID</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">BID</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">NettingEligible</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">ExecutionVenue</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">ExecutionVenue</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">ClearingMemberTradeId</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">Cleared_USI_Prefix</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">Cleared_USI_Value</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">Prior_USI_Prefix</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">Prior_USI_Value</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">UPI</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">Party_A_LEI</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">Party_B_LEI</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">SDR</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes.Connector</column>
+			<column name="value">LCH</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes.Connector</column>
+			<column name="value">LCH_FRA</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">domainName</column>
+			<column name="value">LCHCalypsoMapping.Types</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">RequestUpdateCategoryScheme</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">SpreadCalculationMethod</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">XML.Templates</column>
+			<column name="value">LCHBridgeClearingAck</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">XML.Templates</column>
+			<column name="value">LCHBridgeConsentAck</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">XML.Templates</column>
+			<column name="value">LCHBridgeConsentGranted</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">XML.Templates</column>
+			<column name="value">LCHBridgeConsentRefused</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">XML.Templates</column>
+			<column name="value">LCHBridgeTradeReferenceInformationUpdate</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ZCFixedNotional</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">USIValue</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">USIPrefix</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">UTIValue</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">UTIPrefix</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CreditApprover</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CreditApprovalId</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ReportingCFTCJurisdiction</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ReportingESMAJurisdiction</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPClearedDatetime</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPNettingCategory</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPClassification</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPDuoCompression</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">scheduledTask</column>
+			<column name="value">LCH_NETTING_COMPLETE_CHECK</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">scheduledTask</column>
+			<column name="value">LCH_D2D_TRADE_LOADER</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">IndexTenor</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">Frequency</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">InterestCompoundingMethod</column>
+			<column name="description"></column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">QuoteMeasureType</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">CCP</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">addressMethod</column>
+			<column name="value">LCH</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">addressMethod</column>
+			<column name="value">LCH_FRA</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">leAttributeType</column>
+			<column name="value">LCH_CPTY</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">DiscountingMethod</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">DateRoll</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">DayCount</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">Holidays</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">KeywordName</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">KeywordValue</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">Products</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">RateIndex</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">RateIndexSource</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">RollDay</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">StubPeriod</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">TradeTemplate</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">Workflow</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">ProductSubType</column>
+			<column name="description"></column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">Fees</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">CounterpartyAttributeIdentifier</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">contactType</column>
+			<column name="value">LCH</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeAction</column>
+			<column name="value">NON_ECO_UPDATE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">ExternalReference</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">LCHCalypsoMapping.Types</column>
+			<column name="value">FXReset</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="description"></column>
+			<column name="value">Translator</column>
+			<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="description"></column>
+			<column name="value">TimeZone</column>
+			<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+	</table>
+	<table name="calypso_mapping" xmlns="">
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_value">NON</column>
+			<column name="calypso_value">NON</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_value">1M</column>
+			<column name="calypso_value">MTH</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_value">3M</column>
+			<column name="calypso_value">QTR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_value">6M</column>
+			<column name="calypso_value">SA</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_value">1Y</column>
+			<column name="calypso_value">PA</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_value">1T</column>
+			<column name="calypso_value">ZC</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">IndexTenor</column>
+			<column name="interface_value">12M</column>
+			<column name="calypso_value">1Y</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">DiscountingMethod</column>
+			<column name="interface_value">NONE</column>
+			<column name="calypso_value">NONE</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">DiscountingMethod</column>
+			<column name="interface_value">ISDA</column>
+			<column name="calypso_value">FWD_DISC</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">DiscountingMethod</column>
+			<column name="interface_value">AFMA</column>
+			<column name="calypso_value">DUAL_DISC</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">DiscountingMethod</column>
+			<column name="interface_value">ISDAYield</column>
+			<column name="calypso_value">DUAL_DISC</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Fees</column>
+			<column name="interface_value">PartialTermination</column>
+			<column name="calypso_value">TERMINATION_FEE</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Fees</column>
+			<column name="interface_value">UpfrontFee</column>
+			<column name="calypso_value">UPFRONT_FEE</column>
+			<column name="reverse_b">0</column>
+		</row>
+
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">InterestCompoundingMethod</column>
+			<column name="interface_value">Flat</column>
+			<column name="calypso_value">Flat</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">InterestCompoundingMethod</column>
+			<column name="interface_value">None</column>
+			<column name="calypso_value">NoCmp</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">InterestCompoundingMethod</column>
+			<column name="interface_value">NoCmp</column>
+			<column name="calypso_value">NoCmp</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">InterestCompoundingMethod</column>
+			<column name="interface_value">Straight</column>
+			<column name="calypso_value">Spread</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">DateRoll</column>
+			<column name="interface_value">MODFOLLOWING</column>
+			<column name="calypso_value">MOD_FOLLOW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_value">GBLO</column>
+			<column name="calypso_value">LON</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_value">USNY</column>
+			<column name="calypso_value">NYC</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_value">NYFD</column>
+			<column name="calypso_value">NYC</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_value">EUTA</column>
+			<column name="calypso_value">TARGET</column>
+			<column name="reverse_b">0</column>
+		</row>
+
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Products</column>
+			<column name="interface_value">swap</column>
+			<column name="calypso_value">Swap</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Products</column>
+			<column name="interface_value">InterestRateSwap</column>
+			<column name="calypso_value">Swap</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Products</column>
+			<column name="interface_value">ForeignExchange:NDF</column>
+			<column name="calypso_value">FXNDF</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">ProductType</column>
+			<column name="interface_value">ForeignExchange:NDF</column>
+			<column name="calypso_value">FXNDF</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">TransferInTrade</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">AutoConsentTrade</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">GRANT</column>
+			<column name="calypso_value">CLEAR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">TransferOutTrade</column>
+			<column name="calypso_value">CLEAR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">CLEARED</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">TERMINATED</column>
+			<column name="calypso_value">TERMINATE</column>
+			<column name="reverse_b">0</column>
+		</row>
+
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">CCP Account Reference</column>
+			<column name="calypso_value">CCPAccountReference</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">Cleared Date</column>
+			<column name="calypso_value">CCPClearedDate</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">platform_trade_id</column>
+			<column name="calypso_value">PlatformTradeId</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_value">ACT/365.FIXED</column>
+			<column name="calypso_value">ACT/365</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_value">30/360</column>
+			<column name="calypso_value">30/360</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_value">30E/360</column>
+			<column name="calypso_value">30/360</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_value">30E/360.ISDA</column>
+			<column name="calypso_value">30/360</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">RollDay</column>
+			<column name="interface_value">IMM</column>
+			<column name="calypso_value">-10</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">RollDay</column>
+			<column name="interface_value">EOM</column>
+			<column name="calypso_value">31</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">RollDay</column>
+			<column name="interface_value">NONE</column>
+			<column name="calypso_value">0</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">LIBOR-BBA</column>
+			<column name="calypso_value">LIBOR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">Federal Funds-H.15-OIS-COMPOUND</column>
+			<column name="calypso_value">FEDFUNDS</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">RateIndexSource</column>
+			<column name="interface_value">LIBOR-BBA</column>
+			<column name="calypso_value">BBA</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">RateIndexSource</column>
+			<column name="interface_value">Federal Funds-H.15-OIS-COMPOUND</column>
+			<column name="calypso_value">FEDFUNDS1</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">DateRoll</column>
+			<column name="interface_value">FOLLOWING</column>
+			<column name="calypso_value">FOLLOWING</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">DateRoll</column>
+			<column name="interface_value">NONE</column>
+			<column name="calypso_value">NO_CHANGE</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">StubPeriod</column>
+			<column name="interface_value">ShortInitial</column>
+			<column name="calypso_value">SPECIFIC FIRST</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">StubPeriod</column>
+			<column name="interface_value">ShortFinal</column>
+			<column name="calypso_value">SPECIFIC LAST</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">StubPeriod</column>
+			<column name="interface_value">LongInitial</column>
+			<column name="calypso_value">SPECIFIC FIRST</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">StubPeriod</column>
+			<column name="interface_value">LongFinal</column>
+			<column name="calypso_value">SPECIFIC LAST</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">StubPeriod</column>
+			<column name="interface_value">Both Initial and Final</column>
+			<column name="calypso_value">NONE</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">AMEND</column>
+			<column name="calypso_value">AMEND</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">NEW</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">Clearing</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">BlockTrade</column>
+			<column name="calypso_value">CLEAR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">AllocationTrade</column>
+			<column name="calypso_value">CLEAR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">CLEAR</column>
+			<column name="calypso_value">CLEAR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">Trade</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">NetPositionTrade</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">TERMINATE</column>
+			<column name="calypso_value">TERMINATE</column>
+			<column name="reverse_b">0</column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">TransferOutClearing</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">TransferInClearing</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>				
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">REFUSE</column>
+			<column name="calypso_value">REFUSE</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">Status.BlockTrade</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">Status.AllocationTrade</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">Status.NetPositionTrade</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">Status.Registered</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">Status.TransferInClearing</column>
+			<column name="calypso_value">ALLEGED</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">Status.TransferOutClearing</column>
+			<column name="calypso_value">ALLEGED</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">Status.TransferInTrade</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">Status.Trade</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">CCPStatus.BlockTrade</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">CCPStatus.AllocationTrade</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">CCPStatus.NetPositionTrade</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">CCPStatus.Registered</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">CCPStatus.TransferInClearing</column>
+			<column name="calypso_value">ALLEGED</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">CCPStatus.TransferOutClearing</column>
+			<column name="calypso_value">ALLEGED</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">CCPStatus.TransferInTrade</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">CCPStatus.Trade</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">CCPOriginCode.CUST</column>
+			<column name="calypso_value">CLIENT</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">CCPOriginCode.HOUS</column>
+			<column name="calypso_value">HOUSE</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">ProductSubType</column>
+			<column name="interface_value">BasisSwap</column>
+			<column name="calypso_value">BasisSwap</column>
+			<column name="reverse_b">0</column>
+		</row>
+		
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">AmendOffset</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">AmendReplace</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">NetPositionTrade_Tri</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">NetPositionTrade_Duo</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">RequestUpdateCategoryScheme</column>
+			<column name="interface_value">CCPClassification</column>
+			<column name="calypso_value">http://www.lchclearnet.com/clearlink/coding-scheme/trade-classification</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">RequestUpdateCategoryScheme</column>
+			<column name="interface_value">CCPDuoCompression</column>
+			<column name="calypso_value">http://www.lchclearnet.com/clearlink/coding-scheme/category/duo-compression</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">RequestUpdateCategoryScheme</column>
+			<column name="interface_value">CCPNettingCategory</column>
+			<column name="calypso_value">http://www.lchclearnet.com/clearlink/coding-scheme/category</column>
+			<column name="reverse_b">0</column>
+		</row>			
+		<row cat="exchange_feed_lch">
+			<column name="interface_name">LCH</column>
+			<column name="type_name">ExternalReference</column>
+			<column name="interface_value">LCH</column>
+			<column name="calypso_value">LCH</column>
+			<column name="reverse_b">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="calypso_value"></column>
+			<column name="interface_value">UseResetAdjustmentsTag</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">LCH</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="calypso_value"></column>
+			<column name="interface_value">ApplyIndirectCurrencyforFXNDFNettingRemnant</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">LCH</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="calypso_value">Par/Par</column>
+			<column name="interface_value">ParPar</column>
+			<column name="type_name">SpreadCalculationMethod</column>
+			<column name="interface_name">LCH</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="calypso_value">Dirty Price</column>
+			<column name="interface_value">Proceeds</column>
+			<column name="type_name">SpreadCalculationMethod</column>
+			<column name="interface_name">LCH</column>
+			<column name="reverse_b">0</column>
+		</row>
+	</table>
+	<table name="sd_filter" xmlns="">
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHExchangeFeedTrade</column>
+			<column name="comments"></column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHClearingAck</column>
+			<column name="comments"></column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHNewClear</column>
+			<column name="comments"></column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHTransferOutRejected</column>
+			<column name="comments"></column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHTransferOutClearing</column>
+			<column name="comments"></column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">NonCancelSubActionMsg</column>
+			<column name="comments"></column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHTradeReferenceInformationUpdate</column>
+			<column name="comments"></column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>	
+	</table>
+	<table name="sd_filter_domain" xmlns="">	
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHExchangeFeedTrade</column>
+			<column name="element_name">KEYWORD.IS_CLIENT</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">false</column>
+		</row>						
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHClearingAck</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">isLCHNewClear</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHClearingAck</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">isLCHTransferOutRejected</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">NonCancelSubActionMsg</column>
+			<column name="element_name">Message Sub Action</column>
+			<column name="element_type">2</column>
+			<column name="domain_value">CANCEL</column>
+		</row>
+		
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHTradeReferenceInformationUpdate</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">isLCHExchangeFeedTrade</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHTradeReferenceInformationUpdate</column>
+			<column name="element_name">Trade Action</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">NON_ECO_UPDATE</column>
+		</row>	
+	</table>
+	<table name="sd_filter_element" xmlns="">
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHExchangeFeedTrade</column>
+			<column name="element_name">KEYWORD.IS_CLIENT</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value"/>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHExchangeFeedTrade</column>
+			<column name="element_name">KEYWORD.CCP</column>
+			<column name="element_type">9</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value">LCH</column>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">FCM_LCH-Status-NEW</column>
+			<column name="element_name">KEYWORD.Status</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value"/>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>				
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">FCM_LCH-Status-NETTING</column>
+			<column name="element_name">KEYWORD.Status</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value"/>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>				
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHNewClear</column>
+			<column name="element_name">KEYWORD.Status</column>
+			<column name="element_type">9</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value">NEW</column>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>				
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHNewClear</column>
+			<column name="element_name">KEYWORD.CCP</column>
+			<column name="element_type">9</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value">LCH</column>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHTransferOutRejected</column>
+			<column name="element_name">KEYWORD.Status</column>
+			<column name="element_type">9</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value">TransferOutClearing REJECTED</column>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>				
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHTransferOutRejected</column>
+			<column name="element_name">KEYWORD.CCP</column>
+			<column name="element_type">9</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value">LCH</column>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHTransferOutClearing</column>
+			<column name="element_name">KEYWORD.Status</column>
+			<column name="element_type">9</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value">TransferOutClearing</column>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>				
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHTransferOutClearing</column>
+			<column name="element_name">KEYWORD.CCP</column>
+			<column name="element_type">9</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value">LCH</column>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>								
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHClearingAck</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value"/>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>								
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">NonCancelSubActionMsg</column>
+			<column name="element_name">Message Sub Action</column>
+			<column name="element_type">2</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value"/>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHTradeReferenceInformationUpdate</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value"/>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isLCHTradeReferenceInformationUpdate</column>
+			<column name="element_name">Trade Action</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value"/>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>								
+	</table>	
+</database>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+		<row cat="domain">
+			<column name="name">CA.generateSecFinanceClaimIdXfer</column>
+			<column name="value">true</column>
+			<column name="description">If true, triggering systematically a 'Yellow transfer' on Bond redemption date=Repo end date. If false, the 'Yellow transfer' must not be created. Note that this blocker must also work if the matured Bond is just one piece of a multi-collateral trade</column>
+		</row>
+        <row cat="startup">
+            <column name="name">scheduledTask</column>
+            <column name="value">PROCESS_CALLABLETRADE</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+			<column name="name">SecFinance.FillType</column>
+			<column name="value">MONEY FILL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="domain">
+			<column name="name">SecFinance.FillType</column>
+			<column name="value">NONE</column>
+			<column name="description"></column>
+		</row>
+	</table>
+	<table name="pricer_measure" xmlns="">
+		<row cat="Required">
+            <column name="measure_name">SEC_FIN_EFFECTIVE_MARGIN</column>
+            <column name="measure_class_name">tk.pricer.SecFinancePricerMeasure</column>
+            <column name="measure_id">600</column>
+            <column name="measure_comment"></column>
+        </row>
+        <row cat="Required">
+            <column name="measure_name">SEC_FIN_NOMINAL_MARGIN</column>
+            <column name="measure_class_name">tk.pricer.SecFinancePricerMeasure</column>
+            <column name="measure_id">601</column>
+            <column name="measure_comment"></column>
+        </row>
+        <row cat="Required">
+            <column name="measure_name">SEC_FIN_UNSETTLED_INTEREST</column>
+            <column name="measure_class_name">tk.pricer.SecFinancePricerMeasure</column>
+            <column name="measure_id">602</column>
+            <column name="measure_comment">Unsettled interest of a SecFinance trade.</column>
+        </row>
+        <row cat="Required">
+            <column name="measure_name">SEC_FIN_SETTLED_INTEREST</column>
+            <column name="measure_class_name">tk.pricer.SecFinancePricerMeasure</column>
+            <column name="measure_id">603</column>
+            <column name="measure_comment">Settled interest of a SecFinance trade.</column>
+        </row>
+		<row cat="Required">
+            <column name="measure_name">SEC_FIN_MATURITY_INTEREST</column>
+            <column name="measure_class_name">tk.pricer.SecFinancePricerMeasure</column>
+            <column name="measure_id">604</column>
+            <column name="measure_comment">Interest at the Maturity of a SecFinance trade.</column>
+        </row>
+		<row cat="Required">
+            <column name="measure_name">SEC_FIN_POOL_PRINCIPAL</column>
+            <column name="measure_class_name">tk.pricer.SecFinancePricerMeasure</column>
+            <column name="measure_id">605</column>
+            <column name="measure_comment"></column>
+        </row>
+        <row cat="Required">
+            <column name="measure_name">SEC_FIN_DELAYED_COUPON</column>
+            <column name="measure_class_name">tk.pricer.SecFinancePricerMeasure</column>
+            <column name="measure_id">606</column>
+            <column name="measure_comment">Bond Coupon Delayed payment at Repo Maturity.</column>
+        </row>
+        <row cat="Required">
+            <column name="measure_name">SEC_FIN_LIABILITY_PRINCIPAL</column>
+            <column name="measure_class_name">tk.pricer.SecFinancePricerMeasure</column>
+            <column name="measure_id">607</column>
+            <column name="measure_comment"></column>
+        </row>
+        <row cat="Required">
+            <column name="measure_name">SEC_FIN_LIABILITY_ACCRUAL</column>
+            <column name="measure_class_name">tk.pricer.SecFinancePricerMeasure</column>
+            <column name="measure_id">608</column>
+            <column name="measure_comment"></column>
+        </row>
+        <row cat="Required">
+            <column name="measure_name">SEC_FIN_FUTURE_PRINCIPAL_FLOWS</column>
+            <column name="measure_class_name">tk.pricer.SecFinancePricerMeasure</column>
+            <column name="measure_id">534</column>
+            <column name="measure_comment">Sum of all future Cash Flows (type Principal)</column>
+        </row>
+	</table>
+</database>

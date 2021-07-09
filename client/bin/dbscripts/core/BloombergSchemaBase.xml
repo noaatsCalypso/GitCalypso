@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+  <table name="bloomberg_values" xmlns="">
+    <column name="typename" nullable="false" scale="255" type="string"/>
+    <column name="name" nullable="false" scale="255" type="string"/>
+    <column name="description" nullable="true" scale="255" type="string"/>
+    <column name="version_num" nullable="false" default="1" scale="1" type="int"/>
+      <index primary="true"> <on>typename</on> <on>name</on>
+      </index>
+  </table>
+  
+  <table name="bloomberg_prepayment" xmlns="">
+	<column name="update_name" nullable="false" default="NONE" scale="255" type="string"/>
+    <column name="product_id" nullable="false" default="1" scale="1" type="int"/>
+    <column name="product_name" nullable="false" default="NONE" scale="255" type="string"/>
+    <column name="prepayment_type" nullable="true" scale="255" type="string"/>
+	<column name="prepayment_speed" nullable="true" scale="255" type="string"/>
+    <column name="version_num" nullable="false" default="1" scale="1" type="int"/>
+      <index primary="true"> <on>update_name</on> <on>product_id</on>
+      </index>
+  </table>
+
+   
+ <table name="bloomberg_flows" xmlns="">
+    <column name="product_id" nullable="false" scale="1" type="int"/>
+    <column name="cf_date" nullable="false" type="timestamp"/>
+    <column name="mkt_sector" nullable="false" scale="255" type="string"/>
+    <column name="interest" nullable="true" scale="1" type="float"/>
+    <column name="principal" nullable="true" scale="1" type="float"/>
+    <column name="remaining_principal" nullable="true" scale="1" type="float"/>
+    <column name="rate" nullable="true" scale="1" type="float"/>
+      <index primary="true"> <on>product_id</on> <on>cf_date</on>
+      </index>
+ </table> 
+    
+
+ <table name="bloom_bond_map" xmlns="">
+    <column name="map_id" nullable="false" scale="1" type="int"/>
+    <column name="bond_type" nullable="false" scale="32" type="string"/>
+    <column name="class_name" nullable="false" scale="255" type="string"/>
+    <column name="template_name" nullable="true" scale="64" type="string"/>
+    <column name="version_num" nullable="false" default="1" scale="1" type="int"/>
+      <index primary="true"> <on>map_id</on>
+        </index>
+ </table>
+    
+
+   <table name="bloom_daycnt_map" xmlns="">
+      <column name="map_id" nullable="false" scale="1" type="int"/>
+      <column name="day_count" nullable="false" scale="32" type="string"/>
+      <column name="acc_day_count" nullable="false" scale="32" type="string"/>
+      <column name="per_rule" nullable="false" scale="32" type="string"/>
+      <column name="date_roll" nullable="false" scale="32" type="string"/>
+      <column name="yield_method" nullable="false" scale="32" type="string"/>
+      <column name="eom_method" nullable="false" scale="32" type="string"/>
+      <column name="version_num" nullable="false" default="1" scale="1" type="int"/>
+ <index primary="true"> <on>map_id</on>
+        </index>
+    </table> 
+   
+ 
+   <table name="bloom_header_opt" xmlns="">
+      <column name="name" nullable="false" scale="32" type="string"/>
+      <column name="program_name" nullable="true" scale="255" type="string"/>
+      <column name="default_value" nullable="true" scale="255" type="string"/>
+      <column name="ftp_status" nullable="true" scale="1" type="int"/>
+      <column name="send_status" nullable="true" scale="1" type="int"/>
+      <column name="description" nullable="true" scale="255" type="string"/>
+      <column name="version_num" nullable="false" default="1" scale="1" type="int"/>
+	 <index primary="true">
+	 	 <on>name</on>
+      </index>
+    </table>
+
+	<table name="bloom_equity_map" xmlns="">
+    	<column name="map_id" nullable="false" scale="1" type="int" />
+        <column name="equity_type" nullable="false" scale="32" type="string" />
+        <column name="class_name" nullable="false" scale="255" type="string" />
+        <column name="template_name" nullable="false" scale="64" type="string" />
+		<index primary="true">
+			<on>map_id</on>
+		</index>
+	</table>
+        
+	<table name="bloomberg_fields" xmlns="">
+		<column name="field_id" nullable="false" scale="32" type="string"/>
+		<column name="field_mnemonic" nullable="false" scale="64" type="string"/>
+		<column name="description" nullable="false" scale="64" type="string"/>
+		<column name="data_license_category" nullable="false" scale="32" type="string"/>
+		<column name="category" nullable="false" scale="32" type="string"/>
+		<column name="definition" nullable="false" scale="128" type="string"/>
+		<column name="iscomodty" nullable="false" scale="1" type="int"/>
+		<column name="isequity" nullable="false" scale="1" type="int"/>
+		<column name="ismuni" nullable="false" scale="1" type="int"/>
+		<column name="ispfd" nullable="false" scale="1" type="int"/>
+		<column name="ismmkt" nullable="false" scale="1" type="int"/>
+		<column name="isgovt" nullable="false" scale="1" type="int"/>
+		<column name="iscorp" nullable="false" scale="1" type="int"/>
+		<column name="isindex" nullable="false" scale="1" type="int"/>
+		<column name="iscurncy" nullable="false" scale="1" type="int"/>
+		<column name="ismtge" nullable="false" scale="1" type="int"/>
+		<column name="standard_width" nullable="false" scale="1" type="int"/>
+		<column name="standard_decimal_places" nullable="false" scale="1" type="int"/>
+		<column name="field_type" nullable="false" scale="16" type="string"/>
+		<column name="isbackoffice" nullable="false" scale="1" type="int"/>
+		<column name="isextendedbackoffice" nullable="false" scale="1" type="int"/>
+		<column name="productiondate" nullable="false" scale="8" type="string"/>
+		<column name="current_max_width" nullable="false" scale="1" type="int"/>
+		<index primary="true">
+	 		<on>field_id</on>
+     	</index>
+		<index primary="false">
+			<on>field_mnemonic</on>
+		</index>
+	</table>
+
+</database>
+
+
+

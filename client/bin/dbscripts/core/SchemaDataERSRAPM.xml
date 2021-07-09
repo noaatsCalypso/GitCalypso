@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+<table name="domain_values" xmlns="">
+   <row cat="ERSRAPM">
+       <column name="name">engineName</column>
+       <column name="value">ERSRAPMEngine</column>
+       <column name="description"></column>
+   </row>
+   <row cat="ERSRAPM">
+       <column name="name">eventClass</column>
+       <column name="value">PSEventRAPMBatch</column>
+       <column name="description"></column>
+   </row>
+   <row cat="ERSRAPM">
+       <column name="name">domainName</column>
+       <column name="value">ERSRAPMResultType</column>
+       <column name="description"></column>
+   </row>
+</table>
+</database>

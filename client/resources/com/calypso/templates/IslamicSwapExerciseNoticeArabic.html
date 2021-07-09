@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+      <meta name="language" content="ar-SA" />
+   </head>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+<!--calypso>
+if ((|PRODUCT_TYPE| == "IslamicSwap")&& (|RECEIVELEG_TYPE| == "Float"))
+   set TRANSACTION_TYPE = "معدل ربح متغير‎";
+else
+   set TRANSACTION_TYPE = "معدل ربح ثابت";
+</calypso-->
+
+
+
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" || |MESSAGE_SUBACTION|== "CANCEL")
+	inline  "Amend and Cancel";
+</calypso-->
+</p>
+
+<p class="header1"> |TRANSACTION_TYPE|  Exercise Notice</p>
+<br>
+<br>
+
+<table width="700" cellpadding="0" style="mso-padding-alt:0cm 0cm 0cm 0cm; font-size:12px">
+            <tr>
+               <td width="350" align="left">Dear Customer,</td>
+               <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>عميلنا العزيز</b>
+               </td>
+            </tr>
+			 <tr>
+               <td width="350" align="left">The Seller hereby confirms to the Buyer that</td>
+               <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>البائع يؤكد بموجبه إلى المشتري أن</b>
+               </td>
+            </tr>
+			 <tr>
+               <td width="350" align="left">the Buyer is hereby required to purchase from the Seller</td>
+               <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>المشتري يشتري من البائع</b>
+               </td>
+            </tr>
+			 <tr>
+               <td width="350" align="left">the following Assets on the following terms:</td>
+               <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>الأصول التالية حسب الشروط التالية</b>
+               </td>
+            </tr>			
+						
+			
+
+ </table>
+<br>
+
+<br>
+
+
+
+<table width="700" cellpadding="0" style="mso-padding-alt:0cm 0cm 0cm 0cm; font-size:12px">
+ <tr>
+               <td width="233">Our Transaction Reference:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|TRADE_ID|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA">رقم المعاملة</span>
+               </td>
+</tr>
+
+ <tr>
+               <td width="233">Exercise Date:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|XFER_ATTR_ExerciseDate|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA">تاريخ الممارسة</span>
+               </td>
+</tr>
+
+
+<!--calypso>
+if (|RECEIVELEG_TYPE| == "Fixed") {
+
+inline "
+
+<tr>
+               <td width='233'>FPR Assets</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVELEG_UNDERLYING_NAME|</b>
+               </td>
+               <td width='233' dir='rtl' align='right'style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>ممتلكات</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>FPR Asset Quantity</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVELEG_UNDERLYING_QUANTITY|</b>
+               </td>
+               <td width='233' dir='rtl' align='right'style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>كمية الممتلكات</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>FPR Asset Price</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVELEG_UNDERLYING_PRICE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right'style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>سعر الممتلكات</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>FPR Asset Value</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVELEG_UNDERLYING_VALUE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right'style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>قيمة الممتلكات</span>
+               </td>
+</tr>
+
+";
+
+}
+</calypso-->
+
+
+<!--calypso>
+if (|RECEIVELEG_TYPE| == "Float") {
+
+inline "
+<tr>
+               <td width='233'>FLPR Assets</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVELEG_UNDERLYING_NAME|</b>
+               </td>
+               <td width='233' dir='rtl' align='right'style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>ممتلكات</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>FLPR Asset Quantity</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVELEG_UNDERLYING_QUANTITY|</b>
+               </td>
+               <td width='233' dir='rtl' align='right'style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>كمية الممتلكات</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>FLPR Asset Price</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVELEG_UNDERLYING_PRICE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right'style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>سعر الممتلكات</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>FLPR Asset Value</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVELEG_UNDERLYING_VALUE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right'style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>قيمة الممتلكات</span>
+               </td>
+</tr>
+
+";
+
+}
+</calypso-->
+
+
+ <tr>
+               <td width="233">Purchase Date:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|PAYCASHFLOW_PURCHASE_DATE|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA">تاريخ الشراء</span>
+               </td>
+</tr>
+
+
+ <tr>
+               <td width="233">Payment Date:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|TRANSFER_VALUEDATE|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA">تاريخ البيع</span>
+               </td>
+</tr>
+
+ <tr>
+               <td width="233">Cost Price:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|SWAP_NOTIONAL|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA">سعر الكلفة</span>
+               </td>
+</tr>
+
+ <tr>
+               <td width="233">Profit:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|TRANSFER_SETTLEMENTCCY| |TRANSFER_SETTLEMENTAMOUNT|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA">العائد</span>
+               </td>
+</tr>
+
+ <tr>
+               <td width="233">Payment Amount:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|TRANSFER_SETTLEMENTCCY| |TRANSFER_SETTLEMENTAMOUNT|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA">تاريخ البيع</span>
+               </td>
+</tr>
+ </table>
+
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

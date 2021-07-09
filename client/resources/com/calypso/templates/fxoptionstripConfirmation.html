@@ -1,0 +1,64 @@
+<!--calypso>
+if (|IS_TOP_LEVEL| == "true" && Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+
+<p>This trade carries our trade id number |TRADE_ID| and the details are as follows:</p>
+
+<p class="header2">Trade details:</p>
+
+<table>
+    <tr>
+        <td width="30%">Our Trade Number</td>
+        <td>|TRADE_ID|</td>
+    </tr>
+    <tr>
+        <td>Operation Type</td>
+        <td>|PRODUCT_TYPE|</td>
+    </tr>
+    <tr>
+        <td>Instrument Description</td>
+        <td>|PRODUCT_DESCRIPTION|</td>
+    </tr>
+    <tr>
+        <td>Trade Date</td>
+        <td>|TRADE_DATE|</td>
+    </tr>
+</table>
+
+<br><br>
+
+<table>
+<tr>
+    <th class="smallfont">Sub ID</th>
+    <th class="smallfont">Buyer</th>
+    <th class="smallfont">Seller</th>
+    <th class="smallfont">Option Type/Style</th>
+    <th class="smallfont">Call Amount</th>
+    <th class="smallfont">Put Amount</th>
+    <th class="smallfont">Strike</th>
+    <th class="smallfont">Knock In/Out Level</th>
+    <th class="smallfont">Expiry Date & Time</th>
+    <th class="smallfont">Settlement Date</th>
+    <th class="smallfont">Premium Amount</th>
+</tr>
+<!--calypso>
+iterator ("FXOptionStrip")
+    include "fxOption_tabular.html";
+</calypso-->
+</table>
+
+<br><br>
+
+<p>Please sign and
+return this Confirmation at your earliest convenience. Because of the
+importance of confirming transactions promptly and accurately, we regret that
+any Confirmations which are not signed and returned as soon as possible may
+result in a delay in payments.</p>
+
+
+<!--calypso>
+if (|IS_TOP_LEVEL| == "true" && Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

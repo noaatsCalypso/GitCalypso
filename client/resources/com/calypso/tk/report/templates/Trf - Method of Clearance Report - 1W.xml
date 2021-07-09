@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<reportTemplates>
+    <reportTemplate>
+        <reportType>Transfer</reportType>
+        <name>Trf - Method of Clearance (MOC) Report - 1W</name>
+        <isHidden>false</isHidden>
+        <isPrivate>false</isPrivate>
+        <user>calypso_user</user>
+        <attributes>
+            <attribute>
+                <attributeName>AggregatedFlag</attributeName>
+                <attributeValue>false</attributeValue>
+                <attributeClass>Boolean</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>AttrJoinQuery</attributeName>
+                <attributeValue> xfer_attributes.transfer_id = bo_transfer.transfer_id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>AttrNameColumn</attributeName>
+                <attributeValue>xfer_attributes.attr_name</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>AttrValueColumn</attributeName>
+                <attributeValue>xfer_attributes.attr_value</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>CaseInsensitiveTextSort</attributeName>
+                <attributeValue>false</attributeValue>
+                <attributeClass>Boolean</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Book</attributeName>
+                <attributeValue>Book</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_CounterParty</attributeName>
+                <attributeValue>Counterparty</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Message Id</attributeName>
+                <attributeValue>Message Id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Money Amount</attributeName>
+                <attributeValue>Money Amount</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Nominal (Par)</attributeName>
+                <attributeValue>Nominal (Par)</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_PO Agent</attributeName>
+                <attributeValue>PO Agent</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_PO Settle Method</attributeName>
+                <attributeValue>Settlement Method</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Payment Status</attributeName>
+                <attributeValue>Payment Status</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Processing Org</attributeName>
+                <attributeValue>PO</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Settle Date</attributeName>
+                <attributeValue>Settlement Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_SettleCurrency</attributeName>
+                <attributeValue>Ccy</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Trade Id</attributeName>
+                <attributeValue>Trade Id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Trade Type</attributeName>
+                <attributeValue>Trade Type</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Transfer Status</attributeName>
+                <attributeValue>Status</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Transfer Type</attributeName>
+                <attributeValue>Transfer Type</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Transfer_id</attributeName>
+                <attributeValue>Transfer_id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Value Date</attributeName>
+                <attributeValue>Value Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Xfer Our Agent Account</attributeName>
+                <attributeValue>PO Agent Account</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Xfer Pay/Rec</attributeName>
+                <attributeValue>Pay/Rec</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns0</attributeName>
+                <attributeValue>Processing Org</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns1</attributeName>
+                <attributeValue>PO Agent</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns10</attributeName>
+                <attributeValue>Settle Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns11</attributeName>
+                <attributeValue>Trade Id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns12</attributeName>
+                <attributeValue>Trade Type</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns13</attributeName>
+                <attributeValue>Transfer Type</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns14</attributeName>
+                <attributeValue>PO Settle Method</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns15</attributeName>
+                <attributeValue>Transfer_id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns16</attributeName>
+                <attributeValue>Message Id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns17</attributeName>
+                <attributeValue>Book</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns2</attributeName>
+                <attributeValue>Xfer Our Agent Account</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns3</attributeName>
+                <attributeValue>Transfer Status</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns4</attributeName>
+                <attributeValue>Xfer Pay/Rec</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns5</attributeName>
+                <attributeValue>SettleCurrency</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns6</attributeName>
+                <attributeValue>Nominal (Par)</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns7</attributeName>
+                <attributeValue>Money Amount</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns8</attributeName>
+                <attributeValue>CounterParty</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns9</attributeName>
+                <attributeValue>Value Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns_COUNT</attributeName>
+                <attributeValue>18</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>DATETYPE</attributeName>
+                <attributeValue>ValueDate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Description</attributeName>
+                <attributeValue>MOC Report - 1W</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>EndPlus</attributeName>
+                <attributeValue>+</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>EndTenor</attributeName>
+                <attributeValue>1W</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>EventType</attributeName>
+                <attributeValue>SEC_DELIVERY,SEC_RECEIPT</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Holidays</attributeName>
+                <attributeValue>NYC</attributeValue>
+                <attributeClass>Vector</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>PaymentType</attributeName>
+                <attributeValue>ALL</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SecCode</attributeName>
+                <attributeValue>CUSIP</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns0</attributeName>
+                <attributeValue>Processing Org</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns1</attributeName>
+                <attributeValue>PO Agent</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns2</attributeName>
+                <attributeValue>Xfer Our Agent Account</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns3</attributeName>
+                <attributeValue>Transfer Status</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns4</attributeName>
+                <attributeValue>Xfer Pay/Rec</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns5</attributeName>
+                <attributeValue>Money Amount</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns_COUNT</attributeName>
+                <attributeValue>6</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders0</attributeName>
+                <attributeValue>0.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders1</attributeName>
+                <attributeValue>1.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders2</attributeName>
+                <attributeValue>2.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders3</attributeName>
+                <attributeValue>3.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders4</attributeName>
+                <attributeValue>4.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders5</attributeName>
+                <attributeValue>5.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders_COUNT</attributeName>
+                <attributeValue>6</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>StartPlus</attributeName>
+                <attributeValue>+</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>StartTenor</attributeName>
+                <attributeValue>0D</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Status</attributeName>
+                <attributeValue>SETTLED,VERIFIED</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Subheadings0</attributeName>
+                <attributeValue>Processing Org</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Subheadings1</attributeName>
+                <attributeValue>PO Agent</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Subheadings2</attributeName>
+                <attributeValue>Xfer Our Agent Account</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Subheadings3</attributeName>
+                <attributeValue>Xfer Pay/Rec</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Subheadings_COUNT</attributeName>
+                <attributeValue>4</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Subtotals0</attributeName>
+                <attributeValue>Money Amount</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Subtotals_COUNT</attributeName>
+                <attributeValue>1</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Title</attributeName>
+                <attributeValue>MOC Report - 1W</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>earlyLate</attributeName>
+                <attributeValue>ALL</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+        </attributes>
+    </reportTemplate>
+</reportTemplates>
+

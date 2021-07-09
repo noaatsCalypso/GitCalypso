@@ -1,0 +1,31 @@
+# Import Message Engine (MQ)
+
+input.queue.name=dynamicQueues/input
+dynamicQueues/input.queue.setContext=true
+
+
+# Sender Engine (JMS)
+
+#For ActiveMQ
+jms.url=tcp://localhost:61616
+jms.modetypeclass=org.apache.activemq.jndi.ActiveMQInitialContextFactory
+jms.queue.connectionFactory=ConnectionFactory
+
+#For IBMMQ
+#messagingPlatform=IBMMQ
+#jms.url=file://localhost/c:/tools/ibm/mqs/binding
+#jms.modetypeclass=com.sun.jndi.fscontext.RefFSContextFactory
+#jms.queue.connectionFactory=QueueConnectionFactory
+
+output.queue.name=dynamicQueues/output
+dynamicQueues/output.queue.ackType=auto
+dynamicQueues/output.queue.persist=true
+dynamicQueues/output.queue.transacted=false
+
+#IBM SSL Support
+#sslVersion=SSLV3
+#sslKeystore=<KeyStore certificate>
+#sslKeystorePassword=<KeyStore Password>
+#sslTrustStore=<TrustStore Certificate>
+#sslTrustStorePassword=<TrustStore Password>
+#sslCipherSuite=<Cipher Spec specified on channel>

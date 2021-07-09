@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+<bean id="ApplicationConfiguration.Base" class="com.calypso.infra.configuration.ApplicationConfiguration">
+	<property name="configurations">
+		<list>
+			<value>JMXConfig.xml</value>
+		</list>
+	</property>
+</bean>
+
+<!--
+ This file contains configuration used to configure all applications.
+ WARNING: Modification to this file is not permitted by Calypso clients and will result
+ in a system that will not be supported.
+ -->
+ <bean id="ApplicationConfiguration.DataServer" parent="ApplicationConfiguration.Base">
+ 	<property name="client" value="false" />
+ 	<property name="configurations">
+ 		<list merge="true">
+
+ 			<!--
+ 			The following are additional configuration files referenced
+ 			 -->
+ 			<value>PropertyConfiguration.xml</value>
+ 			<value>AuthenticationClient.xml</value>
+ 			<value>AuthenticationClient.proxy.xml</value>
+			<value>RMIInvocationHandlers.xml</value>
+ 			<value>LoginHandler.xml</value>
+ 			<value>TenantDependentBeans.xml</value>
+ 			<value>RMIClientProxy.xml</value>
+ 			<value>ServerContext.xml</value>
+ 			<value>Security.xml</value>
+ 			<value>DSEventPublisher.xml</value>
+ 			<value>EventServerClient.xml</value>
+			<value>DataServerScheduleJobs.xml</value>
+			<value>AdminEventPublisher.xml</value>
+
+			<!--
+			Event server may be started within the data server for backward
+			compatibility.  To do so, uncomment the following line
+			<value>EventServer.xml</value>
+ 			-->
+
+ 			<!--
+ 				The next section contain the services to be started on Data Server startup.
+
+ 				Required services are defined as <value>ConfigName.config.xml</value>.  Doing so
+ 				implies that this configuration, the services which it defines must be available
+ 				and must start correctly for the DS to be considered as started.
+
+ 				Optional services are defined as <value>classpath*:ConfigName.config.xml</value>
+ 				which implies the configuration is loaded only if the ConfigName.config.xml is
+ 				found in the classpath.  If it is not, the service is not started and the system
+ 				continues to function.  If it is present, however there is an error in its initialization
+ 				the system will report failure to start.
+ 			 -->
+
+ 			<!-- JMX Configuration-->
+
+ 			<value>classpath*:JMX.CacheManagement.config.xml</value>
+ 			<value>classpath*:JMX.PersistedEngineStats.config.xml</value>
+ 			<value>classpath*:JMX.UserStats.config.xml</value>
+ 			<!--
+ 			<value>classpath*:JMXConfig.xml</value>
+
+ 			 -->
+
+			<!-- Required Services -->
+ 			<value>DataServer.service.proxy.xml</value>
+ 			<value>Core.DataServer.serviceconfig.xml</value>
+ 			<value>DataSource.config.xml</value>
+
+
+ 			<!--  Optional Services -->
+			<value>classpath*:CollateralServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:InstructionService.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:QueryService.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:BloombergReferenceServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:BloombergSAPIReferenceServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:CalibrationReferenceServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:HyperSurfaceServer.DataServer.serviceconfig.xml</value>
+            <value>classpath*:PricingScriptServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:SwapswireReferenceServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:MarkITServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:IntexMappingsServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:CLSServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:GSCCSimulatorServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:StructuringServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:TaskEnrichmentServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:MatchingServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:XProdReferenceServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:DealStationServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:PricingSheetServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:VisokioServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:HedgeAccountingServer.DataServer.serviceconfig.xml</value>
+
+ 			<value>classpath*:DashBoardServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:TOFServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:OrderService.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:PricingGridServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:BehavioralAssumptionServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:InstructionService.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:FundTransferPricingServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:SFPerformanceDataServer.DataServer.serviceconfig.xml</value>
+			<value>classpath*:StructuredFinanceServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:CAMService.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:ERSLimitsRefDataService.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:ValidationService.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:CWS.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:CommandExecutionService.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:ERSLimitEngine.clientconfig.xml</value>
+			<value>classpath*:ReconciliationService.Data.serviceconfig.xml</value>
+			<value>classpath*:DataUploadServer.DataServer.serviceconfig.xml</value>
+			<value>classpath*:CalypsoScheduler.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:PositionKeepingCore.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:PositionKeepingLookup.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:com/calypso/llm/service/MessageQueryService.serviceconfig.xml</value> 	<!-- remote service added for errors, low latency -->
+ 			<value>classpath*:ClearingExternalData.DataServer.serviceconfig.xml</value>
+			<value>classpath*:ConfigurationServer.DataServer.serviceconfig.xml</value>
+ 		</list>
+ 	</property>
+ </bean>
+
+  <bean id="ApplicationConfiguration.TestLocalDataServer" parent="ApplicationConfiguration.Base">
+ 	<property name="client" value="false" />
+ 	<property name="configurations">
+ 		<list merge="true">
+
+ 			<!--
+ 			The following are additional configuration files referenced
+ 			 -->
+ 			<value>PropertyConfiguration.xml</value>
+ 			<value>AuthenticationClient.xml</value>
+ 			<value>AuthenticationClient.proxy.xml</value>
+			<value>RMIInvocationHandlers.xml</value>
+ 			<value>TenantDependentBeans.xml</value>
+ 			<value>DummyLoginHandler.xml</value>
+ 			<value>RMIClientProxy.xml</value>
+ 			<value>ServerContext.xml</value>
+ 			<value>AdminEventPublisher.xml</value>
+ 			<value>Security.xml</value>
+
+ 			<!-- <value>Security.xml</value> -->
+ 			<value>EventServerClient.xml</value>
+			<!-- <value>DataServerScheduleJobs.xml</value> -->
+
+			<!--
+			Event server may be started within the data server for backward
+			compatibility.  To do so, uncomment the following line
+			<value>EventServer.xml</value>
+ 			-->
+
+ 			<!--
+ 				The next section contain the services to be started on Data Server startup.
+
+ 				Required services are defined as <value>ConfigName.config.xml</value>.  Doing so
+ 				implies that this configuration, the services which it defines must be available
+ 				and must start correctly for the DS to be considered as started.
+
+ 				Optional services are defined as <value>classpath*:ConfigName.config.xml</value>
+ 				which implies the configuration is loaded only if the ConfigName.config.xml is
+ 				found in the classpath.  If it is not, the service is not started and the system
+ 				continue‰s to function.  If it is present, however there is an error in its initialization
+ 				the system will report failure to start.
+ 			 -->
+
+			<!-- Required Services -->
+ 			<value>DataServer.service.proxy.xml</value>
+ 			<value>Core.TestLocalDataServer.serviceconfig.xml</value>
+ 			<value>DataSource.config.xml</value>
+
+
+ 			<!--  Optional Services -->
+ 			<value>classpath*:MatchingServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:HedgeAccountingServer.DataServer.serviceconfig.xml</value>
+ 			<value>classpath*:ERSLimitsRefDataService.DataServer.serviceconfig.xml</value>
+ 		</list>
+ 	</property>
+ </bean>
+
+ <bean id="ApplicationConfiguration.client" parent="ApplicationConfiguration.Base">
+ 		<property name="client" value="true" />
+ 	 	<property name="configurations">
+ 		<list merge="true">
+ 		 	<value>PropertyConfiguration.xml</value>
+ 			<value>RMIClientProxy.xml</value>
+ 			<value>RMIInvocationHandlers.xml</value>
+ 			<value>LoginHandler.xml</value>
+ 			<value>TenantDependentBeans.xml</value>
+ 			<value>AuthenticationClient.xml</value>
+ 			<value>AuthenticationClient.proxy.xml</value>
+ 			<value>EventServerClient.xml</value>
+			<value>AdminEventPublisher.xml</value>
+ 		</list>
+ 	</property>
+ </bean>
+
+ <bean id="ApplicationConfiguration.engine" parent="ApplicationConfiguration.DSClient">
+ 	 	<property name="configurations">
+ 		<list merge="true">
+			<!-- <value>JMX.Engine.config.xml</value> -->
+ 		</list>
+ 	</property>
+ </bean>
+
+<!--
+	Client to DataServer will get access to all the services deployed in the DataServer
+	It does the login to the AuthenticationServer
+	It configures the connections to the EventServer
+ -->
+ <bean id="ApplicationConfiguration.DSClientBase" parent="ApplicationConfiguration.client">
+ 	 	<property name="configurations">
+ 		<list merge="true">
+ 			<value>Core.DataServer.clientconfig.xml</value>
+ 			<value>classpath*:PresentationServer.clientconfig.xml</value>
+ 			<value>classpath*:CalculationServer.clientconfig.xml</value>
+ 			<value>classpath*:MktDataServer.clientconfig.xml</value>
+ 			<value>classpath*:BloomberSAPIEntitlementServer.clientconfig.xml</value>
+ 			<value>classpath*:IntexEngine.clientconfig.xml</value>
+ 			<value>classpath*:GSCCSimulatorMessageEngine.clientconfig.xml</value>
+ 			<value>classpath*:BONYSimulatorMessageEngine.clientconfig.xml</value>
+ 			<value>classpath*:CDSISDAModel.clientconfig.xml</value>
+ 			<value>classpath*:ERSLimitEngine.clientconfig.xml</value>
+ 			<value>classpath*:WLS.clientconfig.xml</value>
+ 			<!--
+ 			Quote Server is not a module, and hence if the following lines are
+ 			visible, the clients will start looking for the service and the properties.
+ 			Enabling quote server requires the following line to be uncommented
+ 			<value>classpath*:QuoteServer.clientconfig.xml</value>
+ 			 -->
+ 			 <!--
+ 			 SQLInputValidator.clientconfig.xml initializes a validator for text fields.
+ 			 Requires a special AspectJ build and the presence of this file to take effect.
+ 			 -->
+ 			 <value>classpath*:SQLInputValidator.clientconfig.xml</value>
+			 <!-- DS client should be able to get a readonly connection if available. -->
+			 <value>Core.DataServer.ro-clientconfig.xml</value>
+ 			 
+ 		</list>
+ 	</property>
+ </bean>
+
+<bean id="ApplicationConfiguration.DSClient" parent="ApplicationConfiguration.DSClientBase">
+ 	 	<property name="configurations">
+ 		<list merge="true">
+ 			<value>DSClientShutdownHandler.xml</value>
+ 		</list>
+ 	</property>
+ </bean>
+
+ <bean id="ApplicationConfiguration.DSEngine" parent="ApplicationConfiguration.DSClientBase">
+ 	 	<property name="configurations">
+ 		<list merge="true">
+ 			<value>DataSynapseClientShutdownHandler.xml</value>
+ 		</list>
+ 	</property>
+ </bean>
+ 
+<bean id="ApplicationConfiguration.MainEntry" parent="ApplicationConfiguration.DSClient">
+ 	 	<property name="configurations">
+ 		<list merge="true">
+ 			<!--  Optional Services -->
+ 			<value>classpath*:FX.config.xml</value>
+ 			<value>classpath*:CVAServer.clientconfig.xml</value>
+ 		</list>
+ 		</property>
+</bean>
+
+<bean id="ApplicationConfiguration.Navigator" parent="ApplicationConfiguration.DSClient">
+ 	 	<property name="configurations">
+ 		<list merge="true">
+ 			<!--  Optional Services -->
+ 			<value>classpath*:FX.config.xml</value>
+ 			<value>classpath*:CVAServer.clientconfig.xml</value>
+ 			<!-- <value>classpath*:GridCacheConfig.xml</value>
+			<value>classpath*:GridConfigInitializer.xml</value>
+			<value>classpath*:hazelcast-gridclient-base.xml</value> -->
+			<value>classpath*:${navigator.datagrid.bocache.enabled:calypso}-grid-cache-client-base.xml</value>  
+ 		</list>
+ 		</property>
+</bean>
+
+ <!-- <bean id="ApplicationConfiguration.GridEnabledNavigator" parent="ApplicationConfiguration.DSClient">
+ 	 	<property name="configurations">
+ 		<list merge="true"> 			
+ 			<value>classpath*:FX.config.xml</value>
+ 			<value>classpath*:CVAServer.clientconfig.xml</value>
+ 			 <value>classpath*:GridCacheConfig.xml</value> 
+			 <value>classpath*:GridConfigInitializer.xml</value> 
+			<value>classpath*:hazelcast-grid-cache-client-base.xml</value>
+ 		</list>
+ 		</property>
+</bean>  -->
+
+<bean id="ApplicationConfiguration.PositionKeepingClient" parent="ApplicationConfiguration.DSClient">
+ 	 	<property name="configurations">
+ 		<list merge="true">
+ 			<value>classpath*:PositionKeepingClient.config.xml</value>
+ 		</list>
+ 		</property>
+</bean>
+
+<bean id="ApplicationConfiguration.PositionEngine" parent="ApplicationConfiguration.engine">
+        <property name="configurations">
+        <list merge="true">
+            <value>classpath:com/calypso/engine/position/PositionInventoryBuilder.xml</value>
+        </list>
+        </property>
+</bean>
+
+<bean id="ApplicationConfiguration.DSReadOnly" parent="ApplicationConfiguration.DSClient">
+  		<property name="configurations">
+  			<list merge="true">
+	 			<value>Core.DataServer.ro-clientconfig.xml</value>
+	 			<value>classpath*:PresentationServer.clientconfig.xml</value>
+	 			<value>classpath*:CalculationServer.clientconfig.xml</value>
+  			</list>
+  		</property>
+  </bean>
+
+<!--
+	A client application that needs to communicate with DataServer it also needs access to the DataBase, No transaction proxies are required
+	Transaction Proxy when configured, all intermediate jdbc/ioSQL commits/rollbaks are ignore and there is
+	one commit at the Proxy level, DataServer is configured to use TransactionProxy
+
+ -->
+   	<bean id="ApplicationConfiguration.NoTXDataSourceClient" parent="ApplicationConfiguration.DSClient">
+ 		<property name="configurations">
+ 			<list merge="true">
+ 				<value>DataSource.config.xml</value>
+ 				<value>NoTXSQLInitializer.config.xml</value>
+ 			</list>
+ 		</property>
+ 	</bean>
+
+<!--
+	A server application that communicates with the DataServer and needs access to the DataBase, No transaction proxies are required
+
+	Transaction Proxy when configured, all intermediate jdbc/ioSQL commits/rollbaks are ignore and there is
+	one commit at the Proxy level, DataServer is configured to use TransactionProxy
+
+ -->
+ 	 <bean id="ApplicationConfiguration.NoTXServer-DataSourceClient" parent="ApplicationConfiguration.NoTXDataSourceClient">
+ 		<property name="configurations">
+ 			<list merge="true">
+ 				<value>ServerContext.xml</value>
+ 				<value>Security.xml</value>
+ 				<value>None.service.proxy.xml</value>
+ 			</list>
+ 		</property>
+ 		<property name="client" value="false" />
+ 	</bean>
+
+ 	<!--  This service needs a connection to middle tier DB, and it manages it own connection poll -->
+  <bean id="ApplicationConfiguration.QuoteServer" parent="ApplicationConfiguration.DSClient">
+ 	  		<property name="configurations">
+  			<list merge="true">
+  				<value>QuoteServer.serviceconfig.xml</value>
+				<value>ServerContext.xml</value>
+ 				<value>Security.xml</value>
+ 				<value>None.service.proxy.xml</value>
+  			</list>
+  		</property>
+ 		<property name="client" value="false" />
+   </bean>
+
+ 	<!--  This service needs a connection to middle tier DB, and it manages it own connection poll -->
+  <bean id="ApplicationConfiguration.PresentationServer" parent="ApplicationConfiguration.DSClient">
+ 	  		<property name="configurations">
+  			<list merge="true">
+                <value>MiddleTierDataSource.config.xml</value>
+  				<value>ConfigRetriever.xml</value>
+	  			<value>PresentationServer.serviceconfig.xml</value>
+				<value>ServerContext.xml</value>
+ 				<value>Security.xml</value>
+ 				<value>None.service.proxy.xml</value>
+  			</list>
+  		</property>
+ 		<property name="client" value="false" />
+   </bean>
+
+	<!--  This service needs a connection to middle tier DB, and it manages it own connection poll -->
+ 	<bean id="ApplicationConfiguration.CalculationServer" parent="ApplicationConfiguration.DSClient">
+ 	 	  	<property name="configurations">
+  			<list merge="true">
+                <value>MiddleTierDataSource.config.xml</value>
+  				<value>Security.xml</value>
+  				<value>ConfigRetriever.xml</value>
+	  			<value>ServerContext.xml</value>
+	  			<value>CalculationServer.serviceconfig.xml</value>
+ 				<value>None.service.proxy.xml</value>
+  			</list>
+  		</property>
+  		<property name="client" value="false" />
+   </bean>
+
+  	<bean id="ApplicationConfiguration.BloombergSAPIEngine" parent="ApplicationConfiguration.engine">
+ 	 	  	<property name="configurations">
+  			<list merge="true">
+  				<value>ConfigRetriever.xml</value>
+	  			<value>BloomberSAPIEntitlementServer.serviceconfig.xml</value>
+				<value>ServerContext.xml</value>
+ 				<value>Security.xml</value>
+ 				<value>None.service.proxy.xml</value>
+  			</list>
+  		</property>
+  		<property name="client" value="false" />
+   </bean>
+
+   <bean id="ApplicationConfiguration.MktData"  parent="ApplicationConfiguration.DSClient">
+ 		<property name="configurations">
+ 			<list merge="true">
+				<value>ConfigRetriever.xml</value>
+	  			<value>ServerContext.xml</value>
+ 				<value>Security.xml</value>
+ 				<value>MktDataServer.serviceconfig.xml</value>
+ 				<value>None.service.proxy.xml</value>
+ 			</list>
+ 		</property>
+ 		<property name="client" value="false" />
+ 	</bean>
+
+ 	 <bean id="ApplicationConfiguration.ISDAServer"  parent="ApplicationConfiguration.DSClient">
+ 		<property name="configurations">
+ 			<list merge="true">
+	  			<value>ServerContext.xml</value>
+ 				<value>Security.xml</value>
+ 				<value>CDSISDAModel.serviceconfig.xml</value>
+ 				<value>None.service.proxy.xml</value>
+ 			</list>
+ 		</property>
+ 		<property name="client" value="false" />
+ 	</bean>
+ 	<bean id="ApplicationConfiguration.NoTXServer-DataSourceEngine" parent="ApplicationConfiguration.NoTXServer-DataSourceClient">
+	 	 <property name="configurations">
+	 		<list merge="true">
+				<!-- <value>JMX.Engine.config.xml</value> -->
+	 		</list>
+	 	</property>
+ 	</bean>
+ 	 <bean id="ApplicationConfiguration.IntexEngine"  parent="ApplicationConfiguration.NoTXServer-DataSourceEngine">
+ 		<property name="configurations">
+ 			<list merge="true">
+ 				<value>IntexEngine.serviceconfig.xml</value>
+ 			</list>
+ 		</property>
+ 	</bean>
+ 	 <bean id="ApplicationConfiguration.GSCCSimulatorMessageEngine"  parent="ApplicationConfiguration.engine">
+	 	<property name="client" value="false" />
+ 		<property name="configurations">
+ 			<list merge="true">
+	  			<value>ServerContext.xml</value>
+ 				<value>Security.xml</value>
+ 				<value>GSCCSimulatorMessageEngine.serviceconfig.xml</value>
+ 				<value>None.service.proxy.xml</value>
+ 			</list>
+ 		</property>
+ 	</bean>
+ 	 <bean id="ApplicationConfiguration.BONYSimulatorMessageEngine"  parent="ApplicationConfiguration.engine">
+	 	<property name="client" value="false" />
+ 		<property name="configurations">
+ 			<list merge="true">
+	  			<value>ServerContext.xml</value>
+ 				<value>Security.xml</value>
+ 				<value>BONYSimulatorMessageEngine.serviceconfig.xml</value>
+ 				<value>None.service.proxy.xml</value>
+ 			</list>
+ 		</property>
+ 	</bean>
+
+	<bean id="ApplicationConfiguration.NoTXDataSourceEngine" parent="ApplicationConfiguration.NoTXDataSourceClient">
+		 <property name="configurations">
+	 		<list merge="true">
+				<!-- <value>JMX.Engine.config.xml</value> -->
+	 		</list>
+	 	</property>
+	</bean>
+  	<bean id="ApplicationConfiguration.MarketConformityEngine" parent="ApplicationConfiguration.NoTXDataSourceEngine">
+ 		<property name="client" value="false" />
+ 	</bean>
+
+  	<bean id="ApplicationConfiguration.IntradayMarketDataEngine" parent="ApplicationConfiguration.NoTXDataSourceEngine">
+ 		<property name="client" value="false" />
+ 	</bean>
+
+<!-- File that list the ERS Specific Properties, the default empty configuration will be overridden by the ERS installation script  -->
+	<import resource="ApplicationConfigurationsERS.xml" />
+
+
+
+<!-- 	<bean id="ApplicationConfiguration.MainEntry" parent="ApplicationConfiguration.DSClient"> -->
+<!--         <property name="configurations"> -->
+<!--             <list merge="true"> -->
+<!--                 <value>lljms-client.xml</value> -->
+<!--             </list> -->
+<!--         </property> -->
+<!--     </bean> -->
+
+	<!-- ApplicationConfiguration.MiddleTierDataSourceClient is used by scheduled tasks which 
+	need access to middle tier DB. Ideally should be in the scheduler module -->
+ 	<bean id="ApplicationConfiguration.MiddleTierDataSourceClient" parent="ApplicationConfiguration.DSClient">
+ 	 	  	<property name="configurations">
+  			<list merge="true">
+                <value>MiddleTierDataSource.config.xml</value>
+                <value>classpath*:${scheduler.datagrid.bocache.enabled:calypso}-grid-cache-client-base.xml</value> 
+				<value>classpath*:${scheduler.datagrid.analysiscache.enabled:calypso}-gridclient-base.xml</value> 				
+  			</list>
+  		</property>
+  		<property name="client" value="false" />
+   </bean> 
+   <!-- Should be defined in Scheduler module?? -->
+   <bean id="ApplicationConfiguration.QuartzTaskRunner" parent="ApplicationConfiguration.DSClient">
+ 	 	  	<property name="configurations">
+  			<list merge="true">
+				<value>classpath*:${scheduler.datagrid.bocache.enabled:calypso}-grid-cache-client-base.xml</value> 
+				<value>classpath*:${scheduler.datagrid.analysiscache.enabled:calypso}-gridclient-base.xml</value> 				
+  			</list>
+  		</property>
+  		<property name="client" value="false" />
+   </bean> 
+
+ </beans>

@@ -1,0 +1,34 @@
+<!-- 
+Defines a default view (categories, selected fields for each). 
+The field and category labels are defined in the .properties resource file with the same name.  
+-->
+<config>
+	<view>
+	  <category>
+	    <categoryId>REPRICE</categoryId>
+        <fieldId>MARK_EVENT_TYPE</fieldId>
+	    <fieldId>OUTSTANDING_QUANTITY</fieldId>
+ 	    <fieldId>PENDING_QUANTITY</fieldId>
+	    <fieldId>T0_PEND_RETURNS</fieldId>
+	    <fieldId>EX_RULE</fieldId>
+	    <fieldId>EX_SCOPE</fieldId>
+	    <fieldId>MARKED_QUANTITY</fieldId>
+	    <fieldId>ACCRUAL</fieldId>
+	    <fieldId>CLEAN_PRICE_ON_EFFECTIVE_DATE</fieldId>
+	    <fieldId>CLEAN_PRICE_NEW</fieldId>
+	    <fieldId>PRICE_ON_EFFECTIVE_DATE</fieldId>
+	    <fieldId>MARGINED_PRICE_CURRENT</fieldId>
+	    <fieldId>PRICE_NEW</fieldId>
+	    <fieldId>MARGINED_PRICE_NEW</fieldId>
+	    <fieldId>VALUE_CURRENT</fieldId>
+	    <fieldId>MARGINED_VALUE_CURRENT</fieldId>
+	    <fieldId>VALUE_NEW</fieldId>
+	    <fieldId>MARGINED_VALUE_NEW</fieldId>
+	    <fieldId>VALUE_DIFF</fieldId>
+	    <fieldId>MARGINED_VALUE_DIFF</fieldId>
+	    <fieldId>MARK_PERCENT</fieldId>
+	    <fieldId>FX_TRADE_SEC</fieldId>
+	    <fieldId>MARK_DATE_CURRENT</fieldId>
+	  </category>
+	</view>
+</config>

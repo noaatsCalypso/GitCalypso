@@ -1,0 +1,2081 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<calypso:calypsoDocument xmlns:calypso="http://www.calypso.com/xml">
+    <calypso:calypsoObject xsi:type="calypso:TradeFilter" action="NEW" version="12-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <calypso:name>TriOptima_CRD</calypso:name>
+        <calypso:createdBy>calypso_user</calypso:createdBy>
+        <calypso:criterions>
+            <calypso:name>ProductType</calypso:name>
+            <calypso:values xsi:type="calypso:SimpleTypedObject">
+                <calypso:value xsi:type="ns3:string" xmlns:ns3="http://www.w3.org/2001/XMLSchema">CDSIndex</calypso:value>
+            </calypso:values>
+            <calypso:values xsi:type="calypso:SimpleTypedObject">
+                <calypso:value xsi:type="ns3:string" xmlns:ns3="http://www.w3.org/2001/XMLSchema">CDSIndexTranche</calypso:value>
+            </calypso:values>
+            <calypso:values xsi:type="calypso:SimpleTypedObject">
+                <calypso:value xsi:type="ns3:string" xmlns:ns3="http://www.w3.org/2001/XMLSchema">CreditDefaultSwap</calypso:value>
+            </calypso:values>
+            <calypso:inclusion>true</calypso:inclusion>
+        </calypso:criterions>
+        <calypso:includePositionBased>true</calypso:includePositionBased>
+        <calypso:includeExchangeTraded>true</calypso:includeExchangeTraded>
+        <calypso:useCache>false</calypso:useCache>
+        <calypso:maturityDateTenorMin>0</calypso:maturityDateTenorMin>
+        <calypso:checkHolidays>false</calypso:checkHolidays>
+        <calypso:enteredDateTenorMin>360000</calypso:enteredDateTenorMin>
+        <calypso:enteredDateTenorMax>360000</calypso:enteredDateTenorMax>
+        <calypso:expirationInCache>0.0</calypso:expirationInCache>
+    </calypso:calypsoObject>
+    <calypso:calypsoObject xsi:type="calypso:TradeFilter" action="NEW" version="12-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <calypso:name>TriOptima_IRD</calypso:name>
+        <calypso:createdBy>calypso_user</calypso:createdBy>
+        <calypso:criterions>
+            <calypso:name>ProductType</calypso:name>
+            <calypso:values xsi:type="calypso:SimpleTypedObject">
+                <calypso:value xsi:type="ns3:string" xmlns:ns3="http://www.w3.org/2001/XMLSchema">FRA</calypso:value>
+            </calypso:values>
+            <calypso:values xsi:type="calypso:SimpleTypedObject">
+                <calypso:value xsi:type="ns3:string" xmlns:ns3="http://www.w3.org/2001/XMLSchema">Swap</calypso:value>
+            </calypso:values>
+            <calypso:inclusion>true</calypso:inclusion>
+        </calypso:criterions>
+        <calypso:criterions>
+            <calypso:name>SubType</calypso:name>
+            <calypso:values xsi:type="calypso:SimpleTypedObject">
+                <calypso:value xsi:type="ns3:string" xmlns:ns3="http://www.w3.org/2001/XMLSchema">FRA.InArrear</calypso:value>
+            </calypso:values>
+            <calypso:values xsi:type="calypso:SimpleTypedObject">
+                <calypso:value xsi:type="ns3:string" xmlns:ns3="http://www.w3.org/2001/XMLSchema">FRA.Standard</calypso:value>
+            </calypso:values>
+            <calypso:values xsi:type="calypso:SimpleTypedObject">
+                <calypso:value xsi:type="ns3:string" xmlns:ns3="http://www.w3.org/2001/XMLSchema">Swap.Arrear</calypso:value>
+            </calypso:values>
+            <calypso:values xsi:type="calypso:SimpleTypedObject">
+                <calypso:value xsi:type="ns3:string" xmlns:ns3="http://www.w3.org/2001/XMLSchema">Swap.Standard</calypso:value>
+            </calypso:values>
+            <calypso:inclusion>true</calypso:inclusion>
+        </calypso:criterions>
+        <calypso:includePositionBased>true</calypso:includePositionBased>
+        <calypso:includeExchangeTraded>true</calypso:includeExchangeTraded>
+        <calypso:useCache>false</calypso:useCache>
+        <calypso:maturityDateTenorMin>0</calypso:maturityDateTenorMin>
+        <calypso:checkHolidays>false</calypso:checkHolidays>
+        <calypso:enteredDateTenorMin>360000</calypso:enteredDateTenorMin>
+        <calypso:enteredDateTenorMax>360000</calypso:enteredDateTenorMax>
+        <calypso:expirationInCache>0.0</calypso:expirationInCache>
+    </calypso:calypsoObject>
+    <calypso:calypsoObject xsi:type="calypso:ReportTemplate" action="NEW" version="12-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <calypso:identification>
+            <calypso:versionedIdentifier codifier="Calypso" code="1039" version="22"/>
+        </calypso:identification>
+        <calypso:reportType>TriOptima</calypso:reportType>
+        <calypso:name>TriOptimaCDS</calypso:name>
+        <calypso:hidden>false</calypso:hidden>
+        <calypso:private>false</calypso:private>
+        <calypso:user>calypso_user</calypso:user>
+        <calypso:reportAttributes>
+            <calypso:attribute>
+                <calypso:attributeName>AggregatedFlag</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>BuyFlag</calypso:attributeName>
+                <calypso:attributeValue>true</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Assignment Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_MTM Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Maturity Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Next Payment Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Trade Settle Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Trade Short Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Assignment Date</calypso:attributeName>
+                <calypso:attributeValue>ASSIGNMENT_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Assignment Role</calypso:attributeName>
+                <calypso:attributeValue>ASSIGNMENT_ROLE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Book</calypso:attributeName>
+                <calypso:attributeValue>BOOK</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Buy/Sell</calypso:attributeName>
+                <calypso:attributeValue>BUY_SELL</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_CounterParty</calypso:attributeName>
+                <calypso:attributeValue>CP_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Coupon Period</calypso:attributeName>
+                <calypso:attributeValue>COUPON_PER</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Coupon Rate</calypso:attributeName>
+                <calypso:attributeValue>COUPON_RATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Delta 1Y</calypso:attributeName>
+                <calypso:attributeValue>DELTA_1Y</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Delta 2Y</calypso:attributeName>
+                <calypso:attributeValue>DELTA_2Y</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Delta 3Y</calypso:attributeName>
+                <calypso:attributeValue>DELTA_3Y</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Delta 4Y</calypso:attributeName>
+                <calypso:attributeValue>DELTA_4Y</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Delta 5Y</calypso:attributeName>
+                <calypso:attributeValue>DELTA_5Y</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Delta 6Y</calypso:attributeName>
+                <calypso:attributeValue>DELTA_6Y</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Documents Executed</calypso:attributeName>
+                <calypso:attributeValue>DOCS_EXECUTED</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_External Reference</calypso:attributeName>
+                <calypso:attributeValue>CP_TRADE_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Fee.UPFRONT.Amount</calypso:attributeName>
+                <calypso:attributeValue>PREMIUM</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_ISDA Definition</calypso:attributeName>
+                <calypso:attributeValue>ISDA_DEF</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Issuer Full Name</calypso:attributeName>
+                <calypso:attributeValue>CREDIT_ENTITY</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_MTM Date</calypso:attributeName>
+                <calypso:attributeValue>MTM_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Maturity Date</calypso:attributeName>
+                <calypso:attributeValue>END_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Next Payment Date</calypso:attributeName>
+                <calypso:attributeValue>NEXT_PAY_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Initial Notional</calypso:attributeName>
+                <calypso:attributeValue>NOMINAL</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Pricer.DEFAULT_EXPOSURE</calypso:attributeName>
+                <calypso:attributeValue>JUMP_TO_DEFAULT</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Pricer.NPV</calypso:attributeName>
+                <calypso:attributeValue>MTM_VALUE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Processing Org</calypso:attributeName>
+                <calypso:attributeValue>RISK_UNIT</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Product Type</calypso:attributeName>
+                <calypso:attributeValue>INS_TYPE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Restructuring</calypso:attributeName>
+                <calypso:attributeValue>RESTRUCTURING</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Roll Date</calypso:attributeName>
+                <calypso:attributeValue>ROLL_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Seniority</calypso:attributeName>
+                <calypso:attributeValue>SENIORITY</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_TRADE_KEYWORD.DTCCTradeId</calypso:attributeName>
+                <calypso:attributeValue>DTCC_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_TRADE_KEYWORD.Novation_Transfer_Role</calypso:attributeName>
+                <calypso:attributeValue>STEP_OUT_PARTY</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Currency</calypso:attributeName>
+                <calypso:attributeValue>CURR</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Day Count</calypso:attributeName>
+                <calypso:attributeValue>DAY_COUNT</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Id</calypso:attributeName>
+                <calypso:attributeValue>TRADE_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Settle Date</calypso:attributeName>
+                <calypso:attributeValue>START_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Short Date</calypso:attributeName>
+                <calypso:attributeValue>TRADE_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Underlying.Product Code.ISIN</calypso:attributeName>
+                <calypso:attributeValue>REF_OB</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns0</calypso:attributeName>
+                <calypso:attributeValue>Trade Id</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns1</calypso:attributeName>
+                <calypso:attributeValue>CounterParty</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns10</calypso:attributeName>
+                <calypso:attributeValue>Coupon Period</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns11</calypso:attributeName>
+                <calypso:attributeValue>Trade Day Count</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns12</calypso:attributeName>
+                <calypso:attributeValue>Issuer Full Name</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns13</calypso:attributeName>
+                <calypso:attributeValue>Roll Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns14</calypso:attributeName>
+                <calypso:attributeValue>Fee.UPFRONT.Amount</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns15</calypso:attributeName>
+                <calypso:attributeValue>Trade Short Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns16</calypso:attributeName>
+                <calypso:attributeValue>Trade Settle Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns17</calypso:attributeName>
+                <calypso:attributeValue>Maturity Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns18</calypso:attributeName>
+                <calypso:attributeValue>Assignment Role</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns19</calypso:attributeName>
+                <calypso:attributeValue>Assignment Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns2</calypso:attributeName>
+                <calypso:attributeValue>Processing Org</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns20</calypso:attributeName>
+                <calypso:attributeValue>TRADE_KEYWORD.Novation_Transfer_Role</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns21</calypso:attributeName>
+                <calypso:attributeValue>Documents Executed</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns22</calypso:attributeName>
+                <calypso:attributeValue>MTM Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns23</calypso:attributeName>
+                <calypso:attributeValue>Pricer.NPV</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns24</calypso:attributeName>
+                <calypso:attributeValue>TRADE_KEYWORD.DTCCTradeId</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns25</calypso:attributeName>
+                <calypso:attributeValue>Next Payment Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns26</calypso:attributeName>
+                <calypso:attributeValue>Seniority</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns27</calypso:attributeName>
+                <calypso:attributeValue>Underlying.Product Code.ISIN</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns28</calypso:attributeName>
+                <calypso:attributeValue>Restructuring</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns29</calypso:attributeName>
+                <calypso:attributeValue>ISDA Definition</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns3</calypso:attributeName>
+                <calypso:attributeValue>Book</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns30</calypso:attributeName>
+                <calypso:attributeValue>Pricer.DEFAULT_EXPOSURE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns31</calypso:attributeName>
+                <calypso:attributeValue>Delta 1Y</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns32</calypso:attributeName>
+                <calypso:attributeValue>Delta 5Y</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns4</calypso:attributeName>
+                <calypso:attributeValue>External Reference</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns5</calypso:attributeName>
+                <calypso:attributeValue>Product Type</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns6</calypso:attributeName>
+                <calypso:attributeValue>Trade Currency</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns7</calypso:attributeName>
+                <calypso:attributeValue>Initial Notional</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns8</calypso:attributeName>
+                <calypso:attributeValue>Buy/Sell</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns9</calypso:attributeName>
+                <calypso:attributeValue>Coupon Rate</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns_COUNT</calypso:attributeName>
+                <calypso:attributeValue>33</calypso:attributeValue>
+                <calypso:attributeClass>Integer</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>MaturityOpenTerm</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Analysis Type</calypso:attributeName>
+                <calypso:attributeValue>TriOptima</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Param Name</calypso:attributeName>
+                <calypso:attributeValue>TriOptima_CRD</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Processing Org Include Child</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ProductType</calypso:attributeName>
+                <calypso:attributeValue>CreditDefaultSwap</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>SellFlag</calypso:attributeName>
+                <calypso:attributeValue>true</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Status</calypso:attributeName>
+                <calypso:attributeValue>VERIFIED</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>TRADE_FILTER</calypso:attributeName>
+                <calypso:attributeValue>TriOptima_CRD</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Title</calypso:attributeName>
+                <calypso:attributeValue>TriOptima CDS</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>UNDO_DATE_CHECK</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+        </calypso:reportAttributes>
+    </calypso:calypsoObject>
+    <calypso:calypsoObject xsi:type="calypso:ReportTemplate" action="NEW" version="12-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <calypso:identification>
+            <calypso:versionedIdentifier codifier="Calypso" code="1040" version="27"/>
+        </calypso:identification>
+        <calypso:reportType>TriOptima</calypso:reportType>
+        <calypso:name>TriOptimaCDSIndex</calypso:name>
+        <calypso:hidden>false</calypso:hidden>
+        <calypso:private>false</calypso:private>
+        <calypso:user>calypso_user</calypso:user>
+        <calypso:reportAttributes>
+            <calypso:attribute>
+                <calypso:attributeName>AggregatedFlag</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>BuyFlag</calypso:attributeName>
+                <calypso:attributeValue>true</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Assignment Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_MTM Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Maturity Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Next Payment Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Trade Settle Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Trade Short Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Assignment Date</calypso:attributeName>
+                <calypso:attributeValue>ASSIGNMENT_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Assignment Role</calypso:attributeName>
+                <calypso:attributeValue>ASSIGNMENT_ROLE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Book</calypso:attributeName>
+                <calypso:attributeValue>BOOK</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Buy/Sell</calypso:attributeName>
+                <calypso:attributeValue>BUY_SELL</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_CounterParty</calypso:attributeName>
+                <calypso:attributeValue>CP_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Coupon Period</calypso:attributeName>
+                <calypso:attributeValue>COUPON_PER</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Coupon Rate</calypso:attributeName>
+                <calypso:attributeValue>COUPON_RATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Credit Entity</calypso:attributeName>
+                <calypso:attributeValue>CREDIT_ENTITY</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Documents Executed</calypso:attributeName>
+                <calypso:attributeValue>DOCS_EXECUTED</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_External Reference</calypso:attributeName>
+                <calypso:attributeValue>CP_TRADE_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Fee.UPFRONT.Amount</calypso:attributeName>
+                <calypso:attributeValue>PREMIUM</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_MTM Date</calypso:attributeName>
+                <calypso:attributeValue>MTM_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Maturity Date</calypso:attributeName>
+                <calypso:attributeValue>END_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Next Payment Date</calypso:attributeName>
+                <calypso:attributeValue>NEXT_PAY_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Initial Notional</calypso:attributeName>
+                <calypso:attributeValue>NOMINAL</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Pricer.NPV</calypso:attributeName>
+                <calypso:attributeValue>MTM_VALUE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Processing Org</calypso:attributeName>
+                <calypso:attributeValue>RISK_UNIT</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Product Type</calypso:attributeName>
+                <calypso:attributeValue>INS_TYPE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Roll Date</calypso:attributeName>
+                <calypso:attributeValue>ROLL_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_TRADE_KEYWORD.DTCCTradeId</calypso:attributeName>
+                <calypso:attributeValue>DTCC_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_TRADE_KEYWORD.Novation_Transfer_Role</calypso:attributeName>
+                <calypso:attributeValue>STEP_OUT_PARTY</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Currency</calypso:attributeName>
+                <calypso:attributeValue>CURR</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Day Count</calypso:attributeName>
+                <calypso:attributeValue>DAY_COUNT</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Id</calypso:attributeName>
+                <calypso:attributeValue>TRADE_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Settle Date</calypso:attributeName>
+                <calypso:attributeValue>START_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Short Date</calypso:attributeName>
+                <calypso:attributeValue>TRADE_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns0</calypso:attributeName>
+                <calypso:attributeValue>Trade Id</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns1</calypso:attributeName>
+                <calypso:attributeValue>CounterParty</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns10</calypso:attributeName>
+                <calypso:attributeValue>Coupon Period</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns11</calypso:attributeName>
+                <calypso:attributeValue>Trade Day Count</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns12</calypso:attributeName>
+                <calypso:attributeValue>Credit Entity</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns13</calypso:attributeName>
+                <calypso:attributeValue>Roll Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns14</calypso:attributeName>
+                <calypso:attributeValue>Fee.UPFRONT.Amount</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns15</calypso:attributeName>
+                <calypso:attributeValue>Trade Short Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns16</calypso:attributeName>
+                <calypso:attributeValue>Trade Settle Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns17</calypso:attributeName>
+                <calypso:attributeValue>Maturity Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns18</calypso:attributeName>
+                <calypso:attributeValue>Assignment Role</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns19</calypso:attributeName>
+                <calypso:attributeValue>Assignment Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns2</calypso:attributeName>
+                <calypso:attributeValue>Processing Org</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns20</calypso:attributeName>
+                <calypso:attributeValue>TRADE_KEYWORD.Novation_Transfer_Role</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns21</calypso:attributeName>
+                <calypso:attributeValue>Documents Executed</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns22</calypso:attributeName>
+                <calypso:attributeValue>Pricer.NPV</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns23</calypso:attributeName>
+                <calypso:attributeValue>MTM Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns24</calypso:attributeName>
+                <calypso:attributeValue>TRADE_KEYWORD.DTCCTradeId</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns25</calypso:attributeName>
+                <calypso:attributeValue>Next Payment Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns3</calypso:attributeName>
+                <calypso:attributeValue>Book</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns4</calypso:attributeName>
+                <calypso:attributeValue>External Reference</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns5</calypso:attributeName>
+                <calypso:attributeValue>Product Type</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns6</calypso:attributeName>
+                <calypso:attributeValue>Trade Currency</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns7</calypso:attributeName>
+                <calypso:attributeValue>Initial Notional</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns8</calypso:attributeName>
+                <calypso:attributeValue>Buy/Sell</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns9</calypso:attributeName>
+                <calypso:attributeValue>Coupon Rate</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns_COUNT</calypso:attributeName>
+                <calypso:attributeValue>26</calypso:attributeValue>
+                <calypso:attributeClass>Integer</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>MaturityOpenTerm</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Processing Org Include Child</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ProductType</calypso:attributeName>
+                <calypso:attributeValue>CDSIndex</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>SellFlag</calypso:attributeName>
+                <calypso:attributeValue>true</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Status</calypso:attributeName>
+                <calypso:attributeValue>VERIFIED</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>TRADE_FILTER</calypso:attributeName>
+                <calypso:attributeValue>TriOptima_CRD</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Title</calypso:attributeName>
+                <calypso:attributeValue>TriOptima CDSIndex</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>UNDO_DATE_CHECK</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+        </calypso:reportAttributes>
+    </calypso:calypsoObject>
+    <calypso:calypsoObject xsi:type="calypso:ReportTemplate" action="NEW" version="12-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <calypso:identification>
+            <calypso:versionedIdentifier codifier="Calypso" code="1041" version="20"/>
+        </calypso:identification>
+        <calypso:reportType>TriOptima</calypso:reportType>
+        <calypso:name>TriOptimaCDSIndexTranche</calypso:name>
+        <calypso:hidden>false</calypso:hidden>
+        <calypso:private>false</calypso:private>
+        <calypso:user>calypso_user</calypso:user>
+        <calypso:reportAttributes>
+            <calypso:attribute>
+                <calypso:attributeName>AggregatedFlag</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>BuyFlag</calypso:attributeName>
+                <calypso:attributeValue>true</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Assignment Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_MTM Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Maturity Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Next Payment Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Trade Settle Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Trade Short Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Assignment Date</calypso:attributeName>
+                <calypso:attributeValue>ASSIGNMENT_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Assignment Role</calypso:attributeName>
+                <calypso:attributeValue>ASSIGNMENT_ROLE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Book</calypso:attributeName>
+                <calypso:attributeValue>BOOK</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Buy/Sell</calypso:attributeName>
+                <calypso:attributeValue>BUY_SELL</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_CounterParty</calypso:attributeName>
+                <calypso:attributeValue>CP_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Coupon Period</calypso:attributeName>
+                <calypso:attributeValue>COUPON_PER</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Coupon Rate</calypso:attributeName>
+                <calypso:attributeValue>COUPON_RATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Credit Entity</calypso:attributeName>
+                <calypso:attributeValue>CREDIT_ENTITY</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Documents Executed</calypso:attributeName>
+                <calypso:attributeValue>DOCS_EXECUTED</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_External Reference</calypso:attributeName>
+                <calypso:attributeValue>CP_TRADE_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Fee.UPFRONT.Amount</calypso:attributeName>
+                <calypso:attributeValue>PREMIUM</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_MTM Date</calypso:attributeName>
+                <calypso:attributeValue>MTM_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Maturity Date</calypso:attributeName>
+                <calypso:attributeValue>END_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Next Payment Date</calypso:attributeName>
+                <calypso:attributeValue>NEXT_PAY_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Initial Notional</calypso:attributeName>
+                <calypso:attributeValue>NOMINAL</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Pricer.NPV</calypso:attributeName>
+                <calypso:attributeValue>MTM_VALUE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Processing Org</calypso:attributeName>
+                <calypso:attributeValue>RISK_UNIT</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Product Type</calypso:attributeName>
+                <calypso:attributeValue>INS_TYPE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Roll Date</calypso:attributeName>
+                <calypso:attributeValue>ROLL_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_TRADE_KEYWORD.DTCCTradeId</calypso:attributeName>
+                <calypso:attributeValue>DTCC_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_TRADE_KEYWORD.Novation_Transfer_Role</calypso:attributeName>
+                <calypso:attributeValue>STEP_OUT_PARTY</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Currency</calypso:attributeName>
+                <calypso:attributeValue>CURR</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Day Count</calypso:attributeName>
+                <calypso:attributeValue>DAY_COUNT</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Id</calypso:attributeName>
+                <calypso:attributeValue>TRADE_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Settle Date</calypso:attributeName>
+                <calypso:attributeValue>START_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Short Date</calypso:attributeName>
+                <calypso:attributeValue>TRADE_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns0</calypso:attributeName>
+                <calypso:attributeValue>Trade Id</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns1</calypso:attributeName>
+                <calypso:attributeValue>CounterParty</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns10</calypso:attributeName>
+                <calypso:attributeValue>Coupon Period</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns11</calypso:attributeName>
+                <calypso:attributeValue>Trade Day Count</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns12</calypso:attributeName>
+                <calypso:attributeValue>Credit Entity</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns13</calypso:attributeName>
+                <calypso:attributeValue>Roll Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns14</calypso:attributeName>
+                <calypso:attributeValue>Fee.UPFRONT.Amount</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns15</calypso:attributeName>
+                <calypso:attributeValue>Trade Short Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns16</calypso:attributeName>
+                <calypso:attributeValue>Trade Settle Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns17</calypso:attributeName>
+                <calypso:attributeValue>Maturity Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns18</calypso:attributeName>
+                <calypso:attributeValue>Assignment Role</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns19</calypso:attributeName>
+                <calypso:attributeValue>Assignment Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns2</calypso:attributeName>
+                <calypso:attributeValue>Processing Org</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns20</calypso:attributeName>
+                <calypso:attributeValue>TRADE_KEYWORD.Novation_Transfer_Role</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns21</calypso:attributeName>
+                <calypso:attributeValue>Documents Executed</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns22</calypso:attributeName>
+                <calypso:attributeValue>Pricer.NPV</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns23</calypso:attributeName>
+                <calypso:attributeValue>MTM Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns24</calypso:attributeName>
+                <calypso:attributeValue>TRADE_KEYWORD.DTCCTradeId</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns25</calypso:attributeName>
+                <calypso:attributeValue>Next Payment Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns3</calypso:attributeName>
+                <calypso:attributeValue>Book</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns4</calypso:attributeName>
+                <calypso:attributeValue>External Reference</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns5</calypso:attributeName>
+                <calypso:attributeValue>Product Type</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns6</calypso:attributeName>
+                <calypso:attributeValue>Trade Currency</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns7</calypso:attributeName>
+                <calypso:attributeValue>Initial Notional</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns8</calypso:attributeName>
+                <calypso:attributeValue>Buy/Sell</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns9</calypso:attributeName>
+                <calypso:attributeValue>Coupon Rate</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns_COUNT</calypso:attributeName>
+                <calypso:attributeValue>26</calypso:attributeValue>
+                <calypso:attributeClass>Integer</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>MaturityOpenTerm</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Processing Org Include Child</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ProductType</calypso:attributeName>
+                <calypso:attributeValue>CDSIndexTranche</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>SellFlag</calypso:attributeName>
+                <calypso:attributeValue>true</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Status</calypso:attributeName>
+                <calypso:attributeValue>VERIFIED</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>TRADE_FILTER</calypso:attributeName>
+                <calypso:attributeValue>TriOptima_CRD</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Title</calypso:attributeName>
+                <calypso:attributeValue>TriOptima CDSIndexTranche</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>UNDO_DATE_CHECK</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+        </calypso:reportAttributes>
+    </calypso:calypsoObject>
+    <calypso:calypsoObject xsi:type="calypso:ReportTemplate" action="NEW" version="12-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <calypso:identification>
+            <calypso:versionedIdentifier codifier="Calypso" code="1051" version="14"/>
+        </calypso:identification>
+        <calypso:reportType>TriOptima</calypso:reportType>
+        <calypso:name>TriOptimaFRA</calypso:name>
+        <calypso:hidden>false</calypso:hidden>
+        <calypso:private>false</calypso:private>
+        <calypso:user>calypso_user</calypso:user>
+        <calypso:reportAttributes>
+            <calypso:attribute>
+                <calypso:attributeName>AggregatedFlag</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>BuyFlag</calypso:attributeName>
+                <calypso:attributeValue>true</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_MTM Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Maturity Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Next Fixed Leg Payment Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Next Floating Leg Fixing Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Next Floating Leg Payment Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Trade Settle Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Trade Short Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Book</calypso:attributeName>
+                <calypso:attributeValue>BOOK</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_CounterParty.Short Name</calypso:attributeName>
+                <calypso:attributeValue>CP_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Coupon Period</calypso:attributeName>
+                <calypso:attributeValue>COUPON_PER</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Coupon Rate</calypso:attributeName>
+                <calypso:attributeValue>COUPON_RATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Delta 1Y</calypso:attributeName>
+                <calypso:attributeValue>DELTA_1Y</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Delta 5Y</calypso:attributeName>
+                <calypso:attributeValue>DELTA_5Y</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_External Reference</calypso:attributeName>
+                <calypso:attributeValue>CP_TRADE_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Fixed Leg Day Count</calypso:attributeName>
+                <calypso:attributeValue>DAYCOUNT</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Floating Leg Fixing Period</calypso:attributeName>
+                <calypso:attributeValue>FLOAT_RATE_FIXING_PER</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Floating Leg Fixing Rate</calypso:attributeName>
+                <calypso:attributeValue>FLOAT_RATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Floating Leg Index</calypso:attributeName>
+                <calypso:attributeValue>FLOAT_RATE_INDEX</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Floating Leg Index Period</calypso:attributeName>
+                <calypso:attributeValue>FLOAT_RATE_INDEX_PER</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Floating Leg Payment Period</calypso:attributeName>
+                <calypso:attributeValue>FLOAT_RATE_PAY_PER</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Floating Leg Spread</calypso:attributeName>
+                <calypso:attributeValue>FLOAT_SPREAD</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_MTM Date</calypso:attributeName>
+                <calypso:attributeValue>MTM_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Maturity Date</calypso:attributeName>
+                <calypso:attributeValue>END_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Next Fixed Leg Payment Date</calypso:attributeName>
+                <calypso:attributeValue>NEXT_FIX_PAY_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Next Floating Leg Fixing Date</calypso:attributeName>
+                <calypso:attributeValue>NEXT_FIXING_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Next Floating Leg Payment Date</calypso:attributeName>
+                <calypso:attributeValue>NEXT_FLOAT_PAY_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Initial Notional</calypso:attributeName>
+                <calypso:attributeValue>NOMINAL</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Pay / Receive</calypso:attributeName>
+                <calypso:attributeValue>PAY_REC</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Pricer.NPV</calypso:attributeName>
+                <calypso:attributeValue>MTM_VALUE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Processing Org</calypso:attributeName>
+                <calypso:attributeValue>RISK_UNIT</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Product Type</calypso:attributeName>
+                <calypso:attributeValue>INS_TYPE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Roll Date</calypso:attributeName>
+                <calypso:attributeValue>ROLL_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_TRADE_KEYWORD.SWDealId</calypso:attributeName>
+                <calypso:attributeValue>SWAPSWIRE_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_TRADE_KEYWORD.SWSingleSided</calypso:attributeName>
+                <calypso:attributeValue>SW_SINGLESIDED</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Currency</calypso:attributeName>
+                <calypso:attributeValue>CURR</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Id</calypso:attributeName>
+                <calypso:attributeValue>TRADE_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Settle Date</calypso:attributeName>
+                <calypso:attributeValue>START_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Short Date</calypso:attributeName>
+                <calypso:attributeValue>TRADE_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns0</calypso:attributeName>
+                <calypso:attributeValue>Trade Id</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns1</calypso:attributeName>
+                <calypso:attributeValue>CounterParty.Short Name</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns10</calypso:attributeName>
+                <calypso:attributeValue>Coupon Period</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns11</calypso:attributeName>
+                <calypso:attributeValue>Fixed Leg Day Count</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns12</calypso:attributeName>
+                <calypso:attributeValue>Roll Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns13</calypso:attributeName>
+                <calypso:attributeValue>Trade Short Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns14</calypso:attributeName>
+                <calypso:attributeValue>Trade Settle Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns15</calypso:attributeName>
+                <calypso:attributeValue>Maturity Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns16</calypso:attributeName>
+                <calypso:attributeValue>MTM Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns17</calypso:attributeName>
+                <calypso:attributeValue>Pricer.NPV</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns18</calypso:attributeName>
+                <calypso:attributeValue>TRADE_KEYWORD.SWDealId</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns19</calypso:attributeName>
+                <calypso:attributeValue>Delta 1Y</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns2</calypso:attributeName>
+                <calypso:attributeValue>Processing Org</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns20</calypso:attributeName>
+                <calypso:attributeValue>Delta 5Y</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns21</calypso:attributeName>
+                <calypso:attributeValue>Floating Leg Index</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns22</calypso:attributeName>
+                <calypso:attributeValue>Floating Leg Index Period</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns23</calypso:attributeName>
+                <calypso:attributeValue>Floating Leg Payment Period</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns24</calypso:attributeName>
+                <calypso:attributeValue>Floating Leg Fixing Period</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns25</calypso:attributeName>
+                <calypso:attributeValue>Floating Leg Spread</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns26</calypso:attributeName>
+                <calypso:attributeValue>Floating Leg Fixing Rate</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns27</calypso:attributeName>
+                <calypso:attributeValue>Next Floating Leg Fixing Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns28</calypso:attributeName>
+                <calypso:attributeValue>Next Floating Leg Payment Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns29</calypso:attributeName>
+                <calypso:attributeValue>Next Fixed Leg Payment Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns3</calypso:attributeName>
+                <calypso:attributeValue>Book</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns30</calypso:attributeName>
+                <calypso:attributeValue>TRADE_KEYWORD.SWSingleSided</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns4</calypso:attributeName>
+                <calypso:attributeValue>External Reference</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns5</calypso:attributeName>
+                <calypso:attributeValue>Product Type</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns6</calypso:attributeName>
+                <calypso:attributeValue>Initial Notional</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns7</calypso:attributeName>
+                <calypso:attributeValue>Trade Currency</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns8</calypso:attributeName>
+                <calypso:attributeValue>Pay / Receive</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns9</calypso:attributeName>
+                <calypso:attributeValue>Coupon Rate</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns_COUNT</calypso:attributeName>
+                <calypso:attributeValue>31</calypso:attributeValue>
+                <calypso:attributeClass>Integer</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>MaturityOpenTerm</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Analysis Type</calypso:attributeName>
+                <calypso:attributeValue>TriOptima</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Param Name</calypso:attributeName>
+                <calypso:attributeValue>TriOptima_IRD</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Processing Org Include Child</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ProductType</calypso:attributeName>
+                <calypso:attributeValue>FRA</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>SellFlag</calypso:attributeName>
+                <calypso:attributeValue>true</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Status</calypso:attributeName>
+                <calypso:attributeValue>VERIFIED</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>TRADE_FILTER</calypso:attributeName>
+                <calypso:attributeValue>TriOptima_IRD</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Title</calypso:attributeName>
+                <calypso:attributeValue>TriOptima FRA</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>UNDO_DATE_CHECK</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+        </calypso:reportAttributes>
+    </calypso:calypsoObject>
+    <calypso:calypsoObject xsi:type="calypso:ReportTemplate" action="NEW" version="12-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <calypso:identification>
+            <calypso:versionedIdentifier codifier="Calypso" code="1042" version="13"/>
+        </calypso:identification>
+        <calypso:reportType>TriOptima</calypso:reportType>
+        <calypso:name>TriOptimaSwap</calypso:name>
+        <calypso:hidden>false</calypso:hidden>
+        <calypso:private>false</calypso:private>
+        <calypso:user>calypso_user</calypso:user>
+        <calypso:reportAttributes>
+            <calypso:attribute>
+                <calypso:attributeName>AggregatedFlag</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>BuyFlag</calypso:attributeName>
+                <calypso:attributeValue>true</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_MTM Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Maturity Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Next Fixed Leg Payment Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Next Floating Leg Fixing Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Next Floating Leg Payment Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Trade Settle Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnFormats_Trade Short Date</calypso:attributeName>
+                <calypso:attributeValue>DATE,YYYYMMDD,None,-</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Book</calypso:attributeName>
+                <calypso:attributeValue>BOOK</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_CounterParty.Short Name</calypso:attributeName>
+                <calypso:attributeValue>CP_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Coupon Period</calypso:attributeName>
+                <calypso:attributeValue>COUPON_PER</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Coupon Rate</calypso:attributeName>
+                <calypso:attributeValue>COUPON_RATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Delta 1Y</calypso:attributeName>
+                <calypso:attributeValue>DELTA_1Y</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Delta 5Y</calypso:attributeName>
+                <calypso:attributeValue>DELTA_5Y</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_External Reference</calypso:attributeName>
+                <calypso:attributeValue>CP_TRADE_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Fixed Leg Day Count</calypso:attributeName>
+                <calypso:attributeValue>DAYCOUNT</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Floating Leg Fixing Period</calypso:attributeName>
+                <calypso:attributeValue>FLOAT_RATE_FIXING_PER</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Floating Leg Fixing Rate</calypso:attributeName>
+                <calypso:attributeValue>FLOAT_RATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Floating Leg Index</calypso:attributeName>
+                <calypso:attributeValue>FLOAT_RATE_INDEX</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Floating Leg Index Period</calypso:attributeName>
+                <calypso:attributeValue>FLOAT_RATE_INDEX_PER</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Floating Leg Payment Period</calypso:attributeName>
+                <calypso:attributeValue>FLOAT_RATE_PAY_PER</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Floating Leg Spread</calypso:attributeName>
+                <calypso:attributeValue>FLOAT_SPREAD</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_MTM Date</calypso:attributeName>
+                <calypso:attributeValue>MTM_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Maturity Date</calypso:attributeName>
+                <calypso:attributeValue>END_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Next Fixed Leg Payment Date</calypso:attributeName>
+                <calypso:attributeValue>NEXT_FIX_PAY_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Next Floating Leg Fixing Date</calypso:attributeName>
+                <calypso:attributeValue>NEXT_FIXING_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Next Floating Leg Payment Date</calypso:attributeName>
+                <calypso:attributeValue>NEXT_FLOAT_PAY_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Initial Notional</calypso:attributeName>
+                <calypso:attributeValue>NOMINAL</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Pay / Receive</calypso:attributeName>
+                <calypso:attributeValue>PAY_REC</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Pricer.NPV</calypso:attributeName>
+                <calypso:attributeValue>MTM_VALUE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Processing Org</calypso:attributeName>
+                <calypso:attributeValue>RISK_UNIT</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Product Type</calypso:attributeName>
+                <calypso:attributeValue>INS_TYPE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Roll Date</calypso:attributeName>
+                <calypso:attributeValue>ROLL_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_TRADE_KEYWORD.SWDealId</calypso:attributeName>
+                <calypso:attributeValue>SWAPSWIRE_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_TRADE_KEYWORD.SWSingleSided</calypso:attributeName>
+                <calypso:attributeValue>SW_SINGLESIDED</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Currency</calypso:attributeName>
+                <calypso:attributeValue>CURR</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Id</calypso:attributeName>
+                <calypso:attributeValue>TRADE_ID</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Settle Date</calypso:attributeName>
+                <calypso:attributeValue>START_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ColumnNames_Trade Short Date</calypso:attributeName>
+                <calypso:attributeValue>TRADE_DATE</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns0</calypso:attributeName>
+                <calypso:attributeValue>Trade Id</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns1</calypso:attributeName>
+                <calypso:attributeValue>CounterParty.Short Name</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns10</calypso:attributeName>
+                <calypso:attributeValue>Coupon Period</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns11</calypso:attributeName>
+                <calypso:attributeValue>Fixed Leg Day Count</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns12</calypso:attributeName>
+                <calypso:attributeValue>Roll Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns13</calypso:attributeName>
+                <calypso:attributeValue>Trade Short Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns14</calypso:attributeName>
+                <calypso:attributeValue>Trade Settle Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns15</calypso:attributeName>
+                <calypso:attributeValue>Maturity Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns16</calypso:attributeName>
+                <calypso:attributeValue>MTM Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns17</calypso:attributeName>
+                <calypso:attributeValue>Pricer.NPV</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns18</calypso:attributeName>
+                <calypso:attributeValue>TRADE_KEYWORD.SWDealId</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns19</calypso:attributeName>
+                <calypso:attributeValue>Delta 1Y</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns2</calypso:attributeName>
+                <calypso:attributeValue>Processing Org</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns20</calypso:attributeName>
+                <calypso:attributeValue>Delta 5Y</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns21</calypso:attributeName>
+                <calypso:attributeValue>Floating Leg Index</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns22</calypso:attributeName>
+                <calypso:attributeValue>Floating Leg Index Period</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns23</calypso:attributeName>
+                <calypso:attributeValue>Floating Leg Payment Period</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns24</calypso:attributeName>
+                <calypso:attributeValue>Floating Leg Fixing Period</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns25</calypso:attributeName>
+                <calypso:attributeValue>Floating Leg Spread</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns26</calypso:attributeName>
+                <calypso:attributeValue>Floating Leg Fixing Rate</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns27</calypso:attributeName>
+                <calypso:attributeValue>Next Floating Leg Fixing Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns28</calypso:attributeName>
+                <calypso:attributeValue>Next Floating Leg Payment Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns29</calypso:attributeName>
+                <calypso:attributeValue>Next Fixed Leg Payment Date</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns3</calypso:attributeName>
+                <calypso:attributeValue>Book</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns30</calypso:attributeName>
+                <calypso:attributeValue>TRADE_KEYWORD.SWSingleSided</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns4</calypso:attributeName>
+                <calypso:attributeValue>External Reference</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns5</calypso:attributeName>
+                <calypso:attributeValue>Product Type</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns6</calypso:attributeName>
+                <calypso:attributeValue>Initial Notional</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns7</calypso:attributeName>
+                <calypso:attributeValue>Trade Currency</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns8</calypso:attributeName>
+                <calypso:attributeValue>Pay / Receive</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns9</calypso:attributeName>
+                <calypso:attributeValue>Coupon Rate</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Columns_COUNT</calypso:attributeName>
+                <calypso:attributeValue>31</calypso:attributeValue>
+                <calypso:attributeClass>Integer</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>MaturityOpenTerm</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Analysis Type</calypso:attributeName>
+                <calypso:attributeValue>TriOptima</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Param Name</calypso:attributeName>
+                <calypso:attributeValue>TriOptima_IRD</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Processing Org Include Child</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>ProductType</calypso:attributeName>
+                <calypso:attributeValue>Swap</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>SellFlag</calypso:attributeName>
+                <calypso:attributeValue>true</calypso:attributeValue>
+                <calypso:attributeClass>Boolean</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Status</calypso:attributeName>
+                <calypso:attributeValue>VERIFIED</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>TRADE_FILTER</calypso:attributeName>
+                <calypso:attributeValue>TriOptima_IRD</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>Title</calypso:attributeName>
+                <calypso:attributeValue>TriOptima Swap</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+            <calypso:attribute>
+                <calypso:attributeName>UNDO_DATE_CHECK</calypso:attributeName>
+                <calypso:attributeValue>false</calypso:attributeValue>
+                <calypso:attributeClass>String</calypso:attributeClass>
+            </calypso:attribute>
+        </calypso:reportAttributes>
+    </calypso:calypsoObject>
+</calypso:calypsoDocument>

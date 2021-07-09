@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<reportTemplates>
+    <reportTemplate>
+        <reportType>BackLoading</reportType>
+        <name>MarkitWireBackloading</name>
+        <isHidden>false</isHidden>
+        <isPrivate>false</isPrivate>
+        <user>admin</user>
+        <attributes>
+            <attribute>
+                <attributeName>AggregatedFlag</attributeName>
+                <attributeValue>false</attributeValue>
+                <attributeClass>Boolean</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>BuyFlag</attributeName>
+                <attributeValue>true</attributeValue>
+                <attributeClass>Boolean</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnFormats_NovationDate</attributeName>
+                <attributeValue>DATE,DDMMYYYY,None,/</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnFormats_NovationTradeDate</attributeName>
+                <attributeValue>DATE,DDMMYYYY,None,/</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnFormats_Pay Leg Maturity Date</attributeName>
+                <attributeValue>DATE,DDMMYYYY,None,/</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnFormats_Trade Date</attributeName>
+                <attributeValue>DATE,DDMMYYYY,None,/</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnFormats_Trade Settle Date</attributeName>
+                <attributeValue>DATE,DDMMYYYY,None,/</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+			<attribute>
+                <attributeName>ColumnFormats_g_BreakOverrideFirstDate</attributeName>
+                <attributeValue>DATE,DDMMYYYY,None,/</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+			<attribute>
+                <attributeName>ColumnNames_Book_Attr.SwapswireBook</attributeName>
+                <attributeValue>(g_BookID)</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Broker</attributeName>
+                <attributeValue>g_Broker</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Brokerage Amt</attributeName>
+                <attributeValue>g_BrokerageAmt</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Brokerage Currency</attributeName>
+                <attributeValue>g_BrokerageCCY</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Bus Day Convention</attributeName>
+                <attributeValue>g_BusDayConv</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Contractual Definition</attributeName>
+                <attributeValue>g_ContractualDefinitions</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_CounterParty.Attribute.SwapswireParticipant</attributeName>
+                <attributeValue>g_PartyB</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_FullFirstCalculationPeriod</attributeName>
+                <attributeValue>g_FullFirstCalculationPeriod</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_IndexTenor1</attributeName>
+                <attributeValue>g_IndexTenor1</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_IndexTenor2</attributeName>
+                <attributeValue>g_IndexTenor2</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_LinearInterpolation</attributeName>
+                <attributeValue>g_LinearInterpolation</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Master Agreement</attributeName>
+                <attributeValue>g_MasterAgreementType</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Notional</attributeName>
+                <attributeValue>g_Notional</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_NovationDate</attributeName>
+                <attributeValue>g_NovationDate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_NovationTradeDate</attributeName>
+                <attributeValue>g_NovationTradeDate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Pay Leg DayCount</attributeName>
+                <attributeValue>p_DayCountFrac</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Pay Leg Fixed Rate</attributeName>
+                <attributeValue>p_Rate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Pay Leg Maturity Date</attributeName>
+                <attributeValue>g_TerminationDate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Pay Leg Rate Index Spread</attributeName>
+                <attributeValue>p_Spread</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Processing Org.Attribute.SwapswireParticipant</attributeName>
+                <attributeValue>g_PartyA</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Product Type</attributeName>
+                <attributeValue>g_ProductType</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Rcv Leg DayCount</attributeName>
+                <attributeValue>r_DayCountFrac</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Rcv Leg Fixed Rate</attributeName>
+                <attributeValue>r_Rate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Rcv Leg Rate Index Spread</attributeName>
+                <attributeValue>r_Spread</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_TRADE_KEYWORD.Novation_Transferor</attributeName>
+                <attributeValue>g_OutgoingParty</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Trade Currency</attributeName>
+                <attributeValue>g_Currency</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Trade Date</attributeName>
+                <attributeValue>g_TradeDate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Trade Id</attributeName>
+                <attributeValue>g_OurRef</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Trade Settle Date</attributeName>
+                <attributeValue>g_EffectiveDate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_AddField1</attributeName>
+                <attributeValue>(g_AddField1)</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_AddField2</attributeName>
+                <attributeValue>(g_AddField2)</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_AddField3</attributeName>
+                <attributeValue>(g_AddField3)</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_AddField4</attributeName>
+                <attributeValue>(g_AddField4)</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_AddField5</attributeName>
+                <attributeValue>(g_AddField5)</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_AutoSendForClearing</attributeName>
+                <attributeValue>g_AutoSendForClearing</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_BatchID</attributeName>
+                <attributeValue>g_BatchID</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_BreakCalculationMethod</attributeName>
+                <attributeValue>g_BreakCalculationMethod</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_BreakFirstDate</attributeName>
+                <attributeValue>g_BreakFirstDate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_BreakFrequency</attributeName>
+                <attributeValue>g_BreakFrequency</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_BreakOverrideFirstDate</attributeName>
+                <attributeValue>g_BreakOverrideFirstDate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_ClientClearing</attributeName>
+                <attributeValue>g_ClientClearing</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_FixedStubLength</attributeName>
+                <attributeValue>g_FixedStubLength</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_FloatStubLength</attributeName>
+                <attributeValue>g_FloatStubLength</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_MessageText</attributeName>
+                <attributeValue>(g_MessageText)</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_NormalisationDate</attributeName>
+                <attributeValue>g_NormalisationDate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_ParticpantSupplement</attributeName>
+                <attributeValue>g_ParticpantSupplement</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_PartyANovationRoleType</attributeName>
+                <attributeValue>g_PartyANovationRoleType</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_SalesCredit</attributeName>
+                <attributeValue>g_SalesCredit</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_g_StubAt</attributeName>
+                <attributeValue>g_StubAt</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_isIMMTrade</attributeName>
+                <attributeValue>g_IMM</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_p_FixedAmount</attributeName>
+                <attributeValue>p_FixedAmount</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_payLeg BusDayConvention</attributeName>
+                <attributeValue>p_BusDayConv</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_payLeg Compounding Frequency</attributeName>
+                <attributeValue>p_CompFrequency</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_payLeg Compounding Method</attributeName>
+                <attributeValue>p_CompType</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_payLeg Custom Rate Index</attributeName>
+                <attributeValue>p_FloatRateOpt</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_payLeg DayCount</attributeName>
+                <attributeValue>p_DayCountFrac</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_payLeg DesignatedMat</attributeName>
+                <attributeValue>p_DesignatedMat</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_payLeg FinancialCentre</attributeName>
+                <attributeValue>p_FinancialCentre</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_payLeg FirstFixingRate</attributeName>
+                <attributeValue>p_FirstFixingRate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_payLeg FixingFinancialCentre</attributeName>
+                <attributeValue>p_FixingFinancialCentre</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_payLeg PeriodRule</attributeName>
+                <attributeValue>p_PeriodEnd</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_payLeg Rollday</attributeName>
+                <attributeValue>p_Rollday</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_payLeg is ZeroCoupon</attributeName>
+                <attributeValue>p_ZeroCoupon</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_r_FixedAmount</attributeName>
+                <attributeValue>r_FixedAmount</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_receiveLeg BusDayConvention</attributeName>
+                <attributeValue>r_BusDayConv</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_receiveLeg Compounding Frequency</attributeName>
+                <attributeValue>r_CompFrequency</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_receiveLeg Compounding Method</attributeName>
+                <attributeValue>r_CompType</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_receiveLeg Custom Rate Index</attributeName>
+                <attributeValue>r_FloatRateOpt</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_receiveLeg DayCount</attributeName>
+                <attributeValue>r_DayCountFrac</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_receiveLeg DesignatedMat</attributeName>
+                <attributeValue>r_DesignatedMat</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_receiveLeg FinancialCentre</attributeName>
+                <attributeValue>r_FinancialCentre</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_receiveLeg FirstFixingRate</attributeName>
+                <attributeValue>r_FirstFixingRate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_receiveLeg FixingFinancialCentre</attributeName>
+                <attributeValue>r_FixingFinancialCentre</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_receiveLeg PeriodRule</attributeName>
+                <attributeValue>r_PeriodEnd</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_receiveLeg is ZeroCoupon</attributeName>
+                <attributeValue>r_ZeroCoupon</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_swapType</attributeName>
+                <attributeValue>g_SwapType</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns0</attributeName>
+                <attributeValue>Trade Id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns1</attributeName>
+                <attributeValue>swapType</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns10</attributeName>
+                <attributeValue>CounterParty.Attribute.SwapswireParticipant</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns11</attributeName>
+                <attributeValue>payLeg Custom Rate Index</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns12</attributeName>
+                <attributeValue>Pay Leg Rate Index Spread</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns13</attributeName>
+                <attributeValue>Pay Leg Fixed Rate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns14</attributeName>
+                <attributeValue>payLeg PeriodRule</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns15</attributeName>
+                <attributeValue>Pay Leg DayCount</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns16</attributeName>
+                <attributeValue>payLeg BusDayConvention</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns17</attributeName>
+                <attributeValue>payLeg FinancialCentre</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns18</attributeName>
+                <attributeValue>payLeg DesignatedMat</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns19</attributeName>
+                <attributeValue>payLeg Compounding Method</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns2</attributeName>
+                <attributeValue>isIMMTrade</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns20</attributeName>
+                <attributeValue>payLeg Compounding Frequency</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns21</attributeName>
+                <attributeValue>receiveLeg Custom Rate Index</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns22</attributeName>
+                <attributeValue>Rcv Leg Rate Index Spread</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns23</attributeName>
+                <attributeValue>Rcv Leg Fixed Rate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns24</attributeName>
+                <attributeValue>receiveLeg PeriodRule</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns25</attributeName>
+                <attributeValue>Rcv Leg DayCount</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns26</attributeName>
+                <attributeValue>receiveLeg BusDayConvention</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns27</attributeName>
+                <attributeValue>receiveLeg FinancialCentre</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns28</attributeName>
+                <attributeValue>receiveLeg DesignatedMat</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns29</attributeName>
+                <attributeValue>receiveLeg Compounding Method</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns3</attributeName>
+                <attributeValue>Trade Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns30</attributeName>
+                <attributeValue>receiveLeg Compounding Frequency</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns31</attributeName>
+                <attributeValue>payLeg Rollday</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns32</attributeName>
+                <attributeValue>g_NormalisationDate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns33</attributeName>
+                <attributeValue>g_BatchID</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns34</attributeName>
+                <attributeValue>Book_Attr.SwapswireBook</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns35</attributeName>
+                <attributeValue>Broker</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns36</attributeName>
+                <attributeValue>g_SalesCredit</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns37</attributeName>
+                <attributeValue>Brokerage Currency</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns38</attributeName>
+                <attributeValue>Brokerage Amt</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns39</attributeName>
+                <attributeValue>g_AddField1</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns4</attributeName>
+                <attributeValue>Trade Settle Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns40</attributeName>
+                <attributeValue>g_AddField2</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns41</attributeName>
+                <attributeValue>g_AddField3</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns42</attributeName>
+                <attributeValue>g_AddField4</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns43</attributeName>
+                <attributeValue>g_AddField5</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns44</attributeName>
+                <attributeValue>g_MessageText</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns45</attributeName>
+                <attributeValue>g_BreakFirstDate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns46</attributeName>
+                <attributeValue>g_BreakFrequency</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns47</attributeName>
+                <attributeValue>g_ParticpantSupplement</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns48</attributeName>
+                <attributeValue>g_BreakOverrideFirstDate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns49</attributeName>
+                <attributeValue>g_BreakCalculationMethod</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns5</attributeName>
+                <attributeValue>Pay Leg Maturity Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns50</attributeName>
+                <attributeValue>g_StubAt</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns51</attributeName>
+                <attributeValue>g_FixedStubLength</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns52</attributeName>
+                <attributeValue>g_FloatStubLength</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns53</attributeName>
+                <attributeValue>LinearInterpolation</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns54</attributeName>
+                <attributeValue>IndexTenor1</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns55</attributeName>
+                <attributeValue>IndexTenor2</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns56</attributeName>
+                <attributeValue>Contractual Definition</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns57</attributeName>
+                <attributeValue>Master Agreement</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns58</attributeName>
+                <attributeValue>payLeg FixingFinancialCentre</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns59</attributeName>
+                <attributeValue>receiveLeg FixingFinancialCentre</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns6</attributeName>
+                <attributeValue>Bus Day Convention</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns60</attributeName>
+                <attributeValue>Product Type</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns61</attributeName>
+                <attributeValue>NovationTradeDate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns62</attributeName>
+                <attributeValue>NovationDate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns63</attributeName>
+                <attributeValue>TRADE_KEYWORD.Novation_Transferor</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns64</attributeName>
+                <attributeValue>g_PartyANovationRoleType</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns65</attributeName>
+                <attributeValue>FullFirstCalculationPeriod</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns66</attributeName>
+                <attributeValue>receiveLeg FirstFixingRate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns67</attributeName>
+                <attributeValue>payLeg FirstFixingRate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns68</attributeName>
+                <attributeValue>g_ClientClearing</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns69</attributeName>
+                <attributeValue>g_AutoSendForClearing</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns7</attributeName>
+                <attributeValue>Trade Currency</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns70</attributeName>
+                <attributeValue>payLeg is ZeroCoupon</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns71</attributeName>
+                <attributeValue>receiveLeg is ZeroCoupon</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns72</attributeName>
+                <attributeValue>p_FixedAmount</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns73</attributeName>
+                <attributeValue>r_FixedAmount</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns8</attributeName>
+                <attributeValue>Notional</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns9</attributeName>
+                <attributeValue>Processing Org.Attribute.SwapswireParticipant</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns_COUNT</attributeName>
+                <attributeValue>74</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>IncludeArchive</attributeName>
+                <attributeValue>false</attributeValue>
+                <attributeClass>Boolean</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>InterfaceType</attributeName>
+                <attributeValue>MW</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>MaturityOpenTerm</attributeName>
+                <attributeValue>false</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Processing Org Include Child</attributeName>
+                <attributeValue>false</attributeValue>
+                <attributeClass>Boolean</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ProductType</attributeName>
+                <attributeValue>Swap</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SecCode</attributeName>
+                <attributeValue>CUSIP</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SellFlag</attributeName>
+                <attributeValue>true</attributeValue>
+                <attributeClass>Boolean</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Status</attributeName>
+                <attributeValue>PENDING,PRICING,VERIFIED,ALLOCATED,ROLLOVERED,MATURED,EXERCISED,TERMINATED</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>TRADE_FILTER</attributeName>
+                <attributeValue>ALL</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>TRADE_ID</attributeName>
+                <attributeValue>14201</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Title</attributeName>
+                <attributeValue>Trade Browser</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>UNDO_DATE_CHECK</attributeName>
+                <attributeValue>false</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+        </attributes>
+    </reportTemplate>
+</reportTemplates>

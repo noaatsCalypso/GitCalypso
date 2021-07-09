@@ -1,0 +1,353 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+ 
+
+<p><span lang=EN-US >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The purpose of this letter agreement (this &quot;confirmation&quot;) is to confirm the terms and conditions of 
+the Credit Default Swap Transaction entered into between us on the Trade Date specified below. 
+
+<p><span lang=EN-US >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The definitions and provisions contained in the 2003 ISDA Credit Derivatives Definitions (the "Credit Derivatives Definitions"), 
+as published by the International Swaps and Derivatives Association, Inc., are incorporated into this Confirmation. 
+In the event of any inconsistency between the Credit Derivatives Definitions and this Confirmation, this Confirmation will govern.
+</span></p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+<!--calypso>
+if (|LA_STATUS|== "SIGNED")
+	inline "
+    This Confirmation supplements, forms a part of, and is subject to, the ISDA Master Agreement dated as of |LA_AGREEMENT_DATE|, 
+    as amended and supplemented from time to time (the \"Agreement\"), between you and us.  
+    All provisions contained in the Agreement govern this Confirmation except as expressly modified below.
+	";
+if (|LA_STATUS|== "UNDER NEGOTIATION")
+	inline "
+    This Confirmation evidences a complete and binding agreement between you and us as to the terms of the Transaction 
+    to which this Confirmation relates.  In addition, you and we agree to use all reasonable efforts promptly to negotiate, 
+    execute and deliver an agreement in the form of an ISDA Master Agreement, with such modifications as you and we will in good faith agree.  
+    Upon the execution by you and us of such an agreement, this Confirmation will supplement, form part of, and be subject to that agreement.  
+    All provisions contained in or incorporated by reference in that agreement upon its execution will govern this Confirmation 
+    except as expressly modified below.  Until we execute and deliver that agreement, this Confirmation, together with all other documents 
+    referring to an ISDA Master Agreement (each a \"Confirmation\") confirming transactions (each a \"Transaction\") entered into between us 
+    (notwithstanding anything to the contrary in a Confirmation), shall supplement, form a part of, and be subject to, an agreement in the form 
+    of the 1992 ISDA Master Agreement (Multicurrency - Cross Border) if any Confirmation dated prior to the date of this Confirmation 
+    refers to that ISDA Master Agreement and otherwise the 2002 ISDA Master Agreement as if we had executed an agreement in such form 
+    (but without any Schedule except for the election of [English Law][the laws of the State of New York] as the governing law and [specify currency] 
+    as the Termination Currency) on the Trade Date of the first such Transaction between us.  In the event of any inconsistency between the 
+    provisions of that agreement and this Confirmation, this Confirmation will prevail for the purpose of this Transaction.
+	";
+</calypso-->
+
+
+<p><span lang=EN-US >
+The terms of the Transaction to which this Confirmation relates are as follows:
+</span></p>
+
+<p><span lang=EN-US style='font-size:10.0pt;'>
+<!---Credit Default Swap General Table--></span></p>
+
+<p><b><u><span lang=EN-US >1. General Terms:</span></u></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=560 style='width:560.0pt;
+ mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr>
+  <td width="19%" style='width:19.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Trade Date:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|TRADE_DATE|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="19%" style='width:19.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Effective Date:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|SETTLE_DATE|</span></p>  
+  </td>
+ </tr>
+ <tr>
+  <td width="19%" style='width:19.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Scheduled Termination Date:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|PRODUCT_MATURITYDATE|, subject to
+  adjustment in accordance with the Modified Following Business Day Convention.</span></p>
+  </td>
+ </tr>  
+ <tr>
+ <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >The Seller:</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+   <p><span lang=EN-US >|PROTECTION_SELLER_CODE|</span><span
+  lang=FR ></span></p>
+  </td>
+ </tr>
+ <tr>       
+<td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+   <p><span lang=EN-US >The Buyer:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+   <p><span lang=EN-US >|PROTECTION_BUYER_CODE|</span><span
+  lang=FR ></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="23%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Calculation Agent:</span></p>
+  </td>
+  <td width="77%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|CD_CALC_AGENT|</span></p>
+  </td>
+ </tr>
+<tr>
+  <td width="23%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Calculation Agent City:</span></p>
+  </td>
+  <td width="77%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|CD_CALC_AGENT_CITY|</span></p>
+  </td>
+ </tr>
+<td width="23%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Business Day:</span></p>
+  </td>
+  <td width="77%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|FIX_CPN_HOL|</span></p>
+  </td>
+ </tr>
+ <td width="23%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Business Day Convention:</span></p>
+  </td>
+  <td width="77%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|FIX_CPN_DATE_ROLL|</span></p>
+  </td>
+ </tr>
+  <td width="19%" style='width:19.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Reference Entity:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|CD_REFERENCE_ENTITY|</span></p>
+  </td>
+ </tr>
+<tr>
+  <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Reference Obligation(s):</span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|REFERENCE_OBLIGATIONS|</span></p>
+  </td>
+ </tr> 
+</tr>
+<tr>
+  <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >All Guarantees:</span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|ALL_GUARANTEES|</span></p>
+  </td>
+ </tr> 
+</tr>
+<tr>
+  <td width="19%" style='width:19.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Reference Price:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >100%</span></p>
+  </td>
+ </tr>
+</table>
+
+<p><b><u><span lang=EN-US >2. Fixed Payment</span></u></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=560 style='width:560.0pt;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+  <tr> 
+ <td width="20%" valign=top style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Fixed Rate Payer Calculation Amount:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|CD_NOTIONAL|</span></p>
+  </td>
+ </tr>
+ <tr> 
+  <td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Fixed Rate Payer Payment Dates:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|FIX_CPN_FREQ| on the |FIX_ROLL_DAY|, starting
+  |FIX_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the
+  |FIX_CPN_DATE_ROLL| Business Day convention.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Fixed Rate:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|FIX_FIXED_RATE| %</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Fixed Rate Day Count Fraction:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|FIX_DAY_COUNT|</span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span lang=EN-US >|ADDITIONAL_FIXED_AMOUNT|</span></p>
+
+
+<p><!---End Fixed Swap Leg Table-->
+
+<b><u><span lang=EN-US >3. Floating Payment</span></u></b></p>
+
+
+<table border=0 cellspacing=0 cellpadding=0 width=560 style='width:560.0pt;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr>
+  <td width="20%" valign=top style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Floating Rate Payer Calculation Amount:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|CD_NOTIONAL|</span></p>
+  </td>
+ </tr>
+ <tr> 
+  <td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Conditions to Settlement:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >
+    |CREDIT_EVENT_NOTICE|
+    <!--calypso>
+    if (|CREDIT_EVENT_NOTICE|== "Credit Event Notice")
+	inline "
+      <br>Notifying Party: |NOTIFYING_PARTY|
+    ";
+    </calypso-->
+    <br>Notice of Physical Settlement: |NOTICE_OF_PHYSICAL_SETTLEMENT|
+    <br>Notice of Publicly Available Information: |NOTICE_OF_PAI|
+    <br>Public Sources: |PUBLIC_SOURCES|
+    <br>Specified Number: |SPECIFIED_NUMBER|
+  </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Credit Events:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >
+    The following Credit Event(s) shall apply to this Transaction:
+    <!--calypso>
+    	if (NOTEMPTY |BANKRUPTCY| ) inline "<br>|BANKRUPTCY|";
+        if (NOTEMPTY |FAILURE_TO_PAY|) inline "<br>|FAILURE_TO_PAY|";
+        if (NOTEMPTY |FAILURE_TO_PAY|) inline "<br>&nbsp;&nbsp;&nbsp;&nbsp;Grace Period Extension |GRACE_PERIOD_APPLICABLE|";
+        if (NOTEMPTY |FAILURE_TO_PAY|) inline "<br>&nbsp;&nbsp;&nbsp;&nbsp;Grace Period: |GRACE_PERIOD|";
+        if (NOTEMPTY |FAILURE_TO_PAY|) inline "<br>&nbsp;&nbsp;&nbsp;&nbsp;Payment Requirement: |PAYMENT_REQUIREMENT|";
+    	if (NOTEMPTY |OBLIGATION_DEFAULT|) inline "<br>|OBLIGATION_DEFAULT|";
+    	if (NOTEMPTY |OBLIGATION_ACCELERATION|) inline "<br>|OBLIGATION_ACCELERATION|";
+    	if (NOTEMPTY |REPUDIATION_OR_MORATORIUM|) inline "<br>|REPUDIATION_OR_MORATORIUM|";
+    	if (NOTEMPTY |RESTRUCTURING|) inline "<br>|RESTRUCTURING|";
+    	if (NOTEMPTY |RESTRUCTURING|) inline "<br>&nbsp;&nbsp;&nbsp;&nbsp;Restructuring Maturity Limitation and Fully Transferable Obligation: |RESTRUCTURING_MR|";
+    	if (NOTEMPTY |RESTRUCTURING|) inline "<br>&nbsp;&nbsp;&nbsp;&nbsp;Modified Restructuring Maturity Limitation and Conditionally Transferable Obligation: |RESTRUCTURING_MMR|";
+    	if (NOTEMPTY |RESTRUCTURING|) inline "<br>&nbsp;&nbsp;&nbsp;&nbsp;Multiple Holder Obligation: |MULTIPLE_HOLDER_OBLIGATION|";
+    	if (NOTEMPTY |RESTRUCTURING| && NOTEMPTY |DEFAULT_REQUIREMENT|) inline "<br>&nbsp;&nbsp;&nbsp;&nbsp;Default Requirement: |DEFAULT_REQUIREMENT|";       
+    </calypso-->
+  </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Obligation(s):</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >
+    <table border=1 cellspacing=0 cellpadding=0>
+    	<tr>
+    		<td>Obligation Category</td>
+    		<td>Obligation Characteristics</td>
+    	</tr>
+    	<tr>
+    		<td>
+    		<br>[<!--calypso>if (|OBLIGATION_TYPE| == "PAYMENT") inline "X" ; else inline " ";</calypso-->]&nbsp;&nbsp; Payment
+    		<br>[<!--calypso>if (|OBLIGATION_TYPE| == "BORROWED_MONEY") inline "X" ; else inline " ";</calypso-->]&nbsp;&nbsp; Borrowed Money
+    		<br>[<!--calypso>if (|OBLIGATION_TYPE| == "REFERENCE_OBLIGATION_ONLY") inline "X" ; else inline " ";</calypso-->]&nbsp;&nbsp; Reference Obligations Only
+    		<br>[<!--calypso>if (|OBLIGATION_TYPE| == "BOND") inline "X" ; else inline " ";</calypso-->]&nbsp;&nbsp; Bond
+    		<br>[<!--calypso>if (|OBLIGATION_TYPE| == "LOAN") inline "X" ; else inline " ";</calypso-->]&nbsp;&nbsp; Loan
+    		<br>[<!--calypso>if (|OBLIGATION_TYPE| == "BOND_OR_LOAN") inline "X" ; else inline " ";</calypso-->]&nbsp;&nbsp; Bond or Loan
+    		</td>
+    		<td>
+    		<br>[<!--calypso>if (|OBLIGATION_CHARACTERISTICS| LIKE "%Not Subordinated%") inline "X" ; else inline " ";</calypso-->]&nbsp;&nbsp; Not Subordinated
+    		<br>[<!--calypso>if (|OBLIGATION_CHARACTERISTICS| LIKE "%Specified Currency%") inline "X" ; else inline " ";</calypso-->]&nbsp;&nbsp; Specified Currency
+    		<br>[<!--calypso>if (|OBLIGATION_CHARACTERISTICS| LIKE "%Not Sovereign Lender%") inline "X" ; else inline " ";</calypso-->]&nbsp;&nbsp; Not Sovereign Lender
+    		<br>[<!--calypso>if (|OBLIGATION_CHARACTERISTICS| LIKE "%Not Domestic Currency%") inline "X" ; else inline " ";</calypso-->]&nbsp;&nbsp; Not Domestic Currency
+    		<br>[<!--calypso>if (|OBLIGATION_CHARACTERISTICS| LIKE "%Not Domestic Law%") inline "X" ; else inline " ";</calypso-->]&nbsp;&nbsp; Not Domestic Law
+    		<br>[<!--calypso>if (|OBLIGATION_CHARACTERISTICS| LIKE "%Listed%") inline "X" ; else inline " ";</calypso-->]&nbsp;&nbsp; Listed
+    		<br>[<!--calypso>if (|OBLIGATION_CHARACTERISTICS| LIKE "%Not Domestic Issuance%") inline "X" ; else inline " ";</calypso-->]&nbsp;&nbsp; Not Domestic Issuance
+    		</td>
+    	</tr>
+    </table>
+  </span></p>
+  </td>
+ </tr> 
+<tr>
+ <td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Excluded Obligations:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|EXCLUDED_OBLIGATIONS|</span></p>
+ </td>
+</tr> 
+ 
+</table>  
+
+
+<p><b><u><span lang=EN-US >
+
+4. Settlement Terms:</span></u></b></p>
+<table border=0 cellspacing=0 cellpadding=0 width=560 style='width:560.0pt;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+<tr>  
+  <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Settlement Method:</span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span align=left lang=EN-US >|SETTLEMENT_METHOD|</span></p>
+  </td>
+</tr> 
+</table>  
+
+<!--calypso>
+if ( |CD_SETTLEMENT_TYPE| == "PHYSICAL" ||
+     |CD_SETTLEMENT_TYPE| == "CUSTOMER_OPTION")
+    include "cds2003PhysicalSettlement.html";
+</calypso-->
+
+<!--calypso>
+if ( |CD_SETTLEMENT_TYPE| == "CASH" ||
+     |CD_SETTLEMENT_TYPE| == "CUSTOMER_OPTION")
+    include "cds2003CashSettlement.html";
+</calypso-->
+
+
+<p><span lang=EN-US >&nbsp;</span><span
+lang=EN-US style='font-size:10.0pt;'><!---End Credit Default Swap General Table--></span></p>
+
+<p><b><u><span lang=EN-US >5. Notice and Account Details:</span></u></b></p>
+Payment to |SENDER_CODE|:|PO_INSTRUCTIONS|</span></p>
+Payment to |RECEIVER_CODE|:|COUNTERPARTY_INSTRUCTIONS|
+ 
+<p><b><u><span lang=EN-US >6. MS Documentation and Operations Officers:</span></u></b></p>
+(a)    The Office of Party A for the Swap Transaction is |SENDER_ADDRESS| |SENDER_CITY| |SENDER_STATE| |SENDER_ZIPCODE| |SENDER_COUNTRY|; and</span></p>
+(b)    The Office of Party B for the Swap Transaction is |RECEIVER_ADDRESS| |RECEIVER_CITY| |RECEIVER_STATE| |RECEIVER_ZIPCODE| |RECEIVER_COUNTRY|. 
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

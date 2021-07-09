@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+<table name="domain_values" xmlns="">
+		<row cat="startup">
+            <column name="name">domainName</column>
+            <column name="value">securityCode.Sukuk</column>
+            <column name="description">Security codes</column>
+        </row>
+		<row cat="startup">
+            <column name="name">domainName</column>
+            <column name="value">securityCode.IslamicContract</column>
+            <column name="description">Security codes</column>
+        </row>
+		<row cat="startup">
+            <column name="name">securityCode</column>
+            <column name="value">Sukuk</column>
+            <column name="description"></column>
+        </row>
+		<row cat="startup">
+            <column name="name">securityCode</column>
+            <column name="value">IslamicContract</column>
+            <column name="description"></column>
+        </row>
+		<row cat="startup">
+            <column name="name">securityCode.Sukuk</column>
+            <column name="value">True</column>
+            <column name="description"></column>
+        </row>
+		<row cat="startup">
+            <column name="name">securityCode.Sukuk</column>
+            <column name="value">False</column>
+            <column name="description"></column>
+        </row>
+		<row cat="startup">
+            <column name="name">securityCode.IslamicContract</column>
+            <column name="value">Ijara</column>
+            <column name="description"></column>
+        </row>
+		<row cat="startup">
+            <column name="name">securityCode.IslamicContract</column>
+            <column name="value">Mudaraba</column>
+            <column name="description"></column>
+        </row>
+		<row cat="startup">
+            <column name="name">securityCode.IslamicContract</column>
+            <column name="value">Musharaka</column>
+            <column name="description"></column>
+        </row>
+		<row cat="startup">
+            <column name="name">accEventType</column>
+            <column name="value">DISTRIBUTION</column>
+            <column name="description"></column>
+        </row>
+		<row cat="startup"><column name="name">accEventType</column>
+			<column name="value">DISTRIBUTION_TD</column>
+			<column name="description"/></row>
+		<row cat="startup"><column name="name">accEventType</column>
+			<column name="value">DISTRIBUTION_YIELD</column>
+			<column name="description"/></row>
+		<row cat="startup">
+            <column name="name">accEventType</column>
+            <column name="value">PROFIT</column>
+            <column name="description"></column>
+        </row>
+		<row cat="startup">
+            <column name="name">accEventType</column>
+            <column name="value">COST</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">CustomBOTradeFrameTab</column>
+            <column name="value">Islamic</column>
+            <column name="description">Custom BOTrade Frame Tab for IslamicSwap</column>
+        </row>
+		<row cat="domain">
+			<column name="name">domainName</column>
+			<column name="value">IslamicSwap.ProductName</column>
+			<column name="description">Product names for IslamicSwap</column>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicSwap.ProductName</column>
+			<column name="value">Pure Murabaha</column>
+			<column name="description"></column>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicSwap.ProductName</column>
+			<column name="value">Waad Based</column>
+			<column name="description"></column>
+		</row>
+		<row cat="domain">
+			<column name="name">domainName</column>
+			<column name="value">IslamicMM.ProductName</column>
+			<column name="description">Product names for IslamicMM</column>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicMM.ProductName</column>
+			<column name="value">Isra</column>
+			<column name="description"></column>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicMM.ProductName</column>
+			<column name="value">Murabaha</column>
+			<column name="description"></column>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicMM.ProductName</column>
+			<column name="value">Wakala</column>
+			<column name="description"></column>
+		</row>
+		<row cat="domain">
+			<column name="name">domainName</column>
+			<column name="value">IslamicMM.ContractType</column>
+			<column name="description">List of WAKALA contract types</column>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicMM.ContractType</column>
+			<column name="value">Unrestricted Agency</column>
+			<column name="description">Unrestricted agency</column>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicMM.ContractType</column>
+			<column name="value">Restricted Agency</column>
+			<column name="description">Restricted agency</column>
+		</row>
+		<row cat="domain">
+			<column name="name">sdFilterCriterion.Factory</column>
+			<column name="value">IslamicSwap</column>
+			<column name="description"/>
+		</row>
+		<row cat="domain">
+			<column name="name">sdFilterCriterion.Factory</column>
+			<column name="value">IslamicMM</column>
+			<column name="description"/>
+		</row>
+		<row cat="domain">
+			<column name="name">domainName</column>
+			<column name="value">IslamicSwap.ProductStructure</column>
+			<column name="description">Product Structures for IslamicSwap</column>
+		</row> 
+		<row cat="domain">
+			<column name="name">IslamicSwap.ProductStructure</column>
+			<column name="value">Single Sale</column>
+			<column name="description"></column>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicSwap.ProductStructure</column>
+			<column name="value">Double Sale</column>
+			<column name="description"></column>
+		</row>
+		<row cat="domain">
+			<column name="name">MESSAGE.Templates</column>
+			<column name="value">IslamicMMWakalaWakilOffer.html</column>
+			<column name="description"/>
+		</row>
+		<row cat="domain">
+			<column name="name">MESSAGE.Templates</column>
+			<column name="value">IslamicSwapAssetSaleConfirmation.html</column>
+			<column name="description"/>
+		</row>
+		<row cat="domain">
+			<column name="name">MESSAGE.Templates</column>
+			<column name="value">IslamicSwapConfirmation.html</column>
+			<column name="description"/>
+		</row>
+		<row cat="domain">
+			<column name="name">MESSAGE.Templates</column>
+			<column name="value">IslamicSwapExerciseNotice.html</column>
+			<column name="description"/>
+		</row>
+		<row cat="domain">
+            <column name="name">XferAttributes</column>
+            <column name="value">ExerciseDate</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">XferAttributes</column>
+            <column name="value">PurchaseDate</column>
+            <column name="description"></column>
+        </row>
+		<row cat="startup">
+            <column name="name">flowType</column>
+            <column name="value">PROFIT</column>
+            <column name="description"></column>
+        </row>
+		<row cat="startup">
+            <column name="name">flowType</column>
+            <column name="value">COST</column>
+            <column name="description"></column>
+        </row>
+	</table>
+	<table name="product_code" xmlns="">
+		<row cat="startup">
+            <column name="product_code">Sukuk</column>
+            <column name="code_type">boolean</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+		<row cat="startup">
+            <column name="product_code">IslamicContract</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">1</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+	</table>
+	<!-- moved from ShemaData to have all islamic in one place -->
+	<table name="domain_values" xmlns="">
+		<row cat="startup">
+			<column name="name">IslamicMM.subtype</column>
+			<column name="value">Standard</column>
+			<column name="description"/>
+		</row>
+
+        <row cat="domain">
+			<column name="name">keyword.TerminationReason.IslamicMM</column>
+			<column name="value">Manual</column>
+			<column name="description"/>
+		</row>
+		<row cat="domain">
+			<column name="name">keyword.TerminationReason.IslamicMM</column>
+			<column name="value">BoughtBack</column>
+			<column name="description"/>
+		</row>
+
+		<row cat="startup">
+			<column name="name">productType</column>
+			<column name="value">IslamicMM</column>
+			<column name="description"/>
+		</row>
+		<row cat="startup">
+			<column name="name">domainName</column>
+			<column name="value">IslamicMM.subtype</column>
+			<column name="description">Types of IslamicMM</column>
+		</row>
+		<row cat="domain">
+			<column name="name">productTypeReportStyle</column>
+			<column name="value">IslamicMM</column>
+			<column name="description">IslamicMM ReportStyle</column>
+		</row>
+		<row cat="domain">
+			<column name="name">productTypeReportStyle</column>
+			<column name="value">IslamicUnderlying</column>
+			<column name="description">IslamicUnderlying ReportStyle</column>
+		</row>
+		<row cat="startup">
+			<column name="name">domainName</column>
+			<column name="value">IslamicMM.Pricer</column>
+			<column name="description">Pricers for IslamicMM</column>
+		</row>
+		<row cat="startup">
+			<column name="name">IslamicMM.Pricer</column>
+			<column name="value">PricerIslamicMM</column>
+			<column name="description"></column>
+		</row>
+
+        <row cat="domain">
+			<column name="name">MESSAGE.Templates</column>
+			<column name="value">islamicmm.html</column>
+			<column name="description"/>
+		</row>
+
+		<row cat="domain">
+			<column name="name">domainName</column>
+			<column name="value">IslamicMM.UnderlyingName</column>
+			<column name="description">Underlying names for IslamicMM</column>
+		</row>
+		<row cat="domain">
+			<column name="name">domainName</column>
+			<column name="value">IslamicMM.LoanName</column>
+			<column name="description">Names for IslamicMM loan</column>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicMM.LoanName</column>
+			<column name="value">Tawaruq</column>
+			<column name="description">Default name for IslamicMM loan</column>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicMM.LoanName</column>
+			<column name="value">Murabaha</column>
+			<column name="description"/>
+		</row>
+		<row cat="domain">
+			<column name="name">domainName</column>
+			<column name="value">IslamicMM.DepositName</column>
+			<column name="description">Names for IslamicMM deposit</column>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicMM.DepositName</column>
+			<column name="value">Isra</column>
+			<column name="description">Default name for IslamicMM deposit</column>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicMM.DepositName</column>
+			<column name="value">Murabaha</column>
+			<column name="description"/>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicMM.DepositName</column>
+			<column name="value">Wakala</column>
+			<column name="description"/>
+		</row>
+		</table>
+		<table name="domain_values" xmlns="">
+       <row cat="startup">
+			<column name="name">IslamicSwap.subtype</column>
+			<column name="value">Standard</column>
+			<column name="description"/>
+		</row>
+        <row cat="domain">
+			<column name="name">keyword.TerminationReason.IslamicSwap</column>
+			<column name="value">Manual</column>
+			<column name="description"/>
+		</row>
+		<row cat="domain">
+			<column name="name">keyword.TerminationReason.IslamicSwap</column>
+			<column name="value">BoughtBack</column>
+			<column name="description"/>
+		</row>
+		<row cat="startup">
+			<column name="name">productType</column>
+			<column name="value">IslamicSwap</column>
+			<column name="description"/>
+		</row>
+		<row cat="startup">
+			<column name="name">domainName</column>
+			<column name="value">IslamicSwap.subtype</column>
+			<column name="description">Types of IslamicSwap</column>
+		</row>
+		<row cat="domain">
+			<column name="name">productTypeReportStyle</column>
+			<column name="value">IslamicSwap</column>
+			<column name="description">IslamicSwap ReportStyle</column>
+		</row>
+		<row cat="startup">
+			<column name="name">domainName</column>
+			<column name="value">IslamicSwap.Pricer</column>
+			<column name="description">Pricers for IslamicSwap</column>
+		</row>
+		<row cat="startup">
+			<column name="name">IslamicSwap.Pricer</column>
+			<column name="value">PricerIslamicSwap</column>
+			<column name="description"/>
+		</row>
+		<row cat="domain">
+			<column name="name">domainName</column>
+			<column name="value">IslamicSwapLeg.UnderlyingName</column>
+			<column name="description">Underlying names for IslamicSwapLeg</column>
+		</row>
+		<row cat="domain">
+			<column name="name">domainName</column>
+			<column name="value">IslamicSwap.LoanName</column>
+			<column name="description">Names for IslamicSwap loan</column>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicSwap.LoanName</column>
+			<column name="value">Tawaruq</column>
+			<column name="description">Default name for IslamicSwap loan</column>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicSwap.LoanName</column>
+			<column name="value">Murabaha</column>
+			<column name="description"/>
+		</row>
+		<row cat="domain">
+			<column name="name">domainName</column>
+			<column name="value">IslamicSwap.DepositName</column>
+			<column name="description">Names for IslamicSwap deposit</column>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicSwap.DepositName</column>
+			<column name="value">Isra</column>
+			<column name="description">Default name for IslamicSwap deposit</column>
+		</row>
+		<row cat="domain">
+			<column name="name">IslamicSwap.DepositName</column>
+			<column name="value">Murabaha</column>
+			<column name="description"/>
+		</row>
+	</table>
+	 	
+</database>
+

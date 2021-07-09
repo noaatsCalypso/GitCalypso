@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="domain_values" xmlns="">
+        <row cat="Required">
+            <column name="name">engineName</column>
+            <column name="value">MatchingExportEngine</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">applicationName</column>
+            <column name="value">MatchingExportEngine</column>
+            <column name="description">MatchingExportEngine</column>
+        </row>
+    </table>
+    <table name="ps_event_config" xmlns="">
+        <row cat="Required">
+            <column name="event_config_name">Back-Office</column>
+            <column name="event_class">PSEventMatching</column>
+            <column name="engine_name">MatchingExportEngine</column>
+        </row>
+    </table>
+	<table name="engine_param" xmlns="">
+        <row cat="Required">
+            <column name="engine_name">MatchingExportEngine</column>
+            <column name="param_name">CLASS_NAME</column>
+            <column name="param_value">com.calypso.matching.engine.MatchingExportEngine</column>
+        </row>
+        <row cat="Required">
+            <column name="engine_name">MatchingExportEngine</column>
+            <column name="param_name">DISPLAY_NAME</column>
+            <column name="param_value">Matching Export Engine</column>
+        </row>
+        <row cat="Required">
+            <column name="engine_name">MatchingExportEngine</column>
+            <column name="param_name">INSTANCE_NAME</column>
+            <column name="param_value">engineserver</column>
+        </row>
+    </table>
+</database>
+

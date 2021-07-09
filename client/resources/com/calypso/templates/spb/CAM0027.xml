@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+    <contents>
+        <element name="CAM0027" hideifempty="true">
+            <contents>
+                <element name="CodMsg">
+                    <contents>
+                        <text>
+                            <value>CAM0027</value>
+                        </text>
+                    </contents>
+                </element>
+                <element name="NumCtrlIF">
+                    <contents>
+                        <report>
+                            <column>MESSAGE_ID</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJBaseIF">
+                    <contents>
+                        <report>
+                            <column>FXCNPJBaseIF</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="RegOpCaml">
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.RegOpCaml</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtEvtCAM">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>CAM0027DTEVTCAM</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="VlrME">
+                    <contents>
+                        <report>
+                            <expression>abs(toDouble(getReportValue("Settle Amount")))</expression>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodPaisPagdr_RecbdrExtr">
+                    <contents>
+                        <report>
+                            <column>CODPAISFOREIGNCCYRECEIVER</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="NomPagdr_RecbdrExtr">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.RDE") == null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>CounterParty.Full Name</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodCadempPagdr_RecbdrExtr">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.RDE") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodCadempPagdr_RecbdrExtr</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="TpRelcVinc">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.TpRelcVinc") != null || getReportValue("XferAttributes.TpRelcVinc") != null</expression>
+                    </condition>
+                    <contents max="1">
+                        <report>
+                            <condition>
+                                <expression>getReportValue("XferAttributes.TpRelcVinc") != null</expression>
+                            </condition>
+                            <column>XferAttributes.TpRelcVinc</column>
+                        </report>
+                        <report>
+                            <condition>
+                                <expression>getReportValue("TRADE_KEYWORD.TpRelcVinc") != null</expression>
+                            </condition>
+                            <column>TRADE_KEYWORD.TpRelcVinc</column>
+                        </report>
+                    </contents>
+                </element>
+                <!--
+                <element name="RDE">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.RDE") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.RDE</column>
+                        </report>
+                    </contents>
+                </element>
+                
+                <element name="CodFormaEntrMoeda">
+                    <condition>
+                        <expression>getReportValue("CODFORMAENTRMOEDA_NONBRLATTRIBUTE") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>CODFORMAENTRMOEDA_NONBRLATTRIBUTE</column>
+                        </report>
+                    </contents>
+                </element>
+                -->
+                <element name="TpLiquidRDE">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.TpLiquidRDE") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.TpLiquidRDE</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="Grupo_CAM0027_EvtRDE">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.TpEvtRDE") != null || getReportValue("TRADE_KEYWORD.DtSeqEvtRDE") != null</expression>
+                    </condition>
+                    <contents>
+                        <element name="TpEvtRDE">
+                            <contents>
+                                <report>
+                                    <column>TRADE_KEYWORD.TpEvtRDE</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="DtSeqEvtRDE">
+                            <contents>
+                                <report>
+                                    <column>TRADE_KEYWORD.DtSeqEvtRDE</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="VlrMoedaRDE">
+                            <contents>
+                                <report>
+                                    <expression>abs(toDouble(getReportValue("Transfer Amount")))</expression>
+                                </report>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="VlrMoedaDenRDE">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.RDE") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                                <column>TRADE_KEYWORD.VlrMoedaDenRDE</column>
+                        </report>
+                    </contents>
+                </element>
+				<element name="DtMovto">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>TODAY</column>
+                        </report>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

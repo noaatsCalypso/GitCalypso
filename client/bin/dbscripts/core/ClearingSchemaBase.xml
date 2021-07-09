@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+   <table name="clearing_external_data" xmlns="">
+      <column name="id" nullable="false" scale="1" type="int" />
+      <column name="ccp" nullable="false" scale="64" type="string" />
+      <column name="type" nullable="false" scale="128" type="string" />
+      <column name="name" nullable="false" scale="128" type="string" />
+      <column name="processing_org" nullable="false" scale="128" type="string" />
+      <column name="generation_date" nullable="false" type="date" />
+      <column name="last_modified" nullable="false" type="timestamp" />
+      <column name="xml_blob" nullable="true" type="binary" />
+      <column name="version" default="0" nullable="true" scale="1"
+         type="int" />
+      <index primary="true">
+         <on>id</on>
+      </index>
+      <index primary="false" unique="false">
+         <on>name</on>
+         <on>ccp</on>
+         <on>type</on>
+         <on>generation_date</on>
+      </index>
+   </table>
+   <table name="typeh_tenors" xmlns="">
+      <column name="id" nullable="false" scale="1" type="int" />
+      <column name="ccy" nullable="false" scale="64" type="string" />
+      <column name="mktindex" nullable="false" scale="128" type="string" />
+      <column name="tenors" nullable="false" scale="2048" type="string" />
+      <index primary="true">
+         <on>id</on>
+      </index>
+      <index primary="false" unique="false">
+         <on>ccy</on>
+         <on>mktindex</on>
+         <on>tenors</on>
+      </index>
+   </table> 
+   <table name="clearing_onboarding_template" xmlns="">
+      <column name="id" nullable="false" scale="1" type="int" />
+      <column name="version" default="0" nullable="false" scale="1" type="int" />
+      <column name="template_name" nullable="false" scale="128" type="string" />
+      <column name="template_mode" nullable="false" scale="128" type="string" />
+      <column name="data_blob" nullable="true" type="binary" />
+      <index primary="true">
+         <on>id</on>
+      </index>
+      <index primary="false" unique="true">
+         <on>template_name</on>
+      </index>    
+   </table>  
+   <table name="clearing_margin_data" xmlns="">
+      <column name="methodology" nullable="false" scale="128" type="string" />
+      <column name="exchange_spread" nullable="false" scale="128" type="string" />
+      <column name="parameter_type" nullable="false" scale="128" type="string" />
+      <column name="file_name" nullable="false" scale="128" type="string" />
+      <column name="file_date" nullable="false" scale="128" type="string" />
+      <column name="profile" nullable="false" default="__ANY__" scale="64" type="string" />
+      <column name="data_timestamp" nullable="false" type="timestamp" />      
+      <column name="compressed_data" nullable="false" type="binary" />
+      <index primary="true">
+      	<on>methodology</on>
+      	<on>exchange_spread</on>
+      	<on>parameter_type</on>
+      	<on>file_date</on>
+      	<on>profile</on>
+      </index>
+   </table>
+   <table name="clearing_margin_output" xmlns="">
+      <column name="clearinghouse" nullable="false" scale="128" type="string" />
+      <column name="methodology" nullable="false" scale="128" type="string" />
+      <column name="exchange_spread" nullable="false" scale="128" type="string" />
+      <column name="margin_group" nullable="false" scale="128" type="string" />
+      <column name="output_type" nullable="false" scale="128" type="string" />
+      <column name="output_date" nullable="false" scale="128" type="string" />
+      <column name="data_timestamp" nullable="false" type="timestamp" />
+      <column name="compressed_data" nullable="false" type="binary" />
+      <index primary="true">
+      	<on>clearinghouse</on>
+      	<on>methodology</on>
+      	<on>exchange_spread</on>
+      	<on>margin_group</on>
+      	<on>output_type</on>
+      	<on>output_date</on>
+      </index>
+   </table>
+</database>
+
+    

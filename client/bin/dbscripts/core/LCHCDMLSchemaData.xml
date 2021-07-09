@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+   <table name="domain_values" xmlns="">
+   
+      <!-- CDML DOMAIN CONFIGURATION -->
+      <row cat="Required">
+         <column name="name">Clearing.CDML.producerNames</column>
+         <column name="value">LCH</column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.CDML.producerNames</column>
+         <column name="value">LCHITD</column>
+      </row>
+	  <row cat="Required">
+         <column name="name">Clearing.CDML.producerNames</column>
+         <column name="value">LCHSA</column>
+      </row>
+	  <row cat="Required">
+         <column name="name">Clearing.CDML.producerNames</column>
+         <column name="value">LCHPORTFOLIOTRANSFER</column>
+      </row>
+      <row cat="lch">
+		<column name="value">LCH_VM_HOLIDAY</column>
+		<column name="name">leAttributeType</column>
+	  </row>
+	  <row cat="lch">
+		<column name="value">LCH_VM_HOLIDAY</column>
+		<column name="name">mccAdditionalField</column>
+	  </row>
+	  <row cat="lch">
+		<column name="value">LCHSA</column>
+		<column name="name">CalypsoMapping.Interfaces</column>
+	  </row>
+	  <row cat="lch">
+		<column name="value">LCHSACalypsoMapping.Types</column>
+		<column name="name">domainName</column>
+	  </row>
+	  <row cat="lch">
+		<column name="value">SecurityPricePath</column>
+		<column name="name">LCHSACalypsoMapping.Types</column>
+	  </row>
+	  <row cat="lch">
+		<column name="value">Quotes</column>
+		<column name="name">LCHSACalypsoMapping.Types</column>
+	  </row>
+      <!-- END CDML DOMAIN CONFIGURATION -->
+      
+   </table>
+</database>

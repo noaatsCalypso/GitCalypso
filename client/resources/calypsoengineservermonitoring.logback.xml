@@ -1,0 +1,42 @@
+<included>
+	<logger name="com.calypso.Monitoring.ServerRequest" additivity="false">
+       <level value="debug"/>
+       <appender-ref ref="Monitoring.ServerRequest_APPENDER"/>
+       <appender-ref ref="ElasticSearchRequest_APPENDER"/>
+	</logger>
+		<logger name="com.calypso.Monitoring.IncomingServerRequest" additivity="false">
+	      <level value="debug"/>
+	      <appender-ref ref="Monitoring.IncomingServerRequest_APPENDER"/>
+		  <appender-ref ref="ElasticSearchIncomingRequest_APPENDER"/>
+	</logger>
+	<logger name="com.calypso.Monitoring.ClientRequest" additivity="false">
+	      <level value="debug"/>
+	      <appender-ref ref="Monitoring.ClientRequest_APPENDER"/>
+	</logger>  
+	<logger name="com.calypso.Monitoring.Engine" additivity="false">
+	      <level value="debug"/>
+	      <appender-ref ref="Monitoring.Engine_APPENDER"/>
+	</logger>  
+	 <logger name="com.calypso.Monitoring.MethodProfile" additivity="false">
+	       <level value="debug"/>
+	       <appender-ref ref="Monitoring.MethodProfile_APPENDER"/>
+	 </logger>
+	 <logger name="com.calypso.Monitoring.EngineAudit" additivity="false">
+	 	<level value="debug"/>
+	 	<appender-ref ref="Monitoring.EngineAudit_APPENDER"/>
+	 </logger>
+	 <logger name="com.calypso.SYSTEM.Monitoring.EngineAudit" additivity="false">
+	 	<level value="info"/>
+	 	<appender-ref ref="Monitoring.EngineAudit_APPENDER"/>
+	 </logger>
+	 <logger name="com.calypso.alert" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="alert_APPENDER"/>
+        <appender-ref ref="ElasticSearchAlert_APPENDER"/>
+	 </logger>
+	 <logger name="com.calypso.SYSTEM.elasticsearch" additivity="false">
+	 	<level value="info"/>
+	 	<appender-ref ref="ElasticSearchEngineMetrics_APPENDER"/>
+	 </logger>
+	
+</included>

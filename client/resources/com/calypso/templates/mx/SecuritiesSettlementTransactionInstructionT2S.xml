@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+	<contents>
+		<element name="SctiesSttlmTxInstr">
+			<contents>
+				<element name="TxId">
+					<contents>
+						<report>
+							<column>MESSAGE_ID</column>
+						</report>
+					</contents>
+				</element>
+				<element name="SttlmTpAndAddtlParams">
+					<contents>
+						<element name="SctiesMvmntTp">
+							<contents max="1">
+								<text>
+									<condition>
+										<expression>isReceiveTransfer()</expression>
+									</condition>
+									<value>RECE</value>
+								</text>
+								<text>
+									<condition>
+										<expression>isPayTransfer()</expression>
+									</condition>
+									<value>DELI</value>
+								</text>
+							</contents>
+						</element>
+						<element name="Pmt">
+							<contents>
+								<report>
+									<column>Delivery Type</column>
+									<transformations>
+										<transformation>
+											<from>DAP</from>
+											<to>APMT</to>
+										</transformation>
+										<transformation>
+											<from>DFP</from>
+											<to>FREE</to>
+										</transformation>
+									</transformations>
+								</report>
+							</contents>
+						</element>
+						<element name="CmonId" hideifempty="true">
+							<contents>
+								<report>
+									<column>XferAttributes.Common_Reference</column>
+								</report>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="Lnkgs" hideifempty="true">
+					<contents>
+						<element name="Ref">
+							<contents>
+								<element name="MktInfrstrctrTxId">
+									<contents>
+										<report>
+											<column>XferAttributes.T2S_Ref</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="TradDtls">
+					<contents>
+						<element name="TradDt">
+							<contents>
+								<element name="Dt">
+									<contents>
+										<element name="Dt">
+											<contents>
+												<report>
+													<column>Xfer Trade Date</column>
+												</report>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="SttlmDt">
+							<contents>
+								<element name="Dt">
+									<contents>
+										<element name="Dt">
+											<contents>
+												<report>
+													<column>Settle Date</column>
+												</report>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="DealPric">
+							<contents>
+								<element name="Tp">
+									<contents max="1">
+										<element name="Yldd">
+											<condition>
+												<expression>getReportValue("Negotiated Price Type") == "Yield"</expression>
+											</condition>
+											<contents>
+												<text>
+													<value>true</value>
+												</text>
+											</contents>
+										</element>
+										<element name="ValTp">
+											<contents>
+												<text>
+													<value>PARV</value>
+												</text>
+											</contents>
+										</element>
+									</contents>
+								</element>
+								<element name="Val">
+									<contents max="1">
+										<element name="Rate">
+											<condition>
+												<expression>getReportValue("Xfer Product Id Family") != "Equity"
+													&amp;&amp; getReportValue("Negotiated Price Type") != "Price"
+												</expression>
+											</condition>
+											<contents max="1">
+												<report>
+													<condition>
+														<expression>getReportValue("Xfer Product Family") == "Repo" ||
+															getReportValue("Xfer Product Family") == "SecurityLending"
+														</expression>
+													</condition>
+													<expression>toRate(getReportValue("Dirty Price"))</expression>
+												</report>
+												<report>
+													<expression>getReportValue("Negotiated Price")</expression>
+												</report>
+											</contents>
+										</element>
+										<element name="Amt">
+											<attributes>
+												<attribute name="Ccy">
+													<value>
+														<report>
+															<column>SettleCurrency</column>
+														</report>
+													</value>
+												</attribute>
+											</attributes>
+											<contents max="1">
+												<report>
+													<condition>
+														<expression>getReportValue("Xfer Product Family") == "Repo" ||
+															getReportValue("Xfer Product Family") == "SecurityLending"
+														</expression>
+													</condition>
+													<column>Dirty Price</column>
+												</report>
+												<report>
+													<column>Negotiated Price</column>
+												</report>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="NbOfDaysAcrd">
+							<contents>
+								<report>
+									<column>Accrual Days</column>
+								</report>
+							</contents>
+						</element>
+						<element name="TradTxCond" hideifempty="true">
+							<contents>
+								<element name="Cd">
+									<contents>
+										<report>
+											<column>XferAttributes.CATradeBasis</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="MtchgSts" hideifempty="true">
+							<contents>
+								<element name="Cd">
+									<contents>
+										<report>
+											<column>XferAttributes.Matching_Status</column>
+											<transformations>
+												<transformation type="regexp">
+													<from>MTCH//</from>
+													<to></to>
+												</transformation>
+											</transformations>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="FinInstrmId">
+					<contents>
+						<element name="ISIN">
+							<contents>
+								<report>
+									<column>Xfer_SecCode.ISIN</column>
+								</report>
+							</contents>
+						</element>
+						<element name="Desc">
+							<contents>
+								<report>
+									<column>Security</column>
+									<transformations>
+										<transformation type="regexp">
+											<from>%</from>
+											<to>PC</to>
+										</transformation>
+									</transformations>
+								</report>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="QtyAndAcctDtls">
+					<contents>
+						<element name="SttlmQty">
+							<contents>
+								<element name="Qty">
+									<contents max="1">
+										<element name="Unit">
+											<condition>
+												<expression>useSecurityQuantity()</expression>
+											</condition>
+											<contents>
+												<report>
+													<column>Net Rec/Deliv</column>
+												</report>
+											</contents>
+										</element>
+										<element name="FaceAmt">
+											<contents>
+												<report>
+													<column>Nominal (Par)</column>
+												</report>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="AcctOwnr">
+							<condition>
+								<expression>isIBRC()</expression>
+							</condition>
+							<contents>
+								<element name="Id">
+									<contents>
+										<element name="AnyBIC">
+											<contents>
+												<report>
+													<column>Sender.Swift</column>
+												</report>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="SfkpgAcct">
+							<contents>
+								<element name="Id">
+									<contents>
+										<report>
+											<column>Xfer Our Agent Account</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="SttlmParams">
+					<contents>
+						<element name="HldInd">
+							<contents>
+								<element name="Ind">
+									<contents max="1">
+										<text>
+											<condition>
+												<expression>getReportValue("XferAttributes.HoldRelease") == "NPRE"</expression>
+											</condition>
+											<value>true</value>
+										</text>
+										<text>
+											<value>false</value>
+										</text>
+									</contents>
+								</element>
+								<element name="Rsn" hideifempty="true">
+									<contents>
+										<element name="Cd" hideifempty="true">
+											<contents>
+												<element name="Cd" hideifempty="true">
+													<contents>
+														<report>
+															<column>XferAttributes.HoldReason</column>
+														</report>
+													</contents>
+												</element>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="Prty">
+							<contents>
+								<element name="Nmrc" hideifempty="true">
+									<contents>
+										<report>
+											<column>XferAttributes.PRIR</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="SctiesTxTp">
+							<contents>
+								<element name="Cd">
+									<contents>
+										<report>
+											<expression>getTypeOfSettlementIndicator()</expression>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="SttlmTxCond" hideifempty="true">
+							<contents>
+								<element name="Cd">
+									<contents>
+										<report>
+											<column>XferAttributes.OPT_OUT_INDICATOR</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="PrtlSttlmInd" hideifempty="true">
+							<contents>
+								<report>
+									<column>XferAttributes.PARTIAL_INDICATOR</column>
+								</report>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<include>
+					<path>DeliveringSettlementParties.xml</path>
+				</include>
+				<include>
+					<path>ReceivingSettlementParties.xml</path>
+				</include>
+				<element name="SttlmAmt">
+					<contents>
+						<element name="AcrdIntrstInd">
+							<condition>
+								<expression>getReportValue("Product Family") == "Bond" ||
+								 getReportValue("Product Type") == "Repo"
+								</expression>
+							</condition>
+							<contents>
+								<text>
+									<value>true</value>
+								</text>
+							</contents>
+						</element>
+						<element name="Amt">
+							<attributes>
+								<attribute name="Ccy">
+									<value>
+										<report>
+											<column>Settle Cur.</column>
+										</report>
+									</value>
+								</attribute>
+							</attributes>
+							<contents>
+								<report>
+									<column>Real Cash Amount</column>
+								</report>
+							</contents>
+						</element>
+						<element name="CdtDbtInd">
+							<contents>
+								<!-- Reverse direction of Security Xfer = Cash Direction -->
+								<text>
+									<condition>
+										<expression>getReportValue("Xfer Pay/Rec") == "PAY"</expression>
+									</condition>
+									<value>DBIT</value>
+								</text>
+								<text>
+									<condition>
+										<expression>getReportValue("Xfer Pay/Rec") == "RECEIVE"</expression>
+									</condition>
+									<value>CRDT</value>
+								</text>
+							</contents>
+						</element>
+					</contents>
+				</element>
+			</contents>
+		</element>
+	</contents>
+</template>

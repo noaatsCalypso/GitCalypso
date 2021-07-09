@@ -1,0 +1,3523 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+
+   <table name="domain_values" xmlns="">
+
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">NPVFlows</column>
+         <column name="description">MTM flows that, among other things, require different transfer available date logic</column>
+      </row>
+      <row cat="Required">
+         <column name="name">NPVFlows</column>
+         <column name="value">CS_NPV_ADJUSTED</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">NPVFlows</column>
+         <column name="value">CS_PRINCIPAL</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">NPVFlows</column>
+         <column name="value">NPV_ADJUSTED</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">billingCalculators</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">billingCalculators</column>
+         <column name="value">BondInvestmentFeeCalculator</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">securityCode</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">securityCode</column>
+         <column name="value">SFR-8A</column>
+         <column name="description">A value of 'True' designates this fund to SFR-8A column.</column>
+      </row>
+      <row cat="Required">
+         <column name="name">securityCode</column>
+         <column name="value">SFR-8B</column>
+         <column name="description">A value of 'True' designates this fund to SFR-8B column.</column>
+      </row>
+      <row cat="Required">
+         <column name="name">securityCode</column>
+         <column name="value">Collateral Investment</column>
+         <column name="description">A value of 'False' designates this fund to SFR-8C column.</column>
+      </row>
+      <row cat="Required">
+         <column name="name">securityCode</column>
+         <column name="value">CLEARING_DUMMY_CUST_SEG</column>
+         <column name="description">'true' signifies a dummy security used for custodial segregation</column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">securityCode.CLEARING_DUMMY_CUST_SEG</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">securityCode.CLEARING_DUMMY_CUST_SEG</column>
+         <column name="value">true</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">securityCode.CLEARING_DUMMY_CUST_SEG</column>
+         <column name="value">true</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">FundAttributes</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FundAttributes</column>
+         <column name="value">SFR-8A</column>
+         <column name="description">A value of 'True' designates this fund to SFR-8A column.</column>
+      </row>
+      <row cat="Required">
+         <column name="name">FundAttributes</column>
+         <column name="value">SFR-8B</column>
+         <column name="description">A value of 'True' designates this fund to SFR-8B column.</column>
+      </row>
+      <row cat="Required">
+         <column name="name">FundAttributes</column>
+         <column name="value">Collateral Investment</column>
+         <column name="description">A value of 'False' designates this fund to SFR-8C column.</column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">SFR7BMovementType</column>
+         <column name="description">Inventory movement types to be considered when computing the SFR 7B</column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">SFR7CMovementType</column>
+         <column name="description">Inventory movement types to be considered when computing the SFR 7C</column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">SFR7CBookType</column>
+         <column name="description">Book types to be considered when computing the SFR 7C</column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.SOD.IgnoreXferStatusOnRerun</column>
+         <column name="description">Statuses to ignore when processing SOD Cover Dist margin calls</column>
+      </row>
+
+      <!-- ONBOARDING SchemaData (CLEAR-1755 & CLEAR-1900) -->
+      <row cat="Required">
+         <column name="name">classAuthMode</column>
+         <column name="value">ClientOnboardingData</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">function</column>
+         <column name="value">CreateModifyOnboardingTemplate</column>
+         <column name="description">Access Permissions function for creating or modifying an onboarding template</column>
+      </row>
+      <row cat="Required">
+         <column name="name">function</column>
+         <column name="value">DeleteOnboardingTemplate</column>
+         <column name="description">Access Permissions function for deleting an onboarding template</column>
+      </row>
+      <row cat="Required">
+         <column name="name">function</column>
+         <column name="value">CreateOnboardingObjects</column>
+         <column name="description">Access Permissions function to create objects</column>
+      </row>
+      <row cat="Required">
+         <column name="name">function</column>
+         <column name="value">AuthorizeClientOnboardingData</column>
+         <column name="description">Access Permissions function for authorizing ClientOnboardingData objects</column>
+      </row>
+      <row cat="Required">
+         <column name="name">classAccessMode</column>
+         <column name="value">OnboardingTemplates</column>
+         <column name="description"></column>
+      </row>
+      <!-- END ONBOARDING SchemaData -->
+
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">NPVReversalFlows</column>
+         <column name="description">Reversal equivalents of NPVFlows</column>
+      </row>
+      <row cat="Required">
+         <column name="name">NPVReversalFlows</column>
+         <column name="value">CS_NPV_REV</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">NPVReversalFlows</column>
+         <column name="value">NPV_REV</column>
+         <column name="description"></column>
+      </row>
+
+      <!-- MT569 -->
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">incomingType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">incomingType</column>
+         <column name="value">MT569</column>
+         <column name="description">INCOMINGCUSTSEG</column>
+      </row>
+      <!-- END MT569 -->
+
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">flowType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">flowType</column>
+         <column name="value">CASH_SETTLEMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">flowType</column>
+         <column name="value">INTRADAY_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">flowType</column>
+         <column name="value">PAI</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">flowType</column>
+         <column name="value">VARIATION_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">CCPTradeID</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">CCPLedgerType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">SwiftMXCollateralTransfer</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">VMClassification</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">domainName</column>
+      	 <column name="value">keyword.VMClassification</column>
+      	 <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">keyword.VMClassification</column>
+      	 <column name="value">STM</column>
+      	 <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">keyword.VMClassification</column>
+      	 <column name="value">CTM</column>
+      	 <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">keyword.SwiftMXCollateralTransfer</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.SwiftMXCollateralTransfer</column>
+         <column name="value">true</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.SwiftMXCollateralTransfer</column>
+         <column name="value">false</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">CCPIntraDayId</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">CCPNoMirror</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">CCP</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">CCPAccountReference</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">CMFAccountReference</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">IS_CLIENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">ITDTimestamp</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">ITDMarginCallReturn</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">CustSegISIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">keyword.CCP</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">keyword.IS_CLIENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.IS_CLIENT</column>
+         <column name="value">true</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.IS_CLIENT</column>
+         <column name="value">false</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">CCPSegregationAccount</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">CCPOriginCode</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">keyword.CCPOriginCode</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.CCPOriginCode</column>
+         <column name="value">CLIENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.CCPOriginCode</column>
+         <column name="value">HOUSE</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">CCPPreviousTradeId</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">CCPSettlementType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">keyword.CCPSettlementType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.CCPSettlementType</column>
+         <column name="value">EOD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.CCPSettlementType</column>
+         <column name="value">ITD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.CCPSettlementType</column>
+         <column name="value">EOD_OR_ITD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">MirrorKeywords</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MirrorKeywords</column>
+         <column name="value">CCPTradeID</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MirrorKeywords</column>
+         <column name="value">CCPClearedDate</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MirrorKeywords</column>
+         <column name="value">CCP</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MirrorKeywords</column>
+         <column name="value">CCPAccountReference</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MirrorKeywords</column>
+         <column name="value">CCPOriginCode</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MirrorKeywords</column>
+         <column name="value">CCPSegregationAccount</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MirrorKeywords</column>
+         <column name="value">USIPrefix</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MirrorKeywords</column>
+         <column name="value">USIValue</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MirrorKeywords</column>
+         <column name="value">CCPSettlementType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MirrorKeywords</column>
+         <column name="value">RelatedProductType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">ClearingDummyCustSegBond</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">UseAlternateSettleDateMethod</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">leAttributeType</column>
+      	 <column name="value">VMClassification</column>
+      	 <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">domainName</column>
+      	 <column name="value">leAttributeType.VMClassification</column>
+      	 <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">leAttributeType.VMClassification</column>
+      	 <column name="value">STM</column>
+      	 <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">leAttributeType.VMClassification</column>
+      	 <column name="value">CTM</column>
+      	 <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">leAttributeType.UseAlternateSettleDateMethod</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.UseAlternateSettleDateMethod</column>
+         <column name="value">true</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.UseAlternateSettleDateMethod</column>
+         <column name="value">false</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">ClearingDummyCustSegBond</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">CustAccountType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">OfficeCode</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">CFTCID</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">LEI</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">Withhold</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">Clearing Book</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">Client Clearing Book</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">House Clearing Book</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">Use Margin Account</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">role</column>
+         <column name="value">Statement Recipient</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">Minimum CFTC Requirement</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">Minimum Other Requirement</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">CMEFirmId</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">CMEProcessingOrgId</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">LCHFirmId</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">LCHCVRSenderCode</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">ClearingReportingCurrency</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">CFTCReporting</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">ImportZeroMarginAmountITD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">leAttributeType.ImportZeroMarginAmountITD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.ImportZeroMarginAmountITD</column>
+         <column name="value">true</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.ImportZeroMarginAmountITD</column>
+         <column name="value">false</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">ApplyBufferITD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">leAttributeType.ApplyBufferITD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.ApplyBufferITD</column>
+         <column name="value">true</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.ApplyBufferITD</column>
+         <column name="value">false</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">EODCollateralContext</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">ITDCollateralContext</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.Statement.ITD.useBaseValue</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">MarginCallTradeType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">keyword.MarginCallTradeType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.MarginCallTradeType</column>
+         <column name="value">EOD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.MarginCallTradeType</column>
+         <column name="value">ITD</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">workflowRuleCollateral</column>
+         <column name="value">SetMarginCallTradeTypeAttribute</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">accountProperty</column>
+         <column name="value">ProductType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.ProductType</column>
+         <column name="value">IRD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.ProductType</column>
+         <column name="value">NDF</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">accountProperty</column>
+         <column name="value">CCPOriginCode</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">accountProperty.CCPOriginCode</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.CCPOriginCode</column>
+         <column name="value">HOUSE</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.CCPOriginCode</column>
+         <column name="value">CLIENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty</column>
+         <column name="value">AccountType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty</column>
+         <column name="value">InitialMarginAccount</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty</column>
+         <column name="value">Description</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.Description</column>
+         <column name="value">Clearing</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.Description</column>
+         <column name="value">Cash</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.Description</column>
+         <column name="value">Internal</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty</column>
+         <column name="value">ClearingCashAccount</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.ClearingCashAccount</column>
+         <column name="value">True</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.ClearingCashAccount</column>
+         <column name="value">False</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.AccountType</column>
+         <column name="value">House</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">accountProperty.AccountType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.AccountType</column>
+         <column name="value">InitialMargin</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.AccountType</column>
+         <column name="value">IntraDayMargin</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.AccountType</column>
+         <column name="value">Client</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty</column>
+         <column name="value">SequesteredAccount</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">accountProperty.SequesteredAccount</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.SequesteredAccount</column>
+         <column name="value">Bank</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.SequesteredAccount</column>
+         <column name="value">CCP</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.SequesteredAccount</column>
+         <column name="value">CMF</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.SequesteredAccount</column>
+         <column name="value">MSCF</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty</column>
+         <column name="value">VMIMByRegCode</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.VMIMByRegCode</column>
+         <column name="value">YES</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.VMIMByRegCode</column>
+         <column name="value">NO</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">currencyDefaultAttribute</column>
+         <column name="value">ClearingTransferSettleLag</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">ClearingEligible</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">currencyDefaultAttribute</column>
+         <column name="value">ClearingEligible</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ClearingEligible</column>
+         <column name="value">True</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ClearingEligible</column>
+         <column name="value">False</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">InitialMarginEligibleCcy</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">InitialMarginEligibleCcy</column>
+         <column name="value">GBP</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">IntraDayEligibleCcy</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">IntraDayEligibleCcy</column>
+         <column name="value">EUR</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">IntraDayEligibleCcy</column>
+         <column name="value">USD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">swapUpfrontFeeType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">swapUpfrontFeeType</column>
+         <column name="value">UPFRONT_FEE</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">cmeTransferMapping</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">cmeReportMapping</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">cmeMeasureMapping</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">lchTransferMapping</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">lchReportMapping</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">lchMeasureMapping</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">messageType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">messageType</column>
+         <column name="value">CVR_LE_DATA</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">messageType</column>
+         <column name="value">CLEARING_STATEMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">messageType</column>
+         <column name="value">INCOMINGCUSTSEG</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">messageType</column>
+         <column name="value">CFTC_REPORTING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">messageType</column>
+         <column name="value">CVR_WORKSHEET</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">messageType</column>
+         <column name="value">CLEARING_ITD_STATEMENT</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">MESSAGE.Templates</column>
+         <column name="value">ClearingITDStatement.xml</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MESSAGE.Templates</column>
+         <column name="value">LCHCVRResponseAck</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MESSAGE.Templates</column>
+         <column name="value">CalypsoCondensedETDStatement.xsl</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MESSAGE.Templates</column>
+         <column name="value">CalypsoCondensedETDStatementPDF.xsl</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MESSAGE.Templates</column>
+         <column name="value">CalypsoTradeCondensedETDStatement.xsl</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MESSAGE.Templates</column>
+         <column name="value">CalypsoTradeCondensedETDStatementPDF.xsl</column>
+         <column name="description"></column>
+      </row>
+      
+      <row cat="Required">
+         <column name="name">StatementType</column>
+         <column name="value">Clearing</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">productType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">productType</column>
+         <column name="value">ClearingTransfer</column>
+         <column name="description">Product type for Clearing Transfers</column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">ClearingTransfer.subtype</column>
+         <column name="description">Types of Clearing Transfer</column>
+      </row>
+      <row cat="Required">
+         <column name="name">ClearingTransfer.subtype</column>
+         <column name="value">CASH_SETTLEMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ClearingTransfer.subtype</column>
+         <column name="value">INTRADAY_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">productTypeReportStyle</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">productTypeReportStyle</column>
+         <column name="value">ClearingTransfer</column>
+         <column name="description">ClearingTransfer ReportStyle</column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">ProcessGBPFRAIntraday</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.Settlement.Ignore105</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.MCC.propagateFields</column>
+         <column name="description">Name of the MCC additional fields to propagare to Margin Call trades</column>
+      </row>
+
+      <!-- SCHEDULED TASK -->
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">scheduledTask</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_SOD_MARGINCALL</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_EXPORT_CVR_LE_DATA</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_HOLIDAY_PROCESSING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CVR_LE_DATA</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_EXPORT_CVR_LE_DATA</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_EXPORT_CVR_LE_DATA_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_EXPORT_CVR_LE_DATA</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_EXPORT_CVR_LE_DATA_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_IMPORT_REPORT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_IMPORT_MARKET_DATA</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_SETTLEMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_BO_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_MARKS</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_STATEMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_CFTC_REPORTING</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_DOWNLOAD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_LOAD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_INTRADAY_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_INTRADAY_MARGIN_REV</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_INTRADAY_SETTLEMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_EXPORT_CVR_WORKSHEET</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_IMPORT_SCENARIO_SHIFTS</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_INITIALIZE_TENORS_TABLE</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_VM_CALC</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_IM_CALC</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_ETD_INPUT_DATA_IMPORT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_BILLING</column>
+         <column name="description"></column>
+      </row>
+      <!-- END SCHEDULED TASK -->
+
+      <!-- EVENT TYPE -->
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">eventType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_INFORMATION</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CME_CLEARING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_LCH_CLEARING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_LOAD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_LOAD_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_INTRADAY_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_INTRADAY_SETTLEMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_INTRADAY_MARGIN_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_INTRADAY_SETTLEMENT_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_DOWNLOAD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_DOWNLOAD_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_BO_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_BO_MARGIN_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_IMPORT_MARKET_DATA</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_IMPORT_MARKET_DATA_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_IMPORT_REPORT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_IMPORT_REPORT_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_IMPORT_SCENARIO_SHIFTS</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_IMPORT_SCENARIO_SHIFTS_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_INITIALIZE_TENORS_TABLE</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_INITIALIZE_TENORS_TABLE_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_MARKS</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_MARKS_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_SETTLEMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_SETTLEMENT_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_STATEMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_CFTC_REPORTING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_STATEMENT_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_CFTC_REPORTING_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CVR_WORKSHEET</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_EXPORT_CVR_WORKSHEET</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_EXPORT_CVR_WORKSHEET_WARNING
+         </column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_EXCEPTION</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_INFO</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_MISSING_RPF</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_IM_CALC</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_VM_CALC</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_VM_CALC_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_BILLING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">eventType</column>
+         <column name="value">EX_CLEARING_BILLING_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <!-- END EVENT TYPE -->
+
+      <!-- EXCEPTION TYPE -->
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">exceptionType</column>
+         <column name="description">Exception types</column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">INFORMATION</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CME_CLEARING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">LCH_CLEARING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_LOAD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_INTRADAY_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_INTRADAY_SETTLEMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_INTRADAY_SETTLEMENT_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_LOAD_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_DOWNLOAD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_DOWNLOAD_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_BO_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_BO_MARGIN_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_IMPORT_MARKET_DATA</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_IMPORT_MARKET_DATA_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_IMPORT_REPORT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_IMPORT_REPORT_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_MARKS</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_MARKS_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_SETTLEMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_SETTLEMENT_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_STATEMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_CFTC_REPORTING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_STATEMENT_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_CFTC_REPORTING_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_EXPORT_CVR_WORKSHEET</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_EXPORT_CVR_WORKSHEET_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_IMPORT_SCENARIO_SHIFTS</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_IMPORT_SCENARIO_SHIFTS_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_INITIALIZE_TENORS_TABLE</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_INITIALIZE_TENORS_TABLE_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_EXCEPTION</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_INFO</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_MISSING_RPF</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_VM_CALC</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_VM_CALC_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_IM_CALC</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_IM_CALC_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_BILLING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">exceptionType</column>
+         <column name="value">CLEARING_BILLING_WARNING</column>
+         <column name="description"></column>
+      </row>
+      <!-- END EXCEPTION TYPE -->
+
+      <row cat="Required">
+         <column name="name">workflowRuleTrade</column>
+         <column name="value">IntraDayMargin</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">workflowRuleTrade</column>
+         <column name="value">UpdateClearingMarginCallKeywords</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">ClearingTransfer.Pricer</column>
+         <column name="description">Pricers for Clearing Transfers</column>
+      </row>
+      <row cat="Required">
+         <column name="name">ClearingTransfer.Pricer</column>
+         <column name="value">PricerClearingTransfer</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ClearingTransfer.Pricer</column>
+         <column name="value">PricerFromDB</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Swap.Pricer</column>
+         <column name="value">PricerFromDB</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">ACCRUED_FIXED_COUPON</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">ACCRUED_FLOAT_COUPON</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">FIX_COUPON_PAYMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">FLOAT_COUPON_PAYMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">NET_CASHFLOW</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">NPV_ADJUSTED</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">NPV_PREV</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">NPV_ADJUSTED_PREV</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">PAI</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">UPFRONT_PAYMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">VARIATION</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">INITIAL_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">MAINTENANCE_REQUIREMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <!-- ETD IM SPAN calculation uses this instead of MAINTENANCE_REQUIREMENT -->
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">MAINTENANCE_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">MAINTENANCE_MARGIN_MARKUP</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">LIQUIDITY_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">ADDITIONAL_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">BASIS_RISK_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">CREDIT_MULTIPLIER_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">NPV_CHANGE</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">ITD_CALL_AMOUNT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">COUPON_PAYLEG</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">COUPON_RECLEG</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">ACCRUAL_PAYLEG</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">ACCRUAL_RECLEG</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">DV01</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">PV01</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">REALIZED_PL</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">REALIZED_PL_REV</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">CASH_DELIVERY</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">CS_BUY_AMOUNT</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">CS_SELL_AMOUNT</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">CS_PREMIUM_AMOUNT</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">CS_PREMIUM_MTM</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">CS_PREMIUM_MTM_REV</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">CS_PREMIUM_VM</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">CS_PREMIUM_PAI</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">GAMMA</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">VEGA</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">VANNA</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">VOLGA</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">BUY_AMOUNT</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">SELL_AMOUNT</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">PREMIUM_AMOUNT</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">SETTLEMENT_MANAGEMENT_MARGIN</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">PREMIUM_MTM</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">PREMIUM_MTM_REV</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">PREMIUM_VM</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">PREMIUM_PAI</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">GUARANTEE_FUND</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">CS_NDF_SETTLEMENT_PAID</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">CS_NDF_SETTLEMENT_RECEIVED</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">NDF_SETTLEMENT_PAID</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">NDF_SETTLEMENT_RECEIVED</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">TERMINATION_FEE_CLEARER_CHANGE</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">UPFRONT_FEE_CLEARER_CHANGE</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">REPORT.Types</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">REPORT.Types</column>
+         <column name="value">MinimumCapitalRequirement</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">REPORT.Types</column>
+         <column name="value">SequestrationFundRequirement</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">REPORT.Types</column>
+         <column name="value">UnderMarginedAccount</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">CustomStaticDataFilter</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">CustomStaticDataFilter</column>
+         <column name="value">ClearedDate</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">CustomStaticDataFilter</column>
+         <column name="value">TerminationDate</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">CustomStaticDataFilter</column>
+         <column name="value">ClearingLEAttribute</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">customCriterion</column>
+         <column name="value">ClearedDate</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">customCriterion</column>
+         <column name="value">MonthlyClearedDate</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">mccAdditionalField</column>
+      	 <column name="value">VM_CLASSIFICATION</column>
+      	 <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">mccAdditionalField.VM_CLASSIFICATION</column>
+      	 <column name="value">STM</column>
+      	 <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">mccAdditionalField.VM_CLASSIFICATION</column>
+      	 <column name="value">CTM</column>
+      	 <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">mccAdditionalField</column>
+      	 <column name="value">SETTLEMENT_STRATEGY</column>
+      	 <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">mccAdditionalField.SETTLEMENT_STRATEGY</column>
+      	 <column name="value">VMTS</column>
+      	 <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">mccAdditionalField</column>
+      	 <column name="value">SETTLEMENT_TYPE</column>
+      	 <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">mccAdditionalField.SETTLEMENT_TYPE</column>
+      	 <column name="value">EOD</column>
+      	 <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">mccAdditionalField.SETTLEMENT_TYPE</column>
+      	 <column name="value">ITD</column>
+      	 <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">mccAdditionalField.SETTLEMENT_TYPE</column>
+      	 <column name="value">SOD</column>
+      	 <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField</column>
+         <column name="value">INCLUDED_VM_FLOWS</column>
+         <column name="description">Comma Separated list of transfer types explicit to this Margin Call Contract. If the list is empty, this contract will accept any transfer not listed on another of this LE's VM Margin Call Contract</column>
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField</column>
+         <column name="value">SEPARATE_VM_SETTLEMENT</column>
+         <column name="description">A value of 'True' designates this MCC as contributing to the Separate Settlements section of the Client Statement. Any other value will associate the MCC with the Financial Summary section</column>
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField.SEPARATE_VM_SETTLEMENT</column>
+         <column name="value">True</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField.SEPARATE_VM_SETTLEMENT</column>
+         <column name="value">False</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField</column>
+         <column name="value">CCP_SEGREGATION_ACCOUNT</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField</column>
+         <column name="value">PRODUCT_TYPE</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">mccAdditionalField.PRODUCT_TYPE</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField.PRODUCT_TYPE</column>
+         <column name="value">IRD</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField.PRODUCT_TYPE</column>
+         <column name="value">NDF</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField.PRODUCT_TYPE</column>
+         <column name="value">CDX</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField.PRODUCT_TYPE</column>
+         <column name="value">ETD</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField.PRODUCT_TYPE</column>
+         <column name="value">FX</column>
+         <column name="description" />
+      </row>
+
+      <row cat="Required">
+         <column name="name">mccAdditionalField</column>
+	     <column name="value">CLOUD_NET</column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">mccAdditionalField</column>
+         <column name="value">MARGIN_TYPE</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">mccAdditionalField.MARGIN_TYPE</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField.MARGIN_TYPE</column>
+         <column name="value">IM</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField.MARGIN_TYPE</column>
+         <column name="value">VM</column>
+         <column name="description" />
+      </row>
+	  <row cat="Required">
+         <column name="name">mccAdditionalField.MARGIN_TYPE</column>
+         <column name="value">GF</column>
+         <column name="description" />
+      </row>
+
+      <row cat="Required">
+         <column name="name">mccAdditionalField</column>
+         <column name="value">IM_IMPORT_CURRENCY</column>
+         <column name="description">Governs how margin numbers are imported, either in their requirement ccy, or the native one</column>
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField.IM_IMPORT_CURRENCY</column>
+         <column name="value">Converted</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField.IM_IMPORT_CURRENCY</column>
+         <column name="value">Native</column>
+         <column name="description" />
+      </row>
+
+      <row cat="Required">
+         <column name="name">mccAdditionalField</column>
+         <column name="value">CCP_REFERENCE</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField</column>
+         <column name="value">CCP</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">mccAdditionalField</column>
+         <column name="value">CCP_ORIGIN_CODE</column>
+         <column name="description" />
+      </row>
+
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.ParallelDownloadTasks</column>
+         <column name="description">Add the names of the Scheduled Tasks that should make use of the parallel download option, if available (e.g.: CLEARING_IMPORT_MARKET_DATA)</column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">leAttributeType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">LCHRemoteFolderStructure</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">leAttributeType.LCHRemoteFolderStructure</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.LCHRemoteFolderStructure</column>
+         <column name="value">Dynamic</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.LCHRemoteFolderStructure</column>
+         <column name="value">Static</column>
+         <column name="description" />
+      </row>
+
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CVRWorksheetAdviceDocumentID</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CVRWorksheetExportedAdviceDocumentID</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CVRWorksheetCreationDateTime</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CVRWorksheetCreationDateTimeMillis</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CVRWorksheetSaveDateTime</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CVRWorksheetSaveDateTimeMillis</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CVRWorksheetModelVersion</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CVRWorksheetProduct</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CVRWorksheetOriginalID</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CVRWorksheetResponseDescription</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CVRWorksheetResponseAction</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CVRWorksheetResponseMessageID</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CVRWorksheetAckMessageID</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CVRWorksheetExternalResponseMessageID</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CVRWorksheetExternalSentBy</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CVRWorksheetExternalSentTo</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">Statement Type</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">Processing Org Id</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">Client Id</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">Clearing Date</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CFTC Report Type</column>
+         <column name="description"></column>
+      </row>
+	  
+	  <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CFTC Asset Type</column>
+         <column name="description"></column>
+      </row>
+
+	<row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">Frequency</column>
+         <column name="description"></column>
+      </row> 
+
+      <row cat="Required">
+         <column name="name">workflowRuleMessage</column>
+         <column name="value">PrepareCVRForSend</column>
+         <column name="description">Enriches the CVR_WORKSHEET message with information to be sent to the CCP</column>
+      </row>
+      <row cat="Required">
+         <column name="name">workflowRuleMessage</column>
+         <column name="value">MatchCollateralAllocationResponse</column>
+         <column name="description">Processes an incoming collateral allocation message and matches it to an existing CVR_WORKSHEET one</column>
+      </row>
+      <row cat="Required">
+         <column name="name">workflowRuleMessage</column>
+         <column name="value">TranslateSwiftToMarginCall</column>
+         <column name="description">Translates MT569 SWIFT message to margin call security trades</column>
+      </row>
+      <row cat="Required">
+         <column name="name">workflowRuleMessage</column>
+         <column name="value">PrepareClearingStatementForSend</column>
+         <column name="description">Formats the CFTC report and prepares the message for the SenderEngine</column>
+      </row>
+      <row cat="Required">
+         <column name="name">workflowRuleMessage</column>
+         <column name="value">PrepareTabularStatementForSend</column>
+         <column name="description">Formats the Tabular statement and prepares the message for the SenderEngine</column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">messageStatus</column>
+         <column name="value">ACCEPTED</column>
+         <column name="description" />
+      </row>
+
+      <row cat="Required">
+         <column name="name">addressMethod</column>
+         <column name="value">LCHCVR</column>
+         <column name="description" />
+      </row>
+
+      <!-- Clearing Statement configuration -->
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.Statement.stylesheetPath</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.Statement.customizers</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.Statement.customizers</column>
+         <column name="value">NoopStatementCustomizer</column>
+         <column name="description">Added for demo/testing purposes. Does nothing but to log invocations</column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.Statement.resourceLocations</column>
+         <column name="description">Collection of Spring resource locations to configure the Clearing Statement</column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.Statement.resourceLocations</column>
+         <column name="value">classpath:config/ClearingStatementFactory.xml</column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.Statement.profiling</column>
+         <column name="description">Set it to true to activate some basic profiling characteristics. If set to false, or to multiple values, or empty, it's taken as false</column>
+      </row>
+      <!-- END Clearing Statement configuration -->
+
+      <!-- Clearing Novation FilterFlow Configuration -->
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">TerminationAdditionalFiltersFlows</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">TerminationAdditionalFiltersFlows</column>
+         <column name="value">ClearingTermination</column>
+         <column name="description"></column>
+      </row>
+      <!-- END Clearing Novation FilterFlow COnfiguration -->
+
+      <!-- Add the SETTLED value so it's never reported as a failed or cancelled status -->
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">transferSettledStatus</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">transferSettledStatus</column>
+         <column name="value">SETTLED</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">transferStatus</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">transferStatus</column>
+         <column name="value">SETTLED</column>
+         <column name="description"></column>
+      </row>
+
+
+
+      <!-- ETD: ClearingMirroringBehavior keyword -->
+
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">ClearingMirroringBehavior</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">MirrorKeywords</column>
+         <column name="value">ClearingMirroringBehavior</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">keyword.ClearingMirroringBehavior</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.ClearingMirroringBehavior</column>
+         <column name="value">MirroredAccount</column>
+         <column name="description">Default value (OTC style)</column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.ClearingMirroringBehavior</column>
+         <column name="value">SingleAccount</column>
+         <column name="description">Single account (ETD style)</column>
+      </row>
+
+      <!-- ETD: MTM flows -->
+      <row cat="Required">
+         <column name="name">NPVFlows</column>
+         <column name="value">OTE</column>
+         <column name="description">Open Trade Equity</column>
+      </row>
+      <row cat="Required">
+         <column name="name">NPVFlows</column>
+         <column name="value">DISC_FWD_OTE</column>
+         <column name="description">Open Trade Equity</column>
+      </row>
+      <row cat="Required">
+         <column name="name">NPVReversalFlows</column>
+         <column name="value">OTE_REV</column>
+         <column name="description">Open Trade Equity Reversal</column>
+      </row>
+      <row cat="Required">
+         <column name="name">NPVReversalFlows</column>
+         <column name="value">DISC_FWD_OTE_REV</column>
+         <column name="description">Open Trade Equity Reversal</column>
+      </row>
+      <row cat="Required">
+         <column name="name">NPVFlows</column>
+         <column name="value">VARIATION_MARGIN</column>
+         <column name="description"></column>
+      </row>
+
+      <!-- OOTB MCC fields to propagate to MarginCall trades: add kwords so they're not hidden -->
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">CCP_ORIGIN_CODE</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">MARGIN_TYPE</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">PRODUCT_TYPE</column>
+         <column name="description"></column>
+      </row>
+
+      <!-- CFTC Regulatory Code support (ETD) -->
+      <row cat="Required">
+         <column name="name">CalypsoMapping.Interfaces</column>
+         <column name="value">ETD</column>
+         <column name="description">General purpose ETD-related interface</column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">ETDCalypsoMapping.Types</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ETDCalypsoMapping.Types</column>
+         <column name="value">RegulatoryCode</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">workflowRuleTrade</column>
+         <column name="value">ETDTradeEnrichment</column>
+         <column name="description">Enrich ETD cleared trade with keywords derived from other trade information</column>
+      </row>
+      <row cat="Required">
+         <column name="name">workflowRuleTrade</column>
+         <column name="value">CheckProductStatic</column>
+         <column name="description">Sanity check on ETD cleared trades product static data</column>
+      </row>
+      <row cat="Required">
+         <column name="name">workflowRuleTrade</column>
+         <column name="value">CheckAccounts</column>
+         <column name="description">Sanity check on ETD accounts</column>
+      </row>
+
+      <!-- Propagate trade keywords to transfers -->
+      <row cat="Required">
+         <column name="name">PropagateTradeKeyword</column>
+         <column name="value">RegCode</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">DefaultETDPosSpec</column>
+         <column name="description">Allows the default ETD position spec name to be overriden. Its default name is 'default'</column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">CollateralExposure.subtype</column>
+         <column name="value">Variation Margin</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty</column>
+         <column name="value">AccountStructure</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">accountProperty.AccountStructure</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.AccountStructure</column>
+         <column name="value">ValueSeg</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.AccountStructure</column>
+         <column name="value">ValueOmni</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.AccountStructure</column>
+         <column name="value">AssetSeg</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.AccountStructure</column>
+         <column name="value">AssetOmni</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+      	 <column name="name">accountProperty</column>
+      	 <column name="value">CCPAccountStructure</column>
+      	 <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty</column>
+         <column name="value">MarginMode</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">accountProperty.MarginMode</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.MarginMode</column>
+         <column name="value">OTE</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.MarginMode</column>
+         <column name="value">Realized VM</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.MarginMode</column>
+         <column name="value">Exchange Default</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">ClientErrorAccount</column>
+         <column name="description">Default client account name or id to use when missing, or invalid, applicable only to ProcessingOrgs</column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">OTE</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">OTE_REV</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">DISC_FWD_OTE</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">DISC_FWD_OTE_REV</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">NOV</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">measuresForAdjustment</column>
+         <column name="value">VARIATION_MARGIN</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.Statement.parallel.numThreads</column>
+         <column name="description">Number of threads to generate client statements. Defaults to 20</column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">ETOContractAttributes</column>
+         <column name="value">Quote Decimals</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">ETOContractAttributes</column>
+         <column name="value">CabinetPrice</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes</column>
+         <column name="value">CabinetPrice</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">VariableCabinetValue</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">CabinetType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">keyword.CabinetType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.CabinetType</column>
+         <column name="value">Fixed</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.CabinetType</column>
+         <column name="value">Variable</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.CabinetType</column>
+         <column name="value">Zero</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">bookAttribute.ClearingNoMirror</column>
+      </row>
+      <row cat="Required">
+         <column name="name">bookAttribute.ClearingNoMirror</column>
+         <column name="value">true</column>
+      </row>
+      <row cat="Required">
+         <column name="name">bookAttribute.ClearingNoMirror</column>
+         <column name="value">false</column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">StatementDisplayValue</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">UTI</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">MIC</column>
+         <column name="description">Market Identifier Code, used for UTI generation</column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty</column>
+         <column name="value">UTIAccountType</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">TimeZone</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">leAttributeType.TimeZone</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">Africa/Johannesburg</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">America/Chicago</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">America/New_York</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">America/Sao_Paulo</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">Asia/Bangkok</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">Asia/Seoul</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">Asia/Shanghai</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">Asia/Singapore</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">Asia/Tokyo</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">Australia/Sydney</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">Europe/Paris</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">Europe/Berlin</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">Europe/London</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">Europe/Moscow</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">Hongkong</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">IST</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.TimeZone</column>
+         <column name="value">Pacific/Auckland</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">BrokedOut</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">OrderTaker</column>
+         <column name="description"></column>
+      </row>
+
+      <!-- CFTC Reporting attributes -->
+      <row cat="Required">
+         <column name="name">ETOContractAttributes</column>
+         <column name="value">CFTCCommodityCode</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureContractAttributes</column>
+         <column name="value">CFTCCommodityCode</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes</column>
+         <column name="value">CFTCCommodityCode</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ETOContractAttributes</column>
+         <column name="value">CFTCReportingLevel</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureContractAttributes</column>
+         <column name="value">CFTCReportingLevel</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes</column>
+         <column name="value">CFTCReportingLevel</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ETOContractAttributes</column>
+         <column name="value">ExchangeReportingLevel</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureContractAttributes</column>
+         <column name="value">ExchangeReportingLevel</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes</column>
+         <column name="value">ExchangeReportingLevel</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">ETOContractAttributes</column>
+         <column name="value">CFTCStrikeScalingFactor</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">ETOContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ETOContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">-5</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ETOContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">-4</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ETOContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">-3</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ETOContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">-2</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ETOContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">-1</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ETOContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">0</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ETOContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">1</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ETOContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">2</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ETOContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">3</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ETOContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">4</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">ETOContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">5</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes</column>
+         <column name="value">CFTCStrikeScalingFactor</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">FutureOptionContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">-5</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">-4</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">-3</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">-2</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">-1</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">0</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">1</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">2</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">3</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">4</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes.CFTCStrikeScalingFactor</column>
+         <column name="value">5</column>
+         <column name="description"></column>
+      </row>
+
+
+      <row cat="Required">
+         <column name="name">accountProperty</column>
+         <column name="value">CFTCAccountNumber</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty</column>
+         <column name="value">CFTCNetGrossReportingFlag</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">accountProperty.CFTCNetGrossReportingFlag</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.CFTCNetGrossReportingFlag</column>
+         <column name="value">Net</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.CFTCNetGrossReportingFlag</column>
+         <column name="value">Gross</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty</column>
+         <column name="value">CFTCSubAccount</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">TradeType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">keyword.TradeType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.TradeType</column>
+         <column name="value">EFP</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.TradeType</column>
+         <column name="value">EFR</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.TradeType</column>
+         <column name="value">EFS</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_ETD_CFTC_REPORTING</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">messageType</column>
+         <column name="value">CFTC_ETD_REPORT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CFTCETDReportDate</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes</column>
+         <column name="value">CFTCETDReportType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">MsgAttributes.CFTCETDReportType</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes.CFTCETDReportType</column>
+         <column name="value">Large Trader</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes.CFTCETDReportType</column>
+         <column name="value">OCR Form102A</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">MsgAttributes.CFTCETDReportType</column>
+         <column name="value">OCR Form102B</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <!-- Otherwise the UI tries to render it as a JDate instead of ISO -->
+         <column name="name">MessageViewer.MsgAttributes.DateAttributesToKeep</column>
+         <column name="value">CFTCETDReportDate</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">ServiceLevel</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">keyword.ServiceLevel</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.ServiceLevel</column>
+         <column name="value">Full Service</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.ServiceLevel</column>
+         <column name="value">Cleared</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">keyword.ServiceLevel</column>
+         <column name="value">Execution Only</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">messageType</column>
+         <column name="value">CLEARING_ETD_STATEMENT</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">messageType</column>
+         <column name="value">CLEARING_ETD_TRADE_EVENT</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">DefaultVMMode</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">leAttributeType.DefaultVMMode</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.DefaultVMMode</column>
+         <column name="value">OTE</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">leAttributeType.DefaultVMMode</column>
+         <column name="value">Realized VM</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">MarginGroup</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">MarginMethod</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">ExchangeSpread</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">ETOContractAttributes</column>
+         <column name="value">ContractStrategyRate</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">FutureOptionContractAttributes</column>
+         <column name="value">ContractStrategyRate</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">FutureContractAttributes</column>
+         <column name="value">ContractStrategyRate</column>
+         <column name="description" />
+      </row>
+
+
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_ETD_MAINTENANCE</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.IM.marginData.deleteOnInsert</column>
+         <column name="description">If true, purge old margin data when inserting new</column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.IM.marginData.daysToKeep</column>
+         <column name="description">Number of natural days of margin data to keep when purging, counting from today</column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.ExternalData.locations</column>
+         <column name="description">Ordered list of locations where to obtain external data for Clearing (only ETD for the moment)</column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.ExternalData.localCache</column>
+         <column name="description">Path to the local filesystem cache of external data. This location will mirror, in terms of structure, the ones listed in Clearing.ExternalData.locations</column>
+      </row>
+      <row cat="Required">
+         <column name="name">PricingSheetKeywordsToClearUponCopy</column>
+         <column name="value">CCPOriginCode</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">PricingSheetKeywordsToClearUponCopy</column>
+         <column name="value">CCP</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">PricingSheetKeywordsToClearUponCopy</column>
+         <column name="value">Client</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">PricingSheetKeywordsToClearUponCopy</column>
+         <column name="value">ContractSymbol</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">PricingSheetKeywordsToClearUponCopy</column>
+         <column name="value">TradeSource</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">PricingSheetKeywordsToClearUponCopy</column>
+         <column name="value">BrokedOut</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <!-- CLEAR-3635 -->
+         <column name="name">TradeKeywordCopier</column>
+         <column name="value">OTCClearing</column>
+         <column name="description" />
+      </row>
+
+      <row cat="Required">
+         <column name="name">workflowRuleMessage</column>
+         <column name="value">PrepareCFTCReportForSend</column>
+         <column name="description">Enriches and formats the CFTC_ETD_REPORT message</column>
+      </row>
+      <row cat="Required">
+         <column name="name">gateway</column>
+         <column name="value">FTP</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">addressMethod</column>
+         <column name="value">CFTC</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">addressMethod</column>
+         <column name="value">FTP_KEY</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">addressMethod</column>
+         <column name="value">FTP_KEYPASS</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">addressMethod</column>
+         <column name="value">FTP_PASSWORD</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">addressMethod</column>
+         <column name="value">FTP_URL</column>
+         <column name="description" />
+      </row>
+
+      <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">CoveredETDTrade</column>
+         <column name="description">Boolean indicating if the trade is a covered one, for IM calculation purposes</column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">MarginMethod</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">DefaultExecutionAccount</column>
+         <column name="description">CounterParty LE attribute storing an account id/name</column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">OCRVolumeThreshold</column>
+         <column name="description">OCR Volume Threshold to report the accounts that breach this threshold</column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">accountProperty</column>
+         <column name="value">AssignmentMethod</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">accountProperty.AssignmentMethod</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.AssignmentMethod</column>
+         <column name="value">RANDOM</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">accountProperty.AssignmentMethod</column>
+         <column name="value">PRORATA</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_BROKER_FILE_UPLOAD</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">         
+         <column name="name">CalypsoMapping.Interfaces</column>
+         <column name="value">UBS</column>
+         <column name="description">Calypso mapping for uploader Interface types</column>
+      </row>
+      <row cat="Required">         
+         <column name="name">UBSCalypsoMapping.Types</column>
+         <column name="value">ClearingExchangeTicker</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="Required">         
+         <column name="name">UploadMessageSourceTypes</column>
+         <column name="value">UBS</column>
+         <column name="description">XML,FCM</column>
+      </row>
+
+      <row cat="Required">
+         <column name="name">leAttributeType</column>
+         <column name="value">DefaultRegCode</column>
+         <column name="description"></column>
+      </row>
+      
+      <row cat="Required">
+         <column name="name">ProcessingConfig</column>
+         <column name="value">ETDClearing.Profile</column>
+         <column name="description"></column>
+      </row>
+      
+      <row cat="Required">
+         <column name="name">ProcessingConfig</column>
+         <column name="value">ETDClearing.VM.UseNativePricers</column>
+         <column name="description"></column>
+      </row>
+      
+      <row cat="Required">
+         <column name="name">ProcessingConfig</column>
+         <column name="value">ETDClearing.VM.PastQuoteDays</column>
+         <column name="description"></column>
+      </row>
+
+      <row cat="domain">
+         <column name="name">InventoryPositions</column>
+         <column name="value">CLIENT-ACTUAL-AVAILABLE (FROZEN)</column>
+         <column name="description"></column>
+      </row>
+      <row cat="domain">
+         <column name="name">InventoryPositions</column>
+         <column name="value">CLIENT-ACTUAL-TRADE (FROZEN)</column>
+         <column name="description"></column>
+      </row>
+      <row cat="domain">
+         <column name="name">InventoryPositions</column>
+         <column name="value">CLIENT-THEORETICAL-AVAILABLE (FROZEN)</column>
+         <column name="description"></column>
+      </row>
+      <row cat="domain">
+         <column name="name">InventoryPositions</column>
+         <column name="value">CLIENT-THEORETICAL-TRADE (FROZEN)</column>
+         <column name="description"></column>
+      </row>
+      <row cat="domain">
+         <column name="name">InventoryPositions</column>
+         <column name="value">INTERNAL-ACTUAL-AVAILABLE (FROZEN)</column>
+         <column name="description"></column>
+      </row>
+      <row cat="domain">
+         <column name="name">InventoryPositions</column>
+         <column name="value">INTERNAL-ACTUAL-TRADE (FROZEN)</column>
+         <column name="description"></column>
+      </row>
+      <row cat="domain">
+         <column name="name">InventoryPositions</column>
+         <column name="value">INTERNAL-THEORETICAL-AVAILABLE (FROZEN)</column>
+         <column name="description"></column>
+      </row>
+      <row cat="domain">
+         <column name="name">InventoryPositions</column>
+         <column name="value">INTERNAL-THEORETICAL-TRADE (FROZEN)</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">ContractName</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">ContractType</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">SVN</column>
+         <column name="description"></column>
+      </row>
+	  <row cat="Required">
+         <column name="name">tradeKeyword</column>
+         <column name="value">Exchange</column>
+         <column name="description"></column>
+      </row>
+      
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">Active Scenario</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">Delivery Charge</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">FHS VAR</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">IA Charge</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">IE Credit</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">INIT_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">Liquidity Risk</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">Long Option Credit</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">MAINT_MARGIN</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">Market risk</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">NOV</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">Quantity</column>
+         <column name="description">0</column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">Scan Risk</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">Stress VAR</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">Strike</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">Strike Price</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">Clearing.IM.MarginDetail.numericColumns</column>
+         <column name="value">TOTAL_REQ</column>
+         <column name="description"></column>
+      </row>
+      
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.Dashboard.additionalContractAttributes</column>
+         <column name="description">instructs the Clearing Dashboard to load more contract attributes, aside from the OOTB ones</column>
+      </row>
+      
+  
+      
+   </table>
+   <!-- END DOMAIN VALUES TABLE -->
+
+</database>

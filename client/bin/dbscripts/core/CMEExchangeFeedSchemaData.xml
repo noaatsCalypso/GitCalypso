@@ -1,0 +1,1317 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+		<row cat="exchange_feed_cme">
+			<column name="name">UploadMessageSourceTypes</column>
+			<column name="value">CME</column>
+			<column name="description">FpML,FIXML,SDRFIXML</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">MsgAttributes.Connector</column>
+			<column name="value">CME</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">XML.Templates</column>
+			<column name="value">CMEBridgeConsentRefused</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">XML.Templates</column>
+			<column name="value">CMEBridgeConsentGranted</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">domainName</column>
+			<column name="value">CMECalypsoMapping.Types</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">addressMethod</column>
+			<column name="value">CME</column>
+			<column name="description"/>
+		</row>
+		<!-- <row cat="exchange_feed_cme">
+			<column name="name">leAttributeType</column>
+			<column name="value">EMCounterpartyId_BAK1</column>
+			<column name="description"></column>
+		</row> 
+		<row cat="exchange_feed_cme">
+			<column name="name">leAttributeType</column>
+			<column name="value">CounterpartyCode</column>
+			<column name="description"></column>
+		</row>-->
+		<row cat="exchange_feed_cme">
+			<column name="name">leAttributeType</column>
+			<column name="value">CME_CPTY</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPPackageTradeId</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPOriginatingTradeId</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPPackageType</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPPackageSize</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ZCFixedNotional</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">USIValue</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">USIPrefix</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">UTIValue</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">UTIPrefix</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ClientUTIValue</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ClientUTIPrefix</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CME RefuseCode</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CME RefuseDesc</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CME Message ID</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CME Remaining TradeID</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">remaining_trade_id</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CME History</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CME Replacement Trade ID</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CME Originating Event</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CME Status</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">tradeKeyword</column>
+			<column name="value">cme_message_id</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">ResetMethod</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">DiscountingMethod</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">FXResetSource</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">Fees</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">DateRoll</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">DayCount</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">Holidays</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">KeywordName</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">KeywordValue</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">Frequency</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">Products</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">RateIndex</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">RateIndexSource</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">InterestCompoundingMethod</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">RollDay</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">StubPeriod</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">TradeTemplate</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">Workflow</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">IndexTenor</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">QuoteMeasureType</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">TimeZone</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">Location</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">CounterpartyAttributeIdentifier</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">CMECalypsoMapping.Types</column>
+			<column name="value">ExternalReference</column>
+			<column name="description"/>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="name">contactType</column>
+			<column name="value">CME</column>
+			<column name="description"/>
+		</row>
+	</table>
+	<table name="calypso_mapping" xmlns="">
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_value">NON</column>
+			<column name="calypso_value">NON</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_value">1W</column>
+			<column name="calypso_value">WK</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_value">2W</column>
+			<column name="calypso_value">BIWK</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_value">28D</column>
+			<column name="calypso_value">LUN</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_value">1M</column>
+			<column name="calypso_value">MTH</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_value">2M</column>
+			<column name="calypso_value">BIM</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_value">3M</column>
+			<column name="calypso_value">QTR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_value">6M</column>
+			<column name="calypso_value">SA</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_value">1Y</column>
+			<column name="calypso_value">PA</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_value">1T</column>
+			<column name="calypso_value">ZC</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">IndexTenor</column>
+			<column name="interface_value">28D</column>
+			<column name="calypso_value">4W</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">ResetMethod</column>
+			<column name="interface_value">Weighted</column>
+			<column name="calypso_value">Weighted</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">ResetMethod</column>
+			<column name="interface_value">Unweighted</column>
+			<column name="calypso_value">Equal</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">DiscountingMethod</column>
+			<column name="interface_value">NONE</column>
+			<column name="calypso_value">NONE</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">DiscountingMethod</column>
+			<column name="interface_value">ISDA</column>
+			<column name="calypso_value">FWD_DISC</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">DiscountingMethod</column>
+			<column name="interface_value">AFMA</column>
+			<column name="calypso_value">DUAL_DISC</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">DiscountingMethod</column>
+			<column name="interface_value">ISDAYield</column>
+			<column name="calypso_value">DUAL_DISC</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Fees</column>
+			<column name="interface_value">FEE</column>
+			<column name="calypso_value">UPFRONT_FEE</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">QuoteMeasureType</column>
+			<column name="interface_value">ParallelShiftInterestRateSensitivity</column>
+			<column name="calypso_value">PV01</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">QuoteMeasureType</column>
+			<column name="interface_value">NPV</column>
+			<column name="calypso_value">NPV</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">DateRoll</column>
+			<column name="interface_value">MODFOLLOWING</column>
+			<column name="calypso_value">MOD_FOLLOW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">DateRoll</column>
+			<column name="interface_value">PRECEDING</column>
+			<column name="calypso_value">PRECEDING</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_value">MXMC</column>
+			<column name="calypso_value">MEX</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_value">CHZU</column>
+			<column name="calypso_value">ZUR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_value">GBLO</column>
+			<column name="calypso_value">LON</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_value">USNY</column>
+			<column name="calypso_value">NYC</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_value">EUTA</column>
+			<column name="calypso_value">TARGET</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_value">JPTO</column>
+			<column name="calypso_value">TOK</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_value">CATO</column>
+			<column name="calypso_value">TOR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_value">PLWA</column>
+			<column name="calypso_value">VAR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_value">CZPR</column>
+			<column name="calypso_value">PRA</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_value">HUBU</column>
+			<column name="calypso_value">BUD</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_value">ZAJO</column>
+			<column name="calypso_value">JOH</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_value">AUSY</column>
+			<column name="calypso_value">SYD</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Products</column>
+			<column name="interface_value">swap</column>
+			<column name="calypso_value">Swap</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">InterestCompoundingMethod</column>
+			<column name="interface_value">Flat</column>
+			<column name="calypso_value">Flat</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">InterestCompoundingMethod</column>
+			<column name="interface_value">NoCmp</column>
+			<column name="calypso_value">NoCmp</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">InterestCompoundingMethod</column>
+			<column name="interface_value">None</column>
+			<column name="calypso_value">NoCmp</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">InterestCompoundingMethod</column>
+			<column name="interface_value">Straight</column>
+			<column name="calypso_value">Spread</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">InterestCompoundingMethod</column>
+			<column name="interface_value">SpreadExclusive</column>
+			<column name="calypso_value">SimpleSpr</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">ALLEGED</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">CLEARED</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">REFUSE</column>
+			<column name="calypso_value">CANCEL</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">TERMINATED</column>
+			<column name="calypso_value">TERMINATE</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">client_trade_id</column>
+			<column name="calypso_value">ClientTradeID</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">swaption_trade_id</column>
+			<column name="calypso_value">CCPOriginatingTradeId</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">remaining_trade_id</column>
+			<column name="calypso_value">CME Remaining TradeID</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">cme_message_id</column>
+			<column name="calypso_value">CME Message ID</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">CCP Account Reference</column>
+			<column name="calypso_value">CCPAccountReference</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">Cleared Date</column>
+			<column name="calypso_value">CCPClearedDate</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">cme_origin_code</column>
+			<column name="calypso_value">CCPOriginCode</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">cme_trade_id</column>
+			<column name="calypso_value">CCPTradeID</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">platform_trade_id</column>
+			<column name="calypso_value">PlatformTradeId</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">GRANT</column>
+			<column name="calypso_value">CLEAR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">TrdHandlInst</column>
+			<column name="calypso_value">CCPTradeHandleInstruction</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">TrdID2</column>
+			<column name="calypso_value">CCPTradeID2</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">TrdDt</column>
+			<column name="calypso_value">CCPTradeDate</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">TrdTyp</column>
+			<column name="calypso_value">CCPTradeType</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">TxnTm</column>
+			<column name="calypso_value">CCPTransactionTime</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">VenuTyp</column>
+			<column name="calypso_value">CCPVenueType</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">Instrmt_ID</column>
+			<column name="calypso_value">CCPInstrumentID</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">Instrmt_MMY</column>
+			<column name="calypso_value">CCPInstrumentMMY</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">Instrmt_SecTyp</column>
+			<column name="calypso_value">CCPInstrumentSecurityType</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">Instrmt_Src</column>
+			<column name="calypso_value">CCPInstrumentSource</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">LastPx</column>
+			<column name="calypso_value">CCPLastPx</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">LastQty</column>
+			<column name="calypso_value">CCPLastQty</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">MLegRptTyp</column>
+			<column name="calypso_value">CCPMLegReportType</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">RptSide_CustCpcty</column>
+			<column name="calypso_value">CCPCustCpcty</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">RptSide_InptDev</column>
+			<column name="calypso_value">CCPInputDev</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">RptSide_InptSrc</column>
+			<column name="calypso_value">CCPInputSource</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">RptSide_SesID</column>
+			<column name="calypso_value">CCPSessionID</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordName</column>
+			<column name="interface_value">RptSide_SesSub</column>
+			<column name="calypso_value">CCPSessionSub</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_value">ACT/ACT.ISDA</column>
+			<column name="calypso_value">ACT/365I</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_value">ACT/365.FIXED</column>
+			<column name="calypso_value">ACT/365</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_value">30/360</column>
+			<column name="calypso_value">30/360</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_value">30E/360</column>
+			<column name="calypso_value">30/360</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_value">30E/360.ISDA</column>
+			<column name="calypso_value">30/360</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_value">ACT/360</column>
+			<column name="calypso_value">ACT/360</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RollDay</column>
+			<column name="interface_value">NONE</column>
+			<column name="calypso_value">0</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RollDay</column>
+			<column name="interface_value">IMM</column>
+			<column name="calypso_value">-10</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RollDay</column>
+			<column name="interface_value">EOM</column>
+			<column name="calypso_value">31</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">TIIE-Banxico</column>
+			<column name="calypso_value">TIIE</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">LIBOR-BBA</column>
+			<column name="calypso_value">LIBOR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">BBR-BBSW</column>
+			<column name="calypso_value">BBR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">EURIBOR-Reuters</column>
+			<column name="calypso_value">EURIBOR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">EURIBOR-Telerate</column>
+			<column name="calypso_value">EURIBOR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">BA-CDOR</column>
+			<column name="calypso_value">BA</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">Federal Funds-H.15-OIS-COMPOUND</column>
+			<column name="calypso_value">FEDFUNDS</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">EONIA-OIS-COMPOUND</column>
+			<column name="calypso_value">EONIA</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">WMBA-SONIA-COMPOUND</column>
+			<column name="calypso_value">SONIA</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">TONA-OIS-COMPOUND</column>
+			<column name="calypso_value">TONA</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">WIBOR-WIBO</column>
+			<column name="calypso_value">WIBOR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">PRIBOR-PRBO</column>
+			<column name="calypso_value">PRIBOR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">BUBOR-Reuters</column>
+			<column name="calypso_value">BUBOR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">JIBAR-SAFEX</column>
+			<column name="calypso_value">JIBAR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndex</column>
+			<column name="interface_value">CORRA-OIS-COMPOUND</column>
+			<column name="calypso_value">CORRA</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndexSource</column>
+			<column name="interface_value">TIIE-Banxico</column>
+			<column name="calypso_value">Banxico</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndexSource</column>
+			<column name="interface_value">LIBOR-BBA</column>
+			<column name="calypso_value">BBA</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndexSource</column>
+			<column name="interface_value">BBR-BBSW</column>
+			<column name="calypso_value">BBSW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndexSource</column>
+			<column name="interface_value">EURIBOR-Reuters</column>
+			<column name="calypso_value">Reuters</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndexSource</column>
+			<column name="interface_value">BA-CDOR</column>
+			<column name="calypso_value">CDOR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndexSource</column>
+			<column name="interface_value">Federal Funds-H.15-OIS-COMPOUND</column>
+			<column name="calypso_value">FEDFUNDS1</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndexSource</column>
+			<column name="interface_value">EONIA-OIS-COMPOUND</column>
+			<column name="calypso_value">EONIA</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndexSource</column>
+			<column name="interface_value">WMBA-SONIA-COMPOUND</column>
+			<column name="calypso_value">SONIA</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndexSource</column>
+			<column name="interface_value">TONA-OIS-COMPOUND</column>
+			<column name="calypso_value">TONA</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndexSource</column>
+			<column name="interface_value">WIBOR-WIBO</column>
+			<column name="calypso_value">WIBO</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndexSource</column>
+			<column name="interface_value">PRIBOR-PRBO</column>
+			<column name="calypso_value">PRBO</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndexSource</column>
+			<column name="interface_value">BUBOR-Reuters</column>
+			<column name="calypso_value">Reuters</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndexSource</column>
+			<column name="interface_value">JIBAR-SAFEX</column>
+			<column name="calypso_value">SAFEX</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">RateIndexSource</column>
+			<column name="interface_value">CORRA-OIS-COMPOUND</column>
+			<column name="calypso_value">CDOR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">DateRoll</column>
+			<column name="interface_value">FOLLOWING</column>
+			<column name="calypso_value">FOLLOWING</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">DateRoll</column>
+			<column name="interface_value">NONE</column>
+			<column name="calypso_value">NO_CHANGE</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">TradeSource.DataUploader</column>
+			<column name="calypso_value">TradeSource.CME2</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">Status.CLEARED</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">Status.AMENDED</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">CCPStatus.CLEARED</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">CCPStatus.AMENDED</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">StubPeriod</column>
+			<column name="interface_value">ShortInitial</column>
+			<column name="calypso_value">SPECIFIC FIRST</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">StubPeriod</column>
+			<column name="interface_value">ShortFinal</column>
+			<column name="calypso_value">SPECIFIC LAST</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">StubPeriod</column>
+			<column name="interface_value">LongInitial</column>
+			<column name="calypso_value">SPECIFIC FIRST</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">StubPeriod</column>
+			<column name="interface_value">LongFinal</column>
+			<column name="calypso_value">SPECIFIC LAST</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">StubPeriod</column>
+			<column name="interface_value">Both Initial and Final</column>
+			<column name="calypso_value">NONE</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">AMEND</column>
+			<column name="calypso_value">AMEND</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">AMENDED</column>
+			<column name="calypso_value">FO_AMEND</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">GRANT</column>
+			<column name="calypso_value">CLEAR</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Workflow</column>
+			<column name="interface_value">NEW</column>
+			<column name="calypso_value">NEW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">cme_origin_code.CUST</column>
+			<column name="calypso_value">CLIENT</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">KeywordValue</column>
+			<column name="interface_value">cme_origin_code.HOUS</column>
+			<column name="calypso_value">HOUSE</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">Location</column>
+			<column name="interface_value">USNY</column>
+			<column name="calypso_value">USA/New York</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">TimeZone</column>
+			<column name="interface_value">USNY</column>
+			<column name="calypso_value">America/New_York</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">CounterpartyAttributeIdentifier</column>
+			<column name="interface_value">CMEParticipant</column>
+			<column name="calypso_value">CME_CPTY</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="interface_name">CME</column>
+			<column name="type_name">ExternalReference</column>
+			<column name="interface_value">CME</column>
+			<column name="calypso_value">CME</column>
+			<column name="reverse_b">0</column>
+		</row>
+	</table>
+	<table name="sd_filter" xmlns="">
+		<row cat="exchange_feed_cme">
+			<column name="sd_filter_name">isCMEFeedTrade</column>
+			<column name="comments"/>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="sd_filter_name">CMF_CME-Status-ALLEGED</column>
+			<column name="comments"/>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="sd_filter_name">CMF_CME-Status-CLEARED</column>
+			<column name="comments"/>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+	</table>
+	<table name="sd_filter_domain" xmlns="">
+		<row cat="exchange_feed_cme">
+			<column name="sd_filter_name">isCMEFeedTrade</column>
+			<column name="element_name">KEYWORD.IS_CLIENT</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">false</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="sd_filter_name">CMF_CME-Status-ALLEGED</column>
+			<column name="element_name">KEYWORD.CME Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">ALLEGED</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="sd_filter_name">CMF_CME-Status-CLEARED</column>
+			<column name="element_name">KEYWORD.CME Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">AMENDED</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="sd_filter_name">CMF_CME-Status-CLEARED</column>
+			<column name="element_name">KEYWORD.CME Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">CLEARED</column>
+		</row>
+	</table>
+	<table name="sd_filter_element" xmlns="">
+		<row cat="exchange_feed_cme">
+			<column name="sd_filter_name">isCMEFeedTrade</column>
+			<column name="element_name">CPTY_ATTRIBUTE.CME_CPTY</column>
+			<column name="element_type">9</column>
+			<column name="min_value"/>
+			<column name="max_value"/>
+			<column name="like_value">%_%</column>
+			<column name="domain_value"/>
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="sd_filter_name">isCMEFeedTrade</column>
+			<column name="element_name">KEYWORD.IS_CLIENT</column>
+			<column name="element_type">1</column>
+			<column name="min_value"/>
+			<column name="max_value"/>
+			<column name="like_value"/>
+			<column name="domain_value"/>
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_cme">
+			<column name="sd_filter_name">isCMEFeedTrade</column>
+			<column name="element_name">KEYWORD.CCP</column>
+			<column name="element_type">9</column>
+			<column name="min_value"/>
+			<column name="max_value"/>
+			<column name="like_value">CME</column>
+			<column name="domain_value"/>
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<!-- <row cat="exchange_feed_lch">
+			<column name="sd_filter_name">CMF_CME-Status-ALLEGED</column>
+			<column name="element_name">KEYWORD.status</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value"/>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>				
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">CMF_CME-Status-CLEARED</column>
+			<column name="element_name">KEYWORD.status</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value"/>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row> -->
+	</table>
+</database>

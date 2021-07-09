@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+		<row cat="Required">
+			<column name="name">engineName</column>
+			<column name="value">LimitsController</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">timeBucketTemplate</column>
+			<column name="description">Time Bucket Definition</column>
+		</row>
+		<row cat="Required">
+			<column name="name">timeBucketTemplate</column>
+			<column name="value">0D-1Y-2Y-3Y-5Y-10Y</column>
+			<column name="description">0D,1Y,2Y,3Y,5Y,10Y</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">FormulaEnrichment.TotalRiskMCPFE</column>
+			<column name="description">Allow add formulas on TotalRiskMCPFE</column>
+		</row>
+		<row cat="Required">
+            <column name="name">FormulaEnrichment.TotalRiskMCPFE</column>
+            <column name="value">TotalRiskMCPFEFormula.properties</column>
+            <column name="description">Files containing formulas</column>
+        </row>
+		<row cat="Required">
+			<column name="name">ERSLimitServer.engines</column>
+			<column name="value">LimitsController</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">riskAnalysis</column>
+			<column name="value">TotalRiskMCPFE</column>
+			<column name="description"></column>
+        </row>
+	</table>
+	<table name="engine_config" xmlns="">
+		<row cat="Required">
+			<column name="engine_id">engine_config.max(engine_id)+1@1=1|engine_name='LimitsController'</column>
+			<column name="engine_name">LimitsController</column>
+			<column name="engine_comment">Limits Controller</column>
+		</row>
+	</table>
+	<table name="engine_param" xmlns="">
+		<row cat="Required">
+			<column name="engine_name">LimitsController</column>
+			<column name="param_name">CLASS_NAME</column>
+			<column name="param_value">com.calypso.service.limitsOrchestrator.LimitsController</column>
+		</row>
+		<row cat="Required">
+			<column name="engine_name">LimitsController</column>
+			<column name="param_name">DISPLAY_NAME</column>
+			<column name="param_value">Limits Controller</column>
+		</row>
+		<row cat="Required">
+			<column name="engine_name">LimitsController</column>
+			<column name="param_name">INSTANCE_NAME</column>
+			<column name="param_value">erslimitserver</column>
+		</row>
+		<row cat="Required">
+			<column name="engine_name">LimitsController</column>
+			<column name="param_name">STARTUP</column>
+			<column name="param_value">true</column>
+		</row>
+		<!--
+		<row cat="Required">
+			<column name="engine_name">LimitsController</column>
+			<column name="param_name">EVENT_POOL_POLICY</column>
+			<column name="param_value">LimitsControllerSequencePolicy</column>
+		</row>
+		-->
+	</table>
+	
+	<table name="ps_event_config" xmlns="">
+		<row cat="Required">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventTrade</column>
+			<column name="engine_name">LimitsController</column>
+		</row>
+		<row cat="Required">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">engine.limit.event.PSEventCalcJobID</column>
+			<column name="engine_name">LimitsController</column>
+		</row>
+		<row cat="Required">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">engine.limit.event.PSEventLimitChange</column>
+			<column name="engine_name">LimitsController</column>
+		</row>
+		<row cat="Required">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventRiskEngineResult</column>
+			<column name="engine_name">LimitsController</column>
+		</row>
+		<row cat="Required">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventLimitBatchFinished</column>
+			<column name="engine_name">LimitsController</column>
+		</row>
+		<row cat="Required">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">engine.limit.event.PSEventCalcCpty</column>
+			<column name="engine_name">LimitsController</column>
+		</row>
+		<row cat="Required">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventDomainChange</column>
+			<column name="engine_name">LimitsController</column>
+		</row>
+	</table>
+	<table name="ers_credit_measure_config" xmlns="">
+		<row cat="Required">
+			<column name="identifier">ALL</column>
+			<column name="measure">Issuer Market Value</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">IsIssuer ( BaseMTM 0.0 )</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">ALL</column>
+			<column name="measure">AddOn</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">Abs ( BaseNotional ) * ERS_ADDON</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">ALL</column>
+			<column name="measure">MTM</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">BaseMTM</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">FXFlexiForward.MerchantFX.*.*</column>
+			<column name="measure">MTM</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">BaseMTM * TakeUpRatio</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">ALL</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">1</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">NOTIONAL</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">FutureFX.*.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">CA_NOTIONAL</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">VarianceSwap.*.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">CA_NOTIONAL</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">ALL</column>
+			<column name="measure">Notional</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">BaseNotional</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">Swap.*.*.S</column>
+			<column name="measure">Notional</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">Neg ( BaseNotional )</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">ExtendibleSwap.*.*.S</column>
+			<column name="measure">Notional</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">Neg ( BaseNotional )</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">CommoditySwap2.*.*.S</column>
+			<column name="measure">Notional</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">Neg ( BaseNotional )</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">ALL</column>
+			<column name="measure">MTM AddOn</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">Pos ( BaseMTM ) + ( Abs ( BaseNotional ) * ERS_ADDON )</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">1</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">ALL</column>
+			<column name="measure">BaseMTM</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">NPV</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">ALL</column>
+			<column name="measure">Issuer Notional</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">IsIssuer ( BaseNotional 0.0 )</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">ALL</column>
+			<column name="measure">AbsNotional</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">Abs ( BaseNotional )</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">ALL</column>
+			<column name="measure">Tenor</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">Abs ( BaseNotional )</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">FutureFX.*.*.*</column>
+			<column name="measure">Notional</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">Rev ( BaseNotional )</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">MarginCall.*.*.*</column>
+			<column name="measure">AddOn</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">0</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">MarginCall.*.*.*</column>
+			<column name="measure">MTM AddOn</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">Rev ( BaseMTM )</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">MarginCall.*.*.*</column>
+			<column name="measure">MTM</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">Rev ( BaseMTM )</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">MarginCall.*.*.*</column>
+			<column name="measure">Notional</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">0</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">Bond.*.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">[BondNotional]</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">BondAssetBacked.*.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">[BondNotional]</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">BondBrady.*.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">[BondNotional]</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">BondCLN.*.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">[BondNotional]</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">BondConvertible.*.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">[BondNotional]</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">BondDanishMortgage.*.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">[BondNotional]</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">BondFRN.*.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">[BondNotional]</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">BondMMDiscount.*.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">[BondNotional]</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">BondMMDiscountAUD.*.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">[BondNotional]</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">BondMMDiscountWithAI.*.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">[BondNotional]</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">BondMMInterest.*.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">[BondNotional]</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">BondRevolver.*.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">[BondNotional]</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">FXSwap.*.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">1</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">[FXSwapNotional]</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">FXNDFSwap.*.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">1</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">[FXSwapNotional]</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">FXFlexiForward.MerchantFX.*.*</column>
+			<column name="measure">BaseNotional</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">1</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">[MerchantFXNotional]</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">FXFlexiForward.MerchantFX.*.*</column>
+			<column name="measure">TakeUpRatio</column>
+			<column name="is_formula">0</column>
+			<column name="is_display">0</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name">[MerchantFXTakeUpRatio]</column>
+			<column name="formula"></column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">FXFlexiForward.MerchantFX.*.*</column>
+			<column name="measure">MTM AddOn</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">Pos ( BaseMTM * TakeUpRatio ) + ( Abs ( BaseNotional ) * ERS_ADDON )</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">1</column>
+		</row>
+		<row cat="Required">
+			<column name="identifier">ALL</column>
+			<column name="measure">AbsIssuer</column>
+			<column name="is_formula">1</column>
+			<column name="is_display">1</column>
+			<column name="is_rolled">0</column>
+			<column name="is_divisable">0</column>
+			<column name="pricer_name"></column>
+			<column name="formula">IsIssuer ( Abs ( BaseNotional )  0.0 )</column>
+			<column name="start_date_type"></column>
+			<column name="start_date_adjust">0</column>
+			<column name="start_date_adjust_type"></column>
+			<column name="end_date_type"></column>
+			<column name="end_date_adjust">0</column>
+			<column name="end_date_adjust_type"></column>
+			<column name="use_addon">0</column>
+		</row>
+	</table>
+	<table name="calypso_seed" xmlns="">
+		<row cat="Required">
+            <column name="last_id">ers_limit_job.coalesce(max(job_id)+1, 1000)@1=1|seed_name='limit_job'</column>
+            <column name="seed_name">limit_job</column>
+            <column name="seed_alloc_size">100</column>
+        </row>
+		<row cat="Required">
+            <column name="last_id">ers_violation.coalesce(max(violation_id)+1, 1000)@1=1|seed_name='ers_violation_id'</column>
+            <column name="seed_name">ers_violation_id</column>
+            <column name="seed_alloc_size">100</column>
+        </row>
+	</table>
+</database>

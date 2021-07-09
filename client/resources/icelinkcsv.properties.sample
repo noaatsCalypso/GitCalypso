@@ -1,0 +1,58 @@
+
+##########################
+# CSV Interface Settings #
+##########################
+
+# Mapping for the Product type in CSV to the Trade type in XML
+CreditDefaultSwapShort=CreditDefaultSwap
+CreditDefaultSwapIndex=CDSIndex
+CreditDefaultSwapLoan=CDSLoan
+CreditDefaultSwapABSIndex=CDSABSIndex
+CDSABSIndex=CDSABSIndex
+RecoverySwap=RecoverySwap
+CreditDefaultSwapIndexTranche=CDSIndexTranche
+
+#
+# File Watcher Properties
+#
+
+# This is the encoding scheme to be used for the INPUT (i.e. CSV) files
+# This feature is provided to take care of CSV files created using different 
+# encoding schemes e.g. SHIFT_JIS for Japanese
+INPUT_ENCODING_SCHEME=UTF-8
+
+# This is the folder where we place the files, and the interval for scanning the folder
+fileDir=C:\\uploaderICE\\upload
+interval=100
+
+# This is the time to sleep after "seeing" the file before actually processing the file
+sleepInterval=150
+
+# This tells the file watcher which Uploader to call
+fileWatcherType=icelinkcsv
+
+# This tells the file watcher to monitor CSV Files only
+fileFilter=csv
+csvDelimeter=,
+#txtDelimeter=\t
+
+
+#
+#Valid combination for uploadMode and persistMessage
+#
+#							|----------------------------------------------------------------------|
+#							|						   PERSIST MESSAGES							   |
+#							|-----------------|-------------------------------|--------------------|
+#							|		None	  |		Failure					  |		All			   |
+#		|---|---------------|-----------------|-------------------------------|--------------------|
+#		| M	| Local			| No BOMessage	  |  BOMessage will be created	  |  BOMessage will be |
+#		| O	|				| will be created |   only in case of failure	  |  always created    |
+#		| D	|---------------|-----------------|-------------------------------|--------------------|
+#		| E	| BOMessage		| Not Applicable  | 	Not Applicable			  |	BOMessage will be  |
+#		| S	|				|				  |								  |	always created	   |
+#		|---|---------------|-----------------|-------------------------------|--------------------|
+#
+#	For better performance it is recommended to use uploadMode as Local with persistMessages as None.
+#
+uploadMode=Local
+persistMessages=All

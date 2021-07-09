@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+		<!-- Paper confirmation -->
+		<!-- QRCode management -->
+		<!-- QRCode.Size * Size of QRCode QRCode.Pdf * If QRCode is automatically 
+			generated on PDF QRCode.PdfMode * QRcode PDF Mode (AllPages, FirstPage, lastPage) 
+			Pdf.PageNumber * pdf must contains pageNumber QRCode.PdfPosition * QRCodePosition 
+			on page -->
+
+
+		<!-- ScheduledTask Management -->
+		<row cat="startup">
+			<column name="name">formatType</column>
+			<column name="value">PaperConfirmation</column>
+			<column name="description">Message Format Type for non swift confirmation
+			</column>
+		</row>
+
+		<row cat="startup">
+			<column name="name">MatchingContext</column>
+			<column name="value">Paper</column>
+			<column name="description">Pdf Type</column>
+		</row>
+
+		<row cat="startup">
+			<column name="name">MatchingContext.HandlerName</column>
+			<column name="value">Paper</column>
+			<column name="description">Pdf Type</column>
+		</row>
+
+		<row cat="startup">
+			<column name="name">domainName</column>
+			<column name="value">paperFormat</column>
+			<column name="description">Pdf Paper Format</column>
+		</row>
+
+		<row cat="startup">
+			<column name="name">paperFormat</column>
+			<column name="value">pdf</column>
+			<column name="description">Pdf Type</column>
+		</row>
+
+		<row cat="startup">
+			<column name="name">domainName</column>
+			<column name="value">PaperConfirmation.ActivateGenericCommentSave
+			</column>
+			<column name="description"> Save Text of the message in Generic Comment
+			</column>
+		</row>
+
+		<row cat="startup">
+			<column name="name">PaperConfirmation.ActivateGenericCommentSave
+			</column>
+			<column name="value">true</column>
+			<column name="description">Active the saving of the text of message in
+				Generic Comment</column>
+		</row>
+
+		<row cat="startup">
+			<column name="name">domainName</column>
+			<column name="value">paperConfirmation.sendHeader</column>
+			<column name="description">define html template to use as cover page
+			</column>
+		</row>
+
+		<row cat="startup">
+			<column name="name">paperConfirmation.sendHeader</column>
+			<column name="value">DefaultCoverPage.html</column>
+			<column name="description">default template to use as cover page</column>
+		</row>
+
+		<row cat="startup">
+			<column name="name">domainName</column>
+			<column name="value">paperConfirmation.sendMessageType</column>
+			<column name="description">Message type for the countersigned confirmation
+			</column>
+		</row>
+
+		<row cat="startup">
+			<column name="name">paperConfirmation.sendMessageType</column>
+			<column name="value">CountersignedConfirmation</column>
+			<column name="description">Default message type for countersigned
+				confirmation</column>
+		</row>
+	</table>
+</database>
+        
+        

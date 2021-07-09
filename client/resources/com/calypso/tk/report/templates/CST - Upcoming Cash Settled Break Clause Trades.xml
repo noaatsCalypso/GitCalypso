@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<reportTemplates>
+    <reportTemplate>
+        <reportType>CashSettlement</reportType>
+        <name>CST - Upcoming Cash Settled/Break Clause Trades</name>
+        <isHidden>false</isHidden>
+        <isPrivate>false</isPrivate>
+        <user>calypso_user</user>
+        <attributes>
+            <attribute>
+                <attributeName>AggregatedFlag</attributeName>
+                <attributeValue>false</attributeValue>
+                <attributeClass>Boolean</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>CaseInsensitiveTextSort</attributeName>
+                <attributeValue>false</attributeValue>
+                <attributeClass>Boolean</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Book</attributeName>
+                <attributeValue>Book</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Cash Settle Earliest Exercise Time</attributeName>
+                <attributeValue>Earliest Exercise Time</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Cash Settle Exercise Date</attributeName>
+                <attributeValue>Exercise Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Cash Settle Latest Exercise Time</attributeName>
+                <attributeValue>Latest Exercise Time</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Cash Settle Method</attributeName>
+                <attributeValue>Method</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Cash Settle Option Style</attributeName>
+                <attributeValue>Option Style</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Cash Settle Payment Date</attributeName>
+                <attributeValue>Payment Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_CounterParty</attributeName>
+                <attributeValue>Counterparty</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Product Description</attributeName>
+                <attributeValue>Product Description</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Trade Id</attributeName>
+                <attributeValue>Trade Id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Trader</attributeName>
+                <attributeValue>Trader</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns0</attributeName>
+                <attributeValue>Cash Settle Exercise Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns1</attributeName>
+                <attributeValue>Trade Id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns10</attributeName>
+                <attributeValue>Trader</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns2</attributeName>
+                <attributeValue>Product Description</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns3</attributeName>
+                <attributeValue>CounterParty</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns4</attributeName>
+                <attributeValue>Cash Settle Option Style</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns5</attributeName>
+                <attributeValue>Cash Settle Earliest Exercise Time</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns6</attributeName>
+                <attributeValue>Cash Settle Latest Exercise Time</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns7</attributeName>
+                <attributeValue>Cash Settle Payment Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns8</attributeName>
+                <attributeValue>Cash Settle Method</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns9</attributeName>
+                <attributeValue>Book</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns_COUNT</attributeName>
+                <attributeValue>11</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Holidays</attributeName>
+                <attributeValue>NYC</attributeValue>
+                <attributeClass>Vector</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns0</attributeName>
+                <attributeValue>Cash Settle Exercise Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns1</attributeName>
+                <attributeValue>Cash Settle Option Style</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns_COUNT</attributeName>
+                <attributeValue>2</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders0</attributeName>
+                <attributeValue>0.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders1</attributeName>
+                <attributeValue>1.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders_COUNT</attributeName>
+                <attributeValue>2</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>StartPlus</attributeName>
+                <attributeValue>+</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>StartTenor</attributeName>
+                <attributeValue>0D</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Subheadings0</attributeName>
+                <attributeValue>Cash Settle Exercise Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Subheadings_COUNT</attributeName>
+                <attributeValue>1</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>TRADE_FILTER</attributeName>
+                <attributeValue>ALL</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+        </attributes>
+    </reportTemplate>
+</reportTemplates>
+

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    
+    <table name="analysis_message" xmlns="">
+    	<column name="id" type="int" nullable="false" scale="1"></column>
+        <column name="task_id" type="string" nullable="false" scale="255" />
+	    <column name="message_type" type="int" nullable="true" scale="1" />
+	    <column name="source_id" type="int" nullable="true" scale="1" />
+	    <column name="throwable" type="binary" nullable="true"/>
+	    <index primary="false">
+            <on>source_id</on>
+            <on>task_id</on>
+        </index>
+	</table>
+    
+    <table name="analysis_datatable" xmlns="">
+    	<column name="analysis" type="string" nullable="false" scale="255" />
+    	<column name="data_table" type="string" nullable="true" scale="255" />
+    	<column name="user_name" nullable="true" scale="32" type="string"/>    	
+    	<column name="output_id" nullable="true" scale="1" type="int"/>
+    	<column name="service_id" type="string" nullable="true" scale="255" />    	
+    	<column name="view_count" nullable="true" scale="1" type="int"/>
+    	<column name="created_date_time" nullable="true" type="timestamp"/>
+    	<column name="updated_date_time" nullable="true" type="timestamp"/>
+    </table>
+    
+     <table name="store_schema" xmlns="">	 
+         <column name="store_id" type="string" nullable="false" scale="255" />	 
+         <column name="entityname" type="string" nullable="false" scale="255" />	 
+         <column name="analysis_schema" type="binary" nullable="true" />	 
+     </table>
+     <table name="middletier_seed" xmlns="">
+        <column name="last_id" nullable="false" scale="1" type="int"/>
+        <column name="seed_name" nullable="false" scale="32" type="string"/>
+        <column name="seed_alloc_size" nullable="false" scale="1" type="int" default="1"/>
+        <index primary="true">
+            <on>seed_name</on>
+        </index>
+    </table>
+    
+      <table name="column_projection" xmlns="">
+        <column name="id" nullable="false" scale="256" type="string"/>
+        <column name="name" nullable="false" scale="256" type="string"/>
+        <column name="projection" nullable="true" type="binary"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    
+    <table name="middletier_seed" xmlns="">
+		 <row cat="Required">
+            <column name="last_id">1000</column>
+            <column name="seed_name">TableSeed</column>
+            <column name="seed_alloc_size">100</column>
+        </row>
+	</table>
+	
+    <table name="tenant" xmlns="">
+    	<column name="tenant_id" nullable="false" scale="1" type="int"/>
+    	<column name="tenant_name" nullable="false" scale="255" type="string"/>
+   		<column name="isshared" nullable="false" scale="1" type="int"/>
+   		<index primary="true">
+        	 <on>tenant_id</on>
+        </index>
+   	</table>
+	<table name="live_pl_output" xmlns="">
+	  <column name="trade_filter_name" type="string" nullable="false" scale="255" />
+	  <column name="pl_config_name" type="string" nullable="false" scale="255" />
+	  <column name="param_name" nullable="false" scale="36" type="string"/>
+	  <column name="env_name" type="string" scale="64" nullable="false"/>
+	  <column name="agg_config" type="string" scale="128" nullable="false"/>
+	  <column name="trades" type="binary" nullable="true"/>
+	  <column name="gen_und_delta" type="binary" nullable="true"/>
+	  <column name="gen_scenario_items" type="binary" nullable="true"/>
+	  <column name="rebased_gen_und_delta" type="binary" nullable="true"/>      
+	  <column name="rebased_gen_scenario_items" type="binary" nullable="true"/>
+	  <column name="new_business_trades" type="binary" nullable="true"/>
+	  <column name="env" type="binary" nullable="true"/>
+	  <column name="rebased_env" type="binary" nullable="true"/>
+	  <column name="rebase_errors" type="binary" nullable="true"/>
+	  <column name="run_status" type="string" nullable="false" scale="25" />
+	  <column name="run_start_date_time" type="timestamp" nullable="true" />
+	  <column name="run_end_date_time" type="timestamp" nullable="true" />
+	  <column name="pl_start_date_time" type="timestamp" nullable="true" />
+	  <column name="val_date_time" type="timestamp" nullable="false" />
+	  <column name="fatal_errors" type="binary" nullable="true"/>
+	  <column name="undo_date_time" type="timestamp" nullable="true" />
+	  <column name="pl_output" type="binary" nullable="true"/>
+	  <column name="rebased_pl_output" type="binary" nullable="true"/>
+	  <column name="new_business_output" type="binary" nullable="true"/>
+	  <column name="update_time" type="timestamp" nullable="true" />
+	  <column name="rebase_val_date_time" type="timestamp" nullable="true" />
+	  <index primary="true">
+	    <on>trade_filter_name</on>
+	    <on>param_name</on>
+	    <on>env_name</on>
+	    <on>run_status</on>
+	  </index>
+	</table>
+	<table name="live_ladder_output" xmlns="">
+	  <column name="trade_filter_name" type="string" nullable="false" scale="255" />
+	  <column name="pl_config_name" type="string" nullable="false" scale="255" />
+	  <column name="param_name" nullable="false" scale="36" type="string"/>
+	  <column name="env_name" type="string" scale="64" nullable="false"/>
+	  <column name="ladder_output" type="binary" nullable="true"/>
+	  <column name="trades" type="binary" nullable="true"/>
+	  <column name="env" type="binary" nullable="true"/>
+	  <column name="rebased_output" type="binary" nullable="true"/>
+	  <column name="new_business_output" type="binary" nullable="true"/>
+	  <column name="rebased_env" type="binary" nullable="true"/>
+	  <column name="rebase_errors" type="binary" nullable="true"/>
+	  <column name="new_business_trades" type="binary" nullable="true"/>
+	  <column name="run_status" type="string" nullable="false" scale="25" />
+	  <column name="run_start_date_time" type="timestamp" nullable="true" />
+	  <column name="run_end_date_time" type="timestamp" nullable="true" />
+	  <column name="pl_start_date_time" type="timestamp" nullable="true" />
+	  <column name="val_date_time" type="timestamp" nullable="false" />
+	  <column name="fatal_errors" type="binary" nullable="true"/>
+	   <column name="undo_date_time" type="timestamp" nullable="true" />
+	   <column name="update_time" type="timestamp" nullable="true" />
+	   <column name="rebase_val_date_time" type="timestamp" nullable="true" />
+	  <index primary="true">
+	    <on>trade_filter_name</on>
+	    <on>param_name</on>
+	    <on>env_name</on>
+	    <on>run_status</on>
+	  </index>
+	</table>
+</database>

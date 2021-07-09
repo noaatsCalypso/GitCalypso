@@ -1,0 +1,21 @@
+PSEventTransfer;CANCELED;UPDATE;CANCELED;true;false;false;CLS;ALL;;;false;false;;CLS_workflow;false;false;false;
+PSEventTransfer;INVALID;CANCEL;CANCELED;true;false;false;CLS;ALL;;;false;false;;;false;false;false;
+PSEventTransfer;INVALID;UPDATE;INVALID;true;false;false;CLS;ALL;;;false;true;;;false;false;false;
+PSEventTransfer;NONE;NEW;INVALID;true;false;false;CLS;ALL;CheckSDI;;false;true;;;false;false;false;
+PSEventTransfer;NONE;NEW;PENDING;true;false;false;CLS;ALL;CheckCorrectSDI;;false;true;;;false;false;false;
+PSEventTransfer;PARTIAL_SETTLED;PARTIAL_SETTLE;PARTIAL_SETTLED;true;false;false;CLS;ALL;;;false;false;;;false;false;false;
+PSEventTransfer;PARTIAL_SETTLED;SETTLE;SETTLED;true;false;false;CLS;ALL;;;false;false;;;false;false;false;
+PSEventTransfer;PENDING;AMEND;PENDING;true;false;false;CLS;ALL;;;false;true;;;false;false;false;
+PSEventTransfer;PENDING;CANCEL;CANCELED;true;false;false;CLS;ALL;;;false;false;;;false;false;false;
+PSEventTransfer;PENDING;EXECUTE;VERIFIED;true;true;false;CLS;ALL;SetKnownFlag;;false;false;;;false;false;false;
+PSEventTransfer;PENDING;UPDATE;PENDING;true;false;false;CLS;ALL;;;false;true;;;false;false;false;
+PSEventTransfer;SETTLED;CANCEL;CANCELED;true;false;false;CLS;ALL;;;false;false;;;false;false;false;
+PSEventTransfer;VERIFIED;AMEND;PENDING;true;false;false;CLS;ALL;CheckKnownFlag;;false;true;;;false;false;false;
+PSEventTransfer;VERIFIED;CANCEL;CANCELED;true;false;false;CLS;ALL;;;false;false;;;false;false;false;
+PSEventTransfer;VERIFIED;PARTIAL_SETTLE;PARTIAL_SETTLED;true;false;false;CLS;ALL;;;false;false;;;false;false;false;
+PSEventTransfer;VERIFIED;SETTLE;SETTLED;true;false;false;CLS;ALL;;;false;false;;;false;false;false;
+PSEventTransfer;VERIFIED;UPDATE;VERIFIED;true;false;false;CLS;ALL;;;false;false;;;false;false;false;
+StaticDataFilterConfig
+1;CLS_workflow;;
+Xfer Our Method;IN;CLS;
+StaticDataFilterConfig

@@ -1,0 +1,20 @@
+PSEventMessage;ACCEPTED;ACCEPT;ACCEPTED;true;false;false;CVR_WORKSHEET;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;ACCEPTED;ACK;ACCEPTED;true;false;false;CVR_WORKSHEET;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;ACKED;ACCEPT;ACCEPTED;true;false;false;CVR_WORKSHEET;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;ACKED;REJECT;REJECTED;true;false;false;CVR_WORKSHEET;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;EDITABLE;CANCEL;CANCELED;true;false;false;CVR_WORKSHEET;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;EDITABLE;EXPORT;EXPORTED;true;false;false;CVR_WORKSHEET;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;EDITABLE;UPDATE;EDITABLE;true;false;false;CVR_WORKSHEET;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;EXPORTED;AUTHORIZE;TO_BE_SENT;true;true;false;CVR_WORKSHEET;ALL;PrepareCVRForSend;;false;false;;isLCHCVRValidToSend;false;false;false;false;0;
+PSEventMessage;NONE;NEW;EDITABLE;true;false;false;CVR_WORKSHEET;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;REJECTED;ACK;REJECTED;true;false;false;CVR_WORKSHEET;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;REJECTED;REJECT;REJECTED;true;false;false;CVR_WORKSHEET;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;SENT;ACCEPT;ACCEPTED;true;false;false;CVR_WORKSHEET;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;SENT;ACK;ACKED;true;false;false;CVR_WORKSHEET;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;SENT;REJECT;REJECTED;true;false;false;CVR_WORKSHEET;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;TO_BE_SENT;SEND;SENT;true;false;false;CVR_WORKSHEET;ALL;;;false;false;;;false;false;false;false;0;
+StaticDataFilterConfig
+2;isLCHCVRValidToSend;;ANY;
+MSG_ATTRIBUTE.CVRWorksheetAdviceDocumentID;FLOAT_RANGE;1.0,Infinity;
+Message Receiver;IN;LCH;
+StaticDataFilterConfig

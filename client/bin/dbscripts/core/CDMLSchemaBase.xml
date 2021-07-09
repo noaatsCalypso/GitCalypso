@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+
+   <table name="cdml_instance" xmlns="">
+      <column name="id" nullable="false" scale="1" type="int" />
+      <column name="type" nullable="false" scale="256" type="string" />
+      <column name="ccp" nullable="false" scale="256" type="string"/>
+      <column name="clearing_service" nullable="false" scale="256" type="string"/>
+      <column name="member_id" nullable="false" scale="256" type="string"/>
+      <column name="report_date" nullable="false" type="date" />
+      <column name="version" default="0" nullable="false" scale="1" type="int" />
+      <column name="generation_timestamp" nullable="false" type="timestamp" />
+      <column name="cdml_blob" nullable="false" type="binary" />
+      <column name="model_version" default="0" nullable="true" scale="1" type="int" />
+
+      <index primary="true">
+         <on>id</on>
+      </index>
+      
+      <index primary="false" unique="true">
+         <on>type</on>
+         <on>ccp</on>
+         <on>clearing_service</on>
+         <on>member_id</on>
+         <on>report_date</on>
+         <on>version</on>
+      </index>
+   </table>
+   
+</database>

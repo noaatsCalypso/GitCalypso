@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+  	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+  	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd">
+	
+	<!-- authentication changes: fix failed login go inside login module twice -->
+	<bean name="messagingConnectionFactory" class="com.calypso.infra.event.MessagingSessionFactory" 
+	      init-method="init" depends-on="clientContextInitializer">
+		<property name="jmsConnectionFactoryJNDI" value="jms/connectionFactory"/>
+	</bean>
+	
+	<bean name="elasticsearchMessagingClientInitializer" class="com.calypso.elasticsearch.monitoring.ElasticsearchMessagingClientInitializer" 
+		  init-method="init" destroy-method="destroy" depends-on="messagingConnectionFactory">
+		<property name="jmsConnectionFactoryJNDI" value="jms/todConnectionFactory"/>
+		<property name="queueJNDI" value="queue/calypsoMonitoring"/>
+	</bean>
+	
+	<bean name="elasticsearchIndexingClientInitializer" class="com.calypso.elasticsearch.monitoring.ElasticsearchIndexingClientInitializer" 
+		  init-method="init" destroy-method="destroy" depends-on="messagingConnectionFactory">
+	</bean>
+
+</beans>

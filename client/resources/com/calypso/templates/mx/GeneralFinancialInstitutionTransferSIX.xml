@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+    <contents>
+
+        <element name="FinInstnCdtTrf">
+            <contents>
+                <element name="GrpHdr">
+                    <contents>
+                        <element name="MsgId">
+                            <contents>
+                                <report>
+                                    <column>MESSAGE_ID</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="CreDtTm">
+                            <contents>
+                                <report format="yyyy-MM-dd'T'hh:mm:ss">
+                                    <column>ORIGINAL_DATE</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="NbOfTxs">
+                            <contents>
+                                <text>
+                                    <value>1</value>
+                                </text>
+                            </contents>
+                        </element>
+                        <element name="TtlIntrBkSttlmAmt">
+                            <attributes>
+                                <attribute name="Ccy">
+                                    <value>
+                                        <report>
+                                            <column>SettleCurrency</column>
+                                        </report>
+                                    </value>
+                                </attribute>
+                            </attributes>
+                            <contents>
+                                <report>
+                                    <column>Settle Amount</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="IntrBkSttlmDt">
+                            <contents>
+                                <report format="yyyy-MM-dd">
+                                    <column>Settle Date</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="SttlmInf">
+                            <contents>
+                                <element name="SttlmMtd">
+                                    <contents>
+                                        <text>
+                                            <value>CLRG</value>
+                                        </text>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="InstgAgt">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents max="1">
+                                        <element name="ClrSysMmbId" hideifempty="true">
+                                            <contents>
+                                                <element name="ClrSysId">
+                                                    <contents>
+                                                        <element name="Cd">
+                                                            <contents>
+                                                                <report>
+                                                                	<column>PO_CLEARING_SYS_ID</column>
+                                                                </report>
+                                                            </contents>
+                                                        </element>
+                                                    </contents>
+                                                </element>
+                                                <element name="MmbId" hideifempty="true">
+                                                    <contents>
+                                                        <report>
+                                                        	<condition>
+																<expression>!isEmpty(getReportValue("PO_CLEARING_SYS_ID"))</expression>
+	                                                        </condition>
+                                                            <column>PO_CLEARING_MEMBER_ID</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                        <element name="BIC">
+                                            <contents>
+                                                <report>
+                                                    <column>PO_CONTACT_BIC_CODE</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="InstdAgt">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents max="1">
+                                        <element name="ClrSysMmbId" hideifempty="true">
+                                            <contents>
+                                                <element name="ClrSysId">
+                                                    <contents>
+                                                        <element name="Cd">
+                                                            <contents>
+                                                                <report>
+                                                                	<column>CPTY_AGENT_CLEARING_SYS_ID</column>
+                                                                </report>
+                                                            </contents>
+                                                        </element>
+                                                    </contents>
+                                                </element>
+                                                <element name="MmbId" hideifempty="true">
+                                                    <contents>
+                                                        <report>
+                                                        	<condition>
+                                                        		<expression>!isEmpty(getReportValue("CPTY_AGENT_CLEARING_SYS_ID"))</expression>
+                                                        	</condition>
+                                                            <column>CPTY_AGENT_CLEARING_MEMBER_ID</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                        <element name="BIC">
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_RECEIVING_AGENT_BIC_CODE</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="CdtTrfTxInf">
+                    <contents>
+                        <element name="PmtId">
+                            <contents>
+                                <element name="InstrId" hideifempty="true">
+                                    <contents>
+                                    	<text>
+                                    		<condition>
+												<expression>isTrue(getProperty("SIXRelease_2020", "false")) &amp;&amp; !isEmpty(getReportValue("Msg_Attr.UETR"))</expression>
+											</condition>
+                                    		<value>UET</value>
+                                         </text>
+                                        <report>
+                                    		<condition>
+												<expression>isTrue(getProperty("SIXRelease_2020", "false"))</expression>
+											</condition>
+                                            <column>Msg_Attr.UETR</column>
+	                                        <transformations>
+												<transformation type="regexp">
+													<from>\-</from>
+													<to></to>
+												</transformation>
+											</transformations>
+                                        </report>
+                                        <report>
+                                    		<condition>
+												<expression>!isTrue(getProperty("SIXRelease_2020", "false"))</expression>
+											</condition>
+                                            <column>Msg_Attr.UETR</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <element name="EndToEndId">
+                                    <contents>
+                                        <text>
+                                            <value>NOTPROVIDED</value>
+                                        </text>
+                                    </contents>
+                                </element>
+                                <element name="TxId">
+                                    <contents>
+                                        <report>
+                                            <column>MESSAGE_ID</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="PmtTpInf">
+                            <contents>
+                                <element name="SvcLvl" hideifempty="true">
+                                    <contents max="1">
+                                        <element name="Prtry" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <condition>
+                                                        <expression>getReportValue("TRADE_KEYWORD.MXPaymentType") ==
+                                                            "CMPPMT"
+                                                        </expression>
+                                                    </condition>
+                                                    <column>TRADE_KEYWORD.ServiceLvlPmtCode</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Prtry" hideifempty="true">
+                                            <contents>
+                                                <text>
+                                                    <condition>
+                                                        <expression>getReportValue("TRADE_KEYWORD.MXPaymentType") ==
+                                                            "CMPPMT"
+                                                        </expression>
+                                                    </condition>
+                                                    <value>000</value>
+                                                </text>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                                <element name="LclInstrm">
+                                    <contents max="1">
+                                        <element name="Prtry" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>TRADE_KEYWORD.MXPaymentType</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Prtry">
+                                            <contents>
+                                                <text>
+                                                    <value>F2FPMT</value>
+                                                </text>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="IntrBkSttlmAmt">
+                            <attributes>
+                                <attribute name="Ccy">
+                                    <value>
+                                        <report>
+                                            <column>SettleCurrency</column>
+                                        </report>
+                                    </value>
+                                </attribute>
+                            </attributes>
+                            <contents>
+                                <report>
+                                    <column>Settle Amount</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="SttlmTmIndctn" hideifempty="true">
+                            <contents>
+                                <report>
+                                    <column>TRADE_KEYWORD.13CTimeIndication</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="CLSTm" hideifempty="true">
+                            <contents>
+                                <report>
+                                    <column>Cntp_Attr.CLSMT202TimeTag72</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="IntrmyAgt1" hideifempty="true">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <condition>
+                                        <expression>getReportValue("TRADE_KEYWORD.MXPaymentType") != "CMPPMT"
+                                        </expression>
+                                    </condition>
+
+                                    <contents>
+                                        <element name="ClrSysMmbId" hideifempty="true">
+                                            <contents>
+                                                <element name="ClrSysId">
+                                                    <contents>
+                                                        <element name="Cd">
+                                                            <contents>
+                                                                <report>
+                                                                    <column>CPTY_INT1_CLEARING_SYS_ID</column>
+                                                                </report>
+                                                            </contents>
+                                                        </element>
+                                                    </contents>
+                                                </element>
+                                                <element name="MmbId">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_INT1_CLEARING_MEMBER_ID</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                        <element name="BIC" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_INT1_BIC_CODE_IF_CLEARING_EMPTY</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Nm" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_INT1_NAME_IF_CLEARING_AND_BIC_EMPTY</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="PstlAdr" hideifempty="true">
+                                            <contents>
+                                                <element name="StrtNm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_INT1_STREET_IF_CLEARING_AND_BIC_EMPTY</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="PstCd">
+
+                                                </element>
+                                                <element name="TwnNm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_INT1_CITY_IF_CLEARING_AND_BIC_EMPTY</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="Ctry">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_INT1_COUNTRY_IF_CLEARING_AND_BIC_EMPTY</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="AdrLine">
+
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="IntrmyAgt1Acct" hideifempty="true">
+                            <condition>
+                                <expression>getReportValue("TRADE_KEYWORD.MXPaymentType") != "CMPPMT"</expression>
+                            </condition>
+                            <contents>
+                                <element name="Id">
+                                    <contents max="1">
+                                        <element name="IBAN" hideifempty="true">
+                                            <condition>
+                                                <expression>isTrue(getReportValue("Payer.SDIAttributes.IBAN.Intermediary2"))</expression>
+                                            </condition>
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_INT2_ACCT</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Othr">
+                                            <contents>
+                                                <element name="Id">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_INT2_ACCT</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="Dbtr" hideifempty="true">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents max="1">
+                                        <element name="ClrSysMmbId" hideifempty="true">
+                                            <condition>
+                                                <expression>getReportValue("TRADE_KEYWORD.MXPaymentType") == "CMPPMT" ||
+                                                    getReportValue("TRADE_KEYWORD.MXPaymentType") == "PPTTSD"
+                                                </expression>
+                                            </condition>
+                                            <contents>
+                                                <element name="ClrSysId">
+                                                    <contents>
+                                                        <element name="Cd">
+                                                            <contents>
+                                                                <report>
+                                                                    <column>PO_CLEARING_SYS_ID</column>
+                                                                </report>
+                                                            </contents>
+                                                        </element>
+                                                    </contents>
+                                                </element>
+                                                <element name="MmbId">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_CLEARING_MEMBER_ID</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                        <element name="BIC">
+                                            <contents>
+                                                <report>
+                                                    <column>Sender.Swift</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="PstlAdr">
+                                            <condition>
+                                                <expression>getReportValue("TRADE_KEYWORD.MXPaymentType") != "CMPPMT"
+                                                </expression>
+                                            </condition>
+                                            <contents>
+                                                <element name="Ctry">
+                                                    <contents>
+                                                        <report>
+                                                            <column>Sender.Country</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="DbtrAcct" hideifempty="true">
+                            <condition>
+                                <expression>getReportValue("TRADE_KEYWORD.MXPaymentType") != "CMPPMT"</expression>
+                            </condition>
+                            <contents>
+                                <element name="Id" hideifempty="true">
+                                    <contents max="1">
+                                        <element name="IBAN" hideifempty="true">
+                                            <condition>
+                                                <expression>isTrue(getReportValue("Payer.SDIAttributes.IBAN.Agent"))</expression>
+                                            </condition>
+                                            <contents>
+                                                <report>
+                                                    <column>Payer.Agent.Account</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Othr" hideifempty="true">
+                                            <contents>
+                                                <element name="Id" hideifempty="true">
+                                                    <contents>
+                                                        <report>
+                                                            <condition>
+                                                                <expression>getReportValue("Sender.Swift") !=
+                                                                    getReportValue("PO_CONTACT_BIC_CODE_WITHOUT_COMPLETE")
+                                                                </expression>
+                                                            </condition>
+                                                            <column>Payer.Agent.Account</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="CdtrAgt" hideifempty="true">
+                            <contents>
+                                <element name="FinInstnId" hideifempty="true">
+                                    <contents max="1">
+                                        <element name="BIC" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <condition>
+                                                        <expression>getReportValue("TRADE_KEYWORD.MXPaymentType") !=
+                                                            "CMPPMT" &amp;&amp;
+                                                            getReportValue("TRADE_KEYWORD.MXPaymentType") != "PPTTSD"
+                                                        </expression>
+                                                    </condition>
+                                                    <column>Receiver.Agent.Swift</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="PstlAdr" hideifempty="true">
+                                            <contents>
+                                                <element name="Nm">
+                                                    <contents>
+                                                        <report>
+                                                            <condition>
+                                                                <expression>
+                                                                    getReportValue("TRADE_KEYWORD.MXPaymentType") !=
+                                                                    "CMPPMT" &amp;&amp;
+                                                                    getReportValue("TRADE_KEYWORD.MXPaymentType") !=
+                                                                    "PPTTSD"
+                                                                </expression>
+                                                            </condition>
+                                                            <column>Receiver.Agent.Short Name</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="Ctry">
+                                                    <contents>
+                                                        <report>
+                                                            <condition>
+                                                                <expression>
+                                                                    getReportValue("TRADE_KEYWORD.MXPaymentType") !=
+                                                                    "CMPPMT" &amp;&amp;
+                                                                    getReportValue("TRADE_KEYWORD.MXPaymentType") !=
+                                                                    "PPTTSD"
+                                                                </expression>
+                                                            </condition>
+                                                            <column>Receiver.Agent.Country</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="CdtrAgtAcct" hideifempty="true">
+                            <contents max="1">
+                                <element name="Id">
+                                    <contents max="1">
+                                        <element name="IBAN" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <condition>
+                                                        <expression>isTrue(getReportValue("Payer.SDIAttributes.IBAN.Intermediary"))</expression>
+                                                    </condition>
+                                                    <column>CPTY_RECEIVING_INT1_ACC</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Othr" hideifempty="true">
+                                            <contents>
+                                                <element name="Id">
+                                                    <contents>
+                                                        <report>
+                                                            <condition>
+                                                                <expression>
+                                                                    getReportValue("TRADE_KEYWORD.MXPaymentType") !=
+                                                                    "CMPPMT"
+                                                                </expression>
+                                                            </condition>
+                                                            <column>CPTY_RECEIVING_INT1_ACC</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="Cdtr" hideifempty="true"> <!-- BranchAndFinancialInstitutionIdentification5 -->
+                            <contents>
+                                <element name="FinInstnId"> <!-- FinancialInstitutionIdentification8 -->
+                                    <contents>
+                                        <element name="BIC" hideifempty="true">     <!-- BICFIIdentifier -->
+                                            <contents>
+                                                <report>
+                                                    <condition>
+                                                        <expression>getReportValue("TRADE_KEYWORD.MXPaymentType") !=
+                                                            "PPTTSD"
+                                                        </expression>
+                                                    </condition>
+                                                    <column>CPTY_BENEFICIARY_BIC_CODE</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="BIC" hideifempty="true">     <!-- BICFIIdentifier -->
+                                            <contents>
+                                                <report>
+                                                    <condition>
+                                                        <expression>getReportValue("TRADE_KEYWORD.MXPaymentType") ==
+                                                            "PPTTSD"
+                                                        </expression>
+                                                    </condition>
+                                                    <column>CPTY_RECEIVING_AGENT_BIC_CODE</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Nm" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <condition>
+                                                        <expression>isEmpty(getReportValue("CPTY_BENEFICIARY_BIC_CODE"))
+                                                            &amp;&amp; getReportValue("TRADE_KEYWORD.MXPaymentType") !=
+                                                            "CMPPMT" &amp;&amp;
+                                                            getReportValue("TRADE_KEYWORD.MXPaymentType") != "PPTTSD"
+                                                        </expression>
+                                                    </condition>
+                                                    <column>CounterParty.Short Name</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="PstlAdr" hideifempty="true">   <!-- PostalAddress6 -->
+                                            <contents>
+                                                <element name="StrtNm" hideifempty="true">
+                                                    <contents>
+                                                        <report>
+                                                            <condition>
+                                                                <expression>isEmpty(getReportValue("CPTY_BENEFICIARY_BIC_CODE")) &amp;&amp;
+                                                                    getReportValue("TRADE_KEYWORD.MXPaymentType") !=
+                                                                    "CMPPMT" &amp;&amp;
+                                                                    getReportValue("TRADE_KEYWORD.MXPaymentType") !=
+                                                                    "PPTTSD"
+                                                                </expression>
+                                                            </condition>
+                                                            <column>CPTY_BENEFICIARY_CONTACT_ADDRESS_STREET</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="PstCd" hideifempty="true">
+                                                    <contents>
+                                                        <report>
+                                                            <condition>
+                                                                <expression>isEmpty(getReportValue("CPTY_BENEFICIARY_BIC_CODE")) &amp;&amp;
+                                                                    getReportValue("TRADE_KEYWORD.MXPaymentType") !=
+                                                                    "CMPPMT" &amp;&amp;
+                                                                    getReportValue("TRADE_KEYWORD.MXPaymentType") !=
+                                                                    "PPTTSD"
+                                                                </expression>
+                                                            </condition>
+                                                            <column>CPTY_BENEFICIARY_CONTACT_POST_CODE</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="TwnNm">
+                                                    <contents>
+                                                        <report>
+                                                            <condition>
+                                                                <expression>isEmpty(getReportValue("CPTY_BENEFICIARY_BIC_CODE")) &amp;&amp;
+                                                                    getReportValue("TRADE_KEYWORD.MXPaymentType") !=
+                                                                    "CMPPMT" &amp;&amp;
+                                                                    getReportValue("TRADE_KEYWORD.MXPaymentType") !=
+                                                                    "PPTTSD"
+                                                                </expression>
+                                                            </condition>
+                                                            <column>CPTY_BENEFICIARY_CONTACT_TOWN_NAME</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="Ctry">
+                                                    <contents>
+                                                        <report>
+                                                            <condition>
+                                                                <expression>isEmpty(getReportValue("CPTY_BENEFICIARY_BIC_CODE")) &amp;&amp;
+                                                                    getReportValue("TRADE_KEYWORD.MXPaymentType") !=
+                                                                    "CMPPMT" &amp;&amp;
+                                                                    getReportValue("TRADE_KEYWORD.MXPaymentType") !=
+                                                                    "PPTTSD"
+                                                                </expression>
+                                                            </condition>
+                                                            <column>CPTY_BENEFICIARY_CONTACT_COUNTRY</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="CdtrAcct" hideifempty="true">
+                            <condition>
+                                <expression>getReportValue("TRADE_KEYWORD.MXPaymentType") != "CMPPMT" &amp;&amp;
+                                    getReportValue("TRADE_KEYWORD.MXPaymentType") != "PPTTSD"
+                                </expression>
+                            </condition>
+                            <contents>
+                                <element name="Id">
+                                    <contents max="1">
+                                        <element name="IBAN" hideifempty="true">
+                                            <condition>
+                                                <expression>isTrue(getReportValue("Payer.SDIAttributes.IBAN.Agent"))</expression>
+                                            </condition>
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_AGENT_ACCT</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Othr">
+                                            <contents>
+                                                <element name="Id">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_AGENT_ACCT</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="InstrForCdtrAgt" hideifempty="true"> <!--    InstructionForCreditorAgent2 -->
+                            <contents>
+                                <element name="InstrInf">
+                                    <contents>
+                                        <report>
+                                            <column>ADDITIONAL_INFO</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="InstrForNxtAgt" hideifempty="true"><!-- InstructionForNextAgent1 -->
+                            <context>
+                                <to>SplitSDIAttrSIXInstructionToRTGS</to><!--SplitTradeKeywordCodClausEspfcoIF-->
+                            </context>
+                            <contents>
+                                <element name="InstrInf">
+                                    <contents>
+                                        <report>
+                                            <column>SDIAttrSIXInstructionToRTGS</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="RmtInf" hideifempty="true">  <!-- RemittanceInformation2 -->
+                            <contents>
+                                <element name="Ustrd">
+                                    <contents>
+                                        <report>
+                                            <condition>
+                                                <expression>getReportValue("TRADE_KEYWORD.MXPaymentType") != "CMPPMT"
+                                                </expression>
+                                            </condition>
+                                            <column>REMITTANCE_INFO</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>
+

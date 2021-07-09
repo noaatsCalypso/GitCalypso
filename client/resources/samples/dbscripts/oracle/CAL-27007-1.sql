@@ -1,0 +1,3 @@
+update psp_interest_base_calc set notional_base_calc_haircut_inc=notional_base_calc,
+spread_int_haircut_inc=spread_int
+;

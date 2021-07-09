@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<reportTemplates>
+    <reportTemplate>
+        <reportType>Message</reportType>
+        <name>Msg - Sent Pre-Payment Advices - 1W</name>
+        <isHidden>false</isHidden>
+        <isPrivate>false</isPrivate>
+        <user>calypso_user</user>
+        <attributes>
+            <attribute>
+                <attributeName>AggregatedFlag</attributeName>
+                <attributeValue>false</attributeValue>
+                <attributeClass>Boolean</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>AttrJoinQuery</attributeName>
+                <attributeValue> mess_attributes.message_id = bo_message.message_id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>AttrNameColumn</attributeName>
+                <attributeValue>mess_attributes.attr_name</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>AttrValueColumn</attributeName>
+                <attributeValue>mess_attributes.attr_value</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>CaseInsensitiveTextSort</attributeName>
+                <attributeValue>false</attributeValue>
+                <attributeClass>Boolean</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_ACTION</attributeName>
+                <attributeValue>Action</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_CounterParty</attributeName>
+                <attributeValue>Counterparty</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_MESSAGE_DATE</attributeName>
+                <attributeValue>Sent Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_MESSAGE_ID</attributeName>
+                <attributeValue>Message ID</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Message Version</attributeName>
+                <attributeValue>Message Version</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Payer.Agent.Name</attributeName>
+                <attributeValue>Payer Agent</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Payer.Code</attributeName>
+                <attributeValue>Payer</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Payer.Inst</attributeName>
+                <attributeValue>Payer Instructions</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Product Type</attributeName>
+                <attributeValue>Product Type</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Receiver Name</attributeName>
+                <attributeValue>Contact Name</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Receiver Phone</attributeName>
+                <attributeValue>Contact Phone</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Receiver.Agent.Name</attributeName>
+                <attributeValue>Receiver Agent</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Receiver.Code</attributeName>
+                <attributeValue>Receiver</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Receiver.Inst</attributeName>
+                <attributeValue>Receiver Instructions</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Settle Amount</attributeName>
+                <attributeValue>Amount</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Settle Date</attributeName>
+                <attributeValue>Settle Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Trade Currency</attributeName>
+                <attributeValue>Ccy</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Trade Id</attributeName>
+                <attributeValue>Trade Id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>ColumnNames_Transfer Status</attributeName>
+                <attributeValue>Transfer Status</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns0</attributeName>
+                <attributeValue>Settle Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns1</attributeName>
+                <attributeValue>MESSAGE_DATE</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns10</attributeName>
+                <attributeValue>Receiver.Code</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns11</attributeName>
+                <attributeValue>Receiver.Inst</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns12</attributeName>
+                <attributeValue>Receiver Name</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns13</attributeName>
+                <attributeValue>Receiver Phone</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns14</attributeName>
+                <attributeValue>MESSAGE_ID</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns2</attributeName>
+                <attributeValue>Trade Id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns3</attributeName>
+                <attributeValue>CounterParty</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns4</attributeName>
+                <attributeValue>Product Type</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns5</attributeName>
+                <attributeValue>Trade Currency</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns6</attributeName>
+                <attributeValue>Settle Amount</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns7</attributeName>
+                <attributeValue>Transfer Status</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns8</attributeName>
+                <attributeValue>Payer.Code</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns9</attributeName>
+                <attributeValue>Payer.Inst</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Columns_COUNT</attributeName>
+                <attributeValue>15</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>DateType</attributeName>
+                <attributeValue>CreationDate</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Description</attributeName>
+                <attributeValue>Sent Pre-Payment Advices - 1W</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Message From</attributeName>
+                <attributeValue>BOTH</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns0</attributeName>
+                <attributeValue>Settle Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns1</attributeName>
+                <attributeValue>Trade Currency</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns2</attributeName>
+                <attributeValue>Trade Id</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortColumns_COUNT</attributeName>
+                <attributeValue>3</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders0</attributeName>
+                <attributeValue>0.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders1</attributeName>
+                <attributeValue>1.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders2</attributeName>
+                <attributeValue>2.true</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>SortOrders_COUNT</attributeName>
+                <attributeValue>3</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Status</attributeName>
+                <attributeValue>SENT,UNMATCHED</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Subheadings0</attributeName>
+                <attributeValue>Settle Date</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>Subheadings_COUNT</attributeName>
+                <attributeValue>1</attributeValue>
+                <attributeClass>Integer</attributeClass>
+            </attribute>
+            <attribute>
+                <attributeName>TransferType</attributeName>
+                <attributeValue>PAYMENT_ADVICE,RECEIPT_ADVICE</attributeValue>
+                <attributeClass>String</attributeClass>
+            </attribute>
+        </attributes>
+    </reportTemplate>
+</reportTemplates>
+

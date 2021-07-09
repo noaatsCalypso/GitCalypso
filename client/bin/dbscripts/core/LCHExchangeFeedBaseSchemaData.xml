@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+		<row cat="exchange_feed_lch">
+			<column name="name">domainName</column>
+			<column name="value">XML.Templates</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">UploadAllowedAmendActions</column>
+			<column name="value">CLEAR</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeAction</column>
+			<column name="value">RESUBMIT</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeAction</column>
+			<column name="value">FORCE_ACCEPT</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeAction</column>
+			<column name="value">FORCE_REJECT</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeStatus</column>
+			<column name="value">PENDING_REJECT</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeStatus</column>
+			<column name="value">PENDING_RESUBMITTED</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeStatus</column>
+			<column name="value">PENDING_FORCE_ACCEPTED</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeStatus</column>
+			<column name="value">PENDING_FORCE_REJECTED</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">exceptionType</column>
+			<column name="value">EXCHF_MIGRATE</column>
+			<column name="description">EXCHF_MIGRATE</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">domainName</column>
+			<column name="value">MsgAttributes.Connector</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">Connector</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">FirstLeg</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">CCPCreationTimeStamp</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">CalypsoCompletionTimeStamp</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">ClearingEvent</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">Connector</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">Side</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">MSG_ACTION</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeAction</column>
+			<column name="value">REFUSE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPRemainingTradeId</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CcpSide</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">Status</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">RefuseCode</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">RefuseDesc</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPOriginCode</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPBlockTradeID</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPClearedDate</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPOriginalClearedDate</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ClientTradeID</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPAccountReference</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPClearingBroker</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPFirmReference</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCP</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPMessageTimestamp</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ExecutionVenueType</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ExecutionVenue</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ExecutionTimeStamp</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ExecutionTradeType</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPLimitLevel</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPLimitType</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPTotalLimit</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPLimitUtilized</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPLimitRemaining</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPLimitAmountCcy</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPLimitImpact</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CreditApprover</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CreditApprovalId</column>
+			<column name="description"></column>
+		</row>
+		<!-- 
+		<row cat="exchange_feed_lch">
+			<column name="name">UploadAllowedAmendActions</column>
+			<column name="value">CLEAR</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">eventType</column>
+			<column name="value">REGISTERED_TRADE</column>
+			<column name="description"></column>
+		</row>		
+		-->
+		<row cat="exchange_feed_lch">
+			<column name="name">eventType</column>
+			<column name="value">EX_BRIDGE</column>
+			<column name="description"></column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="name">eventType</column>
+			<column name="value">EX_BRIDGE_WARNING</column>
+			<column name="description"></column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="name">eventType</column>
+			<column name="value">EX_BRIDGE_ACK</column>
+			<column name="description"></column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="name">eventType</column>
+			<column name="value">EX_BRIDGE_OUT_MSG</column>
+			<column name="description"></column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="name">eventType</column>
+			<column name="value">REJECTED_TRADE</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="name">eventType</column>
+			<column name="value">CONSENT GRANTED_TRADE</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="name">eventType</column>
+			<column name="value">REQUIRES_CONSENT_TRADE</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="exchange_feed_lch">
+			<column name="name">gateway</column>
+			<column name="value">MQ</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">leAttributeType</column>
+			<column name="value">LEI</column>
+			<column name="description"></column>
+		</row>
+		<!-- <row cat="exchange_feed_lch">
+			<column name="name">leAttributeType</column>
+			<column name="value">Clearing Book</column>
+			<column name="description"></column>
+		</row> 
+		<row cat="exchange_feed_lch">
+			<column name="name">leAttributeType</column>
+			<column name="value">CounterpartyCode</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">leAttributeType</column>
+			<column name="value">ORIGIN</column>
+			<column name="description"></column>
+		</row>-->
+		<row cat="exchange_feed_lch">
+			<column name="name">exceptionType</column>
+			<column name="value">PENDING_VALID_GATEWAYMSG</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">exceptionType</column>
+			<column name="value">BRIDGE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">exceptionType</column>
+			<column name="value">BRIDGE_WARNING</column>
+			<column name="description"></column>
+		</row>
+		<!-- <row cat="exchange_feed_lch">
+			<column name="name">messageStatus</column>
+			<column name="value">ACKED</column>
+			<column name="description"></column>
+		</row> -->
+		<row cat="exchange_feed_lch">
+			<column name="name">messageType</column>
+			<column name="value">BRIDGEMSG</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">messageType</column>
+			<column name="value">UPLOADSOURCE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">messageType</column>
+			<column name="value">BRIDGE_ACK</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">messageType</column>
+			<column name="value">BRIDGE_OUT_MSG</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">messageType</column>
+			<column name="value">CONSENT</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">messageType</column>
+			<column name="value">EXCHANGE_FEED_CLEARING_ACK</column>
+			<column name="description"></column>
+		</row>
+		<!-- <row cat="exchange_feed_lch">
+			<column name="name">messageType</column>
+			<column name="value">EXCHANGE_FEED_TERMINATION_ACK</column>
+			<column name="description"></column>
+		</row> -->
+		<row cat="exchange_feed_lch">
+			<column name="name">messageType</column>
+			<column name="value">EXCHANGE_FEED_CONSENT_ACK</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">client_trade_id</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">platform_trade_id</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CorrelationID</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">Cleared Date</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">TradeSource</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">IncomingMessageID</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">SentTo</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">SentBy</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CounterpartyTradeID</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ClearingConfirmedIncomingMessageID</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ClearingConfirmedCorrelationID</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ClearingConfirmedSentTo</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ClearingConfirmedSentBy</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ClearingConfirmedCounterpartyTradeID</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">TransformBridge</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">messageAction</column>
+			<column name="value">HOLD</column>
+			<column name="description">If waiting for second leg message, apply this action through STP</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">messageStatus</column>
+			<column name="value">HELD</column>
+			<column name="description">message wating for another message</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">messageAction</column>
+			<column name="value">TRANSFORM</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">messageStatus</column>
+			<column name="value">TRANSFORMED</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">MergeTradeId</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">AddQuote</column>
+			<column name="description"></column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="name">scheduledTask</column>
+			<column name="value">LCH_BRIDGE_MESSAGE_LOADER</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">scheduledTask</column>
+			<column name="value">EXCHF_ZCFIXEDAMT_MIGRATE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">scheduledTask</column>
+			<column name="value">LCH_DEFAULT_TRADE_LOADER</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">MsgAttributes</column>
+			<column name="value">BridgeLinkedMsgID</column>
+			<column name="description"></column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">keyword.Status</column>
+			<column name="value">NEW</column>
+			<column name="description">New trade</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">keyword.Status</column>
+			<column name="value">ALLEGED</column>
+			<column name="description">Alleged trade</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">keyword.Status</column>
+			<column name="value">DEFAULT</column>
+			<column name="description">Default trade</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="name">keyword.Status</column>
+			<column name="value">ACCEPT</column>
+			<column name="description">Accepted trade</column>
+		</row>
+	</table>
+	<table name="sd_filter" xmlns="">
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isWaitingForSecondLeg</column>
+			<column name="comments">Check if waiting for another message</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeAckEventFilter</column>
+			<column name="comments"></column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">WF_Message</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">CmpGatewayMsgEventFilter</column>
+			<column name="comments"></column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">WF_Message</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">NonCmpGatewayMsgEventFilter</column>
+			<column name="comments"></column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">WF_Message</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeMessageEventFilter</column>
+			<column name="comments"></column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">WF_Message</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">NewBridgeMsgEventFilter</column>
+			<column name="comments"></column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">WF_Message</column>
+		</row>
+	</table>
+	<table name="sd_filter_domain" xmlns="">
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeAckEventFilter</column>
+			<column name="element_name">Message Action</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">NEW</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeAckEventFilter</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">NONE</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeAckEventFilter</column>
+			<column name="element_name">Message Type</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">BRIDGE_ACK</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeMessageEventFilter</column>
+			<column name="element_name">Message Action</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">AMEND</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeMessageEventFilter</column>
+			<column name="element_name">Message Action</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">NEW</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeMessageEventFilter</column>
+			<column name="element_name">Message Action</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">REDO</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeMessageEventFilter</column>
+			<column name="element_name">Message Action</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">REPROCESS</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeMessageEventFilter</column>
+			<column name="element_name">Message Action</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">TRANSFORM</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeMessageEventFilter</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">TRANSFORMED</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeMessageEventFilter</column>
+			<column name="element_name">Message Type</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">BRIDGEMSG</column>
+		</row>
+<!-- <row cat="exchange_feed_lch">
+			<column name="sd_filter_name">CmpGatewayMsgEventFilter</column>
+			<column name="element_name">Message Action</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">NEW</column>
+		</row> -->		
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">CmpGatewayMsgEventFilter</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">COMPLETED</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">CmpGatewayMsgEventFilter</column>
+			<column name="element_name">Message Type</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">GATEWAYMSG</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">CmpGatewayMsgEventFilter</column>
+			<column name="element_name">Message Type</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">GATEWAYMSG</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">NonCmpGatewayMsgEventFilter</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">REJECTED</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">NonCmpGatewayMsgEventFilter</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">CANCELED</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">NonCmpGatewayMsgEventFilter</column>
+			<column name="element_name">Message Type</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">GATEWAYMSG</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">NewBridgeMsgEventFilter</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">NONE</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">NewBridgeMsgEventFilter</column>
+			<column name="element_name">Message Type</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">BRIDGEMSG</column>
+		</row>
+	</table>
+	<table name="sd_filter_element" xmlns="">
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">isWaitingForSecondLeg</column>
+			<column name="element_name">MSG_ATTRIBUTE.FirstLeg</column>
+			<column name="element_type">9</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value">true</column>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeAckEventFilter</column>
+			<column name="element_name">Message Action</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value" />
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeAckEventFilter</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value" />
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeAckEventFilter</column>
+			<column name="element_name">Message Type</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value" />
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeMessageEventFilter</column>
+			<column name="element_name">Message Action</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value" />
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeMessageEventFilter</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value" />
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">BridgeMessageEventFilter</column>
+			<column name="element_name">Message Type</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value" />
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">CmpGatewayMsgEventFilter</column>
+			<column name="element_name">MSG_ATTRIBUTE.BridgeLinkedMsgID</column>
+			<column name="element_type">9</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value">%%</column>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">CmpGatewayMsgEventFilter</column>
+			<column name="element_name">MSG_ATTRIBUTE.UploadObjectID</column>
+			<column name="element_type">9</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value">%%</column>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+<!-- 		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">CmpGatewayMsgEventFilter</column>
+			<column name="element_name">Message Action</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value" />
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row> -->
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">CmpGatewayMsgEventFilter</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value" />
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">CmpGatewayMsgEventFilter</column>
+			<column name="element_name">Message Type</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value" />
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">NonCmpGatewayMsgEventFilter</column>
+			<column name="element_name">MSG_ATTRIBUTE.BridgeLinkedMsgID</column>
+			<column name="element_type">9</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value">%%</column>
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">NonCmpGatewayMsgEventFilter</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value" />
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">NonCmpGatewayMsgEventFilter</column>
+			<column name="element_name">Message Type</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value" />
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>		
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">NewBridgeMsgEventFilter</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value" />
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+		<row cat="exchange_feed_lch">
+			<column name="sd_filter_name">NewBridgeMsgEventFilter</column>
+			<column name="element_name">Message Type</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="like_value" />
+			<column name="domain_value" />
+			<column name="is_value">0</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+		</row>
+	</table>
+	<table name="mime_type" xmlns="">
+		<row cat="exchange_feed_lch">
+			<column name="mime_name">BRIDGE</column>
+			<column name="extension">bdg</column>
+			<column name="comments">Calypso Bridge Java Object</column>
+			<column name="default_ext_b">0</column>
+		</row>
+	</table>
+</database>

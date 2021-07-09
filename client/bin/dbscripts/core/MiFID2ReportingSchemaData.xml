@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+   <table name="domain_values" xmlns="">
+		
+		<row cat="Required">
+			<column name="name">lifeCycleEntityType</column>
+			<column name="value">Mifid2Reporting</column>
+			<column name="description">Registers the MiFID2 Handler in the Lifcycle Engine</column>
+		</row>
+
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">MiFID2EligibleTradeStatus</column>
+			<column name="description">List the statuses that will be processed for MiFID2 transaction reporting.</column>
+		</row>
+
+		<row cat="Required">
+			<column name="name">MiFID2EligibleTradeStatus</column>
+			<column name="value">VERIFIED</column>
+			<column name="description"></column>
+		</row>
+
+		<row cat="Required">
+			<column name="name">MiFID2EligibleTradeStatus</column>
+			<column name="value">TERMINATED</column>
+			<column name="description"></column>
+		</row>
+
+		<row cat="Required">
+			<column name="name">MiFID2EligibleTradeStatus</column>
+			<column name="value">CANCELED</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="Required">
+			<column name="name">leAttributeType</column>
+			<column name="value">MiFID-InvestFirm</column>
+			<column name="description">Boolean that indicates whether an entity is a MiFID2 Investment Firm</column>
+		</row>
+
+        <row cat="Required">
+			<column name="name">leAttributeType</column>
+			<column name="value">MiFID-Role</column>
+			<column name="description">MiFID classification of LEs. Used to determine eligibility.</column>
+		</row>
+
+		<row cat="Required">
+			<column name="name">addressMethod</column>
+			<column name="value">Date of Birth</column>
+			<column name="description">Date of Birth of the contact. Format is yyyy-MM-dd</column>
+		</row>
+
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">MiFID2VenueTransactionID</column>
+			<column name="description">The value will be used in the Venue Transaction ID field. If absent, the External Reference will be used.</column>
+		</row>
+
+
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">BuyerDecisionMakerName</column>
+			<column name="description">LE Short Name. Identifies the person who makes the decision to acquire the financial instrument.</column>
+		</row>
+
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">SellerDecisionMakerName</column>
+			<column name="description">LE Short Name. Identifies the person who makes the decision to acquire the financial instrument.</column>
+		</row>
+
+
+		<!--Venue Code-->
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">MiFID-Venue</column>
+			<column name="description">Venue MIC code</column>
+		</row>
+
+
+		<!--Instrument Name-->
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">MiFID-InstrumentName</column>
+			<column name="description">Instrument Name that will be sent to the MiFID2 Transaction reporting. If empty the product description will be sent.</column>
+		</row>
+
+		<!--Investment Decision-->
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">Mifid2InvestmentDecisionName</column>
+			<column name="description">The trader name or the algorithm. The trader name must correspond to an id in the trader window</column>
+		</row>
+
+		<!--Product Eligibility-->
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Mifid2ProductEligibility.Swap</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Mifid2ProductEligibility.Equity</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Mifid2ProductEligibility.Credit</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Mifid2ProductEligibility.Credit</column>
+			<column name="value">CreditDefaultSwap</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Mifid2ProductEligibility.Credit</column>
+			<column name="value">CDSIndexOption</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Mifid2ProductEligibility.Swap</column>
+			<column name="value">Swap</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Mifid2ProductEligibility.Equity</column>
+			<column name="value">EquityLinkedSwap</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Mifid2ProductEligibility.Equity</column>
+			<column name="value">EquityForward</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Mifid2ProductEligibility.Equity</column>
+			<column name="value">EquityStructuredOption</column>
+			<column name="description"></column>
+		</row>
+		
+		<!--Firm Execution-->
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">Mifid2FirmExecutionName</column>
+			<column name="description">If left blank the InvestmentDecision will be used</column>
+		</row>
+
+		<!--Waiver Indicator-->
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">Mifid2WaiverIndicator</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">keyword.Mifid2WaiverIndicator</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2WaiverIndicator</column>
+			<column name="value">RFPT</column>
+			<column name="description">Reference Price</column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2WaiverIndicator</column>
+			<column name="value">NLIQ</column>
+			<column name="description">Negotiated (liquid)</column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2WaiverIndicator</column>
+			<column name="value">OILQ</column>
+			<column name="description">Negotiated (illiquid)</column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2WaiverIndicator</column>
+			<column name="value">PRIC</column>
+			<column name="description">Negotiated (conditions)</column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2WaiverIndicator</column>
+			<column name="value">SIZE</column>
+			<column name="description">Above specified size</column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2WaiverIndicator</column>
+			<column name="value">ILQD</column>
+			<column name="description">Illiquid instrument</column>
+		</row>
+
+		<!--Short Selling Indicator-->
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">Mifid2ShortSellingIndicator</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">keyword.Mifid2ShortSellingIndicator</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2ShortSellingIndicator</column>
+			<column name="value">SESH</column>
+			<column name="description">Short sale with no exemption</column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2ShortSellingIndicator</column>
+			<column name="value">SSEX</column>
+			<column name="description">Short sale with exemption</column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2ShortSellingIndicator</column>
+			<column name="value">SELL</column>
+			<column name="description">No short sale</column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2ShortSellingIndicator</column>
+			<column name="value">UNDI</column>
+			<column name="description">Information not available</column>
+		</row>
+
+		<!--OTC Post-Trade Indicator-->
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">Mifid2OTCPostTradeIndicator</column>
+			<column name="description">List of indicators: BENC, ACTX, LRGS, ILQD, SIZE, CANC, AMND, SDIV, RPRI, DUPL, TNCP, TPAC, XFPH</column>
+		</row>
+
+		<!--Commodity Derivative Indicator-->
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">Mifid2CommodityDerivativeIndicator</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">keyword.Mifid2CommodityDerivativeIndicator</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2CommodityDerivativeIndicator</column>
+			<column name="value">TRUE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2CommodityDerivativeIndicator</column>
+			<column name="value">FALSE</column>
+			<column name="description"></column>
+		</row>
+
+		<!--SFT Indicator-->
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">Mifid2SFTIndicator</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">keyword.Mifid2SFTIndicator</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2SFTIndicator</column>
+			<column name="value">TRUE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2SFTIndicator</column>
+			<column name="value">FALSE</column>
+			<column name="description"></column>
+		</row>
+
+		<!--Trading Capacity-->
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">Mifid2TradingCapacity</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">keyword.Mifid2TradingCapacity</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2TradingCapacity</column>
+			<column name="value">DEAL</column>
+			<column name="description">Dealing on own account</column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2TradingCapacity</column>
+			<column name="value">MTCH</column>
+			<column name="description">Matched principal</column>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Mifid2TradingCapacity</column>
+			<column name="value">AOTC</column>
+			<column name="description">Any other capacity</column>
+		</row>
+
+		<!--Instrument Name-->
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">Mifid2InstrumentName</column>
+			<column name="description"></column>
+		</row>
+
+		<!--Report Type -->
+		<row cat="Required">
+			<column name="name">REPORT.Types</column>
+			<column name="value">Mifid2Transaction</column>
+			<column name="description"></column>
+		</row>
+
+		<!--Scheduled Task -->
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">MIFID2_TRANSACTION_REPORTING</column>
+			<column name="description"></column>
+		</row>
+
+    </table>
+
+	<!-- TODO Sec Code MiFID-IndexName-->
+
+	<table name="calypso_seed" xmlns="">
+        <row cat="Required">
+			<column name="last_id">1</column>
+			<column name="seed_name">mifid2_event</column>
+			<column name="seed_alloc_size">1</column>
+		</row>
+		<row cat="Required">
+			<column name="last_id">1</column>
+			<column name="seed_name">mifid2_product_criteria</column>
+			<column name="seed_alloc_size">1</column>
+		</row>
+    </table>   
+
+</database>

@@ -1,0 +1,1513 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	
+	<table name="ers_risk_attribution" xmlns="">
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Aggr</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">1</column>
+		<column name="node_type">0</column>
+		<column name="node_class"></column>
+		<column name="node_value">Aggr</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Aggr</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">1</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemFX</column>
+		<column name="node_value">FX</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Aggr</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">2</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCurveZero</column>
+		<column name="node_value">Rates</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Aggr</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">3</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemEquity</column>
+		<column name="node_value">Equity</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Aggr</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">4</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCap</column>
+		<column name="node_value">Vols</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Aggr</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">5</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemFloor</column>
+		<column name="node_value">Vols</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Aggr</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">6</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemFXVolatilitySurface</column>
+		<column name="node_value">FX Vols</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Aggr</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">7</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemVolatilitySurface3D</column>
+		<column name="node_value">Vols</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Aggr</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">8</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCurveProbability</column>
+		<column name="node_value">Credit</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Aggr</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">9</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCorrelationSurface</column>
+		<column name="node_value">CorrelationSkew</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Aggr</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">10</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCurveInflation</column>
+		<column name="node_value">Inflation</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Aggr</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">11</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCurveCommodity</column>
+		<column name="node_value">Commodity</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">1</column>
+		<column name="node_type">0</column>
+		<column name="node_class"></column>
+		<column name="node_value">FX</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">1</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemFX</column>
+		<column name="node_value">FX</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">2</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">2</column>
+		<column name="node_type">0</column>
+		<column name="node_class"></column>
+		<column name="node_value">Rates</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">2</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">2</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCurveZero</column>
+		<column name="node_value">Rates</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">3</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">3</column>
+		<column name="node_type">0</column>
+		<column name="node_class"></column>
+		<column name="node_value">Credit</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">3</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">3</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCurveProbability</column>
+		<column name="node_value">Credit</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">4</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">4</column>
+		<column name="node_type">0</column>
+		<column name="node_class"></column>
+		<column name="node_value">Equity</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">4</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">4</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemEquity</column>
+		<column name="node_value">Equity</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">5</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">5</column>
+		<column name="node_type">0</column>
+		<column name="node_class"></column>
+		<column name="node_value">Vols</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">5</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">5</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemVolatilitySurface3D</column>
+		<column name="node_value">Vols</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">5</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">6</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemFXVolatilitySurface</column>
+		<column name="node_value">FX Vols</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">5</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">7</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCap</column>
+		<column name="node_value">Vols</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">5</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">8</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemFloor</column>
+		<column name="node_value">Vols</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">6</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">9</column>
+		<column name="node_type">0</column>
+		<column name="node_class"></column>
+		<column name="node_value">Correlation</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">6</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">9</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCorrelationSurface</column>
+		<column name="node_value">CorrelationSkew</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">7</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">10</column>
+		<column name="node_type">0</column>
+		<column name="node_class"></column>
+		<column name="node_value">Inflation</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">7</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">10</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCurveInflation</column>
+		<column name="node_value">Inflation</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">8</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">11</column>
+		<column name="node_type">0</column>
+		<column name="node_class"></column>
+		<column name="node_value">Commodity</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">Standard</column>
+		<column name="node_id">8</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">11</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCurveCommodity</column>
+		<column name="node_value">Commodity</column>
+        </row>
+
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">1</column>
+		<column name="node_type">0</column>
+		<column name="node_class"></column>
+		<column name="node_value">FX</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">1</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemFX</column>
+		<column name="node_value">FX</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">1</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">2</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemFXVolatilitySurface</column>
+		<column name="node_value">FX Vols</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">2</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">3</column>
+		<column name="node_type">0</column>
+		<column name="node_class"></column>
+		<column name="node_value">Rates</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">2</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">3</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCurveZero</column>
+		<column name="node_value">Rates</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">2</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">4</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemVolatilitySurface3D</column>
+		<column name="node_value">Vols</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">2</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">5</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCap</column>
+		<column name="node_value">Vols</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">2</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">6</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemFloor</column>
+		<column name="node_value">Vols</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">3</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">7</column>
+		<column name="node_type">0</column>
+		<column name="node_class"></column>
+		<column name="node_value">Credit</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">3</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">7</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCurveProbability</column>
+		<column name="node_value">Credit</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">3</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">8</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCorrelationSurface</column>
+		<column name="node_value">CorrelationSkew</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">4</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">9</column>
+		<column name="node_type">0</column>
+		<column name="node_class"></column>
+		<column name="node_value">Equity</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">4</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">9</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemEquity</column>
+		<column name="node_value">Equity</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">5</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">10</column>
+		<column name="node_type">0</column>
+		<column name="node_class"></column>
+		<column name="node_value">Inflation</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">5</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">10</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCurveInflation</column>
+		<column name="node_value">Inflation</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">6</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">11</column>
+		<column name="node_type">0</column>
+		<column name="node_class"></column>
+		<column name="node_value">Commodity</column>
+        </row>
+	<row cat="marketriskinstall">
+		<column name="attribution_name">AssetClass</column>
+		<column name="node_id">6</column>
+		<column name="parent_id">0</column>
+		<column name="seq_id">11</column>
+		<column name="node_type">1</column>
+		<column name="node_class">ShiftItemCurveCommodity</column>
+		<column name="node_value">Commodity</column>
+        </row>
+    </table>
+	<table name="ers_analysis_configuration" xmlns="">
+	<row cat="marketriskinstall">
+		<column name="analysis">Capital</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">horizon</column>
+		<column name="attribute_value">10 Day</column>
+		<column name="inuse">1</column>
+		<column name="order_id">20</column>
+		<column name="additional">Horizon</column>
+	</row>           
+	<row cat="marketriskinstall">
+		<column name="analysis">Capital</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">observations</column>
+		<column name="attribute_value">250</column>
+		<column name="inuse">1</column>
+		<column name="order_id">20</column>
+		<column name="additional">Observations</column>
+	</row>                                     
+	<row cat="marketriskinstall">
+		<column name="analysis">Capital</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">days</column>
+		<column name="attribute_value">60</column>
+		<column name="inuse">1</column>
+		<column name="order_id">20</column>
+		<column name="additional">Days</column>
+	</row>                     
+	<row cat="marketriskinstall">
+		<column name="analysis">Capital</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">fromdate</column>
+		<column name="attribute_value">2007-7-31</column>
+		<column name="inuse">2</column>
+		<column name="order_id">20</column>
+		<column name="additional">From Date</column>
+	</row>     
+	<row cat="marketriskinstall">
+		<column name="analysis">Capital</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">scale_factor</column>
+		<column name="attribute_value">3.0</column>
+		<column name="inuse">1</column>
+		<column name="order_id">20</column>
+		<column name="additional">Scaling Factor</column>
+	</row>  
+	<row cat="marketriskinstall">
+		<column name="analysis">Capital</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">weighting</column>
+		<column name="attribute_value">Equal</column>
+		<column name="inuse">1</column>
+		<column name="order_id">20</column>
+		<column name="additional">Weighting</column>
+	</row>                          
+	<row cat="marketriskinstall">
+		<column name="analysis">Capital</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">parameter</column>
+		<column name="attribute_value">Standard</column>
+		<column name="inuse">1</column>
+		<column name="order_id">20</column>
+		<column name="additional">Parameter</column>
+	</row>     
+	<row cat="marketriskinstall">
+		<column name="analysis">Capital</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">confidence</column>
+		<column name="attribute_value">99%</column>
+		<column name="inuse">1</column>
+		<column name="order_id">20</column>
+		<column name="additional">Confidence Level</column>
+	</row>                                                                                                                                
+	<row cat="marketriskinstall">
+		<column name="analysis">ProfitLoss</column>
+		<column name="config_name">main</column>
+		<column name="attribute_name"></column>
+		<column name="attribute_value"></column>
+		<column name="inuse">1</column>
+		<column name="order_id">2</column>
+		<column name="additional"></column>
+	</row>                                  
+	<row cat="marketriskinstall">
+		<column name="analysis">ProfitLoss</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">parameter</column>
+		<column name="attribute_value">Standard</column>
+		<column name="inuse">1</column>
+		<column name="order_id">2</column>
+		<column name="additional"></column>
+	</row>                                 
+	<row cat="marketriskinstall">
+		<column name="analysis">FXRisk</column>
+		<column name="config_name">main</column>
+		<column name="attribute_name"></column>
+		<column name="attribute_value"></column>
+		<column name="inuse">1</column>
+		<column name="order_id">4</column>
+		<column name="additional"></column>
+	</row>                                      
+	<row cat="marketriskinstall">
+		<column name="analysis">FXRisk</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">0</column>
+		<column name="attribute_value">Currency</column>
+		<column name="inuse">1</column>
+		<column name="order_id">4</column>
+		<column name="additional"></column>
+	</row>                                      
+	<row cat="marketriskinstall">
+		<column name="analysis">FXRisk</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">1</column>
+		<column name="attribute_value">Date</column>
+		<column name="inuse">1</column>
+		<column name="order_id">4</column>
+		<column name="additional"></column>
+	</row>                            
+	<row cat="marketriskinstall">
+		<column name="analysis">FXRisk</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">parameter</column>
+		<column name="attribute_value">default</column>
+		<column name="inuse">1</column>
+		<column name="order_id">4</column>
+		<column name="additional"></column>
+	</row>                 
+	<row cat="marketriskinstall">
+		<column name="analysis">QuoteValueRecorder</column>
+		<column name="config_name">main</column>
+		<column name="attribute_name"></column>
+		<column name="attribute_value"></column>
+		<column name="inuse">1</column>
+		<column name="order_id">5</column>
+		<column name="additional"></column>
+	</row>                          
+	<row cat="marketriskinstall">
+		<column name="analysis">IRDelta</column>
+		<column name="config_name">main</column>
+		<column name="attribute_name"></column>
+		<column name="attribute_value"></column>
+		<column name="inuse">1</column>
+		<column name="order_id">6</column>
+		<column name="additional"></column>
+	</row>                                     
+	<row cat="marketriskinstall">
+		<column name="analysis">IRDelta</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">0</column>
+		<column name="attribute_value">Currency</column>
+		<column name="inuse">1</column>
+		<column name="order_id">6</column>
+		<column name="additional"></column>
+	</row>                       
+	<row cat="marketriskinstall">
+		<column name="analysis">IRDelta</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">1</column>
+		<column name="attribute_value">Product</column>
+		<column name="inuse">1</column>
+		<column name="order_id">6</column>
+		<column name="additional"></column>
+	</row>                        
+	<row cat="marketriskinstall">
+		<column name="analysis">IRDelta</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">2</column>
+		<column name="attribute_value">Book</column>
+		<column name="inuse">1</column>
+		<column name="order_id">6</column>
+		<column name="additional"></column>
+	</row>                           
+	<row cat="marketriskinstall">
+		<column name="analysis">IRDelta</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">3</column>
+		<column name="attribute_value">Counterparty</column>
+		<column name="inuse">1</column>
+		<column name="order_id">6</column>
+		<column name="additional"></column>
+	</row>                   
+	<row cat="marketriskinstall">
+		<column name="analysis">IRDelta</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">4</column>
+		<column name="attribute_value">Strategy</column>
+		<column name="inuse">1</column>
+		<column name="order_id">6</column>
+		<column name="additional"></column>
+	</row>                       
+	<row cat="marketriskinstall">
+		<column name="analysis">IRDelta</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">5</column>
+		<column name="attribute_value">Date</column>
+		<column name="inuse">1</column>
+		<column name="order_id">6</column>
+		<column name="additional"></column>
+	</row>                           
+	<row cat="marketriskinstall">
+		<column name="analysis">IRDelta</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">parameter</column>
+		<column name="attribute_value">UpOneBp</column>
+		<column name="inuse">1</column>
+		<column name="order_id">6</column>
+		<column name="additional"></column>
+	</row>                
+	<row cat="marketriskinstall">
+		<column name="analysis">IRGamma</column>
+		<column name="config_name">main</column>
+		<column name="attribute_name"></column>
+		<column name="attribute_value"></column>
+		<column name="inuse">1</column>
+		<column name="order_id">7</column>
+		<column name="additional"></column>
+	</row>                                     
+	<row cat="marketriskinstall">
+		<column name="analysis">IRGamma</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">0</column>
+		<column name="attribute_value">Currency</column>
+		<column name="inuse">1</column>
+		<column name="order_id">7</column>
+		<column name="additional"></column>
+	</row>                       
+	<row cat="marketriskinstall">
+		<column name="analysis">IRGamma</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">1</column>
+		<column name="attribute_value">Product</column>
+		<column name="inuse">1</column>
+		<column name="order_id">7</column>
+		<column name="additional"></column>
+	</row>                        
+	<row cat="marketriskinstall">
+		<column name="analysis">IRGamma</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">2</column>
+		<column name="attribute_value">Book</column>
+		<column name="inuse">1</column>
+		<column name="order_id">7</column>
+		<column name="additional"></column>
+	</row>                           
+	<row cat="marketriskinstall">
+		<column name="analysis">IRGamma</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">3</column>
+		<column name="attribute_value">Counterparty</column>
+		<column name="inuse">1</column>
+		<column name="order_id">7</column>
+		<column name="additional"></column>
+	</row>                   
+	<row cat="marketriskinstall">
+		<column name="analysis">IRGamma</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">4</column>
+		<column name="attribute_value">Strategy</column>
+		<column name="inuse">1</column>
+		<column name="order_id">7</column>
+		<column name="additional"></column>
+	</row>                       
+	<row cat="marketriskinstall">
+		<column name="analysis">IRGamma</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">5</column>
+		<column name="attribute_value">Date</column>
+		<column name="inuse">1</column>
+		<column name="order_id">7</column>
+		<column name="additional"></column>
+	</row>                           
+	<row cat="marketriskinstall">
+		<column name="analysis">IRGamma</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">parameter</column>
+		<column name="attribute_value">Up2Bp-2Up1Bp</column>
+		<column name="inuse">1</column>
+		<column name="order_id">7</column>
+		<column name="additional"></column>
+	</row>             
+	<row cat="marketriskinstall">
+		<column name="analysis">IRVega</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">parameter</column>
+		<column name="attribute_value">IRVegaN</column>
+		<column name="inuse">1</column>
+		<column name="order_id">8</column>
+		<column name="additional"></column>
+	</row>                                
+	<row cat="marketriskinstall">
+		<column name="analysis">CrossAssetPL</column>
+		<column name="config_name">main</column>
+		<column name="attribute_name"></column>
+		<column name="attribute_value"></column>
+		<column name="inuse">1</column>
+		<column name="order_id">10</column>
+		<column name="additional"></column>
+	</row>                               
+	<row cat="marketriskinstall">
+		<column name="analysis">CrossAssetPL</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">parameter</column>
+		<column name="attribute_value">default</column>
+		<column name="inuse">1</column>
+		<column name="order_id">10</column>
+		<column name="additional"></column>
+	</row>                                                                               
+	<row cat="marketriskinstall">
+		<column name="analysis">HistSim</column>
+		<column name="config_name">main</column>
+		<column name="attribute_name"></column>
+		<column name="attribute_value"></column>
+		<column name="inuse">1</column>
+		<column name="order_id">15</column>
+		<column name="additional"></column>
+	</row>                                    
+	<row cat="marketriskinstall">
+		<column name="analysis">HistSim</column>
+		<column name="config_name">general</column>
+		<column name="attribute_name">treeview</column>
+		<column name="attribute_value">n/a</column>
+		<column name="inuse">1</column>
+		<column name="order_id">15</column>
+		<column name="additional"></column>
+	</row>                      
+	<row cat="marketriskinstall">
+		<column name="analysis">HistSim</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">0</column>
+		<column name="attribute_value">Total</column>
+		<column name="inuse">1</column>
+		<column name="order_id">15</column>
+		<column name="additional"></column>
+	</row>
+	<row cat="marketriskinstall">
+		<column name="analysis">HistSim</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">1</column>
+		<column name="attribute_value">RiskType</column>
+		<column name="inuse">1</column>
+		<column name="order_id">15</column>
+		<column name="additional"></column>
+	</row>                      
+	<row cat="marketriskinstall">
+		<column name="analysis">HistSim</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">2</column>
+		<column name="attribute_value">Currency</column>
+		<column name="inuse">1</column>
+		<column name="order_id">15</column>
+		<column name="additional"></column>
+	</row>                      
+	<row cat="marketriskinstall">
+		<column name="analysis">HistSim</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">3</column>
+		<column name="attribute_value">Product</column>
+		<column name="inuse">1</column>
+		<column name="order_id">15</column>
+		<column name="additional"></column>
+	</row>                       
+	<row cat="marketriskinstall">
+		<column name="analysis">HistSim</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">4</column>
+		<column name="attribute_value">Book</column>
+		<column name="inuse">1</column>
+		<column name="order_id">15</column>
+		<column name="additional"></column>
+	</row>                          
+	<row cat="marketriskinstall">
+		<column name="analysis">HistSim</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">5</column>
+		<column name="attribute_value">Date</column>
+		<column name="inuse">1</column>
+		<column name="order_id">15</column>
+		<column name="additional"></column>
+	</row>                          
+	<row cat="marketriskinstall">
+		<column name="analysis">HistSim</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">parameter</column>
+		<column name="attribute_value">Standard</column>
+		<column name="inuse">1</column>
+		<column name="order_id">15</column>
+		<column name="additional">Parameter</column>
+	</row>     
+	<row cat="marketriskinstall">
+		<column name="analysis">HistSim</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">confidence</column>
+		<column name="attribute_value">95%</column>
+		<column name="inuse">1</column>
+		<column name="order_id">15</column>
+		<column name="additional">Confidence Level</column>
+	</row>  
+	<row cat="marketriskinstall">
+		<column name="analysis">HistSim</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">horizon</column>
+		<column name="attribute_value">1 Day</column>
+		<column name="inuse">1</column>
+		<column name="order_id">15</column>
+		<column name="additional">Horizon</column>
+	</row>            
+	<row cat="marketriskinstall">
+		<column name="analysis">HistSim</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">observations</column>
+		<column name="attribute_value">250</column>
+		<column name="inuse">1</column>
+		<column name="order_id">15</column>
+		<column name="additional">Observations</column>
+	</row>    
+	<row cat="marketriskinstall">
+		<column name="analysis">HistSim</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">weighting</column>
+		<column name="attribute_value">Equal</column>
+		<column name="inuse">1</column>
+		<column name="order_id">15</column>
+		<column name="additional">Weighting</column>
+	</row>        
+	<row cat="marketriskinstall">
+		<column name="analysis">HistVaR</column>
+		<column name="config_name">main</column>
+		<column name="attribute_name"></column>
+		<column name="attribute_value"></column>
+		<column name="inuse">1</column>
+		<column name="order_id">16</column>
+		<column name="additional"></column>
+	</row>                                    
+	<row cat="marketriskinstall">
+		<column name="analysis">HistVaR</column>
+		<column name="config_name">general</column>
+		<column name="attribute_name">adhocOf</column>
+		<column name="attribute_value">HistSim</column>
+		<column name="inuse">1</column>
+		<column name="order_id">16</column>
+		<column name="additional"></column>
+	</row>                   
+	<row cat="marketriskinstall">
+		<column name="analysis">HistVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">0</column>
+		<column name="attribute_value">Total</column>
+		<column name="inuse">1</column>
+		<column name="order_id">16</column>
+		<column name="additional"></column>
+	</row>                         
+	<row cat="marketriskinstall">
+		<column name="analysis">HistVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">1</column>
+		<column name="attribute_value">Currency</column>
+		<column name="inuse">1</column>
+		<column name="order_id">16</column>
+		<column name="additional"></column>
+	</row>                      
+	<row cat="marketriskinstall">
+		<column name="analysis">HistVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">2</column>
+		<column name="attribute_value">Product</column>
+		<column name="inuse">1</column>
+		<column name="order_id">16</column>
+		<column name="additional"></column>
+	</row>                       
+	<row cat="marketriskinstall">
+		<column name="analysis">HistVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">3</column>
+		<column name="attribute_value">Book</column>
+		<column name="inuse">1</column>
+		<column name="order_id">16</column>
+		<column name="additional"></column>
+	</row>                          
+	<row cat="marketriskinstall">
+		<column name="analysis">HistVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">4</column>
+		<column name="attribute_value">Counterparty</column>
+		<column name="inuse">1</column>
+		<column name="order_id">16</column>
+		<column name="additional"></column>
+	</row>                  
+	<row cat="marketriskinstall">
+		<column name="analysis">HistVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">5</column>
+		<column name="attribute_value">Strategy</column>
+		<column name="inuse">1</column>
+		<column name="order_id">16</column>
+		<column name="additional"></column>
+	</row>                      
+	<row cat="marketriskinstall">
+		<column name="analysis">HistVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">6</column>
+		<column name="attribute_value">Issuer</column>
+		<column name="inuse">1</column>
+		<column name="order_id">16</column>
+		<column name="additional"></column>
+	</row>                        
+	<row cat="marketriskinstall">
+		<column name="analysis">HistVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">7</column>
+		<column name="attribute_value">Date</column>
+		<column name="inuse">1</column>
+		<column name="order_id">16</column>
+		<column name="additional"></column>
+	</row>                          
+	<row cat="marketriskinstall">
+		<column name="analysis">HistVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">parameter</column>
+		<column name="attribute_value">Standard</column>
+		<column name="inuse">1</column>
+		<column name="order_id">16</column>
+		<column name="additional">Parameter</column>
+	</row>     
+	<row cat="marketriskinstall">
+		<column name="analysis">HistVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">confidence</column>
+		<column name="attribute_value">95%</column>
+		<column name="inuse">1</column>
+		<column name="order_id">16</column>
+		<column name="additional">Confidence Level</column>
+	</row>  
+	<row cat="marketriskinstall">
+		<column name="analysis">HistVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">horizon</column>
+		<column name="attribute_value">1 Day</column>
+		<column name="inuse">1</column>
+		<column name="order_id">16</column>
+		<column name="additional">Horizon</column>
+	</row>            
+	<row cat="marketriskinstall">
+		<column name="analysis">HistVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">observations</column>
+		<column name="attribute_value">250</column>
+		<column name="inuse">1</column>
+		<column name="order_id">16</column>
+		<column name="additional">Observations</column>
+	</row>    
+	<row cat="marketriskinstall">
+		<column name="analysis">HistVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">display</column>
+		<column name="attribute_value">1</column>
+		<column name="inuse">1</column>
+		<column name="order_id">16</column>
+		<column name="additional">VaR Percentage</column>
+	</row>         
+	<row cat="marketriskinstall">
+		<column name="analysis">HistVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">weighting</column>
+		<column name="attribute_value">Equal</column>
+		<column name="inuse">1</column>
+		<column name="order_id">16</column>
+		<column name="additional">Weighting</column>
+	</row>        
+	<row cat="marketriskinstall">
+		<column name="analysis">MrgVaR</column>
+		<column name="config_name">main</column>
+		<column name="attribute_name"></column>
+		<column name="attribute_value"></column>
+		<column name="inuse">1</column>
+		<column name="order_id">17</column>
+		<column name="additional"></column>
+	</row>                                     
+	<row cat="marketriskinstall">
+		<column name="analysis">MrgVaR</column>
+		<column name="config_name">general</column>
+		<column name="attribute_name">adhocOf</column>
+		<column name="attribute_value">HistSim</column>
+		<column name="inuse">1</column>
+		<column name="order_id">17</column>
+		<column name="additional"></column>
+	</row>                    
+	<row cat="marketriskinstall">
+		<column name="analysis">MrgVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">0</column>
+		<column name="attribute_value">Currency</column>
+		<column name="inuse">1</column>
+		<column name="order_id">17</column>
+		<column name="additional"></column>
+	</row>                       
+	<row cat="marketriskinstall">
+		<column name="analysis">MrgVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">1</column>
+		<column name="attribute_value">Product</column>
+		<column name="inuse">1</column>
+		<column name="order_id">17</column>
+		<column name="additional"></column>
+	</row>                        
+	<row cat="marketriskinstall">
+		<column name="analysis">MrgVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">2</column>
+		<column name="attribute_value">Book</column>
+		<column name="inuse">1</column>
+		<column name="order_id">17</column>
+		<column name="additional"></column>
+	</row>                           
+	<row cat="marketriskinstall">
+		<column name="analysis">MrgVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">3</column>
+		<column name="attribute_value">Counterparty</column>
+		<column name="inuse">1</column>
+		<column name="order_id">17</column>
+		<column name="additional"></column>
+	</row>                   
+	<row cat="marketriskinstall">
+		<column name="analysis">MrgVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">4</column>
+		<column name="attribute_value">Strategy</column>
+		<column name="inuse">1</column>
+		<column name="order_id">17</column>
+		<column name="additional"></column>
+	</row>                       
+	<row cat="marketriskinstall">
+		<column name="analysis">MrgVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">5</column>
+		<column name="attribute_value">Issuer</column>
+		<column name="inuse">1</column>
+		<column name="order_id">17</column>
+		<column name="additional"></column>
+	</row>                         
+	<row cat="marketriskinstall">
+		<column name="analysis">MrgVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">parameter</column>
+		<column name="attribute_value">Standard</column>
+		<column name="inuse">1</column>
+		<column name="order_id">17</column>
+		<column name="additional">Parameter</column>
+	</row>      
+	<row cat="marketriskinstall">
+		<column name="analysis">MrgVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">confidence</column>
+		<column name="attribute_value">95%</column>
+		<column name="inuse">1</column>
+		<column name="order_id">17</column>
+		<column name="additional">Confidence Level</column>
+	</row>   
+	<row cat="marketriskinstall">
+		<column name="analysis">MrgVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">horizon</column>
+		<column name="attribute_value">1 Day</column>
+		<column name="inuse">1</column>
+		<column name="order_id">17</column>
+		<column name="additional">Horizon</column>
+	</row>             
+	<row cat="marketriskinstall">
+		<column name="analysis">MrgVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">observations</column>
+		<column name="attribute_value">250</column>
+		<column name="inuse">1</column>
+		<column name="order_id">17</column>
+		<column name="additional">Observations</column>
+	</row>     
+	<row cat="marketriskinstall">
+		<column name="analysis">MrgVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">display</column>
+		<column name="attribute_value">1</column>
+		<column name="inuse">1</column>
+		<column name="order_id">17</column>
+		<column name="additional">VaR Percentage</column>
+	</row>          
+	<row cat="marketriskinstall">
+		<column name="analysis">MrgVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">weighting</column>
+		<column name="attribute_value">Equal</column>
+		<column name="inuse">1</column>
+		<column name="order_id">17</column>
+		<column name="additional">Weighting</column>
+	</row>         
+	<row cat="marketriskinstall">
+		<column name="analysis">IncrVaR</column>
+		<column name="config_name">main</column>
+		<column name="attribute_name"></column>
+		<column name="attribute_value"></column>
+		<column name="inuse">1</column>
+		<column name="order_id">18</column>
+		<column name="additional"></column>
+	</row>                                    
+	<row cat="marketriskinstall">
+		<column name="analysis">IncrVaR</column>
+		<column name="config_name">general</column>
+		<column name="attribute_name">adhocOf</column>
+		<column name="attribute_value">HistSim</column>
+		<column name="inuse">1</column>
+		<column name="order_id">18</column>
+		<column name="additional"></column>
+	</row>                   
+	<row cat="marketriskinstall">
+		<column name="analysis">IncrVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">0</column>
+		<column name="attribute_value">Currency</column>
+		<column name="inuse">1</column>
+		<column name="order_id">18</column>
+		<column name="additional"></column>
+	</row>                      
+	<row cat="marketriskinstall">
+		<column name="analysis">IncrVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">1</column>
+		<column name="attribute_value">Product</column>
+		<column name="inuse">1</column>
+		<column name="order_id">18</column>
+		<column name="additional"></column>
+	</row>                       
+	<row cat="marketriskinstall">
+		<column name="analysis">IncrVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">2</column>
+		<column name="attribute_value">Book</column>
+		<column name="inuse">1</column>
+		<column name="order_id">18</column>
+		<column name="additional"></column>
+	</row>                          
+	<row cat="marketriskinstall">
+		<column name="analysis">IncrVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">3</column>
+		<column name="attribute_value">Counterparty</column>
+		<column name="inuse">1</column>
+		<column name="order_id">18</column>
+		<column name="additional"></column>
+	</row>                  
+	<row cat="marketriskinstall">
+		<column name="analysis">IncrVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">4</column>
+		<column name="attribute_value">Strategy</column>
+		<column name="inuse">1</column>
+		<column name="order_id">18</column>
+		<column name="additional"></column>
+	</row>                      
+	<row cat="marketriskinstall">
+		<column name="analysis">IncrVaR</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">5</column>
+		<column name="attribute_value">Issuer</column>
+		<column name="inuse">1</column>
+		<column name="order_id">18</column>
+		<column name="additional"></column>
+	</row>                        
+	<row cat="marketriskinstall">
+		<column name="analysis">IncrVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">parameter</column>
+		<column name="attribute_value">Standard</column>
+		<column name="inuse">1</column>
+		<column name="order_id">18</column>
+		<column name="additional">Parameter</column>
+	</row>     
+	<row cat="marketriskinstall">
+		<column name="analysis">IncrVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">confidence</column>
+		<column name="attribute_value">95%</column>
+		<column name="inuse">1</column>
+		<column name="order_id">18</column>
+		<column name="additional">Confidence Level</column>
+	</row>  
+	<row cat="marketriskinstall">
+		<column name="analysis">IncrVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">horizon</column>
+		<column name="attribute_value">1 Day</column>
+		<column name="inuse">1</column>
+		<column name="order_id">18</column>
+		<column name="additional">Horizon</column>
+	</row>            
+	<row cat="marketriskinstall">
+		<column name="analysis">IncrVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">observations</column>
+		<column name="attribute_value">250</column>
+		<column name="inuse">1</column>
+		<column name="order_id">18</column>
+		<column name="additional">Observations</column>
+	</row>    
+	<row cat="marketriskinstall">
+		<column name="analysis">IncrVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">display</column>
+		<column name="attribute_value">1</column>
+		<column name="inuse">1</column>
+		<column name="order_id">18</column>
+		<column name="additional">VaR Percentage</column>
+	</row>         
+	<row cat="marketriskinstall">
+		<column name="analysis">IncrVaR</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">weighting</column>
+		<column name="attribute_value">Equal</column>
+		<column name="inuse">1</column>
+		<column name="order_id">18</column>
+		<column name="additional">Weighting</column>
+	</row>        
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">main</column>
+		<column name="attribute_name"></column>
+		<column name="attribute_value"></column>
+		<column name="inuse">1</column>
+		<column name="order_id">19</column>
+		<column name="additional"></column>
+	</row>                                   
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">general</column>
+		<column name="attribute_name">treeview</column>
+		<column name="attribute_value">n/a</column>
+		<column name="inuse">1</column>
+		<column name="order_id">19</column>
+		<column name="additional"></column>
+	</row>                     
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">general</column>
+		<column name="attribute_name">adhocOf</column>
+		<column name="attribute_value">HypPL</column>
+		<column name="inuse">1</column>
+		<column name="order_id">19</column>
+		<column name="additional"></column>
+	</row>                    
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">general</column>
+		<column name="attribute_name">class</column>
+		<column name="attribute_value">backtesting</column>
+		<column name="inuse">1</column>
+		<column name="order_id">19</column>
+		<column name="additional"></column>
+	</row>
+	<row cat="marketriskinstall">
+			<column name="analysis">BackTest</column>
+			<column name="config_name">groupings</column>
+			<column name="attribute_name">1</column>
+			<column name="attribute_value">Currency</column>
+			<column name="inuse">0</column>
+			<column name="order_id">19</column>
+			<column name="additional"></column>
+	</row> 
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">1</column>
+		<column name="attribute_value">RiskType</column>
+		<column name="inuse">1</column>
+		<column name="order_id">19</column>
+		<column name="additional"></column>
+	</row>                     
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">2</column>
+		<column name="attribute_value">Product</column>
+		<column name="inuse">1</column>
+		<column name="order_id">19</column>
+		<column name="additional"></column>
+	</row>                      
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">3</column>
+		<column name="attribute_value">Book</column>
+		<column name="inuse">1</column>
+		<column name="order_id">19</column>
+		<column name="additional"></column>
+	</row>                         
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">parameter</column>
+		<column name="attribute_value">Standard</column>
+		<column name="inuse">1</column>
+		<column name="order_id">19</column>
+		<column name="additional">Parameter</column>
+	</row>    
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">confidence</column>
+		<column name="attribute_value">95%</column>
+		<column name="inuse">1</column>
+		<column name="order_id">19</column>
+		<column name="additional">Confidence Level</column>
+	</row> 
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">horizon</column>
+		<column name="attribute_value">1 Day</column>
+		<column name="inuse">1</column>
+		<column name="order_id">19</column>
+		<column name="additional">Horizon</column>
+	</row>           
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">overlap</column>
+		<column name="attribute_value">1 Day</column>
+		<column name="inuse">1</column>
+		<column name="order_id">19</column>
+		<column name="additional">Overlap Incr</column>
+	</row>      
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">observations</column>
+		<column name="attribute_value">250</column>
+		<column name="inuse">1</column>
+		<column name="order_id">19</column>
+		<column name="additional">Observations</column>
+	</row>   
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">days</column>
+		<column name="attribute_value">120</column>
+		<column name="inuse">2</column>
+		<column name="order_id">19</column>
+		<column name="additional">Days</column>
+	</row>                   
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">fromdate</column>
+		<column name="attribute_value">2007-7-31</column>
+		<column name="inuse">1</column>
+		<column name="order_id">19</column>
+		<column name="additional">From Date</column>
+	</row>    
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">one_tailed</column>
+		<column name="attribute_value">false</column>
+		<column name="inuse">1</column>
+		<column name="order_id">19</column>
+		<column name="additional">One Tailed</column>
+	</row>     
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">weighting</column>
+		<column name="attribute_value">Equal</column>
+		<column name="inuse">1</column>
+		<column name="order_id">19</column>
+		<column name="additional">Weighting</column>
+	</row>       
+	<row cat="marketriskinstall">
+		<column name="analysis">BackTest</column>
+		<column name="config_name">general</column>
+		<column name="attribute_name">overlapon</column>
+		<column name="attribute_value">Std10d</column>
+		<column name="inuse">1</column>
+		<column name="order_id">19</column>
+		<column name="additional"></column>
+	</row>                 
+	<row cat="marketriskinstall">
+		<column name="analysis">Capital</column>
+		<column name="config_name">main</column>
+		<column name="attribute_name"></column>
+		<column name="attribute_value"></column>
+		<column name="inuse">1</column>
+		<column name="order_id">20</column>
+		<column name="additional"></column>
+	</row>                                    
+	<row cat="marketriskinstall">
+		<column name="analysis">Capital</column>
+		<column name="config_name">general</column>
+		<column name="attribute_name">treeview</column>
+		<column name="attribute_value">n/a</column>
+		<column name="inuse">1</column>
+		<column name="order_id">20</column>
+		<column name="additional"></column>
+	</row>                      
+	<row cat="marketriskinstall">
+		<column name="analysis">Capital</column>
+		<column name="config_name">general</column>
+		<column name="attribute_name">adhocOf</column>
+		<column name="attribute_value">HistSim</column>
+		<column name="inuse">1</column>
+		<column name="order_id">20</column>
+		<column name="additional"></column>
+	</row>                   
+	<row cat="marketriskinstall">
+		<column name="analysis">Capital</column>
+		<column name="config_name">general</column>
+		<column name="attribute_name">class</column>
+		<column name="attribute_value">riskcapital</column>
+		<column name="inuse">1</column>
+		<column name="order_id">20</column>
+		<column name="additional"></column>
+	</row>                 
+	<row cat="marketriskinstall">
+		<column name="analysis">Capital</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">0</column>
+		<column name="attribute_value">RiskType</column>
+		<column name="inuse">1</column>
+		<column name="order_id">20</column>
+		<column name="additional"></column>
+	</row>                      
+	<row cat="marketriskinstall">
+		<column name="analysis">Capital</column>
+		<column name="config_name">groupings</column>
+		<column name="attribute_name">1</column>
+		<column name="attribute_value">Date</column>
+		<column name="inuse">1</column>
+		<column name="order_id">20</column>
+		<column name="additional"></column>
+	</row>                          
+	<row cat="marketriskinstall">
+		<column name="analysis">HypPL</column>
+		<column name="config_name">main</column>
+		<column name="attribute_name"></column>
+		<column name="attribute_value"></column>
+		<column name="inuse">1</column>
+		<column name="order_id">1</column>
+		<column name="additional"></column>
+	</row>                                       
+	<row cat="marketriskinstall">
+		<column name="analysis">HypPL</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">parameter</column>
+		<column name="attribute_value">Standard</column>
+		<column name="inuse">1</column>
+		<column name="order_id">1</column>
+		<column name="additional"></column>
+	</row>                 
+	<row cat="marketriskinstall">
+		<column name="analysis">PricingReport</column>
+		<column name="config_name">main</column>
+		<column name="attribute_name"></column>
+		<column name="attribute_value"></column>
+		<column name="inuse">1</column>
+		<column name="order_id">22</column>
+		<column name="additional"></column>
+	</row>
+	<row cat="marketriskinstall">
+		<column name="analysis">PricingReport</column>
+		<column name="config_name">variables</column>
+		<column name="attribute_name">parameter</column>
+		<column name="attribute_value">default</column>
+		<column name="inuse">1</column>
+		<column name="order_id">22</column>
+		<column name="additional"></column>
+	</row> 
+	</table>
+	
+</database>

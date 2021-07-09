@@ -1,0 +1,110 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+
+<!--calypso>
+if (|MESSAGE_ACTION| == "confirm") {
+  inline "I am pleased to confirm the details of the following |PRODUCT_TYPE| trade:";
+}
+if (|MESSAGE_ACTION| == "amend") {
+  inline "I am pleased to confirm the amended details of the following |PRODUCT_TYPE| trade:";
+}
+if (|MESSAGE_ACTION| == "cancel") {
+  inline "Please be advised that the following |PRODUCT_TYPE| trade has been canceled:";
+}
+</calypso-->
+
+
+<p class="header2">Trade details:</p>
+
+<table>
+ <tr>
+  <td width="30%">Our Trade Id</td>
+  <td>|TRADE_ID|</td>
+ </tr>
+ <tr>
+  <td>Operation Type</td>
+  <td>|PRODUCT_TYPE|</td>
+ </tr>
+ <tr>
+  <td>Instrument Description</td>
+  <td>|PRODUCT_DESCRIPTION|</td>
+ </tr>
+ <tr>
+  <td>Buyer</td>
+  <td>|TRADE_BUYER_NAME|</td>
+ </tr>
+ <tr>
+  <td>Seller</td>
+  <td>|TRADE_SELLER_NAME|</td>
+ </tr>
+ <tr>
+  <td>Trade Date</td>
+  <td>|TRADE_DATE|</td>
+ </tr>
+ <tr>
+  <td>Start Date</td>
+  <td>|FXCASH_START_DATE|</td>
+ </tr>
+ <tr>
+  <td>End Date</td>
+  <td>|PRODUCT_MATURITYDATE|</td>
+ </tr>
+ <tr>
+  <td>Bought Currency</td>
+  <td>|FX_BUY_CURRENCY|</td>
+ </tr>
+ <tr>
+  <td>Sold Currency</td>
+  <td>|FX_SELL_CURRENCY|</td>
+ </tr>
+</table>
+
+<p class="header2">Cash flows Exchanged</p>
+<!--calypso>
+inline "<table>
+    <tr><th>PaymentDate</th>
+    <th>Primary Currency</th>
+    <th>Primary Amount</th>
+    <th>FX Rate</th>
+    <th>Quoting Currency</th>
+    <th>Quoting Amount</th></tr>";
+iterator("FXCashFlow")
+    inline "<tr>
+    <td>|FXCASH_FLOW_PAYMENT_DATE|</td>
+    <td>|FXCASH_FLOW_PRIMARY_CURRENCY|</td>
+    <td>|FXCASH_FLOW_PRIMARY_AMOUNT|</td>
+    <td>|FXCASH_FLOW_FX_RATE|</td>
+    <td>|FXCASH_FLOW_QUOTING_CURRENCY|</td>
+    <td>|FXCASH_FLOW_QUOTING_AMOUNT|</td>
+    </tr>
+    ";
+inline "</table>";
+</calypso-->
+
+<p class="header2">Settlement Instructions:</p>
+
+<table>
+ <tr>
+  <td width="30%">Payment to |SENDER_CODE|:</td>
+  <td>|PO_INSTRUCTIONS|</td>
+ </tr>
+ <tr>
+  <td>Payment to |RECEIVER_CODE|:</td>
+  <td>|COUNTERPARTY_INSTRUCTIONS|</td>
+ </tr>
+</table>
+
+<br>
+
+<p>Please sign and return 
+this Confirmation as soon as possible to help safeguard against erroneous 
+settlement.</p>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

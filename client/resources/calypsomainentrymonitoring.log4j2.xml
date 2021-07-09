@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration xmlns:xi="http://www.w3.org/2001/XInclude" status="WARN">
+  <xi:include href="fragments/properties.log4j2.xml"/>
+  <Appenders>
+     <xi:include href="fragments/appender_Monitoring.ClientRequest_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.MethodProfile_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.PresentationClient_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.TaskStation_APPENDER.xml"/>
+  </Appenders>
+  <Loggers>
+	<Logger name="com.calypso.Monitoring.TaskStation" level="DEBUG" additivity="false">
+	  <AppenderRef ref="Monitoring.TaskStation_APPENDER"/>
+	</Logger>  
+	<Logger name="com.calypso.Monitoring.ClientRequest" level="DEBUG" additivity="false">
+	  <AppenderRef ref="Monitoring.ClientRequest_APPENDER"/>
+	</Logger>  
+	<Logger name="com.calypso.Monitoring.MethodProfile" level="DEBUG" additivity="false">
+	  <AppenderRef ref="Monitoring.MethodProfile_APPENDER"/>
+	</Logger>
+	<Logger name="com.calypso.Monitoring.PresentationClient" level="DEBUG" additivity="false">
+	  <AppenderRef ref="Monitoring.PresentationClient_APPENDER"/>
+	</Logger>
+  </Loggers>
+</Configuration>

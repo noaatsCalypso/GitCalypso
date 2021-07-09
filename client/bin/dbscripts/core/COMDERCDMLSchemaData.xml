@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+   <table name="domain_values" xmlns="">
+
+      <!-- CDML DOMAIN CONFIGURATION -->
+      <row cat="Required">
+         <column name="name">Clearing.CDML.producerNames</column>
+         <column name="value">COMDER</column>
+      </row>
+      <!-- END CDML DOMAIN CONFIGURATION -->
+
+      <!-- MARKET DATA CONFIGURATION -->
+      <row cat="Required">
+         <column name="name">CalypsoMapping.Interfaces</column>
+         <column name="value">COMDER</column>
+         <column name="description" />
+      </row>
+      <row cat="Required">
+         <column name="name">COMDER.Types</column>
+         <column name="value">CurveName</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">COMDER.Types</column>
+         <column name="value">Currency</column>
+         <column name="description"></column>
+      </row>
+      <!-- END MARKET DATA CONFIGURATION -->
+
+   </table>
+</database>

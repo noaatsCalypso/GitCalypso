@@ -1,0 +1,42 @@
+# Import Message Engine (MQ)
+input.queue.name=Q.CME.CALYPSO
+Q.CME.CALYPSO.queue.setContext=true
+
+# Sender Engine (JMS)
+
+#For ActiveMQ
+jms.url=tcp://localhost:61616
+jms.modetypeclass=org.apache.activemq.jndi.ActiveMQInitialContextFactory
+jms.queue.connectionFactory=ConnectionFactory
+
+#For IBMMQ
+#jms.url=file://localhost/c:/tools/ibm/mqs/binding
+#jms.modetypeclass=com.sun.jndi.fscontext.RefFSContextFactory
+#jms.queue.connectionFactory=QueueConnectionFactory
+
+output.queue.name=Q.CALYPSO.CME
+Q.CALYPSO.CME.queue.ackType=auto
+Q.CALYPSO.CME.queue.persist=true
+Q.CALYPSO.CME.queue.transacted=false
+
+#the following property can be used to indicate what mode to be used when using the uploader framework
+#possible values are 
+#LocalAPI -> when used the Client API is called to upload, all the processing happens on the client, and the caches are build and used so improves performance
+#RemoteAPI -> when used the RMI API is called to upload, all the processing happens on the server
+#BOMessage -> when used a BO Message is created per message and the BO Message is validated and uploaded via workflow rules.
+
+#use LocalAPI to improve performance and increase the Batch_Thread parameter to the number of cores the machine has
+#Also note that when BOMessage is used, the Message is created so based on the Message Config present in calypso the Sender Engine
+#will send the Acknowledgement.
+#for LocalAPI and RemoteAPI, the Import Message Engine itself will send the acknowledgment after the API is called, based on whether the
+#output.queue.name is configured; if this is empty the acknowledgment will not be sent.
+
+#uploadMode: Local or BOMessage
+uploadMode=Local
+
+#persistMessages: for Local upload mode, whether the messages will be persisted as BO Messages
+#possible values: All (persist all messages as BO Messages), None (do not persist any message), Failure (only failed messages will be persisted as BO Messages)
+persistMessages=All
+
+uploadSource=CME
+uploadFormat=FpML

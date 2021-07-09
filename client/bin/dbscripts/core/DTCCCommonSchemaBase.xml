@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+  <!-- ================================================== -->
+  <!-- Reporting Attributes Tables                        -->
+  <!-- ================================================== -->
+  <table name="tr_reporting_attr" xmlns="">
+    <column name="reporting_attribute_id" nullable="false" scale="1" type="int"/>
+    <column name="version" nullable="false" scale="1" type="int"/>
+    <column name="attribute_name" nullable="false" scale="128" type="string"/>
+    <column name="category" default="ALL" nullable="false" scale="128" type="string"/>
+    <column name="support" default="trade" nullable="false" scale="128" type="string"/>
+    <column name="map_to" nullable="false" scale="128" type="string"/>
+    <column name="iflag" default="WEAK_SET" nullable="false" scale="10" type="string"/>
+    <column name="oflag" default="GET" nullable="false" scale="10" type="string"/>
+    <column name="dsmatch_iflag" default="WEAK_SET" nullable="false" scale="10" type="string"/>
+    <column name="dsmatch_oflag" default="GET" nullable="false" scale="10" type="string"/>
+    <column name="visible" default="1" nullable="false" scale="1" type="int"/>
+    <column name="readonly" default="1" nullable="false" scale="1" type="int"/>
+    <column name="copiable" default="0" nullable="false" scale="1" type="int"/>
+    <column name="description" nullable="true" default="" scale="511" type="string"/>
+	<column name="attribute_domain" nullable="true" default="" scale="255" type="string"/>
+    <index primary="true">
+      <on>reporting_attribute_id</on>
+    </index>
+    <index unique="true">
+      <on>attribute_name</on>
+    </index>
+    <index unique="true">
+      <on>map_to</on>
+    </index>
+  </table>
+  <table name="tr_reporting_attr_restriction" xmlns="">
+    <column name="reporting_attribute_id" nullable="false" scale="1" type="int"/>
+    <column name="value" nullable="false" scale="128" type="string"/>
+    <index primary="true">
+      <on>reporting_attribute_id</on>
+      <on>value</on>
+    </index>
+    <index unique="false">
+      <on>reporting_attribute_id</on>
+    </index>
+  </table>
+  <!-- ================================================== -->
+  <!-- Static Data Tables                                 -->
+  <!-- ================================================== -->
+  <table name="tr_regulation" xmlns="">
+    <column name="regulation_id" nullable="false" scale="1" type="int"/>
+    <column name="regulation_code" nullable="false" scale="10" type="string"/>
+    <column name="regulation_name" nullable="false" scale="20" type="string"/>
+    <column name="dtcc_repository" nullable="false" scale="10" type="string"/>
+    <index primary="true">
+      <on>regulation_id</on>
+    </index>
+    <index unique="true">
+      <on>regulation_code</on>
+    </index>
+    <index unique="true">
+      <on>regulation_name</on>
+    </index>
+  </table>
+  <table name="tr_supervisor" xmlns="">
+    <column name="supervisor_id" nullable="false" scale="1" type="int"/>
+    <column name="regulation_id" nullable="false" scale="1" type="int"/>
+    <column name="supervisor_code" nullable="false" scale="10" type="string"/>
+    <column name="enabled" nullable="false" scale="1" type="int"/>
+    <index primary="true">
+      <on>supervisor_id</on>
+    </index>
+    <index unique="true">
+      <on>supervisor_code</on>
+    </index>
+  </table>
+  <!-- The various sources of Legal Entity Identifiers -->
+  <table name="tr_le_id_source" xmlns="">
+    <column name="source_id" nullable="false" scale="1" type="int"/>
+    <column name="source_code" nullable="false" scale="10" type="string"/>
+    <column name="fpml_url" nullable="false" scale="200" type="string"/>
+    <!-- The Legal Entity Attribute for recording the related LEID -->
+    <column name="le_attribute_value" nullable="true" scale="255" type="string"/>
+    <!-- Is this source an official one (LEI, CICI...) or not (internal name, free format text...) -->
+    <column name="official_source_b" nullable="false" scale="1" type="int"/>
+    <!-- Are identifiers of this source used in Reporting Party determination -->
+    <column name="used_in_rp_det_b"  nullable="false" scale="1" type="int"/>
+    <index primary="true">
+      <on>source_id</on>
+    </index>
+    <index unique="true">
+      <on>source_code</on>
+    </index>
+    <index unique="true">
+      <on>fpml_url</on>
+    </index>
+  </table>
+  <table name="tr_po_role" xmlns="">
+    <column name="role_code" nullable="false" scale="2" type="string"/>
+    <column name="role_name" nullable="false" scale="30" type="string"/>
+    <index primary="true">
+      <on>role_code</on>
+    </index>
+  </table>
+  <!-- ================================================== -->
+  <!-- Reporting tables                                   -->
+  <!-- ================================================== -->
+  
+  <!-- Table for USI and UTI -->
+  <table name="tr_usi_uti" xmlns="">
+    <!-- The calypso trade identifier. See trade.trade_id -->
+    <column name="trade_id" nullable="false" scale="1" type="int"/>
+    <!-- The regulation for which the USI / UTI has been made -->
+    <column name="regulation_id" nullable="false" scale="1" type="int"/>
+    <!-- The USI/UTI type: ST, OR, OL, BL, FE, FR -->
+    <column name="type" nullable="false" scale="2" type="string"/>
+    <!-- Id of the USI/UTI issuer source. See tr_le_id_source -->
+    <column name="issuer_source_id" nullable="false" scale="1" type="int"/>
+    <!-- The prefix is the name of the USI/UTI issuer for the related LEID source -->
+    <column name="issuer_reference" nullable="false" scale="40" type="string"/>
+    <!-- The trade reference part -->
+    <column name="trade_reference" nullable="false" scale="70" type="string"/>
+    <!-- For DFA, the prefix should be 10 characters (NFA ID), and the trade reference 32 characters -->
+    <!-- For EMIR, prefix + trade_reference should be at most 52 characters -->
+    <index primary="true">
+      <on>trade_id</on>
+      <on>regulation_id</on>
+      <on>type</on>
+    </index>
+    <!-- Foreign key trade_id to trade.trade_id -->
+    <!-- Foreign key regulation_id to tr_regulation.trade_id -->
+    <!-- Foreign key issuer_source_id to tr_le_id_source.source_id -->
+  </table>
+  
+  <!-- Table recording submission states -->
+  <table name="tr_submission_state" xmlns="">
+    <column name="trade_id" nullable="false" scale="1" type="int"/>
+    <column name="supervisor_id" nullable="false" scale="1" type="int"/>
+    <!-- The purpose code (RT [RealTime], PT [PET], CF [Confirmation], SN [Snapshot]) -->
+    <column name="purpose_code" nullable="false" scale="2" type="string"/>
+    <column name="submission_time" nullable="false" type="timestamp"/>
+    <column name="response_time" nullable="true" type="timestamp"/>
+    <!-- The validation code from supervisor (OK, KO, WR) -->
+    <column name="validation_code" nullable="true" scale="2" type="string"/>
+    <index primary="true">
+      <on>trade_id</on>
+      <on>supervisor_id</on>
+      <on>purpose_code</on>
+    </index>
+    <!-- Foreign key trade_id to trade.trade_id -->
+    <!-- Foreign key supervisor_id to tr_supervisor.supervisor_id -->
+  </table>
+  
+  <!-- Table recording the supervisor part of report -->
+  <table name="tr_report_regime" xmlns="">
+    <column name="trade_id" nullable="false" scale="1" type="int"/>
+    <column name="supervisor_id" nullable="false" scale="1" type="int"/>
+    <!-- The processing org role code (RP [ReportingParty], NR [NotReportingParty], SE [Self-Submission]...) -->
+    <column name="po_role_code" nullable="false" scale="2" type="string"/>
+    <column name="po_etd_role_code" nullable="true" scale="2" type="string"/>
+    <column name="clearing_mandatory_b" nullable="true" scale="1" type="int"/>
+    <column name="counterparty_masked_b" nullable="true" scale="1" type="int"/>
+    <!-- Canada only: is PO local to related province -->
+    <column name="po_local_b" nullable="true" scale="1" type="int"/>
+    <!-- Canada only: is CPTY local to related province -->
+    <column name="cpty_local_b" nullable="true" scale="1" type="int"/>
+    <!-- EMIR and MAS only: is PO the UTI generator -->
+    <column name="po_uti_generator_b" nullable="true" scale="1" type="int"/>
+    <index primary="true">
+      <on>trade_id</on>
+      <on>supervisor_id</on>
+      <on>po_role_code</on>
+    </index>
+    <!-- Foreign key trade_id to trade.trade_id -->
+    <!-- Foreign key supervisor_id to tr_supervisor.supervisor_id -->
+  </table>
+  
+  <!-- Table recording business unit information -->
+  <table name="tr_business_unit" xmlns="">
+    <column name="trade_id" nullable="false" scale="1" type="int"/>
+    <!-- The Business Unit role code (TR [Trader], SA [Sales], DS [Desk], BR [Broker]) -->
+    <column name="bu_role_code" nullable="false" scale="2" type="string"/>
+    <column name="id" nullable="true" scale="50" type="string"/>
+    <column name="name" nullable="true" scale="50" type="string"/>
+    <!-- country 3-letters iso-code -->
+    <column name="country" nullable="true" scale="3" type="string"/>
+    <index primary="true">
+      <on>trade_id</on>
+      <on>bu_role_code</on>
+    </index>
+    <!-- Foreign key trade_id to trade.trade_id -->
+  </table>
+  
+  <!-- Table recording ETD Position UTI information -->
+  <table name="tr_position_uti" xmlns="">
+    <column name="id" nullable="false" scale="1" type="int"/>
+    <column name="version" nullable="false" scale="1" type="int"/>
+	<column name="product_id" nullable="false" scale="1" type="int"/>
+	<column name="position_id" nullable="false" scale="250" type="string"/>
+    <column name="account_id" nullable="false" scale="1" type="int"/>
+	<column name="liq_config_id" nullable="false" scale="1" type="int"/>
+    <column name="account_type" nullable="false" scale="50" type="string"/>
+    <column name="position_uti" nullable="true" scale="50" type="string"/>
+    <column name="action_type" nullable="true" scale="50" type="string"/>
+    <column name="last_processed_date" nullable="true" scale="1" type="timestamp"/>
+    <index primary="true">
+      <on>id</on>
+	  <on>account_id</on>
+      <on>account_type</on>
+	  <on>product_id</on>
+	  <on>liq_config_id</on>
+    </index>
+    <!-- Foreign key position_id to pl_popision.position_id -->
+  </table>
+
+  <!-- The main report table -->
+  <table name="tr_report" xmlns="">
+    <column name="trade_id" nullable="false" scale="1" type="int"/>
+    <column name="upi_source" nullable="false" scale="5" type="string"/>
+    <column name="upi" nullable="false" scale="255" type="string"/>
+    <column name="primary_asset_class" nullable="false" scale="2" type="string"/>
+    <column name="secondary_asset_class" nullable="true" scale="2" type="string"/>
+    <column name="underlying_asset_code_type" nullable="true" scale="4" type="string"/> <!-- ISIN, RED, CUSIP... -->
+    <column name="underlying_asset_code" nullable="true" scale="35" type="string"/>
+    <!-- Execution Venue type (SEF, DCM, OFF [OffFacility]) -->
+    <column name="execution_venue" nullable="true" scale="3" type="string"/>
+    <!-- PO collateralization status code (NO [Uncolatteralized], PA [Partial], CO [Full], 1W [OneWay]) -->
+    <column name="po_collat_status_code" nullable="true" scale="2" type="string"/>
+    <column name="cpty_collat_status_code" nullable="true" scale="2" type="string"/>
+    <!-- Allocation indicator code (EL [Electronic], NE [NonElectronic], NA [NotApplicable]) -->
+    <column name="allocation_indicator" nullable="true" scale="2" type="string"/>
+    <!-- Electronic confirmation indicator code (EL [Electronic], NE [NonElectronic], NA [NotApplicable]) -->
+    <column name="confirmation_indicator" nullable="true" scale="2" type="string"/>
+    <!-- Off-Platform verification indicator code (EL [Electronic], NE [NonElectronic], NA [NotApplicable]) -->
+    <column name="off_ptf_verification_indicator" nullable="true" scale="2" type="string"/>
+    <!-- Price Notation Type (PBT [BasisPoints], PCT [Percentage], PRC [Price], UPT [UpfrontPoints]) -->
+    <column name="price_type" nullable="true" scale="3" type="string"/>
+    <column name="price_currency" nullable="true" scale="3" type="string"/>
+    <column name="price" nullable="true" scale="1" type="float"/>
+    <!-- Additional Price Notation Type (PBT [BasisPoints], PCT [Percentage], PRC [Price], UPT [UpfrontPoints]) -->
+    <column name="additional_price_type" nullable="true" scale="3" type="string"/>
+    <column name="additional_price_currency" nullable="true" scale="3" type="string"/>
+    <column name="additional_price" nullable="true" scale="1" type="float"/>
+    <column name="payment_frequency_method" nullable="true" scale="1" type="string"/>
+    
+    <column name="clearing_dco_b" nullable="true" scale="1" type="int"/>
+    <column name="price_forming_b" nullable="true" scale="1" type="int"/>
+    <column name="non_standard_b" nullable="true" scale="1" type="int"/>
+    <column name="confirmation_time" nullable="true" scale="1" type="timestamp"/>
+    <column name="execution_time" nullable="true" scale="1" type="timestamp"/>
+    <!-- Processing Org trading capacity (PR [Principal], AG [Agent]) -->
+    <column name="po_trading_capacity" nullable="true" scale="2" type="string"/>
+    <!-- Counterparty trading capacity (PR [Principal], AG [Agent]) -->
+    <column name="cpty_trading_capacity" nullable="true" scale="2" type="string"/>
+    <!-- Is Trade linked to PO commercial activity -->
+    <column name="po_commercial_activity_b" nullable="true" scale="1" type="int"/>
+    <!-- Is Trade linked to CPTY commercial activity -->
+    <column name="cpty_commercial_activity_b" nullable="true" scale="1" type="int"/>
+    <!-- See MarginCallConfig._ADDITIONAL_INFO.Reporting_CollateralPortfolioCode -->
+    <column name="po_collateral_portfolio_code" nullable="true" scale="20" type="string"/>
+    <column name="cpty_collateral_portfolio_code" nullable="true" scale="20" type="string"/>
+    
+	<column name="po_desk_location" nullable="true" scale="2" type="string"/>
+    <column name="po_trader_location" nullable="true" scale="2" type="string"/>
+    <column name="cpty_desk_location" nullable="true" scale="2" type="string"/>
+    <column name="cpty_trader_location" nullable="true" scale="2" type="string"/>
+    
+    <!-- The ISO 2 Letter code of the PO branch location -->
+    <column name="po_branch_location" nullable="true" scale="2" type="string"/>
+    <!-- The ISO 2 Letter code of the PO branch location -->
+    <column name="cpty_branch_location" nullable="true" scale="2" type="string"/>
+    <!-- Is trade produced by a portfolio compression -->
+    <column name="portfolio_compression_b" nullable="true" scale="1" type="int"/>
+    <!-- Is trade terminated by a portfolio compression -->
+    <column name="terminated_by_compression_b" nullable="true" scale="1" type="int"/>
+    <column name="compression_far_b" nullable="true" scale="1" type="int"/>
+    <column name="terminated_by_compression_far" nullable="true" scale="1" type="int"/>
+    <!-- Is trade a large size trade -->
+    <column name="large_size_trade_b" nullable="true" scale="1" type="int"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the clearing house -->
+    <column name="clearing_house_id" nullable="false" default="0" scale="1" type="int"/>
+    <column name="clearing_timestamp" nullable="true" scale="1" type="timestamp"/>
+    <column name="cpty_desk" nullable="true" scale="50" type="string"/>
+    <column name="cpty_trader" nullable="true" scale="50" type="string"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the PO beneficiary -->
+    <column name="po_beneficiary_id" nullable="false" default="0" scale="1" type="int"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the CPTY beneficiary -->
+    <column name="cpty_beneficiary_id" nullable="false" default="0" scale="1" type="int"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the PO execution agent -->
+    <column name="po_execution_agent_id" nullable="false" default="0" scale="1" type="int"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the CPTY execution agent -->
+    <column name="cpty_execution_agent_id" nullable="false" default="0" scale="1" type="int"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the PO settlement agent -->
+    <column name="po_settlement_agent_id" nullable="false" default="0" scale="1" type="int"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the CPTY settlement agent -->
+    <column name="cpty_settlement_agent_id" nullable="false" default="0" scale="1" type="int"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the CPTY broker -->
+    <column name="cpty_broker_id" nullable="false" default="0" scale="1" type="int"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the CPTY clearing broker -->
+    <column name="cpty_clearing_broker_id" nullable="false" default="0" scale="1" type="int"/>
+    
+    <!-- The 1st additional repository -->
+    <column name="additional_repository1" nullable="true" scale="128" type="string"/>
+    <!-- The 2nd additional repository -->
+    <column name="additional_repository2" nullable="true" scale="128" type="string"/>
+    <!-- The 3rd additional repository -->
+    <column name="additional_repository3" nullable="true" scale="128" type="string"/>
+
+	<!-- ETD transaction fields -->
+    <column name="etd_cpty_issuer" nullable="true" scale="128" type="string"/>
+    <column name="etd_cpty_trade" nullable="true" scale="128" type="string"/>
+
+	<!-- Thirdparty Viewer Fields -->
+	<column name="po_party_viewer" nullable="true" scale="255" type="string"/>
+	<column name="cpty_party_viewer" nullable="true" scale="255" type="string"/>
+	
+	<column name="gtr_version" nullable="true" scale="255" type="string"/>
+	
+    <index primary="true">
+      <on>trade_id</on>
+    </index>
+    <!-- Foreign key trade_id to trade.trade_id -->
+  </table>
+  
+  
+  <!-- ================================================== -->
+  <!-- Reporting archive tables                           -->
+  <!-- ================================================== -->
+  
+  <!-- Archive Table for USI and UTI -->
+  <table name="tr_usi_uti_hist" xmlns="">
+    <!-- The calypso trade identifier. See trade.trade_id -->
+    <column name="trade_id" nullable="false" scale="1" type="int"/>
+    <!-- The regulation for which the USI / UTI has been made -->
+    <column name="regulation_id" nullable="false" scale="1" type="int"/>
+    <!-- The USI/UTI type: ST, OR, OL, BL, FE, FR -->
+    <column name="type" nullable="false" scale="2" type="string"/>
+    <!-- Id of the USI/UTI issuer source. See tr_le_id_source -->
+    <column name="issuer_source_id" nullable="false" scale="1" type="int"/>
+    <!-- The prefix is the name of the USI/UTI issuer for the related LEID source -->
+    <column name="issuer_reference" nullable="false" scale="40" type="string"/>
+    <!-- The trade reference part -->
+    <column name="trade_reference" nullable="false" scale="70" type="string"/>
+    <!-- For DFA, the prefix should be 10 characters (NFA ID), and the trade reference 32 characters -->
+    <!-- For EMIR, prefix + trade_reference should be at most 52 characters -->
+    <index primary="true">
+      <on>trade_id</on>
+      <on>regulation_id</on>
+      <on>type</on>
+    </index>
+    <!-- Foreign key trade_id to trade_hist.trade_id -->
+    <!-- Foreign key regulation_id to tr_regulation.regulation_id -->
+    <!-- Foreign key issuer_source_id to tr_le_id_source.source_id -->
+  </table>
+  
+  <!-- Archive Table recording submission states -->
+  <table name="tr_submission_state_hist" xmlns="">
+    <column name="trade_id" nullable="false" scale="1" type="int"/>
+    <column name="supervisor_id" nullable="false" scale="1" type="int"/>
+    <!-- The purpose code (RT [RealTime], PT [PET], CF [Confirmation], SN [Snapshot]) -->
+    <column name="purpose_code" nullable="false" scale="2" type="string"/>
+    <column name="submission_time" nullable="false" type="timestamp"/>
+    <column name="response_time" nullable="true" type="timestamp"/>
+    <!-- The validation code from supervisor (OK, KO, WR) -->
+    <column name="validation_code" nullable="true" scale="2" type="string"/>
+    <index primary="true">
+      <on>trade_id</on>
+      <on>supervisor_id</on>
+      <on>purpose_code</on>
+    </index>
+    <!-- Foreign key trade_id to trade.trade_id -->
+    <!-- Foreign key supervisor_id to tr_supervisor.supervisor_id -->
+  </table>
+  
+  <!-- Archive Table recording the supervisor part of report -->
+  <table name="tr_report_regime_hist" xmlns="">
+    <column name="trade_id" nullable="false" scale="1" type="int"/>
+    <column name="supervisor_id" nullable="false" scale="1" type="int"/>
+    <!-- The processing org role code (RP [ReportingParty], NR [NotReportingParty], SE [Self-Submission]...) -->
+    <column name="po_role_code" nullable="false" scale="2" type="string"/>
+    <column name="po_etd_role_code" nullable="true" scale="2" type="string"/>
+    <column name="clearing_mandatory_b" nullable="true" scale="1" type="int"/>
+    <column name="counterparty_masked_b" nullable="true" scale="1" type="int"/>
+    <!-- Canada only: is PO local to related province -->
+    <column name="po_local_b" nullable="true" scale="1" type="int"/>
+    <!-- Canada only: is CPTY local to related province -->
+    <column name="cpty_local_b" nullable="true" scale="1" type="int"/>
+    <!-- EMIR and MAS only: is PO the UTI generator -->
+    <column name="po_uti_generator_b" nullable="true" scale="1" type="int"/>
+    <index primary="true">
+      <on>trade_id</on>
+      <on>supervisor_id</on>
+      <on>po_role_code</on>
+    </index>
+    <!-- Foreign key trade_id to trade_hist.trade_id -->
+    <!-- Foreign key supervisor_id to tr_supervisor.supervisor_id -->
+  </table>
+  
+  <!-- Archive Table recording business unit information -->
+  <table name="tr_business_unit_hist" xmlns="">
+    <column name="trade_id" nullable="false" scale="1" type="int"/>
+    <!-- The Business Unit role code (TR [Trader], SA [Sales], DS [Desk], BR [Broker]) -->
+    <column name="bu_role_code" nullable="false" scale="2" type="string"/>
+    <column name="id" nullable="true" scale="10" type="string"/>
+    <column name="name" nullable="true" scale="50" type="string"/>
+    <!-- country 3-letters iso-code -->
+    <column name="country" nullable="true" scale="3" type="string"/>
+    <index primary="true">
+      <on>trade_id</on>
+      <on>bu_role_code</on>
+    </index>
+    <!-- Foreign key trade_id to trade_hist.trade_id -->
+  </table>
+  
+  <!-- The main archive report table -->
+  <table name="tr_report_hist" xmlns="">
+    <column name="trade_id" nullable="false" scale="1" type="int"/>
+    <column name="upi_source" nullable="false" scale="5" type="string"/>
+    <column name="upi" nullable="false" scale="255" type="string"/>
+    <column name="primary_asset_class" nullable="false" scale="2" type="string"/>
+    <column name="secondary_asset_class" nullable="true" scale="2" type="string"/>
+    <column name="underlying_asset_code_type" nullable="true" scale="4" type="string"/> <!-- ISIN, RED, CUSIP... -->
+    <column name="underlying_asset_code" nullable="true" scale="35" type="string"/>
+    <!-- Execution Venue type (SEF, DCM, OFF [OffFacility]) -->
+    <column name="execution_venue" nullable="true" scale="3" type="string"/>
+    <!-- PO collateralization status code (NO [Uncolatteralized], PA [Partial], CO [Full], 1W [OneWay]) -->
+    <column name="po_collat_status_code" nullable="true" scale="2" type="string"/>
+    <column name="cpty_collat_status_code" nullable="true" scale="2" type="string"/>
+    <!-- Allocation indicator code (EL [Electronic], NE [NonElectronic], NA [NotApplicable]) -->
+    <column name="allocation_indicator" nullable="true" scale="2" type="string"/>
+    <!-- Electronic confirmation indicator code (EL [Electronic], NE [NonElectronic], NA [NotApplicable]) -->
+    <column name="confirmation_indicator" nullable="true" scale="2" type="string"/>
+    <!-- Off-Platform verification indicator code (EL [Electronic], NE [NonElectronic], NA [NotApplicable]) -->
+    <column name="off_ptf_verification_indicator" nullable="true" scale="2" type="string"/>
+    <!-- Price Notation Type (PBT [BasisPoints], PCT [Percentage], PRC [Price], UPT [UpfrontPoints]) -->
+    <column name="price_type" nullable="true" scale="3" type="string"/>
+    <column name="price_currency" nullable="true" scale="3" type="string"/>
+    <column name="price" nullable="true" scale="1" type="float"/>
+    <!-- Additional Price Notation Type (PBT [BasisPoints], PCT [Percentage], PRC [Price], UPT [UpfrontPoints]) -->
+    <column name="additional_price_type" nullable="true" scale="3" type="string"/>
+    <column name="additional_price_currency" nullable="true" scale="3" type="string"/>
+    <column name="additional_price" nullable="true" scale="1" type="float"/>
+    <column name="payment_frequency_method" nullable="true" scale="1" type="string"/>
+    
+    <column name="clearing_dco_b" nullable="true" scale="1" type="int"/>
+    <column name="price_forming_b" nullable="true" scale="1" type="int"/>
+    <column name="non_standard_b" nullable="true" scale="1" type="int"/>
+    <column name="confirmation_time" nullable="true" scale="1" type="timestamp"/>
+    <column name="execution_time" nullable="true" scale="1" type="timestamp"/>
+    <!-- Processing Org trading capacity (PR [Principal], AG [Agent]) -->
+    <column name="po_trading_capacity" nullable="true" scale="2" type="string"/>
+    <!-- Counterparty trading capacity (PR [Principal], AG [Agent]) -->
+    <column name="cpty_trading_capacity" nullable="true" scale="2" type="string"/>
+    <!-- Is Trade linked to PO commercial activity -->
+    <column name="po_commercial_activity_b" nullable="true" scale="1" type="int"/>
+    <!-- Is Trade linked to CPTY commercial activity -->
+    <column name="cpty_commercial_activity_b" nullable="true" scale="1" type="int"/>
+    <!-- See MarginCallConfig._ADDITIONAL_INFO.Reporting_CollateralPortfolioCode -->
+    <column name="po_collateral_portfolio_code" nullable="true" scale="20" type="string"/>
+    <column name="cpty_collateral_portfolio_code" nullable="true" scale="20" type="string"/>
+    
+	<column name="po_desk_location" nullable="true" scale="2" type="string"/>
+    <column name="po_trader_location" nullable="true" scale="2" type="string"/>
+    <column name="cpty_desk_location" nullable="true" scale="2" type="string"/>
+    <column name="cpty_trader_location" nullable="true" scale="2" type="string"/>
+
+    <!-- The ISO 2 Letter code of the PO branch location -->
+    <column name="po_branch_location" nullable="true" scale="2" type="string"/>
+    <!-- The ISO 2 Letter code of the PO branch location -->
+    <column name="cpty_branch_location" nullable="true" scale="2" type="string"/>
+    <!-- Is trade produced by a portfolio compression -->
+    <column name="portfolio_compression_b" nullable="true" scale="1" type="int"/>
+    <!-- Is trade terminated by a portfolio compression -->
+    <column name="terminated_by_compression_b" nullable="true" scale="1" type="int"/>
+    <column name="compression_far_b" nullable="true" scale="1" type="int"/>
+    <column name="terminated_by_compression_far" nullable="true" scale="1" type="int"/>
+    <!-- Is trade a large size trade -->
+    <column name="large_size_trade_b" nullable="true" scale="1" type="int"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the clearing house -->
+    <column name="clearing_house_id" nullable="false" default="0" scale="1" type="int"/>
+    <column name="clearing_timestamp" nullable="true" scale="1" type="timestamp"/>
+    <column name="cpty_desk" nullable="true" scale="50" type="string"/>
+    <column name="cpty_trader" nullable="true" scale="50" type="string"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the PO beneficiary -->
+    <column name="po_beneficiary_id" nullable="false" default="0" scale="1" type="int"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the CPTY beneficiary -->
+    <column name="cpty_beneficiary_id" nullable="false" default="0" scale="1" type="int"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the PO execution agent -->
+    <column name="po_execution_agent_id" nullable="false" default="0" scale="1" type="int"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the CPTY execution agent -->
+    <column name="cpty_execution_agent_id" nullable="false" default="0" scale="1" type="int"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the PO settlement agent -->
+    <column name="po_settlement_agent_id" nullable="false" default="0" scale="1" type="int"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the CPTY settlement agent -->
+    <column name="cpty_settlement_agent_id" nullable="false" default="0" scale="1" type="int"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the CPTY broker -->
+    <column name="cpty_broker_id" nullable="false" default="0" scale="1" type="int"/>
+    <!-- Legal Entity Id (legal_entity.legal_entity_id) of the CPTY clearing broker -->
+    <column name="cpty_clearing_broker_id" nullable="false" default="0" scale="1" type="int"/>
+    
+    <!-- The 1st additional repository -->
+    <column name="additional_repository1" nullable="true" scale="128" type="string"/>
+    <!-- The 2nd additional repository -->
+    <column name="additional_repository2" nullable="true" scale="128" type="string"/>
+    <!-- The 3rd additional repository -->
+    <column name="additional_repository3" nullable="true" scale="128" type="string"/>
+
+	<!-- ETD transaction fields -->
+    <column name="etd_cpty_issuer" nullable="true" scale="128" type="string"/>
+    <column name="etd_cpty_trade" nullable="true" scale="128" type="string"/>
+    
+    <!-- Thirdparty Viewer Fields -->
+	<column name="po_party_viewer" nullable="true" scale="255" type="string"/>
+	<column name="cpty_party_viewer" nullable="true" scale="255" type="string"/>
+	
+	<column name="gtr_version" nullable="true" scale="255" type="string"/>
+    
+    <index primary="true">
+      <on>trade_id</on>
+    </index>
+    <!-- Foreign key trade_id to trade_hist.trade_id -->
+  </table>
+  
+  <table name="trade_filter_po_role_criterion" xmlns="">
+    <column name="trade_filter_name" nullable="false" scale="255" type="string"/>
+    <column name="and_combination" nullable="false" default="1" type="int"/>
+    <!-- Foreign key trade_filter_name to trade_filter.trade_filter_name -->
+    <index primary="true">
+      <on>trade_filter_name</on>
+    </index>
+  </table>
+  
+  <table name="trade_filter_po_role_element" xmlns="">
+    <column name="trade_filter_name" nullable="false" scale="255" type="string"/>
+    <column name="supervisor_id" nullable="false" type="int"/>
+    <column name="po_role_code" nullable="false" scale="2" type="string"/>
+    <!-- Foreign key trade_filter_name to trade_filter_po_role_criterion.trade_filter_name -->
+    <index unique="false">
+      <on>trade_filter_name</on>
+    </index>
+  </table>
+  
+  <table name="trade_filter_uti_criterion" xmlns="">
+    <column name="trade_filter_name" nullable="false" scale="255" type="string"/>
+    <column name="and_combination" nullable="false" default="1" type="int"/>
+    <!-- Foreign key trade_filter_name to trade_filter.trade_filter_name -->
+    <index primary="true">
+      <on>trade_filter_name</on>
+    </index>
+  </table>
+  
+  <table name="trade_filter_uti_element" xmlns="">
+    <column name="trade_filter_name" nullable="false" scale="255" type="string"/>
+    <column name="regulation_id" nullable="false" type="int"/>
+    <column name="uti_type_id" nullable="false" type="int"/>
+    <column name="comparison_operator" nullable="false" type="string" scale="10"/>
+    <column name="comparison_value" nullable="false" scale="50" type="string"/>
+    <!-- Foreign key trade_filter_name to trade_filter_po_role_criterion.trade_filter_name -->
+    <index unique="false">
+      <on>trade_filter_name</on>
+    </index>
+  </table>
+  
+</database>
+

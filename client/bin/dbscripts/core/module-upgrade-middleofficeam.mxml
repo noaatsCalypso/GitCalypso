@@ -1,0 +1,22 @@
+<module name = "middleofficeam" min-version="1.0.0" target-version="16.1.0.75">
+<schema filename="AssetManagementBase.xml" />
+<schema filename="AssetManagementData.xml" />
+<upgrade version="16.0.0.6">
+    <step name="CAL-332143" version="2"/>
+</upgrade>
+<upgrade version="16.0.0.13">
+    <step name="CAL-343485" version="1"/>
+</upgrade>
+<upgrade version="16.1.0.12">
+    <step name="CAL-360026" version="1"/>
+</upgrade>
+<upgrade version="16.1.0.37">
+	<step name="CAL-380148" version="1"/>
+</upgrade>
+<upgrade version="16.1.0.56">
+	<step name="CAL-385655" version="1"/>
+</upgrade>
+<upgrade version="16.1.0.62">
+	<step name="CAL-400864" version="1"/>
+</upgrade>
+</module>

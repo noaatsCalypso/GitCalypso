@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="advice_config" xmlns="">
+		<row cat="DTCC GTR Message (demo)">
+			<column name="advice_config_id">600</column>
+			<column name="po_id">0</column>
+			<column name="event_type">VERIFIED_TRADE</column>
+			<column name="product_type">CommoditySwap2</column>
+			<column name="message_type">DTCCGTR_OUTGOING</column>
+			<column name="send_contact_type">Default</column>
+			<column name="receiver_role">CounterParty</column>
+			<column name="rec_contact_type">Default</column>
+			<column name="default_language">English</column>
+			<column name="address_method">DTCC</column>
+			<column name="gateway">DTCCGTRCommo</column>
+			<column name="always_send">0</column>
+			<column name="template_name">CommoditySwap_NewTrade_RT_PET_Confirm.xml</column>
+			<column name="matching">0</column>
+			<column name="inactive">0</column>
+			<column name="format_type">DTCCGTR</column>
+			<column name="sd_filter">NONE</column>
+			<column name="receiver_id">0</column>
+		</row>
+		<row cat="DTCC GTR Message (demo)">
+			<column name="advice_config_id">601</column>
+			<column name="po_id">0</column>
+			<column name="event_type">VERIFIED_TRADE</column>
+			<column name="product_type">CommodityOTCOption2</column>
+			<column name="message_type">DTCCGTR_OUTGOING</column>
+			<column name="send_contact_type">Default</column>
+			<column name="receiver_role">CounterParty</column>
+			<column name="rec_contact_type">Default</column>
+			<column name="default_language">English</column>
+			<column name="address_method">DTCC</column>
+			<column name="gateway">DTCCGTRCommo</column>
+			<column name="always_send">0</column>
+			<column name="template_name">CommodityOption_NewTrade_RT_PET_Confirm.xml</column>
+			<column name="matching">0</column>
+			<column name="inactive">0</column>
+			<column name="format_type">DTCCGTR</column>
+			<column name="sd_filter">NONE</column>
+			<column name="receiver_id">0</column>
+		</row>
+
+		<row cat="DTCC GTR Message (demo)">
+			<column name="advice_config_id">602</column>
+			<column name="po_id">0</column>
+			<column name="event_type">TERMINATED_TRADE</column>
+			<column name="product_type">CommoditySwap2</column>
+			<column name="message_type">DTCCGTR_OUTGOING</column>
+			<column name="send_contact_type">Default</column>
+			<column name="receiver_role">CounterParty</column>
+			<column name="rec_contact_type">Default</column>
+			<column name="default_language">English</column>
+			<column name="address_method">DTCC</column>
+			<column name="gateway">DTCCGTRCommo</column>
+			<column name="always_send">0</column>
+			<column name="template_name">CommoditySwap_Termination_RT.xml</column>
+			<column name="matching">0</column>
+			<column name="inactive">0</column>
+			<column name="format_type">DTCCGTR</column>
+			<column name="sd_filter">isDTCCGTR_Term_RT</column>
+			<column name="receiver_id">0</column>
+		</row>
+		<row cat="DTCC GTR Message (demo)">
+			<column name="advice_config_id">603</column>
+			<column name="po_id">0</column>
+			<column name="event_type">TERMINATED_TRADE</column>
+			<column name="product_type">CommodityOTCOption2</column>
+			<column name="message_type">DTCCGTR_OUTGOING</column>
+			<column name="send_contact_type">Default</column>
+			<column name="receiver_role">CounterParty</column>
+			<column name="rec_contact_type">Default</column>
+			<column name="default_language">English</column>
+			<column name="address_method">DTCC</column>
+			<column name="gateway">DTCCGTRCommo</column>
+			<column name="always_send">0</column>
+			<column name="template_name">CommodityOption_Termination_RT.xml</column>
+			<column name="matching">0</column>
+			<column name="inactive">0</column>
+			<column name="format_type">DTCCGTR</column>
+			<column name="sd_filter">isDTCCGTR_Term_RT</column>
+			<column name="receiver_id">0</column>
+		</row>
+	</table>
+	<table name="calypso_hierarchy_node_value" xmlns="">
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">166</column>
+			<column name="node_value">CBOT Gold</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">166</column>
+			<column name="node_value">CBOT Silver</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">166</column>
+			<column name="node_value">NYMEX Gold</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">166</column>
+			<column name="node_value">NYMEX Silver</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">166</column>
+			<column name="node_value">NYSE Liffe Gold</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">166</column>
+			<column name="node_value">NYSE Liffe Silver</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">166</column>
+			<column name="node_value">TOCOM Gold</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">167</column>
+			<column name="node_value">LME Aluminium</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">167</column>
+			<column name="node_value">LME Copper</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">167</column>
+			<column name="node_value">LME Lead</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">167</column>
+			<column name="node_value">LME Nickel</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">167</column>
+			<column name="node_value">LME Steel Far East</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">167</column>
+			<column name="node_value">LME Steel Mediterranean</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">167</column>
+			<column name="node_value">LME Tin</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">167</column>
+			<column name="node_value">LME Zinc</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">167</column>
+			<column name="node_value">NYMEX Aluminium</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">167</column>
+			<column name="node_value">NYMEX Copper</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">167</column>
+			<column name="node_value">TOCOM Aluminium</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">173</column>
+			<column name="node_value">Brent Crude Oil</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">173</column>
+			<column name="node_value">ICE Brent</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">173</column>
+			<column name="node_value">ICE Middle East Sour Crude Oil</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">173</column>
+			<column name="node_value">ICE WTI Crude Oil</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">173</column>
+			<column name="node_value">NYMEX Brent</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">173</column>
+			<column name="node_value">TOCOM Crude Oil</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">177</column>
+			<column name="node_value">ICE Gasoil</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">178</column>
+			<column name="node_value">ICE RBOB Gasoline</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">178</column>
+			<column name="node_value">NYMEX Gulf Gasoline</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">178</column>
+			<column name="node_value">NYMEX RBOB Gasoline</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">178</column>
+			<column name="node_value">TOCOM Gasoline</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">178</column>
+			<column name="node_value">Unleaded Gasoline</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">179</column>
+			<column name="node_value">Heating Oil</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">179</column>
+			<column name="node_value">ICE Heating Oil</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">179</column>
+			<column name="node_value">NYMEX Heating Oil</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">181</column>
+			<column name="node_value">TOCOM Kerosene</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">182</column>
+			<column name="node_value">NYMEX Gulf Diesel</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">182</column>
+			<column name="node_value">NYMEX NYH Diesel</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">183</column>
+			<column name="node_value">ICE Natural Gas</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">183</column>
+			<column name="node_value">NYMEX Natural Gas</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">183</column>
+			<column name="node_value">Natural Gas</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">184</column>
+			<column name="node_value">Coal</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">185</column>
+			<column name="node_value">Chicago Heating Degree Days</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">185</column>
+			<column name="node_value">Electricity</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">185</column>
+			<column name="node_value">Houston Cooling Degree Days</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">185</column>
+			<column name="node_value">NYMEX PJM Electricity</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">BMF Corn</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">BMF Cotton</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">Brazilian Soybeans</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">Brazilian Yellow Corn</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">CBOT Corn</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">CBOT Soybean</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">CBOT Soybean Meal</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">CBOT Soybean Oil</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">CBOT Wheat</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">CME Group Oats</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">EURONEXT LIFFE Wheat</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">ICE Cotton No. 2</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">KCBOT Wheat</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">SAFEX Corn</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">SAFEX Soybean</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">SAFEX Sunflower Seed</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">SAFEX Wheat</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">SAFEX White Maize</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">194</column>
+			<column name="node_value">SAFEX Yellow Maize</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">196</column>
+			<column name="node_value">BMF Feeder Cattle</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">196</column>
+			<column name="node_value">BMF Live Cattle</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">196</column>
+			<column name="node_value">CME Feeder Cattle</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">196</column>
+			<column name="node_value">CME Lean Hogs</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">196</column>
+			<column name="node_value">CME Live Cattle</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">198</column>
+			<column name="node_value">Arabica Coffee</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">198</column>
+			<column name="node_value">BMF Robusta Coffee</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">198</column>
+			<column name="node_value">Crystal Sugar</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">198</column>
+			<column name="node_value">EURONEXT LIFFE Raw Sugar</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">198</column>
+			<column name="node_value">EURONEXT LIFFE White Sugar</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">198</column>
+			<column name="node_value">ICE Cocoa</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">198</column>
+			<column name="node_value">ICE Coffee 'C'</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">198</column>
+			<column name="node_value">ICE Robusta Coffee</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">198</column>
+			<column name="node_value">ICE Suggar #11</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">198</column>
+			<column name="node_value">ICE Suggar #14</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">198</column>
+			<column name="node_value">NYMEX Sugar #11</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">202</column>
+			<column name="node_value">ECX Certified Emission Reduction</column>
+		</row>
+		<row cat="DTCC GTR Commodity (demo)">
+			<column name="node_id">211</column>
+			<column name="node_value">Anhydrous Ethanol</column>
+		</row>
+	</table>
+</database>

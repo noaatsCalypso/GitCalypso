@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+      <meta name="language" content="ar-SA" />
+   </head>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+
+<!--calypso>
+if ((|PRODUCT_TYPE| == "IslamicSwap")&& (|RECEIVELEG_TYPE| == "Float"))
+   set TRANSACTION_TYPE = "معدل ربح متغير‎";
+else
+   set TRANSACTION_TYPE = "معدل ربح ثابت";
+</calypso-->
+
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" || |MESSAGE_SUBACTION|== "CANCEL")
+	inline  "Amend and Cancel";
+</calypso-->
+</p>
+
+<p class="header1"> Murabaha |TRANSACTION_TYPE| Asset Sale Confirmation</p>
+
+
+
+
+
+<br>
+<table width="700" cellpadding="0" style="mso-padding-alt:0cm 0cm 0cm 0cm; font-size:12px">
+            <tr>
+               <td width="350" align="left">Dear Customer,</td>
+               <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>عميلنا العزيز</b>
+               </td>
+            </tr>
+<br>
+</table>
+
+<br>
+<p class="indented">
+The Seller hereby sells to the Buyer and the Buyer hereby purchases the Relevant Shari'ah
+Compliant Assets for delivery to the Buyer on the Purchase Date and for payment by the Buyer of the
+Payment Amount on the Payment Date.
+</p>
+<br>
+<table width="700" cellpadding="0" style="mso-padding-alt:0cm 0cm 0cm 0cm; font-size:12px">
+            <tr>
+               <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>البائع يبيع بموجبه على المشتري والمشتري يشتري حسب الشريعة الأصول لتسليمها إلى المشتري في</b>
+				</td>
+              			   <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>تاريخ الشراء ودفع المشتري المبلغ في تاريخ الدفع</b>
+               
+			    </td>
+            </tr>
+<br>
+</table>
+
+
+<br>
+<p class="indented">
+The terms of this Transaction are as follow:
+</p>
+<br>
+<table width="700" cellpadding="0" style="mso-padding-alt:0cm 0cm 0cm 0cm; font-size:12px">
+ <tr>
+               <td width="233">Our Transaction Reference:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|TRADE_ID|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA">رقم المعاملة</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Cost Price:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|SWAP_NOTIONAL|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">سعر الكلفة</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Profit:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|TRANSFER_SETTLEMENTCCY| |TRANSFER_SETTLEMENTAMOUNT|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">العائد </span>
+               </td>
+</tr>
+</table>
+<br>
+<br>
+
+<p class="indented">
+Details of the Relevant Shari'ah Compliant Assets are as follows:
+</p>
+<br>
+<table width="700" cellpadding="0" style="mso-padding-alt:0cm 0cm 0cm 0cm; font-size:12px">
+
+<tr>
+               <td width="233">Assets:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|RECEIVELEG_UNDERLYING_NAME|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">ملك</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Asset Quantity:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|RECEIVELEG_UNDERLYING_QUANTITY|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">كمية الملك</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Asset Price:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|RECEIVELEG_UNDERLYING_PRICE|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">سعر الملك</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Asset Value:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|RECEIVELEG_UNDERLYING_VALUE|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">قيمة  الملك </span>
+               </td>
+</tr>
+</table>
+<br>
+<br>
+
+<p class="indented">
+To accept the Seller's offer to enter into the Murabaha Sale of the |TRANSACTION_TYPE|
+confirmation, the Buyer may telephone or email the Seller at:
+</p>
+<br>
+
+<table width="700" cellpadding="0" style="mso-padding-alt:0cm 0cm 0cm 0cm; font-size:12px">
+
+<tr>
+               <td width="233">Telephone:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|SENDER_PHONE|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">هاتف</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Email:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|SENDER_CODE_EMAIL|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">بريد الكتروني</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Attention:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|SENDER_CONTACT_NAME|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">الى</span>
+               </td>
+</tr>
+
+
+</table>
+
+<br>
+<br>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

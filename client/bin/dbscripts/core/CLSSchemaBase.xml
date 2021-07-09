@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <!--table name="table_comment" xmlns="">
+        <column name="table_name" nullable="false" scale="32" type="string"/>
+        <column name="table_comment" nullable="false" scale="255" type="string"/>
+        <index primary="true">
+            <on>table_name</on>
+        </index>
+    </table>
+    <table name="domain_values" xmlns="">
+        <column name="name" nullable="false" scale="64" type="string"/>
+        <column name="value" nullable="false" scale="64" type="string"/>
+        <column name="description" nullable="true" scale="255" type="string"/>
+        <index primary="true">
+            <on>name</on>
+            <on>value</on>
+        </index>
+    </table-->
+    <table name="cls_schedule" xmlns="">
+        <column name="schedule_id" nullable="false" scale="1" type="int"/>
+        <column name="version_num" nullable="false" scale="1" type="int"/>
+        <column name="clsb_reference" nullable="false" scale="22" type="string"/>
+        <column name="party_id" nullable="false" scale="1" type="int"/>
+        <column name="timestamp" nullable="false" type="timestamp" default="1970-01-01 00:00:00.0"/>
+        <column name="value_date" nullable="false" type="timestamp" default="1970-01-01 00:00:00.0"/>
+        <column name="type" nullable="false" scale="32" type="string"/>
+        <column name="timing" nullable="false" scale="32" type="string"/>
+        <column name="sttlm_session" nullable="false" scale="16" type="string"/>
+        <column name="acknowledged" nullable="false" scale="1" type="int"/>
+        <column name="ack_identifier" nullable="true" scale="32" type="string"/>
+        <column name="xml_message" nullable="true" type="text"/>
+        <index primary="true">
+            <on>schedule_id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>party_id</on>
+            <on>timestamp</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>clsb_reference</on>
+        </index>
+    </table>
+    <table name="cls_schedule_item" xmlns="">
+        <column name="schedule_id" nullable="false" scale="1" type="int"/>
+        <column name="currency" nullable="false" scale="3" type="string"/>
+        <column name="amount" nullable="false" scale="1" type="float"/>
+        <column name="deadline" nullable="true" type="timestamp"/>
+        <column name="type" nullable="false" scale="20" type="string"/>
+        <index primary="false">
+            <on>schedule_id</on>
+        </index>
+    </table>
+    <table name="cls_message" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="version" nullable="false" default="0" scale="1" type="int"/>
+        <column name="message_id" nullable="false" scale="4" type="string"/>
+        <column name="sub_message_id" nullable="false" scale="10" type="string"/>
+        <column name="clsb_reference" nullable="false" scale="22" type="string"/>
+        <column name="settlement_session" nullable="true" scale="16" type="string"/>
+        <column name="event_param" nullable="true" scale="128" type="string"/>
+        <column name="timestamp" nullable="false" type="timestamp" default="1970-01-01 00:00:00.0"/>
+        <column name="content" nullable="false" scale="2000" type="string"/>
+        <column name="needs_ack" nullable="false" default="0" scale="1" type="int"/>
+        <column name="acknowledged" nullable="false" default="0" scale="1" type="int"/>
+        <column name="ack_timestamp" nullable="true" type="timestamp"/>
+        <column name="ack_identifier" nullable="true" scale="32" type="string"/>
+        <column name="recipient" nullable="true" scale="1" type="int"/>
+        <column name="xml_message" nullable="true" scale="4000" type="string"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <!--
+        <index primary="false" unique="true">
+             <on>recipient</on>
+             <on>timestamp</on>
+             <on>sender</on>
+         </index>
+         -->
+    </table>
+    <table name="cls_reco" xmlns="">
+        <column name="schedule_id" nullable="false" scale="1" type="int"/>
+        <column name="currency" nullable="false" scale="3" type="string"/>
+        <column name="reco_time" nullable="false" type="timestamp" default="1970-01-01 00:00:00.0"/>
+        <column name="cls_amount" nullable="true" scale="1" type="float"/>
+        <column name="calypso_amount" nullable="true" scale="1" type="float"/>
+        <index primary="true">
+            <on>schedule_id</on>
+            <on>currency</on>
+        </index>
+    </table>
+    <table name="cls_trade_info" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="version" nullable="false" default="0" scale="1" type="int"/>
+        <column name="trade_id" nullable="false" scale="1" type="int"/>
+        <column name="statement_id" nullable="false" scale="1" type="int"/>
+        <column name="total_splits" nullable="true" default="0" scale="1" type="int"/>
+        <column name="settled_splits" nullable="true" default="0" scale="1" type="int"/>
+        <column name="po_suspended" nullable="false" default="0" scale="1" type="int"/>
+        <column name="cp_suspended" nullable="false" default="0" scale="1" type="int"/>
+
+        <column name="notif_seq_no" nullable="false" scale="22" type="string"/>
+        <column name="clsb_ref" nullable="false" scale="22" type="string"/>
+        <column name="matching_ref" nullable="true" scale="22" type="string"/>
+        <column name="matched_side_ref" nullable="true" scale="22" type="string"/>
+
+        <column name="is_alleged" nullable="false" default="0" scale="1" type="int"/>
+        <column name="status" nullable="false" scale="17" type="string"/>
+        <column name="sub_status" nullable="true" scale="16" type="string"/>
+        <column name="status_subtype" nullable="true" scale="16" type="string"/>
+        <column name="settlement_session" nullable="false" scale="16" type="string"/>
+        <column name="is_split_trade" nullable="false" default="0" scale="1" type="int"/>
+
+        <column name="timestamp" nullable="false" scale="1" type="timestamp" default="1970-01-01 00:00:00.0"/>
+        <column name="valuedate" nullable="false" scale="1" type="timestamp" default="1970-01-01 00:00:00.0"/>
+        <column name="tradedate" nullable="false" scale="1" type="timestamp" default="1970-01-01 00:00:00.0"/>
+
+        <column name="buy_amount" nullable="false" scale="1" type="float"/>
+        <column name="buy_currency" nullable="false" scale="3" type="string"/>
+        <column name="sell_amount" nullable="false" scale="1" type="float"/>
+        <column name="sell_currency" nullable="false" scale="3" type="string"/>
+        <column name="rate" nullable="false" scale="1" type="float"/>
+
+        <column name="originator_ref" nullable="false" scale="16" type="string"/>
+        <column name="common_ref" nullable="true" scale="16" type="string"/>
+        <column name="related_ref" nullable="true" scale="16" type="string"/>
+        <column name="last_instr_ref" nullable="true" scale="16" type="string"/>
+        <column name="cpty_ref" nullable="true" scale="16" type="string"/>
+
+        <column name="originator_sm" nullable="false" scale="11" type="string"/>
+        <column name="originator_name" nullable="true" scale="200" type="string"/>
+        <column name="originator_bic" nullable="true" scale="11" type="string"/>
+        <column name="originator_lei" nullable="true" scale="32" type="string"/>
+        <column name="fund_lei" nullable="true" scale="32" type="string"/>
+        <column name="fund_idr" nullable="true" scale="11" type="string"/>
+        <column name="fund_name" nullable="true" scale="32" type="string"/>
+        <column name="custodian_idr" nullable="true" scale="32" type="string"/>
+
+        <column name="counterparty_sm" nullable="false" scale="11" type="string"/>
+        <column name="counterparty_name" nullable="true" scale="200" type="string"/>
+        <column name="counterparty_bic" nullable="true" scale="11" type="string"/>
+        <column name="cpty_lei" nullable="true" scale="32" type="string"/>
+        <column name="cpty_fund_idr" nullable="true" scale="11" type="string"/>
+        <column name="cpty_fund_name" nullable="true" scale="32" type="string"/>
+        <column name="cpty_custodian_idr" nullable="true" scale="32" type="string"/>
+
+        <column name="unq_tx_idr" nullable="true" scale="64" type="string"/>
+        <column name="prior_unq_tx_idr" nullable="true" scale="64" type="string"/>
+        <column name="cpty_unq_tx_idr" nullable="true" scale="64" type="string"/>
+        <column name="cpty_prior_unq_tx_idr" nullable="true" scale="64" type="string"/>
+
+        <column name="product_type" nullable="true" scale="16" type="string"/>
+        <column name="operation_scope" nullable="true" scale="16" type="string"/>
+        <column name="sender_receiver_info" nullable="true" scale="210" type="string"/>
+        <column name="reporting_jurisdiction" nullable="true" scale="32" type="string"/>
+        <column name="execution_venue" nullable="true" scale="64" type="string"/>
+        <column name="execution_timestamp" nullable="true" scale="1" type="timestamp" default="1970-01-01 00:00:00.0"/>
+        <!-- Legacy -->
+        <column name="third_party_id" nullable="true" scale="64" type="string"/>
+        <column name="third_party_ref" nullable="true" scale="64" type="string"/>
+        <column name="third_party_specific1" nullable="true" scale="64" type="string"/>
+        <column name="third_party_specific2" nullable="true" scale="64" type="string"/>
+        <column name="third_party_specific3" nullable="true" scale="64" type="string"/>
+        <column name="cls_type" nullable="true" scale="64" type="string" default="House"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>clsb_ref</on>
+        </index>
+    </table>
+    <table name="cls_non_repudiation" xmlns="">
+        <column name="snf_ref" nullable="false" type="string" scale="128"/>
+        <column name="snf_session" nullable="false" type="string" scale="128"/>
+        <column name="snf_outout_seq" nullable="false" type="int" scale="1"/>
+        <column name="snf_delivery_time" nullable="false" type="timestamp"/>
+        <column name="retrieved" nullable="false" type="int" scale="1" default="0"/>
+        <column name="doc_type" nullable="true" type="string" scale="16"/>
+        <column name="nr_message" nullable="true" type="binary"/>
+        <index primary="true">
+            <on>snf_ref</on>
+            <on>snf_session</on>
+            <on>snf_outout_seq</on>
+            <on>snf_delivery_time</on>
+        </index>
+    </table>
+    <table name="cls_account_notification" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="version" nullable="false" default="0" scale="1" type="int"/>
+        <column name="trade_id" nullable="false" default="0" scale="1" type="int"/>
+        <column name="clsb_reference" nullable="false" scale="35" type="string"/>
+        <column name="value_date" nullable="false" scale="1" type="timestamp" default="1970-01-01 00:00:00.0"/>
+        <column name="booking_date" nullable="false" scale="1" type="timestamp" default="1970-01-01 00:00:00.0"/>
+        <column name="currency" nullable="false" scale="3" type="string"/>
+        <column name="amount" nullable="false" scale="1" type="float"/>
+        <column name="direction" nullable="false" scale="4" type="string"/>
+        <column name="movement_ref" nullable="false" scale="35" type="string"/>
+        <column name="owner" nullable="true" scale="140" type="string"/>
+        <column name="central_bank_ref" nullable="true" scale="35" type="string"/>
+        <column name="ordering_bank_ref" nullable="true" scale="35" type="string"/>
+        <column name="xml_message" nullable="true" scale="4000" type="string"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+</database>

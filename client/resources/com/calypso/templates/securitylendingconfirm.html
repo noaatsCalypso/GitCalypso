@@ -1,0 +1,62 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+
+<p>We refer to our telephone conversation and hereby confirm agreement to a Securities Lending Transaction between us which shall be subject to |REPORT#Agreement Type|/|REPORT#Ref Number|.<br>
+The details of the transactions are as follows: <br> </p>
+
+
+<p><b>Trade details:</b> <br>
+
+<table>
+ <tr>
+  <td>Trade Type</td>: </td><td>REPORT#Type| </td> </tr>
+ <tr>
+  <td>Trade Date</td><td>:</td><td>TRADE_DATE| </td> </tr>
+ <tr>
+  <td>Lender</td><td>:</td><td>TRADE_SELLER_NAME| </td> </tr>
+ <tr>
+  <td>Borrower</td><td>:</td><td>TRADE_BUYER_NAME| </td> </tr>
+ <tr>
+  <td>Trade Value Date</td><td>:</td><td>REPORT#Start Date| </td> </tr>
+ <tr>
+  <td>End Date</td><td>:</td><td>REPORT#End Date| </td> </tr>
+ <tr>
+  <td>Securities</td><td>:</td><td>REPORT#Underlying.Security|</td> </tr>
+ <tr>
+  <td>Security Code</td><td>:</td><td>REPORT#Underlying.Product Code.ISIN|</td> </tr>
+ <tr>
+  <td>Amount/Nominal of Securities</td><td>:</td><td>REPORT#Current Nominal|</td> <tr>
+  <td>Price (on 100%)</td><td>:</td><td>REPORT#Sec. Price (Initial)|</td> </tr>
+  <td>Contractual/Fee Currency</td><td>:</td><td>REPORT#Sec. Price (Current)|</td> </tr>
+  <td>Rate</td><td>:</td><td>REPORT#Current Fee Rate|</td> </tr>
+  <td>Minimum Fee</td><td>:</td><td>REPORT#Minimum Fee|</td> </tr>
+  <td>Billing Mode</td><td>:</td><td>REPORT#Fee Billing Type|</td> </tr>
+  <td>Dividend Requirement</td><td>:</td><td>REPORT#Div Rqmt|</td> </tr>
+</table>
+
+<p class=header2>Settlement Instructions are as follows:</p>
+<!--calypso>
+iterator("TransferRules")
+	inline "<table  width='100%'>
+    <tr><th width='30%'>|SETTLEMENT_ACTION|</th><th width='68%'>&nbsp;</th></tr>
+	<tr><td width='30%'>To:</td><td>|SETTLEMENT_TO|</td></tr>
+    <tr><td>|SETTLEMENT_ROUTING|</td><td>|SETTLEMENT_METHOD|</td></tr>
+	<tr><td>Favor of:</td><td>|SETTLEMENT_FAVOR_OF|</td></tr>
+	<tr><td>Account Number:</td><td>|SETTLEMENT_ACCOUNT_NUMBER|</td></tr>
+</table>";
+</calypso-->
+
+<p>Thank you very much. Please refer to our trade id number&nbsp; |TRADE_ID| in your correspondence concerning this trade. <br></p>
+
+<p>Regards, </p>
+<p>|SENDER_CONTACT_NAME| <br> |SENDER_TITLE| </p>
+
+<p>Security Finance Division </p>
+<p>|SENDER_FULL_NAME|</p>
+
+</div>
+</body>
+</html>

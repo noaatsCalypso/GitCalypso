@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+  
+  <logger name="ch.qos.logback" additivity="false">
+	   	<level value="error"/>
+  </logger>
+  <logger name="org.springframework" additivity="false">
+	   	<level value="error"/>
+	</logger>
+	
+</configuration>

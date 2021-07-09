@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="domain_values" xmlns="">
+         <row cat="SWIFT MX SPB Interface">
+            <column name="name">domainName</column>
+            <column name="value">JDHEADER</column>
+            <column name="description">Domain to manage all the JD Header</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">domainName</column>
+            <column name="value">SPBCancellation</column>
+            <column name="description">Domain to manage all the SPB template in case of Cancellation</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">domainName</column>
+            <column name="value">keyword.FXReasonCode</column>
+            <column name="description">Domain to manage all possible values for the keyword FXReasonCode</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">JDHEADER</column>
+            <column name="value">CD_LEGADO</column>
+            <column name="description">CD_LEGADO_value</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">JDHEADER</column>
+            <column name="value">CD_STATUS</column>
+            <column name="description">D</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">JDHEADER</column>
+            <column name="value">TP_MANUT</column>
+            <column name="description">I</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">JDHEADER</column>
+            <column name="value">FL_DEB_CRED</column>
+            <column name="description"></column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">leAttributeType</column>
+            <column name="value">CNPJ</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">gateway</column>
+           <column name="value">JD</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">formatType</column>
+           <column name="value">SPB</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">domainName</column>
+           <column name="value">SPB.Templates</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">SPB.Templates</column>
+           <column name="value">SPB.selector</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">SPB.Templates</column>
+            <column name="value">STR0007.xml</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">SPB.Templates</column>
+            <column name="value">JD.STR0007.xml</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">SPB.Templates</column>
+            <column name="value">STR0004.xml</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">SPB.Templates</column>
+            <column name="value">JD.STR0004.xml</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">addressMethod</column>
+           <column name="value">CNPJ</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">xmlFormatType</column>
+            <column name="value">SPB</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0005R1</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0009R1</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0009R2</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0010R1</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0010R2</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0012R1</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0013R1</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0005R2</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0022R2</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0028R1</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0030R1</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0023R1</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0024R1</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0021R1</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0025R2</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0026R1</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0027R1</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0032R1</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0031R2</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">CAM0034R1</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">incomingType</column>
+            <column name="value">UNKNOWN_SPB</column>
+            <column name="description">SPB_INCOMING</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">tradeKeyword</column>
+            <column name="value">NumSeqEdic</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">tradeKeyword</column>
+            <column name="value">ForceClientBrokerRegistration</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CancellationReason</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CodFatoNatu</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">tradeKeyword</column>
+            <column name="value">IndrAvalNatu</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CodPagdr_RecbdrExtrNatu</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CodGrpNatu</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">tradeKeyword</column>
+            <column name="value">FXReasonCode</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">tradeKeyword</column>
+            <column name="value">LocalProductType</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">tradeKeyword</column>
+            <column name="value">TpLiquidRDE</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CodCadempPagdr_RecbdrExtr</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">tradeKeyword</column>
+            <column name="value">VlrMoedaDenRDE</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">keyword.FXReasonCode</column>
+            <column name="value">Exportacao</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">keyword.FXReasonCode</column>
+            <column name="value">Importacao</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">keyword.FXReasonCode</column>
+            <column name="value">Bancario</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">keyword.FXReasonCode</column>
+            <column name="value">Arbitragem</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">keyword.FXReasonCode</column>
+            <column name="value">Financeiro</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">MsgAttributes</column>
+            <column name="value">RegOpCaml</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">MsgAttributes</column>
+            <column name="value">RegOpCaml2</column>
+        </row>
+
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">workflowRuleMessage</column>
+            <column name="value">SPBTradeUpdate</column>
+        </row>
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">workflowRuleMessage</column>
+            <column name="value">HandleSPBError</column>
+        </row>
+
+        <row cat="SWIFT MX SPB Interface">
+            <column name="name">contactType</column>
+            <column name="value">CNPJ</column>
+        </row>
+
+    </table>
+
+<!--
+    <table name="advice_config" xmlns="">
+    <row cat="SBP Interface Demo">
+        <column name="advice_config_id">300220001</column>
+        <column name="po_id">0</column>
+        <column name="event_type">VERIFIED_TRADE</column>
+        <column name="product_type">FX</column>
+        <column name="message_type">SPB</column>
+        <column name="send_contact_type">Default</column>
+        <column name="receiver_role">Agent</column>
+        <column name="rec_contact_type">Default</column>
+        <column name="default_language">English</column>
+        <column name="address_method">CNPJ</column>
+        <column name="gateway">JD</column>
+        <column name="always_send">0</column>
+        <column name="template_name">SPB.selector</column>
+        <column name="matching">0</column>
+        <column name="inactive">0</column>
+        <column name="format_type">SPB</column>
+        <column name="sd_filter">NONE</column>
+        <column name="receiver_id">0</column>
+    </row>
+    </table>
+-->
+</database>

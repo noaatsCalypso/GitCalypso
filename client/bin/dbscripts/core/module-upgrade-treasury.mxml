@@ -1,0 +1,9 @@
+<module name = "treasury" min-version="1.0.0" target-version="16.1.0.75">
+<schema filename="TreasurySchemaBase.xml" />
+<schema filename="TreasurySchemaData.xml" />
+
+<upgrade version="16.1.0.049">
+	<step name="CAL-389619" version="1"/>
+</upgrade>
+
+</module>

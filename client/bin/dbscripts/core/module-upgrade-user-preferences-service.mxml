@@ -1,0 +1,16 @@
+<module name="user-preferences-service" min-version="1.0.0" target-version="1.5.16">
+    <schema filename="UserPreferencesServiceSchemaBase.xml" />
+
+<upgrade version="1.5.10">
+	<step name="MFC-1357" version="1"/>
+</upgrade>
+
+<upgrade version="1.5.13">
+	<step name="MFC-1434" version="1"/>
+</upgrade>
+
+<upgrade version="1.5.16">
+	<step name="MFC-1434" version="2"/>
+</upgrade>
+
+</module>

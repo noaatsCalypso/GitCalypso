@@ -1,0 +1,45 @@
+#
+#  JMS properties file
+#
+# monitor for the queue channel listed above, in terms of second
+monitor.frequency = 60
+
+jms.queue.hostname=10.1.0.110
+jms.queue.port=51414
+jms.queue.connectionUserName=mq_admin
+jms.queue.connectionPassword=dcRdu9F+
+jms.queue.transportType=MQJMS_TP_CLIENT_MQ_TCPIP
+jms.sender.queue.targetClient=MQJMS_CLIENT_NONJMS_MQ
+jms.queue.queueManager=QM.CME.CALYPSO.INCOMING
+jms.queue.channel=SYSTEM.ADMIN.SVRCONN
+
+#
+#  JMSQueueIEAdaptor properties
+#
+#    Note: if queue.ackType is not set to auto then 
+#          failed messages are not acknowledged to JMS and
+#          will be reconsumed when the engine restarts
+#  
+#  Queue-specific properties are prefixed by the queue name
+#
+#input.queue.name=LQUEUE.CME.CALYPSO
+#input.queue.name=CALYPSO.INTERNAL.IRS.DEV
+#CALYPSO.INTERNAL.IRS.DEV.queue.ackType=auto
+#CALYPSO.INTERNAL.IRS.DEV.queue.persist=false
+#CALYPSO.INTERNAL.IRS.DEV.queue.transacted=false
+
+
+input.queue.name=CDCS.CALYPSO4Q0.TRADOUT.FX
+LQUEUE.CME.CALYPSO.FUTURES.EDUARDO.queue.ackType=auto
+LQUEUE.CME.CALYPSO.FUTURES.EDUARDO.queue.persist=false
+LQUEUE.CME.CALYPSO.FUTURES.EDUARDO.queue.transacted=false
+
+JQUEUE.CALYPSO.CME.queue.ackType=auto
+JQUEUE.CALYPSO.CME.queue.persist=false
+JQUEUE.CALYPSO.CME.queue.transacted=false
+#orig...
+#output.queue.name=LQUEUE.CALYPSO.CME
+output.queue.name=WHATEVER
+WHATEVER.queue.ackType=auto
+WHATEVER.queue.persist=false
+WHATEVER.queue.transacted=false

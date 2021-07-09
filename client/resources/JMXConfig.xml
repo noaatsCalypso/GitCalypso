@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+     	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+  		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+  		
+	<bean id="mbeanServer" class="org.springframework.jmx.support.MBeanServerFactoryBean">
+   		<property name="locateExistingServerIfPossible" value="true" />
+   		<property name="registerWithFactory" value="true" />
+   	</bean>
+   	
+   	<bean id="mBeanExporter" class="com.calypso.infra.management.jmx.MBeanExporter" lazy-init="false">
+   		<property name="server" ref="mbeanServer" />
+   		<property name="namingStrategy">
+   			<bean class="com.calypso.infra.management.jmx.DefaultNamingStrategy" >
+   				<property name="namingQualifier" ref="namingQualifier" />
+   				<property name="instanceName" value="${INSTANCE_NAME}" />
+   				<property name="appName" value="${APPLICATION_NAME}" />
+   				<property name="envName" value="${ENV}" />
+   			</bean>
+   		</property>
+   		<property name="useJMX" value="${com.calypso.management.jmxenabled:false}" />
+	 	<!-- <property name="registrationBehaviorName" value="REGISTRATION_REPLACE_EXISTING"/> -->
+	 	<property name="baseName" value="com.calypso" />
+	 	
+	</bean>
+	
+	<bean id="mBeanBase" abstract="true">
+		<property name="mbeanExporter" ref="mBeanExporter" />
+	</bean>
+
+	<bean class="com.calypso.infra.management.impl.ApplicationLifecycleMBeanImpl" parent="mBeanBase"/>
+
+	 <!--
+	 	Using MXBean help expose data in an open format right now this feature needs additional support to be able to set 
+	 	JMX attributes like currencyTimeLimit, logfile persistence etc. 
+	 -->
+        
+	<!--
+		-Dcom.sun.management.jmxremote.port=7713 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote
+		
+		service:jmx:rmi:///jndi/rmi://localhost:7713/jmxrmi 
+ 	-->    
+ 	
+</beans>

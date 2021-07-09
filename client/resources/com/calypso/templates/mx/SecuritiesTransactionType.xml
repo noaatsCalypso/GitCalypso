@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<template>
+    <contents>
+        <element name="SctiesTxTp">
+            <contents>
+                <element name="Cd">
+                    <contents>
+                        <report>
+                            <expression>getTypeOfSettlementIndicator()</expression>
+                        </report>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

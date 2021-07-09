@@ -1,0 +1,7 @@
+<module name = "bloomberg" min-version="1.0.0" target-version="7.0.0">
+    <schema filename="BloombergSchemaBase.xml" />
+    <schema filename="BloombergSchemaData.xml" />
+	<upgrade version="6.0.0">
+		<step name="CAL-270564" version="1"/>
+	</upgrade>
+</module>

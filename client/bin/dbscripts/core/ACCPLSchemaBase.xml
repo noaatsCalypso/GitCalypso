@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+<table name="posting_position" xmlns="">
+		<column name="posting_position_id" nullable="false" scale="1" type="int"/>
+        <column name="trade_id" nullable="false" scale="1" type="int" default="0"/>
+        <column name="second_trade_id" nullable="false" scale="1" type="int" default="0"/>
+        <column name="posting_type" nullable="false" scale="8" type="string" default="trade"/>
+        <column name="book_id" nullable="false" scale="1" type="int" default="0"/>
+		<column name="matching_criteria_id" nullable="false" scale="1" type="int"/>
+	    <column name="pl_config_id" nullable="false" scale="1" type="int" default="0"/>
+	    <column name="event_type" nullable="false" scale="64" type="string"/>
+	    <column name="amount" nullable="false" scale="1" type="float"/>
+	    <column name="currency" nullable="false" scale="8" type="string"/>
+	    <column name="original_currency" nullable="false" scale="8" type="string"/>
+	    <column name="product_type" nullable="false" scale="64" type="string"/>
+	    <column name="val_date" nullable="true" type="timestamp"/>
+	    <column name="date_type" nullable="true" scale="32" type="string" default="EffectiveDate"/>
+	    <column name="account_id" nullable="true" scale="1" type="int"/>
+	    <column name="account_name" nullable="false" scale="64" type="string"/>
+	    <column name="opl_measure" nullable="false" scale="64" type="string"/>
+	    <column name="pl_position_id" nullable="false" scale="1" type="float"/>
+		<index primary="true">
+            <on>posting_position_id</on>
+        </index>
+        <index primary="false">
+            <on>matching_criteria_id</on>
+        </index>
+    </table>
+    
+    
+    <table name="matching_criteria" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int"/>
+        <column name="config_id" nullable="false" scale="1" type="int"/>
+        <column name="product_type" nullable="false" scale="64" type="string" />
+       	<column name="accounting_book_id" nullable="false" scale="1" type="int" />
+		<column name="account_id" nullable="false" scale="1" type="int"/>
+	    <column name="event" nullable="false" scale="64" type="string"/>
+	    <column name="currency" nullable="false" scale="64" type="string" default="ANY"/>
+	    <column name="opl_category" nullable="false" scale="64" type="string"/>
+	    <column default="0" name="version_num" nullable="false" scale="1" type="int"/>
+	   <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>config_id</on>
+            <on>product_type</on>
+            <on>accounting_book_id</on>
+            <on>account_id</on>
+            <on>event</on>
+            <on>currency</on>
+        </index>
+    </table>
+    
+    <table name="pl_acc_matching_config" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int"/>
+        <!--  <column name="name" nullable="false" scale="64" type="string"/>-->
+        <column name="opl_config_id" nullable="false" scale="1" type="int"/>
+        <!--  <column name="opl_config_name" nullable="false" scale="64" type="string" />-->
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <!--  <index primary="false" unique="true">
+        	<on>name</on>
+        </index>-->
+    </table>
+    
+    
+    
+   <table name="posting_processing_info" xmlns="">
+    	<column name="external_pk" nullable="false" scale="1" type="int"/>
+    	<column name="pl_position_id" nullable="false" scale="1" type="int" default="0"/>
+    	<column name="is_credit" nullable="false" scale="1" type="int"/>
+    	<column name="is_deleted" nullable="false" scale="1" type="int" default="0"/>
+    	<index primary="true">
+            <on>external_pk</on>
+            <on>is_credit</on>
+            <on>is_deleted</on>
+        </index>
+    </table>
+</database>

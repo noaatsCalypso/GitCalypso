@@ -1,0 +1,15 @@
+<BONamedQueries>
+    <BONamedQuery name="LoadOutgoingMessageIdentifier" paramCount="0">
+        <description>Prepared Statement Query to load Outgoing Message Object Identifier Configuration</description>
+        <idColumn>outgoing_message_identifier.config_id</idColumn>
+        <from>outgoing_message_identifier</from>
+        <where><![CDATA[1=1]]></where>
+        <OptionalCondition name="template" paramCount="1">
+            <condition><![CDATA[outgoing_message_identifier.template=?]]></condition>
+        </OptionalCondition>
+        <OptionalCondition name="method" paramCount="1">
+            <condition><![CDATA[outgoing_message_identifier.method=?]]></condition>
+        </OptionalCondition>
+        <orderBy>outgoing_message_identifier.config_id</orderBy>
+    </BONamedQuery>
+</BONamedQueries>

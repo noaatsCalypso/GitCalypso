@@ -1,0 +1,146 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+<h1>This template is deprecated, please consider using derivatives.html instead.</h1>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The purpose of this communication is to confirm the terms and conditions of the transaction (the "Transaction") entered into between |SENDER_FULL_NAME| and |RECEIVER_FULL_NAME| on the trade date specified below. This communication constitutes a "Confirmation" as referred to in the ISDA Master Agreement specified below. </p>
+<OL>
+
+<LI>This transaction is subject to the definitions and conditions contained in the 1991 ISDA Definitions, as published by the International Swaps and Derivatives Association, Inc. (the "Definitions"). In the event of any inconsistency between those definitions and the provisions and this Confirmation, this Confirmation will govern.This Confirmation supplements, forms part of, and is subject to, the |MASTER_AGREEMENT| Master Agreement dated as of |MASTER_AG_DATE|, as amended and supplemented from time to time (the "Agreement"), between you and us. All provisions contained in the Agreement govern this Confirmation except as expressly modified below. </LI>
+<LI>The terms of the particular Transaction to which this Confirmation relates are as follows: </LI></OL>
+</FONT>
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=560>
+<TR><TD WIDTH="19%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>Notional:</FONT></TD>
+<TD WIDTH="81%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>|PRODUCT_CURRENCY| |PRODUCT_PRINCIPAL|</FONT></TD>
+</TR>
+<TR><TD WIDTH="19%" VALIGN="MIDDLE">
+<p><FONT SIZE=2>Trade Date:</FONT></TD>
+<TD WIDTH="81%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>|TRADE_DATE|</FONT></TD>
+</TR>
+<TR><TD WIDTH="19%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>Effective Date:</FONT></TD>
+<TD WIDTH="81%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>|SETTLE_DATE|</FONT></TD>
+</TR>
+<TR><TD WIDTH="19%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>Termination Date:</FONT></TD>
+<TD WIDTH="81%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>|PRODUCT_MATURITYDATE|, subject to adjustment in accordance with the Modified Following Business Day Convention.</FONT></TD>
+</TR>
+</TABLE>
+
+<b><u><FONT SIZE=2><p>Fixed Amounts:</p></u></b></FONT>
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=623>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<p><FONT SIZE=2>Fixed Rate Payer:</FONT></TD>
+<TD WIDTH="80%" VALIGN="BOTTOM">
+<FONT SIZE=2><p>|FIX_PAYER_CODE|</FONT></TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<FONT SIZE=2><p>Fixed Rate Payer Payment Dates:</FONT></TD>
+<TD WIDTH="80%" VALIGN="BOTTOM">
+<FONT SIZE=2><p>|FRA_PAYMENT_DATE| subject to adjustment in accordance with the |FRA_CPN_DATE_ROLL| Business Day convention.</FONT></TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<FONT SIZE=2><p>Fixed Rate:</FONT></TD>
+<TD WIDTH="80%" VALIGN="BOTTOM">
+<FONT SIZE=2><p>|FRA_FIXED_RATE| %</FONT></TD>
+</TR>
+<TR><TD WIDTH="20%" VALIGN="TOP">
+<FONT SIZE=2><p>Fixed Rate Day Count Fraction:</FONT></TD>
+<TD WIDTH="80%" VALIGN="BOTTOM">
+<FONT SIZE=2><p>|FRA_DAY_COUNT|</FONT></TD>
+</TR>
+</TABLE>
+
+<FONT SIZE=2><p>|ADDITIONAL_FIXED_AMOUNT|</p>
+<p><!---End Fixed Swap Leg Table--><b><u>Floating Amounts:</u></b></p></FONT>
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=622>
+<TR><TD WIDTH="22%" VALIGN="TOP">
+<p><FONT SIZE=2>Floating Rate Payer:</FONT></TD>
+<TD WIDTH="78%" VALIGN="BOTTOM">
+<FONT SIZE=2><p>|FLT_PAYER_CODE|</FONT></TD>
+</TR>
+<TR><TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><p>Floating Rate Payer Payment Dates:</FONT></TD>
+<TD WIDTH="78%" VALIGN="BOTTOM">
+<FONT SIZE=2><p>|FRA_PAYMENT_DATE| subject to adjustment in accordance with the |FRA_CPN_DATE_ROLL| Business Day convention.</FONT></TD>
+</TR>
+<TR><TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><p>Floating Rate Option:</FONT></TD>
+<TD WIDTH="78%" VALIGN="BOTTOM">
+<FONT SIZE=2><p>|FLT_RATE_INDEX| </FONT></TD>
+</TR>
+<TR><TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><p>Designated Maturity</FONT></TD>
+<TD WIDTH="78%" VALIGN="BOTTOM">
+<FONT SIZE=2><p>|FLT_INDEX_TENOR|</FONT></TD>
+</TR>
+<TR><TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><p>Spread:</FONT></TD>
+<TD WIDTH="78%" VALIGN="BOTTOM">
+<FONT SIZE=2><p>None.</FONT></TD>
+</TR>
+<TR><TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><p>Floating Rate Day Count Fraction:</FONT></TD>
+<TD WIDTH="78%" VALIGN="BOTTOM">
+<FONT SIZE=2><p>|FLT_DAY_COUNT|</FONT></TD>
+</TR>
+<TR><TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><p>Floating Rate Determined:</FONT></TD>
+<TD WIDTH="78%" VALIGN="BOTTOM">
+<FONT SIZE=2><p>|FRA_FIXING_DATE|</FONT></TD>
+</TR>
+<TR><TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><p>Compounding:</FONT></TD>
+<TD WIDTH="78%" VALIGN="BOTTOM">
+<FONT SIZE=2><p>Inapplicable.</FONT></TD>
+</TR>
+</TABLE>
+
+<p><!---End Floating Swap Leg Table--><!---BizDays Table--></p>
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=624>
+<TR><TD WIDTH="23%" VALIGN="MIDDLE">
+<p><FONT SIZE=2>Business Days:</FONT></TD>
+<TD WIDTH="77%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>|FRA_CPN_HOL|</FONT></TD>
+</TR>
+<TR><TD WIDTH="23%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>Calculation Agent:</FONT></TD>
+<TD WIDTH="77%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>|SENDER_CODE|</FONT></TD>
+</TR>
+</TABLE>
+
+<p><!---End BizDays Table--><FONT SIZE=2>3. Account Details </p></FONT>
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=624>
+<TR><TD WIDTH="38%" VALIGN="MIDDLE">
+<p><FONT SIZE=2>Payment to |SENDER_CODE| :</FONT></TD>
+<TD WIDTH="62%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>|PO_INSTRUCTIONS|</FONT></TD>
+</TR>
+<TR><TD WIDTH="38%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>Payment to |RECEIVER_CODE| :</FONT></TD>
+<TD WIDTH="62%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>|COUNTERPARTY_INSTRUCTIONS|</FONT></TD>
+</TR>
+</TABLE>
+
+<p>&nbsp; </p>
+<p><!---End Account Details Table--><FONT SIZE=2>Please sign and return this Confirmation at your earliest convenience. Because of the importance of confirming transactions promptly and accurately, we regret that any Confirmations which are not signed and returned within ten days may result in a delay in payments. </p>
+<p><br />
+Please confirm that the foregoing correctly sets forth the terms of our agreement by executing this Confirmation and returning it to us.</p>
+</FONT>
+
+
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+  	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd">
+  	
+
+	<bean id="middleTierDataSourceMBean" class="com.calypso.infra.management.impl.BasicDataSourceMBeanImpl" init-method="init" parent="mBeanBase">
+		<property name="dataSource" ref="pooledDataSource" />
+		<property name="name" value="Middle Tier DataSource" />
+	</bean>
+
+	<bean id="pooledDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="username" value="${MiddleTierDBUSER}" />
+		<!-- <property name="password" value="${MiddleTierDBPASSWORD}" /> -->
+		<property name="url" value="${MiddleTierDBURL}" />
+		<property name="driverClassName" value="${MiddleTierDRIVER}" />
+		<property name="initialSize" value="${MiddleTierJDBC_CON_MIN}" />
+		<property name="maxActive" value="${MiddleTierJDBC_CON_MAX}" />
+		<property name="minIdle" value="${MiddleTierJDBC_CON_MIN_IDLE}" />
+		<property name="maxIdle" value="${MiddleTierJDBC_CON_MAX_IDLE}" />
+		<property name="poolPreparedStatements" value="false" />
+		<property name="defaultAutoCommit" value="false" />
+		<property name="testOnBorrow" value="true" />
+		<property name="testOnReturn" value="true" />
+		<property name="testWhileIdle" value="true" />
+		<property name="defaultTransactionIsolation" value="2" />
+		<property name="timeBetweenEvictionRunsMillis" value="10000" />
+		<property name="maxWait" value="${MiddleTierJDBC_MAX_WAIT}" />
+	</bean>
+
+	<bean id="monitoringDataSource" class="com.calypso.tk.core.sql.CalypsoMonitoringDataSource">
+		<constructor-arg ref="pooledDataSource" />
+	</bean>
+
+<!-- 
+	<bean id="dataSource" class="com.calypso.tk.core.sql.SessionAwareDataSource">
+		<constructor-arg ref="monitoringDataSource" />
+		<constructor-arg ref="dbSessionHandler" />
+	</bean>
+	
+	 -->
+	
+	 
+</beans>

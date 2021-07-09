@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	 <table name="domain_values" xmlns="">
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface types</column>
+			<column name="value">FpML</column>
+			<column name="name">CalypsoMapping.Interfaces</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Domain for Interface types</column>
+			<column name="value">FpMLCalypsoMapping.Types</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">AveragingMethod</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">DateRoll</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">Holidays</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">Frequency</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">RateIndex</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">Fees</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">DayCount</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">Translator</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">FXReset</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">Location</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">RateSource</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">IndexTenor</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>			
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">DefaultIndexTenor</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">InterestCompoundingMethod</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">DiscountingMethod</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">TimeZone</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="description"></column>
+			<column name="value">SettlementMatrix</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="description"></column>
+			<column name="value">Seniority</column>
+			<column name="name">FpMLCalypsoMapping.Types</column>
+		</row>
+		<row cat="fpml">
+			<column name="name">FpMLCalypsoMapping.Types</column>
+			<column name="value">ProductType</column>
+			<column name="description"/>
+		</row>
+		<row cat="fpml">
+			<column name="name">FpMLCalypsoMapping.Types</column>
+			<column name="value">OISIndex</column>
+			<column name="description"/>
+		</row>
+		<row cat="fpml">
+			<column name="description">Keyword will store bond sec code type</column>
+			<column name="value">ConditionPrecedentBondCodeType</column>
+			<column name="name">tradeKeyword</column>
+		</row>	
+		<row cat="fpml">
+			<column name="description">Keyword will store bond sec code value</column>
+			<column name="value">ConditionPrecedentBondCodeValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Keyword will store bond maturity date</column>
+			<column name="value">ConditionPrecedentBondMaturityDate</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Keyword will store bond required flag</column>
+			<column name="value">ConditionPrecedentBond</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Keyword will store Discrepancy Clause flag</column>
+			<column name="value">DiscrepancyClause</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fpml">
+			<column name="description">Keyword will store Follow Up Confirmation flag</column>
+			<column name="value">FollowUpConfirmation</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+	</table>
+	
+	<table name="calypso_mapping" xmlns="">
+	
+		<!--Default DayCount mappings -->
+		<row cat="fpml">
+			<column name="calypso_value">1/1</column>
+			<column name="interface_value">1/1</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">30E*/360</column>
+			<column name="interface_value">30E/360.ISDA</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">ACT/365</column>
+			<column name="interface_value">ACT/365.FIXED</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">ACT/365</column>
+			<column name="interface_value">ACT/365.ISDA</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">ACT/365I</column>
+			<column name="interface_value">ACT/365L</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">ACT/ACT29</column>
+			<column name="interface_value">ACT/ACT.AFB</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">ACTB/ACTB</column>
+			<column name="interface_value">ACT/ACT.ICMA</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">ACT/ACT</column>
+			<column name="interface_value">ACT/ACT.ISDA</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">BU/252</column>
+			<column name="interface_value">BUS/252</column>
+			<column name="type_name">DayCount</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+
+		<!--Default DateRoll mappings -->
+		<row cat="fpml">
+			<column name="calypso_value">MOD_FOLLOW</column>
+			<column name="interface_value">MODFOLLOWING</column>
+			<column name="type_name">DateRoll</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">MOD_PRECED</column>
+			<column name="interface_value">MODPRECEDING</column>
+			<column name="type_name">DateRoll</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">NO_CHANGE</column>
+			<column name="interface_value">NONE</column>
+			<column name="type_name">DateRoll</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+
+		<!--Default Holidays mappings -->
+		<row cat="fpml">
+			<column name="calypso_value">NYC</column>
+			<column name="interface_value">USNY</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">EUR</column>
+			<column name="interface_value">EUTA</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">LON</column>
+			<column name="interface_value">GBLO</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">SYD</column>
+			<column name="interface_value">AUSY</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">TOK</column>
+			<column name="interface_value">JPTO</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">IND</column>
+			<column name="interface_value">INMU</column>
+			<column name="type_name">Holidays</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">1</column>
+		</row>
+
+		<!--Default Frequency mappings -->
+		<row cat="fpml">
+			<column name="calypso_value">MTH</column>
+			<column name="interface_value">1M</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">ZC</column>
+			<column name="interface_value">1T</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">DLY</column>
+			<column name="interface_value">1D</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">QTR</column>
+			<column name="interface_value">3M</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">SA</column>
+			<column name="interface_value">6M</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">PA</column>
+			<column name="interface_value">12M</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">PA</column>
+			<column name="interface_value">1Y</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">NON</column>
+			<column name="interface_value">NON</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<!--Default RateSource mappings -->
+		<row cat="fpml">
+			<column name="calypso_value">ISDA_SOURCE</column>
+			<column name="interface_value">ISDA</column>
+			<column name="type_name">RateSource</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		
+		<!--Default IndexTenor mappings -->
+		<row cat="fpml">
+			<column name="calypso_value">1Y</column>
+			<column name="interface_value">12M</column>
+			<column name="type_name">IndexTenor</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">4W</column>
+			<column name="interface_value">28D</column>
+			<column name="type_name">IndexTenor</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>		
+		
+		<!--Default Translator mappings -->
+		<!-- <row cat="fpml">
+			<column name="calypso_value"></column>
+			<column name="interface_value">OriginalPayStartDateKeyword</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value"></column>
+			<column name="interface_value">OriginalRecStartDateKeyword</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row> -->
+		<row cat="fpml">
+			<column name="calypso_value"></column>
+			<column name="interface_value">PartyIdLEAttribute</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value"></column>
+			<column name="interface_value">PartyIdScheme</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value"></column>
+			<column name="interface_value">TradeIdScheme</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value"></column>
+			<column name="interface_value">RefBankIdLEAttribute</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value"></column>
+			<column name="interface_value">MessageIdScheme</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value"></column>
+			<column name="interface_value">CorrelationIdScheme</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value"></column>
+			<column name="interface_value">MessageAddressScheme</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value"></column>
+			<column name="interface_value">RequestedActionScheme</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value"></column>
+			<column name="interface_value">OriginatingEventScheme</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+			<row cat="fpml">
+			<column name="calypso_value"></column>
+			<column name="interface_value">ReasonCodeScheme</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value"></column>
+			<column name="interface_value">SkipFpMLVersionValidation</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">Flat</column>
+			<column name="interface_value">Flat</column>
+			<column name="type_name">InterestCompoundingMethod</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">NoCmp</column>
+			<column name="interface_value">NoCmp</column>
+			<column name="type_name">InterestCompoundingMethod</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">NoCmp</column>
+			<column name="interface_value">None</column>
+			<column name="type_name">InterestCompoundingMethod</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">SimpleSpr</column>
+			<column name="interface_value">SpreadExclusive</column>
+			<column name="type_name">InterestCompoundingMethod</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+			<row cat="fpml">
+			<column name="calypso_value">Spread</column>
+			<column name="interface_value">Straight</column>
+			<column name="type_name">InterestCompoundingMethod</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		
+		<row cat="fpml">
+			<column name="calypso_value">DUAL_DISC</column>
+			<column name="interface_value">AFMA</column>
+			<column name="type_name">DiscountingMethod</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">FWD_DISC</column>
+			<column name="interface_value">ISDA</column>
+			<column name="type_name">DiscountingMethod</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">DUAL_DISC</column>
+			<column name="interface_value">ISDAYield</column>
+			<column name="type_name">DiscountingMethod</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+			<row cat="fpml">
+			<column name="calypso_value">NONE</column>
+			<column name="interface_value">NONE</column>
+			<column name="type_name">DiscountingMethod</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">USA/New York</column>
+			<column name="interface_value">USNY</column>
+			<column name="type_name">Location</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">AUSTRALIA/Sydney</column>
+			<column name="interface_value">AUSY</column>
+			<column name="type_name">Location</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">EURO/Brussels</column>
+			<column name="interface_value">BEBR</column>
+			<column name="type_name">Location</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">UK/London</column>
+			<column name="interface_value">GBLO</column>
+			<column name="type_name">Location</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">America/New_York</column>
+			<column name="interface_value">USNY</column>
+			<column name="type_name">TimeZone</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">Europe/Brussels</column>
+			<column name="interface_value">BEBR</column>
+			<column name="type_name">TimeZone</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value">Europe/London</column>
+			<column name="interface_value">GBLO</column>
+			<column name="type_name">TimeZone</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="fpml">
+			<column name="calypso_value"></column>
+			<column name="interface_value">UseResetAdjustmentsTag</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">FpML</column>
+			<column name="reverse_b">0</column>
+		</row>
+	</table>
+</database>

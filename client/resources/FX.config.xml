@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Application Configuration for FX and all of its modules -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Position-Keeping client config -->
+	<import resource="classpath*:PositionKeepingClient.config.xml" />
+
+	<!-- FX Main module configuration context -->
+	<bean id="Module.FX"
+		class="com.calypso.infra.configuration.spring.ModuleConfigurationContext"
+		lazy-init="true">
+		<property name="configFiles">
+			<list>
+				<value>classpath:PropertyConfiguration.xml</value>
+				<value>classpath*:com/calypso/apps/product/fx/FXSpringConfiguration.xml
+				</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

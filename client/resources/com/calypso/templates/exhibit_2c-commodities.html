@@ -1,0 +1,328 @@
+<!---Start Exhibit II-C -->
+
+<p>     
+<font size='2'>
+The terms of the particular Transaction to which this Confirmation 
+relates are as follows:
+</font>
+</p>
+
+<p>
+<table CELLSPACING=0 BORDER=0 WIDTH=650>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Notional Quantity per<br>Calculation Period:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|SWAP_NOTIONAL_QTY|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Commodity:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|COMMODITY_TYPE|</FONT>
+	</td>
+</tr>
+
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Trade Date:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|TRADE_DATE|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Effective Date:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE='2'>|SETTLE_DATE|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Termination Date:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE='2'>|PRODUCT_MATURITYDATE|</FONT>
+	</td>
+</tr>
+
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Calculation Period(s):</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">&nbsp;</FONT>
+	</td>
+</tr>
+
+
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Period End Date(s):</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|COMMODITY_PERIOD_END_DATES|</FONT>
+	</td>
+</tr>
+
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Fixed Amount Details:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">&nbsp;</FONT>
+	</td>
+</tr>
+
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Fixed Price Payer:</font>
+	</td>
+	<td width="70%" VALIGN="TOP">
+	<font size="2">|FIX_PAYER_CODE|</font>
+	</td>
+</tr>
+
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Fixed Price Payer Settlement Dates:</font>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|COMMODITY_CAPFLOOR_FIXED_SETTLE_DATES|, subject to adjustment in accordance with the |COMMODITY_CAPFLOOR_FIXED_SETTLE_DATE_ROLL| Business Day convention.</FONT>
+	</td>
+</tr>
+
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Fixed Rate:</font>
+	</td>
+	<td width="70%" VALIGN="TOP">
+	<font size="2">|FIX_FIXED_RATE| %</font>
+	</td>
+</tr>
+
+
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Floating Amount Details:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">&nbsp;</FONT>
+	</td>
+</tr>
+
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Floating Rate Payer:</font>
+	</td>
+	<td width="70%" VALIGN="TOP">
+	<font size="2">|FLT_PAYER_CODE|</font>
+	</td>
+</tr>
+
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">
+<!--calypso>
+if ( |COMMODITY_SUB_TYPE| == "Cap" )
+    inline " Cap  ";
+if ( |COMMODITY_SUB_TYPE| == "Floor" )
+    inline " Floor    ";
+</calypso-->
+	Price:</font>
+	</td>
+	<td width="70%" VALIGN="TOP">
+	<font size="2">|CAP_FLOOR_PRICE|</font>
+	</td>
+</tr>
+
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Floating Price Payer Settlement Dates:</font>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|COMMODITY_CAPFLOOR_FLOAT_SETTLE_DATES|, subject to adjustment in accordance with the |COMMODITY_CAPFLOOR_FLOAT_SETTLE_DATE_ROLL| Business Day convention.</FONT>
+	</td>
+</tr>
+
+<!--calypso>
+if ( |HAS_REFERENCE_PRICE| == "true")
+    inline "
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Commodity Reference Price:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|COMMODITY_REFERENCE_PRICE|</FONT>
+	</td>
+</tr>
+    ";
+else
+    inline "
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Commodity:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|COMMODITY_TYPE|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Unit:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|COMMODITY_UNIT|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Price Source::</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|COMMODITY_PRICE_SOURCE|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Currency:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|COMMODITY_CCY|</FONT>
+	</td>
+</tr>
+    ";
+</calypso-->
+
+
+
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Specified Price:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|COMMODITY_SPECIFIED_PRICE|</FONT>
+	</td>
+</tr>
+
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Delivery Date:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|COMMODITY_DELIVERY_DATE|</FONT>
+	</td>
+</tr>
+
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Pricing Date(s):</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|COMMODITY_PRICING_DATES|, subject to adjustment in accordance with the |COMMODITY_PRICING_DATE_ROLL| Business Day convention.</FONT>
+	</td>
+</tr>
+
+
+<!--calypso>
+if ( |FLT_AVERAGING_RESET| == "true" )
+    inline "
+    <tr>
+        <td width='30%' VALIGN='TOP'>
+        <font SIZE='2'>Rate Cut-off Dates:</font>
+        </td>
+        <td width='70%' VALIGN='TOP'>
+        <font SIZE='2'>|FLT_RESET_CUTOFF_DATES|</font>
+        </td>
+    </tr>
+    <tr>
+        <td width='30%' VALIGN='TOP'>
+        <font SIZE='2'>Method of Averaging:</font>
+        </td>
+        <td width='70%' VALIGN='TOP'>
+        <font SIZE='2'>|AVERAGING_METHOD|</font>
+        </td>
+    </tr>
+    <tr>
+        <td width='30%' VALIGN='TOP'>
+        <FONT SIZE='2'>Averaging Frequency:</FONT>
+        </td>
+        <td width='70%' VALIGN='TOP'>
+        <FONT SIZE='2'>|AVERAGING_FREQUENCY|</FONT>
+        </td>
+    </tr>    
+    ";
+</calypso-->
+
+
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Market Disruption:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">&nbsp;</FONT>
+	</td>
+</tr>
+
+<!--calypso>
+if ( |HAS_MARKET_DISRUPTION_EVENTS| == "true" ) 
+    inline "
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Market Disruption Events:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|COMMODITY_MODIFY_MARKET_DISRUPTION_EVENTS|</FONT>
+	</td>
+</tr>
+    ";
+else
+    inline "
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Additional Market Disruption Events:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|COMMODITY_ADDITIONAL_MARKET_DISRUPTION_EVENTS|</FONT>
+	</td>
+</tr>
+    ";
+</calypso-->
+
+
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Disruption Fallback(s):</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|COMMODITY_DISRUPTION_FALLBACKS|</FONT>
+	</td>
+</tr>
+
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Fallback Reference Price::</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|FALLBACK_REFERENCE_PRICE|</FONT>
+	</td>
+</tr>
+
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Rounding:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|COMMODITY_ROUNDING|</FONT>
+	</td>
+</tr>
+
+</table>
+</p>
+
+<!---End Exhibit II-C -->

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<calypso:database xmlns:calypso="http://www.calypso.com/schemer">
+  <table name="domain_values">
+    <row cat="taskenrichment">
+      <column name="name">domainName</column>
+      <column name="value">taskEnrichmentClasses</column>
+      <column name="description">List of data source classes used for task enrichment</column>
+    </row>
+    <row cat="taskenrichment">
+      <column name="name">taskEnrichmentClasses</column>
+      <column name="value">CAElection</column>
+      <column name="description">com.calypso.tk.product.corporateaction.CAElection</column>
+    </row>
+    <row cat="taskenrichment">
+      <column name="name">taskEnrichmentClasses</column>
+      <column name="value">CrossWorkflows</column>
+      <column name="description">com.calypso.tk.bo.Task</column>
+    </row>
+    <row cat="taskenrichment">
+      <column name="name">taskEnrichmentClasses</column>
+      <column name="value">Dynamic</column>
+      <column name="description">com.calypso.tk.bo.Task</column>
+    </row>
+    <row cat="taskenrichment">
+      <column name="name">taskEnrichmentClasses</column>
+      <column name="value">HedgeRelationshipDefinition</column>
+      <column name="description">HedgeRelationshipDefinition</column>
+    </row>
+    <row cat="taskenrichment">
+      <column name="name">taskEnrichmentClasses</column>
+      <column name="value">Message</column>
+      <column name="description">com.calypso.tk.bo.BOMessage</column>
+    </row>
+    <row cat="taskenrichment">
+      <column name="name">taskEnrichmentClasses</column>
+      <column name="value">TradeBundle</column>
+      <column name="description">com.calypso.tk.core.TradeBundle</column>
+    </row>
+    <row cat="taskenrichment">
+      <column name="name">taskEnrichmentClasses</column>
+      <column name="value">Trade</column>
+      <column name="description">com.calypso.tk.core.Trade</column>
+    </row>
+    <row cat="taskenrichment">
+      <column name="name">taskEnrichmentClasses</column>
+      <column name="value">Transfer</column>
+      <column name="description">com.calypso.tk.bo.BOTransfer</column>
+    </row>
+  </table>
+</calypso:database>

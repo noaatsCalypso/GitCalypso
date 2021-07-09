@@ -1,0 +1,13 @@
+<module name = "security-finance" min-version="1.0.0" target-version="16.1.0.75">
+<schema filename="SecurityFinanceSchemaBase.xml" />
+<schema filename="SecurityFinanceSchemaData.xml" />
+
+<upgrade version="16.1.0.048">
+<step name="CAL-388383" version="1"/>
+</upgrade>
+
+<upgrade version="16.1.0.061">
+<step name="CAL-400168" version="1"/>
+</upgrade>
+
+</module>

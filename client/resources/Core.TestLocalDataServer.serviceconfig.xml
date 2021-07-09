@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+		<bean id="sqlInitializer" class="com.calypso.tk.core.sql.SQLInitializer" init-method="init">
+			<property name="driver" value="${DRIVER}" />
+			<property name="dataSource" ref="dataSource" />
+			<property name="nestedTransactionDataSource" ref="nestedTransactionDataSource" />
+			<property name="managedTransaction" value="true" />
+			<property name="databaseSessionHandler" ref="dbSessionHandler" />
+		</bean>
+		
+		<bean name="rmiRegistryConfig" class="com.calypso.infra.rmi.DefaultRMIRegistryConfig">
+			<property name="registryHost" value="${SERVERHOST}" />
+			<property name="registryPort" value="${RMI_REGISTRY_PORT}" />
+		</bean>
+		
+		<!-- DS Connection that is available in the DataServer -->
+		<bean id="DSConnection" class="com.calypso.tk.service.DSConnection" >
+			<property name="server" value="true" />
+		</bean>
+	
+	    <bean id="baseRemoteAccess" class="com.calypso.tk.service.AccessServerImpl">
+	    </bean>
+		<bean id="rmiBaseRemoteAccess" parent="rmiServiceExporter">
+			<property name="service" ref="baseRemoteAccess" />
+			<meta key="serviceInterface" value="com.calypso.tk.service.RemoteAccess" />
+			<meta key="secured" value="false" />
+			 <!--If you need to override the parent proxy name 
+				<meta key="parentProxyName" value="remoteProxy" />
+			 -->
+			<property name="objectDefinitionSource">
+				<value>
+					com.calypso.tk.service.RemoteAccess.*=ROLE_ADMIN
+				</value>
+			</property>	
+		</bean>
+				 
+	    <bean id="baseRemoteTrade" class="com.calypso.tk.service.TradeServerImpl">
+	    </bean>
+		<bean id="rmiBaseRemoteTrade" parent="rmiServiceExporter">
+			<property name="service" ref="baseRemoteTrade" />
+			<meta key="serviceInterface" value="com.calypso.tk.service.RemoteTrade" />
+			<meta key="secured" value="false" />
+		</bean>
+				 
+	    <bean id="baseRemoteBackOffice" class="com.calypso.tk.service.BackOfficeServerImpl">
+	    </bean>
+		<bean id="rmiBaseRemoteBackOffice" parent="rmiServiceExporter">
+			<property name="service" ref="baseRemoteBackOffice" />
+			<meta key="serviceInterface" value="com.calypso.tk.service.RemoteBackOffice" />
+			<meta key="secured" value="false" />
+		</bean>
+				 
+	    <bean id="baseRemoteReferenceData" class="com.calypso.tk.service.ReferenceDataServerImpl">
+	    </bean>
+		<bean id="rmiBaseRemoteReferenceData" parent="rmiServiceExporter">
+			<property name="service" ref="baseRemoteReferenceData" />
+			<meta key="serviceInterface" value="com.calypso.tk.service.RemoteReferenceData" />
+			<meta key="secured" value="false" />
+		</bean>
+				 
+	    <bean id="baseRemoteAccounting" class="com.calypso.tk.service.AccountingServerImpl">
+	    </bean>
+		<bean id="rmiBaseRemoteAccounting" parent="rmiServiceExporter">
+			<property name="service" ref="baseRemoteAccounting" />
+			<meta key="serviceInterface" value="com.calypso.tk.service.RemoteAccounting" />
+			<meta key="secured" value="false" />
+		</bean>
+				 
+	    <bean id="baseRemoteProduct" class="com.calypso.tk.service.ProductServerImpl">
+	    </bean>
+		<bean id="rmiBaseRemoteProduct" parent="rmiServiceExporter">
+			<property name="service" ref="baseRemoteProduct" />
+			<meta key="serviceInterface" value="com.calypso.tk.service.RemoteProduct" />
+			<meta key="secured" value="false" />
+		</bean>
+				 
+	    <bean id="baseRemoteMarketData" class="com.calypso.tk.service.MarketDataServerImpl">
+	    </bean>
+		<bean id="rmiBaseRemoteMarketData" parent="rmiServiceExporter">
+			<property name="service" ref="baseRemoteMarketData" />
+			<meta key="serviceInterface" value="com.calypso.tk.service.RemoteMarketData" />
+			<meta key="secured" value="false" />
+		</bean>
+				 
+	    <bean id="baseRemoteFXDataServer" class="com.calypso.tk.service.FXDataServerImpl">
+	    </bean>
+		<bean id="rmiBaseRemoteFXDataServer" parent="rmiServiceExporter">
+			<property name="service" ref="baseRemoteFXDataServer" />
+			<meta key="serviceInterface" value="com.calypso.tk.service.RemoteFXDataServer" />
+			<meta key="secured" value="false" />
+		</bean>
+				 
+	    <bean id="baseRemoteCommodity" class="com.calypso.tk.service.CommodityServerImpl">
+	    </bean>
+		<bean id="rmiBaseRemoteCommodity" parent="rmiServiceExporter">
+			<property name="service" ref="baseRemoteCommodity" />
+			<meta key="serviceInterface" value="com.calypso.tk.service.RemoteCommodity" />
+			<meta key="secured" value="false" />
+		</bean>
+		<bean name="servicePortBean" class="com.calypso.infra.rmi.ServicePortBean">
+			<property name="servicePortRangeStart" value="${SERVICE_PORT_RANGE_START}" />
+		</bean>
+		
+		<bean id="applicationShutdownHandler" 
+			class="com.calypso.infra.starter.DataServerClientShutdownHandler">
+			<property name="dsConnection" ref="DSConnection" />
+		</bean>
+		
+		<bean id="baseRemoteUserConfig" class="com.calypso.tk.service.UserConfigServerImpl">
+		</bean>
+		<bean id="rmiBaseRemoteUserConfig" parent="rmiServiceExporter">
+			<property name="service" ref="baseRemoteUserConfig" />
+			<meta key="serviceInterface" value="com.calypso.tk.service.RemoteUserConfig" />
+			<meta key="secured" value="false" />
+		</bean>
+		
+		<bean id="baseRemoteLifeCycle" class="com.calypso.tk.service.LifeCycleService">
+		</bean>
+		<bean id="rmiBaseRemoteLifeCycle" parent="rmiServiceExporter">
+			<property name="service" ref="baseRemoteLifeCycle" />
+			<meta key="serviceInterface" value="com.calypso.tk.service.RemoteLifeCycleService" />
+			<meta key="secured" value="false" />
+		</bean>
+		
+	</beans>

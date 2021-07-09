@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<calypso:calypsoDocument xmlns:calypso="http://www.calypso.com/xml">
+    <calypso:calypsoObject xsi:type="calypso:Tree" action="SAVE" version="11-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <calypso:name>Risk Aggregations</calypso:name>
+        <calypso:applicationName>TWS</calypso:applicationName>
+        <calypso:rootNode xsi:type="calypso:Folder">
+            <calypso:name>Fwd Ladder</calypso:name>
+            <calypso:child xsi:type="calypso:RiskAggregation">
+                <calypso:name>Fwd Ladder</calypso:name>
+                <calypso:reportTemplate>
+                    <calypso:reportType>RiskAggregation</calypso:reportType>
+                    <calypso:name>TWS_TREE_NODE_ID_38616</calypso:name>
+                    <calypso:hidden>true</calypso:hidden>
+                    <calypso:private>false</calypso:private>
+                    <calypso:user>calypso_user</calypso:user>
+                    <calypso:reportAttributes>
+                        <calypso:attribute>
+                            <calypso:attributeName>AggregatedFlag</calypso:attributeName>
+                            <calypso:attributeValue>false</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns0</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns1</calypso:attributeName>
+                            <calypso:attributeValue>Book</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns2</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair Position 1</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns3</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair Position 2</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns4</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair Bucket Date</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns5</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair Bucket</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns6</calypso:attributeName>
+                            <calypso:attributeValue>Product</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns_COUNT</calypso:attributeName>
+                            <calypso:attributeValue>7</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>DefaultDrillDownTemplateName</calypso:attributeName>
+                            <calypso:attributeValue>CCY PAIR VIEW</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>FilterEnabled</calypso:attributeName>
+                            <calypso:attributeValue>true</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>FromDefaultGenericTemplate</calypso:attributeName>
+                            <calypso:attributeValue>false</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneSubtotals0</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneSubtotals1</calypso:attributeName>
+                            <calypso:attributeValue>Book</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneSubtotals2</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair Position 1</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneSubtotals3</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair Position 2</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneSubtotals4</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair Bucket Date</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneSubtotals5</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair Bucket</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneSubtotals6</calypso:attributeName>
+                            <calypso:attributeValue>Product</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneSubtotals_COUNT</calypso:attributeName>
+                            <calypso:attributeValue>7</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneTotals0</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneTotals1</calypso:attributeName>
+                            <calypso:attributeValue>Book</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneTotals2</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair Position 1</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneTotals3</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair Position 2</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneTotals4</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair Bucket Date</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneTotals5</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair Bucket</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneTotals6</calypso:attributeName>
+                            <calypso:attributeValue>Product</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneTotals_COUNT</calypso:attributeName>
+                            <calypso:attributeValue>7</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>PivotColumns</calypso:attributeName>
+                            <calypso:attributeValue>Book,Product,CcyPair</calypso:attributeValue>
+                            <calypso:attributeClass>Vector</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>PivotData</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair Position 1,CcyPair Position 2</calypso:attributeValue>
+                            <calypso:attributeClass>Vector</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>PivotPages</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair</calypso:attributeValue>
+                            <calypso:attributeClass>Vector</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>PivotRows</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair Bucket Date,CcyPair Bucket</calypso:attributeValue>
+                            <calypso:attributeClass>Vector</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>ShowPivotDataInColumns</calypso:attributeName>
+                            <calypso:attributeValue>true</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>ShowPivotReport</calypso:attributeName>
+                            <calypso:attributeValue>true</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>ShowPivotReportColumnGrandTotal</calypso:attributeName>
+                            <calypso:attributeValue>false</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>ShowPivotReportColumnTotal</calypso:attributeName>
+                            <calypso:attributeValue>false</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>ShowPivotReportRowGrandTotal</calypso:attributeName>
+                            <calypso:attributeValue>true</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>ShowPivotReportRowTotal</calypso:attributeName>
+                            <calypso:attributeValue>false</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>ShowTradeActionButtons</calypso:attributeName>
+                            <calypso:attributeValue>true</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Slices0</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Slices_COUNT</calypso:attributeName>
+                            <calypso:attributeValue>1</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SortColumns0</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SortColumns_COUNT</calypso:attributeName>
+                            <calypso:attributeValue>1</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SortOrders0</calypso:attributeName>
+                            <calypso:attributeValue>0.true</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SortOrders_COUNT</calypso:attributeName>
+                            <calypso:attributeValue>1</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SorterCount</calypso:attributeName>
+                            <calypso:attributeValue>1</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SorterEnabled</calypso:attributeName>
+                            <calypso:attributeValue>true</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SorterValue0</calypso:attributeName>
+                            <calypso:attributeValue>Default^true^CcyPair Bucket Date^true</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Subheadings0</calypso:attributeName>
+                            <calypso:attributeValue>CcyPair</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Subheadings_COUNT</calypso:attributeName>
+                            <calypso:attributeValue>1</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Ccy Buy PV</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Ccy Buy PV0X</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Ccy Buy Position</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Ccy PV</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Ccy PV Base</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Ccy PV USD</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Ccy PV0X</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Ccy Position</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Ccy Position Base</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Ccy Sell PV</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Ccy Sell PV0X</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Ccy Sell Position</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Shifted Ccy Position</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Ccy Buy PV</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Ccy Buy PV0X</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Ccy Buy Position</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Ccy PV</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Ccy PV Base</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Ccy PV USD</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Ccy PV0X</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Ccy Position</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Ccy Position Base</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Ccy Sell PV</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Ccy Sell PV0X</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Ccy Sell Position</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Shifted Ccy Position</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                    </calypso:reportAttributes>
+                </calypso:reportTemplate>
+                <calypso:reportType>RiskAggregation</calypso:reportType>
+                <calypso:uniqueConfigurationString>0|^|FwdLadder|^|SNOOPY|^|FX Options real time|^|New One|^|G-man|^|G-man|^|null|^|false|^|[MktDataServer] MDS</calypso:uniqueConfigurationString>
+                <calypso:useLatestRun>true</calypso:useLatestRun>
+            </calypso:child>
+        </calypso:rootNode>
+    </calypso:calypsoObject>
+</calypso:calypsoDocument>

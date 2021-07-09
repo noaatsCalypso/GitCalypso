@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><module target-version="8.13.1" name="clearing" min-version="1.0.0">
+  <schema filename="CDMLSchemaBase.xml"/>
+  <schema filename="CDMLSchemaData.xml"/>
+  <schema filename="ClearingSchemaBase.xml"/>
+  <schema filename="ClearingSchemaData.xml"/>
+  <upgrade version="4.1.0">
+    <step name="CLEAR-3501" version="1"/>
+  </upgrade>
+  <upgrade version="8.13.0">
+    <step name="CLEAR-6844" version="1"/>
+  </upgrade>
+</module>

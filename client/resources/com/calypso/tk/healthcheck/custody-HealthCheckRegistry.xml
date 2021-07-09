@@ -1,0 +1,44 @@
+<registry>
+    <categories>
+        <category name="Custody Setup">
+            <topics>
+                <topic>
+                    <className>com.calypso.tk.bo.custody.healthcheck.topic.CustodyEnvironmentHealthCheckTopic</className>
+                </topic>
+                <topic>
+                    <className>com.calypso.tk.bo.custody.healthcheck.topic.CustodyGeneralDomainHealthCheckTopic</className>
+                </topic>
+                <topic>
+                    <className>com.calypso.tk.bo.custody.healthcheck.topic.CustodyTradeKeywordDomainHealthCheckTopic</className>
+                </topic>
+                <topic>
+                    <className>com.calypso.tk.bo.custody.healthcheck.topic.CustodyLiquidationDomainHealthCheckTopic</className>
+                </topic>
+                <topic>
+                    <className>com.calypso.tk.bo.custody.healthcheck.topic.CustodyTaxServiceDomainHealthCheckTopic</className>
+                </topic>
+                <topic>
+                    <className>com.calypso.tk.bo.custody.healthcheck.topic.CustodyPOHealthCheckTopic</className>
+                </topic>
+                <topic>
+                    <className>com.calypso.tk.bo.custody.healthcheck.topic.CustodyAgentLEHealthCheckTopic</className>
+                </topic>
+                <topic>
+                    <className>com.calypso.tk.bo.custody.healthcheck.topic.CustodyClientHealthCheckTopic</className>
+                </topic>
+                <topic>
+                    <className>com.calypso.tk.bo.custody.healthcheck.topic.CustodyCPHealthCheckTopic</className>
+                </topic>
+                <topic>
+                    <className>com.calypso.tk.bo.custody.healthcheck.topic.CustodyInventoryPosHealthCheckTopic</className>
+                </topic>
+                <topic>
+                    <className>com.calypso.tk.bo.custody.healthcheck.topic.CustodyTaxLotHealthCheckTopic</className>
+                </topic>
+                <topic>
+                    <className>com.calypso.tk.bo.custody.healthcheck.topic.CustodyCAHealthCheckTopic</className>
+                </topic>
+            </topics>
+          </category>
+    </categories>
+</registry>

@@ -1,0 +1,1 @@
+/* no changes for Sybase regarding tf_temp_table */

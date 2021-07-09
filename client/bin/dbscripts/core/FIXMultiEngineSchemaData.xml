@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<database xmlns="http://www.calypso.com/schemer">
+	<!-- Please see the documentation for details on usage of this file to setup multiple FIX engines. -->
+	
+	<table name="domain_values" xmlns="">		
+		<!-- engine name -->
+		<row cat="fix-demo">
+  			<column name="description">Name of the FIX2 Engine</column> 
+  			<column name="value">FIX2Engine</column> 
+  			<column name="name">engineName</column> 
+  		</row>
+	</table>
+	
+	<table name="ps_event_config" xmlns="">
+        <row cat="fix-demo">
+            <column name="event_config_name">Back-Office</column>
+            <column name="event_class">PSEventFIXMessage</column>
+            <column name="engine_name">FIX2Engine</column>
+        </row>
+    </table>
+    
+	<table name="ps_event_filter" xmlns="">
+        <row cat="fix-demo">
+            <column name="event_config_name">Back-Office</column>
+            <column name="event_filter">FIXEngineEventFilter</column>
+            <column name="engine_name">FIX2Engine</column>
+        </row>
+    </table>
+    
+    <table name="engine_param" xmlns="">
+        <row cat="fix-demo">
+            <column name="engine_name">FIX2Engine</column>
+            <column name="param_name">EVENT_POOL_POLICY</column>
+            <column name="param_value">FIXEngine</column>
+        </row>    
+    </table>	
+</database>

@@ -1,0 +1,11 @@
+MvtType=//Document/SctiesSttlmAllgmtRmvlAdvc/AcctSvcrTxId/SctiesMvmntTp/text()
+DeliveryType=//Document/SctiesSttlmAllgmtRmvlAdvc/AcctSvcrTxId/Pmt/text()
+TradeDate=//Document/SctiesSttlmAllgmtRmvlAdvc/TxDtls/TradDt/Dt/Dt/text()
+SettleDate=//Document/SctiesSttlmAllgmtRmvlAdvc/TxDtls/SttlmDt/Dt/Dt/text()
+ISIN=//Document/SctiesSttlmAllgmtRmvlAdvc/TxDtls/FinInstrmId/ISIN/text()
+Nominal=//Document/SctiesSttlmAllgmtRmvlAdvc/TxDtls/SttlmQty/Qty/Unit/text()
+PO\ Account=//Document/SctiesSttlmAllgmtRmvlAdvc/SfkpgAcct/Id/text()
+DelPSET=//Document/SctiesSttlmAllgmtRmvlAdvc/TxDtls/DlvrgSttlmPties/Dpstry/Id/AnyBIC/text()
+RecPSET=//Document/SctiesSttlmAllgmtRmvlAdvc/TxDtls/RcvgSttlmPties/Dpstry/Id/AnyBIC/text()
+SettleAmount=//Document/SctiesSttlmAllgmtRmvlAdvc/SttlmAmt/Amt/text()
+SettleCurrency=//Document/SctiesSttlmAllgmtRmvlAdvc/SttlmAmt/Amt/@Ccy

@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+
+  <!-- MARGIN RESULT AND RELATED TABLES -->
+
+  <table name="cm_result" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="account_id" nullable="false" scale="64" type="string" />
+    <column name="currency" nullable="false" scale="3" type="string" />
+    <column name="direction" nullable="false" scale="255" type="string" />
+    <column name="regulator" nullable="true" scale="255" type="string" />
+    <column name="valuation_date" nullable="false" scale="1" type="int" />
+    <column name="status" nullable="false" scale="255" type="string" default="COMPLETED"/>
+
+    <column name="additionalim" nullable="false" scale="1" type="float" />
+    <column name="scheduleim" nullable="false" scale="1" type="float" />
+    <column name="simmim" nullable="false" scale="1" type="float" />
+    <column name="totalim" nullable="false" scale="1" type="float" />
+    <column name="totalimusd" nullable="false" scale="1" type="float" />
+    <column name="totalia" nullable="false" scale="1" type="float" />
+    <column name="maintenance" nullable="false" scale="1" type="float" />
+    <column name="etl" nullable="false" scale="1" type="float" default="0" />
+    <column name="wcl" nullable="false" scale="1" type="float" default="0" />
+	<column name="calibration_multiplier" nullable="true" scale="1" type="float" default="0.0"/>
+	<column name="calibration_margin" nullable="true" scale="1" type="float" default="0.0"/>
+    <column name="discretionary_margin" nullable="false" scale="1" type="float" default="0" />
+    <column name="credit_margin" nullable="false" scale="1" type="float" default="0" />
+    <column name="holiday_margin" nullable="false" scale="1" type="float" default="0" />
+    <column name="nov" nullable="false" scale="1" type="float" />
+    <column name="var" nullable="false" scale="1" type="float" default="0" />
+    <column name="credit_multiplier" nullable="true" scale="1" type="float" default="0.0" />
+    <column name="holiday_multiplier" nullable="true" scale="1" type="float" default="0.0" />
+    <column name="mfm_add_on" nullable="true" scale="1" type="float" default="0.0" />
+    <column name="liquidity_add_on" nullable="true" scale="1" type="float" default="0.0" />
+    <column name="calculationsummary_id" nullable="false" scale="64" type="string" />
+
+    <index primary="true" prikeyname="pk_cm_result">
+      <on>id</on>
+    </index>
+
+    <index primary="false" indexname="cm_result_idx">
+      <on>tenant_id</on>
+      <on>valuation_date</on>
+      <on>account_id</on>
+    </index>
+
+    <index primary="false" indexname="cm_result_calcsum_idx">
+      <on>calculationsummary_id</on>
+    </index>
+
+    <index primary="false" indexname="cm_result_totalimusd_idx">
+      <on>tenant_id</on>
+      <on>account_id</on>
+      <on>direction</on>
+      <on>totalimusd</on>
+    </index>
+
+  </table>
+
+  <table name="cm_result_errors" xmlns="">
+
+    <column name="error_messages" nullable="false" scale="255" type="string" />
+    <column name="tree_id" nullable="false" scale="64" type="string" />
+
+    <index primary="false" indexname="cm_result_errors_tree_idx">
+      <on>tree_id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_calculation_summary" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="status" nullable="false" scale="255" type="string" />
+    <column name="service" nullable="false" scale="255" type="string" />
+    <column name="calculation_request_id" nullable="false" scale="64" type="string" />
+    <column name="calculation_set_id" nullable="true" scale="64" type="string" />
+    <column name="time_horizon" nullable="true" scale="255" type="string" />
+    
+
+    <index primary="true" prikeyname="pk_cm_calculation_summary">
+      <on>id</on>
+    </index>
+
+    <index primary="false" indexname="cm_calculation_summary_idx">
+      <on>tenant_id</on>
+      <on>service</on>
+      <on>calculation_set_id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_result_node" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="node_name" nullable="false" scale="255" type="string" />
+    <column name="currency" nullable="false" scale="3" type="string" />
+    <column name="tree_id" nullable="false" scale="64" type="string" />
+    <column name="depth" nullable="false" scale="1" type="int" />
+    <column name="node_index" nullable="false" scale="1" type="int" />
+
+    <column name="attribute_key" nullable="true" scale="255" type="string" />
+    <column name="string_value" nullable="true" scale="255" type="string" />
+    <column name="numeric_value" nullable="true" scale="1" type="float" />
+
+    <index primary="true" prikeyname="pk_cm_result_node">
+      <on>id</on>
+    </index>
+
+    <index primary="false" indexname="cm_result_node_idx">
+      <on>tenant_id</on>
+      <on>tree_id</on>
+      <on>node_index</on>
+    </index>
+
+  </table>
+
+  <!-- END MARGIN RESULT AND RELATED TABLES -->
+
+  <!-- HIST MARGIN RESULT AND RELATED TABLES -->
+
+  <table name="cm_result_hist" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="account_id" nullable="false" scale="64" type="string" />
+    <column name="currency" nullable="false" scale="3" type="string" />
+    <column name="direction" nullable="false" scale="255" type="string" />
+    <column name="regulator" nullable="true" scale="255" type="string" />
+    <column name="valuation_date" nullable="false" scale="1" type="int" />
+    <column name="status" nullable="false" scale="255" type="string" default="COMPLETED" />
+    
+
+    <column name="additionalim" nullable="false" scale="1" type="float" />
+    <column name="scheduleim" nullable="false" scale="1" type="float" />
+    <column name="simmim" nullable="false" scale="1" type="float" />
+    <column name="totalim" nullable="false" scale="1" type="float" />
+    <column name="totalimusd" nullable="false" scale="1" type="float" />
+    <column name="totalia" nullable="false" scale="1" type="float" />
+    <column name="maintenance" nullable="false" scale="1" type="float" />
+    <column name="etl" nullable="false" scale="1" type="float" default="0" />
+    <column name="wcl" nullable="false" scale="1" type="float" default="0" />
+	<column name="calibration_multiplier" nullable="true" scale="1" type="float" default="0.0"/>
+	<column name="calibration_margin" nullable="true" scale="1" type="float" default="0.0"/>
+    <column name="discretionary_margin" nullable="false" scale="1" type="float" default="0" />
+    <column name="credit_margin" nullable="false" scale="1" type="float" default="0" />
+    <column name="holiday_margin" nullable="false" scale="1" type="float" default="0" />
+    <column name="nov" nullable="false" scale="1" type="float" />
+    <column name="var" nullable="false" scale="1" type="float" default="0" />
+    <column name="credit_multiplier" nullable="true" scale="1" type="float" default="0.0" />
+    <column name="holiday_multiplier" nullable="true" scale="1" type="float" default="0.0" />
+    <column name="mfm_add_on" nullable="true" scale="1" type="float" default="0.0" />
+    <column name="liquidity_add_on" nullable="true" scale="1" type="float" default="0.0" />
+    <column name="calculationsummary_id" nullable="false" scale="64" type="string" />
+
+    <index primary="true" prikeyname="pk_cm_result_hist">
+      <on>id</on>
+    </index>
+
+    <index primary="false" indexname="cm_result_calcsum_hist_idx">
+      <on>calculationsummary_id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_result_temp" xmlns="">
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="account_id" nullable="false" scale="64" type="string" />
+    <column name="currency" nullable="false" scale="3" type="string" />
+    <column name="direction" nullable="false" scale="255" type="string" />
+    <column name="regulator" nullable="true" scale="255" type="string" />
+    <column name="valuation_date" nullable="false" scale="1" type="int" />
+    <column name="status"  nullable="false" scale="255" type="string" default="COMPLETED" />
+
+    <column name="additionalim" nullable="false" scale="1" type="float" />
+    <column name="scheduleim" nullable="false" scale="1" type="float" />
+    <column name="simmim" nullable="false" scale="1" type="float" />
+    <column name="totalim" nullable="false" scale="1" type="float" />
+    <column name="totalimusd" nullable="false" scale="1" type="float" />
+    <column name="totalia" nullable="false" scale="1" type="float" />
+    <column name="maintenance" nullable="false" scale="1" type="float" />
+    <column name="etl" nullable="false" scale="1" type="float" default="0" />
+    <column name="wcl" nullable="false" scale="1" type="float" default="0" />
+	<column name="calibration_multiplier" nullable="true" scale="1" type="float" default="0.0"/>
+	<column name="calibration_margin" nullable="true" scale="1" type="float" default="0.0"/>
+    <column name="discretionary_margin" nullable="false" scale="1" type="float" default="0" />
+    <column name="credit_margin" nullable="false" scale="1" type="float" default="0" />
+    <column name="holiday_margin" nullable="false" scale="1" type="float" default="0" />
+    <column name="nov" nullable="false" scale="1" type="float" />
+    <column name="var" nullable="false" scale="1" type="float" default="0" />
+    <column name="credit_multiplier" nullable="true" scale="1" type="float" default="0.0" />
+    <column name="holiday_multiplier" nullable="true" scale="1" type="float" default="0.0" />
+    <column name="mfm_add_on" nullable="true" scale="1" type="float" default="0.0" />
+    <column name="liquidity_add_on" nullable="true" scale="1" type="float" default="0.0" />
+    <column name="calculationsummary_id" nullable="false" scale="64" type="string" />
+
+  </table>
+
+  <table name="cm_result_errors_hist" xmlns="">
+
+    <column name="error_messages" nullable="false" scale="255" type="string" />
+    <column name="tree_id" nullable="false" scale="64" type="string" />
+
+    <index primary="false" indexname="cm_result_errors_hist_idx">
+      <on>tree_id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_result_errors_temp" xmlns="">
+
+    <column name="error_messages" nullable="false" scale="255" type="string" />
+    <column name="tree_id" nullable="false" scale="64" type="string" />
+
+  </table>
+
+  <table name="cm_calculation_summary_hist" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="status" nullable="false" scale="255" type="string" />
+    <column name="service" nullable="false" scale="255" type="string" />
+    <column name="calculation_request_id" nullable="false" scale="64" type="string" />
+    <column name="time_horizon" nullable="true" scale="255" type="string" />
+    <column name="calculation_set_id" nullable="true" scale="255" type="string" />
+
+    <index primary="true" prikeyname="pk_cm_calculation_summary_hist">
+      <on>id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_calculation_summary_temp" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="status" nullable="false" scale="255" type="string" />
+    <column name="service" nullable="false" scale="255" type="string" />
+    <column name="calculation_request_id" nullable="false" scale="64" type="string" />
+    <column name="time_horizon" nullable="true" scale="255" type="string" />
+    <column name="calculation_set_id" nullable="true" scale="255" type="string" />
+
+  </table>
+
+  <table name="cm_result_node_hist" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="node_name" nullable="false" scale="255" type="string" />
+    <column name="currency" nullable="false" scale="3" type="string" />
+    <column name="tree_id" nullable="false" scale="64" type="string" />
+    <column name="depth" nullable="false" scale="1" type="int" />
+    <column name="node_index" nullable="false" scale="1" type="int" />
+
+    <column name="attribute_key" nullable="true" scale="255" type="string" />
+    <column name="string_value" nullable="true" scale="255" type="string" />
+    <column name="numeric_value" nullable="true" scale="1" type="float" />
+
+    <index primary="true" prikeyname="pk_cm_result_node_hist">
+      <on>id</on>
+    </index>
+
+    <index primary="false" indexname="cm_result_node_hist_idx">
+      <on>tree_id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_result_node_temp" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="node_name" nullable="false" scale="255" type="string" />
+    <column name="currency" nullable="false" scale="3" type="string" />
+    <column name="tree_id" nullable="false" scale="64" type="string" />
+    <column name="depth" nullable="false" scale="1" type="int" />
+    <column name="node_index" nullable="false" scale="1" type="int" />
+
+    <column name="attribute_key" nullable="true" scale="255" type="string" />
+    <column name="string_value" nullable="true" scale="255" type="string" />
+    <column name="numeric_value" nullable="true" scale="1" type="float" />
+
+  </table>
+
+  <!-- END HIST MARGIN RESULT AND RELATED TABLES -->
+
+  <!-- MARGIN ACCOUNT AND RELATED TABLES -->
+
+  <table name="cm_simm_regulator" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="name" nullable="false" scale="32" type="string" />
+
+    <index primary="true" prikeyname="pk_cm_simm_regulator">
+      <on>id</on>
+    </index>
+
+    <index primary="false" unique="true" indexname="cm_simm_regulator_idx">
+      <on>tenant_id</on>
+      <on>name</on>
+    </index>
+
+  </table>
+
+  <table name="cm_account" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="name" nullable="false" scale="255" type="string" />
+    <column name="currency" nullable="false" scale="3" type="string" />
+    <column name="methodology" nullable="false" scale="255" type="string" />
+    <column name="accountdetails_id" nullable="false" scale="64" type="string" />
+    <column name="calculator_type" nullable="true" scale="255" type="string" />
+    <column name="csadetails_id" nullable="true" scale="64" type="string" />
+    <column name="tradeinclusiondetails_id" nullable="true" scale="64" type="string" />
+    <column name="threshold_group_id" nullable="true" scale="64" type="string" />
+
+    <index primary="true" prikeyname="pk_cm_account">
+      <on>id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_account_details" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <index primary="true" prikeyname="pk_cm_account_details">
+      <on>id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_etd_accounts" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <!-- End Core columns -->
+
+    <column name="origin" nullable="true" scale="255" type="string" />
+    <column name="activity_type" nullable="true" scale="255" type="string" />
+
+    <index primary="true" prikeyname="pk_cm_etd_accounts">
+      <on>id</on>
+    </index>
+
+  </table>
+  <table name="cm_simm_accounts" xmlns="">
+    <!-- DEPRECATED. Left for the time being to prevent deletion -->
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <!-- End Core columns -->
+
+    <column name="active_from" nullable="true" scale="1" type="int" />
+    <column name="active_to" nullable="true" scale="1" type="int" />
+
+    <index primary="true" prikeyname="pk_cm_simm_accounts">
+      <on>id</on>
+    </index>
+
+  </table>
+  <table name="cm_simm_account" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <!-- End Core columns -->
+
+    <column name="active_from" nullable="true" scale="1" type="int" />
+    <column name="active_to" nullable="true" scale="1" type="int" />
+
+    <column name="post_currency" nullable="false" scale="3" type="string" default="XXX" />
+    <column name="collect_currency" nullable="false" scale="3" type="string" default="XXX" />
+    
+    <column name="post_threshold" nullable="false" scale="1" type="float" default="0" />
+    <column name="collect_threshold" nullable="false" scale="1" type="float" default="0" />
+
+    <index primary="true" prikeyname="pk_cm_simm_account">
+      <on>id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_simm_post_regulators" xmlns="">
+
+    <!-- DEPRECATED. Left for the time being to prevent deletion -->
+
+    <column name="post_regulators" nullable="false" scale="255" type="string" />
+    <column name="simmmarginaccount_id" nullable="true" scale="64" type="string" />
+
+    <index primary="false" unique="false" indexname="cm_simm_pr_accid_idx">
+      <on>simmmarginaccount_id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_simm_collect_regulators" xmlns="">
+
+    <!-- DEPRECATED. Left for the time being to prevent deletion -->
+
+    <column name="collect_regulators" nullable="false" scale="255" type="string" />
+    <column name="simmmarginaccount_id" nullable="true" scale="64" type="string" />
+
+    <index primary="false" unique="false" indexname="cm_simm_cr_accid_idx">
+      <on>simmmarginaccount_id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_simm_regulator_parameters" xmlns="">
+
+    <!-- DEPRECATED. Left for the time being to prevent deletion -->
+
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="regulator" nullable="false" scale="255" type="string" />
+    <column name="simmmarginaccount_id" nullable="true" scale="64" type="string" />
+
+    <index primary="true" prikeyname="pk_cm_simm_regulator_params">
+      <on>id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_simm_parameters" xmlns="">
+
+    <!-- DEPRECATED. Left for the time being to prevent deletion -->
+
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="parameter_type" nullable="false" scale="255" type="string" />
+    <column name="regulatorparameter_id" nullable="false" scale="64" type="string" />
+
+    <column name="value" nullable="true" scale="1" type="float" />
+    <column name="criteria" nullable="true" scale="255" type="string" />
+
+    <index primary="true" prikeyname="pk_cm_simm_parameters">
+      <on>id</on>
+    </index>
+
+    <index primary="false" unique="false" indexname="cm_simm_param_regparam_idx">
+      <on>regulatorparameter_id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_flat_simm_param" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="regulator" nullable="false" scale="32" type="string" />
+
+    <column name="accountdetails_id" nullable="true" scale="64" type="string" />
+    <column name="direction" nullable="true" scale="16" type="string" />
+    <column name="parameter_type" nullable="true" scale="255" type="string" />
+    <column name="value" nullable="true" scale="1" type="float" />
+    <column name="criteria" nullable="true" scale="255" type="string" />
+
+    <index primary="true" prikeyname="pk_cm_simm_parameters">
+      <on>id</on>
+    </index>
+
+    <index primary="false" unique="false" indexname="cm_fsp_account_idx">
+      <on>accountdetails_id</on>
+    </index>
+
+    <index primary="false" unique="false" indexname="cm_fsp_regulator_idx">
+      <on>regulator</on>
+    </index>
+
+  </table>
+
+  <!-- END MARGIN ACCOUNT AND RELATED TABLES -->
+
+  <!-- WHATIF RESULT AND RELATED TABLES -->
+
+  <table name="cm_whatif_result" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="request_id" nullable="false" scale="64" type="string" />
+
+    <index primary="true" prikeyname="pk_cm_whatif_result">
+      <on>id</on>
+      <on>request_id</on>
+    </index>
+
+    <index primary="false" indexname="cm_whatif_result_idx">
+      <on>tenant_id</on>
+      <on>request_id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_whatif_result_detail" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="account_id" nullable="false" scale="64" type="string" />
+    <column name="currency" nullable="false" scale="3" type="string" />
+    <column name="valuation_date" nullable="false" scale="1" type="int" />
+    <column name="totalim" nullable="false" scale="1" type="float" />
+    <column name="fx_rate" nullable="false" scale="1" type="float" />
+    <column name="threshold" nullable="false" scale="1" type="float" />
+
+    <index primary="true" prikeyname="pk_cm_whatif_result_detail">
+      <on>id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_whatif_result_before" xmlns="">
+
+    <column name="result_id" nullable="false" scale="64" type="string" />
+    <column name="detail_id" nullable="false" scale="64" type="string" />
+
+    <index primary="true" prikeyname="pk_cm_whatif_result_before">
+      <on>result_id</on>
+      <on>detail_id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_whatif_result_after" xmlns="">
+
+    <column name="result_id" nullable="false" scale="64" type="string" />
+    <column name="detail_id" nullable="false" scale="64" type="string" />
+
+    <index primary="true" prikeyname="pk_cm_whatif_result_after">
+      <on>result_id</on>
+      <on>detail_id</on>
+    </index>
+
+  </table>
+
+
+  <!-- END WHATIF RESULT AND RELATED TABLES -->
+
+  <table name="cm_isda_product_type" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <column name="product_type" nullable="false" scale="255" type="string" />
+
+    <index primary="true" prikeyname="pk_cm_isda_product_type">
+      <on>id</on>
+    </index>
+
+    <index primary="false" unique="true" indexname="cm_isda_product_type_idx">
+      <on>tenant_id</on>
+      <on>product_type</on>
+    </index>
+
+  </table>
+  
+  <table name="cm_im_th_monitoring_config" xmlns="">
+	<!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+	<column name="csa_trigger" nullable="false" scale="1" type="float"/>
+	<column name="history_length" nullable="false" scale="7" type="string"/>
+  </table>
+
+  <table name="cm_im_th_monitoring_result" xmlns="">
+    <!-- Core columns -->
+   <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+    <column name="tree_id" nullable="true" scale="64" type="string" />
+  	<column name="account_id" nullable="true" scale="64" type="string" />
+  	<column name="calculation_set_id" nullable="true" scale="64" type="string" />
+  	<column name="direction" nullable="false" scale="255" type="string" />
+  	<column name="threshold_status" nullable="false" scale="255" type="string" />
+  	<column name="csa_status" nullable="false" scale="255" type="string" />
+  	<column name="currency" nullable="false" scale="3" type="string" />
+  	<column name="valuation_date" nullable="false" scale="1" type="int" />
+  	<column name="threshold" nullable="false" scale="1" type="float" />
+  	<column name="threshold_utilization" nullable="false" scale="1" type="float" />
+  	<column name="totalim" nullable="false" scale="1" type="float" />
+  	<column name="csa_trigger" nullable="false" scale="1" type="float" />
+  	<column name="threshold_group_id" nullable="true" scale="64" type="string" />
+
+    <index primary="true" prikeyname="pk_cm_im_th_monitoring_result">
+      <on>id</on>
+    </index>
+
+    <index primary="false" indexname="cm_im_th_monitoring_result_idx">
+      <on>tenant_id</on>
+      <on>calculation_set_id</on>
+	  <on>account_id</on>
+	  <on>tree_id</on>
+	  <on>direction</on>
+	  <on>currency</on>
+	  <on>csa_status</on>
+	  <on>threshold_status</on>
+    </index>
+
+  </table>
+  
+  <table name="cm_im_th_result_errors" xmlns="">
+
+    <column name="im_th_monitoring_result_id" nullable="false" scale="64" type="string" />
+    <column name="errors" nullable="false" scale="255" type="string" />
+
+    <index primary="false" indexname="cm_im_th_result_errors_tree_idx">
+      <on>im_th_monitoring_result_id</on>
+    </index>
+
+  </table>
+  
+  <table name="cm_csa_account_details" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+    <column name="csa_status" nullable="false" scale="255" type="string" />
+    <column name="external_reference_pay" nullable="true" scale="255" type="string" />
+    <column name="external_reference_receive" nullable="true" scale="255" type="string" />
+   </table>
+   
+  <!-- TRADE INCLUSION DETAILS -->
+  <table name="cm_trade_incl_details" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+    <index primary="true" prikeyname="pk_trade_incl_details">
+      <on>id</on>
+    </index>
+
+  </table>
+  
+  <table name="cm_simm_trade_incl_details" xmlns="">
+  	<!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <!-- End Core columns -->
+    <column name="start_date" nullable="true" scale="1" type="int" />
+    
+    <index primary="true" prikeyname="pk_cm_simm_trade_incl_details">
+      <on>id</on>
+    </index>
+  </table>
+  
+  <table name="cm_simm_trade_incl_po_map" xmlns="">
+  	<column name="simm_trade_incl_details_id" nullable="false" scale="64" type="string" />
+	<column name="processing_org_ids" nullable="true" scale="64" type="string" />
+  	
+  	<index primary="false" unique="true" indexname="cm_simm_trade_incl_po_map_idx">
+  		<on>simm_trade_incl_details_id</on>
+  		<on>processing_org_ids</on>
+  	</index>
+  </table>
+  
+  <table name="cm_simm_trade_incl_cp_map" xmlns="">
+  	<column name="simm_trade_incl_details_id" nullable="false" scale="64" type="string" />
+	<column name="counterparty_ids" nullable="true" scale="64" type="string" />
+  	
+  	<index primary="false" unique="true" indexname="cm_simm_trade_incl_cp_map_idx">
+  		<on>simm_trade_incl_details_id</on>
+  		<on>counterparty_ids</on>
+  	</index>
+  </table>
+  
+  <!-- END TRADE INCLUSION DETAILS -->
+  
+  <table name="cm_ia_account" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <!-- End Core columns -->
+
+    <column name="postiaelementdetails_id" type="string" nullable="true" scale="36"/>
+    <column name="collectiaelementdetails_id" type="string" nullable="false" scale="36"/>
+ 
+
+    <index primary="true" prikeyname="pk_cm_ia_account">
+      <on>id</on>
+    </index>
+	<index primary="false">
+       <on>postiaelementdetails_id</on>
+    </index>
+	<index primary="false">
+       <on>collectiaelementdetails_id</on>
+    </index>
+
+  </table>
+  
+  <table name="cm_ia_element_details" xmlns="">
+  <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+	<column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+        <column name="percentage_basis" type="string" nullable="false" scale="255"/>
+        <column name="exposure_management" type="string" nullable="false" scale="255"/>
+    </table>
+  
+    <table name="cm_ia_element_link" xmlns="">
+        <column name="ia_element_details_id" type="string" nullable="false" scale="36"/>
+        <column name="ia_element_id" type="string" nullable="false" scale="36"/>
+    </table>
+
+  <table name="cm_ia_element" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+
+	 <column name="priority" nullable="false"  scale="1" type="int" />
+    <column name="product_type" nullable="false" scale="255" type="string" />
+	 <column name="currency" nullable="false" scale="3" type="string" />
+	  <column name="maturity_tenor_from" nullable="false" scale="255" type="string" />
+	   <column name="maturity_tenor_to" nullable="false" scale="255" type="string" />
+	   <column name="factor" nullable="false" scale="1" type="float" />
+
+    <index primary="true" prikeyname="pk_cm_ia_element">
+      <on>id</on>
+    </index>
+
+  </table>
+
+  <table name="cm_acadia_imem_integration" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+	<column name="tree_id" nullable="false" scale="64" type="string" />
+	<column name="crif_file_transaction_id" nullable="true" scale="64" type="string" />
+	<column name="exposure_file_transaction_id" nullable="true" scale="64" type="string" />
+    <column name="status" nullable="false" scale="255" type="string" />
+    <column name="error_file_id" nullable="true" scale="64" type="string" />
+     <column name="message" nullable="true" scale="255" type="string" />
+     
+    <index primary="true" prikeyname="pk_cm_acadia_imem_integration">
+      <on>id</on>
+    </index>
+    
+    <index primary="false" unique="true" indexname="cm_acadia_imem_integration_idx">
+      <on>tree_id</on>
+      <on>tenant_id</on>
+    </index>
+  </table>
+  <table name="cm_account_group" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+    <column name="name" nullable="false" scale="255" type="string" />
+    <index primary="true" prikeyname="pk_cm_account_group">
+      <on>id</on>
+    </index>
+    <index primary="false" unique="true" indexname="cm_account_group_idx">
+      <on>name</on>
+      <on>tenant_id</on>
+    </index>
+  </table>
+  <table name="cm_account_group_ids" xmlns="">
+    <column name="account_id" type="string" nullable="false" scale="64"/>
+    <column name="account_group_ids" type="string" nullable="false" scale="64"/>
+    <index primary="false" unique="true" indexname="cm_account_id_group_id_idx">
+      <on>account_id</on>
+      <on>account_group_ids</on>
+    </index>
+  </table>
+  
+    <!-- PRODUCT MAPPING -->
+  <table name="cm_product_mapping" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+    <column name="product_class" nullable="false" scale="255" type="string" />
+    <column name="product_type" nullable="false" scale="255" type="string" />
+    <column name="source" nullable="false" scale="255" type="string" />
+    <index primary="true" prikeyname="pk_cm_product_mapping">
+      <on>id</on>
+    </index>
+    <index primary="false" unique="true" indexname="cm_product_type_idx">
+      <on>product_type</on>
+      <on>tenant_id</on>
+    </index>
+  </table>
+  
+  <table name="cm_threshold_group" xmlns="">
+    <!-- Core columns -->
+    <column name="id" nullable="false" scale="64" type="string" />
+    <column name="tenant_id" nullable="false" default="0" scale="1" type="int" />
+    <column name="version" nullable="false" default="0" scale="1" type="int" />
+    <column name="creation_user" nullable="false" scale="255" type="string" />
+    <column name="creation_user_type" nullable="false" scale="255" type="string" />
+    <column name="creation_date" nullable="false" scale="1" type="bigint" />
+    <column name="last_update_user" nullable="false" scale="255" type="string" />
+    <column name="last_update_user_type" nullable="false" scale="255" type="string" />
+    <column name="last_update_date" nullable="false" scale="1" type="bigint" />
+    <!-- End Core columns -->
+    <column name="name" nullable="false" scale="255" type="string" />
+    <column name="currency" nullable="false" scale="3" type="string" default="XXX" />
+    <column name="post_threshold" nullable="false" scale="1" type="float" default="0" />
+    <column name="collect_threshold" nullable="false" scale="1" type="float" default="0" />
+    <column name="trigger_percentage" nullable="false" scale="1" type="float" default="0" />
+    
+    <index primary="true" prikeyname="pk_cm_threshold_group">
+      <on>id</on>
+    </index>
+    <index primary="false" unique="true" indexname="cm_threshold_group_idx">
+      <on>name</on>
+      <on>tenant_id</on>
+    </index>
+  </table>
+</database>

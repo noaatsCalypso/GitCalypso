@@ -1,0 +1,323 @@
+<!-- Start Swap FIX/FLOAT -->
+<div style="page-break-inside:avoid">
+<p>
+<font size="2">
+<b><u>Fixed Amounts:</u></b>
+</font>
+</p>
+
+
+<p>
+<font size="2">|FIX_NOTIONAL|</font>
+</p>
+
+
+<!---Fixed Swap Leg Table-->
+
+<p>
+<table CELLSPACING=0 BORDER=0 WIDTH=650>
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Fixed Rate Payer:</font>
+	</td>
+	<td width="70%" VALIGN="TOP">
+	<font size="2">|FIX_PAYER_CODE|</font>
+	</td>
+</tr>
+<!--calypso>
+if ( |FLT_CPN_OFFSET| like "0%" )
+    inline "
+    <tr>
+        <td width='30%' VALIGN='TOP'>
+        <FONT SIZE='2'>Fixed Rate Payer Payment Dates:</FONT>
+        </td>
+        <td width='70%' VALIGN='TOP'>
+        <FONT SIZE='2'>|FIX_CPN_FREQ| on the |FIX_ROLL_DAY|, starting |FIX_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |FIX_CPN_DATE_ROLL| Business Day convention.</FONT>
+        </td>
+    </tr>
+    ";
+else
+    inline "
+    <tr>
+        <td width='30%' VALIGN='TOP'>
+        <FONT SIZE='2'>Fixed Rate Period End Dates:</FONT>
+        </td>
+        <td width='70%' VALIGN='TOP'>
+        <FONT SIZE='2'>|FIX_CPN_FREQ| on the |FIX_ROLL_DAY|, starting |FIX_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |FIX_CPN_DATE_ROLL| Business Day convention.</FONT>
+        </td>
+    </tr>
+    <tr>
+        <td width='30%' VALIGN='TOP'>
+        <FONT SIZE='2'>Payment Lag:</FONT>
+        </td>
+        <td width='70%' VALIGN='TOP'>
+        <FONT SIZE='2'>|FLT_CPN_OFFSET|.</FONT>
+        </td>
+    </tr>
+    ";
+</calypso-->
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Fixed Rate:</font>
+	</td>
+	<td width="70%" VALIGN="TOP">
+	<font size="2">|FIX_FIXED_RATE| %</font>
+	</td>
+</tr>
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Fixed Rate Day Count Fraction:</font>
+	</td>
+	<td width="70%" VALIGN="TOP">
+	<font size="2">|FIX_DAY_COUNT|</font>
+	</td>
+</tr>
+</table>
+</div>
+<!---End Fixed Swap Leg Table-->
+
+<div style="page-break-inside:avoid">
+
+<p>
+<font size="2">|ADDITIONAL_FIXED_AMOUNT|</font>
+</p>
+
+<p>
+<font size="2">
+<b><u>Floating Amounts:</u></b>
+</font>
+</p>
+
+<p>
+<font size="2">|FLT_NOTIONAL|</font>
+</p>
+
+<!---Floating Swap Leg Table-->
+<p>
+<table CELLSPACING=0 BORDER=0 WIDTH=650>
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Floating Rate Payer:</font>
+	</td>
+	<td width="70%" VALIGN="TOP">
+	<font size="2">|FLT_PAYER_CODE|</font>
+	</td>
+</tr>
+<!--calypso>
+if ( |FLT_CPN_OFFSET| like "0%" )
+    inline "
+    <tr>
+        <td width='30%' VALIGN='TOP'>
+        <FONT SIZE='2'>Floating Rate Payer Payment Dates:</FONT>
+        </td>
+        <td width='70%' VALIGN='TOP'>
+        <FONT SIZE='2'>|FLT_CPN_FREQ| on the |FLT_ROLL_DAY|, starting |FLT_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |FLT_CPN_DATE_ROLL| Business Day convention.</FONT>
+        </td>
+    </tr>
+    ";
+else
+    inline "
+    <tr>
+        <td width='30%' VALIGN='TOP'>
+        <FONT SIZE='2'>Floating Rate Period End Dates:</FONT>
+        </td>
+        <td width='70%' VALIGN='TOP'>
+        <FONT SIZE='2'>|FLT_CPN_FREQ| on the |FLT_ROLL_DAY|, starting |FLT_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |FLT_CPN_DATE_ROLL| Business Day convention.</FONT>
+        </td>
+    </tr>
+    <tr>
+        <td width='30%' VALIGN='TOP'>
+        <FONT SIZE='2'>Payment Lag:</FONT>
+        </td>
+        <td width='70%' VALIGN='TOP'>
+        <FONT SIZE='2'>|FLT_CPN_OFFSET|.</FONT>
+        </td>
+    </tr>
+    ";
+</calypso-->
+<!--calypso>
+if ( |FLT_MANUAL_RESET| == "true" )
+    inline "
+    <tr>
+        <td width='30%' VALIGN='TOP'>
+        <font SIZE='2'>Floating Rate for Initial Calculation Period:</font>
+        </td>
+        <td width='70%' VALIGN='TOP'>
+        <font SIZE='2'>|FLT_FIRST_RESET_RATE|</font>
+        </td>
+    </tr>
+    ";
+</calypso-->
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Floating Rate Option:</font>
+	</td>
+	<td width="70%" VALIGN="TOP">
+	<font size="2">|FLT_RATE_INDEX|</font>
+	</td>
+</tr>
+<!--calypso>
+if ( |FLT_RATE_FACTOR| != 1 )
+    inline "
+    <tr>
+        <td width='30%' VALIGN='TOP'>
+        <font SIZE='2'>Rate Index Factor:</font>
+        </td>
+        <td width='70%' VALIGN='TOP'>
+        <font SIZE='2'>|FLT_RATE_FACTOR|</font>
+        </td>
+    </tr>
+    ";
+</calypso-->
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Designated Maturity:</font>
+	</td>
+	<td width="70%" VALIGN="TOP">
+	<font size="2">|FLT_INDEX_TENOR|</font>
+	</td>
+</tr>
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Spread:</font>
+	</td>
+	<td width="70%" VALIGN="TOP">
+	<font size="2">|FLT_SPREAD|</font>
+	</td>
+</tr>
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Floating Rate Day Count Fraction:</font>
+	</td>
+	<td width="70%" VALIGN="TOP">
+	<font size="2">|FLT_DAY_COUNT|</font>
+	</td>
+</tr>
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Reset Dates:</font>
+	</td>
+	<td width="70%" VALIGN="TOP">
+	<font size="2">|FLT_RATE_DETERMINED|</font>
+	</td>
+</tr>
+<!--calypso>
+if ( |FLT_AVERAGING_RESET| == "true" )
+    inline "
+    <tr>
+        <td width='30%' VALIGN='TOP'>
+        <font SIZE='2'>Rate Cut-off Dates:</font>
+        </td>
+        <td width='70%' VALIGN='TOP'>
+        <font SIZE='2'>|FLT_RESET_CUTOFF_DATES|</font>
+        </td>
+    </tr>
+    <tr>
+        <td width='30%' VALIGN='TOP'>
+        <font SIZE='2'>Method of Averaging:</font>
+        </td>
+        <td width='70%' VALIGN='TOP'>
+        <font SIZE='2'>|AVERAGING_METHOD|</font>
+        </td>
+    </tr>
+    <tr>
+        <td width='30%' VALIGN='TOP'>
+        <FONT SIZE='2'>Averaging Frequency:</FONT>
+        </td>
+        <td width='70%' VALIGN='TOP'>
+        <FONT SIZE='2'>|AVERAGING_FREQUENCY|</FONT>
+        </td>
+    </tr>    
+    ";
+if ( |FLT_COMPOUNDING| == "true" )
+    inline "
+    <tr>
+	<td width='30%' VALIGN='TOP'>
+	<font size='2'>Compounding Type:</font>
+	</td>
+	<td width='70%' VALIGN='TOP'>
+	<font size='2'>|FLT_COMPOUND_TYPE|</font>
+	</td>
+    </tr>
+    <tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Compounding:</font>
+	</td>
+	<td width="70%" VALIGN="TOP">
+	<font size="2">|FLT_COMPOUND_FREQ|</font>
+	</td>
+    </tr>
+    ";
+</calypso-->
+</table>
+</div>
+<!---End Floating Swap Leg Table-->
+
+
+<!--calypso>
+if ( |HAS_MANDATORY_TERMINATION| == "true" )
+    include "exhibit_2g.html";
+</calypso-->
+
+
+<!---BizDays Table-->
+<p>
+<table CELLSPACING=0 BORDER=0 WIDTH=650>
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Business Days:</font>
+	</td>
+	<td width="70%" VALIGN="TOP">
+	<font size="2">|FIX_CPN_HOL|</font>
+	</td>
+</tr>
+<tr>
+	<td width="30%" VALIGN="TOP">
+	<font size="2">Calculation Agent:</font>
+	</td>
+	<td width="70%" VALIGN="TOP">
+	<font size="2">|SENDER_CODE|</font>
+	</td>
+</tr>
+</table>
+</p>
+<!---End BizDays Table-->
+
+<!--calypso>
+if(|HAS_PRINCIPAL_EXCHANGE| != "No") {
+inline "<b><u>Principal Exchange Schedule</u></b>
+<table>
+<tr>
+	<th>Date</th>
+	<th>Currency</th>
+	<th>Amount</th>
+	<th>Payer</th>
+</tr>";
+iterator("SwapPrincipalCashFlows")
+	inline "<tr><td>|PRINCIPAL_EXCHANGE_DATE|</td>
+	<td>|PRINCIPAL_EXCHANGE_CURRENCY|</td>
+	<td>|PRINCIPAL_EXCHANGE_AMOUNT|</td>
+	<td>|PRINCIPAL_EXCHANGE_PAYER|</td></tr>";
+inline "</table>";
+}
+</calypso-->
+
+
+<!--calypso>
+if(|HAS_TERMINATION_DATES| != "No") {
+inline "<b><u>Termination Date Schedule</u></b>
+<table>
+<tr>
+	<th>Termination Date</th>
+	<th>Notification Date</th>
+</tr>";
+iterator("TerminationDates")
+	inline "<tr><td>|TERMINATION_DATES|</td>
+	<td>|NOTIFICATION_DATES|</td></tr>";
+}
+inline "</table>";
+</calypso-->
+
+<!-- End Swap FIX/FLOAT -->
+
+

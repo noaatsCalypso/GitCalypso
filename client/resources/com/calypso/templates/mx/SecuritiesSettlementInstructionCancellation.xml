@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+    <contents>
+        <element name="SctiesTxCxlReq">
+            <contents>
+                <element name="AcctOwnrTxId">
+                    <contents>
+                        <element name="SctiesSttlmTxId">
+                            <contents>
+                                <element name="TxId">
+                                    <contents>
+                                        <report>
+                                            <column>Msg Linked Id</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <include>
+                                    <path>SecuritiesMovementType.xml</path>
+                                </include>
+                                <include>
+                                    <path>Payment.xml</path>
+                                </include>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <include>
+                    <path>SafekeepingAccount.xml</path>
+                </include>
+                <element name="TxDtls">
+                    <contents>
+                        <include>
+                            <path>FinancialInstrumentIdentification.xml</path>
+                        </include>
+                        <include>
+                            <path>TradeDate.xml</path>
+                        </include>
+                        <include>
+                            <path>SettleDate.xml</path>
+                        </include>
+                        <include>
+                            <path>SettlementQuantity.xml</path>
+                        </include>
+                        <element name="SttlmAmt">
+                            <contents>
+                                <element name="Amt">
+                                    <attributes>
+                                        <attribute name="Ccy">
+                                            <value>
+                                                <report>
+                                                    <column>Settle Cur.</column>
+                                                </report>
+                                            </value>
+                                        </attribute>
+                                    </attributes>
+                                    <contents>
+                                        <report>
+                                            <column>Xfer Other Amount</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <include>
+                                    <path>CreditDebitIndicator.xml</path>
+                                </include>
+                            </contents>
+                        </element>
+                        <contents>
+                            <include>
+                                <path>ReceivingSettlementParties.xml</path>
+                            </include>
+                        </contents>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

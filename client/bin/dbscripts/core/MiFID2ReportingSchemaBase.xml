@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    
+    <!--mifid reporting table -->
+    <table name="mifid2_transaction_event" xmlns="">
+
+        <column name="event_id" nullable="false" scale="1" type="int"/>
+
+        <column name="trn" nullable="false" scale="1" type="int"/>
+
+        <column name="trade_id" nullable="false" scale="1" type="int"/>
+
+        <!--A.01 Report Status -->
+        <column name="status" nullable="false" scale="4" type="string"/>
+
+        <column name="creation_date" nullable="false" type="timestamp"/>
+
+        <column name="sent_date" nullable="true" type="timestamp"/>
+
+        <!--A.02 Transaction Reference Number -->
+        <!--Will be derived from trade_id, status, trading_date_time and derivative_notional_change-->
+        
+        <!--A.03 Venue Transaction ID -->
+        <column name="venue_trans_id" nullable="true" scale="255" type="string"/>
+        
+        <!--A.04 Executing Entity ID -->
+        <column name="executing_entity_id" nullable="true" scale="255" type="string"/>
+        
+        <!--A.05 Submitting Entity ID -->
+        <column name="submitting_entity_id" nullable="false" scale="255" type="string"/>
+        
+        <!--A.06 Investment Firm Indicator -->
+        <column name="invest_firm_ind" nullable="true" scale="1" type="int"/>
+
+
+        <!--B.01 Buyer ID -->
+        <column name="buyer_id" nullable="true" scale="255" type="string"/>
+        
+        <!--B.02 Buyer ID Type -->
+        <column name="buyer_id_type" nullable="true" scale="1" type="string"/>
+        
+        <!--B.04 Buyer Country of Branch -->
+        <column name="buyer_country" nullable="true" scale="2" type="string"/>
+
+        <!--In table mifid2_party_national_id -->
+        <!--B.03 Buyer ID Sub Type -->
+        
+        <!--B.05 Buyer First Name -->
+        <!--B.06 Buyer last_name -->
+        <!--B.07 Buyer DOB -->
+        
+        <!--B.08 Buyer Decision Maker ID -->
+        <column name="buyer_dm_id" nullable="true" scale="255" type="string"/>
+        
+        <!--B.09 Buyer Decision Maker ID Type -->
+        <column name="buyer_dm_id_type" nullable="true" scale="1" type="string"/>
+
+        <!--In table mifid2_party_national_id -->
+        <!--B.10 Buyer Decision Maker ID Sub Type -->
+        <!--B.11 Buyer Decision Maker First Name -->
+        <!--B.12 Buyer Decision Maker last_name -->
+        <!--B.13 Buyer Decision Maker DOB -->
+        
+        <!--B.14 Seller ID -->
+        <column name="seller_id" nullable="true" scale="255" type="string"/>
+        
+        <!--B.15 Seller ID Type -->
+        <column name="seller_id_type" nullable="true" scale="1" type="string"/>
+
+        <column name="seller_country" nullable="true" scale="2" type="string"/>
+
+        <!--In table mifid2_party_national_id -->
+        <!--B.16 Seller ID Sub Type -->
+        <!--B.17 Seller Country of Branch -->
+        <!--B.18 Seller First Name -->
+        <!--B.19 Seller last_name -->
+        <!--B.20 Seller DOB -->
+        
+        <!--B.21 Seller Decision Maker ID -->
+        <column name="seller_dm_id" nullable="true" scale="255" type="string"/>
+        
+        <!--B.22 Seller Decision Maker ID Type -->
+        <column name="seller_dm_id_type" nullable="true" scale="1" type="string"/>
+        
+        <!--In table mifid2_party_national_id -->
+        <!--B.23 Seller Decision Maker ID Sub Type -->
+        <!--B.24 Seller Decision Maker First Name -->
+        <!--B.25 Seller Decision Maker last_name -->
+        <!--B.26 Seller Decision Maker DOB -->
+
+
+        <!--C.01 Order Transmission Indicator -->
+        <column name="order_transmission_ind" nullable="true" scale="1" type="string"/>
+        
+        <!--C.02 Buyer Transmitter ID -->
+        <column name="buyer_transmitter_id" nullable="true" scale="255" type="string"/>
+        
+        <!--C.03 Seller Transmitter ID -->
+        <column name="seller_transmitter_id" nullable="true" scale="255" type="string"/>
+
+
+        <!--D.01 Trading Date Time -->
+        <column name="trading_date_time" nullable="false" type="timestamp"/>
+
+        <!--D.02 Trading Capacity -->
+        <column name="trading_capacity" nullable="true" scale="4" type="string"/>
+        
+        <!--D.03 Quantity -->
+        <column name="quantity" nullable="true" type="float"/>
+        
+        <!--D.04 Quantity type -->
+        <column name="quantity_type" nullable="true" scale="20" type="string"/>
+        
+        <!--D.05 Quantity Currency -->
+        <column name="quantity_ccy" nullable="true" scale="3" type="string"/>
+        
+        <!--D.06 Derivative Notional Change -->
+        <column name="derivative_notional_change" nullable="true" scale="4" type="string"/>
+
+        <!--D.07 Price -->
+        <column name="price" nullable="true" type="float"/>
+        
+        <!--D.08 Price type -->
+        <column name="price_type" nullable="true" scale="11" type="string"/>
+        
+        <!--D.09 Price Currency -->
+        <column name="price_ccy" nullable="true" scale="3" type="string"/>
+        
+        <!--D.10 Net Amount -->
+        <column name="net_amount" nullable="true" type="float"/>
+
+        <!--D.11 Venue -->
+        <column name="venue" nullable="true" scale="4" type="string"/>
+        
+        <!--D.12 Country of Branch -->
+        <column name="country_of_branch" nullable="true" scale="2" type="string"/>
+        
+        <!--D.13 Up-Front Payment -->
+        <column name="up_front_payment" nullable="true" type="float"/>
+        
+        <!--D.14 Up-Front Payment Currency -->
+        <column name="up_front_payment_ccy" nullable="true" scale="3" type="string"/>
+        
+        <!--D.15 Complex Trade Component ID -->
+        <column name="complex_trade_component_id" nullable="true" scale="255" type="string"/>
+
+        <!--E.01 Instrument ID -->
+        <column name="instrument_id" nullable="true" scale="12" type="string"/>
+
+        <!--E.02 Instrument ID type -->
+        <column name="instrument_id_type" nullable="true" scale="15" type="string"/>
+        
+        <!--E.03 Instrument Name -->
+        <column name="instrument_name" nullable="true" scale="255" type="string"/>
+        
+        <!--E.04 Instrument Classification -->
+        <column name="instrument_classification" nullable="true" scale="255" type="string"/>
+        
+        <!--E.05 Notional Currency 1 -->
+        <column name="notional_ccy1" nullable="true" scale="3" type="string"/>
+        
+        <!--E.06 Notional Currency 2 type -->
+        <column name="notional_ccy2_type" nullable="true" scale="6" type="string"/>
+        
+        <!--E.07 Notional Currency 2 -->
+        <column name="notional_ccy2" nullable="true" scale="3" type="string"/>
+        
+        <!--E.08 Price Multiplier -->
+        <column name="price_multiplier" nullable="true" type="float"/>
+        
+        <!--E.09 UV Instrument Classification -->
+        <column name="uv_instrument_classification" nullable="true" scale="512" type="string"/>
+        
+        <!--E.10 Underlying Instrument ID -->
+        <column name="underlying_instrument_id" nullable="true" scale="255" type="string"/>
+        
+        <!--E.11 Underlying Index Classification -->
+        <column name="uv_index_classification" nullable="true" scale="255" type="string"/>
+
+        <!--E.12 Underlying Index ID -->
+        <column name="underlying_index_id" nullable="true" scale="512" type="string"/>
+
+        <!--E.13 Underlying Index Name -->
+        <column name="underlying_index_name" nullable="true" scale="255" type="string"/>
+        
+        <!--E.14 Underlying Index Term -->
+        <column name="underlying_index_term" nullable="true" scale="25" type="string"/>
+        
+        <!--E.15 Option Type -->
+        <column name="option_type" nullable="true" scale="12" type="string"/>
+        
+        <!--E.16 Strike Price -->
+        <column name="strike_price" nullable="true" type="float"/>
+        
+        <!--E.17 Strike price Type -->
+        <column name="strike_price_type" nullable="true" scale="12" type="string"/>
+        
+        <!--E.18 Strike Price Currency -->
+        <column name="strike_price_ccy" nullable="true" scale="3" type="string"/>
+
+        <!--E.19 Option Style -->
+        <column name="option_style" nullable="true" scale="25" type="string"/>
+        
+        <!--E.20 Maturity Date -->
+        <column name="maturity_date" nullable="true" type="timestamp"/>
+        
+        <!--E.21 Expiry Date -->
+        <column name="expiry_date" nullable="true" type="timestamp"/>
+
+        <!--E.22 Delivery Type -->
+        <column name="delivery_type" nullable="true" scale="4" type="string"/>
+
+
+        <column name="invest_decision_name" nullable="true" scale="255" type="string"/>
+
+        <!-- F.01 to F.04 will be queried from mifid2_trader table using invest_decision_name value -->
+        <!--F.01 Investment Decision ID. -->
+        <!--F.02 Investment Decision ID Type-->
+        <!--F.03 Investment Decision ID Sub Type -->
+        <!--F.04 Investment Decision Country of Branch -->
+        
+        <column name="firm_execution_name" nullable="true" scale="255" type="string"/>
+        
+        <!--F.05 to F.08 will be queried from mifid2_trader trable using invest_decision_name value -->
+        <!--F.05 Firm Execution ID -->
+        <!--F.06 Firm Execution ID Type -->
+        <!--F.07 Firm Execution ID Sub Type -->
+        <!--F.08 Firm Execution Country of Branch -->
+
+        <!--G.01 Waiver Indicator -->
+        <column name="waiver_ind" nullable="true" scale="4" type="string"/>
+        
+        <!--G.02 Short Selling Indicator -->
+        <column name="short_selling_ind" nullable="true" scale="4" type="string"/>
+        
+        <!--G.03 OTC Post Trade Indicator -->
+        <column name="otc_post_trade_ind" nullable="true" scale="255" type="string"/>
+        
+        <!--G.04 Commodity Derivative Indicator -->
+        <column name="commodity_derivative_ind" nullable="true" scale="1" type="string"/>
+
+        <!--G.05 SFT Indicator -->
+        <column name="sft_ind" nullable="true" scale="1" type="string"/>
+
+        <!--Not Supported-->        
+        <!--G.06 Data Category -->
+        <!--G.07 Internal client identification -->
+
+        <index primary="true">
+            <on>event_id</on>
+        </index>
+
+        <index primary="false">
+            <on>trade_id</on>
+        </index>
+    </table>
+
+    <!--Fields when the id_type of the party (Buyer, Seller, BuyerDM or SellerDM)-->
+    <!--is type national_id. in this case...  -->
+    <table name="mifid2_party_national_id" xmlns="">
+        <column name="event_id" nullable="false" scale="1" type="int"/>
+        <column name="party_id" nullable="false" scale="255" type="string"/>
+        <column name="party_id_sub_type" nullable="true" scale="6" type="string"/>
+        <column name="party_first_name" nullable="true" scale="255" type="string"/>
+        <column name="party_last_name" nullable="true" scale="255" type="string"/>
+        <column name="party_dob" nullable="true" type="timestamp"/>
+
+        <index primary="true">
+            <on>event_id</on>
+             <on>party_id</on>
+        </index>
+	</table>
+
+    <!-- Trader table -->
+    <table name="mifid2_trader" xmlns="">
+        <column name="trader_id" nullable="false" scale="1" type="int"/> 
+        <column name="trader_short_name" nullable="false" type="string" scale="128"/>
+        <column name="trader_first_name" nullable="true" type="string" scale="255"/>
+        <column name="trader_last_name" nullable="true" type="string" scale="255"/>
+		<column name="trader_dob" nullable="true" type="timestamp"/>
+		<column name="trader_country" nullable="true" type="string" scale="2"/>
+        <column name="trader_country_of_branch" nullable="true" type="string" scale="2"/>
+		<column name="trader_nat_id_type" nullable="true" type="string" scale="255"/>
+		<column name="trader_nat_id" nullable="true" type="string" scale="255"/>
+
+        <index primary="true">
+            <on>trader_id</on>
+        </index>
+
+        <index primary="false">
+            <on>trader_short_name</on>
+        </index>
+
+	</table>
+	    <!-- Product Eligibility table -->
+    <table name="mifid2_product_eligibility" xmlns="">
+    	<column name="product_eligibility_id" nullable="false" scale="1" type="int"/> 
+ 		<column name="legal_entity_id" nullable="false" scale="1" type="int"/>
+        <column name="processing_org_id" nullable="false" scale="1" type="int"/>
+        <column name="product_type" nullable="false" scale="32" type="string"/>
+        <column name="product_subtype" nullable="false" scale="32" type="string"/>
+        <column name="instrument_id" nullable="true" scale="1" type="int"/>
+        <column name="leg1_currency" nullable="true" scale="3" type="string"/> 
+        <column name="leg1_rate_index" nullable="true" scale="128" type="string"/>        
+        <column name="leg2_currency" nullable="true" scale="3" type="string"/> 
+        <column name="leg2_rate_index" nullable="true" scale="128" type="string"/>        
+        <column name="underlying_id" nullable="true" scale="1" type="int"/>
+        <column name="obligation_id" nullable="true" scale="1" type="int"/>
+               
+        <index primary="true">
+            <on>product_eligibility_id</on>
+        </index>
+	</table>
+</database>

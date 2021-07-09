@@ -1,0 +1,392 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" || |MESSAGE_SUBACTION|== "CANCEL")
+	inline  "Amend and Cancel";
+</calypso-->
+</p>
+
+<!--calypso>
+if (|PRODUCT_TYPE| == "Swap")
+   set TRANSACTION_TYPE = "Interest Rate Swap";
+else  if (|PRODUCT_TYPE| == "CappedSwap")
+   set TRANSACTION_TYPE = "Interest Rate Capped Swap";
+</calypso-->
+
+<p class="header1">Inflation |TRANSACTION_TYPE| Confirmation</p>
+
+<br>
+<p><b>Our Transaction Reference: |TRADE_ID|</b></p>
+<br>
+
+<p class="indented">
+The purpose of this 
+<!--calypso>
+if ( Message.getAddressMethod() == "FAX" )
+    inline "facsimile";
+else
+    inline "letter";
+</calypso-->
+(this "Confirmation") is to confirm the terms and conditions of the Swap Transaction 
+entered into between us on the Trade Date specified below.
+</p>
+<!--calypso>
+	if (|MESSAGE_SUBACTION|== "AMEND")
+	 inline "<p>This Confirmation cancels and supersedes the previous confirmation under the same reference.</p>";
+	else if (|MESSAGE_SUBACTION|== "CANCEL")
+	 inline "<p>This Confirmation cancels the previous confirmation under the same reference.</p>";
+</calypso-->
+<p class="indented">The definitions and provisions contained in the 2006 ISDA 
+Definitions and in the 2008 ISDA Inflation Derivatives Definitions (the "Inflation Definitions", and together with the Swap Definitions, the
+"Definitions" ), in each case as published by the International Swaps and Derivatives Association, Inc., are
+incorporated into this Confirmation. In the event of any inconsistency between the Swap Definitions and the
+Inflation Definitions, the Inflation Definitions will govern. In the event of any inconsistency between either
+set of Definitions and this Confirmation, this Confirmation will govern.
+</p>
+
+
+<p class="indented">
+<!--calypso>
+if ( |MASTER_AGREEMENT| == "ISDA" && |LA_STATUS| != "SIGNED" ) {
+    inline "This Confirmation evidences a complete and binding agreement between you
+and us as to the terms of the Swap Transaction to which this Confirmation relates.  In addition, you and
+we agree to use all reasonable efforts promptly to negotiate, execute and deliver an agreement in the
+form of the ISDA Master Agreement (Multicurrency-Cross Border) (the &quot;ISDA Form&quot;), with such
+modifications as you and we will in good faith agree.  Upon the execution by you and us of such an agreement,
+this Confirmation will supplement, form a part of and be subject to that agreement.  All provisions contained
+in or incorporated by reference in that agreement upon its execution will govern this Confirmation except as
+expressly modified below.  Until we execute and deliver that agreement, this Confirmation, together with all
+other documents referring to the ISDA Form (each a &quot;Confirmation&quot;) confirming transactions (each a
+&quot;Transaction&quot;) entered into between us (notwithstanding anything to the contrary in a Confirmation),
+shall supplement, form a part of, and be subject to, an agreement in the form of the ISDA Form as if we had
+executed an agreement in such form (but without any Schedule except for the election of
+|LA_LEGAL_JURISDICTION| as the governing law and |TRADE_CURRENCY| as the Termination Currency) on the Trade
+Date of the first such Transaction between us.  In the event of any inconsistency between the provisions of
+that agreement and this Confirmation, this Confirmation will prevail for purposes of this Swap Transaction.
+    ";
+}
+if ( |MASTER_AGREEMENT| != "ISDA" || |LA_STATUS| == "SIGNED" ) {
+    inline "This Confirmation constitutes a &quot;Confirmation&quot; as referred to in, and 
+supplements, forms part of, and is subject to, the |LA_ISDA_AGREEMENT| 
+dated as of |LA_AGREEMENT_DATE|, as amended and supplemented from time to time (the &quot;Agreement&quot;), 
+between you and us. All provisions contained in the Agreement govern this Confirmation except as expressly 
+modified below.  
+    ";
+}
+</calypso-->
+</p>
+
+<br>
+<table>
+<tr>
+	<td width="30%">Notional Amount:</td>
+	<td>|SWAP_NOTIONAL|</td>
+</tr>
+<tr>
+	<td>Trade Date:</td>
+	<td>|TRADE_DATE|</td>
+</tr>
+<tr>
+	<td>Effective Date:</td>
+	<td>|SETTLE_DATE|</td>
+</tr>
+<tr>
+	<td>Termination Date:</td>
+	<td>|PRODUCT_MATURITYDATE|, subject to adjustment in accordance with the Modified Following Business Day Convention.</td>
+</tr>
+</table>
+<br>
+<!--calypso>
+if(|HAS_ADDITIONAL_FIXED_AMOUNT| != "No") {
+    inline "<p class=header2>Additional Fixed Amount</p>";
+    inline "<table>";
+    iterator("FixedFees") {
+        inline "
+        <tr><td>Fixed Rate Payer:</td><td>|ADDITIONAL_FIXED_AMOUNT_PAYER|</td></tr>
+        <tr><td>Fixed Rate Amount:</td><td>|ADDITIONAL_FIXED_AMOUNT_AMOUNT|  |ADDITIONAL_FIXED_AMOUNT_CCY|</td></tr>
+        <tr><td>Fixed Rate Payment Date:</td><td>|ADDITIONAL_FIXED_AMOUNT_DATE|</td></tr>";
+    }
+    inline "</table>";
+}
+</calypso-->
+
+<!--calypso>
+if(|HAS_AMORTIZING| == "Yes") {
+	inline "
+<table>
+<tr>
+	<th>Calculation Period(s) Beginning</th>
+	<th>Notional Amount</th>
+	<th>Notional Reduction from Previous Calculation Period(s)</th>
+</tr>
+";
+	iterator("PayLegFlowInterest")
+		inline "
+		<tr>
+			<td>|CASHFLOW_CALCULATION_PERIOD_BEGINNING|</td><td>|CASHFLOW_NOTIONAL|</td><td>|CASHFLOW_NOTIONAL_REDUCTION|</td>
+		</tr>";
+	}
+</calypso-->
+<br>
+
+<!-- Start Swap FIX/FLOAT -->
+
+<table>
+<tr>
+	<td width="30%">Business Days:</td>
+	<td>|FLT_CPN_HOL|</td>
+</tr>
+<tr>
+	<td>Calculation Agent:</td>
+	<td>|SENDER_CODE|, unless otherwise stated in the Agreement</td>
+</tr>
+</table>
+
+<p class='header2'>Fixed Amounts:</p>
+
+<!---Fixed Swap Leg Table-->
+
+<table>
+<tr>
+	<td width="30%">Fixed Rate Payer:</td>
+	<td>|FIX_PAYER_CODE|</td>
+</tr>
+<tr>
+	<td width="30%">Fixed Currency Amount:</td>
+	<td>|FIX_NOTIONAL|</td>
+</tr>
+<!--calypso>
+if ( |FLT_CPN_OFFSET| like "0%" )
+    inline "
+    <tr>
+        <td>Fixed Rate Payer Payment Dates:</td>
+        <td>|FIX_CPN_FREQ| on the |FIX_ROLL_DAY|, starting |FIX_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |FIX_CPN_DATE_ROLL| Business Day convention.</td>
+    </tr>
+    ";
+else
+    inline "
+    <tr>
+        <td>Fixed Rate Period End Dates:</td>
+        <td>|FIX_CPN_FREQ| on the |FIX_ROLL_DAY|, starting |FIX_FIRST_PAYMENT_DATE| subject to adjustment
+		in accordance with the |FIX_CPN_DATE_ROLL| Business Day convention.</td>
+    </tr>
+    <tr>
+        <td>Payment Lag:</td>
+        <td>|FLT_CPN_OFFSET|.</td>
+    </tr>
+    ";
+</calypso-->
+<tr>
+	<td>Fixed Rate:</td>
+	<td>|FIX_FIXED_RATE| %</td>
+</tr>
+<tr>
+	<td>Fixed Rate Day Count Fraction:</td>
+	<td>|FIX_DAY_COUNT|</td>
+</tr>
+</table>
+<br>
+<!---End Fixed Swap Leg Table-->
+
+<p class="header2">Floating Amounts:</p>
+
+<!---Floating Swap Leg Table-->
+<table CELLSPACING=0 BORDER=0 WIDTH=650>
+<tr>
+	<td width='30%'>Floating Rate Payer:</td>
+	<td>|FLT_PAYER_CODE|</td>
+</tr>
+<tr>
+	<td width="30%">Floating Currency Amount:</td>
+	<td>|FLT_NOTIONAL|</td>
+</tr>
+<!--calypso>
+if ( |FLT_CPN_OFFSET| like "0%" )
+    inline "
+    <tr>
+        <td>Floating Rate Payer Payment Dates:</td>
+        <td>|FLT_CPN_FREQ| on the |FLT_ROLL_DAY|, starting |FLT_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |FLT_CPN_DATE_ROLL| Business Day convention.</td>
+    </tr>
+    ";
+else
+    inline "
+    <tr>
+        <td>Floating Rate Period End Dates:</td>
+        <td>|FLT_CPN_FREQ| on the |FLT_ROLL_DAY|, starting |FLT_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |FLT_CPN_DATE_ROLL| Business Day convention.</td>
+    </tr>
+    <tr>
+        <td>Payment Lag:</td>
+        <td>|FLT_CPN_OFFSET|.</td>
+    </tr>
+    ";
+</calypso-->
+<!--calypso>
+if ( |FLT_MANUAL_RESET| == "true" )
+    inline "
+    <tr>
+        <td>Floating Rate for Initial Calculation Period:</td>
+        <td>|FLT_FIRST_RESET_RATE|</td>
+    </tr>
+    ";
+</calypso-->
+<tr>
+	<td>Floating Rate Option:</td>
+	<td>|FLT_RATE_INDEX|</td>
+</tr>
+<tr>
+	<td>Floating Initial Index Level:</td>
+	<td>|FLT_INIT_INDEX_LEVEL|</td>
+</tr>
+<!--calypso>
+if ( |FLT_RATE_FACTOR| != 1 )
+    inline "
+    <tr>
+        <td>Rate Index Factor:</td>
+        <td>|FLT_RATE_FACTOR|</td>
+    </tr>
+    ";
+</calypso-->
+<tr>
+	<td>Floating Rate Day Count Fraction:</td>
+	<td>|FLT_DAY_COUNT|</td>
+</tr>
+<tr>
+	<td>Reset Dates:</td>
+	<td>|FLT_RATE_DETERMINED|</td>
+</tr>
+<tr>
+	<td>Reset Lag:</td>
+	<td>|FLT_RESET_LAG|</td>
+</tr>
+<tr>
+	<td>Reset Holidays:</td>
+	<td>|FLT_RESET_HOLIDAYS|</td>
+</tr>
+<tr>
+	<td>Reset Date Roll:</td>
+	<td>|FLT_RESET_DATE_ROLL|</td>
+</tr>
+<!--calypso>
+if (|PRODUCT_TYPE| == "CappedSwap")
+    inline "
+	    <tr>
+        <td>Option Type:</td>
+        <td>|FLT_CAP_TYPE|</td>
+    </tr>
+        <td>Strike:</td>
+		<td>|FLT_CAP_RATE|</td>
+    </tr>
+    ";
+</calypso-->
+<tr>
+	<td>Spread as multiplier:</td>
+	<td>|FLT_SPREAD_AS_MULTIPLIER|</td>
+</tr>
+<tr>
+	<td>Inflation calculation method:</td>
+	<td>|FLT_INFLATION_CALCULATION_METHOD|</td>
+</tr>
+<tr>
+	<td>Inflation interpolated method:</td>
+	<td>|FLT_INFLATION_INTERPOLATION_METHOD|</td>
+</tr>
+<tr>
+	<td>Initial inflation:</td>
+	<td>|FLT_INITIAL_INFLATION|</td>
+</tr>
+<tr>
+	<td>Initial inflation date:</td>
+	<td>|FLT_INITIAL_LEVEL_DATE|</td>
+</tr>
+<tr>
+	<td>Initial inflation level:</td>
+	<td>|FLT_INITIAL_LEVEL|</td>
+</tr>
+<tr>
+	<td>Convert basis:</td>
+	<td>|FLT_CONVERT_BASIS|</td>
+</tr>
+<tr>
+	<td>Rate rounding:</td>
+	<td>|FLT_RATE_ROUNDING|</td>
+</tr>
+<tr>
+	<td>Rate decimals:</td>
+	<td>|FLT_RATE_DECIMALS|</td>
+</tr>
+<tr>
+	<td>Inflation adjustment applied to:</td>
+	<td>|FLT_INFLATION_APPLIED_TO|</td>
+</tr>
+<tr>
+	<td>Spread as multiplier:</td>
+	<td>|FLT_SPREAD_AS_MULTIPLIER|</td>
+</tr>
+<tr>
+	<td>Inflation with fixed rate:</td>
+	<td>|FLT_INFLATION_USE_FIXED_RATE|</td>
+</tr>
+</table>
+
+<!--calypso>
+if(|HAS_PRINCIPAL_EXCHANGE| != "No") {
+inline "<b><u>Principal Exchange Schedule</u></b>
+<table>
+<tr>
+	<th>Date</th>
+	<th>Currency</th>
+	<th>Amount</th>
+	<th>Payer</th>
+</tr>";
+iterator("SwapPrincipalCashFlows")
+	inline "<tr><td>|PRINCIPAL_EXCHANGE_DATE|</td>
+	<td>|PRINCIPAL_EXCHANGE_CURRENCY|</td>
+	<td>|PRINCIPAL_EXCHANGE_AMOUNT|</td>
+	<td>|PRINCIPAL_EXCHANGE_PAYER|</td></tr>";
+inline "</table>";
+}
+</calypso-->
+
+<!-- End additional provisions insertion. -->
+<p class='header2'>Account Details:</p>
+<table>
+ <tr>
+  <td width="30%"><b>Payments to |SENDER_CODE|:</b></td>
+  <td>|PO_INSTRUCTIONS|</td>
+ </tr>
+ <tr>
+  <td><b>Payments to |RECEIVER_CODE|:</b></td>
+  <td>|COUNTERPARTY_INSTRUCTIONS|</td>
+ </tr>
+</table>
+<br>
+<br>
+<!--calypso>
+if (|CREDITDOC| like "Y%")
+    inline "<p class='indented'>|RECEIVER_FULL_NAME| agrees to provide the following Credit Support Document:
+</p>
+<p>Offices:<br>
+(a)&nbsp;&nbsp;&nbsp; The Office of Party A for the Swap Transaction is |SENDER_ADDRESS| |SENDER_CITY| |SENDER_STATE| |SENDER_ZIPCODE| |SENDER_COUNTRY|; and<br>
+(b)&nbsp;&nbsp;&nbsp; The Office of Party B for the Swap Transaction is |RECEIVER_ADDRESS| |RECEIVER_CITY| |RECEIVER_STATE| |RECEIVER_ZIPCODE| |RECEIVER_COUNTRY|.
+</p>";
+</calypso-->
+<!--calypso>
+if ( |MASTER_AGREEMENT| == "ISDA" && |LA_STATUS| != "SIGNED" )
+	include "exhibit_LongForm.html";
+</calypso-->
+<p>
+Please confirm that the foregoing correctly sets forth the terms of our agreement
+by executing the copy of this Confirmation enclosed for that purpose and returning
+it to us or by sending us a letter substantially similar to this letter, which letter
+sets forth the material terms of the Swap Transaction to which this Confirmation
+relates and indicates your agreement to those terms.
+</p>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

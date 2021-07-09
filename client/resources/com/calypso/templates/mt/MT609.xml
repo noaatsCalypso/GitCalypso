@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 609: Statement of Metal Contracts -->
+<SwiftMsgDef>
+    <Name>MT609</Name>
+    <ModeSelectionList>
+        <ModeSelection qualifier="NEW" />
+        <ModeSelection qualifier="AMEND" />
+        <ModeSelection qualifier="CANCEL" />
+    </ModeSelectionList>
+    <SwiftSequence name="A" modes="MMM">
+        <SwiftField name="Sequence of Total" tag=":27:" format="1!n/1!n" value="SEQUENCE_TOTAL" modes="MMM" />
+        <SwiftField name="Transaction Reference Number" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM" />
+        <SwiftField name="Statement Date" tag=":31C:" format="6!n" value="DATE" modes="MMM" />
+    </SwiftSequence>
+    <SwiftSequence name="B" iterator="MT609Iterator" modes="MMM">
+        <SwiftField name="Further Identification" tag=":23:" format="16x" value="FURTHER_IDENTIFICATION" condition="contractTypeChanged()" modes="---" />
+        <SwiftField name="Identification of the Metal" tag=":26C:" format="[3!a]/15x/5!a4!a[4x][//8x]" value="METAL" modes="MMM" />
+        <SwiftField name="Transaction Details" tag=":68B:" format="6!n6!n16x/1!a3!a15d\n3!a15d/6!n3!a15d" value="SPOTFORWARD_DETAILS" condition="!isOption()" modes="---" />
+        <SwiftField name="Transaction Details" tag=":68C:" format="4a/4a/1!a[6!n]3!a15d\n3!a15d3!a15d3!a15d" value="OPTION_DETAILS" condition="isOption()" modes="---" />
+    </SwiftSequence>
+    <SwiftSequence name="C" modes="MMM">
+        <SwiftField name="Sender to Receiver Information" tag=":72:" format="6*35x" value="UNDERLYING_INFO" modes="OOO" />
+    </SwiftSequence>
+</SwiftMsgDef>

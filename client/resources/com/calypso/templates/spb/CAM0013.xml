@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+    <contents>
+        <element name="CAM0013" hideifempty="true">
+            <contents>
+                <element name="CodMsg">
+                    <contents>
+                        <text>
+                            <value>CAM0013</value>
+                        </text>
+                    </contents>
+                </element>
+                <element name="NumCtrlIF">
+                    <contents>
+                        <report>
+                            <column>MESSAGE_ID</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJBaseIF">
+                    <contents>
+                        <report>
+                            <column>FXCNPJBaseIF</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJIF">
+                    <contents>
+                        <report>
+                            <column>FXCNPJIF</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJIFParcr">
+                    <contents>
+                        <report>
+                            <column>FXCPTYCNPJ</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="Grupo_CAM0013_Contr"> <!-- Non BRL Ccy Buy -->
+                    <contents>
+                        <element name="TpOpCAM">
+                            <contents>
+                                <text>
+                                    <value>C</value>
+                                </text>
+                            </contents>
+                        </element>
+                        <element name="CodMoedaISO">
+                            <contents>
+                                <report>
+                                    <column>CAM1213BUYCCY</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="VlrME">
+                            <contents>
+                                <report>
+                                    <column>CAM1213BUYCCYAMT</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="TaxCam">
+                            <contents>
+                                <report>
+                                    <column>CAM1213TAXCAMBUYCCY</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="DtEntrME">
+                            <contents max="1">
+                                <report format="yyyy-MM-dd">
+                                    <column>CAM1213BUYCCYSETTLEDATE</column>
+                                </report>
+                                <report format="yyyy-MM-dd">
+                                    <column>Settle Date</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="CodFormaEntrMoeda">
+                            <contents>
+                                <report>
+                                    <column>CAM1213BUYCODFORMAENTRMOEDA</column>
+                                </report>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="Grupo_CAM0013_Contr"> <!-- Non BRL Ccy Sold -->
+                    <contents>
+                        <element name="TpOpCAM">
+                            <contents>
+                                <text>
+                                    <value>V</value>
+                                </text>
+                            </contents>
+                        </element>
+                        <element name="CodMoedaISO">
+                            <contents>
+                                <report>
+                                    <column>CAM1213SELLCCY</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="VlrME">
+                            <contents>
+                                <report>
+                                    <column>CAM1213SELLCCYAMT</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="TaxCam">
+                            <contents>
+                                <report>
+                                    <column>CAM1213TAXCAMSELLCCY</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="DtEntrME">
+                            <contents max="1">
+                                <report format="yyyy-MM-dd">
+                                    <column>CAM1213SELLCCYSETTLEDATE</column>
+                                </report>
+                                <report format="yyyy-MM-dd">
+                                    <column>Settle Date</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="CodFormaEntrMoeda">
+                            <contents>
+                                <report>
+                                    <column>CAM1213SELLCODFORMAENTRMOEDA</column>
+                                </report>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="VlrMN">  <!-- the buyer amount translated in BRL -->
+                    <contents>
+                        <report>
+                            <column>BRLBUYAMOUNT</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtLiquid">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>DTLIMLIQUID</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodFatoNatu">
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodFatoNatu</column>
+                        </report>
+
+                    </contents>
+                </element>
+                <element name="CodCliNatu">
+                    <contents>
+                        <report>
+                            <column>Cntp_Attr.CodCliNatu</column>
+                        </report>
+
+                    </contents>
+                </element>
+                <element name="IndrAvalNatu">
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.IndrAvalNatu</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodPagdr_RecbdrExtrNatu">
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodPagdr_RecbdrExtrNatu</column>
+                        </report>
+
+                    </contents>
+                </element>
+                <element name="CodGrpNatu">
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodGrpNatu</column>
+                        </report>
+
+                    </contents>
+                </element>
+                <element name="NumSeqInstcPgto">
+                    <contents>
+                        <report>
+                            <column>FXPOSDIATTRNUMSESINSTCPGTO</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtMovto">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>TODAY</column>
+                        </report>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

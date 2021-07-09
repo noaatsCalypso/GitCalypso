@@ -1,0 +1,30 @@
+#
+#  JMS properties file
+#
+#  REFER TO EXCHANGE FEED DOCUMENTATION FOR MORE INFO 
+#
+#  JMSQueueIEAdaptor properties
+#
+#    Note: if queue.ackType is not set to auto then 
+#          failed messages are not acknowledged to JMS and
+#          will be reconsumed when the engine restarts
+#	
+#	Queue-specific properties are prefixed by the queue name
+#
+input.queue.name=JQUEUE.LCH.CALYPSO
+JQUEUE.LCH.CALYPSO.queue.ackType=auto
+JQUEUE.LCH.CALYPSO.queue.persist=false
+JQUEUE.LCH.CALYPSO.queue.transacted=false
+
+output.queue.name=JQUEUE.CALYPSO.LCH
+JQUEUE.CALYPSO.LCH.queue.ackType=auto
+JQUEUE.CALYPSO.LCH.queue.persist=false
+JQUEUE.CALYPSO.LCH.queue.transacted=false
+
+jms.queue.hostname=localhost
+jms.queue.port=1414
+jms.queue.connectionUserName=
+jms.queue.connectionPassword=
+jms.queue.transportType=MQJMS_TP_CLIENT_MQ_TCPIP
+jms.queue.queueManager=QM.LCH.CALYPSO
+jms.queue.channel=SYSTEM.ADMIN.SVRCONN

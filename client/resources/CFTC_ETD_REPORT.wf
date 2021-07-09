@@ -1,0 +1,13 @@
+PSEventMessage;NONE;NEW;PENDING;true;false;false;CFTC_ETD_REPORT;ALL;;;false;false;On Failure;;;false;false;false;false;0;;;
+PSEventMessage;PENDING;AMEND;PENDING;true;false;false;CFTC_ETD_REPORT;ALL;;;false;false;On Failure;;;false;false;false;false;0;;;
+PSEventMessage;PENDING;AUTHORIZE;VERIFIED;true;true;false;CFTC_ETD_REPORT;ALL;CheckContact;;false;false;On Failure;;;false;false;false;false;0;;;
+PSEventMessage;PENDING;CANCEL;CANCELED;true;false;false;CFTC_ETD_REPORT;ALL;;;false;false;On Failure;;;false;false;false;false;0;;;
+PSEventMessage;TO_BE_SENT;CANCEL;CANCELED;true;false;false;CFTC_ETD_REPORT;ALL;;;false;false;On Failure;;;false;false;false;false;0;;;
+PSEventMessage;TO_BE_SENT;REPROCESS;TO_BE_SENT;true;false;false;CFTC_ETD_REPORT;ALL;;;false;false;On Failure;Manually trigger send after an initial failure;;false;false;false;false;0;;;
+PSEventMessage;TO_BE_SENT;SEND;SENT;true;false;false;CFTC_ETD_REPORT;ALL;;;false;false;On Failure;;;false;false;false;false;0;;;
+PSEventMessage;VERIFIED;AMEND;VERIFIED;true;false;false;CFTC_ETD_REPORT;ALL;;;false;false;On Failure;;;false;false;false;false;0;;;
+PSEventMessage;VERIFIED;CANCEL;CANCELED;true;false;false;CFTC_ETD_REPORT;ALL;;;false;false;On Failure;;;false;false;false;false;0;;;
+PSEventMessage;VERIFIED;PROCESS;TO_BE_SENT;true;false;false;CFTC_ETD_REPORT;ALL;PrepareCFTCReportForSend;;false;false;On Failure;Will attach a formatted, transmission-valid report to the message, and signal the SenderEngine to send it;;false;false;false;false;0;;;
+RuleAdditionalInfo 2
+ALL/PSEventMessage/CFTC_ETD_REPORT/ALL/PENDING/AUTHORIZE/VERIFIED;CheckContact;;;
+ALL/PSEventMessage/CFTC_ETD_REPORT/ALL/VERIFIED/PROCESS/TO_BE_SENT;PrepareCFTCReportForSend;;;

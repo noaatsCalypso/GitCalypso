@@ -1,0 +1,140 @@
+# Map Markitwire products to Calypso Identifers. 
+# DO NOT MODIFY.
+IRS=Swap
+FRA=FRA
+Swaption=Swaption
+CapFloor=CapFloor
+Basis\u0020Swap=BasisSwap
+OIS=OIS
+ZC\u0020Inflation\u0020Swap=ZCInflationSwap
+Cross\u0020Currency\u0020Basis\u0020Swap=Xccy
+Cross\u0020Currency\u0020IRS=Xccy
+Equity\u0020Share\u0020Swap=EquityShareSwap
+Netting\u0020Grid=NettingGrid
+
+IRS\u0020Novation\u0020Confirmation=Swap
+FRA\u0020Novation\u0020Confirmation=FRA
+Swaption\u0020Novation\u0020Confirmation=Swaption
+CapFloor\u0020Novation\u0020Confirmation=CapFloor
+Basis\u0020Swap\u0020Novation\u0020Confirmation=BasisSwap
+OIS\u0020Novation\u0020Confirmation=OIS
+ZC\u0020Inflation\u0020Swap\u0020Novation\u0020Confirmation=ZCInflationSwap
+Cross\u0020Currency\u0020Basis\u0020Swap\u0020Novation\u0020Confirmation=Xccy
+Cross\u0020Currency\u0020IRS\u0020Novation\u0020Confirmation=Xccy
+Fixed\u0020Fixed\u0020Swap=Swap
+SingleCurrencyInterestRateSwap=Swap
+Single\u0020Currency\u0020Basis\u0020Swap=BasisSwap
+
+# These are used to load the appropriate translators in Calypso
+# DO NOT MODIFY
+ZCInflationSwapParser=ZCInflationSwap
+XccyParser=Xccy
+FRAParser=FRA
+SwaptionParser=Swaption
+CapFloorParser=CapFloor
+SwapParser=Swap
+Swap42Parser=Swap
+BasisSwapParser=BasisSwap
+OISParser=OIS
+NDSParser=NDS
+XCCySwapParser=XCCySwap
+SwapCrossCurrencyParser=Swap
+SwapNonDeliverableParser=Swap
+EquityShareSwapParser=EquityShareSwap
+EquityLinkedSwapParser=EquityShareSwap
+
+# Indicate the version of SWML used for every product
+# DO NOT MODIFY
+FRAVer=4.2
+ClearingFRAVer=4.2
+CapFloorVer=4.2
+SwaptionVer=4.2
+ZCInflationSwapVer=4.2
+SwapVer=4.2
+Swap42Ver=4.2
+ClearingSwapVer=4.2
+XccyVer=4.2
+ClearingXccyVer=4.2
+BasisSwapVer=4.2
+ClearingBasisSwapVer=4.2
+OISVer=4.2
+ClearingOISVer=4.2
+EquityShareSwapVer=4.9
+NettingGridVer=4.2
+NettingInstructionRespVer=4.2
+
+# doRecovery is used to fetch trades released from Markitwire but not yet imported in Calypso
+# Only perform the doRecovery if the flag below is set to true
+performDoRecovery=false
+
+# Do Recovery Start Date (Must be in YYYYMMDD format for actual date or xD/xW/xM format for relative date). This requests trades from Markitwire from this date.
+# For normal operations, it must be kept blank.
+# You can specify the relative dates in below format. If you specify 2d deals from two business days back will be recovered
+# If you specify 2w, deals from 2 week will be recovered. If it is non business day deals from it's prior business day will be recovered.
+#doRecoveryStartDate=20091113
+#doRecoveryStartDate=2D
+#doRecoveryStartDate=1W
+
+# Do Recovery End Date should be in YYYYMMDD format. If End Date is not specified it will consider as current date. 
+# End Date should be after Start Date. 
+#doRecoveryEndDate=20120829
+
+# This flag is used to generate XML files from the SWML Messages. Two XML files are generated for every SWML
+# message. One file is the SWML message itself, the other is Calypso Data Upload XML (which is the Calypso 
+# representation of the SWML. Please refer to documentation for more details.
+# The files are generated in USER_HOME\Calypso\markitwire
+DEBUG_MW_XML=true
+
+#logMessages	messageFileDir	Comment
+#false	N/A	No debug file will be created
+#true	Empty	Debug file will be generated at default location <UserHome>/Calypso/markitwire like it is happening right now
+#true	Given	The given location will be validated for access-permission, if it is valid file will be generated at the given location ELSE it will generate a file at default location at <UserHome>/Calypso/markitwire
+#logMessages=true
+#messageFileDir=C:\\interfaces\\markitwire\\test
+
+# Password Encryption flag
+# Set this mandatorily otherwise engine will not startup
+AutoEncryptPassword=false
+
+# The Value of this attribute indicates Clearing-takeup deals will follow which trade-workflow. The Possible values are 
+# a) FCM (No Head Room Check) b) HRC (Head Room Check is used for Risk). 
+# And based on this, the the Update manager listens to different Trade Status Messages
+BusinessFlow=FCM
+
+#Timeout for MW connection
+session_timeout=360
+
+#Mark EXCHANGE_CLEARING as true for Exchange Clearing solution
+EXCHANGE_CLEARING=false
+
+#In exchange clearing, this flag is used for CCP as a PO model if set to true
+CCP_IS_PO=false
+
+#This flag is used to start engine in Test mode
+TEST_MODE=false
+
+#This flag is used when user needs DF Reporting in SWML.
+IncludeTRReportingInfo=true
+
+#Valid combination for uploadMode and persistMessage
+#
+#					|------------------------------------------------------------------------|
+#					|						PERSIST MESSAGES							     |
+#	|---------------|-------------------|-------------------------------|--------------------|
+#	|				|		None		|		Failure					|		All			 |
+#	|---------------|-------------------|-------------------------------|--------------------|
+#	| Local			|	No BOMessage	|  BOMessage will be created	|  BOMessage will be |
+#	|				|	will be created | only in case of failure		|  always created    |
+#	|---------------|-------------------|-------------------------------|--------------------|
+#	| BOMessage		|	Not Supported	| 		Not Supported			|	BOMessage will be|
+#	|				|					|								|	always created	 |
+#	|---------------|-------------------|-------------------------------|--------------------|
+#
+#	For better performance it is recommended to use uploadMode as Local with persistMessages as All.
+#
+
+uploadMode=BOMessage
+persistMessages=
+
+#delay for event creation
+#EventCreationLag=0

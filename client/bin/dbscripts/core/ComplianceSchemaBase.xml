@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="ersc_job" xmlns="">
+		<column name="id" nullable="false" type="string" scale="36" />
+		<column name="tenant_id" nullable="false" type="int" />
+		<column name="version" nullable="false" type="int" />
+		<column name="end_time" nullable="true" type="int" />
+		<column name="event" nullable="false" type="string" scale="255" />
+		<column name="event_info" nullable="false" type="string" scale="4000" />
+		<column name="run_date" nullable="false" type="int" />
+		<column name="start_time" nullable="false" type="int" />
+		<column name="status" nullable="false" type="string" scale="255" />
+		<column name="tag" nullable="false" type="string" scale="255" />
+		<column name="user1" nullable="false" type="string" scale="255" />
+		<column name="creation_date" nullable="false" default="0" type="int" />
+		<column name="creation_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="creation_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="last_update_date"  nullable="false" default="0" type="int"/>
+		<column name="last_update_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="last_update_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<index primary="false" unique="false">
+			<on>tenant_id</on>
+			<on>status</on>
+		</index>
+		<index primary="false" unique="false">
+			<on>tenant_id</on>
+			<on>run_date</on>
+		</index>
+		<index primary="false" unique="false">
+			<on>tenant_id</on>
+			<on>tag</on>
+		</index>
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	
+	<table name="ersc_job_hist" xmlns="">
+		<column name="id" nullable="false" type="string" scale="36" />
+		<column name="tenant_id" nullable="false" type="int" />
+		<column name="version" nullable="false" type="int" />
+		<column name="end_time" nullable="true" type="int" />
+		<column name="event" nullable="false" type="string" scale="255" />
+		<column name="event_info" nullable="false" type="string" scale="4000" />
+		<column name="run_date" nullable="false" type="int" />
+		<column name="start_time" nullable="false" type="int" />
+		<column name="status" nullable="false" type="string" scale="255" />
+		<column name="tag" nullable="false" type="string" scale="255" />
+		<column name="user1" nullable="false" type="string" scale="255" />
+		<column name="archived_date" nullable="true" type="timestamp"/>
+		<column name="creation_date" nullable="false" default="0" type="int" />
+		<column name="creation_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="creation_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="last_update_date"  nullable="false" default="0" type="int"/>
+		<column name="last_update_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="last_update_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<index primary="false" unique="false">
+			<on>tenant_id</on>
+			<on>status</on>
+		</index>
+		<index primary="false" unique="false">
+			<on>tenant_id</on>
+			<on>run_date</on>
+		</index>
+		<index primary="false" unique="false">
+			<on>tenant_id</on>
+			<on>tag</on>
+		</index>
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule" xmlns="">
+		<column name="id" nullable="false" type="string" scale="36" />
+		<column name="tenant_id" nullable="false" type="int" />
+		<column name="version" nullable="false" type="int" />
+		<column name="applicable_officer" nullable="true" type="string" scale="255" />
+		<column name="applicable_trade_filter" nullable="true" type="string" scale="255" />
+		<column name="applicable_user" nullable="true" type="string" scale="255" />
+		<column name="code" nullable="false" type="string" scale="255" />
+		<column name="created_by" nullable="false" type="string" scale="255" />
+		<column name="created_date" nullable="false" type="string" scale="255" />
+		<column name="description" nullable="true" type="string" scale="255" />
+		<column name="enabled" nullable="false" type="int" />
+		<column name="from_date" nullable="false" type="string" scale="255" />
+		<column name="measure_column" nullable="false" type="string" scale="255" />
+		<column name="name" nullable="false" type="string" scale="255" />
+		<column name="ref_analysis" nullable="false" type="string" scale="255" />
+		<column name="revision_number" nullable="false" type="int"/>
+		<column name="rollup" nullable="false" type="int" />
+		<column name="to_date" nullable="false" type="string" scale="255" />
+		<column name="type" nullable="false" type="string" scale="255" />
+		<column name="creation_date" nullable="false" default="0" type="int" />
+		<column name="creation_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="creation_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="last_update_date"  nullable="false" default="0" type="int"/>
+		<column name="last_update_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="last_update_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="rulegroup_id" nullable="true" type="string" scale="36" />
+		<column name="criteria_match_option" nullable="true" type="string" scale="10" />
+		<column name="ref_po" nullable="false" type="int" />
+		<column name="russian_doll" nullable="true" type="string" scale="3" />
+		<column name="time_bucket_date_column" nullable="true" type="string" scale="255" />
+		<column name="time_bucket_holiday_column" nullable="true" type="string" scale="255" />
+		<column name="time_bucket_start_date_column" nullable="true" type="string" scale="255" />
+		<column name="book_hierarchy_max_depth" nullable="true" type="string" scale="255" />
+		<column name="legal_entity_max_depth" nullable="true" type="string" scale="255" />
+		<column name="is_filter_formula" nullable="false" type="int" />
+		<index primary="false" unique="false">
+			<on>tenant_id</on>
+			<on>name</on>
+		</index>
+		<index primary="false" unique="true">
+			<on>tenant_id</on>
+			<on>code</on>
+		</index>
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_grouping_columns" xmlns="">
+		<column name="rule_id" nullable="false" type="string" scale="36" />
+		<!-- The name of the column below is misleading. grouping_columns represents one grouping column only. --> 
+		<column name="grouping_columns" nullable="false" type="string" scale="255" />
+		<column name="grouping_columns_order" nullable="false" type="int" default="0"/>
+		<index primary="false" unique="true">
+			<on>rule_id</on>
+			<on>grouping_columns_order</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_sub_grouping_columns" xmlns="">
+		<column name="rule_id" nullable="false" type="string" scale="36" />
+		<!-- The name of the column below is misleading. sub_grouping_columns represents one subgrouping column only. --> 
+		<column name="sub_grouping_columns" nullable="false" type="string" scale="255" />
+		<column name="sub_grouping_columns_order" nullable="false" type="int" default="0"/>
+		<index primary="false" unique="true">
+			<on>rule_id</on>
+			<on>sub_grouping_columns_order</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_check" xmlns="">
+		<column name="id" nullable="false" type="string" scale="36" />
+		<column name="tenant_id" nullable="false" type="int" />
+		<column name="version" nullable="false" type="int" />
+		<column name="max_limit" nullable="true" type="float" />
+		<column name="max_limit_tolerance" nullable="true" type="float" />
+		<column name="max_limit_warning" nullable="true" type="float" />
+		<column name="min_limit" nullable="true" type="float" />
+		<column name="min_limit_tolerance" nullable="true" type="float" />
+		<column name="min_limit_warning" nullable="true" type="float" />
+		<column name="pid" nullable="false" type="int" />
+		<column name="precedence" nullable="false" type="int" />
+		<column name="restrict" nullable="true" type="string" scale="255" />
+		<column name="creation_date" nullable="false" default="0" type="int" />
+		<column name="creation_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="creation_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="last_update_date"  nullable="false" default="0" type="int"/>
+		<column name="last_update_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="last_update_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="from_date" nullable="true" type="int" />
+		<column name="to_date" nullable="true" type="int" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_check_criteria" xmlns="">
+		<column name="rule_check_id" nullable="false" type="string" scale="36" />
+		<!-- The name of the column below is misleading. grouping_criteria represents one grouping criterion only. --> 
+		<column name="grouping_criteria" nullable="false" type="string" scale="255" />
+		<column name="grouping_criteria_order" nullable="false" type="int" default="0"/>
+		<index primary="false" unique="true">
+			<on>rule_check_id</on>
+			<on>grouping_criteria_order</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_check_join" xmlns="">
+		<column name="rule_id2" nullable="false" type="string" scale="36" />
+		<column name="rule_check_id3" nullable="false" type="string" scale="36" />
+		<index primary="false" unique="true">
+			<on>rule_check_id3</on>
+		</index>
+		<index primary="false" unique="false">
+			<on>rule_id2</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_check_result" xmlns="">
+		<column name="id" nullable="false" type="string" scale="36" />
+		<column name="tenant_id" nullable="false" type="int" />
+		<column name="version" nullable="false" type="int" />
+		<column name="check_version" nullable="true" type="int" />
+		<column name="description" nullable="true" type="string" scale="255" />
+		<column name="grouping_key" nullable="true" type="string" scale="600" />
+		<column name="measure_column" nullable="true" type="string" scale="255" />
+		<column name="measure_value" nullable="true" type="float" />
+		<column name="measure_valueb4pre_trade" nullable="true" type="float" />
+		<column name="measure_value_str" nullable="true" type="string" scale="255" />
+		<column name="portfolio" nullable="true" type="string" scale="255" />
+		<column name="status" nullable="false" type="string" scale="255" />
+		<column name="user_comment" nullable="true" type="string" scale="2000"/>
+		<column name="validation_status" nullable="true" type="string" scale="255" />
+		<column name="creation_date" nullable="false" default="0" type="int" />
+		<column name="creation_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="creation_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="last_update_date"  nullable="false" default="0" type="int"/>
+		<column name="last_update_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="last_update_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="check_id" nullable="true" type="string" scale="36" />
+		<column name="sanctioning_act_time" nullable="true" type="string" scale="255" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_check_result_hist" xmlns="">
+		<column name="id" nullable="false" type="string" scale="36" />
+		<column name="tenant_id" nullable="false" type="int" />
+		<column name="version" nullable="false" type="int" />
+		<column name="check_version" nullable="true" type="int" />
+		<column name="description" nullable="true" type="string" scale="255" />
+		<column name="grouping_key" nullable="true" type="string" scale="255" />
+		<column name="measure_column" nullable="true" type="string" scale="255" />
+		<column name="measure_value" nullable="true" type="float" />
+		<column name="measure_valueb4pre_trade" nullable="true" type="float" />
+		<column name="measure_value_str" nullable="true" type="string" scale="255" />
+		<column name="portfolio" nullable="true" type="string" scale="255" />
+		<column name="status" nullable="false" type="string" scale="255" />
+		<column name="user_comment" nullable="true" type="string" scale="2000"/>
+		<column name="validation_status" nullable="true" type="string" scale="255" />
+		<column name="archived_date" nullable="true" type="timestamp"/>
+		<column name="creation_date" nullable="false" default="0" type="int" />
+		<column name="creation_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="creation_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="last_update_date"  nullable="false" default="0" type="int"/>
+		<column name="last_update_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="last_update_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="check_id" nullable="true" type="string" scale="36" />
+		<column name="sanctioning_act_time" nullable="true" type="string" scale="255" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_check_res_group_cols" xmlns="">
+		<column name="rule_check_result_id" nullable="false" type="string" scale="36" />
+		<!-- The name of the column below is misleading. grouping_columns represents one grouping column only. --> 
+		<column name="grouping_columns" nullable="false" type="string" scale="255" />
+		<column name="grouping_columns_order" nullable="false" type="int" default="0"/>
+		<index primary="false" unique="true">
+			<on>rule_check_result_id</on>
+			<on>grouping_columns</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_check_res_groupcolsh" xmlns="">
+		<column name="rule_check_result_id" nullable="false" type="string" scale="36" />
+		<!-- The name of the column below is misleading. grouping_columns represents one grouping column only. --> 
+		<column name="grouping_columns" nullable="false" type="string" scale="255" />
+		<column name="grouping_columns_order" nullable="false" type="int" default="0"/>
+		<column name="archived_date" nullable="true" type="timestamp"/>
+		<index primary="false" unique="true">
+			<on>rule_check_result_id</on>
+			<on>grouping_columns</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_check_res_group_vals" xmlns="">
+		<column name="rule_check_result_id" nullable="false" type="string" scale="36" />
+		<!-- The name of the column below is misleading. grouping_values represents one grouping value only. --> 
+		<column name="grouping_values" nullable="false" type="string" scale="255" />
+		<column name="grouping_values_order" nullable="false" type="int" default="0"/>
+		<index primary="false" unique="true">
+			<on>rule_check_result_id</on>
+			<on>grouping_values_order</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_check_res_groupvalsh" xmlns="">
+		<column name="rule_check_result_id" nullable="false" type="string" scale="36" />
+		<!-- The name of the column below is misleading. grouping_values represents one grouping value only. --> 
+		<column name="grouping_values" nullable="false" type="string" scale="255" />
+		<column name="grouping_values_order" nullable="false" type="int" default="0"/>
+		<column name="archived_date" nullable="true" type="timestamp"/>
+		<index primary="false" unique="true">
+			<on>rule_check_result_id</on>
+			<on>grouping_values_order</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_portfolio" xmlns="">
+		<column name="id" nullable="false" type="string" scale="36" />
+		<column name="tenant_id" nullable="false" type="int" />
+		<column name="version" nullable="false" type="int" />
+		<column name="pid" nullable="false" type="int" />
+		<column name="severity" nullable="false" type="int" />
+		<column name="wf_group" nullable="false" type="string" scale="255" />
+		<column name="creation_date" nullable="false" default="0" type="int" />
+		<column name="creation_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="creation_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="last_update_date"  nullable="false" default="0" type="int"/>
+		<column name="last_update_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="last_update_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_portfolio_join" xmlns="">
+		<column name="rule_id0" nullable="false" type="string" scale="36" />
+		<column name="rule_portfolio_id1" nullable="false" type="string" scale="36" />
+		<index primary="false" unique="true">
+			<on>rule_portfolio_id1</on>
+		</index>
+		<index primary="false" unique="false">
+			<on>rule_id0</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_result" xmlns="">
+		<column name="id" nullable="false" type="string" scale="36" />
+		<column name="tenant_id" nullable="false" type="int" />
+		<column name="version" nullable="false" type="int" />
+		<column name="rule_version" nullable="true" type="int" />
+		<column name="creation_date" nullable="false" default="0" type="int" />
+		<column name="creation_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="creation_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="last_update_date"  nullable="false" default="0" type="int"/>
+		<column name="last_update_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="last_update_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="job_id" nullable="true" type="string" scale="36" />
+		<column name="rule_id" nullable="true" type="string" scale="36" />
+		<column name="found_exceptions" nullable="false" type="int" />
+		<index primary="false" unique="false">
+			<on>tenant_id</on>
+			<on>rule_id</on>
+		</index>
+		<index primary="false" unique="false">
+			<on>tenant_id</on>
+			<on>job_id</on>
+		</index>
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_result_hist" xmlns="">
+		<column name="id" nullable="false" type="string" scale="36" />
+		<column name="tenant_id" nullable="false" type="int" />
+		<column name="version" nullable="false" type="int" />
+		<column name="rule_version" nullable="true" type="int" />
+		<column name="archived_date" nullable="true" type="timestamp"/>
+		<column name="creation_date" nullable="false" default="0" type="int" />
+		<column name="creation_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="creation_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="last_update_date"  nullable="false" default="0" type="int"/>
+		<column name="last_update_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="last_update_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="job_id" nullable="true" type="string" scale="36" />
+		<column name="rule_id" nullable="true" type="string" scale="36" />
+		<column name="found_exceptions" nullable="false" type="int" />
+		<index primary="false" unique="false">
+			<on>tenant_id</on>
+			<on>rule_id</on>
+		</index>
+		<index primary="false" unique="false">
+			<on>tenant_id</on>
+			<on>job_id</on>
+		</index>
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_result_check_join" xmlns="">
+		<column name="rule_result_id0" nullable="false" type="string" scale="36" />
+		<column name="rule_check_result_id1" nullable="false" type="string" scale="36" />
+		<index primary="false" unique="true">
+			<on>rule_check_result_id1</on>
+		</index>
+		<index primary="false" unique="false">
+			<on>rule_result_id0</on>
+		</index>		
+	</table>
+	
+	<table name="ersc_rule_result_check_join_h" xmlns="">
+		<column name="rule_result_id0" nullable="false" type="string" scale="36" />
+		<column name="rule_check_result_id1" nullable="false" type="string" scale="36" />
+		<column name="archived_date" nullable="true" type="timestamp"/>
+		<index primary="false" unique="true">
+			<on>rule_check_result_id1</on>
+		</index>
+		<index primary="false" unique="false">
+			<on>rule_result_id0</on>
+		</index>		
+	</table>
+	
+	<table name="ersc_data_revision" xmlns="">
+		<column name="id" nullable="false" type="string" scale="36" />
+		<column name="tenant_id" nullable="false" type="int" />
+		<column name="version" nullable="false" type="int" />
+		<column name="data" nullable="false" type="text" />
+		<column name="data_id" nullable="true" type="string" scale="255" />
+		<column name="data_type" nullable="false" type="string" scale="2000" />
+		<column name="data_version" nullable="false" type="int" />
+		<column name="staged_by" nullable="false" type="string" scale="255" />
+		<column name="status" nullable="false" type="string" scale="255" />
+		<column name="synopsis" nullable="true" type="text" />
+		<column name="type" nullable="false" type="string" scale="255" />
+		<column name="user_comment" nullable="true" type="string" scale="2000" />
+		<column name="verified_by" nullable="true" type="string" scale="255" />
+		<column name="creation_date" nullable="false" default="0" type="int" />
+		<column name="creation_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="creation_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="last_update_date"  nullable="false" default="0" type="int"/>
+		<column name="last_update_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="last_update_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="staged_by_ref_po" nullable="false" type="int"/>
+		<index primary="false" unique="false">
+			<on>tenant_id</on>
+			<on>data_id</on>
+		</index>
+		<index primary="false" unique="false">
+			<on>tenant_id</on>
+			<on>data_type</on>
+		</index>
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>	
+	
+	<table name="ersc_sanction_item" xmlns="">
+		<column name="id" nullable="false" type="string" scale="36"/>
+		<column name="tenant_id" nullable="false" type="int"/>
+		<column name="version" nullable="false" type="int"/>
+		<column name="enabled" nullable="false" type="int"/>
+		<column name="event_cat" nullable="false" type="string" scale="255"/>
+		<column name="severity" nullable="false" type="int"/>
+		<column name="user_group" nullable="false" type="string" scale="255"/>
+		<column name="violation_amount" nullable="false" type="float"/>
+		<column name="violation_pct" nullable="false" type="float"/>
+		<column name="creation_date" nullable="false" default="0" type="int" />
+		<column name="creation_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="creation_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="last_update_date"  nullable="false" default="0" type="int"/>
+		<column name="last_update_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="last_update_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_sanction_join" xmlns="">
+		<column name="rule_id4" nullable="false" type="string" scale="36"/>
+		<column name="sanction_item_id5" nullable="false" type="string" scale="36"/>
+		<index primary="false" unique="true">
+			<on>sanction_item_id5</on>
+		</index>
+		<index>
+			<on>rule_id4</on>
+			<on>sanction_item_id5</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_result_trade" xmlns="">
+		<column name="id" nullable="false" type="string" scale="36" />
+		<column name="tenant_id" nullable="false" type="int" />
+		<column name="version" nullable="false" type="int" />
+		<column name="rule_id" nullable="false" type="string" scale="36" />
+		<column name="rule_result_id" nullable="false" type="string" scale="36" />
+		<column name="run_date" nullable="false" type="int" />
+		<column name="trade_id" nullable="false" type="int" />
+		<column name="creation_date" nullable="false" default="0" type="int" />
+		<column name="creation_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="creation_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="last_update_date"  nullable="false" default="0" type="int"/>
+		<column name="last_update_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="last_update_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<index primary="false" unique="false">
+			<on>tenant_id</on>
+			<on>trade_id</on>
+		</index>
+		<index primary="false" unique="false">
+			<on>trade_id</on>
+			<on>run_date</on>
+		</index>
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	
+	<table name="ersc_rule_result_trade_hist" xmlns="">
+		<column name="id" nullable="false" type="string" scale="36" />
+		<column name="tenant_id" nullable="false" type="int" />
+		<column name="version" nullable="false" type="int" />
+		<column name="rule_id" nullable="false" type="string" scale="36" />
+		<column name="rule_result_id" nullable="false" type="string" scale="36" />
+		<column name="run_date" nullable="false" type="int" />
+		<column name="trade_id" nullable="false" type="int" />
+		<column name="archived_date" nullable="true" type="timestamp"/>
+		<column name="creation_date" nullable="false" default="0" type="int" />
+		<column name="creation_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="creation_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<column name="last_update_date"  nullable="false" default="0" type="int"/>
+		<column name="last_update_user" nullable="false" default="00112233-4455-6677-8899-aabbccddeeff" type="string" scale="255" />
+		<column name="last_update_user_type" nullable="false" default="urn:calypso:cloud:platform:iam:model:User" type="string" scale="255" />
+		<index primary="false" unique="false">
+			<on>tenant_id</on>
+			<on>trade_id</on>
+		</index>
+		<index primary="false" unique="false">
+			<on>trade_id</on>
+			<on>creation_date</on>
+		</index>
+		<index primary="false" unique="false">
+			<on>trade_id</on>
+			<on>run_date</on>
+		</index>
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+</database>

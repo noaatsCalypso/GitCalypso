@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 350: Advice of Loan/Deposit Interest Payment -->
+<SwiftMsgDef>
+    <Name>MT350</Name>
+    <ModeSelectionList>
+        <ModeSelection qualifier="NEW" />
+        <ModeSelection qualifier="AMEND" />
+        <ModeSelection qualifier="CANCEL" />
+    </ModeSelectionList>
+    <SwiftSequence name="Mandatory Sequence A General Information" openTag=":15A:" modes="MMM">
+        <SwiftField name="Sender's Reference" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM" />
+        <SwiftField name="Related Reference" tag=":21:" format="16x" value="MESSAGE_LINKEDID" modes=" MM" />
+        <SwiftField name="Type of Operation" tag=":22A:" format="4!c" value="TYPE_OPERATION" modes="MMM" />
+        <SwiftField name="Scope of Operation" tag=":94A:" format="4!c" value="SCOPE_OPERATION" modes="MMM" />
+        <SwiftField name="Common Reference" tag=":22C:" format="4!a2!c4!n4!a2!c" value="COMMON_REF" modes="MMM" />
+        <SwiftField name="Contract Number Party A" tag=":21N:" format="16x" value="TRADE_ID" modes="MMM" />
+        <SwiftField name="Party A" tag=":82a:" value="PARTY_A" modes="MMM">
+	    	<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	    	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+        <SwiftField name="Party B" tag=":87a:" value="PARTY_B" modes="MMM">
+	    	<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	    	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Sender to Receiver Information" tag=":72:" value="ADDITIONAL_INFO" format="6*35x" modes="OOO"/>
+    </SwiftSequence>
+    <SwiftSequence name="Mandatory Sequence B Interest Information" openTag=":15B:" modes="MMM">
+        <SwiftField name="Interest Period" tag=":30G:" format="8!n/8!n" value="INTEREST_PERIOD" modes="MMM" />
+        <SwiftField name="Currency and Principal Amount" tag=":32B:" format="3!a15d" value="CURRENCY_PRINCIPAL" modes="MMM" />
+        <SwiftField name="Value Date" tag=":30V:" format="8!n" value="SETTLE_DATE" modes="MMM" />
+        <SwiftField name="Currency and Interest Amount" tag=":34B:" format="3!a15d" value="CURRENCY_INTEREST" modes="MMM" />
+        <SwiftField name="Interest Rate" tag=":37M:" format="[N]12d" value="INTEREST_RATE" modes="MMM" />
+        <SwiftField name="Day Count Fraction" tag=":14D:" format="7x" value="DAY_COUNT_FRACTION" modes="MMM" />
+    </SwiftSequence>
+    <SwiftSequence name="Mandatory Sequence C Settlement Instructions" openTag=":15C:" modes="MMM"> 
+        <SwiftField name="Delivery Agent" tag=":53a:" value="DELIVERY_AGENT" modes="OOO">
+	    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+	    <SwiftFieldOption letter="J" format="5*40x" />
+	</SwiftField>
+        <SwiftField name="Intermediary 2" tag=":86a:" value="INTERMEDIARY2" modes="OOO">
+	    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+	    <SwiftFieldOption letter="J" format="5*40x" />
+	</SwiftField>
+        <SwiftField name="Intermediary" tag=":56a:" value="INTERMEDIARY" modes="OOO">
+	    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+	    <SwiftFieldOption letter="J" format="5*40x" />
+	</SwiftField>
+        <SwiftField name="Receiving Agent" tag=":57a:" value="RECEIVING_AGENT" modes="MMM">     
+	    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+	    <SwiftFieldOption letter="J" format="5*40x" />
+	</SwiftField> 
+    </SwiftSequence>
+</SwiftMsgDef>

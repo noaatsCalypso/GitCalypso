@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><module target-version="3.12.5" name="dtcc" min-version="2.00.00">
+  <schema filename="DTCCCommonSchemaBase.xml"/>
+  <schema filename="DTCCCommonSchemaData.xml"/>
+  <schema filename="DTCCGTRSchemaData.xml"/>
+  <schema filename="DTCCGTRCommoditySchemaData.xml"/>
+  <schema filename="DTCCSchemaData.xml"/>
+  <upgrade version="3.02.00">
+    <step name="DTCC-1404" version="1"/>
+  </upgrade>
+  <upgrade version="3.4.00">
+    <step name="DTCC-1713" version="1"/>
+    <step name="DTCC-1851" version="1"/>
+    <step name="DTCC-1851" version="2"/>
+  </upgrade>
+  <upgrade version="3.7.0">
+    <step name="DTCC-2386" version="1"/>
+  </upgrade>
+</module>

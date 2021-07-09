@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+  <table name="bloom_sec_entitlement" xmlns="">
+  	<column name="feed_name" nullable="false" scale="32" type="string"/>
+  	<column name="feed_address" nullable="false" scale="255" type="string"/>
+  	<column name="security_eid" nullable="false" scale="1" type="int"/> 
+      <index primary="true"> 
+      	<on>feed_name</on>
+      	<on>feed_address</on>
+      </index>
+  </table>
+</database>
+
+
+

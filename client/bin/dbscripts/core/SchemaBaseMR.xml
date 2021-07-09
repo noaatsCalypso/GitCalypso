@@ -1,0 +1,1236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="execution_stats" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int"/>
+		<column name="instance" nullable="false" type="string" scale="50"/>
+		<column name="type" nullable="false" type="string" scale="50"/>
+		<column name="subtype" nullable="false" type="string" scale="50"/>
+		<column name="value" nullable="true" type="binary"/>
+	</table>
+	<table name="ers_a_an_param" xmlns="">
+		<column name="audit_date" nullable="false" type="timestamp"/>
+		<column name="analysis" nullable="false" type="string" scale="32"/>
+		<column name="param_name" nullable="false" type="string" scale="255"/>
+		<column name="attribute_name" nullable="true" type="string" scale="32"/>
+		<column name="attribute_value" nullable="true" type="string" scale="1024"/>
+	</table>
+	<table name="ers_a_analysis_configuration" xmlns="">
+		<column name="audit_date" nullable="false" type="timestamp"/>
+		<column name="analysis" nullable="false" type="string" scale="64"/>
+		<column name="config_name" nullable="false" type="string" scale="32"/>
+		<column name="attribute_name" nullable="true" type="string" scale="32"/>
+		<column name="attribute_value" nullable="true" type="string" scale="255"/>
+		<column name="inuse" nullable="false" type="int" scale="1"/>
+		<column name="order_id" nullable="false" type="int" scale="1"/>
+		<column name="additional" nullable="true" type="string" scale="255"/>
+	</table>
+   	<table name="ers_a_liquidity_period" xmlns="">
+        <column name="audit_date" nullable="false" type="timestamp"/>
+        <column name="audit_user" nullable="true" type="string" scale="32"/>
+		<column name="liquidity_set_id" nullable="false" type="int" scale="1" default="1"/>
+		<column name="product_type" nullable="false" type="string" scale="32"/>
+		<column name="product_name" nullable="false" type="string" scale="64"/>
+		<column name="threshold" nullable="true" type="float" scale="1"/>
+		<column name="liquidity_period" nullable="false" type="float" scale="1"/>
+		<column name="bidask_spread" nullable="true" type="float" scale="1"/>
+		<index primary="false">
+			<on>audit_date</on>
+		</index>
+    </table>
+	<table name="ers_a_result_history" xmlns="">
+		<column name="audit_date" nullable="false" type="timestamp"/>
+		<column name="value_date" nullable="false" type="int" scale="1"/>
+		<column name="portfolio" nullable="false" type="string" scale="255"/>
+		<column name="analysis" nullable="false" type="string" scale="64"/>
+		<column name="group_level" nullable="false" type="int" scale="1"/>
+		<column name="is_packed" nullable="false" type="int" scale="1"/>
+		<column name="element_id" nullable="false" type="string" scale="32"/>
+		<column name="system_id" nullable="false" type="int" scale="1"/>
+		<column name="version" nullable="false" type="int" scale="1"/>
+		<column name="event_id" nullable="true" type="int" scale="1"/>
+		<column name="seq_id" nullable="false" type="int" scale="1"/>
+		<column name="factor1" nullable="false" type="string" scale="64"/>
+		<column name="factor2" nullable="true" type="string" scale="64"/>
+		<column name="factor3" nullable="true" type="string" scale="64"/>
+		<column name="amount_ccy" nullable="false" type="string" scale="3"/>
+		<column name="amount" nullable="true" type="float" scale="1"/>
+		<column name="base_amount" nullable="true" type="float" scale="1"/>
+		<column name="total_on" nullable="false" type="int" scale="1"/>
+		<column name="packed_results" nullable="true" type="binary"/>
+		<index primary="false" unique="true">
+			<on>audit_date</on>
+			<on>value_date</on>
+			<on>portfolio</on>
+			<on>analysis</on>
+			<on>element_id</on>
+			<on>seq_id</on>
+			<on>factor1</on>
+			<on>factor2</on>
+			<on>factor3</on>
+			<on>amount_ccy</on>
+			<on>group_level</on>
+		</index>
+		<index primary="false">
+			<on>audit_date</on>
+			<on>analysis</on>
+			<on>portfolio</on>
+			<on>value_date</on>
+		</index>
+	</table>
+	<table name="ers_a_risk_attribution" xmlns="">
+		<column name="audit_date" nullable="false" type="timestamp"/>
+		<column name="attribution_name" nullable="false" type="string" scale="32"/>
+		<column name="node_id" nullable="false" type="int" scale="1"/>
+		<column name="parent_id" nullable="false" type="int" scale="1"/>
+		<column name="seq_id" nullable="false" type="int" scale="1"/>
+		<column name="node_type" nullable="false" type="int" scale="1"/>
+		<column name="node_class" nullable="true" type="string" scale="255"/>
+		<column name="node_value" nullable="false" type="string" scale="255"/>
+	</table>
+
+	<table name="ers_analysis_configuration" xmlns="">
+		<column name="analysis" nullable="false" type="string" scale="64"/>
+		<column name="config_name" nullable="false" type="string" scale="32"/>
+		<column name="attribute_name" nullable="true" type="string" scale="32"/>
+		<column name="attribute_value" nullable="true" type="string" scale="255"/>
+		<column name="inuse" nullable="false" type="int" scale="1"/>
+		<column name="order_id" nullable="false" type="int" scale="1"/>
+		<column name="additional" nullable="true" type="string" scale="255"/>
+	</table>
+	<table name="ers_analysis_config_pending" xmlns="">
+		<column name="analysis" nullable="false" type="string" scale="64"/>
+		<column name="config_name" nullable="false" type="string" scale="32"/>
+		<column name="attribute_name" nullable="true" type="string" scale="32"/>
+		<column name="attribute_value" nullable="true" type="string" scale="255"/>
+		<column name="inuse" nullable="false" type="int" scale="1"/>
+		<column name="additional" nullable="true" type="string" scale="255"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="action_type" nullable="false" type="string" scale="32"/>
+
+
+
+	</table>
+	<table name="ers_an_param" xmlns="">
+		<column name="analysis" nullable="false" type="string" scale="32"/>
+		<column name="param_name" nullable="false" type="string" scale="255"/>
+		<column name="attribute_name" nullable="true" type="string" scale="32"/>
+		<column name="attribute_value" nullable="true" type="string" scale="1024"/>
+	</table>
+	<table name="ers_an_param_pending" xmlns="">
+		<column name="analysis" nullable="false" type="string" scale="32"/>
+		<column name="param_name" nullable="false" type="string" scale="255"/>
+		<column name="attribute_name" nullable="true" type="string" scale="32"/>
+		<column name="attribute_value" nullable="true" type="string" scale="1024"/>
+		<column name="additional" nullable="true" type="string" scale="255"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="action_type" nullable="false" type="string" scale="32"/>
+	</table>
+	<table name="ers_batch" xmlns="">
+		<column name="task_id" nullable="false" type="int" scale="1"/>
+		<column name="batch_id" nullable="false" type="string" scale="32"/>
+		<column name="analysis" nullable="false" type="string" scale="32"/>
+		<column name="target" nullable="false" type="string" scale="255"/>
+		<column name="target_type" nullable="false" type="string" scale="32"/>
+		<column name="param_set" nullable="false" type="string" scale="32"/>
+		<column name="pricing_env" nullable="false" type="string" scale="32"/>
+		<column name="is_complex" nullable="false" type="int" scale="1"/>
+		<column name="is_live" nullable="false" type="int" scale="1"/>
+		<column name="trade_explode" nullable="false" type="int" scale="1"/>
+		<column name="create_drilldown_results" nullable="false" type="int" scale="1"/>
+		<column name="optimize_by_netting" nullable="false" type="int" scale="1"/>
+		<column name="effective_date" nullable="false" type="int" scale="1"/>
+		<column name="expiration_date" nullable="true" type="int" scale="1"/>
+		<index primary="true">
+			<on>batch_id</on>
+			<on>analysis</on>
+			<on>target</on>
+			<on>param_set</on>
+			<on>effective_date</on>
+		</index>
+	</table>
+	<table name="ers_batch_pending" xmlns="">
+		<column name="task_id" nullable="false" type="int" scale="1"/>
+		<column name="batch_id" nullable="false" type="string" scale="32"/>
+		<column name="analysis" nullable="false" type="string" scale="32"/>
+		<column name="target" nullable="false" type="string" scale="255"/>
+		<column name="target_type" nullable="false" type="string" scale="32"/>
+		<column name="param_set" nullable="false" type="string" scale="32"/>
+		<column name="pricing_env" nullable="false" type="string" scale="32"/>
+		<column name="is_complex" nullable="false" type="int" scale="1"/>
+		<column name="is_live" nullable="false" type="int" scale="1"/>
+		<column name="trade_explode" nullable="false" type="int" scale="1"/>
+		<column name="create_drilldown_results" nullable="false" type="int" scale="1"/>
+		<column name="optimize_by_netting" nullable="false" type="int" scale="1"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="action_type" nullable="false" type="string" scale="32"/>
+		<index primary="true">
+			<on>batch_id</on>
+			<on>analysis</on>
+			<on>target</on>
+			<on>param_set</on>
+			<on>user_name</on>
+		</index>
+	</table>
+	<table name="ers_benchmark_defn" xmlns="">
+		<column name="hierarchy_node" nullable="false" type="string" scale="255"/>
+		<column name="benchmark" nullable="false" type="string" scale="255"/>
+		<column name="benchmark_type" nullable="true" type="string" scale="32"/>
+		<column name="scaling_factor" nullable="true" type="float"/>
+		<index primary="true">
+			<on>hierarchy_node</on>
+		</index>
+	</table>
+	<table name="ers_dataset_defn" xmlns="">
+		<column name="dataset_id" nullable="false" type="int" scale="1"/>
+		<column name="dataset_type" nullable="false" type="string" scale="32"/>
+		<column name="dataset_subtype" nullable="false" type="string" scale="32"/>
+		<column name="effective_date" nullable="false" type="int" scale="1"/>
+		<column name="expiration_date" nullable="true" type="int" scale="1"/>
+		<index primary="true">
+			<on>dataset_id</on>
+		</index>
+		<index primary="false" unique="true">
+			<on>dataset_type</on>
+			<on>dataset_subtype</on>
+			<on>effective_date</on>
+		</index>
+	</table>
+	<table name="ers_engine" xmlns="">
+		<column name="engine_id" nullable="false" type="int" scale="1"/>
+		<column name="host" nullable="false" type="string" scale="32"/>
+		<column name="engine_name" nullable="false" type="string" scale="32"/>
+		<column name="seq_id" nullable="false" type="int" scale="1"/>
+		<column name="portfolio" nullable="false" type="string" scale="255"/>
+		<column name="analysis" nullable="false" type="string" scale="32"/>
+		<column name="log" nullable="true" type="string" scale="255"/>
+	</table>
+	<table name="ers_event" xmlns="">
+		<column name="event_id" nullable="false" type="int" scale="1"/>
+		<column name="system_id" nullable="false" type="int" scale="1"/>
+		<column name="event_time" nullable="false" type="timestamp"/>
+		<column name="event_type" nullable="false" type="string" scale="32"/>
+		<column name="description" nullable="false" type="string" scale="255"/>
+		<index primary="true">
+			<on>event_id</on>
+			<on>system_id</on>
+		</index>
+	</table>
+	
+	<table name="ers_drc_defaults" xmlns="">
+		<column name="default_type" nullable="false" type="string" scale="16"/>
+		<column name="issuer_seniority" nullable="false" type="string" scale="255"/>
+		<column name="amount" nullable="false" type="float" scale="1"/>
+		<index primary="true">
+			<on>default_type</on>
+			<on>issuer_seniority</on>
+		</index>
+	</table>
+	
+	<table name="ers_frtb_risk_attribution" xmlns="">
+		<column name="attribution_name" nullable="false" type="string" scale="64"/>
+		<column name="seq_id" nullable="false" type="int" scale="1"/>
+		<column name="risk_class" nullable="false" type="string" scale="32"/>
+		<column name="risk_factor" nullable="false" type="string" scale="255"/>
+		<column name="liquidity_horizon" nullable="false" type="int" scale="1"/>
+		<column name="modelable_indicator" nullable="false" type="int" scale="1"/>
+		<index primary="true">
+			<on>attribution_name</on>
+			<on>risk_class</on>
+			<on>risk_factor</on>
+		</index>
+	</table>
+	
+	<table name="ers_grouping" xmlns="">
+		<column name="analysis" nullable="false" type="string" scale="64"/>
+		<column name="portfolio" nullable="true" type="string" scale="255"/>
+		<column name="node_key" nullable="false" type="int" scale="1"/>
+		<column name="system_id" nullable="false" type="int" scale="1"/>
+		<column name="attr1_name" nullable="true" type="string" scale="64"/>
+		<column name="attr1_value" nullable="true" type="string" scale="64"/>
+		<column name="attr2_name" nullable="true" type="string" scale="64"/>
+		<column name="attr2_value" nullable="true" type="string" scale="64"/>
+		<column name="attr3_name" nullable="true" type="string" scale="64"/>
+		<column name="attr3_value" nullable="true" type="string" scale="64"/>
+		<column name="attr4_name" nullable="true" type="string" scale="64"/>
+		<column name="attr4_value" nullable="true" type="string" scale="64"/>
+		<column name="attr5_name" nullable="true" type="string" scale="64"/>
+		<column name="attr5_value" nullable="true" type="string" scale="64"/>
+		<column name="attr6_name" nullable="true" type="string" scale="64"/>
+		<column name="attr6_value" nullable="true" type="string" scale="64"/>
+		<column name="attr7_name" nullable="true" type="string" scale="64"/>
+		<column name="attr7_value" nullable="true" type="string" scale="64"/>
+		<column name="attr8_name" nullable="true" type="string" scale="64"/>
+		<column name="attr8_value" nullable="true" type="string" scale="64"/>
+		<column name="attr9_name" nullable="true" type="string" scale="64"/>
+		<column name="attr9_value" nullable="true" type="string" scale="64"/>
+		<column name="group_id" nullable="false" type="string" scale="64"/>
+		<index primary="true">
+			<on>group_id</on>
+		</index>
+	</table>
+	
+	<table name="ers_grouping_def" xmlns="">
+		<column name="analysis" nullable="false" type="string" scale="64"/>
+		<column name="portfolio" nullable="true" type="string" scale="255"/>
+		<column name="grouping_types_id" nullable="false" type="int" scale="1"/>
+		<index primary="true">
+			<on>analysis</on>
+			<on>grouping_types_id</on>
+		</index>
+	</table>
+	<table name="ers_grouping_types" xmlns="">
+		<column name="id" nullable="false" type="int" scale="1"/>
+		<column name="name" nullable="false" type="string" scale="32"/>
+		<column name="seq_id" nullable="false" type="int" scale="1"/>
+		<index primary="true">
+			<on>id</on>
+			<on>name</on>
+			<on>seq_id</on>
+		</index>
+	</table>
+	<table name="ers_gui_configuration" xmlns="">
+		<column name="config_name" nullable="false" type="string" scale="32"/>
+		<column name="attribute_name" nullable="false" type="string" scale="32"/>
+		<column name="attribute_value" nullable="false" type="string" scale="255"/>
+	</table>
+
+	<table name="ers_job_exec" xmlns="">
+		<column name="task_id" nullable="false" type="int" scale="1"/>
+		<column name="event_src" nullable="false" type="int" scale="1"/>
+		<column name="batch_id" nullable="true" type="string" scale="32"/>
+		<column name="analysis" nullable="false" type="string" scale="64"/>
+		<column name="portfolio" nullable="false" type="string" scale="255"/>
+		<column name="param_set" nullable="true" type="string" scale="32"/>
+		<column name="value_date" nullable="true" type="int" scale="1"/>
+		<column name="run_id" nullable="true" type="int" scale="1"/>
+		<column name="exec_time" nullable="true" type="timestamp"/>
+		<column name="exec_status" nullable="false" type="int" scale="1"/>
+		<column name="val_time" nullable="true" type="timestamp"/>
+		<column name="end_time" nullable="true" type="timestamp"/>
+		<column name="comments" nullable="true" type="string" scale="255"/>
+		<column name="user_name" nullable="true" type="string" scale="32"/>
+		<column name="submit_time" nullable="false" type="timestamp"/>
+		<index primary="false">
+			<on>event_src</on>
+		</index>
+		<index primary="false">
+			<on>run_id</on>
+		</index>
+	</table>
+
+    <table name="ers_liquidity_period" xmlns="">
+	<column name="liquidity_set_id" nullable="false" type="int" scale="1" default="1"/>
+        <column name="product_type" nullable="false" type="string" scale="32"/>
+        <column name="product_name" nullable="false" type="string" scale="64"/>
+        <column name="threshold" nullable="true" type="float" scale="1"/>
+        <column name="liquidity_period" nullable="false" type="float" scale="1"/>
+	<column name="bidask_spread" nullable="true" type="float" scale="1"/>
+    </table>
+    <table name="ers_lookup_result" xmlns="">
+    	<column name="value_date" nullable="false" type="int" scale="1"/>
+    	<column name="parameter" nullable="false" type="string" scale="64"/>
+    	<column name="element_id" nullable="false" type="string" scale="32"/>
+    	<column name="risk_type" nullable="false" type="string" scale="64"/>
+    	<column name="risk_index" nullable="false" type="string" scale="64"/>
+    	<column name="tenor" nullable="false" type="int" scale="1"/>
+    	<column name="tenor_label" nullable="true" type="string" scale="64"/>
+    	<column name="shift" nullable="false" type="float" scale="1"/>
+    	<column name="base_ccy" nullable="false" type="string" scale="3"/>
+    	<column name="amount_ccy" nullable="false" type="string" scale="3"/>
+    	<column name="amount" nullable="true" type="float" scale="1"/>
+    	<column name="base_amount" nullable="true" type="float" scale="1"/>
+    	<column name="type" nullable="false" type="int" scale="1"/>
+    	<index primary="false" unique="true">
+    		<on>value_date</on>
+    		<on>parameter</on>
+    		<on>element_id</on>
+    		<on>type</on>
+    		<on>risk_type</on>
+    		<on>risk_index</on>
+    		<on>shift</on>
+    		<on>tenor</on>
+    		<on>amount_ccy</on>
+    		<on>base_ccy</on>
+    	</index>
+    	<index primary="false">
+    		<on>value_date</on>
+    		<on>parameter</on>
+    		<on>element_id</on>
+    	</index>
+    	<index primary="false">
+    		<on>value_date</on>
+    		<on>type</on>
+    	</index>
+    	<index primary="false">
+    		<on>element_id</on>
+    	</index>
+    </table>
+
+    <table name="ers_hedge_portfolio_report" xmlns="">
+	<column name="value_date" nullable="false" type="timestamp" />
+        <column name="account" nullable="true" type="string" scale="32"/>
+        <column name="currency" nullable="true" type="string" scale="32"/>
+        <column name="risk_type" nullable="true" type="string" scale="32"/>
+        <column name="maturity" nullable="true" type="string" scale="32"/>
+        <column name="value_type" nullable="true" type="string" scale="32"/>
+        <column name="bucket_sensitivity" nullable="true" type="string" scale="32"/>
+        
+		<column name="value" nullable="true" type="float" scale="1"/>
+    </table>
+	
+    <table name="ers_liquidity_table" xmlns="">
+	    <column name="value_date" nullable="false" type="timestamp" />
+        <column name="product_type" nullable="true" type="string" scale="32"/>
+        <column name="currency" nullable="true" type="string" scale="32"/>
+        <column name="maturity" nullable="true" type="string" scale="32"/>
+        
+        <column name="net_position_size" nullable="true" type="float" scale="1"/>
+        <column name="liquidity_factor" nullable="true" type="float" scale="1"/>
+        <column name="bid_ask_spread" nullable="true" type="float" scale="1"/>        
+		<column name="liquidity_set_id" nullable="true" type="int" scale="1"/>
+    </table>
+    <!-- shared table with Market Risk -->
+	<!--table name="ers_log" xmlns="">
+		<column name="run_id" nullable="false" type="int" scale="1"/>
+		<column name="calc_id" nullable="true" type="int" scale="1"/>
+		<column name="msglevel" nullable="false" type="string" scale="50"/>
+		<column name="msgcategory" nullable="false" type="string" scale="50"/>
+		<column name="msg" nullable="false" type="string" scale="255"/>
+		<column name="isexception" nullable="false" type="int" scale="1"/>
+		<column name="exceptionmsg" nullable="true" type="binary"/>
+		<column name="thread" nullable="false" type="string" scale="50"/>
+		<column name="msgtime" nullable="false" type="string" scale="35"/>
+		<column name="last_updated" nullable="false" type="timestamp"/>
+		<index primary="false">
+			<on>run_id</on>
+			<on>msgtime</on>
+		</index>
+	</table-->
+	<table name="ers_mc_config" xmlns="">
+        <column name="mc_config_id" nullable="false" type="int" scale="1"/>
+        <column name="config_name" nullable="false" type="string" scale="64"/>
+        <column name="source_scenset_id" nullable="true" type="int" scale="1"/>
+        <column name="user_name" nullable="false" type="string" scale="32"/>
+        <column name="update_dt" nullable="false" type="timestamp"/>
+        <column name="description" nullable="true" type="string" scale="255"/>
+        <index primary="true">
+            <on>mc_config_id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>config_name</on>
+        </index>
+   </table>
+    <table name="ers_mc_correlation" xmlns="">
+        <column name="mc_config_id" nullable="false" type="int" scale="1"/>
+        <column name="mc_risk_factor_id_1" nullable="false" type="int" scale="1"/>
+        <column name="mc_risk_factor_id_2" nullable="false" type="int" scale="1"/>        
+        <column name="value" nullable="false" type="float" scale="1"/>
+
+        <index primary="true">
+            <on>mc_config_id</on>
+            <on>mc_risk_factor_id_1</on>
+            <on>mc_risk_factor_id_2</on>
+        </index>
+    </table>   
+    <table name="ers_mc_generator_param" xmlns="">
+        <column name="mc_config_id" nullable="false" type="int" scale="1"/>        
+        <column name="param_name" nullable="false" type="string" scale="64"/>
+        <column name="param_type" nullable="false" type="string" scale="32"/>
+        <column name="param_value" nullable="false" type="string" scale="64"/>
+
+        <index primary="true">
+            <on>mc_config_id</on>
+            <on>param_name</on>
+        </index>
+    </table>
+	<table name="ers_mc_model_config" xmlns="">
+        <column name="mc_config_id" nullable="false" type="int" scale="1"/>        
+        <column name="mc_risk_factor_id" nullable="false" type="int" scale="1"/>
+        <column name="model_name" nullable="true" type="string" scale="255"/>
+        <column name="use_stats_ind" nullable="false" type="int" scale="1"/>
+        <column name="source_rf_id" nullable="true" type="int" scale="1"/>       
+
+        <index primary="true">
+            <on>mc_config_id</on>
+            <on>mc_risk_factor_id</on>
+        </index>
+    </table>
+    <table name="ers_mc_risk_factor" xmlns="">
+        <column name="mc_risk_factor_id" nullable="false" type="int" scale="1"/>
+        <column name="rf_risk_type" nullable="false" type="string" scale="32"/>        
+        <column name="rf_ccy" nullable="false" type="string" scale="3"/>
+        <column name="rf_index" nullable="false" type="string" scale="128"/>
+        <column name="rf_tenor" nullable="false" type="string" scale="32" default="~"/>
+
+        <index primary="true">
+            <on>mc_risk_factor_id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>rf_risk_type</on>
+            <on>rf_ccy</on>
+            <on>rf_index</on>
+            <on>rf_tenor</on>
+        </index>
+    </table>     
+    <table name="ers_mc_statistic" xmlns="">
+        <column name="mc_config_id" nullable="false" type="int" scale="1"/>
+        <column name="mc_risk_factor_id" nullable="false" type="int" scale="1"/>
+        <column name="statistic_name" nullable="false" type="string" scale="64"/>        
+        <column name="value" nullable="true" type="float" scale="1"/>
+        <column name="override_value" nullable="true" type="float" scale="1"/>
+
+        <index primary="true">
+            <on>mc_config_id</on>
+            <on>mc_risk_factor_id</on>
+            <on>statistic_name</on>
+        </index>
+    </table>	
+	
+	<table name="ers_mktdata_portfolio" xmlns="">
+		<column name="portfolio" nullable="false" type="string" scale="255"/>
+                <column name="value_date" nullable="false" type="int" scale="1"/>
+		<column name="market_data_hashid" nullable="false" type="int" scale="1"/>
+                <column name="risk_type" nullable="false" type="string" scale="32"/>
+                <column name="market_data_detail" nullable="true" type="string" scale="128"/>
+		<index primary="true">
+			<on>portfolio</on>
+                        <on>value_date</on>
+                        <on>market_data_hashid</on>
+                        <on>risk_type</on>
+		</index>
+		<index primary="false">
+			<on>portfolio</on>
+                        <on>value_date</on>
+		</index>
+	</table>
+	<table name="ers_mktdata_quote_value" xmlns="">
+                <column name="market_data_hashid" nullable="false" type="int" scale="1"/>               
+                <column name="quote_date" nullable="false" type="int" scale="1"/>
+                <column name="quote_name" nullable="false" type="string" scale="255"/>                
+		<column name="quote_type" nullable="true" type="string" scale="64"/>
+		<column name="close_quote" nullable="true" type="float" scale="1"/>
+		<index primary="true">
+                        <on>market_data_hashid</on>
+			<on>quote_date</on>
+                        <on>quote_name</on>
+		</index>
+		<index primary="false">
+                        <on>market_data_hashid</on>
+                        <on>quote_date</on>
+		</index>
+	</table>
+	<table name="ers_office" xmlns="">
+		<column name="doc_id" nullable="false" type="int" scale="1"/>
+		<column name="doc_name" nullable="false" type="string" scale="255"/>
+		<column name="mime" nullable="false" type="string" scale="32"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="version" nullable="false" type="int" scale="1"/>
+		<column name="updated_time" nullable="false" type="timestamp"/>
+		<column name="doc_image" nullable="true" type="binary"/>
+		<column name="checksum" nullable="true" type="string" scale="255"/>
+		<column name="lock_id" nullable="true" type="string" scale="255"/>
+	</table>
+	<table name="ers_rate_archive" xmlns="">
+		<column name="set_id" nullable="false" type="int" scale="1"/>
+		<column name="ts_id" nullable="false" type="int" scale="1"/>
+		<column name="rf_risk_type" nullable="false" type="string" scale="32"/>
+		<column name="rf_ccy" nullable="false" type="string" scale="3"/>
+		<column name="rf_index" nullable="false" type="string" scale="128"/>
+		<column name="rf_label" nullable="false" type="string" scale="255"/>
+		<column name="rate_type" nullable="false" type="int" scale="1"/>
+		<column name="rf_seq_id" nullable="false" type="int" scale="1"/>
+		<column name="rf_tenor" nullable="true" type="string" scale="32"/>
+		<index primary="true">
+			<on>set_id</on>
+			<on>ts_id</on>
+		</index>
+	</table>
+	<table name="ers_rate_archive_ts" xmlns="">
+		<column name="set_id" nullable="false" type="int" scale="1"/>
+		<column name="ts_id" nullable="false" type="int" scale="1"/>
+		<column name="rate_date" nullable="false" type="int" scale="1"/>
+		<column name="rate_value" nullable="true" type="float" scale="1"/>
+		<index primary="true">
+			<on>set_id</on>
+			<on>ts_id</on>
+			<on>rate_date</on>
+		</index>
+	</table>
+	<table name="ers_result" xmlns="">
+		<column name="run_id" nullable="false" type="int" scale="1"/>
+		<column name="element_id" nullable="false" type="string" scale="32"/>
+		<column name="system_id" nullable="false" type="int" scale="1"/>
+		<column name="group_level" nullable="false" type="int" scale="1"/>
+		<column name="version" nullable="false" type="int" scale="1"/>
+		<column name="event_id" nullable="true" type="int" scale="1"/>
+		<column name="seq_id" nullable="false" type="int" scale="1"/>
+		<column name="factor1" nullable="false" type="string" scale="64"/>
+		<column name="factor2" nullable="true" type="string" scale="64"/>
+		<column name="factor3" nullable="true" type="string" scale="64"/>
+		<column name="amount_ccy" nullable="false" type="string" scale="3"/>
+		<column name="amount" nullable="true" type="float" scale="1"/>
+		<column name="base_amount" nullable="true" type="float"/>
+		<column name="total_on" nullable="false" type="int" scale="1"/>
+		<column name="packed_results" nullable="true" type="binary"/>
+		<index primary="false">
+			<on>run_id</on>
+		</index>
+		<index primary="false">
+			<on>run_id</on>
+			<on>element_id</on>
+			<on>seq_id</on>
+			<on>factor1</on>
+			<on>amount_ccy</on>
+		</index>
+	</table>
+	<table name="ers_histsimmargin_result" xmlns="">
+		<column name="run_id" nullable="false" type="int" scale="1"/>
+		<column name="base_ccy" nullable="true" type="string" scale="5"/>
+		<column name="ccy" nullable="true" type="string" scale="5"/>
+		<column name="measure" nullable="false" type="string" scale="64"/>
+		<column name="amount" nullable="false" type="float"/>
+		<index primary="false">
+			<on>run_id</on>
+		</index>
+		<index primary="false">
+			<on>run_id</on>
+			<on>measure</on>
+		</index>
+	</table>
+	<table name="ers_result_drilldown" xmlns="">
+		<column name="value_date" nullable="false" type="int" scale="1"/>
+		<column name="portfolio" nullable="true" type="string" scale="255"/>
+		<column name="analysis" nullable="false" type="string" scale="64"/>
+		<column name="element_id" nullable="true" type="string" scale="32"/>
+		<column name="official" nullable="false" type="int" scale="1"/>
+		<column name="seq_id" nullable="false" type="int" scale="1"/>
+		<column name="interpretation" nullable="false" type="string" scale="32"/>
+		<column name="drillfactor1" nullable="true" type="string" scale="64"/>
+		<column name="drillfactor2" nullable="true" type="string" scale="64"/>
+		<column name="drillfactor3" nullable="true" type="string" scale="64"/>
+		<column name="amount_ccy" nullable="false" type="string" scale="3"/>
+		<column name="amount" nullable="true" type="float" scale="1"/>
+		<column name="base_amount" nullable="true" type="float" scale="1"/>
+		<column name="shift" nullable="true" type="float" scale="1"/>
+		<index primary="false">
+			<on>official</on>
+		</index>
+		<index primary="false">
+			<on>value_date</on>
+			<on>portfolio</on>
+			<on>analysis</on>
+		</index>
+	</table>
+	<table name="ers_result_history" xmlns="">
+		<column name="value_date" nullable="false" type="int" scale="1"/>
+		<column name="portfolio" nullable="false" type="string" scale="255"/>
+		<column name="analysis" nullable="false" type="string" scale="64"/>
+		<column name="group_level" nullable="false" type="int" scale="1"/>
+		<column name="is_packed" nullable="false" type="int" scale="1"/>
+		<column name="element_id" nullable="false" type="string" scale="32"/>
+		<column name="system_id" nullable="false" type="int" scale="1"/>
+		<column name="version" nullable="false" type="int" scale="1"/>
+		<column name="event_id" nullable="true" type="int" scale="1"/>
+		<column name="seq_id" nullable="false" type="int" scale="1"/>
+		<column name="factor1" nullable="false" type="string" scale="64"/>
+		<column name="factor2" nullable="true" type="string" scale="64"/>
+		<column name="factor3" nullable="true" type="string" scale="64"/>
+		<column name="amount_ccy" nullable="false" type="string" scale="3"/>
+		<column name="amount" nullable="true" type="float" scale="1"/>
+		<column name="base_amount" nullable="true" type="float" scale="1"/>
+		<column name="total_on" nullable="false" type="int" scale="1"/>
+		<column name="packed_results" nullable="true" type="binary"/>
+                <index primary="false" unique="true">
+			<on>value_date</on>
+			<on>portfolio</on>
+			<on>analysis</on>
+			<on>element_id</on>
+			<on>seq_id</on>
+			<on>factor1</on>
+                        <on>factor2</on>
+                        <on>factor3</on>
+			<on>amount_ccy</on>
+			<on>group_level</on>
+		</index>
+		<index primary="false">
+			<on>analysis</on>
+			<on>portfolio</on>
+			<on>value_date</on>
+		</index>
+		<index primary="false">
+			<on>value_date</on>
+			<on>analysis</on>
+		</index>
+		<index primary="false">
+			<on>element_id</on>
+		</index>
+	</table>
+    <table name="ers_result_rf" xmlns="">
+   	<column name="run_id" nullable="false" type="int" scale="1"/>
+   	<column name="scset_id" nullable="false" type="int" scale="1"/>
+   	<column name="rf_risk_type" nullable="false" type="string" scale="32"/>
+	<column name="rf_ids" nullable="true" type="binary"/>
+	<index primary="false">
+		<on>run_id</on>
+	</index>
+    </table>  
+    <table name="ers_result_mktdata_attr" xmlns="">
+                <column name="attributes_id" nullable="false" type="string" scale="32"/>
+                <column name="itemkey" nullable="false" type="string" scale="32"/>
+                <column name="itemvalue" nullable="false" type="string" scale="255"/>
+                <index primary="true">
+                        <on>attributes_id</on>
+                        <on>itemkey</on>
+                </index>
+    </table>    
+    
+	<table name="ers_risk_attribution" xmlns="">
+		<column name="attribution_name" nullable="false" type="string" scale="32"/>
+		<column name="node_id" nullable="false" type="int" scale="1"/>
+		<column name="parent_id" nullable="false" type="int" scale="1"/>
+		<column name="seq_id" nullable="false" type="int" scale="1"/>
+		<column name="node_type" nullable="false" type="int" scale="1"/>
+		<column name="node_class" nullable="true" type="string" scale="255"/>
+		<column name="node_value" nullable="false" type="string" scale="255"/>
+		<index primary="true">
+			<on>attribution_name</on>
+			<on>node_id</on>
+			<on>node_type</on>
+			<on>seq_id</on>
+		</index>
+	</table>
+	<table name="ers_risk_attribution_pending" xmlns="">
+		<column name="attribution_name" nullable="false" type="string" scale="32"/>
+		<column name="node_id" nullable="false" type="int" scale="1"/>
+		<column name="parent_id" nullable="false" type="int" scale="1"/>
+		<column name="seq_id" nullable="false" type="int" scale="1"/>
+		<column name="node_type" nullable="false" type="int" scale="1"/>
+		<column name="node_class" nullable="true" type="string" scale="255"/>
+		<column name="node_value" nullable="false" type="string" scale="255"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="action_type" nullable="false" type="string" scale="32"/>
+		<index primary="true">
+			<on>attribution_name</on>
+			<on>user_name</on>
+			<on>node_id</on>
+			<on>node_type</on>
+			<on>seq_id</on>
+		</index>
+	</table>
+	<table name="ers_risk_audit" xmlns="">
+		<column name="audit_id" nullable="false" type="int" scale="1"/>
+		<column name="audit_type" nullable="false" type="string" scale="32"/>
+		<column name="audit_table" nullable="false" type="string" scale="64"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="modified_date" nullable="false" type="timestamp"/>
+		<column name="audit_description" nullable="false" type="string" scale="255"/>
+	</table>
+	<table name="ers_run" xmlns="">
+		<column name="run_id" nullable="false" type="int" scale="1"/>
+		<column name="analysis" nullable="false" type="string" scale="64"/>
+		<column name="portfolio" nullable="true" type="string" scale="255"/>
+		<column name="official" nullable="false" type="int" scale="1"/>
+		<column name="group_level" nullable="false" type="int" scale="1"/>
+		<column name="is_live" nullable="false" type="int" scale="1"/>
+		<column name="is_reversed" nullable="false" type="int" scale="1" default="0"/>
+		<column name="is_packed" nullable="false" type="int" scale="1"/>
+		<column name="value_date" nullable="false" type="int" scale="1"/>
+		<column name="base_ccy" nullable="false" type="string" scale="3"/>
+		<column name="user_name" nullable="true" type="string" scale="32"/>
+		<column name="last_updated" nullable="false" type="timestamp"/>
+		<column name="time_id" nullable="true" type="int"/>
+		<index primary="true">
+			<on>run_id</on>
+		</index>
+		<index primary="false" unique="true">
+			<on>analysis</on>
+			<on>portfolio</on>
+			<on>official</on>
+			<on>value_date</on>
+			<on>group_level</on>
+		</index>
+	</table>
+	<table name="ers_run_history" xmlns="">
+		<column name="analysis" nullable="false" type="string" scale="64"/>
+		<column name="portfolio" nullable="false" type="string" scale="255"/>
+		<column name="official" nullable="false" type="int" scale="1"/>
+		<column name="group_level" nullable="false" type="int" scale="1"/>
+		<column name="is_live" nullable="false" type="int" scale="1"/>
+		<column name="is_packed" nullable="false" type="int" scale="1"/>
+		<column name="value_date" nullable="false" type="int" scale="1"/>
+		<column name="base_ccy" nullable="false" type="string" scale="3"/>
+		<column name="user_name" nullable="true" type="string" scale="32"/>
+		<column name="last_updated" nullable="false" type="timestamp"/>
+		<column name="archived" nullable="false" type="timestamp"/>
+		<column name="run_id" nullable="false" type="int" scale="1"/>
+		<column name="is_reversed" nullable="false" type="int" scale="1" default="0"/>
+		<index primary="true">
+			<on>analysis</on>
+			<on>portfolio</on>
+			<on>official</on>
+			<on>value_date</on>
+			<on>group_level</on>
+		</index>
+		<index primary="false">
+			<on>value_date</on>
+			<on>analysis</on>
+		</index>
+	</table>
+	<table name="ers_run_param" xmlns="">
+		<column name="analysis" nullable="false" type="string" scale="64"/>
+		<column name="portfolio" nullable="false" type="string" scale="255"/>
+		<column name="value_date" nullable="false" type="int" scale="1"/>
+		<column name="param_set" nullable="true" type="string" scale="32"/>
+		<column name="pricing_env" nullable="false" type="string" scale="32"/>
+		<column name="value_time" nullable="false" type="timestamp"/>
+		<column name="official" nullable="false" type="int" scale="1"/>
+		<column name="trade_explode" nullable="false" type="int" scale="1"/>
+		<column name="asofdate" nullable="false" type="int" scale="1"/>
+		<column name="create_drilldown_results" nullable="false" type="int" scale="1"/>
+		<index primary="true">
+			<on>analysis</on>
+			<on>portfolio</on>
+			<on>value_date</on>
+			<on>official</on>
+		</index>
+	</table>
+	<table name="ers_scenario" xmlns="">
+		<column name="scset_id" nullable="false" type="int" scale="1"/>
+		<column name="scenario_id" nullable="false" type="int" scale="1"/>
+		<column name="scenario_label" nullable="false" type="string" scale="32"/>
+		<column name="rf_id" nullable="false" type="int" scale="1"/>
+		<column name="rf_shift_value" nullable="true" type="float" scale="1"/>
+		<index primary="true">
+			<on>scset_id</on>
+			<on>rf_id</on>
+			<on>scenario_id</on>			
+		</index>
+		<index primary="false">
+			<on>scenario_id</on>
+		</index>
+		<index primary="false">
+			<on>rf_id</on>
+		</index>
+	</table>
+	<table name="ers_scenario_datasource" xmlns="">
+		<column name="scset_data_source" nullable="false" type="string" scale="32"/>
+		<column name="rf_risk_type" nullable="false" type="string" scale="32"/>
+		<column name="rf_ccy" nullable="false" type="string" scale="3"/>
+		<column name="rf_index" nullable="false" type="string" scale="128"/>
+		<column name="rf_label" nullable="true" type="string" scale="255"/>
+		<column name="rf_shift_type" nullable="false" type="string" scale="32"/>
+		<column name="rf_shift_space" nullable="false" type="string" scale="32"/>
+		<column name="action" nullable="false" type="int" scale="1"/>
+		<column name="action_seq_id" nullable="false" type="int" scale="1"/>
+		<column name="source_id" nullable="false" type="string" scale="255"/>
+		<column name="source_filter" nullable="true" type="string" scale="2048"/>
+		<column name="source_type" nullable="false" type="string" scale="32"/>
+		<column name="rf_index_original" nullable="false" type="string" scale="128"/>
+		<column name="liquidity_horizon" nullable="true" type="int" scale="1"/>
+		<column name="frtb_risk_class" nullable="true" type="string" scale="32"/>
+		<column name="modelable_indicator" nullable="true" type="int" scale="1"/>
+		<column name="nmrf_correl" nullable="true" type="float" scale="1"/>
+		<index primary="true">
+			<on>scset_data_source</on>
+			<on>rf_risk_type</on>
+			<on>rf_ccy</on>
+			<on>rf_index</on>
+			<on>action</on>
+		</index>
+	</table>
+	<table name="ers_scenario_grid" xmlns="">
+		<column name="scset_id" nullable="false" type="int" scale="1"/>
+		<column name="rf_id" nullable="false" type="int" scale="1"/>
+		<column name="scenario_id" nullable="false" type="int" scale="1"/>
+		<column name="scenario_horizon" nullable="false" type="int" scale="1"/>
+		<column name="scenario_value" nullable="true" type="float" scale="1"/>
+		<index primary="true">
+			<on>scset_id</on>
+			<on>rf_id</on>
+			<on>scenario_id</on>
+			<on>scenario_horizon</on>
+		</index>
+		<index primary="false">
+			<on>scenario_id</on>
+		</index>
+	</table>
+	<table name="ers_scenario_pc_map" xmlns="">
+		<column name="rf_index" nullable="false" type="string" scale="128"/>
+		<column name="rf_ccy" nullable="false" type="string" scale="3"/>
+		<column name="pc_item" nullable="false" type="string" scale="255"/>
+		<column name="key_type" nullable="true" type="string" scale="8"/>
+	</table>
+	<table name="ers_scenario_rf" xmlns="">
+		<column name="scset_id" nullable="false" type="int" scale="1"/>
+		<column name="rf_id" nullable="false" type="int" scale="1"/>
+		<column name="rf_seq_id" nullable="false" type="int" scale="1"/>
+		<column name="rf_label" nullable="false" type="string" scale="255"/>
+		<column name="rf_ccy" nullable="false" type="string" scale="3"/>
+		<column name="rf_risk_type" nullable="false" type="string" scale="32"/>
+		<column name="rf_index" nullable="false" type="string" scale="128"/>
+		<column name="rf_index_originals" nullable="true" type="binary"/>
+		<column name="rf_tenor" nullable="true" type="string" scale="32"/>
+		<column name="rf_shift_space" nullable="false" type="string" scale="32"/>
+		<column name="rf_shift_type" nullable="false" type="string" scale="32"/>
+		<column name="liquidity_horizon" nullable="true" type="int" scale="1"/>
+		<column name="reduced_rf" nullable="true" type="int" scale="1"/>
+		<column name="nmrf_correl" nullable="true" type="float" scale="1"/>
+		<index primary="true">
+			<on>scset_id</on>
+			<on>rf_id</on>
+		</index>
+	</table>
+	<table name="ers_scenario_rf_quotes" xmlns="">
+		<column name="quote_date" nullable="false" type="int" scale="1"/>
+		<column name="scset_id" nullable="false" type="int" scale="1"/>
+		<column name="rf_id" nullable="false" type="int" scale="1"/>
+		<column name="quote_name" nullable="false" type="string" scale="255"/>
+		<column name="quote_value" nullable="false" type="float" scale="1"/>
+		<column name="is_interpolated" nullable="false" type="int" scale="1"/>
+		<index primary="true">
+			<on>quote_date</on>
+			<on>scset_id</on>
+			<on>rf_id</on>
+		</index>
+	</table>
+	<table name="ers_scenario_rule" xmlns="">
+		<column name="risk_type" nullable="false" type="string" scale="32"/>
+		<column name="ccy_filter" nullable="false" type="string" scale="32"/>
+		<column name="index_filter" nullable="false" type="string" scale="128"/>
+		<column name="extended_filter" nullable="true" type="string" scale="128"/>
+		<column name="use_index" nullable="false" type="string" scale="128"/>
+		<column name="sequence" nullable="false" type="int" scale="1"/>
+	</table>
+	<table name="ers_scenario_rule_audit" xmlns="">
+		<column name="audit_time" nullable="false" type="timestamp"/>
+		<column name="event" nullable="false" type="string" scale="32"/>
+		<column name="risk_type" nullable="false" type="string" scale="32"/>
+		<column name="detail" nullable="false" type="string" scale="255"/>
+		<column name="event_src" nullable="true" type="int" scale="1"/>
+	</table>
+	<table name="ers_scenario_set" xmlns="">
+		<column name="scset_id" nullable="false" type="int" scale="1"/>
+		<column name="scenario_index_type" nullable="false" type="string" scale="32"/>
+		<column name="description" nullable="false" type="string" scale="255"/>
+		<column name="parent_id" nullable="true" type="int" scale="1"/>
+		<column name="scset_data_source" nullable="true" type="string" scale="255"/>
+        <column name="is_multi_step" nullable="false" type="int" scale="1" default="0"/>
+	    <index unique="true">
+		  <on>description</on>
+       </index>
+	</table>
+	<table name="ers_sensitivity_rf_map" xmlns="">
+		<column name="sensitivity_name" nullable="false" type="string" scale="64"/>
+		<column name="analysis_type" nullable="false" type="string" scale="32"/>
+		<column name="currency" nullable="false" type="string" scale="32"/>
+		<column name="risk_type" nullable="false" type="string" scale="32"/>
+		<column name="rf_index" nullable="false" type="string" scale="32"/>
+		<column name="rf_block" nullable="false" type="int" scale="1"/>
+		<column name="scset_id" nullable="false" type="int" scale="1"/>
+		<column name="multiplier" nullable="false" type="float" scale="1"/>
+		<index primary="true">
+			<on>sensitivity_name</on>
+			<on>currency</on>
+			<on>risk_type</on>
+			<on>rf_index</on>
+		</index>
+	</table>
+	<table name="ers_sensitivity_tenors" xmlns="">
+		<column name="rf_block" nullable="false" type="int" scale="1"/>
+		<column name="seq_id" nullable="false" type="string" scale="32"/>
+		<column name="sensitivity_tenor" nullable="false" type="string" scale="32"/>
+		<column name="rf_tenor" nullable="false" type="string" scale="32"/>
+		<index primary="true">
+			<on>rf_block</on>
+			<on>sensitivity_tenor</on>
+		</index>
+	</table>
+	<table name="ers_system" xmlns="">
+		<column name="system_id" nullable="false" type="int" scale="1"/>
+		<column name="name" nullable="false" type="string" scale="32"/>
+		<index primary="true">
+			<on>system_id</on>
+		</index>
+	</table>
+	<table name="ers_system_defaults" xmlns="">
+		<column name="system_id" nullable="false" type="int" scale="1"/>
+		<column name="parameter_name" nullable="false" type="string" scale="64"/>
+		<column name="parameter_value" nullable="false" type="string" scale="64"/>
+	</table>
+	<table name="ers_tempid_table" xmlns="">
+		<column name="request_id" nullable="false" scale="1" type="int"/>
+		<column name="row_number" nullable="false" scale="1" type="int"/>
+		<column name="ref_id" nullable="true" scale="1" type="int"/>
+		<column name="ref_id_str" nullable="true" type="string" scale="255"/>
+		<index primary="true">
+			<on>request_id</on>
+			<on>row_number</on>
+		</index>
+		<index primary="false">
+			<on>ref_id</on>
+		</index>
+	</table>
+	<table name="ers_trade" xmlns="">
+		<column name="trade_id" nullable="false" type="string" scale="32"/>
+		<column name="system_id" nullable="false" type="int" scale="1"/>
+		<column name="version" nullable="false" type="int" scale="1"/>
+		<column name="last_updated" nullable="false" type="timestamp"/>
+		<column name="action_type" nullable="false" type="string" scale="32"/>
+		<column name="product" nullable="true" type="string" scale="32"/>
+		<column name="book" nullable="true" type="string" scale="255"/>
+		<column name="product_description" nullable="true" type="string" scale="255"/>
+		<column name="attr1_name" nullable="true" type="string" scale="32"/>
+		<column name="attr1_value" nullable="true" type="string" scale="64"/>
+		<column name="attr2_name" nullable="true" type="string" scale="32"/>
+		<column name="attr2_value" nullable="true" type="string" scale="255"/>
+		<column name="attr3_name" nullable="true" type="string" scale="32"/>
+		<column name="attr3_value" nullable="true" type="string" scale="255"/>
+		<column name="attr4_name" nullable="true" type="string" scale="32"/>
+		<column name="attr4_value" nullable="true" type="string" scale="255"/>
+		<column name="attr5_name" nullable="true" type="string" scale="32"/>
+		<column name="attr5_value" nullable="true" type="string" scale="255"/>
+		<column name="attr6_name" nullable="true" type="string" scale="32"/>
+		<column name="attr6_value" nullable="true" type="string" scale="255"/>
+		<column name="attr7_name" nullable="true" type="string" scale="32"/>
+		<column name="attr7_value" nullable="true" type="string" scale="255"/>
+		<column name="attr8_name" nullable="true" type="string" scale="32"/>
+		<column name="attr8_value" nullable="true" type="string" scale="255"/>
+		<column name="attr9_name" nullable="true" type="string" scale="32"/>
+		<column name="attr9_value" nullable="true" type="string" scale="255"/>
+		<column name="attr10_name" nullable="true" type="string" scale="32"/>
+		<column name="attr10_value" nullable="true" type="string" scale="255"/>
+		<column name="attr11_name" nullable="true" type="string" scale="32"/>
+		<column name="attr11_value" nullable="true" type="string" scale="255"/>
+		<column name="attr12_name" nullable="true" type="string" scale="32"/>
+		<column name="attr12_value" nullable="true" type="string" scale="255"/>
+		<column name="attr13_name" nullable="true" type="string" scale="32"/>
+		<column name="attr13_value" nullable="true" type="string" scale="255"/>
+		<index primary="true">
+			<on>trade_id</on>
+			<on>system_id</on>
+		</index>
+	</table>
+	<table name="ers_property" xmlns="">
+		<column name="propkey" nullable="false" scale="255" type="string"/>
+		<column name="propvalue" nullable="true" scale="255" type="string"/>
+		<column name="node_id" nullable="false" type="int" scale="1"/>
+		<column name="parent_id" nullable="false" type="int" scale="1"/>
+		<column name="effective_date" nullable="false" type="int" scale="1"/>
+		<column name="expiration_date" nullable="true" type="int" scale="1"/>
+		<column name="pending_user" nullable="false" type="string" scale="32"/>
+	</table>
+
+  
+  <table name="ers_multiplier_table" xmlns="">
+    <column name="threshold" nullable="false" type="float"/>
+	<column name="multiplier" nullable="false" type="float"/>
+	<column name="multiplier_type" nullable="false" type="string" scale="64"/>
+    <column name="rate_index" nullable="false" type="string" scale="64"/>	
+    <index primary="true">
+      <on>multiplier_type</on>
+	  <on>rate_index</on>
+	  <on>threshold</on>
+    </index>
+  </table>
+
+  <table name="ers_scenario_params" xmlns="">
+      <column name="scset_id" nullable="false" type="int" scale="1"/>
+  	<column name="pricing_env" nullable="false" type="string" scale="32"/>
+  	<column name="portfolio" nullable="true" type="string" scale="255"/>
+  	<column name="currency" nullable="true" type="string" scale="255"/>
+      	<column name="risk_type" nullable="true" type="string" scale="256"/>        
+      	<column name="holiday_cal" nullable="false" type="string" scale="32"/>   
+  	<column name="end_date" nullable="false" type="timestamp"/>
+  	<column name="number_of_days" nullable="false" scale="1" type="int"/>
+  	<column name="start_date" nullable="true" type="timestamp"/>
+  	<column name="horizon" nullable="false" scale="1" type="int"/>
+  	<column name="overlap" nullable="false" scale="1" type="int"/>
+  	<column name="missing_data_window" nullable="false" scale="1" type="int"/>
+  	<column name="number_of_observations" nullable="false" scale="1" type="int"/>
+	<column name="frtb_attribution" nullable="true" type="string" scale="64"/>
+	<column name="nmrf_export" nullable="true" type="int" scale="1"/>
+	<column name="by_po_ccy" nullable="true" type="string" scale="1"/>
+	<column name="is_drc" nullable="true" type="int" scale="1"/>
+	<column name="bond_spread_type" nullable="true" type="string" scale="256"/>  	
+      <index primary="true">
+        <on>scset_id</on>
+      </index>
+  </table>
+	
+  <table name="ers_scen_gen_task" xmlns="">
+    <column name="scen_gen_req_uuid" nullable="false" type="float"/>
+    <column name="task_id" nullable="false" type="float"/>
+	<column name="risk_type" nullable="false" type="string" scale="32"/>
+	<column name="rf_ccy" nullable="false" type="string" scale="3"/>
+	<column name="rf_index" nullable="false" type="string" scale="128"/>
+    <column name="time_taken" nullable="false" type="float"/>	
+    <column name="status" nullable="false" type="string" scale="16"/>	
+    <column name="message" nullable="true" type="string" scale="256"/>	
+    <index primary="true">
+      <on>scen_gen_req_uuid</on>
+	  <on>task_id</on>
+    </index>
+  </table>
+  
+   <table name="ers_mc_scenario_params" xmlns="">
+    <column name="mc_scset_id" nullable="false" type="int" scale="1"/>
+    <column name="hist_scset_id" nullable="false" type="int" scale="1" default="0"/>
+    <column name="hist_num_obs" nullable="false" type="int" scale="1"/>
+    <column name="hist_obs_end_date" nullable="false" type="timestamp"/>
+    <column name="horizon" nullable="false" type="int" scale="1"/>
+	<column name="rng_name" nullable="false" type="string" scale="64"/>
+    <column name="rng_seed" nullable="false" type="int" scale="1"/>
+    <column name="num_sims" nullable="false" type="int" scale="1"/>
+    <column name="step_size" nullable="false" type="float"/>
+	<column name="value_date" nullable="false" type="timestamp" default="1900-01-01 00:00:00.0"/>
+	<column name="pricing_env" nullable="false" type="string" scale="32"/>
+    <column name="holiday_cal" nullable="false" type="string" scale="32"/>   
+	<column name="use_drift" nullable="true" type="string" scale="1"/>
+    <column name="var_reduction_method" nullable="true" type="string" scale="32"/>   
+	<column name="ewma_filtering" nullable="true" type="string" scale="1"/>
+    <column name="ewma_lambda" nullable="true"  type="float"/>
+	<column name="unconditional_vol" nullable="false" type="string" scale="1"/>
+    <column name="vol_window_in_days" nullable="true" type="int" scale="1"/>
+	<column name="use_pca" nullable="true" type="string" scale="1"/>
+    <column name="num_pcs_to_use" nullable="true" type="int" scale="1"/>
+    <column name="min_pc_variance" nullable="true" type="float"/>
+    <column name="degrees_of_freedom" nullable="true" type="int" scale="1"/>
+	<column name="equity_beta_set" nullable="true" type="string" scale="64"/>
+	<column name="multi_step" nullable="true" type="string" scale="1"/>
+    <column name="number_of_steps" nullable="true" type="int" scale="1"/>
+    <column name="step_tenors" nullable="true" type="string" scale="128"/>
+    <column name="use_rolled_curves" nullable="true" type="string" scale="1"/>   
+    <column name="multi_step_curve_roll_down" nullable="true" type="string" scale="1"/>
+    <column name="step_tenors_b" nullable="true" type="binary"/>
+    <column name="eigen_value_threshold" nullable="true"  type="float"/>
+    <column name="is_drc" nullable="true" type="int" scale="1"/>
+    <column name="drc_data_correlation" nullable="true" type="float"/>
+    <column name="drc_obs_end_date" nullable="true" type="timestamp"/>
+    <column name="drc_return_horizon" nullable="true" type="int" scale="1"/>
+    <column name="drc_beta_set1" nullable="true" type="string" scale="64"/>
+    <column name="drc_beta_set2" nullable="true" type="string" scale="64"/>
+    <index primary="true">
+      <on>mc_scset_id</on>
+    </index>
+  </table>
+  
+  <table name="ers_mc_rf_setup" xmlns="">
+    <column name="mc_scset_id" nullable="false" type="int" scale="1"/>
+	<column name="seq_id" nullable="false" type="int" scale="1"/>
+	<column name="risk_type" nullable="false" type="string" scale="32"/>
+	<column name="rf_ccy" nullable="false" type="string" scale="3"/>
+	<column name="rf_index" nullable="false" type="string" scale="128"/>
+	<column name="rf_tenor" nullable="true" type="string" scale="32"/>
+	<column name="rf_shift_space" nullable="false" type="string" scale="32"/>
+	<column name="stochastic_process" nullable="false" type="string" scale="32"/>
+    <column name="drift" nullable="false" type="float"/>
+    <column name="diffusion" nullable="false" type="float"/>
+    <column name="mean_rev_rate" nullable="true" type="float"/>
+	<column name="equity_index" nullable="true" type="string" scale="128"/>
+	<column name="fw_cap" nullable="true" type="float"/>
+	<column name="base_for_derived" nullable="true" type="string" scale="1"/>
+	<column name="beta_1_index" nullable="true" type="string" scale="128"/>
+	<column name="beta_2_index" nullable="true" type="string" scale="128"/>
+	<column name="beta_1" nullable="true" type="float"/>
+	<column name="beta_2" nullable="true" type="float"/>
+    <index primary="true">
+      <on>mc_scset_id</on>
+	  <on>risk_type</on>
+	  <on>rf_ccy</on>
+	  <on>rf_index</on>
+	  <on>seq_id</on>
+    </index>
+  </table>
+  
+  <table name="ers_mc_rnd_nums" xmlns="">
+    <column name="mc_scset_id" nullable="false" type="int" scale="1"/>
+	<column name="gen_date" nullable="false" type="timestamp"/>
+	<column name="rnd_nums" nullable="true" type="binary"/>
+	<column name="is_multi_blob" nullable="false" type="int" scale="1" default="0"/>
+    <index primary="true">
+      <on>mc_scset_id</on>
+      <on>gen_date</on>
+    </index>
+  </table>
+  
+  <table name="ers_mc_rnd_nums_multi" xmlns="">
+    <column name="mc_scset_id" nullable="false" type="int" scale="1"/>
+    <column name="gen_date" nullable="false" type="timestamp"/>
+    <column name="blob_id" nullable="false" type="int" scale="1"/>
+    <column name="rnd_nums" nullable="true" type="binary"/>
+    <index primary="true">
+      <on>mc_scset_id</on>
+      <on>gen_date</on>
+      <on>blob_id</on>
+    </index>
+  </table>
+  
+   <table name="ers_mc_grouped_rf_rnd_indexes" xmlns="">
+    <column name="mc_scset_id" nullable="false" type="int" scale="1"/>
+	<column name="gen_date" nullable="false" type="timestamp"/>
+	<column name="grouped_rf_rnd_indexes" nullable="true" type="binary"/>
+    <index primary="true">
+      <on>mc_scset_id</on>
+      <on>gen_date</on>
+    </index>
+  </table>
+  
+   <table name="ers_mc_pca_factor_loadings" xmlns="">
+    <column name="mc_scset_id" nullable="false" type="int" scale="1"/>
+	<column name="gen_date" nullable="false" type="timestamp"/>
+	<column name="factor_loadings" nullable="true" type="binary"/>
+    <index primary="true">
+      <on>mc_scset_id</on>
+      <on>gen_date</on>
+    </index>
+  </table>
+
+   <table name="ers_pstress_scenario_params" xmlns="">
+    <column name="pstress_scset_id" nullable="false" type="int" scale="1"/>
+    <column name="hist_scset_ids_used" nullable="true" type="string" scale="128"/>
+    <column name="hist_num_obs" nullable="false" type="int" scale="1"/>
+    <column name="hist_obs_end_date" nullable="true" type="timestamp"/>
+    <column name="horizon" nullable="false" type="int" scale="1"/>
+	<column name="max_expl_variables" nullable="false" type="int" scale="1"/>
+    <index primary="true">
+      <on>pstress_scset_id</on>
+    </index>
+  </table>
+
+  <table name="ers_pstress_rf_setup" xmlns="">
+    <column name="pstress_scset_id" nullable="false" type="int" scale="1"/>
+	<column name="seq_id" nullable="false" type="int" scale="1"/>
+	<column name="risk_type" nullable="false" type="string" scale="32"/>
+	<column name="rf_ccy" nullable="false" type="string" scale="3"/>
+	<column name="rf_index" nullable="false" type="string" scale="128"/>
+	<column name="rf_tenor" nullable="false" type="string" scale="32"/>
+	<column name="explanatory_variable" nullable="true" type="string" scale="1"/>
+    <index primary="true">
+      <on>pstress_scset_id</on>
+	  <on>risk_type</on>
+	  <on>rf_ccy</on>
+	  <on>rf_index</on>
+	  <on>rf_tenor</on>
+    </index>
+  </table>
+
+   <table name="ers_mc_pca" xmlns="">
+    <column name="mc_scset_id" nullable="false" type="int" scale="1"/>
+	<column name="gen_date" nullable="false" type="timestamp"/>
+	<column name="pca_data" nullable="true" type="binary"/>
+    <index primary="true">
+      <on>mc_scset_id</on>
+      <on>gen_date</on>
+    </index>
+  </table>
+
+	<table name="ers_scenario_pending_header" xmlns="">
+		<column name="scset_id" nullable="false" type="int" scale="1"/>
+		<column name="pending_timestamp" nullable="false" type="timestamp"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<index unique="true">
+			<on>scset_id</on>
+		</index>
+	</table>
+  
+</database>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<template>
+    <contents>
+        <element name="DealPric">
+            <contents>
+                <element name="Tp">
+                    <contents max="1">
+                        <element name="Yldd">
+                            <condition>
+                                <expression>getReportValue("Negotiated Price Type") == "Yield"</expression>
+                            </condition>
+                            <contents>
+                                <text>
+                                	<value>true</value>
+                                </text>
+                            </contents>
+                        </element>
+                        <element name="ValTp">
+                            <contents>
+                                <text>
+                                    <value>PARV</value>
+                                </text>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="Val">
+                    <contents max="1">
+                        <element name="Rate">
+                            <condition>
+                                <expression>getReportValue("Xfer Product Id Family") != "Equity" &amp;&amp; getReportValue("Negotiated Price Type") != "Price"</expression>
+                            </condition>
+                            <contents max ="1">
+                                <report>
+                                    <condition>
+                                        <expression>getReportValue("Xfer Product Family") == "Repo" || getReportValue("Xfer Product Family") == "SecurityLending"</expression>
+                                    </condition>
+                                    <expression>toRate(getReportValue("Dirty Price"))</expression>
+                                </report>
+                                <report>
+                                    <expression>getReportValue("Negotiated Price")</expression>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="Amt">
+                            <attributes>
+                                <attribute name="Ccy">
+                                    <value>
+                                        <report>
+                                            <column>SettleCurrency</column>
+                                        </report>
+                                    </value>
+                                </attribute>
+                            </attributes>
+                            <contents max ="1">
+                                <report>
+                                    <condition>
+                                        <expression>getReportValue("Xfer Product Family") == "Repo" || getReportValue("Xfer Product Family") == "SecurityLending"</expression>
+                                    </condition>
+                                    <column>Dirty Price</column>
+                                </report>
+                                <report>
+                                    <column>Negotiated Price</column>
+                                </report>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

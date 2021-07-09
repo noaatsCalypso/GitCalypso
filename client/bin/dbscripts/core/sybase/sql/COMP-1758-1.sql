@@ -1,0 +1,8 @@
+update domain_values set value='ComplianceRuleSanctioningLevelViewRole' where value='ComplianceRuleSantioningLevelViewRole'
+GO
+update domain_values set value='ComplianceRuleSanctioningLevelEditRole' where value='ComplianceRuleSantioningLevelEditRole'
+GO
+update group_access set access_value='ComplianceRuleSanctioningLevelViewRole' where access_value='ComplianceRuleSantioningLevelViewRole'
+GO
+update group_access set access_value='ComplianceRuleSanctioningLevelEditRole' where access_value='ComplianceRuleSantioningLevelEditRole'
+GO

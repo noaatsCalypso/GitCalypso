@@ -1,0 +1,13 @@
+<!--calypso>
+if (|BILLING_TYPE| == "Maturity") {
+inline "File_type |BILLING_STATEMENT_TYPE| From |SENDER_CODE| To |RECEIVER_CODE| Statement Date |STATEMENT_DATE|";
+}
+else {
+inline "File_type |BILLING_STATEMENT_TYPE| From |SENDER_CODE| To |RECEIVER_CODE| Period_start |START_DATE| Period_end |END_DATE| Statement Date |STATEMENT_DATE|";
+}
+</calypso-->
+po_major_cd|DEL|po_major_descr|DEL|cpty_major_cd|DEL|cpty_major_descr|DEL|sec_code|DEL|sec_code_type|DEL|sec_description|DEL|sec_type|DEL|sec_country|DEL|trade_reference|DEL|trade_type_ind|DEL|borrow_loan_ind|DEL|fee_rebate_ind|DEL|collateral_type_ind|DEL|minimum_fee|DEL|event_type|DEL|date_from|DEL|date_to|DEL|days|DEL|actual_settle_date|DEL|rate_type|DEL|rate_index|DEL|quantity|DEL|loan_ccy|DEL|loan_price|DEL|loan_value|DEL|fee_rebate_rate|DEL|billing_ccy|DEL|theo_billing_amount|DEL|late_settlement|DEL|billing_amount|DEL|pay_rcv_ind|DEL|actual_minimum_fee|DEL|min_fee_pay_rcv_ind|DEL|billing_total|DEL|billing_adjustment|DEL|billing_tax|DEL|billing_grandtotal|DEL|
+<!--calypso>
+iterator ( "StatementEntryDetails" )
+    inline "|po_major_cd||DEL||po_major_descr||DEL||cpty_major_cd||DEL||cpty_major_descr||DEL||sec_code||DEL||sec_code_type||DEL||sec_description||DEL||sec_type||DEL||sec_country||DEL||trade_reference||DEL||trade_type_ind||DEL||borrow_loan_ind||DEL||fee_rebate_ind||DEL||collateral_type_ind||DEL||minimum_fee||DEL||event_type||DEL||date_from||DEL||date_to||DEL||days||DEL||actual_settle_date||DEL||rate_type||DEL||rate_index||DEL||quantity||DEL||loan_ccy||DEL||loan_price||DEL||loan_value||DEL||fee_rebate_rate||DEL||billing_ccy||DEL||theo_billing_amount||DEL||late_settlement||DEL||billing_amount||DEL||pay_rcv_ind||DEL||actual_minimum_fee||DEL||min_fee_pay_rcv_ind||DEL||billing_total||DEL||billing_adjustment||DEL||billing_tax||DEL||billing_grandtotal||DEL|";
+</calypso-->

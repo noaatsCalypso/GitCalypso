@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="incoming_linked_msg_identifier" xmlns="">
+        <column name="config_id" nullable="false" scale="1" type="int"/>
+        <column name="version_num" nullable="true" scale="1" type="int"/>
+        <column name="template" nullable="false" scale="64" type="string"/>
+        <column name="msg_attr" nullable="false" scale="255" type="string"/>
+        <column name="outgoing_templates" nullable="false" scale="255" type="string"/>
+        <index primary="true">
+            <on>config_id</on>
+        </index>
+    </table>
+    <!-- ************** Value Date Control Config table ************** -->
+    <table name="value_date_control_config" xmlns="">
+        <column name="value_date_control_config_id" nullable="false" scale="1" type="int"/>
+        <column name="version_num" nullable="true" scale="1" type="int"/>
+        <column name="currency" nullable="false" scale="32" type="string"/>
+        <column name="method" nullable="false" scale="32" type="string"/>
+        <column name="holidays" nullable="false" scale="32" type="string"/>
+        <column name="time" nullable="false" scale="1" type="int"/>
+        <column name="days" nullable="false" type="int" scale="1" default="0"></column>
+        <column name="business_b" nullable="false" type="int" scale="1" default="1"></column>
+        <column name="update_settle_date_b" nullable="false" type="int" scale="1" default="1"></column>
+        <column name="timezone" nullable="true" scale="32" type="string"/>
+        <index primary="true">
+            <on>value_date_control_config_id</on>
+        </index>
+    </table>
+    <table name="outgoing_message_identifier" xmlns="">
+        <column name="config_id" nullable="false" scale="1" type="int"/>
+        <column name="version_num" nullable="true" scale="1" type="int"/>
+        <column name="template" nullable="false" scale="64" type="string"/>
+        <column name="method" nullable="false" scale="32" type="string"/>
+        <column name="object_identifier" nullable="false" scale="64" type="string"/>
+        <index primary="true">
+            <on>config_id</on>
+        </index>
+    </table>
+
+    <!-- ************** ISO External Code table ************** -->
+    <table name="iso_20022_external_code" xmlns="">
+        <column name="iso_20022_external_code_id" nullable="false" scale="1" type="int"/>
+        <column name="version_num" nullable="true" scale="1" type="int"/>
+        <column name="type" nullable="false" scale="32" type="string"/>
+        <column name="code" nullable="false" scale="4" type="string"/>
+        <column name="name" nullable="false" scale="255" type="string"/>
+        <column name="definition" nullable="false" scale="1000" type="string"/>
+        <column name="jurisdiction" nullable="true" scale="255" type="string"/>
+        <column name="code_type" nullable="true" scale="255" type="string"/>
+        <index primary="true">
+            <on>iso_20022_external_code_id</on>
+        </index>
+    </table>
+</database>

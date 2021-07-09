@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+  	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+
+		<bean name="rmiRegistryConfig" class="com.calypso.infra.rmi.DefaultRMIRegistryConfig">
+			<property name="registryHost" value="${QUOTE_SERVER_HOST}" />
+			<property name="registryPort" value="${QUOTE_SERVER_RMI_PORT}" />
+			<property name="bindPort" value="${QUOTESERVER_RMI_BIND_PORT}" />
+		</bean>
+
+	    <bean id="baseRemoteQuoteServer" class="com.calypso.tk.marketdata.quoteEngine.QEInterfaceComp">
+	    </bean>
+	    
+	    <bean id="rmiBaseRemoteQuoteServer" parent="rmiServiceExporter" depends-on="rmiRegistry">
+			<property name="service" ref="baseRemoteQuoteServer" />
+			<meta key="serviceInterface" value="com.calypso.tk.marketdata.quoteEngine.RemoteQuoteServer" />
+			<property name="registryPort" >
+				<util:property-path path="rmiRegistryConfig.registryPort"/>
+			</property>	
+		</bean>
+
+		<bean name="servicePortBean" class="com.calypso.infra.rmi.ServicePortBean">
+			<property name="servicePortRangeStart">
+				<util:property-path path="rmiRegistryConfig.bindPort" />
+			</property>
+		</bean>
+
+	</beans>

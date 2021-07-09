@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hotfix>
+    <patch date="Mon May 17 17:09:22 KST 2021" file="custom-project-distribution-1.0.0-SNAPSHOT-rel.zip" md5="04ee8dcfd8e16cf2f094121568623c87" force="true" patchVersion="5.3.4">
+        <modification type="add" file="resources/samples/NoaQuoteGent.txt" md5="1cbe3e48bd2b4e9bbe654848859407c3" modifiedSinceLastPatch="true" source="patcher"/>
+    </patch>
+    <patch date="Tue May 18 11:55:10 KST 2021" file="custom-project-distribution-1.0.0-SNAPSHOT-rel.zip" md5="abb15ff19c768427a272ed48897bb681" force="true" patchVersion="5.3.4">
+        <modification type="upgrade" file="resources/samples/NoaQuoteGent.txt" md5="1cbe3e48bd2b4e9bbe654848859407c3" modifiedSinceLastPatch="false" source="patcher"/>
+    </patch>
+</hotfix>

@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+
+	<table name="margin_run_info" xmlns="">
+		<column name="margin_hierarchy" nullable="false" type="string" scale="64"/>
+		<column name="calculation_set" nullable="false" type="string" scale="250"/>
+		<column name="eod" nullable="false" scale="1" type="int" default="1"/>
+		<column name="margin_data_type" nullable="false" type="string" scale="64"/>
+		<column name="valuation_date" nullable="false" type="timestamp"/>
+		<column name="valuation_date_time" nullable="false" type="timestamp"/>
+		<column name="time_zone" nullable="true" type="string" scale="64"/>
+		<index primary="true">
+			<on>margin_hierarchy</on>
+			<on>calculation_set</on>
+			<on>eod</on>
+			<on>margin_data_type</on>
+		</index>
+	</table>
+	<table name="margin_mfm_multiplier" xmlns="">
+		<column name="aggregation_key" nullable="false" type="string" scale="64"/>
+		<column name="etl_lower_bound" nullable="false" type="float"/>
+		<column name="etl_upper_bound" nullable="false" type="float"/>
+		<column name="value" nullable="false" type="float" />
+		<index primary="true">
+			<on>aggregation_key</on>
+			<on>etl_lower_bound</on>
+			<on>etl_upper_bound</on>
+		</index>
+	</table>
+	<table name="margin_addon" xmlns="">
+		<column name="currency" nullable="false" scale="3" type="string"/>
+		<column name="valuation_date" nullable="false" type="timestamp"/>
+	    <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+		<column name="value" nullable="false" type="float"/>
+		<column name="add_on_type" nullable="false" scale="250" type="string"/>
+		<column name="description" nullable="true" scale="250" type="string"/>
+		<column name="calculation_set" nullable="false" scale="255" default="Default" type="string"/>
+		<index primary="false">
+			<on>valuation_date</on>
+			<on>margin_agreement_name</on>
+			<on>add_on_type</on>
+		</index>
+	</table>
+	<table name="margin_addon_hist" xmlns="">
+		<column name="currency" nullable="false" scale="3" type="string"/>
+		<column name="valuation_date" nullable="false" type="timestamp"/>
+	    <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+		<column name="value" nullable="false" type="float"/>
+		<column name="add_on_type" nullable="false" scale="250" type="string"/>
+		<column name="description" nullable="true" scale="250" type="string"/>
+		<column name="calculation_set" nullable="false" scale="255" default="Default" type="string"/>
+		<index primary="false">
+			<on>valuation_date</on>
+			<on>margin_agreement_name</on>
+			<on>add_on_type</on>
+		</index>
+	</table>
+	<table name="margin_addon_temp" xmlns="">
+		<column name="currency" nullable="false" scale="3" type="string"/>
+		<column name="valuation_date" nullable="false" type="timestamp"/>
+	    <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+		<column name="value" nullable="false" type="float"/>
+		<column name="add_on_type" nullable="false" scale="250" type="string"/>
+		<column name="description" nullable="true" scale="250" type="string"/>
+		<column name="calculation_set" nullable="false" scale="255" default="Default" type="string"/>
+	</table>
+	<table name="margin_multiplier" xmlns="">
+		<column name="threshold" nullable="false" type="float"/>
+		<column name="multiplier" nullable="false" type="float"/>
+		<column name="multiplier_type" nullable="false" type="string" scale="64"/>
+		<column name="rate_index" nullable="false" type="string" scale="64"/>
+		<index primary="true">
+			<on>multiplier_type</on>
+			<on>rate_index</on>
+			<on>threshold</on>
+		</index>
+	</table>
+    <table name="margin_liquidity_factor" xmlns="">
+		<column name="liquidity_set_id" nullable="false" type="int" scale="1" default="1"/>
+        <column name="product_type" nullable="false" type="string" scale="32"/>
+        <column name="product_name" nullable="false" type="string" scale="64"/>
+        <column name="threshold" nullable="true" type="float" scale="1"/>
+        <column name="liquidity_period" nullable="false" type="float" scale="1"/>
+		<column name="bidask_spread" nullable="true" type="float" scale="1"/>
+		<index primary="false">
+			<on>liquidity_set_id</on>
+		</index>
+    </table>
+    <table name="margin_liquidity" xmlns="">
+        <column name="version" nullable="false" scale="1" default="0" type="int"/>
+        <column name="valuation_date" nullable="false" type="timestamp"/>
+        <column name="margin_account" nullable="false" scale="250" type="string"/>
+        <column name="bucket" nullable="false" scale="20" type="string"/>
+        <column name="amount" nullable="false" type="float"/>
+        <column name="currency" nullable="false" scale="3" type="string"/>
+        <column name="type" nullable="false" scale="50" type="string"/>
+        <column name="eod" nullable="false" scale="1" type="int" default="1"/>
+        <column name="pricing_env" nullable="false" scale="120" type="string"/>
+        <index primary="false" unique="true">
+            <on>valuation_date</on>
+			<on>margin_account</on>
+            <on>pricing_env</on>
+            <on>bucket</on>
+            <on>currency</on>
+            <on>type</on>
+            <on>eod</on>
+        </index>
+    </table>
+    <table name="margin_trade_liquidity" xmlns="">
+        <column name="valuation_date" nullable="false" type="timestamp"/>
+        <column name="trade_id" nullable="false" scale="60" type="string"/>
+        <column name="margin_account" nullable="false" scale="250" type="string"/>
+        <column name="bucket" nullable="false" scale="20" type="string"/>
+        <column name="amount" nullable="false" type="float"/>
+        <column name="currency" nullable="false" scale="3" type="string"/>
+        <column name="type" nullable="false" scale="50" type="string"/>
+        <column name="eod" nullable="false" scale="1" type="int" default="1"/>
+        <column name="pricing_env" nullable="false" scale="120" type="string"/>
+        <index primary="false" unique="true">
+			<on>trade_id</on>
+            <on>valuation_date</on>
+            <on>pricing_env</on>
+            <on>margin_account</on>
+            <on>bucket</on>
+			<on>currency</on>
+            <on>type</on>
+            <on>eod</on>
+		</index>
+    </table>
+	<table name="margin_unsettled_vm" xmlns="">
+	    <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+		<column name="amount" nullable="false" type="float"/>
+		<column name="valuation_date" nullable="false" type="timestamp"/>
+        <column name="currency" nullable="false" scale="3" type="string"/>
+        <column name="version" nullable="false" scale="1" default="0" type="int"/>
+		<index primary="false" unique="true">
+            <on>margin_agreement_name</on>
+			<on>valuation_date</on>
+			<on>currency</on>
+		</index>
+	</table>
+	<table name="margin_unsettled_vm_hist" xmlns="">
+	    <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+		<column name="amount" nullable="false" type="float"/>
+		<column name="valuation_date" nullable="false" type="timestamp"/>
+        <column name="currency" nullable="false" scale="3" type="string"/>
+        <column name="version" nullable="false" scale="1" default="0" type="int"/>
+		<index primary="false" unique="true">
+            <on>margin_agreement_name</on>
+			<on>valuation_date</on>
+			<on>currency</on>
+		</index>
+	</table>
+	<table name="margin_unsettled_vm_temp" xmlns="">
+	    <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+		<column name="amount" nullable="false" type="float"/>
+		<column name="valuation_date" nullable="false" type="timestamp"/>
+        <column name="currency" nullable="false" scale="3" type="string"/>
+        <column name="version" nullable="false" scale="1" default="0" type="int"/>
+	</table>
+	<table name="margin_vm_config" xmlns="">
+		<column name="config_name" nullable="false" scale="255" type="string"/>
+		<column name="config_value" nullable="false" scale="255" type="string"/>
+	</table>
+    <table name="margin_vm_definition" xmlns="">
+        <column name="name" nullable="false" scale="120" type="string"/>
+        <column name="additional_column_index" nullable="false" scale="1" type="int"/>
+        <column name="leg" nullable="true" scale="60" type="string"/>
+        <column name="product_type" nullable="true" scale="250" type="string"/>
+        <column name="measure_name" nullable="false" scale="250" type="string"/>
+        <column name="intraday" nullable="false" scale="1" type="int"/>
+        <column name="flip_sign" nullable="true" scale="1" type="int"/>
+        <column name="cumulative" nullable="false" scale="1" type="int"/>
+        <index primary="false">
+            <on>measure_name</on>
+		</index>
+    </table>
+    <table name="margin_trade_vm" xmlns="">
+        <column name="trade_id" nullable="false" scale="60" type="string"/>
+        <column name="po_view" nullable="false" scale="1" default="0" type="int"/>
+        <column name="valuation_date" nullable="false" type="timestamp"/>
+        <column name="currency" nullable="true" scale="3" type="string"/>
+        <column name="eod" nullable="false" scale="1" type="int" default="1"/>
+        <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+        <column name="im_portfolio_name" nullable="false" scale="250" type="string"/>
+        <column name="calculation_set" nullable="false" scale="250" type="string"/>
+        <column name="vm" nullable="false" type="float"/>
+        <column name="vm_collaterized" nullable="false" type="float" default="0"/>
+        <column name="vm_cash" nullable="false" type="float"/>
+        <column name="npv" nullable="false" type="float"/>
+        <column name="npv_adj" nullable="false" type="float"/>
+        <column name="pai" nullable="false" type="float"/>
+        <column name="vm_exposure" nullable="false" type="float"/>
+        <column name="leg_direction" nullable="true" scale="60" type="string"/>
+        <column name="po" nullable="false" scale="1" type="int" default="0"/>
+        <column name="additional_measure_1" nullable="false" type="float"/>
+        <column name="additional_measure_2" nullable="false" type="float"/>
+        <column name="additional_measure_3" nullable="false" type="float"/>
+        <column name="additional_measure_4" nullable="false" type="float"/>
+        <column name="additional_measure_5" nullable="false" type="float"/>
+        <column name="additional_measure_6" nullable="false" type="float"/>
+        <column name="additional_measure_7" nullable="false" type="float"/>
+        <column name="additional_measure_8" nullable="false" type="float"/>
+        <column name="additional_measure_9" nullable="false" type="float"/>
+        <column name="additional_measure_10" nullable="false" type="float"/>
+        <column name="additional_measure_11" nullable="false" type="float"/>
+        <column name="additional_measure_12" nullable="false" type="float"/>
+        <column name="additional_measure_13" nullable="false" type="float"/>
+        <column name="additional_measure_14" nullable="false" type="float"/>
+        <column name="additional_measure_15" nullable="false" type="float"/>
+        <index primary="false" unique="true">
+			<on>trade_id</on>
+            <on>valuation_date</on>
+            <on>currency</on>
+            <on>leg_direction</on>
+			<on>margin_agreement_name</on>
+			<on>calculation_set</on>
+	    	<on>eod</on>
+		</index>
+        <index primary="false">
+			<on>trade_id</on>
+			<on>im_portfolio_name</on>
+			<on>calculation_set</on>
+            <on>valuation_date</on>
+	    	<on>eod</on>
+		</index>
+    </table>
+    <table name="margin_trade_vm_hist" xmlns="">
+        <column name="trade_id" nullable="false" scale="60" type="string"/>
+        <column name="po_view" nullable="false" scale="1" default="0" type="int"/>
+        <column name="valuation_date" nullable="false" type="timestamp"/>
+        <column name="currency" nullable="true" scale="3" type="string"/>
+        <column name="eod" nullable="false" scale="1" type="int" default="1"/>
+        <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+        <column name="im_portfolio_name" nullable="false" scale="250" type="string"/>
+        <column name="calculation_set" nullable="false" scale="250" type="string"/>
+        <column name="vm" nullable="false" type="float"/>
+        <column name="vm_collaterized" nullable="false" type="float" default="0"/>
+        <column name="vm_cash" nullable="false" type="float"/>
+        <column name="npv" nullable="false" type="float"/>
+        <column name="npv_adj" nullable="false" type="float"/>
+        <column name="pai" nullable="false" type="float"/>
+        <column name="vm_exposure" nullable="false" type="float"/>
+        <column name="leg_direction" nullable="true" scale="60" type="string"/>
+        <column name="po" nullable="false" scale="1" type="int" default="0"/>
+        <column name="additional_measure_1" nullable="false" type="float"/>
+        <column name="additional_measure_2" nullable="false" type="float"/>
+        <column name="additional_measure_3" nullable="false" type="float"/>
+        <column name="additional_measure_4" nullable="false" type="float"/>
+        <column name="additional_measure_5" nullable="false" type="float"/>
+        <column name="additional_measure_6" nullable="false" type="float"/>
+        <column name="additional_measure_7" nullable="false" type="float"/>
+        <column name="additional_measure_8" nullable="false" type="float"/>
+        <column name="additional_measure_9" nullable="false" type="float"/>
+        <column name="additional_measure_10" nullable="false" type="float"/>
+        <column name="additional_measure_11" nullable="false" type="float"/>
+        <column name="additional_measure_12" nullable="false" type="float"/>
+        <column name="additional_measure_13" nullable="false" type="float"/>
+        <column name="additional_measure_14" nullable="false" type="float"/>
+        <column name="additional_measure_15" nullable="false" type="float"/>
+        <index primary="false" unique="true">
+			<on>trade_id</on>
+            <on>valuation_date</on>
+            <on>currency</on>
+            <on>leg_direction</on>
+			<on>calculation_set</on>
+            <on>eod</on>
+		</index>
+    </table>
+    <table name="margin_trade_vm_temp" xmlns="">
+        <column name="trade_id" nullable="false" scale="60" type="string"/>
+        <column name="po_view" nullable="false" scale="1" default="0" type="int"/>
+        <column name="valuation_date" nullable="false" type="timestamp"/>
+        <column name="currency" nullable="true" scale="3" type="string"/>
+        <column name="eod" nullable="false" scale="1" type="int" default="1"/>
+        <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+        <column name="im_portfolio_name" nullable="false" scale="250" type="string"/>
+        <column name="calculation_set" nullable="false" scale="250" type="string"/>
+        <column name="vm" nullable="false" type="float"/>
+        <column name="vm_collaterized" nullable="false" type="float" default="0"/>
+        <column name="vm_cash" nullable="false" type="float"/>
+        <column name="npv" nullable="false" type="float"/>
+        <column name="npv_adj" nullable="false" type="float"/>
+        <column name="pai" nullable="false" type="float"/>
+        <column name="vm_exposure" nullable="false" type="float"/>
+        <column name="leg_direction" nullable="true" scale="60" type="string"/>
+        <column name="po" nullable="false" scale="1" type="int" default="0"/>
+        <column name="additional_measure_1" nullable="false" type="float"/>
+        <column name="additional_measure_2" nullable="false" type="float"/>
+        <column name="additional_measure_3" nullable="false" type="float"/>
+        <column name="additional_measure_4" nullable="false" type="float"/>
+        <column name="additional_measure_5" nullable="false" type="float"/>
+        <column name="additional_measure_6" nullable="false" type="float"/>
+        <column name="additional_measure_7" nullable="false" type="float"/>
+        <column name="additional_measure_8" nullable="false" type="float"/>
+        <column name="additional_measure_9" nullable="false" type="float"/>
+        <column name="additional_measure_10" nullable="false" type="float"/>
+        <column name="additional_measure_11" nullable="false" type="float"/>
+        <column name="additional_measure_12" nullable="false" type="float"/>
+        <column name="additional_measure_13" nullable="false" type="float"/>
+        <column name="additional_measure_14" nullable="false" type="float"/>
+        <column name="additional_measure_15" nullable="false" type="float"/>
+    </table>
+    <table name="margin_portfolio_vm" xmlns="">
+        <column name="version" nullable="false" scale="1" default="0" type="int"/>
+        <column name="valuation_date" nullable="false" type="timestamp"/>
+        <column name="currency" nullable="true" scale="3" type="string"/>
+        <column name="eod" nullable="false" scale="1" type="int" default="1"/>
+        <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+        <column name="im_portfolio_name" nullable="false" scale="250" type="string"/>
+        <column name="calculation_set" nullable="false" scale="250" type="string"/>
+        <column name="vm" nullable="false" type="float"/>
+        <column name="vm_collaterized" nullable="false" type="float" default="0"/>
+        <column name="vm_cash" nullable="false" type="float"/>
+        <column name="npv" nullable="false" type="float"/>
+        <column name="npv_adj" nullable="false" type="float"/>
+        <column name="pai" nullable="false" type="float"/>
+        <column name="vm_exposure" nullable="false" type="float"/>
+        <column name="additional_measure_1" nullable="false" type="float"/>
+        <column name="additional_measure_2" nullable="false" type="float"/>
+        <column name="additional_measure_3" nullable="false" type="float"/>
+        <column name="additional_measure_4" nullable="false" type="float"/>
+        <column name="additional_measure_5" nullable="false" type="float"/>
+        <column name="additional_measure_6" nullable="false" type="float"/>
+        <column name="additional_measure_7" nullable="false" type="float"/>
+        <column name="additional_measure_8" nullable="false" type="float"/>
+        <column name="additional_measure_9" nullable="false" type="float"/>
+        <column name="additional_measure_10" nullable="false" type="float"/>
+        <column name="additional_measure_11" nullable="false" type="float"/>
+        <column name="additional_measure_12" nullable="false" type="float"/>
+        <column name="additional_measure_13" nullable="false" type="float"/>
+        <column name="additional_measure_14" nullable="false" type="float"/>
+        <column name="additional_measure_15" nullable="false" type="float"/>
+        <column name="po_view" nullable="true" scale="1" type="int" default="0"/>
+        <index primary="false" unique="true">
+			<on>margin_agreement_name</on>
+			<on>calculation_set</on>
+            <on>valuation_date</on>
+            <on>currency</on>
+            <on>eod</on>
+		</index>
+    </table>
+    <table name="margin_portfolio_vm_hist" xmlns="">
+        <column name="version" nullable="false" scale="1" default="0" type="int"/>
+        <column name="valuation_date" nullable="false" type="timestamp"/>
+        <column name="currency" nullable="true" scale="3" type="string"/>
+        <column name="eod" nullable="false" scale="1" type="int" default="1"/>
+        <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+        <column name="im_portfolio_name" nullable="false" scale="250" type="string"/>
+        <column name="calculation_set" nullable="false" scale="250" type="string"/>
+        <column name="vm" nullable="false" type="float"/>
+        <column name="vm_collaterized" nullable="false" type="float" default="0"/>
+        <column name="vm_cash" nullable="false" type="float"/>
+        <column name="npv" nullable="false" type="float"/>
+        <column name="npv_adj" nullable="false" type="float"/>
+        <column name="pai" nullable="false" type="float"/>
+        <column name="vm_exposure" nullable="false" type="float"/>
+        <column name="additional_measure_1" nullable="false" type="float"/>
+        <column name="additional_measure_2" nullable="false" type="float"/>
+        <column name="additional_measure_3" nullable="false" type="float"/>
+        <column name="additional_measure_4" nullable="false" type="float"/>
+        <column name="additional_measure_5" nullable="false" type="float"/>
+        <column name="additional_measure_6" nullable="false" type="float"/>
+        <column name="additional_measure_7" nullable="false" type="float"/>
+        <column name="additional_measure_8" nullable="false" type="float"/>
+        <column name="additional_measure_9" nullable="false" type="float"/>
+        <column name="additional_measure_10" nullable="false" type="float"/>
+        <column name="additional_measure_11" nullable="false" type="float"/>
+        <column name="additional_measure_12" nullable="false" type="float"/>
+        <column name="additional_measure_13" nullable="false" type="float"/>
+        <column name="additional_measure_14" nullable="false" type="float"/>
+        <column name="additional_measure_15" nullable="false" type="float"/>
+        <column name="po_view" nullable="true" scale="1" type="int" default="0"/>
+        <index primary="false" unique="true">
+			<on>margin_agreement_name</on>
+			<on>calculation_set</on>
+            <on>valuation_date</on>
+            <on>currency</on>
+            <on>eod</on>
+		</index>
+    </table>
+	<table name="margin_portfolio_vm_temp" xmlns="">
+        <column name="version" nullable="false" scale="1" default="0" type="int"/>
+        <column name="valuation_date" nullable="false" type="timestamp"/>
+        <column name="currency" nullable="true" scale="3" type="string"/>
+        <column name="eod" nullable="false" scale="1" type="int" default="1"/>
+        <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+        <column name="im_portfolio_name" nullable="false" scale="250" type="string"/>
+        <column name="calculation_set" nullable="false" scale="250" type="string"/>
+        <column name="vm" nullable="false" type="float"/>
+        <column name="vm_collaterized" nullable="false" type="float" default="0"/>
+        <column name="vm_cash" nullable="false" type="float"/>
+        <column name="npv" nullable="false" type="float"/>
+        <column name="npv_adj" nullable="false" type="float"/>
+        <column name="pai" nullable="false" type="float"/>
+        <column name="vm_exposure" nullable="false" type="float"/>
+        <column name="additional_measure_1" nullable="false" type="float"/>
+        <column name="additional_measure_2" nullable="false" type="float"/>
+        <column name="additional_measure_3" nullable="false" type="float"/>
+        <column name="additional_measure_4" nullable="false" type="float"/>
+        <column name="additional_measure_5" nullable="false" type="float"/>
+        <column name="additional_measure_6" nullable="false" type="float"/>
+        <column name="additional_measure_7" nullable="false" type="float"/>
+        <column name="additional_measure_8" nullable="false" type="float"/>
+        <column name="additional_measure_9" nullable="false" type="float"/>
+        <column name="additional_measure_10" nullable="false" type="float"/>
+        <column name="additional_measure_11" nullable="false" type="float"/>
+        <column name="additional_measure_12" nullable="false" type="float"/>
+        <column name="additional_measure_13" nullable="false" type="float"/>
+        <column name="additional_measure_14" nullable="false" type="float"/>
+        <column name="additional_measure_15" nullable="false" type="float"/>
+        <column name="po_view" nullable="true" scale="1" type="int" default="0"/>
+        <index primary="false" unique="true">
+			<on>margin_agreement_name</on>
+			<on>calculation_set</on>
+            <on>valuation_date</on>
+            <on>currency</on>
+            <on>eod</on>
+		</index>
+    </table>
+    <table name="margin_result" xmlns="">
+		<column name="id" nullable="false" scale="64" type="string"/>
+		<column name="version" nullable="true" scale="1" type="int" default="0"/>
+		<column name="account_id" nullable="false" scale="64" type="string" />
+		<column name="eod" nullable="false" scale="1" type="int" default="1"/>
+		<column name="currency" nullable="false" scale="3" type="string" />
+		<column name="valuation_date" nullable="false" scale="1" type="timestamp"/>
+		<column name="additionalim" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="scheduleim" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="simmim" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="totalim" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="maintenance" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="nov" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="regulator" nullable="true" scale="255" type="string" />
+		<column name="direction" nullable="false" scale="255" type="string" />
+		<column name="methodology" nullable="false" scale="255" type="string" />
+		<column name="etl" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="wcl" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="var" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="discretionary_margin" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="credit_margin" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="holiday_margin" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="credit_multiplier" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="holiday_multiplier" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="calibration_margin" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="calibration_multiplier" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="mfm_add_on" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="liquidity_add_on" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="status" nullable="false" scale="255" type="string" default="Unknown"/>
+		<column name="service" nullable="false" scale="255" type="string" default="MARGIN-OTC" />
+		<column name="calculation_request_id" nullable="false" scale="64" type="string" default=""/>
+		<column name="calculation_set" nullable="false" scale="64" type="string" default="Default"/>
+		<column name="time_horizon" nullable="true" scale="255" type="string" />
+		<index primary="true">
+			<on>valuation_date</on>
+			<on>direction</on>
+			<on>account_id</on>
+			<on>eod</on>
+			<on>calculation_set</on>
+		</index>
+	</table>
+	<table name="margin_result_hist" xmlns="">
+		<column name="id" nullable="false" scale="64" type="string"/>
+		<column name="version" nullable="true" scale="1" type="int" default="0"/>
+		<column name="account_id" nullable="false" scale="64" type="string" />
+		<column name="eod" nullable="false" scale="1" type="int" default="1"/>
+		<column name="currency" nullable="false" scale="3" type="string" />
+		<column name="valuation_date" nullable="false" scale="1" type="timestamp"/>
+		<column name="additionalim" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="scheduleim" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="simmim" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="totalim" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="maintenance" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="nov" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="regulator" nullable="true" scale="255" type="string" />
+		<column name="direction" nullable="false" scale="255" type="string" />
+		<column name="methodology" nullable="false" scale="255" type="string" />
+		<column name="etl" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="wcl" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="var" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="discretionary_margin" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="credit_margin" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="holiday_margin" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="credit_multiplier" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="holiday_multiplier" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="calibration_margin" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="calibration_multiplier" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="mfm_add_on" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="liquidity_add_on" nullable="true" scale="1" type="float" default="0.0"/>
+        <column name="status" nullable="false" scale="255" type="string" default="Unknown"/>
+        <column name="service" nullable="false" scale="255" type="string" default="MARGIN-OTC" />
+        <column name="calculation_request_id" nullable="false" scale="64" type="string" default=""/>
+        <column name="calculation_set" nullable="false" scale="64" type="string" default="Default"/>
+		<column name="time_horizon" nullable="true" scale="255" type="string" />
+		<index primary="true">
+			<on>valuation_date</on>
+			<on>direction</on>
+			<on>account_id</on>
+			<on>eod</on>
+			<on>calculation_set</on>
+		</index>
+	</table>
+	<table name="margin_result_temp" xmlns="">
+		<column name="id" nullable="false" scale="64" type="string"/>
+		<column name="version" nullable="true" scale="1" type="int" default="0"/>
+		<column name="account_id" nullable="false" scale="64" type="string" />
+		<column name="eod" nullable="false" scale="1" type="int" default="1"/>
+		<column name="currency" nullable="false" scale="3" type="string" />
+		<column name="valuation_date" nullable="false" scale="1" type="timestamp"/>
+		<column name="additionalim" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="scheduleim" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="simmim" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="totalim" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="maintenance" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="nov" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="regulator" nullable="true" scale="255" type="string" />
+		<column name="direction" nullable="false" scale="255" type="string" />
+		<column name="methodology" nullable="false" scale="255" type="string" />
+		<column name="etl" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="wcl" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="var" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="discretionary_margin" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="credit_margin" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="holiday_margin" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="credit_multiplier" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="holiday_multiplier" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="calibration_margin" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="calibration_multiplier" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="mfm_add_on" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="liquidity_add_on" nullable="true" scale="1" type="float" default="0.0"/>
+        <column name="status" nullable="false" scale="255" type="string" default="Unknown"/>
+        <column name="service" nullable="false" scale="255" type="string" default="MARGIN-OTC" />
+        <column name="calculation_request_id" nullable="false" scale="64" type="string" default=""/>
+        <column name="calculation_set" nullable="false" scale="64" type="string" default="Default"/>
+        <column name="time_horizon" nullable="true" scale="255" type="string" />
+	</table>
+	<table name="margin_result_errors" xmlns="">
+		<column name="error_messages" nullable="false" scale="255" type="string"/>
+		<column name="tree_id" nullable="false" scale="64" type="string"/>
+		<index primary="false">
+           <on>tree_id</on>
+		</index>
+	</table>
+	<table name="margin_result_errors_hist" xmlns="">
+		<column name="error_messages" nullable="false" scale="255" type="string"/>
+		<column name="tree_id" nullable="false" scale="64" type="string"/>
+	</table>
+	<table name="margin_result_errors_temp" xmlns="">
+		<column name="error_messages" nullable="false" scale="255" type="string"/>
+		<column name="tree_id" nullable="false" scale="64" type="string"/>
+	</table>
+	<table name="margin_result_node" xmlns="">
+		<column name="id" nullable="false" scale="64" type="string"/>
+		<column name="version" nullable="true" scale="1" type="int" default="0"/>
+		<column name="node_name" nullable="false" scale="250" type="string"/>
+		<column name="currency" nullable="false" scale="3" type="string"/>
+		<column name="attribute_key" nullable="true" scale="255" type="string" />
+		<column name="depth" nullable="false" scale="1" type="int" />
+		<column name="node_index" nullable="false" scale="1" type="int" />
+		<column name="numeric_value" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="string_value" nullable="true" scale="255" type="string" />
+		<column name="tree_id" nullable="false" scale="64" type="string"/>
+		<index primary="false" unique="true">
+			<on>id</on>
+			<on>node_name</on>
+		</index>
+	</table>
+	<table name="margin_result_node_hist" xmlns="">
+		<column name="id" nullable="false" scale="64" type="string"/>
+		<column name="version" nullable="true" scale="1" type="int" default="0"/>
+		<column name="node_name" nullable="false" scale="250" type="string"/>
+		<column name="currency" nullable="false" scale="3" type="string"/>
+		<column name="attribute_key" nullable="true" scale="255" type="string" />
+		<column name="depth" nullable="false" scale="1" type="int" />
+		<column name="node_index" nullable="false" scale="1" type="int" />
+		<column name="numeric_value" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="string_value" nullable="true" scale="255" type="string" />
+		<column name="tree_id" nullable="false" scale="64" type="string"/>
+		<index primary="false" unique="true">
+			<on>id</on>
+			<on>node_name</on>
+		</index>
+	</table>
+	<table name="margin_result_node_temp" xmlns="">
+		<column name="id" nullable="false" scale="64" type="string"/>
+		<column name="version" nullable="true" scale="1" type="int" default="0"/>
+		<column name="node_name" nullable="false" scale="250" type="string"/>
+		<column name="currency" nullable="false" scale="3" type="string"/>
+		<column name="attribute_key" nullable="true" scale="255" type="string" />
+		<column name="depth" nullable="false" scale="1" type="int" />
+		<column name="node_index" nullable="false" scale="1" type="int" />
+		<column name="numeric_value" nullable="true" scale="1" type="float" default="0.0"/>
+		<column name="string_value" nullable="true" scale="255" type="string" />
+		<column name="tree_id" nullable="false" scale="64" type="string"/>
+	</table>
+</database>

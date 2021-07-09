@@ -1,0 +1,1331 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+
+  <table name="domain_values" xmlns="">
+    <row cat="Required">
+      <column name="name">function</column>
+      <column name="value">MARGIN_ADMINRole</column>
+      <column name="description">Role function</column>
+    </row>
+    <row cat="Required">
+      <column name="name">function</column>
+      <column name="value">MARGIN_USERRole</column>
+      <column name="description">Role function</column>
+    </row>
+  </table>
+
+ <table name="cm_product_mapping" xmlns="">
+ 
+  <!-- FX Product class -->
+  
+    <row cat="Required">
+      <column name="id">00632a8a-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">FX</column>
+      <column name="product_type">FXCompoundOption</column>
+      <column name="source">SYSTEM</column>
+    </row>
+     <row cat="Required">
+	  <column name="id">b4bcc85e-40d0-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">FX</column>
+      <column name="product_type">FXNDF</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    <row cat="Required">
+	  <column name="id">c6d1c06c-40d0-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">FX</column>
+      <column name="product_type">FXNDFSwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">e3d4bf2a-40d0-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">FX</column>
+      <column name="product_type">FXOption</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">f054f742-40d0-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">FX</column>
+      <column name="product_type">FXOptionForward</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">ffc8431e-40d0-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">FX</column>
+      <column name="product_type">FXOptionStrategy</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">11dee954-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">FX</column>
+      <column name="product_type">FXOptionStrip</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">1c1a502a-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">FX</column>
+      <column name="product_type">FXOptionSwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">20f77122-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">FX</column>
+      <column name="product_type">FXSwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">25384af4-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">FX</column>
+      <column name="product_type">PositionFXExposure</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">29db7fcc-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">FX</column>
+      <column name="product_type">PositionFXNDF</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+   <!-- Rates Product class -->
+      
+     <row cat="Required">
+	  <column name="id">2f083418-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">CancellableSwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+     <row cat="Required">
+	  <column name="id">39ea7530-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">CancellableXCCySwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    <row cat="Required">
+	  <column name="id">3e2905e4-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">CapFloor</column>
+      <column name="source">SYSTEM</column>
+    </row>
+     <row cat="Required">
+	  <column name="id">42bd002e-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">CappedSwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">4ab6713e-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">CappedSwapNonDeliverable</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">4f818fa0-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">ExoticCapFloor</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">54eca024-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">FRA</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">59bd1016-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">FRAInArrear</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">5da286e8-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">FRAStandard</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	   <column name="id">62dab068-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">PreciousMetalDepositLease</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required"> 
+	  <column name="id">042a3956-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">PreciousMetalLeaseRateSwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">d3eb224c-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">ScriptableOTCProduct</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">da40179c-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">SingleSwapLeg</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">e0a71496-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">SpreadCapFloor</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">e63d7418-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">SpreadLock</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">078e661c-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">SpreadSwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">ed6a9c66-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">StructuredProduct</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">0b2ce1e0-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">Swap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">f3e6268c-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">SwapCrossCurrency</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">fa4aa99e-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">SwapNonDeliverable</column>
+      <column name="source">SYSTEM</column>
+    </row> 
+    
+    <row cat="Required">
+	  <column name="id">ff9575fa-40d1-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">Swaption</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">0338ff6a-40d2-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">TriggerSwaption</column>
+      <column name="source">SYSTEM</column>
+    </row> 
+    
+     <row cat="Required">
+	  <column name="id">0760d8b0-40d2-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">VarianceSwap</column>
+      <column name="source">SYSTEM</column>
+    </row> 
+    
+     <row cat="Required">
+	  <column name="id">0b6b7b86-40d2-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">XCCySwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">105fddbc-40d2-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">RATES</column>
+      <column name="product_type">IRStructuredOption</column>
+      <column name="source">SYSTEM</column>
+    </row>  
+    
+       <!-- Credit Product class -->
+       
+     <row cat="Required">
+	  <column name="id">13fc5a9a-40d2-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">CancellableCDS</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">192ac90c-40d2-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">CancellableCDSNthDefault</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">1f32e852-40d2-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">CancellableCDSNthLoss</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">25cd43ce-40d2-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">CDSABSIndex</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">0e79bb02-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">CDSABSIndexTranche</column>
+      <column name="source">SYSTEM</column>
+    </row> 
+    
+    <row cat="Required">
+	  <column name="id">12090746-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">CDSIndex</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">1588bf56-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">CDSIndexDefinition</column>
+      <column name="source">SYSTEM</column>
+    </row> 
+    
+     <row cat="Required">
+	  <column name="id">18c9da74-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">CDSIndexOption</column>
+      <column name="source">SYSTEM</column>
+    </row> 
+    
+     <row cat="Required">
+	  <column name="id">1c61a98c-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">CDSIndexTranche</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">200875e8-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">CDSIndexTrancheOption</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">9782f6a2-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">CDSNthDefault</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">9d9e02ac-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">CDSNthLoss</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">baad385e-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">ContingentCreditDefaultSwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">be7d0ce8-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">CreditDefaultSwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">c2c2c1ee-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">CreditDefaultSwapABS</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">c6573010-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">CreditDefaultSwapLoan</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">caddcfcc-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">CreditDefaultSwaption</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">ce72816e-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">ExtendibleCDS</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">d234cab4-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">ExtendibleCDSNthDefault</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">d5b9f376-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">ExtendibleCDSNthLoss</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">d96c9aa0-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">CREDIT</column>
+      <column name="product_type">StructuredTranche</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <!-- Commodity Product class-->
+    
+     <row cat="Required">
+	  <column name="id">dcc1e462-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">COMMODITY</column>
+      <column name="product_type">Commodity</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">e09619e6-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">COMMODITY</column>
+      <column name="product_type">CommodityCertificate</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">e4603688-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">COMMODITY</column>
+      <column name="product_type">CommodityForward</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">e8066e38-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">COMMODITY</column>
+      <column name="product_type">CommodityIndexSwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">eb38d5b4-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">COMMODITY</column>
+      <column name="product_type">CommodityOTCOption2</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">ee6fe4e8-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">COMMODITY</column>
+      <column name="product_type">CommoditySwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">aa7a545c-40d4-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">COMMODITY</column>
+      <column name="product_type">CommoditySwap2</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">60c0fe9a-40db-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">COMMODITY</column>
+      <column name="product_type">CommoditySwaption</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">f3f1ed08-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">COMMODITY</column>
+      <column name="product_type">OTCCommodityOption</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <!-- Equity product class -->
+    
+    <row cat="Required">
+	  <column name="id">f90b57a2-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">CFDConvertibleArbitrage</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">fd24b978-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">CFDDirectional</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">fff0ce3a-40d3-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">CFDPairTrading</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">0326cbb8-40d4-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">CFDRiskArbitrage</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">060e2cae-40d4-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">EquityCliquetOption</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">09859ffc-40d4-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">EquityForward</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">127104da-40d4-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">EquityIndex</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">15edab0e-40d4-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">EquityLinkedSwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">19568770-40d4-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">EquityStructuredOption</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">2ef1344a-40d4-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">OTCEquityOption</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">b25aedb2-40d4-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">OTCEquityOptionVanilla</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">b6cadfec-40d4-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">PerformanceSwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">bb5809a4-40d4-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">PortfolioSwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">c094ce02-40d4-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">PortfolioSwapPosition</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+     <row cat="Required">
+	  <column name="id">d065dbc0-40d2-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">QuotableStructuredOption</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    
+    <row cat="Required">
+	  <column name="id">e0a847ac-40d2-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">TotalReturnSwap</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    
+    <row cat="Required">
+	  <column name="id">e814e00e-40d2-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">TRSBasket</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">eda147e2-40d2-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">VarianceOption</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+      <column name="id">f1892226-40d2-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">VolatilityIndex</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+	  <column name="id">f72abdfc-40d2-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">Warrant</column>
+      <column name="source">SYSTEM</column>
+    </row>
+    
+    <row cat="Required">
+      <column name="id">fb4b9438-40d2-11eb-b378-0242ac130002</column>
+      <column name="tenant_id">0</column>
+      <column name="version">0</column>
+      <column name="creation_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="creation_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="creation_date">1608249902</column>
+      <column name="last_update_user">00000000-0000-0000-0000-000000000000</column>
+      <column name="last_update_user_type">urn:calypso:cloud:platform:iam:model:User</column>
+      <column name="last_update_date">1608249902</column>
+      <column name="product_class">EQUITY</column>
+      <column name="product_type">WarrantIssuance</column>
+      <column name="source">SYSTEM</column>
+    </row>
+  </table>
+</database>

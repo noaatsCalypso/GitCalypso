@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- defines the CA Attribute definition structure.
+     Please refer to com.calypso.tk.product.corporateaction.CAAttributeDefinition javadoc for fields documentation -->
+     
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="attributes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="attribute"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="attribute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="displayName"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="description"/>
+        <xs:element minOccurs="0" maxOccurs="3" ref="swiftEventChoice"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="swiftEvent"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="swiftCodeValue"/>
+      </xs:sequence>    
+      <xs:attribute name="name" use="required"/>
+      <xs:attribute name="type" use="required"/>
+      <xs:attribute name="domainName"/>
+      <xs:attribute name="parentPropertyName"/>
+      <xs:attribute name="sequenceNumber" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="displayName" type="xs:string">
+    <xs:annotation><xs:documentation>
+      The name displayed in a Report or in the Corporate Action frame.
+      Optional: using name attribute if display name element missing. 
+    </xs:documentation></xs:annotation>
+  </xs:element>
+  <xs:element name="description" type="xs:string">
+    <xs:annotation><xs:documentation>
+      Optional: a detailed description of the CA attribute purpose
+    </xs:documentation></xs:annotation>
+  </xs:element>
+  <xs:element name="swiftEventChoice" type="xs:string">
+    <xs:annotation><xs:documentation>
+      Optional: group of swiftEvent qualified with same event choice. 
+      No need to set swiftEvent element if swiftEventChoice provided
+    </xs:documentation></xs:annotation>
+  </xs:element>
+  <xs:element name="swiftEvent" type="xs:string">
+    <xs:annotation><xs:documentation>
+      Swift event - CAEV tag - for which attribute is applicable
+    </xs:documentation></xs:annotation>
+  </xs:element>
+  <xs:element name="swiftCodeValue" type="xs:string">
+    <xs:annotation><xs:documentation>
+      Optional domain: a restricted list of possible values
+    </xs:documentation></xs:annotation>
+  </xs:element>
+  <xs:element name="accessPermission" type="xs:string">
+    <xs:annotation><xs:documentation>
+      Optional: a restricted list of possible values
+    </xs:documentation></xs:annotation>
+  </xs:element>
+  <xs:element name="productType" type="xs:string">
+    <xs:annotation><xs:documentation>
+      Optional: group of product type allowed for this attribute
+    </xs:documentation></xs:annotation>
+  </xs:element>
+</xs:schema>

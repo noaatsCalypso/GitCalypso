@@ -1,0 +1,2876 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="collateral_config" xmlns="">
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<!-- old columns from mrgcall_config -->
+		<column name="account_id" nullable="true" type="int" scale="1" />
+		<column name="agency_list" nullable="true" scale="255" type="string" />
+		<column name="book_list" nullable="true" scale="1024" type="string" />
+		<column name="clearing_member_id" nullable="true" type="int"	scale="1" />
+		<column name="concentration_position" nullable="true" scale="16" type="string" />
+		<column name="concentration_side" nullable="true" scale="8" type="string" />
+		<column name="contract_direction" nullable="true" scale="32" type="string" />
+		<column default="0" name="contract_dispute_tol_amount"	nullable="false" scale="1" type="float" />
+		<column default="0" name="contract_dispute_tol_perc_b"	nullable="false" type="int" scale="1" />
+		<column default="GLOBAL_REQUIRED_MARGIN" name="dispute_tol_perc_basis"	nullable="false" scale="24" type="string" />
+		<column default="0" name="accept_on_po_favor_b" nullable="false"	type="int" scale="1" />
+		<column name="credit_multiplier" nullable="true" type="float"	scale="1" />
+		<column default="0" name="exclude_from_optimizer" nullable="false"	type="int" scale="1" />
+		<column name="exposure_type_list" nullable="true" scale="2048"	type="string" />
+		<column default="0" name="is_initial_margin" nullable="false"	type="int" scale="1" />
+		<column name="le_ia_rating_direction" nullable="true" scale="32" type="string" />
+		<column name="le_mta_currency" nullable="true" scale="3" type="string" />
+		<column name="le_rating_config" nullable="true" scale="1" type="int" />
+		<column name="le_rating_hier_config" nullable="true" scale="1" type="int" />
+		<column name="le_thres_currency" nullable="true" scale="3" type="string" />
+		<column name="notes" nullable="true" scale="1024" type="string" />
+		<column name="po_ia_rating_direction" nullable="true" scale="32" type="string" />
+		<column name="po_mta_currency" nullable="true" scale="3" type="string" />
+		<column name="po_rating_config" nullable="true" scale="1" type="int" />
+		<column name="po_rating_hier_config" nullable="true" scale="1" type="int" />
+		<column name="po_thres_currency" nullable="true" scale="3" type="string" />
+		<column default="POSITION_DATE_DEFAULT" name="position_date_type" nullable="true" scale="24" type="string" />
+		<column default="THEORETICAL" name="position_type" nullable="true" scale="32" type="string" />
+		<column default="1" name="rounding_before_mta_b" nullable="false"	type="int" scale="1" />
+		<column name="secured_party" nullable="true" scale="128" type="string" />
+		<column default="Pay Margin" name="substitution_context" nullable="true" scale="24" type="string" />
+		<column default="Inherited from Optimization Configuration" name="substitution_level" nullable="false" scale="48" type="string" />
+		<column default="Never" name="substitution_type" nullable="true" scale="24" type="string" />
+		<!-- end of old columns from mrgcall_config -->
+		<column name="wf_product" nullable="true" scale="32" type="string" />
+		<column name="wf_subtype" nullable="true" scale="32" type="string" />
+		<column name="perimeter_type" nullable="true" scale="32" type="string" />
+		<column name="po_ia_direction" nullable="true" scale="8" type="string" />
+		<column name="le_ia_direction" nullable="true" scale="8" type="string" />
+		<column name="settlement_offset" nullable="true" scale="1"	type="int" />
+		<column name="settlement_holidays" nullable="true" scale="1024"	type="string" />
+		<column name="tba_settlement_offset" nullable="true" scale="1"	type="int" />
+		<column default="If Not Fully Allocated" name="reset_allocations_type"	nullable="false" scale="32" type="string" />
+		<column name="interest_type" default="Contract" nullable="true"	scale="16" type="string" />
+		<column name="intraday_pricing_env_name" nullable="true" scale="32" type="string" />
+		<column name="collateral_group" nullable="true" scale="32"	type="string" />
+		<column default="0" name="triparty_b" nullable="false" type="int"	scale="1" />
+		<column name="po_mta_perc_basis" nullable="true" scale="32" type="string" />
+		<column default="Net Value" name="po_mta_value_basis" nullable="false" scale="32" type="string" />				
+		<column name="le_mta_perc_basis" nullable="true" scale="32" type="string" />
+		<column default="Net Value" name="le_mta_value_basis" nullable="false" scale="32" type="string" />				
+		<column name="po_thresh_perc_basis" nullable="true" scale="32" type="string" />
+		<column default="Net Value" name="po_thresh_value_basis" nullable="false" scale="32" type="string" />				
+		<column name="le_thresh_perc_basis" nullable="true" scale="32" type="string" />
+		<column default="Net Value" name="le_thresh_value_basis" nullable="false" scale="32" type="string" />		
+		<column default="0" name="config_adhoc_details_id" nullable="false"	type="int" scale="1" />
+		<column default="0" name="val_time_offset_id" nullable="false"	type="int" scale="1" />
+		<column name="holidays" nullable="true" scale="1024"	type="string" />
+		<column default="0" name="ignore_mta_on_return_b" nullable="false" type="int"	scale="1" />
+		<column default="0" name="ignore_mta_on_return_thres_b" nullable="false" type="int"	scale="1" />
+		<column name="quote_offset" default="0" nullable="true" scale="1" type="int" />
+		<column default="0" name="val_time_seconds" nullable="false" type="int" scale="1" />
+		<column default="0" name="notification_time_seconds" nullable="false" type="int" scale="1" />
+		<column default="0" name="substitution_time_seconds" nullable="false" type="int" scale="1" />
+		<column default="1" name="is_independent_wf" nullable="false" type="int" scale="1" />
+		<column default="0" name="is_distribute_to_exp" nullable="false" type="int" scale="1" />
+		<column default="0" name="is_portfolio_distrib" nullable="false" type="int" scale="1" />
+		<column default="0" name="is_direction_based_inc" nullable="false" type="int" scale="1" />
+		<column name="book_cash_in" nullable="true" type="int" scale="1" />
+		<column name="book_cash_out" nullable="true" type="int" scale="1" />
+		<column name="book_sec_in" nullable="true" type="int" scale="1" />
+		<column name="book_sec_out" nullable="true" type="int" scale="1" />
+		<column name="inv_source_book_for" nullable="true" scale="100" type="string" />
+		<column name="simulation_pricing_env_name" nullable="true" scale="32" type="string" />
+		<column default="0" name="mandatory_agencies" nullable="false" type="int" scale="1" />
+		<column name="collateral_rehypothecation" nullable="true" scale="8" type="string" />
+		<column name="accept_rehypothecated" nullable="true" scale="8" type="string" />
+		<column name="term_settle_ccy_list" nullable="true" scale="1024" type="string" />
+		<column name="le_term_ccy_list" nullable="true" scale="1024" type="string" />
+		<column name="le_haircut_name" nullable="true" scale="256" type="string" />
+		<column name="po_haircut_name" nullable="true" scale="256" type="string" />
+		<column name="po_haircut_type" nullable="true" type="string" scale="32" />
+		<column name="le_haircut_type" nullable="true" type="string" scale="32" />
+		<column name="le_is_rehypothecable" nullable="true" scale="1" type="int" />
+		<column name="le_accept_rehyp" nullable="true" scale="8" type="string" />
+		<column name="le_collateral_rehyp" nullable="true" scale="8" type="string" />
+		<column default="1" name="is_asym_elig_currencies" nullable="true" scale="1" type="int" />
+		<column default="1" name="is_asym_elig_filters" nullable="true" scale="1" type="int" />
+		<column default="1" name="is_asym_elig_exclusion" nullable="true" scale="1" type="int" />
+		<column default="0" name="acadia_b" nullable="true" scale="1" type="int" />
+		<column default="0" name="is_sweep_exp_group" nullable="true" scale="1" type="int" />
+		<column default="0" name="dispute_aging_start" nullable="false" scale="1" type="int" />		
+		<column default="0" name="track_as_dispute" nullable="true"	type="int" scale="1" />
+		<column default="0" name="undisputed_tol_amt" nullable="true" scale="1" type="float" />
+		<column default="0" name="accept_undisputed_amt" nullable="true" type="int" scale="1" />
+		<column default="0" name="undisputed_percentage" nullable="true" type="int" scale="1" />
+		<column default="GLOBAL_REQUIRED_MARGIN" name="undisputed_perc_dispute_b"	nullable="false" scale="24" type="string" />
+		<column default="0" name="nov_date_incl_excl_b" nullable="false" type="int" scale="1" />
+		<column default="0" name="regulatory_csa_b" nullable="false" type="int" scale="1" />
+		<column name="regulatory_compliance_date" nullable="true" type="timestamp"/>
+		<column name="default_optim_currency" nullable="true" scale="3" type="string" />
+		<column name="po_thresh_appl" nullable="true" scale="32" type="string" />
+		<column name="le_thresh_appl" nullable="true" scale="32" type="string" />
+		<column name="mf_application_type" nullable="true" scale="32" type="string" />	
+		<column name="mf_method" nullable="true" scale="32" type="string" />	
+		<column name="mf_linked_confid" nullable="true" scale="255" type="string" />	
+		<column name="mf_exp_linkedid" nullable="true" scale="255" type="string" />		
+		<column default="0" name="triparty_trade_id" nullable="false" scale="1" type="int" />
+		<index primary="true">
+			<on>mcc_id</on>
+		</index>
+		<index primary="false">
+			<on>clearing_member_id</on>
+		</index>
+		<index primary="false">
+			<on>collateral_group</on>
+		</index>
+	</table>
+	<table name="collateral_config_bin" xmlns="">
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="additional_fields" nullable="true" type="binary" />
+		<column name="collateral_dates" nullable="true" type="binary" />
+		<column name="eligibility_filters" nullable="true" type="binary" />
+		<column name="eligibility_exclusion" nullable="true" type="binary" />
+		<column name="le_eligibility_filters" nullable="true" type="binary" />
+		<column name="le_eligibility_exclusion" nullable="true" type="binary" />
+		<index primary="true">
+			<on>mcc_id</on>
+		</index>
+	</table>
+	<table name="config_linked" xmlns="">
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="linked_mcc_id" nullable="false" scale="1" type="int" />
+		<index primary="true">
+			<on>mcc_id</on>
+			<on>linked_mcc_id</on>
+		</index>
+	</table>
+	<table name="collateral_config_field" xmlns="">
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="mcc_field" nullable="false" scale="255" type="string" />
+		<column name="mcc_value" nullable="true" scale="255" type="string" />
+		<index primary="true">
+			<on>mcc_id</on>
+			<on>mcc_field</on>
+		</index>
+		<index primary="false">
+			<on>mcc_id</on>
+		</index>
+		<index primary="false">
+			<on>mcc_field</on>
+			<on>mcc_value</on>
+		</index>
+	</table>
+	<table name="mrgcall_config_le" xmlns="">
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="le_id" nullable="false" scale="1" type="int" />
+		<column name="le_role" nullable="false" scale="32" type="string" />
+		<index primary="false">
+			<on>mcc_id</on>
+		</index>
+		<index primary="false">
+			<on>le_id</on>
+			<on>le_role</on>
+		</index>
+		<index primary="false">
+			<on>le_id</on>
+		</index>
+	</table>
+	<table name="collateral_config_currency" xmlns="">
+		<column name="mrg_call_def" nullable="false" scale="1" type="int" />
+		<column name="currency_code" nullable="false" scale="3" type="string" />
+		<column name="rate_fixed" nullable="true" scale="1" type="float" />
+		<column name="rate_index" nullable="true" scale="255" type="string" />
+		<column name="rate_index_spread" nullable="true" scale="1"	type="float" />
+		<column name="rate_index_factor" nullable="true" scale="1"	type="float" />
+		<column name="is_compound" nullable="false" type="int" scale="1" />
+		<column name="is_included" nullable="false" type="int" scale="1" />
+		<column name="is_projected" nullable="false" type="int" scale="1" />
+		<column name="is_auto_adjust_margin" nullable="false" type="int"	scale="1" />
+		<column name="is_rate_index_floor" nullable="false" type="int"	scale="1" />
+		<column name="rate_index_floor" nullable="true" scale="1" type="float" />
+		<column default="0" name="auto_repayment" nullable="true" type="int"	scale="1" />
+		<column default="0" name="account_id" nullable="true" scale="1"	type="int" />
+		<column default="1" name="is_po_elig" nullable="false" scale="1" type="int" />
+		<column default="1" name="is_le_elig" nullable="false" scale="1" type="int" />
+		<column default="0" name="adj_order" nullable="false" scale="1" type="int" />
+		<column default="0" name="is_explode_mrg" nullable="false" scale="1" type="int" />
+		<column name="call_cutoff_time" nullable="true" type="timestamp"/>
+		<index primary="true">
+			<on>mrg_call_def</on>
+			<on>currency_code</on>
+			<on>is_po_elig</on>
+			<on>is_le_elig</on>
+		</index>
+		<index primary="false">
+			<on>mrg_call_def</on>
+		</index>
+	</table>
+	<table name="collateral_config_buffer" xmlns="">
+		<column name="mrg_call_def" nullable="false" scale="1" type="int" />
+		<column name="type" nullable="false" scale="255" type="string" />
+		<column name="buffer_method" nullable="false" scale="255" type="string" />
+		<column name="value" nullable="true" scale="1" type="float" />
+		<column name="currency_code" nullable="true" scale="3" type="string" />
+		<index primary="false">
+			<on>mrg_call_def</on>
+		</index>
+	</table>
+	<table name="exposure_group_definition" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="mrg_call_def" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="false" scale="255" type="string" />
+		<column name="description" nullable="true" scale="255" type="string" />
+		<column name="currency_code" nullable="true" scale="3" type="string" />
+		<column name="exposure_filters" nullable="true" type="binary" />
+		<column name="eligibility_filters" nullable="true" type="binary" />
+		<column name="eligibility_exclusion" nullable="true" type="binary" />
+		<column name="po_coll_type" nullable="true" scale="32" type="string"/>
+		<column name="po_mta_type" nullable="true" scale="32" type="string"/>
+		<column name="po_mta_amt" nullable="true" scale="1" type="float"/>
+		<column name="po_mta_perc" nullable="true" scale="1" type="float"/>
+		<column name="po_mta_perc_basis" nullable="true" scale="32" type="string" />
+		<column default="Net Value" name="po_mta_value_basis" nullable="false" scale="32" type="string" />
+		<column name="po_mta_currency" nullable="true" scale="3" type="string" />
+		<column name="po_thres_type" nullable="true" scale="32" type="string"/>
+		<column name="po_thres_amt" nullable="true" scale="1" type="float"/>
+		<column name="po_thres_perc" nullable="true" scale="1" type="float"/>
+		<column name="po_thresh_perc_basis" nullable="true" scale="32" type="string" />
+		<column default="Net Value" name="po_thresh_value_basis" nullable="false" scale="32" type="string" />
+		<column name="po_thres_currency" nullable="true" scale="3"	type="string" />
+		<column name="po_rounding_method" nullable="true" scale="32" type="string"/>
+		<column default="0" name="po_rounding_figure" nullable="false" scale="1" type="float"/>
+		<column name="po_return_rounding_method" nullable="true" scale="32" type="string"/>
+		<column default="0" name="po_return_rounding_figure" nullable="false" scale="1" type="float"/>
+		<column name="po_mta_rating_direction" nullable="true" scale="8" type="string"/>
+		<column name="po_thres_rating_direction" nullable="true" scale="8" type="string"/>
+		<column name="le_coll_type" nullable="true" scale="32" type="string"/>
+		<column name="le_mta_type" nullable="true" scale="32" type="string"/>
+		<column name="le_mta_amt" nullable="true" scale="1" type="float"/>
+		<column name="le_mta_perc" nullable="true" scale="1" type="float"/>
+		<column name="le_mta_perc_basis" nullable="true" scale="32" type="string" />
+		<column default="Net Value" name="le_mta_value_basis" nullable="false" scale="32" type="string" />
+		<column name="le_mta_currency" nullable="true" scale="3" type="string" />
+		<column name="le_thres_type" nullable="true" scale="32" type="string"/>
+		<column name="le_thres_amt" nullable="true" scale="1" type="float"/>
+		<column name="le_thres_perc" nullable="true" scale="1" type="float"/>
+		<column name="le_thresh_perc_basis" nullable="true" scale="32" type="string" />
+		<column default="Net Value" name="le_thresh_value_basis" nullable="false" scale="32" type="string" />
+		<column name="le_thres_currency" nullable="true" scale="3"	type="string" />
+		<column name="le_rounding_method" nullable="true" scale="32" type="string"/>
+		<column default="0" name="le_rounding_figure" nullable="false" scale="1" type="float"/>
+		<column name="le_return_rounding_method" nullable="true" scale="32" type="string"/>
+		<column default="0" name="le_return_rounding_figure" nullable="false" scale="1" type="float"/>
+		<column name="le_mta_rating_direction" nullable="true" scale="8" type="string"/>
+		<column name="le_thres_rating_direction" nullable="true" scale="8" type="string"/>
+		<column name="book_id" nullable="true" scale="1" type="int"/>
+		<column name="concentration_position" nullable="true" scale="16" type="string" />
+		<column name="concentration_side" nullable="true" scale="16" type="string" />
+		<column default="0" name="limit_amount" nullable="false" scale="1" type="float"/>
+		<column name="order_index" nullable="false" scale="1" type="int"/>
+		<column name="enable_alloc_proc" nullable="false" scale="1" type="int"/>
+		<column name="comments" nullable="true" scale="255" type="string"/>
+		<column name="book_cash_in" nullable="true" type="int" scale="1" />
+		<column name="book_cash_out" nullable="true" type="int" scale="1" />
+		<column name="book_sec_in" nullable="true" type="int" scale="1" />
+		<column name="book_sec_out" nullable="true" type="int" scale="1" />
+		<column name="inv_source_book_for" nullable="true" scale="100" type="string" />
+		<column default="0" name="parent_eligibility_book" nullable="false" scale="1" type="int" />
+		<column default="0" name="parent_eligibility_currency" nullable="false" scale="1" type="int" />
+		<column default="0" name="parent_eligibility_security" nullable="false" scale="1" type="int" />
+		<column default="0" name="po_id" nullable="false" scale="1" type="int" />
+		<column name="coll_distrib_mta" nullable="true" scale="1" type="float" />
+		<column name="coll_distrib_mta_currency" nullable="true" scale="3" type="string" />
+		<column default="0" name="triparty_b" nullable="false" type="int"	scale="1" />
+		<column name="term_settle_ccy_list" nullable="true" type="string"	scale="1024" />
+		<column name="le_term_ccy_list" nullable="true" type="string"	scale="1024" />
+		<column name="le_haircut_name" nullable="true" type="string" scale="256" />
+		<column name="po_haircut_name" nullable="true" type="string" scale="256" />
+		<column name="haircut_type" nullable="true" type="string" scale="32" />
+		<column name="le_haircut_type" nullable="true" type="string" scale="32" />
+		<column name="exc_trade_haircut" nullable="true" type="int" scale="1" />
+		<column name="po_is_rehypothecable" nullable="true" scale="1" type="int" />
+		<column name="po_accept_rehyp" nullable="true" scale="8" type="string" />
+		<column name="po_collateral_rehyp" nullable="true" scale="8" type="string" />
+		<column name="le_is_rehypothecable" nullable="true" scale="1" type="int" />
+		<column name="le_accept_rehyp" nullable="true" scale="8" type="string" />
+		<column name="le_collateral_rehyp" nullable="true" scale="8" type="string" />
+		<column name="le_eligibility_filters" nullable="true" type="binary" />
+		<column name="le_eligibility_exclusion" nullable="true" type="binary" />
+		<column default="1" name="is_asym_elig_currencies" nullable="true" scale="1" type="int" />
+		<column default="1" name="is_asym_elig_filters" nullable="true" scale="1" type="int" />
+		<column default="1" name="is_asym_elig_exclusion" nullable="true" scale="1" type="int" />
+		<column default="0" name="acadia_b" nullable="true" scale="1" type="int" />
+		<column name="contract_direction" nullable="true" scale="48" type="string" />
+		<column name="secured_party" nullable="true" scale="48" type="string" />		
+		<column name="po_thresh_appl" nullable="true" scale="32" type="string" />
+		<column name="le_thresh_appl" nullable="true" scale="32" type="string" />
+		<column default="0" name="triparty_trade_id" nullable="false" scale="1" type="int" />
+		<index primary="true">
+			<on>mrg_call_def</on>
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>mrg_call_def</on>
+		</index>
+		<index primary="false">
+			<on>mrg_call_def</on>
+			<on>name</on>
+		</index>
+	</table>
+	<table name="eligible_books_kv" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="false" scale="255" type="string" />
+		<column name="type" nullable="false" scale="255" type="string" />
+		<column name="value" nullable="false" scale="255" type="string" />
+		<column name="internal_id" nullable="false" scale="1" type="int" />
+		<index primary="false">
+			<on>id</on>
+			<on>internal_id</on>
+		</index>
+	</table>
+	<table name="margin_call_entries" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="audit_version" nullable="false" scale="1" type="int" />
+		<column name="orm_version" nullable="false" default="0" scale="1" type="int" />
+		<column name="processing_type" nullable="false" default="processing" scale="32" type="string" />
+		<column name="last_update" nullable="true" type="timestamp" />
+		<column name="last_user" nullable="true" scale="32" type="string" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="net_balance" nullable="false" scale="1" type="float" />
+		<column default="0" name="net_balance_no_buffer" nullable="false" scale="1" type="float" />
+		<column default="0" name="net_balance_cont_buffer" nullable="false" scale="1" type="float" />
+		<column name="prev_security_margin" nullable="false" scale="1"	type="float" />
+		<column name="prev_security_margin_date" nullable="true" type="timestamp" />
+		<column name="constituted_margin" nullable="false" scale="1"	type="float" />
+		<column name="constituted_margin_rounded" nullable="false"	scale="1" type="float" />
+		<column name="mta_amount" nullable="false" scale="1" type="float" />
+		<column name="global_required_margin" nullable="false" scale="1"	type="float" />
+		<column name="cash_margin" nullable="false" scale="1" type="float" />
+		<column name="cash_margin_daily" nullable="false" scale="1"	type="float" />
+		<column name="interest" nullable="false" scale="1" type="float" />
+		<column name="interest_daily" nullable="false" scale="1" type="float" />
+		<column name="interest_exposure" nullable="false" scale="1"	type="float" />
+		<column name="cash_movement" nullable="false" scale="1" type="float" />
+		<column name="security_margin" nullable="false" scale="1" type="float" />
+		<column name="security_margin_daily" nullable="false" scale="1"	type="float" />
+		<column name="remaining_margin" nullable="true" scale="1"	type="float" />
+		<column name="non_nettable_exposure" nullable="false" scale="1"	type="float" />
+		<column name="initial_margin" nullable="false" scale="1" type="float" />
+		<column name="variation_margin" nullable="false" scale="1"	type="float" />
+		<column name="threshold_amount" nullable="false" scale="1"	type="float" />
+		<column name="is_fully_priced" nullable="true" type="int"	scale="1" />
+		<column name="is_cfd" nullable="false" scale="1" type="int" />
+		<column name="ctpy_amount" nullable="false" scale="1" type="float" />
+		<column name="dispute_amount" nullable="false" scale="1" type="float" />
+		<column name="agreed_dispute_amount" nullable="false" scale="1"	type="float" />
+		<column name="is_dispute" nullable="false" type="int" scale="1" />
+		<column name="trade_ind_amount" nullable="false" scale="1"	type="float" />
+		<column name="independent_amount" nullable="false" scale="1"	type="float" />
+		<column name="global_required_margin_calc" nullable="false"	scale="1" type="float" />
+		<column name="returned_margin" nullable="false" scale="1" type="float" />
+		<column name="returned_margin_rounded" nullable="false" scale="1"	type="float" />
+		<column name="new_margin" nullable="false" scale="1" type="float" />
+		<column name="new_margin_rounded" nullable="false" scale="1"	type="float" />
+		<column name="variation_margin_no_ca" nullable="false" scale="1"	type="float" />
+		<column name="net_exposure" nullable="false" scale="1" type="float" />
+		<column name="cfd_ca_cf_settled" nullable="false" scale="1"	type="float" />
+		<column name="settle_date_cash" nullable="true" type="timestamp" />
+		<column name="settle_date_security" nullable="true" type="timestamp" />
+		<column name="trade_margin" nullable="false" scale="1" type="float" />
+		<column name="margin_required" nullable="false" scale="1" type="float" />
+		<column name="trade_datetime" nullable="true" type="timestamp" />
+		<column name="process_datetime" nullable="true" type="timestamp" />
+		<column name="process_date" nullable="true" type="timestamp" />
+		<column name="prev_cash_margin" nullable="false" scale="1"	type="float" />
+		<column name="prev_cash_margin_date" nullable="true" type="timestamp" />
+		<column name="nettable_exposure" nullable="false" scale="1"	type="float" />
+		<column name="rounding_method" nullable="true" scale="64" type="string" />
+		<column name="rounding_method_return" nullable="true" scale="64"	type="string" />
+		<column name="prev_cash_margin_act" nullable="false" scale="1"	type="float" />
+		<column name="prev_sec_margin_act" nullable="false" scale="1"	type="float" />
+		<column name="forward_date" nullable="true" type="timestamp" />
+		<column name="ctpy_trade_exposure" nullable="false" scale="1"	type="float" />
+		<column name="trade_dispute_amount" nullable="false" scale="1"	type="float" />
+		<column name="is_trade_dispute" nullable="false" scale="1"	type="float" />
+		<column name="rolled_interest" nullable="false" scale="1" type="float" />
+		<column name="settled_rolled_interest" nullable="false" scale="1"	type="float" />
+		<column name="interest_init_amount" nullable="false" scale="1"	type="float" />
+		<column name="dispute_reason" nullable="true" scale="256" type="string" />
+		<column name="payement_currency" nullable="true" scale="32"	type="string" />
+		<column name="dispute_comment" nullable="true" scale="256"	type="string" />
+		<column name="dispute_status" nullable="true" scale="64" type="string" />
+		<column name="opening_balance" nullable="false" scale="1" type="float" />
+		<column name="closing_balance" nullable="false" scale="1" type="float" />
+		<column name="rolled_interest_balance" nullable="false" scale="1"	type="float" />
+		<column name="rolled_interet_to_settle" nullable="false" scale="1"	type="float" />
+		<column name="sub_type" nullable="true" scale="32" type="string" />
+		<column name="parent_id" nullable="false" scale="1" type="int" />
+		<column default="0" name="master_entry_id" nullable="false" scale="1" type="int" />
+		<column default="0" name="master_config_id" nullable="false" scale="1" type="int" />
+		<column name="exposure_group_margin_req" nullable="false" default="0" scale="1" type="float" />
+		<column name="exposure_group_grm" nullable="false" default="0" scale="1" type="float" />
+		<column name="status" nullable="true" scale="32" type="string" />
+		<column name="action" nullable="true" scale="32" type="string" />
+		<column name="pref_action" nullable="true" scale="32" type="string" />
+		<column name="recon_status" nullable="true" scale="32" type="string" />
+		<column name="settle_balance" nullable="false" scale="1" type="float" />
+		<column name="contract_currency" nullable="true" scale="32"	type="string" />
+		<column name="saved_date" nullable="true" type="timestamp" />
+		<column name="base_currency" nullable="true" scale="32" type="string" />
+		<column name="base_remaining_margin" nullable="true" scale="1"	type="float" />
+		<column name="group_currency" nullable="true" scale="32" type="string" />
+		<column name="group_remaining_margin" nullable="false" scale="1"	type="float" />
+		<column name="threshold" nullable="true" type="binary" />
+		<column name="mta" nullable="true" type="binary" />
+		<column name="contract_ind_amount" nullable="true" type="binary" />
+		<column name="mc_interest" nullable="true" type="binary" />
+		<column name="mc_interest_exposure" nullable="true" type="binary" />
+		<column name="attributes" nullable="true" type="binary" />
+		<column name="notification_status" nullable="true" scale="32"	type="string" />
+		<column name="pricing_status" nullable="true" scale="32" type="string" />
+		<column name="last_used_pricing_env" nullable="true" scale="128"	type="string" />
+		<column name="is_valuation_day" nullable="true" scale="1" type="int" />
+		<column name="prev_cash_margin_theo" nullable="true" scale="1"	type="float" />
+		<column name="prev_sec_margin_theo" nullable="true" scale="1"	type="float" />
+		<column default="THEORETICAL" name="position_type" nullable="true"	scale="64" type="string" />
+		<column name="prev_cash_margin_exp" nullable="true" scale="1"	type="float" />
+		<column name="prev_sec_margin_exp" nullable="true" scale="1"	type="float" />
+		<column default="0" name="buffer_deficit" nullable="true"	scale="1" type="float" />
+		<column default="0" name="buffer_call" nullable="true" scale="1"	type="float" />
+		<column default="NO_ACTION" name="buffer_action" nullable="true"	scale="64" type="string" />
+		<column default="0" name="deficit" nullable="true" scale="1"	type="float" />
+		<column default="0" name="credit_ext_used" nullable="true"	scale="1" type="float" />
+		<column default="0" name="unused_buffer" nullable="true" scale="1"	type="float" />
+		<column default="0" name="call_inc_buffer" nullable="true"	scale="1" type="float" />
+		<column default="0" name="credit_ext_unused" nullable="true"	scale="1" type="float" />
+		<column default="0" name="credit_ext_used_perc" nullable="true"	scale="1" type="float" />
+		<column default="0" name="total_deficit" nullable="true" scale="1"	type="float" />
+		<column default="0" name="credit_extension" nullable="true"	scale="1" type="float" />
+		<column default="0" name="headroom" nullable="true" scale="1"	type="float" />
+		<column name="allocation_order" default="0" nullable="true"	scale="1" type="int" />
+		<column default="0" name="excess_buffer_requirement" nullable="true"	scale="1" type="float" />
+		<column default="0" name="total_liabilities" nullable="true"	scale="1" type="float" />
+		<column default="0" name="used_collateral_value" nullable="true"	scale="1" type="float" />
+		<column default="0" name="unused_collateral_value" nullable="true"	scale="1" type="float" />
+		<column default="0" name="total_collateral_value" nullable="true"	scale="1" type="float" />
+		<column default="0" name="excess_collateral" nullable="true"	scale="1" type="float" />
+		<column default="0" name="credit_ex_perc" nullable="true"	scale="1" type="float" />
+		<column default="0" name="final_call_amount" nullable="true"	scale="1" type="float" />
+		<column default="0" name="theo_net_balance" nullable="true"	scale="1" type="float" />
+		<column default="0" name="excl_net_balance" nullable="true"	scale="1" type="float" />
+		<column default="0" name="daily_settled_cash_mrg" nullable="true"	scale="1" type="float" />
+		<column default="0" name="daily_unsettled_cash_mrg" nullable="true"	scale="1" type="float" />
+		<column default="0" name="daily_settled_sec_mrg" nullable="true"	scale="1" type="float" />
+		<column default="0" name="daily_unsettled_sec_mrg" nullable="true"	scale="1" type="float" />
+		<column default="0" name="dispute_age" nullable="false" scale="1"	type="int" />
+		<column default="0" name="dispute_age_offset" nullable="false" scale="1"	type="int" />
+		<column default="NONE" name="dispute_acceptance_status"	nullable="false" scale="64" type="string" />
+		<column default="0" name="perc_dispute_basis_amount" nullable="false"	scale="1" type="float" />
+		<column name="collateral_context_id" nullable="true" scale="1"	type="int" />
+		<column name="collateral_context_name" nullable="true" scale="128"	type="string" />
+		<column name="po_threshold_amount" nullable="true" scale="1" type="float" />
+		<column name="le_threshold_amount" nullable="true" scale="1" type="float" />
+		<column name="po_mta_amount" nullable="true" scale="1" type="float" />
+		<column name="le_mta_amount" nullable="true" scale="1" type="float" />
+		<column name="po_ia_amount" nullable="true" scale="1" type="float" />
+		<column name="le_ia_amount" nullable="true" scale="1" type="float" />
+		<column name="po_threshold_rating" nullable="true" scale="32" type="string" />
+		<column name="le_threshold_rating" nullable="true" scale="32" type="string" />
+		<column name="po_mta_rating" nullable="true" scale="32" type="string" />
+		<column name="le_mta_rating" nullable="true" scale="32" type="string" />
+		<column name="po_ia_rating" nullable="true" scale="32" type="string" />
+		<column name="le_ia_rating" nullable="true" scale="32" type="string" />
+		<column name="payer_threshold_agency" nullable="true" scale="32" type="string" />
+		<column name="payer_threshold_rating" nullable="true" scale="32" type="string" />
+		<column name="payer_threshold_seniority" nullable="true" scale="32" type="string" />
+		<column name="payer_mta_agency" nullable="true" scale="32" type="string" />
+		<column name="payer_mta_rating" nullable="true" scale="32" type="string" />
+		<column name="payer_mta_seniority" nullable="true" scale="32" type="string" />
+		<column name="payer_ia_agency" nullable="true" scale="32" type="string" />
+		<column name="payer_ia_rating" nullable="true" scale="32" type="string" />
+		<column name="payer_ia_seniority" nullable="true" scale="34" type="string" />
+		<column name="credit_limit" nullable="true" scale="1" type="float" />
+		<column name="exposure_group_ratio" nullable="true" scale="1" type="float" />
+		<column name="rehyp_ratio" nullable="true" scale="1" type="float" />
+		<column name="trade_numbers" nullable="true" scale="256" type="string" />
+		<column default="0" name="global_value" nullable="false" scale="1" type="float" />
+		<column default="0" name="marking_required" nullable="false" scale="1" type="int" />
+		<column default="0" name="directional_dispute_age" nullable="false" scale="1" type="int" />
+		<column default="0" name="directional_dispute_age_offset" nullable="false" scale="1" type="int" />
+		<column default="1" name="exposure_swing" nullable="false" scale="1" type="int" />
+		<column default="0" name="previous_rqv" nullable="false" scale="1"	type="float" />
+		<column default="0" name="required_value" nullable="false" scale="1" type="float" />
+		<column name="cash_position_values" nullable="true" type="binary" />
+		<column name="sec_position_values" nullable="true" type="binary" />
+		<column default="0" name="cpty_mark_to_market" nullable="false" scale="1" type="float" />
+		<column default="0" name="dispute_mtm_amount" nullable="false" scale="1"	type="float" />
+		<column name="cpty_deliver_amount" nullable="true" scale="1" type="float" />
+		<column name="cpty_return_amount" nullable="true" scale="1"	type="float" />
+		<column name="collateralization_tolerance" default="0" nullable="true" scale="1" type="float" />
+		<column name="collateralization_status" nullable="true" scale="128" type="string" />
+		<column name="mf_iapost_threshold" nullable="true" scale="1"	type="float" />	
+		<column name="mf_mfta" nullable="true" scale="1"	type="float" />	
+		<column name="mf_revised_ia" nullable="true" scale="1"	type="float" />	
+		<column name="mf_marginreq_post_mfa" nullable="true" scale="1"	type="float" />
+		<column name="mf_simm" nullable="true" scale="1"	type="float" />	
+		<column name="mf_schedule" nullable="true" scale="1"	type="float" />	
+		<column name="cpty_act_tot_mrg"  nullable="true" scale="1"	type="float" />
+		<column name="cpty_nonset_tot_mrg"  nullable="true" scale="1"	type="float" />
+		<column name="cpty_total_prev_mrg" nullable="true" scale="1"	type="float" />	
+		<index primary="true">
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>mcc_id</on>
+		</index>
+		<index primary="false">
+			<on>mcc_id</on>
+			<on>process_date</on>
+			<on>collateral_context_id</on>
+		</index>
+		<index primary="false">
+			<on>mcc_id</on>
+			<on>process_date</on>
+			<on>collateral_context_id</on>
+			<on>processing_type</on>
+		</index>
+		<index primary="false">
+			<on>id</on>
+			<on>mcc_id</on>
+		</index>
+		<index primary="false">
+			<on>parent_id</on>
+		</index>
+		<index primary="false">
+			<on>master_config_id</on>
+		</index>
+		<index primary="false">
+			<on>master_entry_id</on>
+		</index>
+		<index primary="false">
+			<on>collateral_context_id</on>
+			<on>process_date</on>
+		</index>
+		<index primary="false">
+			<on>process_datetime</on>
+		</index>
+	</table>
+	<table name="pending_margin_call_entries" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="audit_version" nullable="false" scale="1" type="int" />
+		<column name="orm_version" nullable="false" default="0" scale="1" type="int" />
+		<column name="processing_type" nullable="false" default="processing" scale="32" type="string" />
+		<column name="last_update" nullable="true" type="timestamp" />
+		<column name="last_user" nullable="true" scale="32" type="string" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="net_balance" nullable="false" scale="1" type="float" />
+		<column name="net_balance_no_buffer" nullable="false" scale="1" type="float" />
+		<column name="net_balance_cont_buffer" nullable="false" scale="1" type="float" />
+		<column name="prev_security_margin" nullable="false" scale="1"	type="float" />
+		<column name="prev_security_margin_date" nullable="true" type="timestamp" />
+		<column name="constituted_margin" nullable="false" scale="1"	type="float" />
+		<column name="constituted_margin_rounded" nullable="false"	scale="1" type="float" />
+		<column name="mta_amount" nullable="false" scale="1" type="float" />
+		<column name="global_required_margin" nullable="false" scale="1"	type="float" />
+		<column name="cash_margin" nullable="false" scale="1" type="float" />
+		<column name="cash_margin_daily" nullable="false" scale="1"	type="float" />
+		<column name="interest" nullable="false" scale="1" type="float" />
+		<column name="interest_daily" nullable="false" scale="1" type="float" />
+		<column name="interest_exposure" nullable="false" scale="1"	type="float" />
+		<column name="cash_movement" nullable="false" scale="1" type="float" />
+		<column name="security_margin" nullable="false" scale="1" type="float" />
+		<column name="security_margin_daily" nullable="false" scale="1"	type="float" />
+		<column name="remaining_margin" nullable="true" scale="1"	type="float" />
+		<column name="non_nettable_exposure" nullable="false" scale="1"	type="float" />
+		<column name="initial_margin" nullable="false" scale="1" type="float" />
+		<column name="variation_margin" nullable="false" scale="1"	type="float" />
+		<column name="threshold_amount" nullable="false" scale="1"	type="float" />
+		<column name="is_fully_priced" nullable="true" type="int"	scale="1" />
+		<column name="is_cfd" nullable="false" scale="1" type="int" />
+		<column name="ctpy_amount" nullable="false" scale="1" type="float" />
+		<column name="dispute_amount" nullable="false" scale="1" type="float" />
+		<column name="agreed_dispute_amount" nullable="false" scale="1"	type="float" />
+		<column name="is_dispute" nullable="false" type="int" scale="1" />
+		<column name="trade_ind_amount" nullable="false" scale="1"	type="float" />
+		<column name="independent_amount" nullable="false" scale="1"	type="float" />
+		<column name="global_required_margin_calc" nullable="false"	scale="1" type="float" />
+		<column name="returned_margin" nullable="false" scale="1" type="float" />
+		<column name="returned_margin_rounded" nullable="false" scale="1"	type="float" />
+		<column name="new_margin" nullable="false" scale="1" type="float" />
+		<column name="new_margin_rounded" nullable="false" scale="1"	type="float" />
+		<column name="variation_margin_no_ca" nullable="false" scale="1"	type="float" />
+		<column name="net_exposure" nullable="false" scale="1" type="float" />
+		<column name="cfd_ca_cf_settled" nullable="false" scale="1"	type="float" />
+		<column name="settle_date_cash" nullable="true" type="timestamp" />
+		<column name="settle_date_security" nullable="true" type="timestamp" />
+		<column name="trade_margin" nullable="false" scale="1" type="float" />
+		<column name="margin_required" nullable="false" scale="1" type="float" />
+		<column name="trade_datetime" nullable="true" type="timestamp" />
+		<column name="process_datetime" nullable="true" type="timestamp" />
+		<column name="process_date" nullable="true" type="timestamp" />
+		<column name="prev_cash_margin" nullable="false" scale="1"	type="float" />
+		<column name="prev_cash_margin_date" nullable="true" type="timestamp" />
+		<column name="nettable_exposure" nullable="false" scale="1"	type="float" />
+		<column name="rounding_method" nullable="true" scale="64" type="string" />
+		<column name="rounding_method_return" nullable="true" scale="64"	type="string" />
+		<column name="prev_cash_margin_act" nullable="false" scale="1"	type="float" />
+		<column name="prev_sec_margin_act" nullable="false" scale="1"	type="float" />
+		<column name="forward_date" nullable="true" type="timestamp" />
+		<column name="ctpy_trade_exposure" nullable="false" scale="1"	type="float" />
+		<column name="trade_dispute_amount" nullable="false" scale="1"	type="float" />
+		<column name="is_trade_dispute" nullable="false" scale="1"	type="float" />
+		<column name="rolled_interest" nullable="false" scale="1" type="float" />
+		<column name="settled_rolled_interest" nullable="false" scale="1"	type="float" />
+		<column name="interest_init_amount" nullable="false" scale="1"	type="float" />
+		<column name="dispute_reason" nullable="true" scale="64" type="string" />
+		<column name="payement_currency" nullable="true" scale="32"	type="string" />
+		<column name="dispute_comment" nullable="true" scale="256"	type="string" />
+		<column name="dispute_status" nullable="true" scale="64" type="string" />
+		<column name="opening_balance" nullable="false" scale="1" type="float" />
+		<column name="closing_balance" nullable="false" scale="1" type="float" />
+		<column name="rolled_interest_balance" nullable="false" scale="1"	type="float" />
+		<column name="rolled_interet_to_settle" nullable="false" scale="1"	type="float" />
+		<column name="sub_type" nullable="true" scale="32" type="string" />
+		<column name="parent_id" nullable="false" scale="1" type="int" />
+		<column name="master_entry_id" nullable="false" scale="1" type="int" />
+		<column name="master_config_id" nullable="false" scale="1" type="int" />
+		<column name="exposure_group_margin_req" nullable="false" default="0" scale="1" type="float" />
+		<column name="exposure_group_grm" nullable="false" default="0" scale="1" type="float" />
+		<column name="status" nullable="true" scale="32" type="string" />
+		<column name="action" nullable="true" scale="32" type="string" />
+		<column name="pref_action" nullable="true" scale="32" type="string" />
+		<column name="recon_status" nullable="true" scale="32" type="string" />
+		<column name="settle_balance" nullable="false" scale="1" type="float" />
+		<column name="contract_currency" nullable="true" scale="32"	type="string" />
+		<column name="saved_date" nullable="true" type="timestamp" />
+		<column name="base_currency" nullable="true" scale="32" type="string" />
+		<column name="base_remaining_margin" nullable="true" scale="1"	type="float" />
+		<column name="group_currency" nullable="true" scale="32" type="string" />
+		<column name="group_remaining_margin" nullable="false" scale="1"	type="float" />
+		<column name="threshold" nullable="true" type="binary" />
+		<column name="mta" nullable="true" type="binary" />
+		<column name="contract_ind_amount" nullable="true" type="binary" />
+		<column name="mc_interest" nullable="true" type="binary" />
+		<column name="mc_interest_exposure" nullable="true" type="binary" />
+		<column name="attributes" nullable="true" type="binary" />
+		<column name="notification_status" nullable="true" scale="32"	type="string" />
+		<column name="pricing_status" nullable="true" scale="32" type="string" />
+		<column name="last_used_pricing_env" nullable="true" scale="128"	type="string" />
+		<column name="is_valuation_day" nullable="true" scale="1" type="int" />
+		<column name="prev_cash_margin_theo" nullable="true" scale="1"	type="float" />
+		<column name="prev_sec_margin_theo" nullable="true" scale="1"	type="float" />
+		<column default="THEORETICAL" name="position_type" nullable="true"	scale="64" type="string" />
+		<column name="prev_cash_margin_exp" nullable="true" scale="1"	type="float" />
+		<column name="prev_sec_margin_exp" nullable="true" scale="1"	type="float" />
+		<column default="0" name="buffer_deficit" nullable="true"	scale="1" type="float" />
+		<column default="0" name="buffer_call" nullable="true" scale="1"	type="float" />
+		<column default="NO_ACTION" name="buffer_action" nullable="true"	scale="64" type="string" />
+		<column default="0" name="deficit" nullable="true" scale="1"	type="float" />
+		<column default="0" name="credit_ext_used" nullable="true"	scale="1" type="float" />
+		<column default="0" name="unused_buffer" nullable="true" scale="1"	type="float" />
+		<column default="0" name="call_inc_buffer" nullable="true"	scale="1" type="float" />
+		<column default="0" name="credit_ext_unused" nullable="true"	scale="1" type="float" />
+		<column default="0" name="credit_ext_used_perc" nullable="true"	scale="1" type="float" />
+		<column default="0" name="total_deficit" nullable="true" scale="1"	type="float" />
+		<column default="0" name="credit_extension" nullable="true"	scale="1" type="float" />
+		<column default="0" name="headroom" nullable="true" scale="1"	type="float" />
+		<column name="allocation_order" default="0" nullable="true"	scale="1" type="int" />
+		<column default="0" name="excess_buffer_requirement" nullable="true"	scale="1" type="float" />
+		<column default="0" name="total_liabilities" nullable="true"	scale="1" type="float" />
+		<column default="0" name="used_collateral_value" nullable="true"	scale="1" type="float" />
+		<column default="0" name="unused_collateral_value" nullable="true"	scale="1" type="float" />
+		<column default="0" name="total_collateral_value" nullable="true"	scale="1" type="float" />
+		<column default="0" name="excess_collateral" nullable="true"	scale="1" type="float" />
+		<column default="0" name="credit_ex_perc" nullable="true"	scale="1" type="float" />
+		<column default="0" name="final_call_amount" nullable="true"	scale="1" type="float" />
+		<column default="0" name="theo_net_balance" nullable="true"	scale="1" type="float" />
+		<column default="0" name="excl_net_balance" nullable="true"	scale="1" type="float" />
+		<column default="0" name="daily_settled_cash_mrg" nullable="true"	scale="1" type="float" />
+		<column default="0" name="daily_unsettled_cash_mrg" nullable="true"	scale="1" type="float" />
+		<column default="0" name="daily_settled_sec_mrg" nullable="true"	scale="1" type="float" />
+		<column default="0" name="daily_unsettled_sec_mrg" nullable="true"	scale="1" type="float" />
+		<column default="0" name="dispute_age" nullable="false" scale="1"	type="int" />
+		<column default="0" name="dispute_age_offset" nullable="false" scale="1"	type="int" />
+		<column default="NONE" name="dispute_acceptance_status"	nullable="false" scale="64" type="string" />
+		<column default="0" name="perc_dispute_basis_amount" nullable="false"	scale="1" type="float" />
+		<column name="collateral_context_id" nullable="true" scale="1"	type="int" />
+		<column name="collateral_context_name" nullable="true" scale="128"	type="string" />
+		<column name="po_threshold_amount" nullable="true" scale="1" type="float" />
+		<column name="le_threshold_amount" nullable="true" scale="1" type="float" />
+		<column name="po_mta_amount" nullable="true" scale="1" type="float" />
+		<column name="le_mta_amount" nullable="true" scale="1" type="float" />
+		<column name="po_ia_amount" nullable="true" scale="1" type="float" />
+		<column name="le_ia_amount" nullable="true" scale="1" type="float" />
+		<column name="po_threshold_rating" nullable="true" scale="32" type="string" />
+		<column name="le_threshold_rating" nullable="true" scale="32" type="string" />
+		<column name="po_mta_rating" nullable="true" scale="32" type="string" />
+		<column name="le_mta_rating" nullable="true" scale="32" type="string" />
+		<column name="po_ia_rating" nullable="true" scale="32" type="string" />
+		<column name="le_ia_rating" nullable="true" scale="32" type="string" />
+		<column name="payer_threshold_agency" nullable="true" scale="32" type="string" />
+		<column name="payer_threshold_rating" nullable="true" scale="32" type="string" />
+		<column name="payer_threshold_seniority" nullable="true" scale="32" type="string" />
+		<column name="payer_mta_agency" nullable="true" scale="32" type="string" />
+		<column name="payer_mta_rating" nullable="true" scale="32" type="string" />
+		<column name="payer_mta_seniority" nullable="true" scale="32" type="string" />
+		<column name="payer_ia_agency" nullable="true" scale="32" type="string" />
+		<column name="payer_ia_rating" nullable="true" scale="32" type="string" />
+		<column name="payer_ia_seniority" nullable="true" scale="34" type="string" />
+		<column name="credit_limit" nullable="true" scale="1" type="float" />
+		<column name="exposure_group_ratio" nullable="true" scale="1" type="float" />
+		<column name="rehyp_ratio" nullable="true" scale="1" type="float" />
+		<column name="trade_numbers" nullable="true" scale="256" type="string" />
+		<column name="global_value" nullable="false" scale="1" type="float" />
+		<column name="marking_required" nullable="false" scale="1" type="int" />
+		<column default="0" name="directional_dispute_age" nullable="false" scale="1" type="int" />
+		<column default="0" name="directional_dispute_age_offset" nullable="false" scale="1" type="int" />
+		<column default="1" name="exposure_swing" nullable="false" scale="1" type="int" />
+		<column name="previous_rqv" nullable="false" scale="1"	type="float" />
+		<column name="required_value" nullable="false" scale="1" type="float" />
+		<column name="cash_position_values" nullable="true" type="binary" />
+		<column name="sec_position_values" nullable="true" type="binary" />
+		<column name="cpty_mark_to_market" nullable="false" scale="1" type="float" />
+		<column name="dispute_mtm_amount" nullable="false" scale="1"	type="float" />
+		<column name="cpty_deliver_amount" nullable="true" scale="1" type="float" />
+		<column name="cpty_return_amount" nullable="true" scale="1"	type="float" />
+		<column name="collateralization_tolerance" default="0" nullable="true" scale="1" type="float" />
+		<column name="collateralization_status" nullable="true" scale="128" type="string" />
+		<column name="mf_iapost_threshold" nullable="true" scale="1"	type="float" />	
+		<column name="mf_mfta" nullable="true" scale="1"	type="float" />	
+		<column name="mf_revised_ia" nullable="true" scale="1"	type="float" />	
+		<column name="mf_marginreq_post_mfa" nullable="true" scale="1"	type="float" />
+		<column name="mf_simm" nullable="true" scale="1"	type="float" />	
+		<column name="mf_schedule" nullable="true" scale="1"	type="float" />		
+		<column name="cpty_act_tot_mrg"  nullable="true" scale="1"	type="float" />
+		<column name="cpty_nonset_tot_mrg"  nullable="true" scale="1"	type="float" />
+		<column name="cpty_total_prev_mrg" nullable="true" scale="1"	type="float" />					
+		<index primary="true">
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>mcc_id</on>
+			<on>process_datetime</on>
+		</index>
+		<index primary="false">
+			<on>parent_id</on>
+		</index>
+		<index primary="false">
+			<on>master_config_id</on>
+		</index>
+		<index primary="false">
+			<on>master_entry_id</on>
+		</index>
+	</table>
+	<table name="mrgcall_entries_hist" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="audit_version" nullable="false" scale="1" type="int" />
+		<column name="orm_version" nullable="false" default="0" scale="1" type="int" />
+		<column name="processing_type" nullable="false" default="processing" scale="32" type="string" />
+		<column name="last_update" nullable="true" type="timestamp" />
+		<column name="last_user" nullable="true" scale="32" type="string" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="net_balance" nullable="false" scale="1" type="float" />
+		<column name="net_balance_no_buffer" nullable="false" scale="1" type="float" />
+		<column name="net_balance_cont_buffer" nullable="false" scale="1" type="float" />
+		<column name="prev_security_margin" nullable="false" scale="1"	type="float" />
+		<column name="prev_security_margin_date" nullable="true" type="timestamp" />
+		<column name="constituted_margin" nullable="false" scale="1"	type="float" />
+		<column name="constituted_margin_rounded" nullable="false"	scale="1" type="float" />
+		<column name="mta_amount" nullable="false" scale="1" type="float" />
+		<column name="global_required_margin" nullable="false" scale="1"	type="float" />
+		<column name="cash_margin" nullable="false" scale="1" type="float" />
+		<column name="cash_margin_daily" nullable="false" scale="1"	type="float" />
+		<column name="interest" nullable="false" scale="1" type="float" />
+		<column name="interest_daily" nullable="false" scale="1" type="float" />
+		<column name="interest_exposure" nullable="false" scale="1"	type="float" />
+		<column name="cash_movement" nullable="false" scale="1" type="float" />
+		<column name="security_margin" nullable="false" scale="1" type="float" />
+		<column name="security_margin_daily" nullable="false" scale="1"	type="float" />
+		<column name="remaining_margin" nullable="true" scale="1"	type="float" />
+		<column name="non_nettable_exposure" nullable="false" scale="1"	type="float" />
+		<column name="initial_margin" nullable="false" scale="1" type="float" />
+		<column name="variation_margin" nullable="false" scale="1"	type="float" />
+		<column name="threshold_amount" nullable="false" scale="1"	type="float" />
+		<column name="is_fully_priced" nullable="true" type="int"	scale="1" />
+		<column name="is_cfd" nullable="false" scale="1" type="int" />
+		<column name="ctpy_amount" nullable="false" scale="1" type="float" />
+		<column name="dispute_amount" nullable="false" scale="1" type="float" />
+		<column name="agreed_dispute_amount" nullable="false" scale="1"	type="float" />
+		<column name="is_dispute" nullable="false" type="int" scale="1" />
+		<column name="trade_ind_amount" nullable="false" scale="1"	type="float" />
+		<column name="independent_amount" nullable="false" scale="1"	type="float" />
+		<column name="global_required_margin_calc" nullable="false"	scale="1" type="float" />
+		<column name="returned_margin" nullable="false" scale="1" type="float" />
+		<column name="returned_margin_rounded" nullable="false" scale="1"	type="float" />
+		<column name="new_margin" nullable="false" scale="1" type="float" />
+		<column name="new_margin_rounded" nullable="false" scale="1"	type="float" />
+		<column name="variation_margin_no_ca" nullable="false" scale="1"	type="float" />
+		<column name="net_exposure" nullable="false" scale="1" type="float" />
+		<column name="cfd_ca_cf_settled" nullable="false" scale="1"	type="float" />
+		<column name="settle_date_cash" nullable="true" type="timestamp" />
+		<column name="settle_date_security" nullable="true" type="timestamp" />
+		<column name="trade_margin" nullable="false" scale="1" type="float" />
+		<column name="margin_required" nullable="false" scale="1" type="float" />
+		<column name="trade_datetime" nullable="true" type="timestamp" />
+		<column name="process_datetime" nullable="true" type="timestamp" />
+		<column name="process_date" nullable="true" type="timestamp" />
+		<column name="prev_cash_margin" nullable="false" scale="1"	type="float" />
+		<column name="prev_cash_margin_date" nullable="true" type="timestamp" />
+		<column name="nettable_exposure" nullable="false" scale="1"	type="float" />
+		<column name="rounding_method" nullable="true" scale="64" type="string" />
+		<column name="rounding_method_return" nullable="true" scale="64"	type="string" />
+		<column name="prev_cash_margin_act" nullable="false" scale="1"	type="float" />
+		<column name="prev_sec_margin_act" nullable="false" scale="1"	type="float" />
+		<column name="forward_date" nullable="true" type="timestamp" />
+		<column name="ctpy_trade_exposure" nullable="false" scale="1"	type="float" />
+		<column name="trade_dispute_amount" nullable="false" scale="1"	type="float" />
+		<column name="is_trade_dispute" nullable="false" scale="1"	type="float" />
+		<column name="rolled_interest" nullable="false" scale="1" type="float" />
+		<column name="settled_rolled_interest" nullable="false" scale="1"	type="float" />
+		<column name="interest_init_amount" nullable="false" scale="1"	type="float" />
+		<column name="dispute_reason" nullable="true" scale="64" type="string" />
+		<column name="payement_currency" nullable="true" scale="32"	type="string" />
+		<column name="dispute_comment" nullable="true" scale="256"	type="string" />
+		<column name="dispute_status" nullable="true" scale="64" type="string" />
+		<column name="opening_balance" nullable="false" scale="1" type="float" />
+		<column name="closing_balance" nullable="false" scale="1" type="float" />
+		<column name="rolled_interest_balance" nullable="false" scale="1"	type="float" />
+		<column name="rolled_interet_to_settle" nullable="false" scale="1"	type="float" />
+		<column name="sub_type" nullable="true" scale="32" type="string" />
+		<column name="parent_id" nullable="false" scale="1" type="int" />
+		<column name="master_entry_id" nullable="false" scale="1" type="int" />
+		<column name="master_config_id" nullable="false" scale="1" type="int" />
+		<column name="exposure_group_margin_req" nullable="false" default="0" scale="1" type="float" />
+		<column name="exposure_group_grm" nullable="false" default="0" scale="1" type="float" />
+		<column name="status" nullable="true" scale="32" type="string" />
+		<column name="action" nullable="true" scale="32" type="string" />
+		<column name="pref_action" nullable="true" scale="32" type="string" />
+		<column name="recon_status" nullable="true" scale="32" type="string" />
+		<column name="settle_balance" nullable="false" scale="1" type="float" />
+		<column name="contract_currency" nullable="true" scale="32"	type="string" />
+		<column name="saved_date" nullable="true" type="timestamp" />
+		<column name="base_currency" nullable="true" scale="32" type="string" />
+		<column name="base_remaining_margin" nullable="true" scale="1"	type="float" />
+		<column name="group_currency" nullable="true" scale="32" type="string" />
+		<column name="group_remaining_margin" nullable="false" scale="1"	type="float" />
+		<column name="threshold" nullable="true" type="binary" />
+		<column name="mta" nullable="true" type="binary" />
+		<column name="contract_ind_amount" nullable="true" type="binary" />
+		<column name="mc_interest" nullable="true" type="binary" />
+		<column name="mc_interest_exposure" nullable="true" type="binary" />
+		<column name="attributes" nullable="true" type="binary" />
+		<column name="notification_status" nullable="true" scale="32"	type="string" />
+		<column name="pricing_status" nullable="true" scale="32" type="string" />
+		<column name="last_used_pricing_env" nullable="true" scale="128"	type="string" />
+		<column name="is_valuation_day" nullable="true" scale="1" type="int" />
+		<column name="prev_cash_margin_theo" nullable="true" scale="1"	type="float" />
+		<column name="prev_sec_margin_theo" nullable="true" scale="1"	type="float" />
+		<column default="THEORETICAL" name="position_type" nullable="true"	scale="64" type="string" />
+		<column name="prev_cash_margin_exp" nullable="true" scale="1"	type="float" />
+		<column name="prev_sec_margin_exp" nullable="true" scale="1"	type="float" />
+		<column default="0" name="buffer_deficit" nullable="true"	scale="1" type="float" />
+		<column default="0" name="buffer_call" nullable="true" scale="1"	type="float" />
+		<column default="NO_ACTION" name="buffer_action" nullable="true"	scale="64" type="string" />
+		<column default="0" name="deficit" nullable="true" scale="1"	type="float" />
+		<column default="0" name="credit_ext_used" nullable="true"	scale="1" type="float" />
+		<column default="0" name="unused_buffer" nullable="true" scale="1"	type="float" />
+		<column default="0" name="call_inc_buffer" nullable="true"	scale="1" type="float" />
+		<column default="0" name="credit_ext_unused" nullable="true"	scale="1" type="float" />
+		<column default="0" name="credit_ext_used_perc" nullable="true"	scale="1" type="float" />
+		<column default="0" name="total_deficit" nullable="true" scale="1"	type="float" />
+		<column default="0" name="credit_extension" nullable="true"	scale="1" type="float" />
+		<column default="0" name="headroom" nullable="true" scale="1"	type="float" />
+		<column name="allocation_order" default="0" nullable="true"	scale="1" type="int" />
+		<column default="0" name="excess_buffer_requirement" nullable="true"	scale="1" type="float" />
+		<column default="0" name="total_liabilities" nullable="true"	scale="1" type="float" />
+		<column default="0" name="used_collateral_value" nullable="true"	scale="1" type="float" />
+		<column default="0" name="unused_collateral_value" nullable="true"	scale="1" type="float" />
+		<column default="0" name="total_collateral_value" nullable="true"	scale="1" type="float" />
+		<column default="0" name="excess_collateral" nullable="true"	scale="1" type="float" />
+		<column default="0" name="credit_ex_perc" nullable="true"	scale="1" type="float" />
+		<column default="0" name="final_call_amount" nullable="true"	scale="1" type="float" />
+		<column default="0" name="theo_net_balance" nullable="true"	scale="1" type="float" />
+		<column default="0" name="excl_net_balance" nullable="true"	scale="1" type="float" />
+		<column default="0" name="daily_settled_cash_mrg" nullable="true"	scale="1" type="float" />
+		<column default="0" name="daily_unsettled_cash_mrg" nullable="true"	scale="1" type="float" />
+		<column default="0" name="daily_settled_sec_mrg" nullable="true"	scale="1" type="float" />
+		<column default="0" name="daily_unsettled_sec_mrg" nullable="true"	scale="1" type="float" />
+		<column default="0" name="dispute_age" nullable="false" scale="1"	type="int" />
+		<column default="0" name="dispute_age_offset" nullable="false" scale="1"	type="int" />
+		<column default="NONE" name="dispute_acceptance_status"	nullable="false" scale="64" type="string" />
+		<column default="0" name="perc_dispute_basis_amount" nullable="false"	scale="1" type="float" />
+		<column name="collateral_context_id" nullable="true" scale="1"	type="int" />
+		<column name="collateral_context_name" nullable="true" scale="128"	type="string" />
+		<column name="po_threshold_amount" nullable="true" scale="1" type="float" />
+		<column name="le_threshold_amount" nullable="true" scale="1" type="float" />
+		<column name="po_mta_amount" nullable="true" scale="1" type="float" />
+		<column name="le_mta_amount" nullable="true" scale="1" type="float" />
+		<column name="po_ia_amount" nullable="true" scale="1" type="float" />
+		<column name="le_ia_amount" nullable="true" scale="1" type="float" />
+		<column name="po_threshold_rating" nullable="true" scale="32" type="string" />
+		<column name="le_threshold_rating" nullable="true" scale="32" type="string" />
+		<column name="po_mta_rating" nullable="true" scale="32" type="string" />
+		<column name="le_mta_rating" nullable="true" scale="32" type="string" />
+		<column name="po_ia_rating" nullable="true" scale="32" type="string" />
+		<column name="le_ia_rating" nullable="true" scale="32" type="string" />
+		<column name="payer_threshold_agency" nullable="true" scale="32" type="string" />
+		<column name="payer_threshold_rating" nullable="true" scale="32" type="string" />
+		<column name="payer_threshold_seniority" nullable="true" scale="32" type="string" />
+		<column name="payer_mta_agency" nullable="true" scale="32" type="string" />
+		<column name="payer_mta_rating" nullable="true" scale="32" type="string" />
+		<column name="payer_mta_seniority" nullable="true" scale="32" type="string" />
+		<column name="payer_ia_agency" nullable="true" scale="32" type="string" />
+		<column name="payer_ia_rating" nullable="true" scale="32" type="string" />
+		<column name="payer_ia_seniority" nullable="true" scale="34" type="string" />
+		<column name="credit_limit" nullable="true" scale="1" type="float" />
+		<column name="exposure_group_ratio" nullable="true" scale="1" type="float" />
+		<column name="rehyp_ratio" nullable="true" scale="1" type="float" />
+		<column name="global_value" nullable="false" scale="1" type="float" />
+		<column name="marking_required" nullable="false" scale="1" type="int" />
+		<column name="trade_numbers" nullable="true" scale="256" type="string" />
+		<column default="0" name="directional_dispute_age" nullable="false" scale="1" type="int" />
+		<column default="0" name="directional_dispute_age_offset" nullable="false" scale="1" type="int" />
+		<column default="1" name="exposure_swing" nullable="false" scale="1" type="int" />
+		<column name="previous_rqv" nullable="false" scale="1"	type="float" />
+		<column name="required_value" nullable="false" scale="1" type="float" />
+		<column name="cash_position_values" nullable="true" type="binary" />
+		<column name="sec_position_values" nullable="true" type="binary" />
+		<column name="cpty_mark_to_market" nullable="false" scale="1" type="float" />
+		<column name="dispute_mtm_amount" nullable="false" scale="1"	type="float" />
+		<column name="cpty_deliver_amount" nullable="true" scale="1" type="float" />
+		<column name="cpty_return_amount" nullable="true" scale="1"	type="float" />
+		<column name="collateralization_tolerance" default="0" nullable="true" scale="1" type="float" />
+		<column name="collateralization_status" nullable="true" scale="128" type="string" />
+		<column name="mf_iapost_threshold" nullable="true" scale="1"	type="float" />	
+		<column name="mf_mfta" nullable="true" scale="1"	type="float" />	
+		<column name="mf_revised_ia" nullable="true" scale="1"	type="float" />	
+		<column name="mf_marginreq_post_mfa" nullable="true" scale="1"	type="float" />	
+		<column name="mf_simm" nullable="true" scale="1"	type="float" />	
+		<column name="mf_schedule" nullable="true" scale="1"	type="float" />	
+		<column name="cpty_act_tot_mrg"  nullable="true" scale="1"	type="float" />
+		<column name="cpty_nonset_tot_mrg"  nullable="true" scale="1"	type="float" />
+		<column name="cpty_total_prev_mrg" nullable="true" scale="1"	type="float" />			
+		<index primary="true">
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>mcc_id</on>
+			<on>process_datetime</on>
+		</index>
+		<index primary="false">
+			<on>parent_id</on>
+		</index>
+		<index primary="false">
+			<on>master_config_id</on>
+		</index>
+	</table>
+	<table name="pending_entries_header" xmlns="">
+		<column name="mc_entry_id" nullable="false" scale="1" type="int" />
+		<column name="pending_mc_entry_id" nullable="false" scale="1"	type="int" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="details_id" nullable="false" scale="1" type="int" />
+		<index primary="false">
+			<on>mc_entry_id</on>
+			<on>pending_mc_entry_id</on>
+		</index>
+		<index primary="false">
+			<on>mc_entry_id</on>
+		</index>
+	</table>
+	<table name="margin_call_detail_entries" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="mc_entry_id" nullable="false" scale="1" type="int" />
+		<column name="liability_entry_id" default="0" nullable="true"	scale="1" type="int" />
+		<column name="liability_name" nullable="true" scale="128" type="string" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="audit_version" nullable="false" scale="1" type="int" />
+		<column name="trade_id" nullable="false" scale="1" type="int" />
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="fx_rate" nullable="false" scale="1" type="float" />
+		<column name="margin_call" nullable="false" scale="1" type="float" />
+		<column name="is_excluded" nullable="false" scale="1" type="int" />
+		<column name="cfd_cashflow" nullable="false" scale="1" type="float" />
+		<column name="cfd_cashflow_settled" nullable="false" scale="1"	type="float" />
+		<column name="trade_version" nullable="false" scale="1" type="int" />
+		<column name="status" nullable="false" scale="64" type="string" />
+		<column name="principal" nullable="false" scale="1" type="float" />
+		<column name="nominal" nullable="false" scale="1" type="float" />
+		<column name="is_dispute" nullable="false" scale="1" type="int" />
+		<column name="dispute_reason" nullable="true" scale="64" type="string" />
+		<column name="dispute_comment" nullable="true" scale="256"	type="string" />
+		<column name="dispute_amount" nullable="false" scale="1" type="float" />
+		<column name="agreed_amount" nullable="false" scale="1" type="float" />
+		<column name="dispute_status" nullable="true" scale="64" type="string" />
+		<column name="trade_datetime" nullable="true" type="timestamp" />
+		<column name="process_datetime" nullable="true" type="timestamp" />
+		<column name="parent_id" nullable="false" scale="1" type="int" />
+		<column name="initial_margin" nullable="false" scale="1" type="float" />
+		<column name="collateral_date_offset" nullable="false" scale="1"	type="int" />
+		<column name="collateral_date" nullable="true" type="timestamp" />
+		<column name="collateral_date_method" nullable="true" scale="64"	type="string" />
+		<column name="currency" nullable="true" scale="32" type="string" />
+		<column name="product_type" nullable="true" scale="32" type="string" />
+		<column name="description" nullable="true" scale="255" type="string" />
+		<column name="type" nullable="true" scale="32" type="string" />
+		<column name="start_date" nullable="true" type="timestamp" />
+		<column name="end_date" nullable="true" type="timestamp" />
+		<column name="trade_date" nullable="true" type="timestamp" />
+		<column name="collateral_measures" nullable="true" type="binary" />
+		<column name="recon_status" nullable="false" scale="32" type="string" />
+		<column name="recon_measures" nullable="true" type="binary" />
+		<column name="trade_definition" nullable="true" type="binary" />
+		<column name="cpty_exposure" nullable="false" scale="1" type="float" />
+		<column name="settle_date" nullable="true" type="timestamp" />
+		<column name="collateral_trades" nullable="true" type="binary" />
+		<column default="NONE" name="settlement_eval_mode" nullable="true"	scale="64" type="string" />
+		<column default="FULL_SETTLEMENT" name="settlement_status"	nullable="true" scale="64" type="string" />
+		<column default="0" name="theoretical_margincall" nullable="false" scale="1"	type="float" />
+		<column default="0" name="unsettled_margincall" nullable="false" scale="1"	type="float" />
+		<column default="0" name="dispute_age" nullable="false" scale="1"	type="int" />
+		<column default="NONE" name="dispute_acceptance_status"	nullable="false" scale="64" type="string" />
+		<column name="unconverted_mc_value" nullable="true" scale="1" type="float" />
+		<column default="USD" name="contract_currency" nullable="false" scale="5" type="string" />
+		<column name="additional_comment" nullable="true" scale="255" type="string" />
+		<column name="external_reference" nullable="true" scale="255" type="string"/>
+		<column name="is_error" nullable="true" scale="1" type="int" />
+		<column name="is_priceable" nullable="true" scale="1" type="int" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>mc_entry_id</on>
+		</index>
+		<index primary="false">
+			<on>mcc_id</on>
+		</index>
+		<index primary="false">
+			<on>trade_id</on>
+			<on>process_datetime</on>
+		</index>
+	</table>
+	<table name="pending_mc_detail_entries" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="mc_entry_id" nullable="false" scale="1" type="int" />
+		<column name="liability_entry_id" default="0" nullable="true"	scale="1" type="int" />
+		<column name="liability_name" nullable="true" scale="128" type="string" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="audit_version" nullable="false" scale="1" type="int" />
+		<column name="trade_id" nullable="false" scale="1" type="int" />
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="fx_rate" nullable="false" scale="1" type="float" />
+		<column name="margin_call" nullable="false" scale="1" type="float" />
+		<column name="is_excluded" nullable="false" scale="1" type="int" />
+		<column name="cfd_cashflow" nullable="false" scale="1" type="float" />
+		<column name="cfd_cashflow_settled" nullable="false" scale="1"	type="float" />
+		<column name="trade_version" nullable="false" scale="1" type="int" />
+		<column name="status" nullable="false" scale="64" type="string" />
+		<column name="principal" nullable="false" scale="1" type="float" />
+		<column name="nominal" nullable="false" scale="1" type="float" />
+		<column name="is_dispute" nullable="false" scale="1" type="int" />
+		<column name="dispute_reason" nullable="true" scale="64" type="string" />
+		<column name="dispute_comment" nullable="true" scale="256"	type="string" />
+		<column name="dispute_amount" nullable="false" scale="1" type="float" />
+		<column name="agreed_amount" nullable="false" scale="1" type="float" />
+		<column name="dispute_status" nullable="true" scale="64" type="string" />
+		<column name="trade_datetime" nullable="true" type="timestamp" />
+		<column name="process_datetime" nullable="true" type="timestamp" />
+		<column name="parent_id" nullable="false" scale="1" type="int" />
+		<column name="initial_margin" nullable="false" scale="1" type="float" />
+		<column name="collateral_date_offset" nullable="false" scale="1"	type="int" />
+		<column name="collateral_date" nullable="true" type="timestamp" />
+		<column name="collateral_date_method" nullable="true" scale="64"	type="string" />
+		<column name="currency" nullable="true" scale="32" type="string" />
+		<column name="product_type" nullable="true" scale="32" type="string" />
+		<column name="description" nullable="true" scale="255" type="string" />
+		<column name="type" nullable="true" scale="32" type="string" />
+		<column name="start_date" nullable="true" type="timestamp" />
+		<column name="end_date" nullable="true" type="timestamp" />
+		<column name="trade_date" nullable="true" type="timestamp" />
+		<column name="collateral_measures" nullable="true" type="binary" />
+		<column name="recon_status" nullable="false" scale="32" type="string" />
+		<column name="recon_measures" nullable="true" type="binary" />
+		<column name="trade_definition" nullable="true" type="binary" />
+		<column name="cpty_exposure" nullable="false" scale="1" type="float" />
+		<column name="settle_date" nullable="true" type="timestamp" />
+		<column name="collateral_trades" nullable="true" type="binary" />
+		<column default="CONFIG_DRIVEN" name="settlement_eval_mode"	nullable="true" scale="64" type="string" />
+		<column default="FULL_SETTLEMENT" name="settlement_status"	nullable="true" scale="64" type="string" />
+		<column name="theoretical_margincall" nullable="false" scale="1"	type="float" />
+		<column name="unsettled_margincall" nullable="false" scale="1"	type="float" />
+		<column default="0" name="dispute_age" nullable="false" scale="1"	type="int" />
+		<column default="NONE" name="dispute_acceptance_status"	nullable="false" scale="64" type="string" />
+		<column name="unconverted_mc_value" nullable="true" scale="1" type="float" />
+		<column name="contract_currency" nullable="false" scale="5" type="string" />
+		<column name="additional_comment" nullable="true" scale="255" type="string" />
+		<column name="external_reference" nullable="true" scale="255" type="string"/>
+		<column name="is_error" nullable="true" scale="1" type="int" />
+		<column name="is_priceable" nullable="true" scale="1" type="int" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>mc_entry_id</on>
+		</index>
+		<index primary="false">
+			<on>mcc_id</on>
+		</index>
+		<index primary="false">
+			<on>trade_id</on>
+			<on>process_datetime</on>
+		</index>
+	</table>
+	<table name="mrgcall_detail_entries_hist" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="mc_entry_id" nullable="false" scale="1" type="int" />
+		<column name="liability_entry_id" default="0" nullable="true"	scale="1" type="int" />
+		<column name="liability_name" nullable="true" scale="128" type="string" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="audit_version" nullable="false" scale="1" type="int" />
+		<column name="trade_id" nullable="false" scale="1" type="int" />
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="fx_rate" nullable="false" scale="1" type="float" />
+		<column name="margin_call" nullable="false" scale="1" type="float" />
+		<column name="is_excluded" nullable="false" scale="1" type="int" />
+		<column name="cfd_cashflow" nullable="false" scale="1" type="float" />
+		<column name="cfd_cashflow_settled" nullable="false" scale="1"	type="float" />
+		<column name="trade_version" nullable="false" scale="1" type="int" />
+		<column name="status" nullable="false" scale="64" type="string" />
+		<column name="principal" nullable="false" scale="1" type="float" />
+		<column name="nominal" nullable="false" scale="1" type="float" />
+		<column name="is_dispute" nullable="false" scale="1" type="int" />
+		<column name="dispute_reason" nullable="true" scale="64" type="string" />
+		<column name="dispute_comment" nullable="true" scale="256"	type="string" />
+		<column name="dispute_amount" nullable="false" scale="1" type="float" />
+		<column name="agreed_amount" nullable="false" scale="1" type="float" />
+		<column name="dispute_status" nullable="true" scale="64" type="string" />
+		<column name="trade_datetime" nullable="true" type="timestamp" />
+		<column name="process_datetime" nullable="true" type="timestamp" />
+		<column name="parent_id" nullable="false" scale="1" type="int" />
+		<column name="initial_margin" nullable="false" scale="1" type="float" />
+		<column name="collateral_date_offset" nullable="false" scale="1"	type="int" />
+		<column name="collateral_date" nullable="true" type="timestamp" />
+		<column name="collateral_date_method" nullable="true" scale="64"	type="string" />
+		<column name="currency" nullable="true" scale="32" type="string" />
+		<column name="product_type" nullable="true" scale="32" type="string" />
+		<column name="description" nullable="true" scale="255" type="string" />
+		<column name="type" nullable="true" scale="32" type="string" />
+		<column name="start_date" nullable="true" type="timestamp" />
+		<column name="end_date" nullable="true" type="timestamp" />
+		<column name="trade_date" nullable="true" type="timestamp" />
+		<column name="collateral_measures" nullable="true" type="binary" />
+		<column name="recon_status" nullable="false" scale="32" type="string" />
+		<column name="recon_measures" nullable="true" type="binary" />
+		<column name="trade_definition" nullable="true" type="binary" />
+		<column name="cpty_exposure" nullable="false" scale="1" type="float" />
+		<column name="settle_date" nullable="true" type="timestamp" />
+		<column name="collateral_trades" nullable="true" type="binary" />
+		<column default="CONFIG_DRIVEN" name="settlement_eval_mode"	nullable="true" scale="64" type="string" />
+		<column default="FULL_SETTLEMENT" name="settlement_status"	nullable="true" scale="64" type="string" />
+		<column name="theoretical_margincall" nullable="false" scale="1"	type="float" />
+		<column name="unsettled_margincall" nullable="false" scale="1"	type="float" />
+		<column default="0" name="dispute_age" nullable="false" scale="1"	type="int" />
+		<column default="NONE" name="dispute_acceptance_status"	nullable="false" scale="64" type="string" />
+		<column name="unconverted_mc_value" nullable="true" scale="1" type="float" />
+		<column name="contract_currency" nullable="false" scale="5" type="string" />
+		<column name="additional_comment" nullable="true" scale="255" type="string" />
+		<column name="external_reference" nullable="true" scale="255" type="string"/>
+		<column name="is_error" nullable="true" scale="1" type="int" />
+		<column name="is_priceable" nullable="true" scale="1" type="int" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>mc_entry_id</on>
+		</index>
+		<index primary="false">
+			<on>mcc_id</on>
+		</index>
+		<index primary="false">
+			<on>trade_id</on>
+			<on>process_datetime</on>
+		</index>
+	</table>
+	<table name="liability_group_entries" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="mc_entry_id" nullable="false" scale="1" type="int" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="status" nullable="false" scale="64" type="string" />
+		<column name="trade_datetime" nullable="true" type="timestamp" />
+		<column name="process_datetime" nullable="true" type="timestamp" />
+		<column name="currency" nullable="true" scale="32" type="string" />
+		<column name="value" default="0" nullable="false" scale="1"	type="float" />
+		<column name="contract_currency" nullable="true" scale="32"	type="string" />
+		<column name="contract_value" default="0" nullable="false"	scale="1" type="float" />
+		<column name="fx_rate" default="0" nullable="false" scale="1"	type="float" />
+		<column name="covered_value" default="0" nullable="false"	scale="1" type="float" />
+		<column name="remaining_value" default="0" nullable="false"	scale="1" type="float" />
+		<column name="description" nullable="true" scale="255" type="string" />
+		<column name="liability_group" nullable="false" scale="64"	type="string" />
+		<column name="allocation_order" default="0" nullable="true"	scale="1" type="int" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>mc_entry_id</on>
+		</index>
+	</table>
+	<table name="pending_liability_gr_entries" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="mc_entry_id" nullable="false" scale="1" type="int" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="status" nullable="false" scale="64" type="string" />
+		<column name="trade_datetime" nullable="true" type="timestamp" />
+		<column name="process_datetime" nullable="true" type="timestamp" />
+		<column name="currency" nullable="true" scale="32" type="string" />
+		<column name="value" default="0" nullable="false" scale="1"	type="float" />
+		<column name="contract_currency" nullable="true" scale="32"	type="string" />
+		<column name="contract_value" default="0" nullable="false"	scale="1" type="float" />
+		<column name="fx_rate" default="0" nullable="false" scale="1"	type="float" />
+		<column name="covered_value" default="0" nullable="false"	scale="1" type="float" />
+		<column name="remaining_value" default="0" nullable="false"	scale="1" type="float" />
+		<column name="description" nullable="true" scale="255" type="string" />
+		<column name="liability_group" nullable="false" scale="64"	type="string" />
+		<column name="allocation_order" default="0" nullable="true"	scale="1" type="int" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>mc_entry_id</on>
+		</index>
+	</table>
+	<table name="liab_gr_entries_hist" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="mc_entry_id" nullable="false" scale="1" type="int" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="status" nullable="false" scale="64" type="string" />
+		<column name="trade_datetime" nullable="true" type="timestamp" />
+		<column name="process_datetime" nullable="true" type="timestamp" />
+		<column name="currency" nullable="true" scale="32" type="string" />
+		<column name="value" default="0" nullable="false" scale="1"	type="float" />
+		<column name="contract_currency" nullable="true" scale="32"	type="string" />
+		<column name="contract_value" default="0" nullable="false"	scale="1" type="float" />
+		<column name="fx_rate" default="0" nullable="false" scale="1"	type="float" />
+		<column name="covered_value" default="0" nullable="false"	scale="1" type="float" />
+		<column name="remaining_value" default="0" nullable="false"	scale="1" type="float" />
+		<column name="description" nullable="true" scale="255" type="string" />
+		<column name="liability_group" nullable="false" scale="64"	type="string" />
+		<column name="allocation_order" default="0" nullable="true"	scale="1" type="int" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>mc_entry_id</on>
+		</index>
+	</table>
+	<table name="chart_config" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="type" nullable="false" scale="128" type="string" />
+		<column name="name" nullable="false" scale="128" type="string" />
+		<column name="report_type" nullable="false" scale="128" type="string" />
+		<column name="configuration" nullable="false" type="binary" />
+		<index primary="false">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="margin_call_positions" xmlns="">
+		<column name="mc_entry_id" nullable="false" scale="1" type="int" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="position_type" nullable="true" scale="64" type="string" />
+		<column name="position_date" nullable="true" type="timestamp" />
+		<column name="haircut" nullable="false" scale="1" type="float" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="currency" nullable="true" scale="32" type="string" />
+		<column name="value" nullable="false" scale="1" type="float" />
+		<column name="haircuted_value" nullable="false" scale="1" type="float" />
+		<column name="fx_rate" nullable="false" scale="1" type="float" />
+		<column name="contract_value" nullable="false" scale="1" type="float" />
+		<column name="principal" nullable="false" scale="1" type="float" />
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="quantity" nullable="false" scale="1" type="float" />
+		<column name="nominal" nullable="false" scale="1" type="float" />
+		<column name="market_price" nullable="false" scale="1" type="float" />
+		<column name="clean_price" nullable="false" scale="1" type="float" />
+		<column name="accrual" nullable="false" scale="1" type="float" />
+		<column name="coupon_record_date" nullable="true" type="timestamp" />
+		<column name="coupon_date" nullable="true" type="timestamp" />
+		<column name="dividend_record_date" nullable="true" type="timestamp" />
+		<column name="dividend_date" nullable="true" type="timestamp" />
+		<column name="contract_currency" nullable="true" scale="32"	type="string" />
+		<column name="valuation_date" nullable="true" type="timestamp" />
+		<column name="category" nullable="true" scale="64" type="string" />
+		<column name="status" nullable="true" scale="32" type="string" />
+		<column name="base_currency" nullable="true" scale="32" type="string" />
+		<column name="base_value" nullable="false" scale="1" type="float" />
+		<column name="book_id" nullable="false" scale="1" type="int" />
+		<column name="account_id" default="0" nullable="false" scale="1"	type="int" />
+		<column name="security_maturity_date" nullable="true" type="timestamp" />
+		<column name="position_definition" nullable="true" type="binary" />
+		<column name="position_key" nullable="true" scale="64" type="string" />
+		<column default="0" name="exp_po_id" nullable="false" scale="1" type="int" />
+		<column default="0" name="source_id" nullable="false" scale="1" type="int" />
+		<column default="0" name="source_mcc_id" nullable="false" scale="1" type="int" />
+		<column name="termination_currency" nullable="true" scale="256" type="string" />
+		<index primary="false">
+			<on>mc_entry_id</on>
+		</index>
+	</table>
+	<table name="pending_margin_call_positions" xmlns="">
+		<column name="mc_entry_id" nullable="false" scale="1" type="int" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="position_type" nullable="true" scale="64" type="string" />
+		<column name="position_date" nullable="true" type="timestamp" />
+		<column name="haircut" nullable="false" scale="1" type="float" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="currency" nullable="true" scale="32" type="string" />
+		<column name="value" nullable="false" scale="1" type="float" />
+		<column name="haircuted_value" nullable="false" scale="1" type="float" />
+		<column name="fx_rate" nullable="false" scale="1" type="float" />
+		<column name="contract_value" nullable="false" scale="1" type="float" />
+		<column name="principal" nullable="false" scale="1" type="float" />
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="quantity" nullable="false" scale="1" type="float" />
+		<column name="nominal" nullable="false" scale="1" type="float" />
+		<column name="market_price" nullable="false" scale="1" type="float" />
+		<column name="clean_price" nullable="false" scale="1" type="float" />
+		<column name="accrual" nullable="false" scale="1" type="float" />
+		<column name="coupon_record_date" nullable="true" type="timestamp" />
+		<column name="coupon_date" nullable="true" type="timestamp" />
+		<column name="dividend_record_date" nullable="true" type="timestamp" />
+		<column name="dividend_date" nullable="true" type="timestamp" />
+		<column name="contract_currency" nullable="true" scale="32"	type="string" />
+		<column name="valuation_date" nullable="true" type="timestamp" />
+		<column name="category" nullable="true" scale="64" type="string" />
+		<column name="status" nullable="true" scale="32" type="string" />
+		<column name="base_currency" nullable="true" scale="32" type="string" />
+		<column name="base_value" nullable="false" scale="1" type="float" />
+		<column name="book_id" nullable="false" scale="1" type="int" />
+		<column name="account_id" default="0" nullable="false" scale="1"	type="int" />
+		<column name="security_maturity_date" nullable="true" type="timestamp" />
+		<column name="position_definition" nullable="true" type="binary" />
+		<column name="position_key" nullable="true" scale="64" type="string" />
+		<column name="exp_po_id" nullable="false" scale="1" type="int" />
+		<column name="source_id" nullable="false" scale="1" type="int" />
+		<column name="source_mcc_id" nullable="false" scale="1" type="int" />
+		<column name="termination_currency" nullable="true" scale="256" type="string" />
+		<index primary="false">
+			<on>mc_entry_id</on>
+		</index>
+		<index primary="false">
+			<on>mc_entry_id</on>
+			<on>type</on>
+			<on>position_type</on>
+			<on>currency</on>
+		</index>
+		<index primary="false">
+			<on>mc_entry_id</on>
+			<on>type</on>
+			<on>position_type</on>
+			<on>product_id</on>
+		</index>
+	</table>
+	<table name="mrgcall_positions_hist" xmlns="">
+		<column name="mc_entry_id" nullable="false" scale="1" type="int" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="position_type" nullable="true" scale="64" type="string" />
+		<column name="position_date" nullable="true" type="timestamp" />
+		<column name="haircut" nullable="false" scale="1" type="float" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="currency" nullable="true" scale="32" type="string" />
+		<column name="value" nullable="false" scale="1" type="float" />
+		<column name="haircuted_value" nullable="false" scale="1" type="float" />
+		<column name="fx_rate" nullable="false" scale="1" type="float" />
+		<column name="contract_value" nullable="false" scale="1" type="float" />
+		<column name="principal" nullable="false" scale="1" type="float" />
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="quantity" nullable="false" scale="1" type="float" />
+		<column name="nominal" nullable="false" scale="1" type="float" />
+		<column name="market_price" nullable="false" scale="1" type="float" />
+		<column name="clean_price" nullable="false" scale="1" type="float" />
+		<column name="accrual" nullable="false" scale="1" type="float" />
+		<column name="coupon_record_date" nullable="true" type="timestamp" />
+		<column name="coupon_date" nullable="true" type="timestamp" />
+		<column name="dividend_record_date" nullable="true" type="timestamp" />
+		<column name="dividend_date" nullable="true" type="timestamp" />
+		<column name="contract_currency" nullable="true" scale="32"	type="string" />
+		<column name="valuation_date" nullable="true" type="timestamp" />
+		<column name="category" nullable="true" scale="64" type="string" />
+		<column name="status" nullable="true" scale="32" type="string" />
+		<column name="base_currency" nullable="true" scale="32" type="string" />
+		<column name="base_value" nullable="false" scale="1" type="float" />
+		<column name="book_id" nullable="false" scale="1" type="int" />
+		<column name="account_id" default="0" nullable="false" scale="1"	type="int" />
+		<column name="security_maturity_date" nullable="true" type="timestamp" />
+		<column name="position_definition" nullable="true" type="binary" />
+		<column name="position_key" nullable="true" scale="64" type="string" />
+		<column name="exp_po_id" nullable="false" scale="1" type="int" />
+		<column name="source_id" nullable="false" scale="1" type="int" />
+		<column name="source_mcc_id" nullable="false" scale="1" type="int" />
+		<column name="termination_currency" nullable="true" scale="256" type="string" />
+		<index primary="false">
+			<on>mc_entry_id</on>
+		</index>
+	</table>
+	<table name="margin_call_allocation" xmlns="">
+		<column name="mc_entry_id" nullable="false" scale="1" type="int" />
+		<column name="liability_entry_id" default="0" nullable="true"	scale="1" type="int" />
+		<column name="liability_name" nullable="true" scale="128" type="string" />
+		<column name="liability_configuration" nullable="true" scale="128"	type="string" />
+		<column name="liability_currency" nullable="true" scale="128"	type="string" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="book_id" nullable="true" scale="1" type="int" />
+		<column name="source_book_id" nullable="true" scale="1" type="int" />
+		<column name="currency" nullable="true" scale="32" type="string" />
+		<column name="value" nullable="false" scale="1" type="float" />
+		<column name="initial_fx_rate" nullable="true" scale="1" type="float" />
+		<column name="contract_value" nullable="false" scale="1" type="float" />
+		<column name="haircut" nullable="true" scale="1" type="float" />
+		<column name="haircut_type" nullable="true" scale="32" type="string" />
+		<column name="haircut_quote_type" nullable="true" scale="64"	type="string" />
+		<column name="settlement_date" nullable="true" type="timestamp" />
+		<column name="settlement_amount" nullable="true" default="0" scale="1" type="float" />
+		<column name="settlement_value" nullable="true" default="0" scale="1" type="float" />
+		<column name="principal" nullable="false" scale="1" type="float" />
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="pass_through_b" nullable="false" type="int"	scale="1" />
+		<column name="quantity" nullable="true" scale="1" type="float" />
+		<column name="nominal" nullable="true" scale="1" type="float" />
+		<column name="original_nominal" nullable="true" scale="1" type="float" />
+		<column name="market_price" nullable="false" scale="1" type="float" />
+		<column name="clean_price" nullable="false" scale="1" type="float" />
+		<column name="accrual" nullable="false" scale="1" type="float" />
+		<column name="trade_date" nullable="true" type="timestamp" />
+		<column name="trade_id" nullable="true" scale="1" type="int" />
+		<column name="contract_currency" nullable="true" scale="32"	type="string" />
+		<column name="all_in_value" nullable="false" scale="1" type="float" />
+		<column name="is_manual_cash" nullable="false" scale="1" type="int" />
+		<column name="allocation_type" nullable="true" scale="32" type="string" />
+		<column name="allocation_comment" nullable="true" scale="64"	type="string" />
+		<column name="status" nullable="true" scale="32" type="string" />
+		<column name="locked" nullable="false" type="int" scale="1" />
+		<column name="cost_of_margin" nullable="false" scale="1" type="float" />
+		<column name="collateral_cost" nullable="false" scale="1" type="float" />
+		<column name="category" nullable="true" scale="64" type="string" />
+		<column name="optimization_category" nullable="true" scale="64"	type="string" />
+		<column name="trade_version" nullable="true" scale="1" type="int" />
+		<column name="base_currency" nullable="true" scale="32" type="string" />
+		<column name="base_value" nullable="false" scale="1" type="float" />
+		<column name="product_code" nullable="true" scale="64" type="string" />
+		<column name="attributes" nullable="true" type="binary" />
+		<column name="execution_id" nullable="true" scale="1" type="int" />
+		<column name="reservation_id" nullable="true" scale="1" type="int" />
+		<column name="reservation_trade_id" nullable="true" scale="1"	type="int" />
+		<column name="contract_order" default="0" nullable="true"	scale="1" type="int" />
+		<column name="liability_order" default="0" nullable="true"	scale="1" type="int" />
+		<column name="allocation_order" default="0" nullable="true"	scale="1" type="int" />
+		<column name="source_id" default="0" nullable="true"	scale="1" type="int" />
+		<column name="context_id" default="0" nullable="true"	scale="1" type="int" />
+		<column default="0" name="weight" nullable="false" scale="1" type="float" />
+		<column name="booking_type" nullable="true" scale="64" type="string" />
+		<column name="substitution_id" nullable="true" scale="1" type="int" />
+		<column name="linked_exposure_group_id" nullable="true" scale="1" type="int" />
+		<column name="source_contract_id" nullable="true" scale="1" type="int" />
+		<column name="exp_po_id" nullable="true" scale="1" type="int" />
+		<column name="termination_currency" nullable="true" scale="256" type="string" />
+		<column name="original_position_quantity" default="0" nullable="true" scale="1" type="float" />
+		<column name="legal_entity_id" default="0" nullable="true" scale="1" type="int" />
+		<column default="0" name="hold" nullable="false" type="int" scale="1" />
+		<index primary="false">
+			<on>mc_entry_id</on>
+		</index>
+	</table>
+	<table name="pending_margin_call_allocation" xmlns="">
+		<column name="mc_entry_id" nullable="false" scale="1" type="int" />
+		<column name="liability_entry_id" default="0" nullable="true"	scale="1" type="int" />
+		<column name="liability_name" nullable="true" scale="128" type="string" />
+		<column name="liability_configuration" nullable="true" scale="128"	type="string" />
+		<column name="liability_currency" nullable="true" scale="128"	type="string" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="book_id" nullable="true" scale="1" type="int" />
+		<column name="currency" nullable="true" scale="32" type="string" />
+		<column name="value" nullable="false" scale="1" type="float" />
+		<column name="initial_fx_rate" nullable="true" scale="1" type="float" />
+		<column name="contract_value" nullable="false" scale="1" type="float" />
+		<column name="haircut" nullable="true" scale="1" type="float" />
+		<column name="haircut_type" nullable="true" scale="32" type="string" />
+		<column name="haircut_quote_type" nullable="true" scale="64"	type="string" />
+		<column name="settlement_date" nullable="true" type="timestamp" />
+		<column name="settlement_amount" nullable="true" default="0" scale="1" type="float" />
+		<column name="settlement_value" nullable="true" default="0" scale="1" type="float" />
+		<column name="principal" nullable="false" scale="1" type="float" />
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="pass_through_b" nullable="false" type="int"	scale="1" />
+		<column name="quantity" nullable="true" scale="1" type="float" />
+		<column name="nominal" nullable="true" scale="1" type="float" />
+		<column name="original_nominal" nullable="true" scale="1" type="float" />
+		<column name="market_price" nullable="false" scale="1" type="float" />
+		<column name="clean_price" nullable="false" scale="1" type="float" />
+		<column name="accrual" nullable="false" scale="1" type="float" />
+		<column name="trade_date" nullable="true" type="timestamp" />
+		<column name="trade_id" nullable="true" scale="1" type="int" />
+		<column name="contract_currency" nullable="true" scale="32"	type="string" />
+		<column name="all_in_value" nullable="false" scale="1" type="float" />
+		<column name="is_manual_cash" nullable="false" scale="1" type="int" />
+		<column name="allocation_type" nullable="true" scale="32" type="string" />
+		<column name="allocation_comment" nullable="true" scale="64"	type="string" />
+		<column name="status" nullable="true" scale="32" type="string" />
+		<column name="locked" nullable="false" type="int" scale="1" />
+		<column name="cost_of_margin" nullable="false" scale="1" type="float" />
+		<column name="collateral_cost" nullable="false" scale="1" type="float" />
+		<column name="category" nullable="true" scale="64" type="string" />
+		<column name="optimization_category" nullable="true" scale="64"	type="string" />
+		<column name="trade_version" nullable="true" scale="1" type="int" />
+		<column name="base_currency" nullable="true" scale="32" type="string" />
+		<column name="base_value" nullable="false" scale="1" type="float" />
+		<column name="product_code" nullable="true" scale="64" type="string" />
+		<column name="attributes" nullable="true" type="binary" />
+		<column name="execution_id" nullable="true" scale="1" type="int" />
+		<column name="reservation_id" nullable="true" scale="1" type="int" />
+		<column name="reservation_trade_id" nullable="true" scale="1"	type="int" />
+		<column name="contract_order" default="0" nullable="true"	scale="1" type="int" />
+		<column name="liability_order" default="0" nullable="true"	scale="1" type="int" />
+		<column name="allocation_order" default="0" nullable="true"	scale="1" type="int" />
+		<column name="source_id" default="0" nullable="true"	scale="1" type="int" />
+		<column name="context_id" default="0" nullable="true"	scale="1" type="int" />
+		<column name="booking_type" nullable="true" scale="64" type="string" />
+		<column name="weight" nullable="false" scale="1" type="float" />
+		<column name="substitution_id" nullable="true" scale="1" type="int" />
+		<column name="source_book_id" nullable="true" scale="1" type="int" />
+		<column name="linked_exposure_group_id" nullable="true" scale="1" type="int" />
+		<column name="source_contract_id" nullable="true" scale="1" type="int" />
+		<column name="exp_po_id" nullable="true" scale="1" type="int" />
+		<column name="termination_currency" nullable="true" scale="256" type="string" />
+		<column name="original_position_quantity" default="0" nullable="true" scale="1" type="float" />
+		<column name="legal_entity_id" default="0" nullable="true" scale="1" type="int" />
+		<column name="hold" nullable="false" type="int" scale="1" />
+		<index primary="false">
+			<on>mc_entry_id</on>
+		</index>
+	</table>
+	<table name="mrgcall_allocation_hist" xmlns="">
+		<column name="mc_entry_id" nullable="false" scale="1" type="int" />
+		<column name="liability_entry_id" default="0" nullable="true"	scale="1" type="int" />
+		<column name="liability_name" nullable="true" scale="128" type="string" />
+		<column name="liability_configuration" nullable="true" scale="128"	type="string" />
+		<column name="liability_currency" nullable="true" scale="128"	type="string" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="book_id" nullable="true" scale="1" type="int" />
+		<column name="source_book_id" nullable="true" scale="1" type="int" />
+		<column name="currency" nullable="true" scale="32" type="string" />
+		<column name="value" nullable="false" scale="1" type="float" />
+		<column name="initial_fx_rate" nullable="true" scale="1" type="float" />
+		<column name="contract_value" nullable="false" scale="1" type="float" />
+		<column name="haircut" nullable="true" scale="1" type="float" />
+		<column name="haircut_type" nullable="true" scale="32" type="string" />
+		<column name="haircut_quote_type" nullable="true" scale="64"	type="string" />
+		<column name="settlement_date" nullable="true" type="timestamp" />
+		<column name="settlement_amount" nullable="true" default="0" scale="1" type="float" />
+		<column name="settlement_value" nullable="true" default="0" scale="1" type="float" />
+		<column name="principal" nullable="false" scale="1" type="float" />
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="pass_through_b" nullable="false" type="int"	scale="1" />
+		<column name="quantity" nullable="true" scale="1" type="float" />
+		<column name="nominal" nullable="true" scale="1" type="float" />
+		<column name="original_nominal" nullable="true" scale="1" type="float" />
+		<column name="market_price" nullable="false" scale="1" type="float" />
+		<column name="clean_price" nullable="false" scale="1" type="float" />
+		<column name="accrual" nullable="false" scale="1" type="float" />
+		<column name="trade_date" nullable="true" type="timestamp" />
+		<column name="trade_id" nullable="true" scale="1" type="int" />
+		<column name="contract_currency" nullable="true" scale="32"	type="string" />
+		<column name="all_in_value" nullable="false" scale="1" type="float" />
+		<column name="is_manual_cash" nullable="false" scale="1" type="int" />
+		<column name="allocation_type" nullable="true" scale="32" type="string" />
+		<column name="allocation_comment" nullable="true" scale="64"	type="string" />
+		<column name="status" nullable="true" scale="32" type="string" />
+		<column name="locked" nullable="false" type="int" scale="1" />
+		<column name="cost_of_margin" nullable="false" scale="1" type="float" />
+		<column name="collateral_cost" nullable="false" scale="1" type="float" />
+		<column name="category" nullable="true" scale="64" type="string" />
+		<column name="optimization_category" nullable="true" scale="64"	type="string" />
+		<column name="trade_version" nullable="true" scale="1" type="int" />
+		<column name="base_currency" nullable="true" scale="32" type="string" />
+		<column name="base_value" nullable="false" scale="1" type="float" />
+		<column name="product_code" nullable="true" scale="64" type="string" />
+		<column name="attributes" nullable="true" type="binary" />
+		<column name="execution_id" nullable="true" scale="1" type="int" />
+		<column name="reservation_id" nullable="true" scale="1" type="int" />
+		<column name="reservation_trade_id" nullable="true" scale="1"	type="int" />
+		<column name="contract_order" default="0" nullable="true"	scale="1" type="int" />
+		<column name="liability_order" default="0" nullable="true"	scale="1" type="int" />
+		<column name="allocation_order" default="0" nullable="true"	scale="1" type="int" />
+		<column name="source_id" default="0" nullable="true"	scale="1" type="int" />
+		<column name="context_id" default="0" nullable="true"	scale="1" type="int" />
+		<column name="weight" nullable="false" scale="1" type="float" />
+		<column name="booking_type" nullable="true" scale="64" type="string" />
+		<column name="substitution_id" nullable="true" scale="1" type="int" />
+		<column name="linked_exposure_group_id" nullable="true" scale="1" type="int" />
+		<column name="source_contract_id" nullable="true" scale="1" type="int" />
+		<column name="exp_po_id" nullable="true" scale="1" type="int" />
+		<column name="termination_currency" nullable="true" scale="256" type="string" />
+		<column name="original_position_quantity" default="0" nullable="true" scale="1" type="float" />
+		<column name="legal_entity_id" default="0" nullable="true" scale="1" type="int" />
+		<column name="hold" nullable="false" type="int" scale="1" />
+		<index primary="false">
+			<on>mc_entry_id</on>
+		</index>
+	</table>
+	<table name="collateral_concentration" xmlns="">
+		<column name="entity_id" nullable="false" scale="1" type="int" />
+		<column name="liability_entry_id" default="0" nullable="true" scale="1" type="int" />
+		<column name="liability_name" nullable="true" scale="128" type="string" />
+		<column name="liability_configuration" nullable="true" scale="128" type="string" />
+		<column name="liability_currency" nullable="true" scale="128" type="string" />
+		<column name="mcc_id" nullable="true" scale="1" type="int" />
+		<column name="concentration_date" nullable="true" type="timestamp" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="rule_name" nullable="true" scale="64" type="string" />
+		<column name="limit_name" nullable="true" scale="64" type="string" />
+		<column name="rule_type" nullable="true" scale="64" type="string" />
+		<column name="type" nullable="true" scale="16" type="string" />
+		<column name="initial_value" nullable="false" scale="1" type="float" />
+		<column name="additional_value" nullable="false" scale="1"	type="float" />
+		<column default="1" name="netted_liability" nullable="false" type="int" scale="1" />
+		<column name="minimum_value" nullable="false" scale="1" type="float" />
+		<column name="maximum_value" nullable="false" scale="1" type="float" />
+		<column name="used_value" nullable="false" scale="1" type="float" />
+		<column name="available_value" nullable="false" scale="1" type="float" />
+		<column name="usage_value" nullable="false" scale="1" type="float" />
+		<column name="minimum_percentage" nullable="false" scale="1"	type="float" />
+		<column name="maximum_percentage" nullable="false" scale="1"	type="float" />
+		<column name="used_percentage" nullable="false" scale="1" type="float" />
+		<column name="available_percentage" nullable="false" scale="1"	type="float" />
+		<column name="total" nullable="false" scale="1" type="float" />
+		<column name="status" nullable="true" scale="64" type="string" />
+		<column name="available" nullable="false" scale="1" type="float" />
+		<column name="minimum" nullable="false" scale="1" type="float" />
+		<column name="scope_rule" nullable="true" scale="32" type="string" default="Contract" />
+		<column name="scope_currency" nullable="true" scale="3" type="string" default="ANY"/>
+		<column name="scope_liability" nullable="true" scale="64" type="string" default="ANY"/>
+		<column name="group_name" nullable="true" scale="64" type="string" />
+		<column name="limit_id" nullable="true" scale="1" type="int" />
+		<column name="breakdown_key" nullable="true" scale="256" type="string" />
+		<column name="breakdown_depth" nullable="true" scale="1" type="int" default ="0" />
+		<column name="filter_name" nullable="true" scale="256" type="string"/>
+		<column default="0" name="total_collateral" nullable="false" scale="1" type="float" />
+		<column default="0" name="total_issued" nullable="false" scale="1" type="float" />
+		<column name="currencies" nullable="true" scale="256" type="string"/>
+		<column name="total_collateral_projected" nullable="true" scale="1" type="float" />
+		<column name="maximum_value_current" nullable="true" scale="1" type="float" />
+		<column name="maximum_value_projected" nullable="true" scale="1" type="float" />
+		<column name="used_percentage_projected" nullable="true" scale="1" type="float" />
+		<column name="available_projected" nullable="true" scale="1" type="float" />
+		<column name="status_projected" nullable="true" scale="64" type="string" />
+		<index primary="false">
+			<on>entity_id</on>
+		</index>
+	</table>
+	<table name="pending_concentration" xmlns="">
+		<column name="entity_id" nullable="false" scale="1" type="int" />
+		<column name="liability_entry_id" default="0" nullable="true" scale="1" type="int" />
+		<column name="liability_name" nullable="true" scale="128" type="string" />
+		<column name="liability_configuration" nullable="true" scale="128" type="string" />
+		<column name="liability_currency" nullable="true" scale="128" type="string" />
+		<column name="mcc_id" nullable="true" scale="1" type="int" />
+		<column name="concentration_date" nullable="true" type="timestamp" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="rule_name" nullable="true" scale="64" type="string" />
+		<column name="limit_name" nullable="true" scale="64" type="string" />
+		<column name="rule_type" nullable="true" scale="64" type="string" />
+		<column name="type" nullable="true" scale="16" type="string" />
+		<column name="initial_value" nullable="false" scale="1" type="float" />
+		<column name="additional_value" nullable="false" scale="1"	type="float" />
+		<column default="1" name="netted_liability" nullable="false" type="int" scale="1" />
+		<column name="minimum_value" nullable="false" scale="1" type="float" />
+		<column name="maximum_value" nullable="false" scale="1" type="float" />
+		<column name="used_value" nullable="false" scale="1" type="float" />
+		<column name="available_value" nullable="false" scale="1" type="float" />
+		<column name="usage_value" nullable="false" scale="1" type="float" />
+		<column name="minimum_percentage" nullable="false" scale="1"	type="float" />
+		<column name="maximum_percentage" nullable="false" scale="1"	type="float" />
+		<column name="used_percentage" nullable="false" scale="1" type="float" />
+		<column name="available_percentage" nullable="false" scale="1"	type="float" />
+		<column name="total" nullable="false" scale="1" type="float" />
+		<column name="status" nullable="true" scale="64" type="string" />
+		<column name="available" nullable="false" scale="1" type="float" />
+		<column name="minimum" nullable="false" scale="1" type="float" />
+		<column name="scope_rule" nullable="true" scale="32" type="string" default="Contract" />
+		<column name="scope_currency" nullable="true" scale="3" type="string" default="ANY"/>
+		<column name="scope_liability" nullable="true" scale="64" type="string" default="ANY"/>
+		<column name="group_name" nullable="true" scale="64" type="string" />
+		<column name="limit_id" nullable="true" scale="1" type="int" />
+		<column name="breakdown_key" nullable="true" scale="256" type="string" />
+		<column name="breakdown_depth" nullable="true" scale="1" type="int" default ="0" />
+		<column name="filter_name" nullable="true" scale="256" type="string"/>
+		<column name="total_collateral" nullable="false" scale="1" type="float" />
+		<column name="total_issued" nullable="false" scale="1" type="float" />
+		<column name="currencies" nullable="true" scale="256" type="string"/>
+		<column name="total_collateral_projected" nullable="true" scale="1" type="float" />
+		<column name="maximum_value_current" nullable="true" scale="1" type="float" />
+		<column name="maximum_value_projected" nullable="true" scale="1" type="float" />
+		<column name="used_percentage_projected" nullable="true" scale="1" type="float" />
+		<column name="available_projected" nullable="true" scale="1" type="float" />
+		<column name="status_projected" nullable="true" scale="64" type="string" />
+		<index primary="false">
+			<on>entity_id</on>
+		</index>
+	</table>
+	<table name="coll_concentration_hist" xmlns="">
+		<column name="entity_id" nullable="false" scale="1" type="int" />
+		<column name="liability_entry_id" default="0" nullable="true" scale="1" type="int" />
+		<column name="liability_name" nullable="true" scale="128" type="string" />
+		<column name="liability_configuration" nullable="true" scale="128" type="string" />
+		<column name="liability_currency" nullable="true" scale="128" type="string" />
+		<column name="mcc_id" nullable="true" scale="1" type="int" />
+		<column name="concentration_date" nullable="true" type="timestamp" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="rule_name" nullable="true" scale="64" type="string" />
+		<column name="limit_name" nullable="true" scale="64" type="string" />
+		<column name="rule_type" nullable="true" scale="64" type="string" />
+		<column name="initial_value" nullable="false" scale="1" type="float" />
+		<column name="additional_value" nullable="false" scale="1"	type="float" />
+		<column default="1" name="netted_liability" nullable="false" type="int" scale="1" />
+		<column name="minimum_value" nullable="false" scale="1" type="float" />
+		<column name="maximum_value" nullable="false" scale="1" type="float" />
+		<column name="used_value" nullable="false" scale="1" type="float" />
+		<column name="available_value" nullable="false" scale="1" type="float" />
+		<column name="usage_value" nullable="false" scale="1" type="float" />
+		<column name="minimum_percentage" nullable="false" scale="1"	type="float" />
+		<column name="maximum_percentage" nullable="false" scale="1"	type="float" />
+		<column name="used_percentage" nullable="false" scale="1" type="float" />
+		<column name="available_percentage" nullable="false" scale="1"	type="float" />
+		<column name="total" nullable="false" scale="1" type="float" />
+		<column name="status" nullable="true" scale="64" type="string" />
+		<column name="available" nullable="false" scale="1" type="float" />
+		<column name="minimum" nullable="false" scale="1" type="float" />
+		<column name="scope_rule" nullable="true" scale="32" type="string" default="Contract" />
+		<column name="scope_currency" nullable="true" scale="3" type="string" default="ANY"/>
+		<column name="scope_liability" nullable="true" scale="64" type="string" default="ANY"/>
+		<column name="group_name" nullable="true" scale="64" type="string" />
+		<column name="limit_id" nullable="true" scale="1" type="int" />
+		<column name="breakdown_key" nullable="true" scale="256" type="string" />	
+		<column name="breakdown_depth" nullable="true" scale="1" type="int" default ="0" />
+		<column name="filter_name" nullable="true" scale="256" type="string"/>
+		<column name="total_collateral" nullable="false" scale="1" type="float" />
+		<column name="total_issued" nullable="false" scale="1" type="float" />
+		<column name="currencies" nullable="true" scale="256" type="string"/>	
+		<column name="total_collateral_projected" nullable="true" scale="1" type="float" />
+		<column name="maximum_value_current" nullable="true" scale="1" type="float" />
+		<column name="maximum_value_projected" nullable="true" scale="1" type="float" />
+		<column name="used_percentage_projected" nullable="true" scale="1" type="float" />
+		<column name="available_projected" nullable="true" scale="1" type="float" />
+		<column name="status_projected" nullable="true" scale="64" type="string" />
+		<index primary="false">
+			<on>entity_id</on>
+		</index>
+	</table>
+	<table name="mrg_config_concentration_rule" xmlns="">
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="rule_id" nullable="false" scale="1" type="int" />
+		<index primary="true">
+			<on>mcc_id</on>
+			<on>rule_id</on>
+		</index>
+	</table>
+	<table name="concentration_rule" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="true" scale="128" type="string" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="type" nullable="true" scale="32" type="string" />
+		<column name="scope_rule" nullable="true" scale="32" type="string" default="Contract" />
+		<column name="scope_currency" nullable="true" scale="3" type="string" default="ANY"/>
+		<column name="scope_liability" nullable="true" scale="64" type="string" default="ANY"/>
+		<column default="1" name="netted_liability" nullable="false" type="int" scale="1" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="concentration_limit" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="rule_id" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="true" scale="128" type="string" />
+		<column name="underlying_type" nullable="true" scale="64" type="string" />
+		<column name="sd_filter" nullable="true" scale="64" type="string" />
+		<column name="currencies" nullable="true" scale="256" type="string" />
+		<column name="minimum_value" nullable="false" scale="1" type="float" />
+		<column name="minimum_percentage" nullable="false" scale="1"	type="float" />
+		<column name="maximum_value" nullable="false" scale="1" type="float" />
+		<column name="maximum_percentage" nullable="false" scale="1"	type="float" />
+		<column name="percentage_basis" nullable="true" scale="64" type="string" />
+		<column name="parent_limit_id" nullable="true" scale="1" type="int" />
+		<column name="breakdown" nullable="true" scale="256" type="string" />
+		<column name="depth" nullable="true" scale="1" type="int" default ="0" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>rule_id</on>
+		</index>
+	</table>
+	<table name="optimization_configuration" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="true" scale="128" type="string" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="optimizer" nullable="true" scale="64" type="string" />
+		<column name="allocation_type" nullable="true" scale="64" type="string" />
+		<column name="process_org_id" default="0" nullable="false"	scale="1" type="int" />
+		<column name="attributes" nullable="true" type="binary" />
+		<column name="substitution_type" nullable="true" scale="32"	type="string" />
+		<column name="currency" nullable="true" scale="64" type="string" />
+		<column name="pricing_env_name" nullable="true" scale="32"	type="string" />
+		<column name="target_id" nullable="false" scale="1" type="int" />
+		<column name="optimization_type" nullable="true" scale="64"	type="string" />
+		<column default="Pay Margin" name="substitution_context"	nullable="true" scale="64" type="string" />
+		<column default="0" name="rounding_decimals" nullable="true"	scale="1" type="int" />
+		<column name="optimization_date_offset" nullable="false"	default="0" scale="1" type="int" />
+		<column default="0" name="scoring_solver_id" nullable="false" scale="1" type="int" />
+		<column name="linked_config_id" nullable="false" default="0" scale="1" type="int" />
+		<column name="substitution_delta" nullable="true" scale="1" type="float" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="optimization_step" xmlns="">
+		<column name="optimization_config_id" nullable="false" scale="1"	type="int" />
+		<column name="name" nullable="true" scale="64" type="string" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="dto_id" nullable="false" scale="1" type="int" />
+		<index primary="false">
+			<on>optimization_config_id</on>
+		</index>
+	</table>
+	<table name="optimization_step_kv" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="false" scale="32" type="string" />
+		<column name="type" nullable="false" scale="32" type="string" />
+		<column name="value" nullable="true" scale="256" type="string" />
+		<index primary="true">
+			<on>id</on>
+			<on>name</on>
+		</index>
+	</table>
+	<table name="allocation_validator" xmlns="">
+		<column name="collateral_context_id" nullable="false" scale="1"	type="int" />
+		<column name="name" nullable="true" scale="64" type="string" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="dto_id" nullable="false" scale="1" type="int" />
+		<index primary="false">
+			<on>collateral_context_id</on>
+		</index>
+	</table>
+
+	<table name="allocation_validator_kv" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="false" scale="32" type="string" />
+		<column name="type" nullable="false" scale="32" type="string" />
+		<column name="value" nullable="true" scale="256" type="string" />
+		<index primary="true">
+			<on>id</on>
+			<on>name</on>
+		</index>
+	</table>
+	<table name="target_configuration" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="definition" nullable="true" type="binary" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="true" scale="128" type="string" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="config_id" nullable="false" scale="1" type="int" />
+		<column default="0" name="is_reverse_hc" nullable="false" type="int"	scale="1" />
+		<index primary="false">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="allocation_rule_configuration" xmlns="">
+		<column name="target_config_id" nullable="false" scale="1"	type="int" />
+		<column name="name" nullable="true" scale="64" type="string" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="dto_id" nullable="false" scale="1" type="int" />
+		<index primary="false">
+			<on>target_config_id</on>
+		</index>
+	</table>
+	<table name="allocation_rule_kv" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="false" scale="32" type="string" />
+		<column name="type" nullable="false" scale="32" type="string" />
+		<column name="value" nullable="true" scale="256" type="string" />
+		<index primary="true">
+			<on>id</on>
+			<on>name</on>
+		</index>
+	</table>
+	<table name="constraint_configuration" xmlns="">
+		<column name="config_id" nullable="false" scale="1" type="int" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="definition" nullable="true" type="binary" />
+		<column name="weight" nullable="true" scale="1" type="float" />
+		<column name="is_autoaccept" nullable="true" type="int" scale="1" />
+		<column name="is_mandatory" nullable="true" type="int" scale="1" />
+		<index primary="false">
+			<on>config_id</on>
+		</index>
+	</table>
+	<table name="substitution_configuration" xmlns="">
+		<column name="config_id" nullable="false" scale="1" type="int" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="definition" nullable="true" type="binary" />
+		<index primary="false">
+			<on>config_id</on>
+		</index>
+	</table>
+	<table name="mrgcall_substitution_config" xmlns="">
+		<column name="mrgcall_id" nullable="false" scale="1" type="int" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="definition" nullable="true" type="binary" />
+		<index primary="false">
+			<on>mrgcall_id</on>
+		</index>
+	</table>
+	<table name="eligibility_exclusion_config" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="true" scale="128" type="string" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="le_list" nullable="true" scale="512" type="string"/>
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="eligibility_exclusion" xmlns="">
+		<column name="config_id" nullable="false" scale="1" type="int" />
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="filter_name" nullable="true" scale="128" type="string" />
+		<column name="start_date" nullable="true" type="timestamp" />
+		<column name="end_date" nullable="true" type="timestamp" />
+		<index primary="false">
+			<on>config_id</on>
+		</index>
+	</table>
+	<table name="collateral_context" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="true" scale="128" type="string" />
+		<column name="is_default" nullable="false" type="int" scale="1" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="currency" nullable="true" scale="3" type="string" />
+		<column name="attributes" nullable="true" type="binary" />
+		<column name="value_date_days" nullable="false" default="0" scale="1" type="int" />
+		<column name="underlying_template_id" default="0" nullable="false" scale="1" type="int" />
+		<column name="interest_template_id" default="0" nullable="false" scale="1" type="int" />
+		<column name="position_template_id" default="0" nullable="false" scale="1" type="int" />
+		<column name="allocation_template_id" default="0" nullable="false" scale="1" type="int" />
+		<column name="position_aggregation" default="Config/Book" nullable="true" scale="64" type="string" />
+		<column name="pricing_env_type" nullable="true" scale="64" type="string" />
+		<column name="credit_rating_scenario_id" default="0" nullable="false" scale="1" type="int" />
+		<column default = "Standard" name="valuation_mode" nullable="false" scale="64" type="string" />
+		<column default = "From Contract" name="workflow_subtype" nullable="false" scale="32" type="string" />
+		<column default = "From Contract" name="workflow_product" nullable="false" scale="32" type="string" />
+		<column name="valuation_offset" default="0" nullable="false" scale="1" type="int" />
+		<column name="quote_offset" default="0" nullable="false" scale="1" type="int" />
+		<column name="exposure_offset" default="0" nullable="false" scale="1" type="int" />
+		<column name="context_based_calendar" nullable="true" type="binary" />
+		<column name="exp_ratio_base" nullable="true" scale="64" type="string" />
+		<column name="le_cash_offset" nullable="true" scale="1" type="int"/>
+	    <column name="po_cash_offset" nullable="true" scale="1" type="int"/>
+		<column name="le_security_offset" nullable="true" scale="1" type="int"/>
+		<column name="po_security_offset" nullable="true" scale="1" type="int"/>
+		<column name="override_collateral" nullable="true" scale="1" type="int"/>
+		<column name="collateralization_tolerance" default="0" nullable="true" scale="1" type="float" />
+		<column default="0" name="is_tolerance_percentage" nullable="false" type="int"	scale="1" />
+		<column name="check_tolerance_against" nullable="true" scale="128" type="string" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="context_margin_call_property" xmlns="">
+		<column name="context_id" nullable="false" scale="1" type="int" />
+		<column name="property_type" nullable="false" scale="32" type="string" />
+		<column name="property_name" nullable="false" scale="64" type="string" />
+		<column name="category" nullable="true" scale="32" type="string" />
+		<column name="description" nullable="true" scale="128" type="string" />
+		<column name="is_mandatory" nullable="false" type="int" scale="1" />
+		<column name="sort_id" default="0" nullable="false" type="int"	scale="1" />
+		<index primary="true">
+			<on>context_id</on>
+			<on>property_name</on>
+		</index>
+	</table>
+	<table name="context_allocation_property" xmlns="">
+		<column name="context_id" nullable="false" scale="1" type="int" />
+		<column name="property_type" nullable="false" scale="32" type="string" />
+		<column name="property_name" nullable="false" scale="64" type="string" />
+		<column name="category" nullable="true" scale="32" type="string" />
+		<column name="description" nullable="true" scale="128" type="string" />
+		<column name="is_mandatory" nullable="false" type="int" scale="1" />
+		<column name="is_mandatory_exec" nullable="false" type="int"	scale="1" />
+		<column name="is_propagate" nullable="false" type="int" scale="1" />
+		<column name="is_tkw_propagate" nullable="false" type="int" scale="1" />
+		<column name="sort_id" default="0" nullable="false" type="int"	scale="1" />
+		<index primary="true">
+			<on>context_id</on>
+			<on>property_name</on>
+		</index>
+	</table>
+	<table name="context_user_action" xmlns="">
+		<column name="context_id" nullable="false" scale="1" type="int" />
+		<column name="application_name" nullable="false" scale="32"	type="string" />
+		<column name="user_action" nullable="false" scale="32" type="string" />
+		<column name="wf_status" nullable="false" scale="32" type="string" />
+		<column name="wf_action" nullable="false" scale="32" type="string" />
+		<column name="is_action_hidden" nullable="false" scale="1"	type="int" />
+		<column name="sort_id" default="0" nullable="false" type="int"	scale="1" />
+		<column name="wf_subtype" nullable="true" scale="32" type="string" />
+		<column name="wf_product" nullable="true" scale="32" type="string" />
+		<index primary="false">
+			<on>context_id</on>
+		</index>
+	</table>
+	<table name="collateral_product_definition" xmlns="">
+		<column name="sort_id" default="0" nullable="false" scale="1"	type="int" />
+		<column name="context_id" nullable="false" scale="1" type="int" />
+		<column name="product_type" nullable="false" scale="64" type="string" />
+		<column name="data_type" nullable="false" scale="64" type="string" />
+		<column name="data" nullable="false" scale="64" type="string" />
+		<index primary="true">
+			<on>context_id</on>
+			<on>product_type</on>
+			<on>data_type</on>
+			<on>data</on>
+		</index>
+	</table>
+	<table name="collateral_position_definition" xmlns="">
+		<column name="sort_id" default="0" nullable="false" scale="1"	type="int" />
+		<column name="context_id" nullable="false" scale="1" type="int" />
+		<column name="position_key" nullable="false" scale="64" type="string" />
+		<column name="position_type" nullable="false" scale="64" type="string" />
+		<column name="date_type" nullable="true" scale="64" type="string" />
+		<column name="data_type" nullable="true" scale="64" type="string" />
+		<column name="data" nullable="true" scale="64" type="string" />
+	</table>
+	<table name="collateral_currency_definition" xmlns="">
+		<column name="sort_id" default="0" nullable="false" scale="1"	type="int" />
+		<column name="context_id" nullable="false" scale="1" type="int" />
+		<column name="collateral_group" nullable="false" scale="64"	type="string" />
+		<column name="currency" nullable="true" scale="3" type="string" />
+		<index primary="true">
+			<on>context_id</on>
+			<on>collateral_group</on>
+		</index>
+	</table>
+	<table name="collateral_acadia_definition" xmlns="">
+		<column name="sort_id" default="0" nullable="false" scale="1"	type="int" />
+		<column name="context_id" nullable="false" scale="1" type="int" />
+		<column name="rule_key" nullable="false" scale="64" type="string" />
+		<column name="rule_type" nullable="false" scale="64" type="string" />
+		<column name="criteria" nullable="false" scale="64" type="string" />
+		<index primary="true">
+			<on>context_id</on>
+			<on>rule_type</on>
+			<on>criteria</on>
+		</index>
+	</table>
+	<table name="coll_recon_trade" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="external_ref" nullable="false" scale="32" type="string" />
+		<column name="trade_id" nullable="false" scale="1" type="int" />
+		<column name="product_type" nullable="false" scale="32" type="string" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="sub_product_type" nullable="true" scale="128"	type="string" />
+		<column name="trade_date" nullable="true" type="timestamp" />
+		<column name="settle_date" nullable="true" type="timestamp" />
+		<column name="trade_definition" nullable="true" type="binary" />
+		<index primary="true">
+			<on>external_ref</on>
+		</index>
+		<index primary="false">
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>trade_id</on>
+		</index>
+	</table>
+	<table name="coll_recon_pricer_measure" xmlns="">
+		<column name="recon_id" nullable="false" scale="1" type="int" />
+		<column name="valuation_date" nullable="false" type="timestamp" />
+		<column name="recon_trade_id" nullable="false" scale="1" type="int" />
+		<column name="pricer_measures" nullable="false" type="binary" />
+		<column name="message_id" nullable="false" scale="1" type="int" />
+		<column name="margin_call" nullable="false" scale="1" type="float" />
+		<index primary="true">
+			<on>valuation_date</on>
+			<on>recon_trade_id</on>
+		</index>
+		<index primary="false">
+			<on>recon_id</on>
+		</index>
+	</table>
+	<table name="coll_reconciliation" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<column name="valuation_date" nullable="false" type="timestamp" />
+		<column name="status" nullable="false" scale="32" type="string" />
+		<column name="num_sent" nullable="false" scale="1" type="int" />
+		<column name="num_processed" nullable="false" scale="1" type="int" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<index primary="true">
+			<on>mcc_id</on>
+			<on>valuation_date</on>
+		</index>
+		<index primary="false">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="etl_job" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="mcc_id" nullable="true" scale="1" type="int" />
+		<column name="job_name" nullable="false" scale="32" type="string" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="serialized_reader_config" nullable="true" type="binary" />
+		<column name="serialized_writer_config" nullable="true" type="binary" />
+		<column name="serialized_processor_config" nullable="true"	type="binary" />
+		<column name="use_post_processing" nullable="false" scale="1"	type="int" />
+		<column name="folder_name" nullable="true" scale="32" type="string" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>mcc_id</on>
+		</index>
+	</table>
+	<table name="etl_mapping" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="job_id" nullable="false" scale="1" type="int" />
+		<column name="filter_name" nullable="true" scale="32" type="string" />
+		<column name="input_meta_data" nullable="true" type="binary" />
+		<column name="output_meta_data" nullable="true" type="binary" />
+		<column name="map_name" nullable="true" type="string" scale="32" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>job_id</on>
+		</index>
+	</table>
+	<table name="etl_mapping_filter" xmlns="">
+		<column name="filter_name" nullable="false" scale="32" type="string" />
+		<column name="filter_comment" nullable="true" scale="64" type="string" />
+		<column name="serialized_criteria" nullable="true" type="binary" />
+		<index primary="true">
+			<on>filter_name</on>
+		</index>
+	</table>
+	<table name="etl_transform" xmlns="">
+		<column name="map_id" nullable="false" scale="1" type="int" />
+		<column name="input_data" nullable="true" type="binary" />
+		<column name="output_data" nullable="true" type="binary" />
+		<column name="converter_config" nullable="true" type="binary" />
+		<index primary="false">
+			<on>map_id</on>
+		</index>
+	</table>
+	<table name="etl_job_execution" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="job_id" nullable="false" scale="1" type="int" />
+		<column name="execution_time" nullable="false" type="timestamp" />
+		<column name="has_errored" nullable="false" type="int" scale="1" />
+		<column name="log_entries" nullable="true" type="binary" />
+		<index primary="false">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="etl_output_default" xmlns="">
+		<column name="default_name" nullable="false" scale="32" type="string" />
+		<column name="serialized_metadata" nullable="true" type="binary" />
+		<index primary="true">
+			<on>default_name</on>
+		</index>
+	</table>
+	<table name="product_collateral_exposure" xmlns="">
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="start_date" nullable="true" type="timestamp" />
+		<column name="end_date" nullable="true" type="timestamp" />
+		<column name="currency_code" nullable="true" scale="3" type="string" />
+		<column name="principal_amount" nullable="true" scale="1" type="float" />
+		<column name="underlying_type" nullable="false" scale="32"	type="string" />
+		<column name="trade_definition" nullable="true" type="binary" />
+		<column name="mcc_id" nullable="false" scale="1" type="int" />
+		<index primary="true">
+			<on>product_id</on>
+		</index>
+		<index primary="false">
+			<on>underlying_type</on>
+		</index>
+		<index primary="false">
+			<on>mcc_id</on>
+		</index>
+	</table>
+	<table name="collateral_exposure_context" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="true" scale="128" type="string" />
+		<column name="is_default" nullable="false" type="int" scale="1" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="attributes" nullable="true" type="binary" />
+		<column name="context_type" nullable="true" scale="32" type="string" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="collateral_exposure_definition" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="exposure_context_id" nullable="false" scale="1"	type="int" />
+		<column name="product_type" nullable="false" scale="64" type="string" />
+		<column name="description_pattern" nullable="true" scale="255"	type="string" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>exposure_context_id</on>
+		</index>
+	</table>
+	<table name="collateral_exposure_property" xmlns="">
+		<column name="exposure_context_id" nullable="false" scale="1"	type="int" />
+		<column name="exposure_definition_id" nullable="false" scale="1"	type="int" />
+		<column name="property_type" nullable="false" scale="32" type="string" />
+		<column name="property_name" nullable="false" scale="64" type="string" />
+		<column name="category" nullable="true" scale="32" type="string" />
+		<column name="description" nullable="true" scale="128" type="string" />
+		<column name="is_mandatory" nullable="false" type="int" scale="1" />
+		<column name="sort_id" default="0" nullable="false" type="int"	scale="1" />
+		<index primary="true">
+			<on>exposure_definition_id</on>
+			<on>property_name</on>
+		</index>
+	</table>
+	<table name="collateral_info" xmlns="">
+		<column name="major_version" nullable="false" scale="1" type="int" />
+		<column name="minor_version" nullable="false" scale="1" type="int" />
+		<column name="sub_version" nullable="false" scale="1" type="int" />
+		<column name="version_date" nullable="true" type="timestamp" />
+		<column name="ref_time_zone" nullable="true" scale="128" type="string" />
+		<column name="patch_version" nullable="false" scale="32" type="string"	default="000" />
+		<column name="patch_date" nullable="true" type="timestamp" />
+		<index primary="true">
+			<on>major_version</on>
+			<on>minor_version</on>
+			<on>sub_version</on>
+			<on>patch_version</on>
+		</index>
+	</table>
+	<table name="global_rating_config" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="true" scale="128" type="string" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="is_default" nullable="false" type="int" scale="1" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="global_rating" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="global_rating_config_id" nullable="false" scale="1"	type="int" />
+		<column name="agency_name" nullable="false" scale="32" type="string" />
+		<column name="seniority" nullable="false" scale="32" type="string" />
+		<column name="rating_type" nullable="false" scale="32" type="string" />
+		<column name="ignored_values" nullable="true" scale="256" type="string" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="global_rating_value" xmlns="">
+		<column name="global_rating_id" nullable="false" scale="1"	type="int" />
+		<column name="priority" nullable="false" scale="1" type="int" />
+		<column name="rating_value" nullable="true" scale="32" type="string" />
+	</table>
+	<table name="mrgcall_credit_rating_config" xmlns="">
+		<column name="credit_rating_id" nullable="false" scale="1"	type="int" />
+		<column name="name" nullable="false" scale="128" type="string" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="mc_threshold_ccy" nullable="false" scale="3"	type="string" />
+		<column name="mta_ccy" nullable="false" scale="3" type="string" />
+		<column name="ind_amount_ccy" nullable="false" scale="3" type="string" />
+		<column name="rating_type" nullable="false" scale="32" type="string" />
+		<column name="ia_both" nullable="false" scale="32" type="string" default="Biggest"/>
+		<column name="mta_both" nullable="false" scale="32" type="string" default="Smallest"/>
+		<column name="thres_both" nullable="false" scale="32" type="string" default="Smallest"/>
+		<column name="version_num" nullable="true" scale="1" type="int" />
+		<index primary="true">
+			<on>credit_rating_id</on>
+		</index>	
+	</table>
+	<table name="mrgcall_credit_rating" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="credit_rating_id" nullable="false" scale="1"	type="int" />
+		<column name="priority" nullable="false" scale="1" type="int" />
+		<column name="threshold" nullable="true" scale="1" type="float" />
+		<column name="mc_threshold" nullable="true" scale="32" type="string" />
+		<column name="mta" nullable="true" scale="1" type="float" />
+		<column name="mc_mta" nullable="true" scale="32" type="string" />
+		<column name="independent_amount" nullable="true" scale="1"	type="float" />
+		<column name="mc_ia" nullable="true" scale="32" type="string" />
+		<column name="threshold_percent" nullable="false" scale="1"	type="float" />
+		<column name="mta_percent" nullable="false" scale="1" type="float" />
+		<column name="ia_percent" nullable="false" scale="1" type="float" />
+		<column name="threshold_percent_basis" nullable="true" scale="32" type="string" />
+		<column name="mta_percent_basis" nullable="true" scale="32" type="string" />
+		<column name="ia_percent_basis" nullable="true" scale="32" type="string" />
+		<column name="threshold_type" nullable="false" scale="32" type="string" />
+		<column name="mta_type" nullable="false" scale="32" type="string" />
+		<column name="ia_type" nullable="false" scale="32" type="string" />
+		<column name="as_of_date" nullable="false" type="timestamp" />
+		<column name="entered_user" nullable="true" scale="32" type="string" />
+		<column name="updated_datetime" nullable="true" type="timestamp" />
+		<column name="version_num" nullable="true" scale="1" type="int" />
+		<index primary="true">
+			<on>as_of_date</on>
+			<on>credit_rating_id</on>
+			<on>priority</on>
+		</index>
+	</table>
+	<table name="mrgcall_credit_hier_config" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="false" scale="128" type="string" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="version_num" nullable="true" scale="1" type="int" />
+		<column name="level_order" nullable="true" scale="256" type="string" />
+	</table>
+	<table name="mrgcall_credit_hier_level" xmlns="">
+		<column name="hier_id" nullable="false" scale="1" type="int" />
+		<column name="hier_level" nullable="false" scale="32" type="string" />
+		<column name="agency" nullable="false" scale="32" type="string" />
+		<column name="seniority" nullable="false" scale="32" type="string" />
+		<column name="rating_type" nullable="true" scale="32" type="string" />
+		<column name="scenario_id" nullable="true" scale="1" type="int" />
+		<index primary="true">
+			<on>hier_id</on>
+			<on>hier_level</on>
+			<on>agency</on>
+			<on>seniority</on>
+		</index>
+	</table>
+	<table name="collateral_pool_source" xmlns="">
+		<column name="source_id" nullable="false" scale="1" type="int" />
+		<column name="version_number" nullable="false" scale="1" type="int" />
+		<column name="source_name" nullable="true" scale="64" type="string" />
+		<column name="source_description" nullable="true" scale="64" type="string" />
+		<column default="Other" name="source_type" nullable="true" scale="128" type="string" />
+		<index primary="true" unique="true">
+			<on>source_id</on>
+		</index>
+	</table>
+	<table name="collateral_pool_position" xmlns="">
+		<column default="0" name="product_id" nullable="false" scale="1" type="int" />
+		<column default="0" name="source_id" nullable="false" scale="1" type="int" />
+		<column default="0" name="book_id" nullable="false" scale="1" type="int" />
+		<column name="ccy" nullable="true" scale="3" type="string" />
+		<column name="pool_le_id" nullable="false" scale="1" type="int" />
+		<column name="used_quantity" nullable="true" type="float" />
+		<column name="available_quantity" nullable="true" type="float" />
+		<column name="batch_id" nullable="true" scale="1" type="int" />
+		<index primary="false">
+			<on>pool_le_id</on>
+		</index>
+		<index primary="false">
+			<on>product_id</on>
+			<on>pool_le_id</on>
+		</index>
+		<index primary="false">
+			<on>ccy</on>
+			<on>pool_le_id</on>
+		</index>
+	</table>
+	<table name="collateral_pool_cost" xmlns="">
+		<column name="cost_id" nullable="false" scale="1" type="int" />
+		<column name="source_id" nullable="false" scale="1" type="int" />
+		<column name="version_number" nullable="false" scale="1" type="int" />
+		<column name="cost_method" nullable="true" scale="64" type="string" />
+		<column name="product_filter" nullable="true" scale="64"	type="string" />
+		<column name="pos_type" nullable="true" scale="64"	type="string" />
+		<column name="cost_amount" nullable="true" type="float"/>
+		<index primary="true" unique="true">
+			<on>cost_id</on>
+		</index>
+	</table>
+	<table name="collateral_inventory_pool" xmlns="">
+		<column name="pool_id" nullable="false" scale="1" type="int" />
+		<column name="version_number" nullable="false" scale="1" type="int" />
+		<column name="pool_name" nullable="true" scale="64" type="string" />
+		<column name="pool_description" nullable="true" scale="64"	type="string" />
+		<column name="pool_value_date" nullable="true" type="timestamp"/>
+		<column name="pricing_env" nullable="true" scale="64" type="string" />
+		<column name="haircut_rule" nullable="true" scale="64" type="string" />
+		<column name="pool_currency" nullable="true" scale="64" type="string" />
+		<column name="le_id" nullable="true" scale="1" type="int" />
+		<index primary="true" unique="true">
+			<on>pool_id</on>
+		</index>
+	</table>
+	
+	<table name="collateral_pool_batch" xmlns="">
+		<column name="batch_id" nullable="false" scale="1" type="int" />
+		<column name="version_number" nullable="false" scale="1" type="int" />
+		<column name="source_id" nullable="false" scale="1" type="int" />
+		<column name="batch_status" nullable="true" scale="64" type="string" />
+		<column name="batch_date" nullable="true" type="timestamp"/>
+		<index primary="true" unique="true">
+			<on>batch_id</on>
+		</index>
+	</table>
+	
+	<table name="collateral_pool_attr" xmlns="">
+		<column name="entity_id" nullable="false" scale="1" type="int"/>
+		<column name="entity_type" nullable="false" scale="32" type="string"/>
+		<column name="attr_name" nullable="false" scale="255" type="string"/>
+		<column default="String" name="attr_type" nullable="false" scale="50" type="string"/>
+		<column name="attr_value" nullable="true" scale="255" type="string"/>
+		<column name="attr_numeric_value" nullable="true" scale="1" type="float"/>
+		<column name="attr_date_value" nullable="true" type="timestamp"/>
+		<column name="attr_blob" nullable="true" type="binary"/>
+		<index primary="true">
+			<on>entity_id</on>
+			<on>entity_type</on>
+			<on>attr_name</on>
+		</index>
+	</table>
+	<table name="collateral_pool_source_attr" xmlns="">
+		<column name="entity_id" nullable="false" scale="1" type="int"/>
+		<column name="entity_type" nullable="false" scale="32" type="string"/>
+		<column name="attr_name" nullable="false" scale="255" type="string"/>
+		<column default="String" name="attr_type" nullable="false" scale="50" type="string"/>
+		<column name="attr_value" nullable="true" scale="255" type="string"/>
+		<column name="attr_numeric_value" nullable="true" scale="1" type="float"/>
+		<column name="attr_date_value" nullable="true" type="timestamp"/>
+		<column name="attr_blob" nullable="true" type="binary"/>
+		<index primary="true">
+			<on>entity_id</on>
+			<on>entity_type</on>
+			<on>attr_name</on>
+		</index>
+	</table>
+	<table name="collateral_pool_connector_attr" xmlns="">
+		<column name="entity_id" nullable="false" scale="1" type="int"/>
+		<column name="entity_type" nullable="false" scale="32" type="string"/>
+		<column name="attr_name" nullable="false" scale="255" type="string"/>
+		<column default="String" name="attr_type" nullable="false" scale="50" type="string"/>
+		<column name="attr_value" nullable="true" scale="255" type="string"/>
+		<column name="attr_numeric_value" nullable="true" scale="1" type="float"/>
+		<column name="attr_date_value" nullable="true" type="timestamp"/>
+		<column name="attr_blob" nullable="true" type="binary"/>
+		<index primary="true">
+			<on>entity_id</on>
+			<on>entity_type</on>
+			<on>attr_name</on>
+		</index>
+	</table>
+	<table name="collateral_pool_pos_cash" xmlns="">
+		<column name="pos_id" nullable="false" scale="1" type="int" />
+		<column name="version_number" nullable="false" scale="1" type="int" />
+		<column name="start_date" nullable="true" type="timestamp"/>
+		<column name="end_date" nullable="true" type="timestamp"/>
+		<column name="pos_type" nullable="true" scale="64" type="string" />
+		<column name="initial_quantity" nullable="true" scale="1" type="float"/>
+		<column name="currency" nullable="true" scale="4" type="string"/>
+		<column name="source_id" nullable="false" scale="1" type="int" />
+		<column name="cost" nullable="true" scale="1" type="float"/>
+		<column name="cost_method" nullable="true" scale="64" type="string"/>
+		<column name="batch_id" nullable="true" scale="1" type="int" />
+		<index primary="true" unique="true">
+			<on>pos_id</on>
+		</index>
+	</table>
+	<table name="collateral_pool_pos_security" xmlns="">
+		<column name="pos_id" nullable="false" scale="1" type="int" />
+		<column name="version_number" nullable="false" scale="1" type="int" />
+		<column name="start_date" nullable="true" type="timestamp"/>
+		<column name="end_date" nullable="true" type="timestamp"/>
+		<column name="pos_type" nullable="true" scale="64" type="string" />
+		<column name="initial_quantity" nullable="true" scale="1" type="float"/>
+		<column name="product_id" nullable="true"  scale="1" type="int" />
+		<column name="source_id" nullable="false" scale="1" type="int" />
+		<column name="cost" nullable="true" scale="1" type="float"/>
+		<column name="cost_method" nullable="true" scale="64" type="string"/>
+		<column name="batch_id" nullable="true" scale="1" type="int" />
+		<index primary="true" unique="true">
+			<on>pos_id</on>
+		</index>
+	</table>
+	<table name="collateral_pool_source_rel" xmlns="">
+		<column name="rel_id" nullable="false" scale="1" type="int" />
+		<column name="version_number" nullable="false" scale="1" type="int" />
+		<column name="pool_id" nullable="false" scale="1" type="int" />
+		<column name="source_id" nullable="false" scale="1" type="int" />
+		<index primary="true" unique="true">
+			<on>rel_id</on>
+		</index>
+	</table>
+	<table name="collateral_pool_connector" xmlns="">
+		<column name="con_id" nullable="false" scale="1" type="int" />
+		<column name="version_number" nullable="false" scale="1" type="int" />
+		<column name="con_name" nullable="true" scale="64" type="string" />
+		<column name="con_description" nullable="true" scale="64" type="string" />
+		<column name="source_id" nullable="true" scale="1" type="int" />
+		<column name="con_type" nullable="true" scale="64" type="string" />
+		<column name="definition" nullable="true" type="binary"/>
+		<column default="0" name="list_index" nullable="false" scale="1" type="int" />
+		<index primary="true" unique="true">
+			<on>con_id</on>
+		</index>
+	</table>
+	<table name="collateral_pool_constraint" xmlns="">
+		<column name="constraint_id" nullable="false" scale="1" type="int" />
+		<column name="version_number" nullable="false" scale="1" type="int" />
+		<column name="source_id" nullable="true" scale="1" type="int" />
+		<column name="con_type" nullable="true" scale="64" type="string" />
+		<column name="definition" nullable="true" type="binary"/>
+		<index primary="true" unique="true">
+			<on>constraint_id</on>
+		</index>
+	</table>
+	<table name="clearing_member_configuration" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="true" scale="128" type="string" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<!-- we could remove intraday_pricing_env_name as it was moved into collateral_config -->
+		<column name="intraday_pricing_env_name" nullable="true" scale="256"	type="string" />
+		<column name="credit_ext_call_perc" nullable="true" scale="1"	type="float" />
+		<column name="excess_buf_req" nullable="true" scale="1" type="float" />
+		<column name="excess_buff_autocall" nullable="true" scale="1"	type="int" />
+		<column name="use_credit_extension" nullable="true" scale="1"	type="int" />
+		<column default="0" name="minimum_repay_thresh" nullable="true"	scale="1" type="float" />
+		<column default="0" name="do_call" nullable="true" scale="1"	type="int" />
+		<column default="0" name="call_distribution" nullable="true"	scale="1" type="int" />
+		<column default="FALSE" name="cov_prefs_exclusion_type"	nullable="false" scale="256" type="string" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="clearing_member_service" xmlns="">
+		<column name="clearing_member_id" nullable="false" scale="1"	type="int" />
+		<column name="clearing_service_id" nullable="false" scale="1"	type="int" />
+		<index primary="true">
+			<on>clearing_member_id</on>
+			<on>clearing_service_id</on>
+		</index>
+	</table>
+	<table name="call_preference" xmlns="">
+		<column name="clearing_member_id" nullable="false" scale="1"	type="int" />
+		<column name="start_date" nullable="true" type="timestamp" />
+		<column name="underlying_type" nullable="true" scale="32" type="string" />
+		<column name="currency" nullable="true" scale="32" type="string" />
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="holiday" nullable="true" scale="255" type="string" />
+		<column default="AMOUNT" name="mta_type" nullable="true" scale="32"	type="string" />
+		<column name="mta_amount" nullable="true" scale="1" type="float" />
+		<column name="mta_percentage" nullable="true" scale="1" type="float" />
+		<column name="mta_rating_direction" nullable="true" scale="8" type="string" />
+		<column default="0" name="filter_index" nullable="true" scale="1" type="int" />
+		<index primary="false">
+			<on>clearing_member_id</on>
+		</index>
+	</table>
+	<table name="cover_preference" xmlns="">
+		<column name="clearing_member_id" nullable="false" scale="1"	type="int" />
+		<column name="liability_ccy" nullable="true" scale="64" type="string" />
+		<column name="liability_group" nullable="true" scale="64" type="string" />
+		<column name="collateral_ccy" nullable="true" scale="64" type="string" />
+		<column name="filter_name" nullable="true" scale="64" type="string" />
+		<column name="category" nullable="true" scale="64" type="string" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="start_date" nullable="true" type="timestamp" />
+		<column name="end_date" nullable="true" type="timestamp" />
+		<column default="0" name="filter_index" nullable="true" scale="1"	type="int" />
+		<index primary="false">
+			<on>clearing_member_id</on>
+		</index>
+	</table>
+	<table name="clearing_eligibility_exclusion" xmlns="">
+		<column name="clearing_member_id" nullable="false" scale="1"	type="int" />
+		<column name="liability_ccy" nullable="true" scale="64" type="string" />
+		<column name="liability_group" nullable="true" scale="64" type="string" />
+		<column name="collateral_ccy" nullable="true" scale="64" type="string" />
+		<column name="filter_name" nullable="true" scale="64" type="string" />
+		<column name="category" nullable="true" scale="64" type="string" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="start_date" nullable="true" type="timestamp" />
+		<column name="end_date" nullable="true" type="timestamp" />
+		<column default="0" name="filter_index" nullable="true" scale="1"	type="int" />
+		<index primary="false">
+			<on>clearing_member_id</on>
+		</index>
+	</table>
+	<table name="clearing_service" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="true" scale="128" type="string" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="attributes" nullable="true" type="binary" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="clearing_service_eligibility" xmlns="">
+		<column name="config_id" nullable="false" scale="1" type="int" />
+		<column name="liability_ccy" nullable="true" scale="64" type="string" />
+		<column name="liability_group" nullable="true" scale="64" type="string" />
+		<column name="collateral_ccy" nullable="true" scale="64" type="string" />
+		<column name="filter_name" nullable="true" scale="64" type="string" />
+		<column name="category" nullable="true" scale="64" type="string" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="start_date" nullable="true" type="timestamp" />
+		<column name="end_date" nullable="true" type="timestamp" />
+		<index primary="false">
+			<on>config_id</on>
+		</index>
+	</table>
+	<table name="liability_group_context" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="true" scale="128" type="string" />
+		<column name="is_default" nullable="false" type="int" scale="1" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="attributes" nullable="true" type="binary" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="liability_group_config" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="context_id" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="false" scale="64" type="string" />
+		<column name="currency" nullable="true" scale="32" type="string" />
+		<column name="description" nullable="true" scale="255" type="string" />
+		<column name="attributes" nullable="true" type="binary" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>context_id</on>
+		</index>
+	</table>
+	<table name="liability_rule_config" xmlns="">
+		<column name="liability_group_id" nullable="false" scale="1"	type="int" />
+		<column name="type" nullable="true" scale="64" type="string" />
+		<column name="dto_id" nullable="false" scale="1" type="int" />
+		<index primary="false">
+			<on>liability_group_id</on>
+		</index>
+	</table>
+	<table name="liability_rule_kv" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="false" scale="32" type="string" />
+		<column name="type" nullable="false" scale="32" type="string" />
+		<column name="value" nullable="true" scale="256" type="string" />
+		<index primary="true">
+			<on>id</on>
+			<on>name</on>
+		</index>
+	</table>
+	<table name="liability_group_service" xmlns="">
+		<column name="liability_group_id" nullable="false" scale="1"	type="int" />
+		<column name="clearing_service_id" nullable="false" scale="1"	type="int" />
+		<index primary="true">
+			<on>liability_group_id</on>
+			<on>clearing_service_id</on>
+		</index>
+	</table>
+	<table name="optimization_desc" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="true" scale="64" type="string" />
+		<column name="description" nullable="true" scale="255" type="string" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="optimizer_id" nullable="false" scale="1" type="int" />
+		<column name="optimizer_version" nullable="false" scale="1"	type="int" />
+		<column name="optimization_date" nullable="true" type="timestamp" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="collateral_pool" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="true" scale="64" type="string" />
+		<column name="description" nullable="true" scale="255" type="string" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="value_date" nullable="true" type="timestamp" />
+		<column name="collateral_pool_config_id" nullable="false"	scale="1" type="int" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="collateral_available_position" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="collateral_pool_id" nullable="false" scale="1"	type="int" />
+		<column name="position_type" nullable="false" scale="64" type="string" />
+		<column name="position_date" nullable="true" type="timestamp" />
+		<column name="initial_quantity" nullable="true" scale="1" type="float" />
+		<column name="used_quantity" nullable="true" scale="1" type="float" />
+		<column name="substituted_quantity" nullable="true" scale="1"	type="float" />
+		<column name="product_id" nullable="true" scale="1" type="int" />
+		<column name="product_description" nullable="true" scale="255"	type="string" />
+		<column name="currency" nullable="true" scale="1" type="string" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="collat_optim_sdf_elem_sorting" xmlns="">
+		<column name="order_id" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="false" scale="128" type="string" />
+		<column name="optimization_id" nullable="false" scale="1" type="int" />
+		<column name="avg_exec_time" nullable="true" scale="1" type="float" />
+		<index primary="false">
+			<on>order_id</on>
+		</index>
+		<index primary="false">
+			<on>optimization_id</on>
+		</index>
+	</table>
+	<table name="collat_optim_candidate_profile" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="product_type" nullable="false" scale="128" type="string" />
+		<column name="optimization_id" nullable="false" scale="1" type="int" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+		<index primary="false">
+			<on>optimization_id</on>
+		</index>
+	</table>
+	<table name="collat_optim_sdf_sorting" xmlns="">
+		<column name="cand_profile_id" nullable="false" scale="1" type="int" />
+		<column name="order_id" nullable="false" scale="1" type="int" />
+		<column name="sdf_name" nullable="false" scale="128" type="string" />
+		<column name="accept_probability" nullable="true" scale="1"	type="float" />
+		<column name="avg_exec_time" nullable="true" scale="1" type="float" />
+		<index primary="false">
+			<on>cand_profile_id</on>
+		</index>
+		<index primary="false">
+			<on>order_id</on>
+		</index>
+	</table>
+	<table name="credit_rating_scenario" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="true" scale="128" type="string" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="attributes" nullable="true" type="binary" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="collateral_credit_rating" xmlns="">
+		<column name="scenario_id" nullable="false" scale="1" type="int" />
+		<column name="legal_entity_id" nullable="false" scale="1" type="int" />
+		<column name="debt_seniority" nullable="false" scale="64" type="string" />
+		<column name="rating_agency_name" nullable="false" scale="32"	type="string" />
+		<column name="rating_type" nullable="false" scale="32" type="string" />
+		<column name="as_of_date" nullable="false" type="timestamp" />
+		<column name="rating_value" nullable="true" scale="12" type="string" />
+		<column name="updated_datetime" nullable="true" type="timestamp" />
+		<column name="entered_user" nullable="true" scale="32" type="string" />
+		<column name="version_num" nullable="true" scale="1" type="int" />
+		<index primary="false">
+			<on>scenario_id</on>
+		</index>
+	</table>
+	<table name="collat_product_credit_rating" xmlns="">
+		<column name="scenario_id" nullable="false" scale="1" type="int" />
+		<column name="product_id" nullable="false" scale="1" type="int" />
+		<column name="rating_agency_name" nullable="false" scale="32"	type="string" />
+		<column name="rating_type" nullable="false" scale="32" type="string" />
+		<column name="as_of_date" nullable="false" type="timestamp" />
+		<column name="rating_value" nullable="true" scale="12" type="string" />
+		<column name="updated_datetime" nullable="true" type="timestamp" />
+		<column name="entered_user" nullable="true" scale="32" type="string" />
+		<column name="version_num" nullable="true" scale="1" type="int" />
+		<index primary="false">
+			<on>scenario_id</on>
+		</index>
+	</table>
+	<table name="config_adhoc_details" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="val_date_freq" nullable="false" scale="1" type="int" />
+		<column name="val_time_offset" nullable="false" scale="1" type="int" />
+		<column name="val_time" nullable="true" type="timestamp" />
+		<column name="val_time_zone" nullable="true" scale="128" type="string" />
+		<column default="0" name="val_time_seconds" nullable="false" type="int" scale="1" />
+		<column name="po_mta_type" nullable="true" scale="32" type="string" />
+		<column name="le_mta_type" nullable="true" scale="32" type="string" />
+		<column name="po_mta_amt" nullable="true" scale="1" type="float" />
+		<column name="le_mta_amt" nullable="true" scale="1" type="float" />
+		<column name="po_mta_currency" nullable="true" scale="3" type="string" />
+		<column name="le_mta_currency" nullable="true" scale="3" type="string" />
+		<column name="po_mta_perc" nullable="true" scale="1" type="float" />
+		<column name="le_mta_perc" nullable="true" scale="1" type="float" />
+		<column name="po_mta_rating_direction" nullable="true" scale="8"	type="string" />
+		<column name="le_mta_rating_direction" nullable="true" scale="8"	type="string" />
+		<column name="mta_redefinition" nullable="false" scale="1"	type="int" />
+	</table>
+	<table name="collateral_engine_config" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="true" scale="128" type="string" />
+		<column name="is_default" nullable="false" type="int" scale="1" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<column name="thread_pool_size" nullable="true" scale="1" type="int" />
+		<column name="reprice_method" nullable="true" scale="128" type="string" />
+		<column name="command_timing" nullable="true" type="int" scale="1" />
+		<column name="engine_timing" nullable="true" type="int" scale="1" />
+		<index primary="true">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="scoring_solver_configuration" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="name" nullable="true" scale="128" type="string" />
+		<column name="description" nullable="true" scale="256" type="string" />
+		<index primary="false">
+			<on>id</on>
+		</index>
+	</table>
+	<table name="scoring_solver" xmlns="">
+		<column name="config_id" nullable="false" scale="1" type="int" />
+		<column name="low_limit" nullable="false" scale="1" type="int" />
+		<column name="high_limit" nullable="false" scale="1" type="int" />
+		<column name="action" nullable="true" scale="128" type="string" />
+		<column name="recommandation" nullable="true" scale="128" type="string" />
+		<index primary="false">
+			<on>config_id</on>
+		</index>
+	</table>
+	<table name="arch_registry" xmlns="">
+		<column name="table_type" nullable="false" scale="128" type="string" />
+		<column name="table_size" nullable="false" scale="1" type="int" />
+		<index primary="false">
+			<on>table_type</on>
+		</index>
+	</table>
+	<table name="margin_call_entries_ratio" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int" />
+		<column name="version" nullable="false" scale="1" type="int" />
+		<column name="master_contract_id" nullable="true" scale="1" type="int" />
+		<column name="exposure_contract_id" nullable="true" scale="1" type="int" />
+		<column name="master_entry_id" nullable="true" scale="1" type="int" />
+		<column name="entry_id" nullable="true" scale="1" type="int" />
+		<column name="ratio" nullable="false" scale="1" type="float" />
+		<column name="ratio_type" nullable="true" scale="128" type="string" />
+		<column name="ratio_date" nullable="true" type="timestamp" />
+		<column name="exp_po_id" nullable="true" scale="1" type="int" />
+		<index primary="false">
+			<on>id</on>
+		</index>
+	</table>
+</database>

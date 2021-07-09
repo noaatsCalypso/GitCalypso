@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+  	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd">
+  	
+	<bean id="dataSourceMBean" class="com.calypso.infra.management.impl.BasicDataSourceMBeanImpl" init-method="init" parent="mBeanBase">
+		<property name="dataSource" ref="dataSource" />
+		<property name="name" value="ApplicationDataSource" />
+	</bean>
+
+	<bean id="seedDataSourceMBean" class="com.calypso.infra.management.impl.BasicDataSourceMBeanImpl" init-method="init" parent="mBeanBase" >
+		<property name="dataSource" ref="nestedTransactionDataSource" />
+		<property name="name" value="SeedDataSource" />
+	</bean>
+	
+	<!--
+	  	core datasource from which database connections are retrieved for standard
+	  	business logic
+  	 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="username" value="${DBUSER}" />
+		<property name="password" value="${DBPASSWORD}" />
+		<property name="url" value="${DBURL}" />
+		<property name="driverClassName" value="${DRIVER}" />
+		<property name="initialSize" value="${JDBC_CON_MIN}" />
+		<property name="maxActive" value="${JDBC_CON_MAX}" />
+		<property name="minIdle" value="${JDBC_CON_MIN_IDLE}" />
+		<property name="maxIdle" value="${JDBC_CON_MAX_IDLE}" />
+		<property name="poolPreparedStatements" value="false" />
+		<property name="defaultAutoCommit" value="false" />
+		<property name="testOnBorrow" value="true" />
+		<property name="testOnReturn" value="true" />
+		<property name="testWhileIdle" value="true" />
+		<property name="defaultTransactionIsolation" value="2" />
+		<property name="timeBetweenEvictionRunsMillis" value="10000" />
+		<property name="maxWait" value="${JDBC_MAX_WAIT}" />
+	</bean>
+	
+	<!-- 
+		secondary datasource used for nested transactions such as
+		seed connections. 
+	 -->
+	<bean id="nestedTransactionDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="username" value="${DBUSER}" />
+		<!-- <property name="password" value="${DBPASSWORD}" /> -->
+		<property name="url" value="${DBURL}" />
+		<property name="driverClassName" value="${DRIVER}" />
+		<property name="initialSize" value="2" />
+		<property name="maxActive" value="2" />
+		<property name="minIdle" value="2" />
+		<property name="poolPreparedStatements" value="false" />
+		<property name="defaultAutoCommit" value="false" />
+		<property name="testOnBorrow" value="true" />
+		<property name="testOnReturn" value="true" />
+		<property name="testWhileIdle" value="true" />
+		<property name="defaultTransactionIsolation" value="2" />
+		<property name="timeBetweenEvictionRunsMillis" value="30000" />
+		<property name="maxWait" value="10000" />
+	</bean>
+
+</beans>

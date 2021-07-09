@@ -1,0 +1,82 @@
+#
+# Clearing configuration properties
+#
+
+# Import data base folder. (HD 89919) 
+# If not defined, it will default to $calypso_user_home/clearing, 
+# were $calypso_user_home is the running user's 
+# Calypso home (-userhome arg)
+#
+# clearing.import.folder=/home/clearing/Calypso/clearing
+
+# CustomGetPackages Clearing extension mechanism (HD 90079, HD118682)
+#
+# Clearing provides a CustomGetPackages implementation that is able to
+# to read from this file and add the packages defined in the
+# clearing.custom.packages property:
+#
+#  - If the com.calypso.clearing package is present in the list of
+#    packages, its position in such list is respected. E.g
+#      clearing.custom.packages=com.calypso.clearing,my.custom.package
+#    will result in a lookup order of
+#      com.calypso,calypsox,com.calypso.clearing,my.custom.package
+#    and a inverse lookup order of
+#      my.custom.package,com.calypso.clearing,calypsox,com.calypso
+#
+#  - If the com.calypso.clearing package is NOT present in the list,
+#    it will be added at the end of it. E.g.
+#      clearing.custom.packages=my.custom.package
+#    will result in a lookup order of
+#      com.calypso,calypsox,my.custom.package,com.calypso.clearing
+#    and a inverse lookup order of
+#      com.calypso.clearing,my.custom.package,calypsox,com.calypso
+# 
+# clearing.custom.packages=pkg1,pkg2,...,pkgN
+
+# LCH Member Firm Id suffix
+#
+# LCH uses different paths for members, depending of they're on the
+# test or production environments. This property will be added to the
+# firm id, if defined, when composing the report paths
+#
+# clearing.import.lchFirmIdPathSuffix=(mbr)
+
+# LCH SwapClear Folder Suffix
+# 
+# The value of this property will be added to the SwapClear folder, if
+# defined. E.g. if valued ' Member Test Refresh', the path
+#
+#  /<mnemonic>/SwapClear/...
+# 
+# will be transformed to
+#
+#  /<mnemonic>/SwapClear Member Test Refresh/...
+#
+# Note the escaped space before the value.
+#
+# clearing.import.lch.swapClearFolderSuffix=\ Member Test Refresh
+
+# CME UAT New Release suffix
+#
+# If defined, the value of this property will be prepended to the
+# .csv or .xml suffixes of all CME reports
+#
+# clearing.import.cme.UATNRSuffix=.nr
+
+# Global SFTP connection timeout
+# 
+# Connection timeout, in milliseconds, for all configurations
+# that use SFTP to connect to the server
+# 
+# clearing.import.sftp.connectionTimeout=120000
+
+# EUREX System prefix
+#
+# Defines from which EUREX system the EOD files comes from.
+# Current known values are
+#   84 : Production
+#   85 : Simulation
+#
+# Default value is 84
+#
+# clearing.import.eurex.system=84

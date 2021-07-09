@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+		<row cat="SWIFT MX COLR">
+			<column name="name">tradeKeyword</column>
+			<column name="value">InterAccountRelatedTradeID</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CollateralTransfer</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LCHCollateralProposalResponseType</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LCHCollateralProposalRejectionReason</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LCHCollateralProposalRejectionInformation</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">domainName</column>
+			<column name="value">keyword.CollateralTransfer</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">keyword.CollateralTransfer</column>
+			<column name="value">true</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">keyword.CollateralTransfer</column>
+			<column name="value">false</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CollateralSubstitution</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">domainName</column>
+			<column name="value">keyword.CollateralSubstitution</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">keyword.CollateralSubstitution</column>
+			<column name="value">true</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">keyword.CollateralSubstitution</column>
+			<column name="value">false</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">MsgAttributes</column>
+			<column name="value">LCHCollateralProposalResponseType</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">MsgAttributes</column>
+			<column name="value">LCHCollateralProposalRejectionReason</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">MsgAttributes</column>
+			<column name="value">LCHCollateralProposalRejectionInformation</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">domainName</column>
+			<column name="value">MsgAttributes.LCHCollateralProposalResponseType</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">MsgAttributes.LCHCollateralProposalResponseType</column>
+			<column name="value">PACK</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">MsgAttributes.LCHCollateralProposalResponseType</column>
+			<column name="value">REJT</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">LCHCollateralProposalResponse</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">MX.Templates</column>
+			<column name="value">CollateralProposal.selector</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">MX.Templates</column>
+			<column name="value">colr.007.001</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">MX.Templates</column>
+			<column name="value">INCOMING_COLR008</column>
+		</row>
+		<row cat="SWIFT MX COLR">
+			<column name="name">MX.Versions</column>
+			<column name="value">colr.007.001</column>
+			<column name="description">03</column>
+		</row>
+<!--
+		<row cat="SWIFT MX COLR Demo">
+			<column name="name">messageType</column>
+			<column name="value">COLR_PROPOSAL</column>
+		</row>
+		<row cat="SWIFT MX COLR Demo">
+			<column name="name">messageType</column>
+			<column name="value">COLR_INCOMING</column>
+		</row>
+		<row cat="SWIFT MX COLR Demo">
+			<column name="name">incomingType</column>
+			<column name="value">COLR008</column>
+			<column name="description">COLR_INCOMING</column>
+		</row>
+-->
+	</table>
+<!--
+	<table name="advice_config" xmlns="">
+		<row cat="SWIFT MX COLR Demo">
+			<column name="advice_config_id">200220301</column>
+			<column name="po_id">0</column>
+			<column name="event_type">CANCELED_TRADE</column>
+			<column name="product_type">MarginCall</column>
+			<column name="message_type">COLR_PROPOSAL</column>
+			<column name="send_contact_type">Default</column>
+			<column name="receiver_role">Agent</column>
+			<column name="rec_contact_type">Default</column>
+			<column name="default_language">English</column>
+			<column name="address_method">SWIFT</column>
+			<column name="gateway">MX</column>
+			<column name="always_send">0</column>
+			<column name="template_name">CollateralProposal.selector</column>
+			<column name="matching">0</column>
+			<column name="inactive">0</column>
+			<column name="format_type">MX</column>
+			<column name="sd_filter">NONE</column>
+			<column name="receiver_id">0</column>
+		</row>
+		<row cat="SWIFT MX COLR Demo">
+			<column name="advice_config_id">200220302</column>
+			<column name="po_id">0</column>
+			<column name="event_type">VERIFIED_TRADE</column>
+			<column name="product_type">MarginCall</column>
+			<column name="message_type">COLR_PROPOSAL</column>
+			<column name="send_contact_type">Default</column>
+			<column name="receiver_role">Agent</column>
+			<column name="rec_contact_type">Default</column>
+			<column name="default_language">English</column>
+			<column name="address_method">SWIFT</column>
+			<column name="gateway">MX</column>
+			<column name="always_send">0</column>
+			<column name="template_name">CollateralProposal.selector</column>
+			<column name="matching">0</column>
+			<column name="inactive">0</column>
+			<column name="format_type">MX</column>
+			<column name="sd_filter">NONE</column>
+			<column name="receiver_id">0</column>
+		</row>
+	</table>
+-->
+</database>

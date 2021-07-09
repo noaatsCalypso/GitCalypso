@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 605: Precious Metal Notice to Receive -->
+<SwiftMsgDef>
+    <Name>MT605</Name>
+    <ModeSelectionList>
+        <ModeSelection qualifier="NEW" />
+        <ModeSelection qualifier="AMEND" />
+        <ModeSelection qualifier="CANCEL" />
+    </ModeSelectionList>
+    <SwiftSequence name="A:General Information" modes="MMM">
+        <SwiftField name="Transaction Reference Number" tag=":20:" format="16x" value="GROUP_ID" modes="MMM" />
+        <SwiftField name="Identification of the Metal and the Metal Account" tag=":26C:" format="[3!a]/15x/5!a4!a[4x][//8x]" value="METAL" modes="MMM" />
+        <SwiftField name="Further Account Identification" tag=":25:" format="35x" value="ACCOUNT_INFO" modes="OOO" />
+        <SwiftField name="Value Date" tag=":30:" format="6!n" value="TRANSFER_VALUEDATE" modes="MMM" />
+        <SwiftField name="Sender to Receiver Information" tag=":72:" format="6*35x" value="ADDITIONAL_INFO" modes="OOO" />
+    </SwiftSequence>
+    <SwiftSequence name="B:Payment Instructions" iterator="MessageGroupIterator" modes="MMM">
+        <SwiftField name="Related Reference" tag=":21:" format="16x" value="TRANSFER_ID" modes="MMM" />
+        <SwiftField name="Further Identification" tag=":23:" format="16x" value="FURTHER_IDENTIFICATION" modes="MMM" />
+        <SwiftField name="Certificate Number(s) and/or Bar Number(s)" tag=":26D:" format="30*65x" value="CERTIFICATE_NUM" modes="OOO" />
+        <SwiftField name="Quantity of the Metal" tag=":32F:" format="3!a15d" value="QUANTITY" modes="MMM" />
+	<SwiftField name="Instructing Party" tag=":82a:" value="SENDER_OF_METAL" modes="---" hasValue="LEDifferentFromSender">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="B" format="[[/1!a][/34x]\n]35x" />
+		    <SwiftFieldOption letter="D" format="[/1!a][/34x]4*35x" />
+	</SwiftField>
+        <SwiftField name="Deliverer of the Metal" tag=":87a:" value="XFER_DELIVERER_OF_METAL" modes="MMM">
+		<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		<SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+		<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+	</SwiftField>
+        <SwiftField name="Beneficiary of the Metal" tag=":88a:" value="XFER_BENEFICIARY_OF_METAL" modes="OOO">
+		<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		<SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+		<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+	</SwiftField>
+        <SwiftField name="Sender to Receiver Information" tag=":72:" format="6*35x" value="UNDERLYING_INFO" modes="OOO" />
+    </SwiftSequence>
+</SwiftMsgDef>

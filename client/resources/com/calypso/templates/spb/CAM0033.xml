@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+    <contents>
+        <element name="CAM0033" hideifempty="true">
+            <contents>
+                <element name="CodMsg">
+                    <contents>
+                        <text>
+                            <value>CAM0033</value>
+                        </text>
+                    </contents>
+                </element>
+                <element name="NumCtrlIF">
+                    <contents>
+                        <report>
+                            <column>MESSAGE_ID</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJBaseIF">
+                    <contents>
+                        <report>
+                            <column>FXCNPJBaseIF</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="RegOpCamlVincte">
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.BCBLinkedID</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="RegOpCamlVincd">
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.RegOpCaml</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodMotvVinc">
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.BCBReasonCode</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtMovto">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>TODAY</column>
+                        </report>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

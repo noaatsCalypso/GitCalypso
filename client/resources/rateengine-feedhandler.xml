@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:broker="http://activemq.apache.org/schema/core"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd">
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean >
+    
+	<bean id="jmsConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="${RATE_ENGINE_LLMEVENTSERVERURL:${CALYPSO_TRANSIENT_MESSAGING_SERVER_URL}}" />
+	</bean>
+
+    <bean id="selectorstr" class="java.lang.String">
+        <constructor-arg value="INSTRUMENT_ID" />
+    </bean>
+      
+	<!-- ActiveMQ destination to use by default -->
+    <bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory"
+        init-method="start" destroy-method="stop">
+        <property name="maxConnections" value="8" />
+        <property name="connectionFactory" ref="jmsConnectionFactory" />
+    </bean>
+	<bean id="destination" class="org.apache.activemq.command.ActiveMQTopic">
+		<constructor-arg value="rateengine.${retopic}" />
+	</bean>
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate" >
+		<property name="connectionFactory" ref="pooledConnectionFactory" />
+		<property name="defaultDestination" ref="destination" />
+    </bean>
+	<bean id="rateEngineLoggingDestination" class="org.apache.activemq.command.ActiveMQTopic">
+		<constructor-arg value="rateengine.${retopic}_monitoring" />
+	</bean>
+	<bean id="jmsTemplateForRateEngineLogging" class="org.springframework.jms.core.JmsTemplate" >
+		<property name="connectionFactory" ref="pooledConnectionFactory" />
+		<property name="defaultDestination" ref="rateEngineLoggingDestination" />
+    </bean>
+
+</beans>

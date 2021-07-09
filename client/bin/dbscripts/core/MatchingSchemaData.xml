@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="calypso_seed" xmlns="">
+        <row cat="Required">
+            <column name="last_id">1000</column>
+            <column name="seed_name">alias</column>
+            <column name="seed_alloc_size">100</column>
+        </row>
+        <row cat="Required">
+            <column name="last_id">0</column>
+            <column name="seed_name">MatchingEligibilityCutOff</column>
+            <column name="seed_alloc_size">100</column>
+        </row>
+    </table>
+    <table name="domain_values" xmlns="">
+        <row cat="Required">
+            <column name="name">ProcessStatusCustomizer</column>
+            <column name="value">Matching</column>
+            <column name="description">tk.report.MatchingProcessStatusCustomizer</column>
+        </row>
+        <row cat="Required">
+	    <column name="name">scheduledTask</column>
+            <column name="value">MATCHING</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+	    <column name="name">scheduledTask</column>
+            <column name="value">PURGE_MATCHING</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MainEntry.CustomEventSubscription</column>
+            <column name="value">PSEventMatchable</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MainEntry.Startup</column>
+            <column name="value">Matching</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">workflowRuleMessage</column>
+            <column name="value">CreateChaser</column>
+            <column name="description"></column>
+        </row>
+		<row cat="Required">
+            <column name="name">sdFilterCriterion.Factory</column>
+            <column name="value">Matchable</column>
+            <column name="description">build Matchable Static Data Filter criteria</column>
+       </row> 
+        <row cat="Required">
+            <column name="name">CustomBOTradeFrameTab</column>
+            <column name="value">Matching</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">CustomMessageViewerTab</column>
+            <column name="value">Matching</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">CustomTransferViewerTab</column>
+            <column name="value">Matching</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">CustomMessageViewerTab</column>
+            <column name="value">MatchingAudit</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">CustomTransferViewerTab</column>
+            <column name="value">MatchingAudit</column>
+            <column name="description"></column>
+        </row>
+       <row cat="Required">
+	    <column name="name">eventType</column>
+	    <column name="value">CHASER_MISMATCHED</column>
+	    <column name="description"></column>
+       </row>
+       <row cat="Required">
+	    <column name="name">eventType</column>
+	    <column name="value">CHASER_AUTO</column>
+	    <column name="description"></column>
+       </row>
+       <row cat="Required">
+            <column name="name">classAuditMode</column>
+            <column name="value">MatchingContext</column>
+            <column name="description"></column>
+       </row>
+       <row cat="Required">
+            <column name="name">classAuditMode</column>
+            <column name="value">MatchingAlias</column>
+            <column name="description"></column>
+       </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">ReportTypeUsingCalypsoPivotTable</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">ReportTypeUsingCalypsoPivotTable</column>
+            <column name="value">Matchable</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">MatchingContext.PartialMatch.ConfigName</column>
+            <column name="description">Partial Match Config Type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.PartialMatch.ConfigName</column>
+            <column name="value">BrokerOrder</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.PartialMatch.ConfigName</column>
+            <column name="value">CashSettlement</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">MatchingContext.EligibilityCutOff.ConfigName</column>
+            <column name="description">EligibilityCutOff Config Type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.EligibilityCutOff.ConfigName</column>
+            <column name="value">CashSettlement</column>
+            <column name="description"></column>
+        </row>
+
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">MatchingContext.MatchWithCreation.ConfigName</column>
+            <column name="description">Match With Creation Config Type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.MatchWithCreation.ConfigName</column>
+            <column name="value">SimpleTransfer</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.MatchWithCreation.ConfigName</column>
+            <column name="value">CashManagement</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">MatchingContext.Propagation.ConfigName</column>
+            <column name="description">Propagation Config Type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.Propagation.ConfigName</column>
+            <column name="value">Forecast</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.Propagation.ConfigName</column>
+            <column name="value">CashSettlement</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.Propagation.ConfigName</column>
+            <column name="value">UTI</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.Propagation.ConfigName</column>
+            <column name="value">BrokerSettlement</column>
+            <column name="description"></column>
+        </row>                        
+        <row cat="Required">
+            <column name="name">MatchingContext.Propagation.ConfigName</column>
+            <column name="value">CCPSettlement</column>
+            <column name="description"></column>
+        </row>        
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">MatchingContext.Investigation.ConfigName</column>
+            <column name="description">Investigation Config Type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.Investigation.ConfigName</column>
+            <column name="value">CashSettlement</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.Investigation.ConfigName</column>
+            <column name="value">Confirmation</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">MatchingContext.Extension.ConfigName</column>
+            <column name="description">Extension Config Type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.Extension.ConfigName</column>
+            <column name="value">AutoMatchOneToMany</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">MatchingAlias.Type</column>
+            <column name="description">list of Alias type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingAlias.Type</column>
+            <column name="value">String</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingAlias.Type</column>
+            <column name="value">Instruction</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">MatchingContext.Key.Aliasable</column>
+            <column name="description">List of Keys (type Other) which are eligible for aliasing</column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.Key.Aliasable</column>
+            <column name="value">Sender to Receiver Information</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">MatchingContext.Reference.Tolerance</column>
+            <column name="description">List of Tolerance for Reference Keys</column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.Reference.Tolerance</column>
+            <column name="value">IgnoreReceiptReference</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.Reference.Tolerance</column>
+            <column name="value">OptionalReference</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">Message.ChaserType</column>
+            <column name="description">list of Chaser type for Message</column>
+        </row>
+        <row cat="Required">
+            <column name="name">Message.ChaserType</column>
+            <column name="value">CHASER_AUTO</column>
+            <column name="description">Auto Chaser</column>
+        </row>
+        <row cat="Required">
+            <column name="name">Message.ChaserType</column>
+            <column name="value">CHASER_MISMATCHED</column>
+            <column name="description">Mismatched Chaser</column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">MatchingContext</column>
+            <column name="description">list of context's type</column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext</column>
+            <column name="value">Default</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext</column>
+            <column name="value">ThreeWayBroker</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext</column>
+            <column name="value">Dynamic</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">MatchingContext.HandlerName</column>
+            <column name="description">list of Handler's name</column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.HandlerName</column>
+            <column name="value">Default</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.HandlerName</column>
+            <column name="value">ThreeWayBroker</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.HandlerName</column>
+            <column name="value">Tracking</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.HandlerName</column>
+            <column name="value">Reconciliation</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">Matchable.Comments</column>
+            <column name="description">list of standard comments</column>
+        </row>
+        <row cat="Required">
+            <column name="name">Matchable.Comments</column>
+            <column name="value">Blind Match</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">Matchable.Comments</column>
+            <column name="value">Forced Match</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">Matchable.Comments</column>
+            <column name="value">Manual Match</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">MatchingContext.Calculator</column>
+            <column name="description">list of CutOff Date Calculator</column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.Calculator</column>
+            <column name="value">Default</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.Calculator</column>
+            <column name="value">HideIncoming</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.Calculator</column>
+            <column name="value">HideNonMatchable</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">MatchingContext.Priority</column>
+            <column name="description">list of Matching Context Priorities</column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.Priority</column>
+            <column name="value">0</column>
+            <column name="description">Low</column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.Priority</column>
+            <column name="value">1</column>
+            <column name="description">Normal</column>
+        </row>
+        <row cat="Required">
+            <column name="name">MatchingContext.Priority</column>
+            <column name="value">2</column>
+            <column name="description">High</column>
+        </row>
+        <row cat="Required">
+            <column name="name">engineName</column>
+            <column name="value">MatchableBuilderEngine</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">applicationName</column>
+            <column name="value">MatchableBuilderEngine</column>
+            <column name="description">MatchableBuilderEngine</column>
+        </row>
+        <row cat="Required">
+            <column name="name">engineName</column>
+            <column name="value">MatchingEngine</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">applicationName</column>
+            <column name="value">MatchingEngine</column>
+            <column name="description">MatchingEngine</column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventClass</column>
+            <column name="value">PSEventMatchable</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventFilter</column>
+            <column name="value">MatchableBuilderEventFilter</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventFilter</column>
+            <column name="value">MatchingEventFilter</column>
+            <column name="description">Filter out Message not eligible for any Matching Context Event Filter</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">AddModifyMatchingAlias</column>
+            <column name="description">Access permission to Add/Modify Matching Alias</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">AddModifyMatchingContext</column>
+            <column name="description">Access permission to Add/Modify Matching Context</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">RemoveMatchingAlias</column>
+            <column name="description">Access permission to Remove Matching Alias</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">RemoveMatchingContext</column>
+            <column name="description">Access permission to Remove Matching Context</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">Manual Match</column>
+            <column name="description">Access permission to Allow Manual Match in matching manager</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">Force Match</column>
+            <column name="description">Access permission to allow Force match in Matching manager</column>
+        </row>
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">Manual Match Autorization</column>
+            <column name="description">Access permission to allow to validate or reject a Match while in 4 eyes</column>        
+        </row>
+        <row cat="Required">
+            <column name="name">MessageAttributeCopier</column>
+            <column name="value">DefaultMatching</column>
+        </row>
+        <row cat="Required">
+            <column name="name">TradeKeywordCopier</column>
+            <column name="value">DefaultMatching</column>
+        </row>
+		<row cat="Required">
+            <column name="name">domainName</column>
+            <column name="value">chaseEventType</column>
+            <column name="description">Domain name used to define Chaser type allowed in the MatchableBuilderEngine</column>
+        </row>
+		<row cat="Required">
+            <column name="name">chaseEventType</column>
+            <column name="value">CHASE</column>
+            <column name="description">CHASE EventType</column>
+        </row>
+		<row cat="Required">
+            <column name="name">chaseEventType</column>
+            <column name="value">DK</column>
+            <column name="description">DK EventType</column>
+        </row>
+		<row cat="Required">
+            <column name="name">chaseEventType</column>
+            <column name="value">CHASEUTI</column>
+            <column name="description">CHASEUTI EventType</column>
+        </row>        
+    </table>
+    <table name="ps_event_config" xmlns="">
+        <row cat="Required">
+            <column name="event_config_name">Back-Office</column>
+            <column name="event_class">PSEventMessage</column>
+            <column name="engine_name">MatchableBuilderEngine</column>
+        </row>
+        <row cat="Required">
+            <column name="event_config_name">Back-Office</column>
+            <column name="event_class">PSEventProcessMessage</column>
+            <column name="engine_name">MatchableBuilderEngine</column>
+        </row>
+        <row cat="Required">
+            <column name="event_config_name">Back-Office</column>
+            <column name="event_class">PSEventProcessTransfer</column>
+            <column name="engine_name">MatchableBuilderEngine</column>
+        </row>
+        <row cat="Required">
+            <column name="event_config_name">Back-Office</column>
+            <column name="event_class">PSEventProcessTrade</column>
+            <column name="engine_name">MatchableBuilderEngine</column>
+        </row>
+        <row cat="Required">
+            <column name="event_config_name">Back-Office</column>
+            <column name="event_class">PSEventTrade</column>
+            <column name="engine_name">MatchableBuilderEngine</column>
+        </row>
+        <row cat="Required">
+            <column name="event_config_name">Back-Office</column>
+            <column name="event_class">PSEventTransfer</column>
+            <column name="engine_name">MatchableBuilderEngine</column>
+        </row>
+        <row cat="Required">
+            <column name="event_config_name">Back-Office</column>
+            <column name="event_class">PSEventMatchable</column>
+            <column name="engine_name">MatchingEngine</column>
+        </row>
+        <row cat="Required">
+            <column name="event_config_name">Back-Office</column>
+            <column name="event_class">PSEventDomainChange</column>
+            <column name="engine_name">MatchingEngine</column>
+        </row>
+    </table>
+    <table name="ps_event_filter" xmlns="">
+        <row cat="Required">
+            <column name="event_config_name">Back-Office</column>
+            <column name="engine_name">MatchableBuilderEngine</column>
+            <column name="event_filter">MatchableBuilderEventFilter</column>
+        </row>
+        <row cat="Required">
+            <column name="event_config_name">Back-Office</column>
+            <column name="engine_name">MatchingEngine</column>
+            <column name="event_filter">MatchingEventFilter</column>
+        </row>
+    </table>
+    <table name="calypso_cache" xmlns="">
+        <row cat="Required">
+            <column name="cache_limit">100000</column>
+            <column name="app_name">DefaultServer</column>
+            <column name="limit_name">MatchingContext</column>
+            <column name="expiration">0</column>
+            <column name="implementation">Calypso</column>
+            <column name="eviction">LFU</column>
+        </row>
+        <row cat="Required">
+            <column name="cache_limit">10000</column>
+            <column name="app_name">DefaultClient</column>
+            <column name="limit_name">Matchable</column>
+            <column name="expiration">0</column>
+            <column name="implementation">NonTransactional</column>
+            <column name="eviction">LRU</column>
+        </row>
+        <row cat="Required">
+            <column name="cache_limit">10000</column>
+            <column name="app_name">DefaultClient</column>
+            <column name="limit_name">MatchingContext</column>
+            <column name="expiration">0</column>
+            <column name="implementation">NonTransactional</column>
+            <column name="eviction">LRU</column>
+        </row>
+        <row cat="Required">
+            <column name="cache_limit">10000</column>
+            <column name="app_name">DefaultClient</column>
+            <column name="limit_name">MatchingAlias</column>
+            <column name="expiration">0</column>
+            <column name="implementation">NonTransactional</column>
+            <column name="eviction">LRU</column>
+        </row>
+    </table>
+   	<table name="engine_param" xmlns="">
+        <row cat="Required">
+            <column name="engine_name">MatchingEngine</column>
+            <column name="param_name">TIMEOUT_RESTART</column>
+            <column name="param_value">5</column>
+        </row>
+        <row cat="Required">
+            <column name="engine_name">MatchableBuilderEngine</column>
+            <column name="param_name">TIMEOUT_RESTART</column>
+            <column name="param_value">5</column>
+        </row>
+    </table>
+</database>
+

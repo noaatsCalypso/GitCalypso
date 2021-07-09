@@ -1,0 +1,3 @@
+<CalypsoAppender factoryClass="com.calypso.operations.dashboard.monitoring.appender.ElasticSearchIncomingRequestAppenderDelegateFactory" name="ElasticSearchIncomingRequest_APPENDER">
+<ThresholdFilter level="${sys:calypso.centralizedlogging.level:-ALL}" onMatch="ACCEPT" onMismatch="DENY"/>
+</CalypsoAppender>

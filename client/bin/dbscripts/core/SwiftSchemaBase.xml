@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+<table name="swift_message_mapping_config" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="version" nullable="false" scale="1" type="int"/>		
+		<column name="template" nullable="false" scale="64" type="string"/>
+		<column name="agent_id" nullable="false" scale="1" type="int"/>
+		<column name="po_id" nullable="false" scale="1" type="int"/>
+        <column name="book_id" nullable="false" scale="1" type="int"/>
+		<column name="cpty_id" nullable="false" scale="1" type="int"/>
+		<column name="product" nullable="false" scale="64" type="string"/>
+        <column name="sd_filter_list" nullable="true" scale="256" type="string"/>
+		<column name="party_a_id" nullable="true" scale="255" type="string"/>
+		<column name="party_a_acc" nullable="true" scale="255" type="string"/>
+		<column name="party_b_id" nullable="true" scale="255" type="string"/>
+		<column name="party_b_acc" nullable="true" scale="255" type="string"/>
+		<column name="eligibility_set" nullable="true" scale="255" type="string"/>
+		<index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+</database>

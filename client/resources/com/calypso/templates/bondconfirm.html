@@ -1,0 +1,114 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+
+
+<p class="indented">I am pleased to |MESSAGE_ACTION| our |PRODUCT_FAMILY| trade,
+traded |TRADE_DATE| and settling |SETTLE_DATE|. This trade carries our trade ID
+number |TRADE_ID| and the details are as follows:</p>
+
+<p class="smallfont">Trade details:</p>
+
+<table>
+ <tr>
+  <td width="30%">Our Trade Number:</td>
+  <td>|TRADE_ID|</td>
+ </tr>
+ <tr>
+  <td>Operation Type</td>
+  <td>|PRODUCT_TYPE|</td>
+ </tr>
+ <tr>
+  <td>Instrument Description</td>
+  <td>|PRODUCT_DESCRIPTION|</td>
+ </tr>
+ <tr>
+  <td>ISIN Code</td>
+  <td>|PRODUCT_ISINCODE|</td>
+ </tr>
+ <tr>
+  <td>Buyer</td>
+  <td>|TRADE_BUYER_NAME|</td>
+ </tr>
+ <tr>
+  <td>Seller</td>
+  <td>|TRADE_SELLER_NAME|</td>
+ </tr>
+ <tr>
+  <td>Trade Date</td>
+  <td>|TRADE_DATE|</td>
+ </tr>
+ <!--calypso>
+if(|ALTERNATE_DATE| == "NULL DATE") {
+ inline "<tr>
+  <td>Settlement Date</td>
+  <td>|SETTLE_DATE|</td>
+ </tr>";
+ }
+ else {
+ inline "<tr>
+  <td>Security Settlement Date</td>
+  <td>|SETTLE_DATE|</td>
+ </tr>
+ <tr>
+  <td>Cash Settlement Date</td>
+  <td>|ALTERNATE_DATE|</td>
+ </tr>";
+ }
+</calypso-->
+ <tr>
+  <td>Nominal</td>
+  <td>|PRODUCT_CURRENCY| |TRADE_NOMINAL|</td>
+ </tr>
+ <tr>
+  <td>Quantity</td>
+  <td>|TRADE_QUANTITY|</td>
+ </tr>
+ <tr>
+  <td>Negotiated Type</td>
+  <td>|TRADE_NEGOCIATEDPRICETYPE|</td>
+ </tr>
+ <tr>
+  <td>Negotiated Price</td>
+  <td>|TRADE_NEGOCIATEDPRICE|</td>
+ </tr>
+ <tr>
+  <td>Clean Price</td>
+  <td>|TRADE_PRICE|</td>
+ </tr>
+ <tr>
+  <td>Accrual Amount</td>
+  <td>|TRADE_ACCRUAL|</td>
+ </tr>
+ <tr>
+  <td>Total Amount </td>
+  <td>|TRADE_SETTLEMENT_AMOUNT|</td>
+ </tr>
+ <tr>
+  <td>Settlement Currency</td>
+  <td>|TRADE_SETTLECCY|</td>
+ </tr>
+</table>
+
+<br><br>
+
+<p class=smallfont>Settlement Instructions are as follows:</p>
+<!--calypso>
+iterator("TransferRules")
+    inline "<table  width='100%'>
+    <tr><th width='30%'>|SETTLEMENT_ACTION|</th><th width='68%'>&nbsp;</th></tr>
+    <tr><td>To:</td><td >|SETTLEMENT_TO|</td></tr>
+    <tr><td>|SETTLEMENT_ROUTING|</td><td>|SETTLEMENT_METHOD|</td></tr>
+    <tr><td>Favor of:</td><td>|SETTLEMENT_FAVOR_OF|</td></tr>
+    <tr><td>Account Number:</td><td>|SETTLEMENT_ACCOUNT_NUMBER|</td></tr>
+</table>";
+</calypso-->
+
+<p>Please refer to Trade ID |TRADE_ID| in any correspondence related to this trade</p>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

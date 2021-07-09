@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 101: Multiple Request For Transfer -->
+<SwiftMsgDef>
+	<Name>MT101</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Sender's Reference" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Customer Specified Reference" tag=":21R:" format="16x" value="CUSTOMER_REFERENCE" modes="OOO" condition = "isGroupedMessage()"/>
+		<SwiftField name="Message Index/Total" tag=":28D:" format="5n/5n" value="MESSAGE_INDEX" modes="MMM"/>
+		<SwiftField name="Ordering Customer" tag=":50a:" value="ORDERING_CUSTOMER" modes="+++" condition = "isPay()">
+			<SwiftFieldOption letter="G" format="[/34x\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="H" format="[/34x\n]4*35x" />
+			<SwiftFieldOption letter="F" format="5*35x" />
+		</SwiftField>
+		<SwiftField name="Ordering Customer" tag=":50a:" value="CPTY_BENEFICIARY" modes="+++" condition = "!isPay()">
+			<SwiftFieldOption letter="G" format="[/34x\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="H" format="[/34x\n]4*35x" />
+			<SwiftFieldOption letter="F" format="5*35x" />
+		</SwiftField>
+		<SwiftField name="Requested Execution Date" tag=":30:" format="6!n" value="VALUE_DATE" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="B:Transaction Details" modes="MMM" iterator="MessageGroup">
+		<SwiftField name="Transaction Reference" tag=":21:" format="16x" value="TRANSACTION_REFERENCE" modes="MMM"/>
+		<SwiftField name="Instruction Code" tag=":23E:" format="4!c[/30x]" value="INSTRUCTION_CODE" modes="OOO"/>
+		<SwiftField name="Instruction Code" tag=":23E:" format="4!c[/30x]" value="INSTRUCTION_CODE2" modes="OOO"/>
+		<SwiftField name="Instruction Code" tag=":23E:" format="4!c[/30x]" value="INSTRUCTION_CODE3" modes="OOO"/>
+		<SwiftField name="Instruction Code" tag=":23E:" format="4!c[/30x]" value="INSTRUCTION_CODE4" modes="OOO"/>		
+		<SwiftField name="Transaction Amount" tag=":32B:" format="3!a15d" value="CCY_AMOUNT" modes="MMM"/>
+		
+		<SwiftField name="Intermediary Institution" tag=":56a:" value="CPTY_INTERMEDIARY" modes="---" condition = "!isCoverMessageRequired() AND isPay()">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="C" format="/34x" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Intermediary Institution" tag=":56a:" value="PO_INTERMEDIARY" modes="---" condition = "!isCoverMessageRequired() AND !isPay()">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="C" format="/34x" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Account With Institution" tag=":57a:" value="CPTY_RECEIVING_AGENT" modes="---" condition = "isPay()">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+			<SwiftFieldOption letter="C" format="/34x" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Account With Institution" tag=":57a:" value="PO_RECEIVING_AGENT" modes="---" condition = "!isPay()">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+			<SwiftFieldOption letter="C" format="/34x" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Beneficiary Customer" tag=":59a:" value="CPTY_BENEFICIARY" modes="---" condition = "isPay()">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="F" format="5*35x" />
+			<SwiftFieldOption letter="" format="[/34x\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Beneficiary Customer" tag=":59a:" value="ORDERING_CUSTOMER" modes="---" condition = "!isPay()">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="F" format="5*35x" />
+			<SwiftFieldOption letter="" format="[/34x\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Remittance Information" tag=":70:" value="REMITTANCE_INFO" format="4*35x" modes="OOO"/>		
+		<SwiftField name="Details of Charges" tag=":71A:" value="DETAILS_CHARGES" format="3!a" modes="OOO"/>		
+	</SwiftSequence>
+</SwiftMsgDef>

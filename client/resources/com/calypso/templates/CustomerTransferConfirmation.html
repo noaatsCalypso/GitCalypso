@@ -1,0 +1,69 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+<p class="header2">Trade Information</p>
+<table width='100%'>
+ <tr>
+  <td width="30%">Processing Organization</td>
+  <td width='68%'>|TRADE_PROCESSING_ORGANIZATION|</td>
+ </tr>
+ <tr>
+  <td>Book</td>
+  <td>|TRADE_BOOK|</td>
+ </tr>
+ <tr>
+  <td>Trader</td>
+  <td>|TRADE_TRADER|</td>
+ </tr>
+ <tr>
+  <td>Input Date</td>
+  <td>|TRADE_ENTEREDDATE|</td>
+ </tr>
+ <tr>
+  <td>Trade Date</td>
+  <td>|TRADE_DATE|</td>
+ </tr>
+ <tr>
+  <td>Settle Date</td>
+  <td>|SETTLE_DATE|</td>
+ </tr>
+ <tr>
+  <td>Currency</td>
+  <td>|TRADE_CURRENCY|</td>
+ </tr>
+ <tr>
+  <td>Principal</td>
+  <td>|PRINCIPAL|</td>
+ </tr>
+ <tr>
+  <td>Details of Charges</td>
+  <td>|CHARGE_BURDEN|</td>
+ </tr>
+ <tr>
+  <td>Customer Account</td>
+  <td>|CUSTOMER_ACCOUNT|</td>
+ </tr>
+ <tr>
+  <td>Beneficiary</td>
+  <td>|BENEFICIARY|</td>
+ </tr>
+ <tr>
+  <td>Beneficiary SDI</td>
+  <td>|BENEFICIARY_SDI|</td>
+ </tr>
+</table>
+<!--calypso>
+if(|TRADE_CURRENCY| != |SETTLEMENT_CURRENCY|)
+include "SettleInfo.html";
+</calypso-->
+
+
+
+<br /><br />
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

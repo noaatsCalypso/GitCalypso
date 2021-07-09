@@ -1,0 +1,134 @@
+<!--calypso>
+if (|FXOPTION_TRIGGERTYPE| == "OT UP" || |FXOPTION_TRIGGERTYPE| == "OT DN" || |FXOPTION_TRIGGERTYPE| == "ABOVE" || |FXOPTION_TRIGGERTYPE| == "BELOW")
+   set FXOPTION_EVENTTYPE = "One-Touch";
+else if (|FXOPTION_TRIGGERTYPE| == "NT UP" || |FXOPTION_TRIGGERTYPE| == "NT DN")
+   set FXOPTION_EVENTTYPE = "No-Touch";
+else if (|FXOPTION_TRIGGERTYPE| == "DOT")
+   set FXOPTION_EVENTTYPE = "Double One-Touch";
+else if (|FXOPTION_TRIGGERTYPE| == "DNT")
+   set FXOPTION_EVENTTYPE = "Double No-Touch";
+</calypso-->
+
+<!--calypso>
+if (|FXOPTION_TRIGGERTYPE| == "OT UP" || |FXOPTION_TRIGGERTYPE| == "NT UP" || |FXOPTION_TRIGGERTYPE| == "ABOVE")
+   set FXOPTION_RATE_DIRECTION = "Greater than or equal to the Barrier Level";
+else if (|FXOPTION_TRIGGERTYPE| == "OT DN" || |FXOPTION_TRIGGERTYPE| == "NT DN" || |FXOPTION_TRIGGERTYPE| == "BELOW")
+   set FXOPTION_RATE_DIRECTION = "Less than or equal to the Barrier Level";
+</calypso-->
+
+
+<p>The terms of the one of the Transacion to which this Confirmation relates are as follows:</p>
+<br>
+<p><u>General Terms: </u></p>
+<table width='100%'>
+    <tr>
+        <td WIDTH="39%"><b>Trade Reference</b></td>
+        <td WIDTH="59%">|TRADE_ID|</td>
+    </tr>
+   <tr>
+        <td>Trade Date</td>
+        <td>|TRADE_DATE|</td>
+    </tr>
+    <tr>
+		<td>Buyer</td>
+        <td>|TRADE_BUYER_NAME|</td>
+    </tr>
+    <tr>
+        <td>Seller</td>
+        <td>|TRADE_SELLER_NAME|</td>
+    </tr>
+    <tr>
+        <td>Currency Option Style</td>
+        <td>|REPORT#Digital.Payout Type|  |FXOPTION_STYLE|</td>
+    </tr>
+    <tr>
+        <td>Digital Payout</td>
+        <td>|FXOPTION_DIGITALPAYOUT|</td>
+    </tr>
+	<tr>
+		<td>Expiration Date</td>
+		<td>|FXOPTION_EXPIRY_DATE|</td>
+	</tr>
+	<tr>
+		<td>Expiration Time</td>
+		<td>|FXOPTION_EXPIRY_TIMEZONE|</td>
+	</tr>
+<!--calypso>
+		if (|REPORT#Auto Exercise|=="false")
+		inline "
+		<tr>
+			<td>Automatic Exercise</td>
+			<td>Inapplicable</td>
+		</tr>
+		";
+		if (|REPORT#Auto Exercise|=="true")
+		inline "
+		<tr>
+			<td>Automatic Exercise</td>
+			<td>Applicable</td>
+		</tr>
+		";
+</calypso-->
+	<tr>
+		<td>Settlement</td>
+		<td>|REPORT#Settle Type|</td>
+	</tr>
+	<tr>
+		<td>Settlement Date</td>
+		<td>|FXOPTION_DELIVERY_DATE|</td>
+	</tr>
+	<tr>
+		<td>Settlement Rate Option</td>
+		<td>|FXOPTION_SETTLE_RATE_SOURCE|</td>
+	</tr>
+<!-- Premium details -->
+<!--calypso>
+if (|PREMIUM_CURRENCY|!= "None")
+    inline "
+	<tr>
+		<td>Premium</td>
+		<td>|PREMIUM_CURRENCY| |PREMIUM_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td>Premium Date</td>
+		<td>|PREMIUM_DATE|</td>
+	</tr>
+	";
+</calypso-->
+</table>
+
+<br>
+<p><u>Other terms and conditions</u></p>
+<table width='100%'>
+    <tr>
+        <td WIDTH="39%">Barrier Event</td>
+        <td WIDTH="59%">Applicable</td>
+    </tr>
+	<tr>
+        <td>Event Type</td>
+        <td>|FXOPTION_EVENTTYPE|  |FXOPTION_STYLE|</td>
+    </tr>
+	<tr>
+		<td>Spot Exchange Rate Direction</td>
+		<td>|FXOPTION_RATE_DIRECTION|</td>
+    </tr>
+   <tr>
+        <td>Barrier Level</td>
+        <td>|FXOPTION_TRIGGERVALUE|</td>
+   </tr>
+<!--calypso>
+if ((|REPORT#Digital.Dur Type| == "FULL") || (|REPORT#Digital.Dur Type| == "PARTIAL"))
+    inline "
+	<tr>
+        <td>Event Period Start Date</td>
+        <td>|FXOPTION_BARRIER_STARTDATE|</td>
+    </tr>
+    <tr>
+        <td>Event Period End Date</td>
+        <td>|FXOPTION_BARRIER_ENDDATE|</td>
+    </tr>
+	";
+</calypso-->
+</table>
+<hr>
+<br><br>

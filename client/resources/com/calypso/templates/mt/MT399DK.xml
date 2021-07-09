@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 399: Free Format Message used for DK purposes-->
+<SwiftMsgDef>
+    <Name>MT399</Name>
+    <ModeSelectionList>
+        <ModeSelection qualifier="NEW" />
+        <ModeSelection qualifier="AMEND" />
+        <ModeSelection qualifier="CANCEL" />
+    </ModeSelectionList>
+    <SwiftSequence name="A:General Information" modes="MMM">
+        <SwiftField name="Transaction Reference Number" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM" />
+        <SwiftField name="Narrative" tag=":79:" format="35*50x" include="DK" modes="MMM" />
+    </SwiftSequence>
+</SwiftMsgDef>

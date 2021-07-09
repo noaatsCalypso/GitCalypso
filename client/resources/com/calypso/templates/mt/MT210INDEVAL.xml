@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 210: Notice to Receive -->
+<SwiftMsgDef>
+    <Name>MT210</Name>
+    <ModeSelectionList>
+        <ModeSelection qualifier="NEW" />
+        <ModeSelection qualifier="AMEND" />
+        <ModeSelection qualifier="CANCEL" />
+    </ModeSelectionList>
+    <SwiftSequence name="A:General Information" modes="MMM">
+        <SwiftField name="Transaction Reference Number" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM" />
+        <SwiftField name="Account Identification" tag=":25:" format="35x" value="AGENT_ACCOUNT" modes="OOO" />
+        <SwiftField name="Value Date" tag=":30:" format="6!n" value="VALUE_DATE" modes="MMM" />
+        <SwiftField name="Related Reference" tag=":21:" format="16x" value="RELATED_REF" modes="MMM" />
+        <SwiftField name="Currency Code, Amount" tag=":32B:" format="3!a15d" value="CCY_AMOUNT" modes="MMM" />
+        <SwiftField name="Ordering Customer" tag=":50C:" value="CPTY_BENEFICIARY_NOACCOUNT" format="4!a2!a2!c[3!c]" condition="!isCptyBeneficiaryFinancial() AND hasSwiftCodeCptyBeneficiary() " modes="---" />
+        <SwiftField name="Ordering Customer" tag=":50:" value="CPTY_BENEFICIARY_NOACCOUNT" format="4*35x" condition="!isCptyBeneficiaryFinancial() AND !hasSwiftCodeCptyBeneficiary()" modes="---" >
+	   <SwiftFieldOption letter="F" format="5*35x" />
+	</SwiftField>
+        <SwiftField name="Ordering Institution" tag=":52a:" value="CPTY_BENEFICIARY_NOACCOUNT" condition="isCptyBeneficiaryFinancial()" modes="---" >
+	   <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	   <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+	</SwiftField>
+	 <SwiftField name="Intermediary" tag=":56a:" value="PO_INTERMEDIARY" modes="+++" condition = "hasPoIntermediary() AND hasPOIntermediaryIsNotCptyBeneficiaryInstitution()">
+	    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+	</SwiftField>
+        <SwiftField name="Intermediary" tag=":56a:" value="CPTY_INTERMEDIARY2" modes="+++" condition = "hasIntermediary2() AND !hasPoIntermediary() AND hasIntermediary2IsNotCptyBeneficiaryInstitution()">
+	    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+	</SwiftField>
+	 <SwiftField name="Intermediary" tag=":56a:" value="CPTY_INTERMEDIARY" modes="+++" condition = "hasIntermediary() AND !hasPoIntermediary() AND !hasIntermediary2()  AND hasIntermediaryIsNotCptyBeneficiaryInstitution()">
+	    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+	</SwiftField>
+	 <SwiftField name="Intermediary" tag=":56a:" value="CPTY_AGENT" modes="+++" condition = "!hasIntermediary() AND !hasPoIntermediary() AND hasCptyAgentIsNotCptyBeneficiaryInstitution()">
+	    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+	</SwiftField>
+    </SwiftSequence>
+</SwiftMsgDef>

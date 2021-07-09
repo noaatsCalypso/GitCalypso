@@ -1,0 +1,167 @@
+<database xmlns="http://www.calypso.com/schemer">
+
+    <!-- userprefs_preferences -->
+    <table name="userprefs_preferences" xmlns="">
+        <column name="id" scale="64" type="string"/>
+        <column name="version" scale="1" type="int"/>
+        <column name="tenant_id" scale="1" type="bigint"/>
+        <column name="creation_user" scale="255" type="string"/>
+        <column name="creation_date" scale="1" type="bigint"/>
+        <column name="creation_user_type" scale="255" type="string"/>
+        <column name="last_update_user" scale="255" type="string"/>
+        <column name="last_update_date" scale="1" type="bigint"/>
+        <column name="last_update_user_type" scale="255" type="string"/>
+        <column name="preference_type" scale="255" type="string"/>
+        <column name="preference_key" scale="255" type="string"/>
+        <column name="preference_value" type="text"/>
+        <column name="app" scale="255" type="string"/>
+        <column name="user_id" nullable="true" scale="255" type="string"/>
+        <column name="default_value" type="text"/>
+        <column name="regex" scale="255" type="string"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+
+
+    <!-- dashboard_config_layout -->
+    <table name="dashboard_config_layout" xmlns="">
+        <column name="id" scale="64" type="string"/>
+        <column name="version" scale="1" type="int"/>
+        <column name="tenant_id" scale="1" type="bigint"/>
+        <column name="creation_user" scale="255" type="string"/>
+        <column name="creation_date" scale="1" type="bigint"/>
+        <column name="creation_user_type" scale="255" type="string"/>
+        <column name="last_update_user" scale="255" type="string"/>
+        <column name="last_update_date" scale="1" type="bigint"/>
+        <column name="last_update_user_type" scale="255" type="string"/>
+        <column name="layout_owner" scale="255" type="string"/>
+        <column name="layout_type" scale="255" type="string"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+
+
+    <!-- dashboard_config_dashboard -->
+    <table name="dashboard_config_dashboard" xmlns="">
+        <column name="id" scale="64" type="string"/>
+        <column name="version" scale="1" type="int"/>
+        <column name="tenant_id" scale="1" type="bigint"/>
+        <column name="creation_user" scale="255" type="string"/>
+        <column name="creation_date" scale="1" type="bigint"/>
+        <column name="creation_user_type" scale="255" type="string"/>
+        <column name="last_update_user" scale="255" type="string"/>
+        <column name="last_update_date" scale="1" type="bigint"/>
+        <column name="last_update_user_type" scale="255" type="string"/>
+        <column name="description" scale="255" type="string" nullable="true" />
+        <column name="dashboard_name" scale="255" type="string"/>
+        <column name="dashboard_owner" scale="255" type="string"/>
+        <column name="is_shared" scale="1" type="int"/>
+        <column name="dashboard_type" scale="255" type="string"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+
+
+    <!-- dashboard_config_widget -->
+    <table name="dashboard_config_widget" xmlns="">
+        <column name="id" scale="64" type="string"/>
+        <column name="version" scale="1" type="int"/>
+        <column name="tenant_id" scale="1" type="bigint"/>
+        <column name="creation_user" scale="255" type="string"/>
+        <column name="creation_date" scale="1" type="bigint"/>
+        <column name="creation_user_type" scale="255" type="string"/>
+        <column name="last_update_user" scale="255" type="string"/>
+        <column name="last_update_date" scale="1" type="bigint"/>
+        <column name="last_update_user_type" scale="255" type="string"/>
+        <column name="component_name" scale="255" type="string"/>
+        <column name="dashboard_id" scale="64" type="string"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+
+
+    <!-- dashboard_config_widget_attr -->
+    <table name="dashboard_config_widget_attr" xmlns="">
+        <column name="id" scale="64" type="string"/>
+        <column name="version" scale="1" type="int"/>
+        <column name="tenant_id" scale="1" type="bigint"/>
+        <column name="creation_user" scale="255" type="string"/>
+        <column name="creation_date" scale="1" type="bigint"/>
+        <column name="creation_user_type" scale="255" type="string"/>
+        <column name="last_update_user" scale="255" type="string"/>
+        <column name="last_update_date" scale="1" type="bigint"/>
+        <column name="last_update_user_type" scale="255" type="string"/>
+        <column name="attribute_name" scale="255" type="string"/>
+        <column name="attribute_type" scale="255" type="string"/>
+        <column name="attribute_value" nullable="true" scale="255" type="string"/>
+        <column name="widget_id" scale="64" type="string"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+
+
+    <!-- dashboard_config_layout_dashboard -->
+    <table name="dashboard_config_layout_board" xmlns="">
+        <column name="layout_id" scale="64" type="string"/>
+        <column name="dashboard_id" scale="64" type="string"/>
+    </table>
+	
+    <!-- userprefs_template -->
+    <table name="userprefs_template" xmlns="">
+        <column name="id" scale="64" type="string"/>
+        <column name="version" scale="1" type="int"/>
+        <column name="tenant_id" scale="1" type="bigint"/>
+        <column name="creation_user" scale="255" type="string"/>
+        <column name="creation_date" scale="1" type="bigint"/>
+        <column name="creation_user_type" scale="255" type="string"/>
+        <column name="last_update_user" scale="255" type="string"/>
+        <column name="last_update_date" scale="1" type="bigint"/>
+        <column name="last_update_user_type" scale="255" type="string"/>
+        <column name="template_type" scale="255" type="string"/>
+        <column name="template_name" scale="255" type="string"/>
+        <column name="user_id" scale="255" type="string"/>
+        <column name="app" scale="255" type="string"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false" unique="true">
+	      <on>tenant_id</on>
+	      <on>template_type</on>
+	      <on>app</on>
+	      <on>user_id</on>
+	      <on>template_name</on>
+        </index>
+    </table>
+	
+	<!--userprefs_template_crit -->
+    <table name="userprefs_template_crit" xmlns="">
+        <column name="id" scale="64" type="string"/>
+        <column name="version" scale="1" type="int"/>
+        <column name="tenant_id" scale="1" type="bigint"/>
+        <column name="creation_user" scale="255" type="string"/>
+        <column name="creation_date" scale="1" type="bigint"/>
+        <column name="creation_user_type" scale="255" type="string"/>
+        <column name="last_update_user" scale="255" type="string"/>
+        <column name="last_update_date" scale="1" type="bigint"/>
+        <column name="last_update_user_type" scale="255" type="string"/>
+        <column name="criteria_value" type="text"/>
+        <column name="criteria_name" scale="255" type="string"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+	<!--userprefs_template_2_crit-->
+    <table name="userprefs_template_2_crit" xmlns="">
+        <column name="template_id" scale="255" type="string"/>
+        <column name="criteria_id" scale="255" type="string"/>
+        <index primary="false">
+            <on>template_id</on>
+        </index>
+    </table>
+	
+</database>

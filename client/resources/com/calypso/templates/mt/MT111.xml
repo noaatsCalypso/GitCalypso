@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 103: Single Customer Credit Transfer -->
+<SwiftMsgDef>
+	<Name>MT111</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Sender's Reference" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Cheque Number" tag=":21:" format="16x" value="TRADE_ID" modes="MMM"/>
+		<SwiftField name="Date of Issue" tag=":30:" format="6!n" value="VALUE_DATE" modes="MMM"/>
+		<SwiftField name="Amount" tag=":32B:" format="3!a15d" value="CCY_AMOUNT" modes="MMM"/>
+        <SwiftField name="Payer" tag=":50a:" value="ORDERING_CUSTOMER" modes="OOO">
+			<SwiftFieldOption letter="A" format="[/34x\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="F" format="5*35x" />
+			<SwiftFieldOption letter="K" format="[/34x\n]4*35x" />			
+		</SwiftField>
+		<SwiftField name="Payee" tag=":59a:" value="CPTY_BENEFICIARY" modes="OOO">
+			<SwiftFieldOption letter="F" format="5*35x" />
+			<SwiftFieldOption letter="" format="[/34x\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Queries" tag=":75:" format="6*35x" value="QUERIES" modes="OOO"/>
+	</SwiftSequence>		
+</SwiftMsgDef>	

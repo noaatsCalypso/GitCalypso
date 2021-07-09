@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="margin_regulator" xmlns="">
+        <column name="source" nullable="false" scale="120" type="string"/>
+        <column name="active_from" nullable="true" type="timestamp"/>
+        <column name="active_to" nullable="true" type="timestamp"/>
+        <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+        <column name="post_regulations" nullable="true" scale="100" type="string"/>
+        <column name="collect_regulations" nullable="true" scale="100" type="string"/>
+        <column name="post_currency" nullable="true" scale="100" type="string"/>
+        <column name="collect_currency" nullable="true" scale="100" type="string"/>
+        <index primary="false">
+            <on>margin_agreement_name</on>
+            <on>source</on>
+            <on>active_from</on>
+		</index>
+    </table>
+    <table name="margin_regulator_schedule" xmlns="">
+        <column name="source" nullable="false" scale="120" type="string"/>
+        <column name="active_from" nullable="true" type="timestamp"/>
+        <column name="active_to" nullable="true" type="timestamp"/>
+        <column name="margin_agreement_name" nullable="true" scale="250" type="string"/>
+        <column name="direction" nullable="true" scale="16" type="string"/>
+        <column name="regulator" nullable="true" scale="100" type="string"/>
+        <column name="isda_product" nullable="true" scale="200" type="string"/>
+        <index primary="false">
+            <on>margin_agreement_name</on>
+            <on>direction</on>
+            <on>source</on>
+		</index>
+    </table>
+    <table name="margin_local_simm_regulator" xmlns="">
+        <column name="source" nullable="false" scale="120" type="string"/>
+        <column name="active_from" nullable="true" type="timestamp"/>
+        <column name="active_to" nullable="true" type="timestamp"/>
+        <column name="margin_agreement_name" nullable="true" scale="250" type="string"/>
+        <column name="direction" nullable="true" scale="16" type="string"/>
+        <column name="regulator" nullable="true" scale="100" type="string"/>
+        <column name="isda_product" nullable="true" scale="200" type="string"/>
+        <index primary="false">
+            <on>margin_agreement_name</on>
+            <on>direction</on>
+            <on>source</on>
+		</index>
+    </table>
+    <table name="margin_regulator_multiplier" xmlns="">
+        <column name="source" nullable="false" scale="120" type="string"/>
+        <column name="active_from" nullable="true" type="timestamp"/>
+        <column name="active_to" nullable="true" type="timestamp"/>
+        <column name="margin_agreement_name" nullable="true" scale="250" type="string"/>
+        <column name="direction" nullable="true" scale="16" type="string"/>
+        <column name="regulator" nullable="true" scale="100" type="string"/>
+        <column name="product_class" nullable="true" scale="50" type="string"/>
+        <column name="multiplier" nullable="false" type="float"/>
+        <index primary="false">
+            <on>margin_agreement_name</on>
+            <on>direction</on>
+            <on>source</on>
+		</index>
+    </table>
+    <table name="margin_regulator_addon" xmlns="">
+        <column name="source" nullable="false" scale="120" type="string"/>
+        <column name="active_from" nullable="true" type="timestamp"/>
+        <column name="active_to" nullable="true" type="timestamp"/>
+        <column name="margin_agreement_name" nullable="true" scale="250" type="string"/>
+        <column name="direction" nullable="true" scale="16" type="string"/>
+        <column name="regulator" nullable="true" scale="100" type="string"/>
+        <column name="isda_product" nullable="true" scale="100" type="string"/>
+        <column name="factor" nullable="false" type="float"/>
+        <index primary="false">
+            <on>margin_agreement_name</on>
+            <on>direction</on>
+            <on>source</on>
+		</index>
+    </table>
+    <table name="margin_regulator_fixed_amount" xmlns="">
+        <column name="source" nullable="false" scale="120" type="string"/>
+        <column name="active_from" nullable="true" type="timestamp"/>
+        <column name="active_to" nullable="true" type="timestamp"/>
+        <column name="margin_agreement_name" nullable="true" scale="250" type="string"/>
+        <column name="direction" nullable="true" scale="16" type="string"/>
+        <column name="regulator" nullable="true" scale="100" type="string"/>
+        <column name="currency" nullable="true" scale="3" type="string"/>
+        <column name="fixed_amount" nullable="false" type="float"/>
+        <index primary="false">
+            <on>margin_agreement_name</on>
+            <on>direction</on>
+            <on>source</on>
+		</index>
+    </table>
+    <table name="margin_sensitivity" xmlns="">
+        <column name="version" nullable="false" scale="1" default="0" type="int"/>
+        <column name="execution_time" nullable="true" type="timestamp"/>
+        <column name="valuation_date" nullable="false" type="timestamp"/>
+        <column name="party_id" nullable="false" scale="60" type="string"/>
+        <column name="cp_id" nullable="false" scale="60" type="string"/>
+        <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+        <column name="im_model" nullable="false" scale="20" type="string"/>
+        <column name="risk_type" nullable="false" scale="20" type="string"/>
+        <column name="qualifier" nullable="true" scale="200" type="string"/>
+        <column name="bucket" nullable="true" scale="1" type="int"/>
+        <column name="label1" nullable="true" scale="20" type="string"/>
+        <column name="label2" nullable="true" scale="20" type="string"/>
+        <column name="amount" nullable="false" type="float"/>
+        <column name="amount_ccy" nullable="false" scale="3" type="string"/>
+        <column name="amount_base" nullable="false" type="float"/>
+        <column name="amount_base_positive" nullable="true" type="float"/>
+        <column name="amount_base_negative" nullable="true" type="float"/>
+        <column name="source" nullable="true" scale="60" type="string"/>
+        <column name="pricing_env" nullable="false" scale="120" type="string"/>
+        <column name="product_class" nullable="false" scale="50" type="string"/>
+        <column name="post_regulations" nullable="true" scale="100" type="string"/>
+        <column name="collect_regulations" nullable="true" scale="100" type="string"/>
+        <index primary="false" unique="true">
+            <on>valuation_date</on>
+			<on>margin_agreement_name</on>
+            <on>im_model</on>
+            <on>pricing_env</on>
+            <on>product_class</on>
+            <on>risk_type</on>
+            <on>qualifier</on>
+            <on>bucket</on>
+            <on>label1</on>
+            <on>label2</on>
+            <on>amount_ccy</on>
+            <on>source</on>
+			<on>post_regulations</on>
+			<on>collect_regulations</on>
+        </index>
+    </table>
+    <table name="margin_sensitivity_hist" xmlns="">
+        <column name="version" nullable="false" scale="1" default="0" type="int"/>
+        <column name="execution_time" nullable="true" type="timestamp"/>
+        <column name="valuation_date" nullable="false" type="timestamp"/>
+        <column name="party_id" nullable="false" scale="60" type="string"/>
+        <column name="cp_id" nullable="false" scale="60" type="string"/>
+        <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+        <column name="im_model" nullable="false" scale="20" type="string"/>
+        <column name="risk_type" nullable="false" scale="20" type="string"/>
+        <column name="qualifier" nullable="true" scale="200" type="string"/>
+        <column name="bucket" nullable="true" scale="1" type="int"/>
+        <column name="label1" nullable="true" scale="20" type="string"/>
+        <column name="label2" nullable="true" scale="20" type="string"/>
+        <column name="amount" nullable="false" type="float"/>
+        <column name="amount_ccy" nullable="false" scale="3" type="string"/>
+        <column name="amount_base" nullable="false" type="float"/>
+        <column name="amount_base_positive" nullable="true" type="float"/>
+        <column name="amount_base_negative" nullable="true" type="float"/>
+        <column name="source" nullable="true" scale="60" type="string"/>
+        <column name="pricing_env" nullable="false" scale="120" type="string"/>
+        <column name="product_class" nullable="false" scale="50" type="string"/>
+        <column name="post_regulations" nullable="true" scale="100" type="string"/>
+        <column name="collect_regulations" nullable="true" scale="100" type="string"/>
+        <index primary="false" unique="true">
+            <on>valuation_date</on>
+			<on>margin_agreement_name</on>
+            <on>im_model</on>
+            <on>pricing_env</on>
+            <on>product_class</on>
+            <on>risk_type</on>
+            <on>qualifier</on>
+            <on>bucket</on>
+            <on>label1</on>
+            <on>label2</on>
+            <on>amount_ccy</on>
+            <on>source</on>
+			<on>post_regulations</on>
+			<on>collect_regulations</on>
+        </index>
+    </table>
+    <table name="margin_trade_sensitivity" xmlns="">
+        <column name="execution_time" nullable="true" type="timestamp"/>
+        <column name="valuation_date" nullable="false" type="timestamp"/>
+        <column name="trade_id" nullable="false" scale="60" type="string"/>
+        <column name="trade_sub_id" nullable="true" scale="60" type="string"/>
+        <column name="uti" nullable="true" scale="60" type="string"/>
+        <column name="party_id" nullable="false" scale="60" type="string"/>
+        <column name="cp_id" nullable="false" scale="60" type="string"/>
+        <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+        <column name="im_model" nullable="false" scale="20" type="string"/>
+        <column name="risk_type" nullable="false" scale="20" type="string"/>
+        <column name="qualifier" nullable="true" scale="200" type="string"/>
+        <column name="bucket" nullable="true" scale="1" type="int"/>
+        <column name="label1" nullable="true" scale="20" type="string"/>
+        <column name="label2" nullable="true" scale="20" type="string"/>
+        <column name="amount" nullable="false" type="float"/>
+        <column name="amount_ccy" nullable="false" scale="3" type="string"/>
+        <column name="amount_base" nullable="false" type="float"/>
+        <column name="source" nullable="true" scale="60" type="string"/>
+        <column name="pricing_env" nullable="false" scale="120" type="string"/>
+        <column name="product_class" nullable="false" scale="50" type="string"/>
+        <column name="end_date" nullable="true" type="string" scale="20"/>
+        <column name="post_regulations" nullable="true" scale="100" type="string"/>
+        <column name="collect_regulations" nullable="true" scale="100" type="string"/>
+        <index primary="false" unique="true">
+			<on>trade_id</on>
+			<on>trade_sub_id</on>
+            <on>valuation_date</on>
+            <on>margin_agreement_name</on>
+            <on>im_model</on>
+            <on>pricing_env</on>
+            <on>product_class</on>
+            <on>risk_type</on>
+            <on>qualifier</on>
+            <on>bucket</on>
+            <on>label1</on>
+            <on>label2</on>
+			<on>amount_ccy</on>
+			<on>source</on>
+			<on>post_regulations</on>
+			<on>collect_regulations</on>
+		</index>
+    </table>
+    <table name="margin_trade_sensitivity_hist" xmlns="">
+        <column name="execution_time" nullable="true" type="timestamp"/>
+        <column name="valuation_date" nullable="false" type="timestamp"/>
+        <column name="trade_id" nullable="false" scale="60" type="string"/>
+        <column name="trade_sub_id" nullable="true" scale="60" type="string"/>
+        <column name="uti" nullable="true" scale="60" type="string"/>
+        <column name="party_id" nullable="false" scale="60" type="string"/>
+        <column name="cp_id" nullable="false" scale="60" type="string"/>
+        <column name="margin_agreement_name" nullable="false" scale="250" type="string"/>
+        <column name="im_model" nullable="false" scale="20" type="string"/>
+        <column name="risk_type" nullable="false" scale="20" type="string"/>
+        <column name="qualifier" nullable="true" scale="200" type="string"/>
+        <column name="bucket" nullable="true" scale="1" type="int"/>
+        <column name="label1" nullable="true" scale="20" type="string"/>
+        <column name="label2" nullable="true" scale="20" type="string"/>
+        <column name="amount" nullable="false" type="float"/>
+        <column name="amount_ccy" nullable="false" scale="3" type="string"/>
+        <column name="amount_base" nullable="false" type="float"/>
+        <column name="source" nullable="true" scale="60" type="string"/>
+        <column name="pricing_env" nullable="false" scale="120" type="string"/>
+        <column name="product_class" nullable="false" scale="50" type="string"/>
+        <column name="end_date" nullable="true" type="string" scale="20"/>
+        <column name="post_regulations" nullable="true" scale="100" type="string"/>
+        <column name="collect_regulations" nullable="true" scale="100" type="string"/>
+        <index primary="false" unique="true">
+			<on>trade_id</on>
+			<on>trade_sub_id</on>
+            <on>valuation_date</on>
+            <on>margin_agreement_name</on>
+            <on>im_model</on>
+            <on>pricing_env</on>
+            <on>product_class</on>
+            <on>risk_type</on>
+            <on>qualifier</on>
+            <on>bucket</on>
+            <on>label1</on>
+            <on>label2</on>
+			<on>amount_ccy</on>
+			<on>source</on>
+			<on>post_regulations</on>
+			<on>collect_regulations</on>
+		</index>
+    </table>
+</database>

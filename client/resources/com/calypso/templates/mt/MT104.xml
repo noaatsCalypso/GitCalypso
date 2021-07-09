@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 104: Direct Debit and Request for Debit Transfer -->
+<SwiftMsgDef>
+	<Name>MT104</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Sender's Reference" tag=":20:" format="16x" value="SENDER_REFERENCE" modes="MMM"/>
+		<SwiftField name="Customer Specified Reference" tag=":21R:" format="16x" value="CUSTOMER_SPECIFIED_REFERENCE" modes="OOO"/>
+		<SwiftField name="Instruction Code" tag=":23E:" format="4!c[/30x]" value="INSTRUCTION_CODE" modes="MMM"/>
+		<SwiftField name="Registration Reference" tag=":21E:" format="35x" value="REGISTRATION_REFERENCE" modes="OOO"/>
+		<SwiftField name="Requested Execution Date" tag=":30:" format="6!n" value="REQUESTED_EXECUTION_DATE" modes="MMM"/>
+		<SwiftField name="Sending Institution" tag=":51A:" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" value="SENDING_INSTITUTION" modes="OOO" />
+		<SwiftField name="Instructing Party" tag=":50a:" value="INSTRUCTING_PARTY" modes="OOO">
+			<SwiftFieldOption letter="C" format="4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="L" format="35x" />
+		</SwiftField>
+		<SwiftField name="Creditor" tag=":50a:" value="CREDITOR" modes="OOO">
+			<SwiftFieldOption letter="A" format="[/34x\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="K" format="[/34x\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Creditor's Bank" tag=":52a:" value="CREDITOR_BANK" modes="OOO">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="C" format="/34x" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Transaction Type Code" tag=":26T:" value="TYPE_CODE" format="3!c" modes="OOO"/>
+		<SwiftField name="Regulatory Reporting" tag=":77B:" value="REGULATORY_REPORTING" format="3*35x" modes="OOO"/>
+		<SwiftField name="Details of Charges" tag=":71A:" value="DETAILS_CHARGES" format="3!a" modes="MMM"/>
+		<SwiftField name="Sender to Receiver Information" tag=":72:" value="SENDER_TO_RECEIVER_INFO" format="6*35x" modes="OOO"/>
+	</SwiftSequence>
+	<SwiftSequence name="B:Transaction Details" modes="MMM">
+		<SwiftField name="Transaction Reference" tag=":21:" format="16x" value="TRANSACTION_REFERENCE" modes="MMM"/>
+		<SwiftField name="Instruction Code" tag=":23E:" format="4!c[/30x]" value="TRANSACTION_INSTRUCTION_CODE" modes="OOO"/>
+		<SwiftField name="Mandate Reference" tag=":21C:" format="35x" value="TRANSACTION_MANDATE_REFERENCE" modes="OOO"/>
+		<SwiftField name="Direct Debit Reference" tag=":21D:" format="35x" value="TRANSACTION_DIRECT_DEBIT_REFERENCE" modes="OOO"/>
+		<SwiftField name="Transaction Amount" tag=":32B:" format="3!a15d" value="TRANSACTION_AMOUNT" modes="MMM"/>
+		<SwiftField name="Instructing Party" tag=":50a:" value="TRANSACTION_INSTRUCTING_PARTY"  modes="OOO">
+			<SwiftFieldOption letter="C" format="4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="L" format="35x" />
+		</SwiftField>
+		<SwiftField name="Debtor's Bank" tag=":57a:" value="TRANSACTION_DEBTOR_BANK" modes="MMM">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="C" format="/34x" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Debtor" tag=":59a:" value="TRANSACTION_DEBTOR" modes="MMM">
+			<SwiftFieldOption letter="" format="[/34x\n]4*35x" />
+			<SwiftFieldOption letter="A" format="[/34x\n]4!a2!a2!c[3!c]" />
+		</SwiftField>
+		<SwiftField name="Remittance Information" tag=":70:" value="TRANSACTION_REMITTANCE_INFO" format="4*35x" modes="OOO"/>
+		<SwiftField name="Transaction Type Code" tag=":26T:" value="TRANSACTION_TYPE_CODE" format="3!c" modes="OOO"/>
+		<SwiftField name="Currency/Instructed Amount" tag=":33B:" format="3!a15d" value="TRANSACTION_CCY_INSTRUCTED_AMOUNT" modes="OOO"/>
+		<SwiftField name="Sender's Charges" tag="71F:" value="TRANSACTION_SENDER_CHARGES" format="3!a15d" modes="OOO"/>
+		<SwiftField name="Receiver's Charges" tag=":71G:" value="TRANSACTION_RECEIVER_CHARGES" format="3!a15d" modes="OOO"/>
+		<SwiftField name="Exchange Rate" tag=":36:" value="TRANSACTION_EXCHANGE_RATE" format="12d" modes="OOO"/>
+	</SwiftSequence>
+	<SwiftSequence name="C:Settlement Details" modes="OOO">
+		<SwiftField name="Currency and Settlement Amount" tag=":32B:" format="3!a15d" value="CURRENCY_SETTLEMENT_AMOUNT" modes="OOO"/>
+		<SwiftField name="Sum of Sender's Charges" tag=":71F:" value="SUM_OF_SENDER_CHARGES" format="3!a15d" modes="OOO"/>
+		<SwiftField name="Sum of Receiver's Charges" tag=":71G:" value="SUM_OF_RECEIVER_CHARGES" format="3!a15d" modes="OOO"/>
+		<SwiftField name="Sender's Correspondent" tag=":53a:" value="SENDER_CORRESPONDENT" modes="OOO">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="B" format="[[/1!a][/34x]\n][35x]" />
+		</SwiftField>
+	</SwiftSequence>
+</SwiftMsgDef>

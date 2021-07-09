@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">LIMIT_BATCH</column>
+			<column name="description">Runs a full inventory batch for Risk Control</column>
+		</row>
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">RISK_CONTROL_HOUSEKEEPING</column>
+			<column name="description">Performs housekeeping functions on Risk Control database tables</column>
+		</row>
+		<!-- For RiskControlRecovery -->
+		<row cat="Required">
+			<column name="name">eventType</column>
+			<column name="value">EX_RISK_CONTROL</column>
+			<column name="description">Risk Control exception event</column>
+		</row>
+		<row cat="Required">
+			<column name="name">exceptionType</column>
+			<column name="value">RISK_CONTROL</column>
+			<column name="description">Risk Control exception event</column>
+		</row>
+		<!-- End for RiskControlRecovery -->
+	</table>
+</database>

@@ -1,0 +1,273 @@
+New variables added 3/24/99
+"PROG" means program.
+  PROG_NAME
+  PROG_DATE
+  PROG_PROSPECTUS_NUMBER
+  PROG_FILE_NUMBER
+  PROG_RULE_NUMBER
+
+"ISS" means issuance.
+  ISS_FIXED_FLOAT  - this should be the string 'Fixed' when 
+    Issuance.getFixedRateB() returns TRUE; and 'Float' 
+    otherwise.
+  ISS_PRINCIPAL
+  ISS_CUSIP
+  ISS_FIXED_RATE
+  ISS_START_DATE
+  ISS_END_DATE
+  ISS_PAYMENT_FREQ
+  ISS_DATE_ROLL
+  ISS_HOLDER_OPTION  -- not sure what to do for this. A concatenation 
+                        of the option details?
+  ISS_ISSUER_OPTION  -- same for this.
+  TRUSTEE_FULL_NAME
+
+%%%%%%%%%%%%% Paul: Add to Issuance class & table %%%%%%%%%%%%%
+class: set/getCusip  DM: cusip_number
+
+%%%%%%%%%%%%% Paul: Add to Program class & table %%%%%%%%%%%%%%
+class: set/getSupplementDate   DM: supplement_date
+class: set/getProspectusNumber   DM: prospectus_number
+class: set/getFileNumber   DM: file_number
+class: set/getRuleNumber   DM: rule_number
+
+
+-------------------------------------------------------------------------
+---------------EVERYTHING BELOW THIS LINE IS OBSOLETE--------------------
+-------------------------------------------------------------------------
+
+Existing ones on 1/26/99
+
+PROCESSING_ORG_NAME <--- I assume this is ALWAYS the PROCESSING_ORG.  Is 
+   this assumption safe?
+PROCESSING_ORG_ROLE="$PROCESSING_ORG_ROLE$";
+PROCESSING_ORG_PHONE="$PROCESSING_ORG_PHONE$";
+PROCESSING_ORG_FAX="$PROCESSING_ORG_FAX$";
+DATE="$DATE$";
+COUNTERPARTY_NAME <---- I assume this is ALWAYS the COUNTERPARTY.  Is 
+   this assumption safe?
+COUNTERPARTY_ROLE="$COUNTERPARTY_ROLE$";
+TRADE_DATE="$TRADE_DATE$";
+SETTLE_DATE="$SETTLE_DATE$";
+TRADE_ID="$TRADE_ID$";
+
+
+I added these in my templates:
+
+----from the Product----------
+PRODUCT_FAMILY
+PRODUCT_TYPE
+
+----from the PAY SwapLeg----------
+
+PAY_PRINCIPAL_AMOUNT
+PAY_PRINCIPAL_CURRENCY
+PAY_START_DATE
+PAY_MATURITY_DATE
+PAY_FIXED_RATE
+PAY_RATE_INDEX
+PAY_SPREAD
+PAY_INDEX_FACTOR
+PAY_OPTION (not currently supported in SwapLeg)
+PAY_FIRST_RESET_RATE
+PAY_DAY_COUNT
+PAY_RESET_TIMING
+PAY_DETERM_TIMING (the timing for calculation of interest) This
+   does not map directly to a value we store.  Work to be done.
+PAY_AVG_METHOD This does not map directly to a value we store.  
+PAY_COMPOUND_FREQ
+PAY_COMPOUND_DATES This does not map directly to a value we store.  
+PAY_CPN_DATE_ROLL
+PAY_CPN_FREQ
+PAY_CPN_HOL
+PAY_CPN_OFFSET
+PAY_CPN_PAY_END_B
+PAY_CPN_STUB_RULE
+
+----------for the RECEIVE SwapLeg-------------
+Repeat all of the above PAY_'s for "REC_"
+REC_PRINCIPAL_AMOUNT
+
+------FIXED/FLOAT---------------------------------
+Hakim -- The following are for fixed/float swaps only and may 
+ safely be set to NULL for any other type of swap. I know these 
+ are redundant with other variables, but the layout of the
+ message requires that I must sometimes reference these based
+ on FIX/FLT instead of PAY/RECV.
+
+First, we need to special variables for LegalEntity names:
+FIX_PAYER_NAME
+FIX_PAYER_CODE
+FLT_PAYER_NAME
+FLT_PAYER_CODE
+
+Next, we need the standard SwapLet attributes:
+----------for the FIXED SwapLeg-------------
+FIX_PRINCIPAL_AMOUNT
+FIX_PRINCIPAL_CURRENCY
+FIX_START_DATE
+FIX_MATURITY_DATE
+FIX_FIXED_RATE
+FIX_DAY_COUNT
+FIX_CPN_DATE_ROLL
+FIX_CPN_FREQ
+FIX_CPN_HOL
+FIX_CPN_OFFSET
+FIX_CPN_PAY_END_B
+FIX_CPN_STUB_RULE
+----------for the FLOAT SwapLeg-------------
+FLT_PRINCIPAL_AMOUNT
+FLT_PRINCIPAL_CURRENCY
+FLT_START_DATE
+FLT_MATURITY_DATE
+FLT_RATE_INDEX
+FLT_SPREAD
+FLT_INDEX_FACTOR
+FLT_OPTION 
+FLT_FIRST_RESET_RATE
+FLT_DAY_COUNT
+FLT_RESET_TIMING
+FLT_DETERM_TIMING 
+FLT_AVG_METHOD 
+FLT_COMPOUND_FREQ
+FLT_COMPOUND_DATES
+FLT_CPN_DATE_ROLL
+FLT_CPN_FREQ
+FLT_CPN_HOL
+FLT_CPN_OFFSET
+FLT_CPN_PAY_END_B
+FLT_CPN_STUB_RULE
+
+
+
+--------------------For all deal types------------------------------
+---------From the LegalEntityContact object of the ProcessingOrg----
+----------------------and the CounterParty--------------------------
+
+PROCESSING_ORG_CODE
+PROCESSING_ORG_CITY_NAME
+PROCESSING_ORG_COMMENT
+PROCESSING_ORG_CONTACT_NAME
+PROCESSING_ORG_CONTACT_TYPE
+PROCESSING_ORG_COUNTRY
+PROCESSING_ORG_EMAIL_ADDR
+PROCESSING_ORG_FAX
+PROCESSING_ORG_ID
+PROCESSING_ORG_MAIL_ADDR
+PROCESSING_ORG_PHONE
+PROCESSING_ORG_STATE
+PROCESSING_ORG_SWIFT
+PROCESSING_ORG_TELEX
+PROCESSING_ORG_TITLE
+PROCESSING_ORG_ZIP_CODE
+
+COUNTERPARTY_CODE
+COUNTERPARTY_CITY_NAME
+COUNTERPARTY_COMMENT
+COUNTERPARTY_CONTACT_NAME
+COUNTERPARTY_CONTACT_TYPE
+COUNTERPARTY_COUNTRY
+COUNTERPARTY_EMAIL_ADDR
+COUNTERPARTY_FAX
+COUNTERPARTY_ID
+COUNTERPARTY_MAIL_ADDR
+COUNTERPARTY_PHONE
+COUNTERPARTY_STATE
+COUNTERPARTY_SWIFT
+COUNTERPARTY_TELEX
+COUNTERPARTY_TITLE
+COUNTERPARTY_ZIP_CODE
+
+OUR_AGT_CODE
+OUR_AGT_NAME
+OUR_AGT_ACCOUNT
+OUR_AGT_ABA
+from our agent's contact object:
+  OUR_AGT_CITY_NAME
+  OUR_AGT_COMMENT
+  OUR_AGT_CONTACT_NAME
+  OUR_AGT_CONTACT_TYPE
+  OUR_AGT_COUNTRY
+  OUR_AGT_EMAIL_ADDR
+  OUR_AGT_FAX
+  OUR_AGT_ID
+  OUR_AGT_MAIL_ADDR
+  OUR_AGT_PHONE
+  OUR_AGT_STATE
+  OUR_AGT_SWIFT
+  OUR_AGT_TELEX
+  OUR_AGT_TITLE
+  OUR_AGT_ZIP_CODE
+
+THEIR_AGT_CODE
+THEIR_AGT_NAME
+THEIR_AGT_ACCOUNT
+THEIR_AGT_ABA
+from their agent's contact object:
+  THEIR_AGT_CITY_NAME
+  THEIR_AGT_COMMENT
+  THEIR_AGT_CONTACT_NAME
+  THEIR_AGT_CONTACT_TYPE
+  THEIR_AGT_COUNTRY
+  THEIR_AGT_EMAIL_ADDR
+  THEIR_AGT_FAX
+  THEIR_AGT_ID
+  THEIR_AGT_MAIL_ADDR
+  THEIR_AGT_PHONE
+  THEIR_AGT_STATE
+  THEIR_AGT_SWIFT
+  THEIR_AGT_TELEX
+  THEIR_AGT_TITLE
+  THEIR_AGT_ZIP_CODE
+
+------
+Special fields for swaps:
+We may need to create some special summary variables if our 
+confirms have to match the Merrill ones precisely.  We would 
+need:
+<<<<REVIEW THIS -- ESP. How do we handle pay at BER_PER/END_PER?>>>>>>
+
+PAY_CPN_DATES_SUMMARY/REC_CPN_DATES_SUMMARY  -- a summary of 
+ the payment dates including: 
+  -dates if fixed in each year (e.g. "15 Feb of each year")
+    -or-
+   offset in days from period start or end date
+  -payment frequency
+  -first payment date
+  -last payment date
+  -payment date roll
+
+PAY_RESET_DATES_SUMMARY/REC_RESET_DATES_SUMMARY  -- a summary of 
+ the reset dates including: 
+  -reset timing
+  -dates if fixed in each year (e.g. "15 Feb of each year")
+    -or-
+   offset in days from period begin or end date
+  -reset frequency
+  -first reset date
+  -last reset date
+  -reset date roll
+
+PAY_DETERM_DATES_SUMMARY/REC_DETERM_DATES_SUMMARY  -- a summary of 
+ the determination dates including: 
+  -dates if fixed in each year (e.g. "15 Feb of each year")
+    -or-
+   offset in days from payment date
+  -reset frequency
+  -first reset date
+  -last reset date
+  -reset date roll
+
+--------------
+USD-TBILL-H.15: provided however that the Floating Rate, inclusive of Spread, applicable to a Reset Date shall not be less than 3.00% and shall not exceed 7.25%.
+
+LA_AGREEMENT_DATE
+LA_STATUS
+LA_REFERENCE_NUMBER
+LEGAL_AGREEMENT_TYPE
+LA_SPECIAL_CLAUSE
+LA_<Any Additional Field from LegalAgreement>
+
+LE_<Any Legal Entity Attribute>
+BOOK_<Any Book Attribute>
+SDI_<Any SDI Attribute>

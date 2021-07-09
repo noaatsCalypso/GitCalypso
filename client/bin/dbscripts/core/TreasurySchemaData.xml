@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+	 	<row cat="Required">
+            <column name="name">productType</column>
+            <column name="value">FTPProduct</column>
+            <column name="description">Treasury Fund Transfer Pricing Product type</column>
+        </row>
+	 	<row cat="Required">
+            <column name="name">FTPProduct.subType</column>
+            <column name="value">Bond</column>
+            <column name="description">Treasury FTP Product sub type for Bond</column>
+        </row>
+	 	<row cat="Required">
+            <column name="name">FTPProduct.subType</column>
+            <column name="value">StructuredFlows</column>
+            <column name="description">Treasury FTP Product sub type for StructuredFlows</column>
+        </row>
+	 	<row cat="Required">
+            <column name="name">FTPProduct.extendedType</column>
+            <column name="value">COLL_LIQUIDITY_PREMIUM</column>
+            <column name="description">Treasury FTP COLL_LIQUIDITY_PREMIUM cost type from FtpCostComponentNames domain values</column>
+        </row>
+	 	<row cat="Required">
+            <column name="name">FTPProduct.extendedType</column>
+            <column name="value">LIQUIDITY_PREMIUM</column>
+            <column name="description">Treasury FTP LIQUIDITY_PREMIUM cost type from FtpCostComponentNames domain values</column>
+        </row>
+	 	<row cat="Required">
+            <column name="name">FTPProduct.extendedType</column>
+            <column name="value">BASIS_COST</column>
+            <column name="description">Treasury FTP BASIS_COST cost type from FtpCostComponentNames domain values</column>
+        </row>
+	 	<row cat="Required">
+            <column name="name">FTPProduct.extendedType</column>
+            <column name="value">SWAP_COST</column>
+            <column name="description">Treasury FTP SWAP_COST cost type from FtpCostComponentNames domain values</column>
+        </row>
+		<row cat="domain">
+			<column name="name">productTypeReportStyle</column>
+			<column name="value">FTPProduct</column>
+			<column name="description">Treasury FTPProduct ReportStyle</column>
+			</row>
+		<row cat="startup">
+			<column name="name">domainName</column>
+			<column name="value">FTPProduct.Pricer</column>
+			<column name="description">Treasury Pricers for FTPProduct</column>
+		</row>
+		<row cat="startup">
+			<column name="name">FTPProduct.Pricer</column>
+			<column name="value">PricerFTPProduct</column>
+			<column name="description">Treasury Pricer for FTPProduct</column>
+		</row>
+		<row cat="startup">
+			<column name="name">FTPProduct.Pricer</column>
+			<column name="value">PricerFTPProductFilterTerminated</column>
+			<column name="description">Treasury Pricer for FTPProduct filtering terminated legs</column>
+		</row>
+	    <row cat="Required">
+            <column name="name">scheduledTask</column>
+            <column name="value">FTP_TRADE_GENERATION</column>
+            <column name="description">Treasury FTP Funding trades generation</column>
+        </row>
+        <row cat="Required">
+            <column name="name">tradeAction</column>
+            <column name="value">FTP_TRADE_CANCEL</column>
+            <column name="description">Action applied on trades processed and saved by the FTP engine</column>
+        </row>                    
+        <row cat="Required">
+            <column name="name">tradeAction</column>
+            <column name="value">FTP_TRADE_MATURE`</column>
+            <column name="description">Action applied on trades processed and saved by the FTP engine</column>
+        </row>                    
+        <row cat="Required">
+            <column name="name">tradeAction</column>
+            <column name="value">FTP_TRADE_UPDATE</column>
+            <column name="description">Action applied on trades processed and saved by the FTP engine</column>
+        </row>                    
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">FTP_TRADE_TYPE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">FTP_TRADE_ERROR</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">tradeKeyword</column>
+            <column name="value">FTP_TRADE_STATUS</column>
+            <column name="description"></column>
+        </row>
+        <row cat="Required">
+            <column name="name">eventFilter</column>
+            <column name="value">ProductEventFilter</column>
+            <column name="description">filter based on Engine name and product types/sub types</column>
+        </row>
+	</table>
+</database>

@@ -1,0 +1,2414 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+  <table name="domain_values" xmlns="">
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">domainName</column>
+      <column name="value">DTCCGTRFindNodeWithoutNamespace</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTRFindNodeWithoutNamespace</column>
+      <column name="value">IgnoreNamespace</column>
+      <column name="description">false</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">domainName</column>
+      <column name="value">DTCCGTR_Collateral_Version</column>
+      <column name="description">The DTCC collateral module version (to be include in message sent to DTCC)</column>
+    </row>	 
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">domainName</column>
+      <column name="value">DTCCGTR-ETD-RateIndex</column>
+      <column name="description">RateIndex values for ETD trade state report</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">EONIA</column>
+      <column name="description">EONA</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">EONIA SWAP</column>
+      <column name="description">EONS</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">EURIBOR</column>
+      <column name="description">EURI</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">FUTURE SWAP</column>
+      <column name="description">FUSW</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">SWAP</column>
+      <column name="description">SWAP</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">TREASURY</column>
+      <column name="description">TREA</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">WIBOR</column>
+      <column name="description">WIBO</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">TELBOR</column>
+      <column name="description">TLBO</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">PRIBOR</column>
+      <column name="description">PRBO</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">NIBOR</column>
+      <column name="description">NIBO</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">EURODOLLAR</column>
+      <column name="description">EUUS</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">MUNI AAA</column>
+      <column name="description">MAAA</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">PFANDBRIEFE</column>
+      <column name="description">PFAN</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">TIBOR</column>
+      <column name="description">TIBO</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">STIBOR</column>
+      <column name="description">STBO</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">LIBOR</column>
+      <column name="description">LIBO</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">LIBID</column>
+      <column name="description">LIBI</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">ISDAFIX</column>
+      <column name="description">ISDA</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">GCF REPO</column>
+      <column name="description">GCFR</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">EUROSWISS</column>
+      <column name="description">EUCH</column>
+    </row>
+
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">MOSPRIM</column>
+      <column name="description">MOSP</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">CIBOR</column>
+      <column name="description">CIBO</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">CDOR</column>
+      <column name="description">CDOR</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">BUBOR</column>
+      <column name="description">BUBO</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">JIBAR</column>
+      <column name="description">JIBA</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-ETD-RateIndex</column>
+      <column name="value">BBSW</column>
+      <column name="description">BBSW</column>
+    </row>	
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR_Collateral_Version</column>
+      <column name="value">Coll1.0</column>
+      <column name="description">The DTCC collateral module version (to be include in message sent to DTCC)</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">domainName</column>
+      <column name="value">DTCCGTR-USI-IssuerIdSource</column>
+      <column name="description">The preferred USI Issuer Id source</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-USI-IssuerIdSource</column>
+      <column name="value">Credit</column>
+      <column name="description">NFA</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-USI-IssuerIdSource</column>
+      <column name="value">InterestRate</column>
+      <column name="description">NFA</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR-USI-IssuerIdSource</column>
+      <column name="value">ForeignExchange</column>
+      <column name="description">NFA</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">domainName</column>
+      <column name="value">ExtensionTradeReportStyle</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">domainName</column>
+      <column name="value">REPORT.Types</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">REPORT.Types</column>
+      <column name="value">DTCCGTRValuation</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">REPORT.Types</column>
+      <column name="value">DTCCGTRCollateralLink</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">REPORT.Types</column>
+      <column name="value">DTCCGTRCollateralValue</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">REPORT.Types</column>
+      <column name="value">DTCCGTRCollateralAggregatedValue</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">domainName</column>
+      <column name="value">gateway</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">gateway</column>
+      <column name="value">DTCCGTRCredit</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">gateway</column>
+      <column name="value">DTCCGTRCreditNP</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">gateway</column>
+      <column name="value">DTCCGTRCommo</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">gateway</column>
+      <column name="value">DTCCGTRCommoNP</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">gateway</column>
+      <column name="value">DTCCGTREquity</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">gateway</column>
+      <column name="value">DTCCGTREquityNP</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">gateway</column>
+      <column name="value">DTCCGTRFX</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">gateway</column>
+      <column name="value">DTCCGTRFXNP</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">gateway</column>
+      <column name="value">DTCCGTRIntRate</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">gateway</column>
+      <column name="value">DTCCGTRIntRateNP</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">gateway</column>
+      <column name="value">DTCCGTRFile</column>
+      <column name="description">A file gateway for dumping DTCCGTR messages into file instead of sending them through MQ Series</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">gateway</column>
+      <column name="value">DTCCSFTP</column>
+      <column name="description">DTCCGTR file to send Via SFTP to DTCC</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">domainName</column>
+      <column name="value">SFTP_DTCC_MODE</column>
+      <column name="description">UAT or Production Server</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">scheduledTask</column>
+      <column name="value">DTCC_EOD_Report</column>
+      <column name="description">Generate EOD Bulk trade reporting</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">SFTP_DTCC_MODE</column>
+      <column name="value">UAT</column>
+      <column name="description">UAT for Uat and PROD for Production Server</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">domainName</column>
+      <column name="value">formatType</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">formatType</column>
+      <column name="value">DTCCGTR</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">xmlFormatType</column>
+      <column name="value">DTCCGTR</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">domainName</column>
+      <column name="value">messageType</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">messageType</column>
+      <column name="value">DTCCGTR_OUTGOING</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">messageType</column>
+      <column name="value">DTCCGTR_CHILDMESSAGE</column>
+      <column name="description">A system message used for storing children messages sent via SFTP in the ST DTCC_EOD_REPORT</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">messageType</column>
+      <column name="value">DTCCGTR_INCOMING</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">domainName</column>
+      <column name="value">DTCCGTR.Templates</column>
+      <column name="description"/>
+    </row>
+    
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">BondOption_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">BondOption_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">BondOption_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">BondOption_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">BondOption_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">BondOption_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">BondOption_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">BondOption_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">BondOption_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">BondOption_Termination_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">BondOption_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">BondOption_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">BondOption_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultSwap_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultSwap_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultSwap_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultSwap_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultSwap_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultSwap_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultSwap_Document.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultIndex_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultIndex_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultIndex_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultIndex_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultIndex_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultIndex_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexOption_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexOption_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexOption_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexOption_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexOption_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexOption_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexOption_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexOption_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexOption_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexOption_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexOption_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexOption_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthLoss_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthLoss_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthLoss_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthLoss_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthLoss_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthLoss_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthDefault_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthDefault_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthDefault_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthDefault_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthDefault_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthDefault_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexTranche_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexTranche_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexTranche_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexTranche_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexTranche_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexTranche_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSwap_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSwap_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSwap_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSwap_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSwap_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSwap_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSExotic_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSExotic_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSExotic_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSExotic_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSExotic_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSExotic_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">Swaption_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">Swaption_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">Swaption_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">Swaption_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">Swaption_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">Swaption_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FRA_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FRA_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FRA_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FRA_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FRA_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FRA_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CapFloor_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CapFloor_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CapFloor_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CapFloor_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CapFloor_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CapFloor_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_SingleLeg_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_SingleLeg_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_SingleLeg_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_SingleLeg_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_SingleLeg_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_SingleLeg_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_Termination_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_Termination_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_Termination_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_Termination_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_SingleLeg_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_SingleLeg_Termination_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_SingleLeg_Termination_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_SingleLeg_Termination_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_SingleLeg_Termination_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_Termination_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_Termination_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_Termination_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_Termination_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSExotic_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSwap_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">Swaption_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FRA_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CapFloor_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultIndex_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexTranche_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultSwap_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthLoss_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthDefault_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">Exit_nonpublicReport.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_Exercise_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_Exercise_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_Exercise_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_Exercise_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_Exercise_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_Exercise_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_Exercise_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_Exercise_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_Exercise_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_Exercise_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexTranche_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthLoss_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthLoss_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultIndex_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultSwap_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultIndex_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthDefault_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultSwap_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexTranche_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthDefault_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FRA_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSwap_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSwap_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CapFloor_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSExotic_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FRA_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">Swaption_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CapFloor_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSExotic_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">Swaption_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexTranche_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthLoss_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthDefault_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultIndex_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultSwap_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CapFloor_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FRA_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSExotic_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSwap_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">Swaption_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_SingleLeg_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultIndex_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthDefault_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultSwap_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthLoss_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexTranche_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">Swaption_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CapFloor_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FRA_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSwap_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSExotic_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_SingleLeg_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FX_Option_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FXO_Exotic_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthDefault_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultIndex_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSNthLoss_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CreditDefaultSwap_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CDSIndexTranche_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">Swaption_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">FRA_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSExotic_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">IRSwap_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">CapFloor_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_Amendment_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_Amendment_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_Exercise_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_Exercise_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_Termination_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_Termination_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_Termination_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_NovationRemaining_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityOption_NovationRemaining_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_Amendment_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_Amendment_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_Termination_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_Termination_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_Termination_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_NovationRemaining_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquityForward_NovationRemaining_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_Amendment_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_Amendment_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_NovationRemaining_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_NovationRemaining_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_Termination_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_Termination_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">EquitySwap_PSA_CFD_Termination_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_Termination_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_Termination_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_Termination_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_NovationRemaining_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_NovationRemaining_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_Amendment_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">VarianceSwap_Amendment_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_Amendment_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_Amendment_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_NovationRemaining_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_NovationRemaining_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_Termination_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_Termination_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">DividendSwap_Termination_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">ContingentCDS_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">ContingentCDS_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">ContingentCDS_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">ContingentCDS_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">ContingentCDS_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">ContingentCDS_NewTrade_RT_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">ContingentCDS_NewTrade_RT_PET_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">ContingentCDS_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">ContingentCDS_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">ContingentCDS_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">ContingentCDS_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">ContingentCDS_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">ContingentCDS_Termination_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">TRSBond_Amendment_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">TRSBond_Amendment_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">TRSBond_NewTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">TRSBond_NewTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">TRSBond_NewTrade_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">TRSBond_NewTrade_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">TRSBond_NovationFee_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">TRSBond_NovationTrade_Confirm.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">TRSBond_NovationTrade_PET.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">TRSBond_Termination_RT.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCCGTR.Templates</column>
+      <column name="value">TRSBond_Termination_Snapshot.xml</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">domainName</column>
+      <column name="value">workflowRuleMessage</column>
+      <column name="description">Workflow rules to check advice messages</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleMessage</column>
+      <column name="value">DTCCGTRIncomingReply</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleMessage</column>
+      <column name="value">DTCCGTRConfirmTrade</column>
+      <column name="description">added on the action which results to MATCHED status in CONFIRM message WF, sets the CONFIRMED keyword to Y</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleMessage</column>
+      <column name="value">DTCCGTRRemoveSubAction</column>
+      <column name="description">Reset the SUB_ACTION of the message to NONE (to avoid the cancellation of the old message previously sent)</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleMessage</column>
+      <column name="value">DTCCGTROnNewOutgoing</column>
+      <column name="description">To apply on any new DTCCGTR_OUTGOING messages</column>
+    </row>
+    <!--not implemented yet
+		<row cat="DTCC GTR Domain (required)">
+		<column name="name">workflowRuleMessage</column>
+		<column name="value">DTCCGTRUpdateDocument</column>
+		<column name="description"></column>
+		</row>
+		-->
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">domainName</column>
+      <column name="value">workflowRuleTrade</column>
+      <column name="description">Workflow rules to check trades</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetDFAReportingParty</column>
+      <column name="description">sets the ReportingParty keyword on the trade</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetReportingParty</column>
+      <column name="description">sets the ReportingParty keyword on the trade (deprecated)</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetDFANovationFeeReportingParty</column>
+      <column name="description">sets the NovationFeeReportingParty keyword on the trade</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetNovationFeeReportingParty</column>
+      <column name="description">sets the NovationFeeReportingParty keyword on the trade (deprecated)</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetUTI</column>
+      <column name="description">sets the UTI keywords on the trade</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetUTIPosition</column>
+      <column name="description">sets the Position UTI keywords on the trade for an ETD trade</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetAsicUTI</column>
+      <column name="description">sets the UTI keywords on the trade</column>
+    </row>
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetFcaUTI</column>
+      <column name="description">sets the FCA UTI keywords on the trade</column>
+    </row>    
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetUSI</column>
+      <column name="description">sets the USI keywords on the trade</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetCanadaUTI</column>
+      <column name="description">sets the Canada UTI keywords on the trade</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetHKMAUTI</column>
+      <column name="description">sets the HKMA UTI keywords on the trade</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetMasUTI</column>
+      <column name="description">sets the MAS UTI keywords on the trade</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetUniqueTradeIdentifiers</column>
+      <column name="description">sets all the appropriate USI/UTIs on the trade</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetUPI</column>
+      <column name="description">sets the UPI keywords on the trade</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetEmirUTIGeneratingParty</column>
+      <column name="description">sets the EMIR UTI Generating Party</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetFcaUTIGeneratingParty</column>
+      <column name="description">sets the FCA UTI Generating Party</column>
+    </row>    
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRCheckUTI</column>
+      <column name="description">Check the reporting attributes UTI/TradeId and UTI-ETDCpty/TradeId</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetEmirReportingRegime</column>
+      <column name="description">sets the EMIR reporting regime if not already set</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetFcaReportingRegime</column>
+      <column name="description">sets the FCA reporting regime if not already set</column>
+    </row>    
+	<row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetAsicUTIGeneratingParty</column>
+      <column name="description">sets the ASIC UTI Generating Party</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetAsicReportingRegime</column>
+      <column name="description">sets the ASIC reporting regime if not already set</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetCanadaReportingRegime</column>
+      <column name="description">sets the Canada reporting regime if not already set</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetMasReportingRegime</column>
+      <column name="description">sets the MAS reporting regime if not already set</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetHkmaReportingRegime</column>
+      <column name="description">sets the HKMA reporting regime if not already set</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetReportingRegimes</column>
+      <column name="description">sets relevant reporting regimes if not already set</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetSupervisorInformation</column>
+      <column name="description">sets relevant reporting regimes if not already set</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRSetNovationChildType</column>
+      <column name="description">sets the type of novations children trades</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRRetract</column>
+      <column name="description">Used to RETRACT from a TERMINATION, EXERCISE, EXPIRATION or CANCELATION</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTRCleanNovation</column>
+      <column name="description">Used to clean reporting information from a brand new novation trade</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">DTCCGTROnExiting</column>
+      <column name="description">Cleans messages of EXITING trades</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType</column>
+      <column name="value">Dodd-Frank/Rates/MarketRole</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType</column>
+      <column name="value">Dodd-Frank/Commodity/MarketRole</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType</column>
+      <column name="value">Dodd-Frank/Credit/MarketRole</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType</column>
+      <column name="value">Dodd-Frank/Equity/MarketRole</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType</column>
+      <column name="value">Dodd-Frank/FX/MarketRole</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType.Dodd-Frank/Rates/MarketRole</column>
+      <column name="value">SD</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType.Dodd-Frank/Rates/MarketRole</column>
+      <column name="value">MSP</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType.Dodd-Frank/Rates/MarketRole</column>
+      <column name="value">non-SD/MSP</column>
+      <column name="description"/>
+    </row>
+        <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType.Dodd-Frank/Commodity/MarketRole</column>
+      <column name="value">SD</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType.Dodd-Frank/Commodity/MarketRole</column>
+      <column name="value">MSP</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType.Dodd-Frank/Commodity/MarketRole</column>
+      <column name="value">non-SD/MSP</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType.Dodd-Frank/Credit/MarketRole</column>
+      <column name="value">SD</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType.Dodd-Frank/Credit/MarketRole</column>
+      <column name="value">MSP</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType.Dodd-Frank/Credit/MarketRole</column>
+      <column name="value">non-SD/MSP</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType.Dodd-Frank/Equity/MarketRole</column>
+      <column name="value">SD</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType.Dodd-Frank/Equity/MarketRole</column>
+      <column name="value">MSP</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType.Dodd-Frank/Equity/MarketRole</column>
+      <column name="value">non-SD/MSP</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType.Dodd-Frank/FX/MarketRole</column>
+      <column name="value">SD</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType.Dodd-Frank/FX/MarketRole</column>
+      <column name="value">MSP</column>
+      <column name="description"/>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">leAttributeType.Dodd-Frank/FX/MarketRole</column>
+      <column name="value">non-SD/MSP</column>
+      <column name="description"/>
+    </row>
+    <!-- Creating the  domain DTCCGTRRemoveSubActionMessageRule -->
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">domainName</column>
+      <column name="value">DTCCGTRRemoveSubActionMessageRule</column>
+      <column name="description">This domain lists the static data filters that must be validated for triggering the message rule DTCCGTRRemoveSubAction</column>
+    </row>
+    <!-- Creating the domain DTCC-GTR-TradeRetractableStatus -->
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">domainName</column>
+      <column name="value">DTCC-GTR-TradeRetractableStatus</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">CustomStaticDataFilter</column>
+      <column name="value">DTCCGTR</column>
+      <column name="description">Static Data Filter specific to DTCCGTR</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">CustomStaticDataFilter</column>
+      <column name="value">TradeRepository</column>
+      <column name="description">Static Data Filter specific to TradeRepository</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">domainName</column>
+      <column name="value">DTCC-GTR-RelevantJurisdictionsByPurpose</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCC-GTR-RelevantJurisdictionsByPurpose</column>
+      <column name="value">RT</column>
+      <column name="description">CFTC,CANADA,HKMA</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCC-GTR-RelevantJurisdictionsByPurpose</column>
+      <column name="value">PET</column>
+      <column name="description">CFTC,CANADA,MAS,HKMA</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCC-GTR-RelevantJurisdictionsByPurpose</column>
+      <column name="value">Confirm</column>
+      <column name="description">CFTC,CANADA,MAS,HKMA</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCC-GTR-RelevantJurisdictionsByPurpose</column>
+      <column name="value">Snapshot</column>
+      <column name="description">CFTC,ESMA,CANADA,MAS,HKMA,ASIC,FCA</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCC-GTR-RelevantJurisdictionsByPurpose</column>
+      <column name="value">RT-PET</column>
+      <column name="description">CFTC,CANADA,MAS,HKMA</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCC-GTR-RelevantJurisdictionsByPurpose</column>
+      <column name="value">PET-Confirm</column>
+      <column name="description">CFTC,CANADA,MAS,HKMA</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">DTCC-GTR-RelevantJurisdictionsByPurpose</column>
+      <column name="value">RT-PET-Confirm</column>
+      <column name="description">CFTC,CANADA,MAS,HKMA</column>
+    </row>
+    <!-- FxSwap generate multiple messages -->
+    <row cat="DTCC GTR Domain (required)">
+      <column name="name">multiMessageFormatType</column>
+      <column name="value">DTCCGTR</column>
+      <column name="description">DTCCGTR must generate multiple messages for FXSwap</column>
+    </row>
+	<!-- MIFID requirements -->
+	<row cat="DTCC required">
+      <column name="name">domainName</column>
+      <column name="value">OtcProductCode.Location</column>
+      <column name="description"></column>
+    </row>
+    <row cat="DTCC required">
+      <column name="name">OtcProductCode.Location</column>
+      <column name="value">ProductSecCode</column>
+      <column name="description">To identify whether otc codes are stored as tradekeywords or as part of product sec code .</column>
+    </row>
+  </table>
+  <table name="send_config" xmlns="">
+    <row cat="DTCC GTR Domain (required)">
+      <column name="send_config_id">950</column>
+      <column name="advice_status">VERIFIED</column>
+      <column name="product_type">ALL</column>
+      <column name="advice_type">DTCCGTR_OUTGOING</column>
+      <column name="address_method">DTCC</column>
+      <column name="gateway">DTCCGTRCredit</column>
+      <column name="send_b">1</column>
+      <column name="save_b">1</column>
+      <column name="publish_b">0</column>
+      <column name="by_gateway_b">1</column>
+      <column name="by_method_b">0</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="send_config_id">951</column>
+      <column name="advice_status">VERIFIED</column>
+      <column name="product_type">ALL</column>
+      <column name="advice_type">DTCCGTR_OUTGOING</column>
+      <column name="address_method">DTCC</column>
+      <column name="gateway">DTCCGTRCreditNP</column>
+      <column name="send_b">1</column>
+      <column name="save_b">1</column>
+      <column name="publish_b">0</column>
+      <column name="by_gateway_b">1</column>
+      <column name="by_method_b">0</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="send_config_id">952</column>
+      <column name="advice_status">VERIFIED</column>
+      <column name="product_type">ALL</column>
+      <column name="advice_type">DTCCGTR_OUTGOING</column>
+      <column name="address_method">DTCC</column>
+      <column name="gateway">DTCCGTRCommo</column>
+      <column name="send_b">1</column>
+      <column name="save_b">1</column>
+      <column name="publish_b">0</column>
+      <column name="by_gateway_b">1</column>
+      <column name="by_method_b">0</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="send_config_id">953</column>
+      <column name="advice_status">VERIFIED</column>
+      <column name="product_type">ALL</column>
+      <column name="advice_type">DTCCGTR_OUTGOING</column>
+      <column name="address_method">DTCC</column>
+      <column name="gateway">DTCCGTRCommoNP</column>
+      <column name="send_b">1</column>
+      <column name="save_b">1</column>
+      <column name="publish_b">0</column>
+      <column name="by_gateway_b">1</column>
+      <column name="by_method_b">0</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="send_config_id">954</column>
+      <column name="advice_status">VERIFIED</column>
+      <column name="product_type">ALL</column>
+      <column name="advice_type">DTCCGTR_OUTGOING</column>
+      <column name="address_method">DTCC</column>
+      <column name="gateway">DTCCGTREquity</column>
+      <column name="send_b">1</column>
+      <column name="save_b">1</column>
+      <column name="publish_b">0</column>
+      <column name="by_gateway_b">1</column>
+      <column name="by_method_b">0</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="send_config_id">955</column>
+      <column name="advice_status">VERIFIED</column>
+      <column name="product_type">ALL</column>
+      <column name="advice_type">DTCCGTR_OUTGOING</column>
+      <column name="address_method">DTCC</column>
+      <column name="gateway">DTCCGTREquityNP</column>
+      <column name="send_b">1</column>
+      <column name="save_b">1</column>
+      <column name="publish_b">0</column>
+      <column name="by_gateway_b">1</column>
+      <column name="by_method_b">0</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="send_config_id">956</column>
+      <column name="advice_status">VERIFIED</column>
+      <column name="product_type">ALL</column>
+      <column name="advice_type">DTCCGTR_OUTGOING</column>
+      <column name="address_method">DTCC</column>
+      <column name="gateway">DTCCGTRFX</column>
+      <column name="send_b">1</column>
+      <column name="save_b">1</column>
+      <column name="publish_b">0</column>
+      <column name="by_gateway_b">1</column>
+      <column name="by_method_b">0</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="send_config_id">957</column>
+      <column name="advice_status">VERIFIED</column>
+      <column name="product_type">ALL</column>
+      <column name="advice_type">DTCCGTR_OUTGOING</column>
+      <column name="address_method">DTCC</column>
+      <column name="gateway">DTCCGTRFXNP</column>
+      <column name="send_b">1</column>
+      <column name="save_b">1</column>
+      <column name="publish_b">0</column>
+      <column name="by_gateway_b">1</column>
+      <column name="by_method_b">0</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="send_config_id">958</column>
+      <column name="advice_status">VERIFIED</column>
+      <column name="product_type">ALL</column>
+      <column name="advice_type">DTCCGTR_OUTGOING</column>
+      <column name="address_method">DTCC</column>
+      <column name="gateway">DTCCGTRIntRate</column>
+      <column name="send_b">1</column>
+      <column name="save_b">1</column>
+      <column name="publish_b">0</column>
+      <column name="by_gateway_b">1</column>
+      <column name="by_method_b">0</column>
+    </row>
+    <row cat="DTCC GTR Domain (required)">
+      <column name="send_config_id">959</column>
+      <column name="advice_status">VERIFIED</column>
+      <column name="product_type">ALL</column>
+      <column name="advice_type">DTCCGTR_OUTGOING</column>
+      <column name="address_method">DTCC</column>
+      <column name="gateway">DTCCGTRIntRateNP</column>
+      <column name="send_b">1</column>
+      <column name="save_b">1</column>
+      <column name="publish_b">0</column>
+      <column name="by_gateway_b">1</column>
+      <column name="by_method_b">0</column>
+    </row>
+  </table>
+</database>

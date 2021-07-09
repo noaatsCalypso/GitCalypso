@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+      <meta name="language" content="ar-SA" />
+   </head>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+
+<!--calypso>
+if (|PRODUCT_TYPE| == "IslamicSwap")
+   set TRANSACTION_TYPE = "مبادلة الأرباح‎";
+else
+   set TRANSACTION_TYPE = |PRODUCT_TYPE|;
+</calypso-->
+
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" || |MESSAGE_SUBACTION|== "CANCEL")
+	inline  "Amend and Cancel";
+</calypso-->
+</p>
+
+<!--calypso>
+if (|PAYLEG_TYPE| == "Fixed")
+   set TRANSACTION_LEG = "معدل ربح ثابت";
+else
+   set TRANSACTION_TYPE = "معدل ربح متغير‎";
+</calypso-->
+
+
+
+<p class="header1"> |TRANSACTION_LEG| |TRANSACTION_TYPE| رسالة تأكيد‎‎</p>
+<p class="header1"> |PRODUCT_NAME| involving |PRODUCT_STRUCTURE| Structure </p>
+
+<br>
+<br>
+
+<table width="700" cellpadding="0" style="mso-padding-alt:0cm 0cm 0cm 0cm; font-size:12px">
+            <tr>
+               <td width="350" align="left">Dear Customer,</td>
+               <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>عميلنا العزيز</b>
+               </td>
+            </tr>
+            <tr>
+               <td width="350" align="left">We confirm the Islamic Return Account deal as</td>
+               <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>بهذا الإشعار نؤكد لكم صفقة حساب العائد الإسلامي المبرمة</b>
+               </td>
+            </tr>
+            <tr>
+               <td width="350" align="left">per your order with us, please review the details</td>
+               <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>معكم حسب التفاصيل الواردة أدناه، الرجاء مراجعة التفاصيل</b>
+               </td>
+            </tr>
+            <tr>
+               <td width="350" align="left">below and advise us of any discrepancies</td>
+               <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>الخاصة بالعملية و إخطارنا في حال وجود اعتراض لديكم</b>
+               </td>
+            </tr>			
+            <tr>
+               <td width="350" align="left"></td>
+               <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>الهاتف المجاني.</b>
+               </td>
+            </tr>			
+         </table>		 
+		 
+         <br />
+
+<br>
+
+<b><br><u><p>General Terms:</u> <br/></p></b>
+
+
+<table width="700" cellpadding="0" style="mso-padding-alt:0cm 0cm 0cm 0cm; font-size:12px">
+
+
+ <tr>
+               <td width="233">Our Transaction Reference:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|TRADE_ID|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA">رقم المعاملة</span>
+               </td>
+</tr>
+
+<tr>
+               <td width="233">Capital Amount:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|SWAP_NOTIONAL|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">المبلغ</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Trade Date:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|TRADE_DATE|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">تاريخ المعاملة</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Effective Date:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|SETTLE_DATE|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">التاريخ الفعلي</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Termination Date:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|SETTLE_DATE|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">تاريخ الانتهاء</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Exercise Dates:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|PAYCASHFLOW_EXERCISE_DATE|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">تاريخ الممارسة</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Buyer:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|TRADE_PROCESSING_ORGANIZATION|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">الشاري</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Seller:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|TRADE_COUNTERPARTY|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">البائع</span>
+               </td>
+</tr>
+
+
+
+
+<!--calypso>
+if (|PAYLEG_TYPE| == "Fixed") {
+inline "
+
+<tr>
+               <td width='233'>FPR Assets</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_UNDERLYING_NAME|</b>
+               </td>
+               <td width='233' dir='rtl' align='right'style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>ممتلكات</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>FPR Asset Quantity</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_UNDERLYING_QUANTITY|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>كمية الممتلكات</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>FPR Asset Price</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_UNDERLYING_PRICE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>سعر الممتلكات</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>FPR Asset Value</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_UNDERLYING_VALUE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>قيمة الممتلكات</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Purchase Dates</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYCASHFLOW_PURCHASE_DATE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>تاريخ الشراء</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Period End Dates</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYCASHFLOW_END_DATE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>تاريخ انتهاء الفترة</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Payment Dates</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYCASHFLOW_DATE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>تاريخ البيع</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>FPR Fixed Profit Rate</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_FIXED_RATE|</b>
+               </td>
+               <td width='233'dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>معدل ربح ثابت</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>FPR Day Count Fraction</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_DAY_COUNT|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>معدل الايام</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Reference Rate Amount for FPR:</td>
+			   		   
+						   
+				<td width='233' align='center' style='background-color:white'>
+                  <b></b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'></span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Reference Rate</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVELEG_RATE_INDEX|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>معدل مرجعي</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Reference Rate Spread</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVELEG_RATE_INDEX|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>معدل هامشي مرجعي</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Reference Rate Day Count Fraction</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVELEG_DAY_COUNT|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>معدل مرجعي على عدد الايام</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Business Days</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_CPN_OFFSET|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>أيام عمل</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Business Day Convention</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_CPN_DATE_ROLL|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>اتفاقية ايام العمل</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Calculation Agent</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|SENDER_CODE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>وكيل الحساب</span>
+               </td>
+</tr>
+
+";
+}
+</calypso-->
+<!--calypso>
+if (|PAYLEG_TYPE| == "Float") {
+inline "
+<tr>
+               <td width='233'>FLPR Assets:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_UNDERLYING_NAME|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>ممتلكات</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>FLPR Asset Quantity:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_UNDERLYING_QUANTITY|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>كمية الممتلكات</span>
+               </td>
+</tr>
+
+<tr>
+               <td width='233'>FLPR Asset Price:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_UNDERLYING_PRICE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>سعر الممتلكات</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>FLPR Asset Value:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_UNDERLYING_VALUE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>قيمة الممتلكات</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>FLPR Benchmark:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_RATE_INDEX|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>المعيار</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Spread:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_SPREAD|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>معدل هامشي</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Reset Dates:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYCASHFLOW_RESET_DATE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>تاريخ إعادة تعيين</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Period End Dates:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYCASHFLOW_END_DATE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>تاريخ انتهاء الفترة</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Purchase Dates:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYCASHFLOW_PURCHASE_DATE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>تاريخ الشراء</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Payment Dates:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYCASHFLOW_DATE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>تاريخ البيع</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>FLPR Day Count Fraction:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_DAY_COUNT|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>معدل الايام</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Reference Rate Amount for FLPR:</td>
+			   <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_DAY_COUNT|</b>
+               </td>
+			   <td width='233' align='center' style='background-color:white'>
+                  <b></b>
+               </td>
+
+               <td width='233' dir='rtl' align='right'style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'></span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Reference Rate:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVELEG_RATE_INDEX|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>معدل مرجعي</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Reference Rate Day Count Fraction:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVELEG_DAY_COUNT|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>معدل مرجعي على عدد الايام</span>
+               </td>
+</tr>
+
+<tr>
+               <td width='233'>Business Days:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_CPN_OFFSET|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>أيام عمل</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Business Day Convention:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_CPN_DATE_ROLL|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>اتفاقية ايام العمل</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Calculation Agent:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|SENDER_CODE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>وكيل الحساب</span>
+               </td>
+</tr>
+
+";
+}
+</calypso-->
+
+
+
+
+</table>
+
+<table width="700" cellpadding="0" style="mso-padding-alt:0cm 0cm 0cm 0cm; font-size:12px">
+
+
+<b><br><u><p>Agency or Brokerage:</u> <br/></p></b>
+
+<tr>
+               <td width='233'>Buyer's Agent:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|SENDER_CODE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>وكيل الشاري</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Seller's Agent:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVER_CODE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>وكيل الشاري</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Seller's Agent:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVER_CODE|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>وكيل البائع</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Buyer's Broker 1:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_BROKER_1|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>وسيط الشاري ١</span>
+               </td>
+</tr>
+
+<tr>
+               <td width='233'>Buyer's Broker 2:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|PAYLEG_BROKER_2|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>وسيط الشاري ٢</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Seller's Broker 1:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVELEG_BROKER_1|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>وسيط البائع ١</span>
+               </td>
+</tr>
+<tr>
+               <td width='233'>Seller's Broker 2:</td>
+               <td width='233' align='center' style='background-color:white'>
+                  <b>|RECEIVELEG_BROKER_2|</b>
+               </td>
+               <td width='233' dir='rtl' align='right' style='font-size:16px;font-family:traditional arabic;'>
+                  <span lang='AR-SA' align='right'>وسيط البائع ٢</span>
+               </td>
+</tr>
+
+
+
+<TABLE CELLSPACING=1 WIDTH=623>
+<p>
+<b><u> Account Details:</p></u></b>
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=624>
+<TR><TD WIDTH='38%' VALIGN='MIDDLE'><p>Payment to |SENDER_CODE| :</TD>
+<TD WIDTH='62%' VALIGN='MIDDLE'><p>|PO_INSTRUCTIONS|</TD>
+<TD width="233" dir="rtl" align="right">
+                  <span lang="AR-SA" style="font-family:traditional arabic;">
+                     <b>من</b>
+                  </span>
+               </TD>
+</TR>
+<TR><TD WIDTH='38%' VALIGN='MIDDLE'><p>Payment to |RECEIVER_CODE| :</TD>
+<TD WIDTH='62%' VALIGN='MIDDLE'><p>|COUNTERPARTY_INSTRUCTIONS|</TD>
+<TD width="233" dir="rtl" align="right">
+                  <span lang="AR-SA" style="font-family:traditional arabic;">
+                     <b>الى</b>
+                  </span>
+               </TD>
+</TR>
+</TABLE>
+
+<p>&nbsp; </p>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

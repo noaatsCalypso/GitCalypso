@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<template>
+	<contents>
+		<element name="SctiesSttlmTxInstr">
+			<contents>
+				<element name="TxId">
+					<contents>
+						<report>
+							<column>MESSAGE_ID</column>
+						</report>
+					</contents>
+				</element>
+				<element name="SttlmTpAndAddtlParams">
+					<contents>
+						<include>
+							<path>SecuritiesMovementType.xml</path>
+						</include>
+						<include>
+							<path>Payment.xml</path>
+						</include>
+					</contents>
+				</element>
+				<element name="Lnkgs">
+					<condition>
+                    	<expression>hasLinkReference()</expression>
+                    </condition>
+                    <contents>
+                   		<element name="PrcgPos">
+							<contents>
+								<report>
+									<column>XferAttributes.LinkQualifier</column>
+								</report>
+							</contents>
+						</element>
+                    	<element name="SctiesSttlmTxId">
+							<contents>
+								<report>
+									<column>XferAttributes.LinkReference</column>
+								</report>
+							</contents>
+						</element>					
+                    </contents>
+				</element>					
+				<element name="TradDtls">
+					<contents>
+                        <include>
+                            <path>TradeDate.xml</path>
+                        </include>
+                        <include>
+                            <path>SettleDate.xml</path>
+                        </include>
+                        <include>
+                            <path>DealPrice.xml</path>
+                        </include>
+						<element name="NbOfDaysAcrd">
+							<contents>
+								<report>
+									<column>Accrual Days</column>
+								</report>
+							</contents>
+						</element>
+						<element name="TradTxCond">
+							<condition>
+								<expression>getReportValue("XferAttributes.CATradeBasis") != null</expression>
+							</condition>
+							<contents>
+								<element name="Cd">
+									<contents>
+										<report>
+											<column>XferAttributes.CATradeBasis</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<include>
+					<path>FinancialInstrumentIdentification.xml</path>
+				</include>
+				<element name="QtyAndAcctDtls">
+					<contents>
+                        <include>
+                            <path>SettlementQuantity.xml</path>
+                        </include>
+                        <include>
+                            <path>SafekeepingAccount.xml</path>
+                        </include>
+					</contents>
+				</element>
+				<element name="SttlmParams">
+					<contents>
+                        <include>
+                            <path>HoldIndicator.xml</path>
+                        </include>
+                        <include>
+                            <path>ExecutionPriority.xml</path>
+                        </include>
+                        <include>
+                            <path>SecuritiesTransactionType.xml</path>
+                        </include>
+						<element name="SttlmTxCond">
+							<contents>
+								<element name="Cd">
+									<contents>
+										<report>
+											<column>XferAttributes.OPT_OUT_INDICATOR</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+                        <include>
+                            <path>PartialSettlementIndicator.xml</path>
+                        </include>
+                        <include>
+                            <path>SecuritiesRTGS.xml</path>
+                        </include>
+					</contents>
+				</element>
+				<include>
+					<path>DeliveringSettlementParties.xml</path>
+				</include>
+				<include>
+					<path>ReceivingSettlementParties.xml</path>
+				</include>
+				<element name="SttlmAmt">
+					<contents>
+						<element name="AcrdIntrstInd">
+							<condition>
+								<expression>getReportValue("Product Family") == "Bond" || getReportValue("Product Type") == "Repo"</expression>
+							</condition>
+							<contents>
+								<text>
+									<value>true</value>
+								</text>
+							</contents>
+						</element>
+						<element name="Amt">
+							<attributes>
+								<attribute name="Ccy">
+									<value>
+										<report>
+											<column>Settle Cur.</column>
+										</report>
+									</value>
+								</attribute>
+							</attributes>
+							<contents>
+								<report>
+									<column>Real Cash Amount</column>
+								</report>
+							</contents>
+						</element>
+                        <include>
+                            <path>CreditDebitIndicator.xml</path>
+                        </include>
+					</contents>
+				</element>
+			</contents>
+		</element>
+	</contents>
+</template>

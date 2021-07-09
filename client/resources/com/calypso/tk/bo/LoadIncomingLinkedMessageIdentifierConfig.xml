@@ -1,0 +1,13 @@
+<BONamedQueries>
+    <BONamedQuery name="LoadIncomingLinkedMessageIdentifierConfig" paramCount="0">
+        <description>Prepared Statement Query to load Incoming Linked Message Object Identifier Configuration
+        </description>
+        <idColumn>incoming_linked_msg_identifier.config_id</idColumn>
+        <from>incoming_linked_msg_identifier</from>
+        <where><![CDATA[1=1]]></where>
+        <OptionalCondition name="template" paramCount="1">
+            <condition><![CDATA[incoming_linked_msg_identifier.template=?]]></condition>
+        </OptionalCondition>
+        <orderBy>incoming_linked_msg_identifier.config_id</orderBy>
+    </BONamedQuery>
+</BONamedQueries>

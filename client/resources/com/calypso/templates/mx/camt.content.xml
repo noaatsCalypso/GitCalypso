@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+    <contents max="1">
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "camt.056.001.T2")</expression>
+            </condition>
+            <path>TransferRecall.T2.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "camt.056.001.MEPS")</expression>
+            </condition>
+            <path>PaymentCancellationRequestMEPS.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "camt.056.001.SIX")</expression>
+            </condition>
+            <path>PaymentCancellationRequestSIX.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "camt.057.001.CBPR")</expression>
+            </condition>
+            <path>NotificationToReceiveCBPR.xml</path>
+        </include>
+		<include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "camt.050.001.T2")</expression>
+            </condition>
+            <path>LiquidityCreditTransferT2.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "camt.050.001.SIX")</expression>
+            </condition>
+            <path>LiquidityCreditTransferSIX.xml</path>
+        </include> 
+       <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "camt.029.001.SIX")</expression>
+            </condition>
+            <path>ResolutionOfInvestigationSIX.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "camt.029.001.MEPS")</expression>
+            </condition>
+            <path>ResolutionOfInvestigationMEPS.xml</path>
+        </include>                
+    </contents>
+</template>

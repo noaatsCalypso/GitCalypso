@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+
+  @(#)package.html	1.0 07/30/98
+
+-->
+</head>
+<body bgcolor="white">
+Data Server infrastructure to provide remote and local caching, loading, saving, updating, and retrieving data.  When a user saves or retrieves data in a Calypso application, that application communicates only with the Calypso Data Server, and not with the database directly.  The Data Server handles the communication and saving that must be done as a result of the commands the user has given the application (such a "Save the trade" or "Edit the settlement instructions").
+<p>
+Trade entry provides a good example of the work done by the Data Server.  Imagine that a trader has just entered a bond deal into the Calypso Trade Manager application, priced it, and agreed with his counterparty on the price at which he will sell the bond.  To save the deal, he sets the trade status to "verified" and hits the "Save" button.  The "verified" status indicates that the trade is a real trade.  The trading application uses its dedicated connection to the Data Server to send the trade to the Data Server. (The trading application established this connection as a "socket" when the user launched the trading application.)  What the trading application actually sends to the Data Server is referred to as the trade "object."  An object is the set of data describing the trade, associated in an ordered representation.
+<p>
+The Data Server follows a seven-step procedure when it receives a "save" or "update" instruction from a trading application.  These steps are encased in a single transaction.  Every part of the transaction must execute successfully, or the Data Server will inform the user-interface application that the transaction has failed and that none of the trade's data have been saved.
+<p>
+1) Place the trade data and its back office data in the memory cache where it will remain in case other applications request this information.
+<p>
+2) Save the trade to the database.  Keep in mind that this saving can be undone ("rolled back") if the Data Server is unable to complete the remaining four steps successfully.
+<p>
+3) Save the associated back office data to the database.  Again, this will be rolled back if any subsequent step fails.
+<p>
+4) Create prescribed event message(s) that the Event Service will deliver to interested Calypso applications.  Event messages are short bulletins used to inform another application that some event has occurred.  There are specific event types for each type of real-world event. The Data Server evaluates the incoming trade to determine what type of event it will generate.  In the case of a saved trade, the Data Server determines (a) whether the trade is a new trade or a modification to an existing trade and (b) whether the trade is a pending trade or a real, verified trade.  In this case, the trade is a new, verified trade, so it will produce a "NEW_TRADE" event message.  (See <code>PSEventTrade</code> for information on the trade event types.)
+<p>
+5) Save high-priority events that require guaranteed delivery.  Some applications need to ensure that they are notified every time a certain type of event occurs.  To do this, they establish a guaranteed subscription with the Event Service for the desired type of event. The Data Server saves such events to the database.
+<p>
+In this case, the Data Server checks whether any applications have established a guaranteed subscription for "NEW_TRADE" events.  It finds that the Calypso Message Engine has established such a subscription, and it saves the event.
+<p>
+If the interested application is not running or if some other problem prevents the Event Service from delivering the event, the Event Service will wait for the subscribing application (or other component) to come back online, and will deliver the event then.  Only after successful delivery will the Data Server delete its copy of the event from the database.
+<p>
+6) Send the database a "commit" message that indicates that the Data Server has completed successfully the five steps of the trade saving operation.  Upon receiving this "commit," the database will leave the saved data (the trade, the back office data, and any high-priority events) intact on the disk.  Had it not received a "commit," the database would have removed ("rolled back") the saved trade data and back office data.
+<p>
+7) Publish the prescribed events to the Event Service, which in turn will publish the events to subscribing applications.  "Publish" in this context simply means to send the event.
+<p>
+With step seven, the Data Server has completed its handling of the saving operation.  Once a trade is saved, other applications must be notified immediately that this has occurred.  The Event Service handles such inter-application communication over the network.
+
+
+<!--
+<h2>Package Specification</h2>
+
+##### FILL IN ANY SPECS NEEDED BY JAVA COMPATIBILITY KIT #####
+<ul>
+  <li><a href="">##### REFER TO ANY SPECIFICATION DOCS HERE #####</a>
+</ul>
+
+<h2>Related Documentation</h2>
+
+For overviews, tutorials, examples, guides, and tool documentation, please see:
+<ul>
+  <li><a href="">##### REFER TO NON-SPEC DOCS HERE #####</a>
+</ul>
+-->
+
+
+</body>
+</html>

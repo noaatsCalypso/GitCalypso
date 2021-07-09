@@ -1,0 +1,137 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<!-- ###################### -->
+<!-- #### START HEADER #### -->
+<!-- ###################### -->
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Confirmation Notice</title>
+    <style>
+    <!--
+        body, td, th, a, p {
+            font-size: 8pt;
+            font-family:arial,sans-serif;
+        }
+        body {
+            width: 600px;
+        }
+        p.indented {
+            text-indent: 3em;
+        }
+        td, tr, th {
+            padding: 2px;
+            vertical-align: top;
+            text-align: left;
+        }
+        table {
+            width: 100%;
+        }
+        th {
+            font-weight: bold;
+        }
+        .smallfont {
+            font-size: 7pt;
+        }
+        .header1 {
+            font-size: 12pt;
+            font-weight: bold;
+            text-decoration: underline;
+            text-align: center;
+        }
+        .header2 {
+            font-size: 10pt;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    //-->
+    </style>
+  </head>
+
+<body>
+
+<table width='100%'>
+  <tr>
+    <td width="50%"><img src="http://www.calypso.com/images/logo_js.gif"></td>
+    <td width='48%'>
+      <p>|SENDER_FULL_NAME|<br>
+         |SENDER_CONTACT_NAME|<br>
+         |SENDER_TITLE|<br>
+         |SENDER_ADDRESS|<br>
+         |SENDER_CITY|<br>
+<!--calypso>
+if (|SENDER_STATE| == true) inline "|SENDER_STATE|<br>";
+</calypso-->
+         |SENDER_ZIPCODE|<br>
+         |SENDER_COUNTRY|<br>
+<!--calypso>
+if (|SENDER_EMAIL| == true) inline "E-mail: |SENDER_EMAIL|<br>";
+if (|SENDER_PHONE| == true) inline "Phone: |SENDER_PHONE|<br>";
+if (|SENDER_FAX| == true)   inline "Fax: |SENDER_FAX|<br>";
+if (|SENDER_TELEX| == true) inline "Telex: |SENDER_TELEX|<br>";
+</calypso-->
+        Swift: |SENDER_SWIFT|
+      </p>
+    </td>
+  </tr>
+</table>
+
+<!--RECEIVER INFO -->
+
+<table width='100%'>
+<tr><td width="15%">Date:</td><td>|DATE|</td></tr>
+<tr><td>To:</td><td>|RECEIVER_FULL_NAME|</td></tr>
+<tr><td>Address:</td>
+    <td>|RECEIVER_ADDRESS|<br/>
+        |RECEIVER_CITY|
+        |RECEIVER_STATE|
+        |RECEIVER_ZIPCODE|<br/>
+        |RECEIVER_COUNTRY|</td></tr>
+
+<!--calypso>
+if (|RECEIVER_FAX| == true)
+    inline "<tr><td>Fax:</td><td>|RECEIVER_FAX|</td></tr>";
+</calypso-->
+
+<!--calypso>
+	if (|RECEIVER_CONTACT_NAME| == true) inline "<tr><td>Attention:</td><td>|RECEIVER_CONTACT_NAME|</td></tr>";
+</calypso-->
+
+<tr><td>From:</td><td>|SENDER_FULL_NAME|</td></tr>
+<tr><td>RE:</td><td>Credit Derivative Transaction on Mortgage-Backed Security with Pay-As-You-Go or Physical Settlement  (Form I)  (Dealer Form)</td></tr>
+</table>
+
+<p class="header1">|PRODUCT_TYPE|
+<!--calypso>
+if(|MESSAGE_TYPE| == "RATE_RESET")
+    inline " Rate Reset Notice";
+else if(|MESSAGE_TYPE| == "CONFIRM")
+    inline " Confirmation";
+else if(|MESSAGE_TYPE| == "PAYMENT_ADVICE")
+    inline " Payment Advice";
+else if(|MESSAGE_TYPE| == "TICKET")
+    inline " Ticket";
+else if(|MESSAGE_TYPE| == "EXERCISE_NOTICE")
+    inline " Exercise Notice";
+else if(|MESSAGE_TYPE| == "PAYMENT_MSG")
+    inline " Payment Message";
+else if(|MESSAGE_TYPE| == "PAYMENT_ADVICE")
+    inline " Payment Advice";
+else if(|MESSAGE_TYPE| == "RECEIPTMSG")
+    inline " Receipt Message";
+else if(|MESSAGE_TYPE| == "RECEIPT_ADVICE")
+    inline " Receipt Advice";
+else if(|MESSAGE_TYPE| == "SEC_DELIVERYMSG")
+    inline " Securities Delivery";
+else if(|MESSAGE_TYPE| == "SEC_RECEIPTMSG")
+    inline " Securities Receipt";
+</calypso-->
+</p>
+
+
+<P>Dear |SALUTATION|,</P>
+
+<!-- #################### -->
+<!-- #### END HEADER #### -->
+<!-- #################### -->

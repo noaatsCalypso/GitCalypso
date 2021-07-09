@@ -1,0 +1,39 @@
+<!-- 
+Defines a default view (categories, selected fields for each).
+The field and category labels are defined in the .properties resource file with the same name.  
+-->
+<config>
+	<view>
+	  <category>
+	    <categoryId>TRADE</categoryId>
+	    <fieldId>COUNTERPARTY</fieldId>                    
+	    <fieldId>BOOK</fieldId>                            
+	  </category>
+	  <category>
+	    <categoryId>PRODUCT</categoryId>
+	    <fieldId>LOAN_DIRECTION</fieldId>                  
+	    <fieldId>START_DATE</fieldId>                      
+	    <fieldId>END_DATE</fieldId>                        
+	    <fieldId>PRINCIPAL</fieldId>                       
+	    <fieldId>CURRENCY</fieldId>                        
+	    <fieldId>DAY_COUNT</fieldId>                       
+	    <fieldId>ROUNDING_METHOD</fieldId>                 
+	    <fieldId>DISCOUNT_B</fieldId>                      
+	  </category>
+	  <category>
+	    <categoryId>RATE</categoryId>
+	    <fieldId>FIXED_RATE_B</fieldId>                    
+	    <fieldId>RATE_INDEX_NAME</fieldId>                 
+	    <fieldId>TENOR</fieldId>                           
+	    <fieldId>SOURCE</fieldId>                          
+	    <fieldId>FIXED_RATE</fieldId>                      
+	    <fieldId>SALES_MARGIN</fieldId>                    
+	    <fieldId>SPREAD</fieldId>                          
+	    <fieldId>FINAL_RATE</fieldId>                      
+	  </category>
+	  <category>
+	    <categoryId>MISC</categoryId>
+	    <fieldId>PAYMENT_HOLIDAYS</fieldId>                
+	  </category>
+	</view>
+</config>

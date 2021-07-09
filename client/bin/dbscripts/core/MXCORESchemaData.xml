@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+		<row cat="SWIFT MX Core">
+			<column name="name">gateway</column>
+			<column name="value">MX</column>
+		</row>
+		<row cat="SWIFT MX Core">
+			<column name="name">gateway</column>
+			<column name="value">MX.T2</column>
+		</row>
+        <row cat="SWIFT MX Core">
+            <column name="name">gateway</column>
+            <column name="value">SAA</column>
+        </row>
+        <row cat="SWIFT MX Core">
+            <column name="name">gateway</column>
+            <column name="value">MIChannel</column>
+        </row>
+		<row cat="SWIFT MX Core">
+			<column name="name">xmlFormatType</column>
+			<column name="value">MX</column>
+		</row>
+		<row cat="SWIFT MX Core">
+			<column name="name">formatType</column>
+			<column name="value">MX</column>
+			<column name="description">text/xml</column>
+		</row>
+		<row cat="SWIFT MX Core">
+			<column name="name">domainName</column>
+			<column name="value">MX.Templates</column>
+		</row>
+        <row cat="SWIFT MX Core">
+            <column name="name">domainName</column>
+            <column name="value">MX.DisplayAppHeader</column>
+        </row>
+		<row cat="SWIFT MX Core">
+			<column name="name">domainName</column>
+			<column name="value">MX.Templates.COV</column>
+		</row>
+		<row cat="SWIFT MX Core">
+			<column name="name">domainName</column>
+			<column name="value">SWIFT.Templates.GPI</column>
+		</row>
+		<row cat="SWIFT MX Core">
+			<column name="name">domainName</column>
+			<column name="value">MX.Versions</column>
+		</row>
+		<row cat="SWIFT MX Core">
+			<column name="name">domainName</column>
+			<column name="value">MX.BAH.Versions</column>
+		</row>
+		<row cat="SWIFT MX Core">
+			<column name="name">domainName</column>
+			<column name="value">MX.BAH.BusinessService.Versions</column>
+		</row>
+	</table>
+</database>

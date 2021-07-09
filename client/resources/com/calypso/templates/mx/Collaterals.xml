@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+	<contents>
+		<element name="MrgnCallReqId">
+			<contents>
+				<text>
+					<value>NONREF</value>
+				</text>
+			</contents>
+		</element>
+		<include>
+			<context>
+				<to>InterAccountRelatedTrades</to>
+				<condition>
+					<expression>checkDlvrOrRtr()</expression>
+				</condition>
+			</context>
+			<path>SecurityCollateral.xml</path>
+		</include>
+	</contents>
+</template>

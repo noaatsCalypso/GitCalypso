@@ -1,0 +1,143 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:amq="http://activemq.apache.org/schema/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+  http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd
+  http://activemq.apache.org/camel/schema/spring http://activemq.apache.org/camel/schema/spring/camel-spring.xsd">
+	
+	<alias name="defaultApplicationProperties" alias="applicationSpecificProperties"/>
+	
+	<!--
+					-->
+
+	<broker xmlns="http://activemq.apache.org/schema/core" persistent="true" brokerName="CALYPSO_MESSAGING_SERVER" advisorySupport="false" useJmx="false">
+		<!-- Destination specific policies using destination names -->
+		<destinationPolicy>
+			<policyMap>
+				<policyEntries>
+																<!-- Define Queues for DTUP here -->
+																				<!-- if queues are available as part of default solution. -->
+						<policyEntry queue="margin_simm_account" />						
+						<policyEntry queue="margin_results" />						
+						<policyEntry queue="what_if_margin_results" />						
+						<policyEntry queue="regulatoryaudit" />						
+
+					<policyEntry queue=">" memoryLimit="100 mb" producerFlowControl="true" optimizedDispatch="true" >
+						<deadLetterStrategy>
+							<individualDeadLetterStrategy queuePrefix="DLQ." useQueueForQueueMessages="true"/>
+						</deadLetterStrategy>
+						<messageGroupMapFactory>
+							<simpleMessageGroupMapFactory/>
+						</messageGroupMapFactory>
+						<pendingQueuePolicy>
+						    <vmQueueCursor/>
+						</pendingQueuePolicy>
+					</policyEntry>
+										
+					<policyEntry topic=">" memoryLimit="256 mb" producerFlowControl="true">
+						<dispatchPolicy>
+							<strictOrderDispatchPolicy />
+						</dispatchPolicy>
+						<subscriptionRecoveryPolicy>
+							<lastImageSubscriptionRecoveryPolicy />
+						</subscriptionRecoveryPolicy>
+					</policyEntry>					
+					
+				</policyEntries>
+			</policyMap>
+		</destinationPolicy>
+		<managementContext>
+			<managementContext createConnector="false" />
+		</managementContext>
+
+				<persistenceAdapter>
+			<jdbcPersistenceAdapter dataSource="#application-ds"/>
+		</persistenceAdapter>
+				<!-- The maximum amount of space the broker will use before slowing down
+			producers -->
+		<systemUsage>
+			<systemUsage sendFailIfNoSpace="false">
+				<memoryUsage>
+					<memoryUsage limit="${CALYPSO_MESSAGING_SERVER_MEMORYUSAGE:3 gb}" />
+				</memoryUsage>
+				<storeUsage>
+					<storeUsage limit="${CALYPSO_MESSAGING_SERVER_STOREUSAGE:5 gb}" />
+				</storeUsage>
+				<tempUsage>
+					<tempUsage limit="${CALYPSO_MESSAGING_SERVER_TEMPUSAGE:300 mb}" />
+				</tempUsage>
+			</systemUsage>
+		</systemUsage>
+		<!-- The transport connectors ActiveMQ will listen to -->
+		<transportConnectors>
+			<transportConnector uri="${CALYPSO_MESSAGING_SERVER_URL:tcp://0.0.0.0:62616}" updateClusterClients="true"/>
+		</transportConnectors>
+		<plugins>
+			<statisticsBrokerPlugin />
+		</plugins>
+	</broker>
+	
+	<broker xmlns="http://activemq.apache.org/schema/core" persistent="false" brokerName="CALYPSO_TRANSIENT_MESSAGING_SERVER" advisorySupport="false" useJmx="false">
+		<!-- Destination specific policies using destination names -->
+		<destinationPolicy>
+			<policyMap>
+				<policyEntries>
+											<!-- Define Queues for DTUP here -->
+										<!-- if queues are available as part of default solution. -->
+										<policyEntry queue=">" memoryLimit="100 mb" producerFlowControl="true" optimizedDispatch="true" >
+						<deadLetterStrategy>
+							<individualDeadLetterStrategy queuePrefix="DLQ." useQueueForQueueMessages="true"/>
+						</deadLetterStrategy>
+						<messageGroupMapFactory>
+							<simpleMessageGroupMapFactory/>
+						</messageGroupMapFactory>
+						<pendingQueuePolicy>
+						    <vmQueueCursor/>
+						</pendingQueuePolicy>
+					</policyEntry>
+					<policyEntry topic=">" memoryLimit="256" producerFlowControl="true">
+						<dispatchPolicy>
+							<strictOrderDispatchPolicy />
+						</dispatchPolicy>
+						<subscriptionRecoveryPolicy>
+							<lastImageSubscriptionRecoveryPolicy />
+						</subscriptionRecoveryPolicy>
+					</policyEntry>
+					
+				</policyEntries>
+			</policyMap>
+		</destinationPolicy>
+		<managementContext>
+			<managementContext createConnector="false" />
+		</managementContext>
+		
+		<!-- The maximum amount of space the broker will use before slowing down producers -->
+		<systemUsage>
+			<systemUsage sendFailIfNoSpace="false">
+				<memoryUsage>
+					<memoryUsage limit="${CALYPSO_TRANSIENT_MESSAGING_SERVER_MEMORYUSAGE:3 gb}" />
+				</memoryUsage>
+				<storeUsage>
+					<storeUsage limit="${CALYPSO_TRANSIENT_MESSAGING_SERVER_STOREUSAGE:5 gb}" />
+				</storeUsage>
+				<tempUsage>
+					<tempUsage limit="${CALYPSO_TRANSIENT_MESSAGING_SERVER_TEMPUSAGE:300 mb}" />
+				</tempUsage>
+			</systemUsage>
+		</systemUsage>
+		<!-- The transport connectors ActiveMQ will listen to -->
+		<transportConnectors>
+			<transportConnector uri="${CALYPSO_TRANSIENT_MESSAGING_SERVER_URL:tcp://0.0.0.0:63616}" updateClusterClients="true"/>
+		</transportConnectors>		
+		<plugins>
+			<statisticsBrokerPlugin />
+		</plugins>
+		
+	</broker>
+
+		<bean id="application-ds" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${CALYPSO_MESSAGING_SERVER_DRIVER:${DRIVER}}" />
+		<property name="url" value="${CALYPSO_MESSAGING_SERVER_DBURL:${DBURL}}" />
+		<property name="username" value="${CALYPSO_MESSAGING_SERVER_DBUSER:${DBUSER}}" />
+		<property name="password" value="${CALYPSO_MESSAGING_SERVER_DBPASSWORD:${DBPASSWORD}}" />
+		<property name="maxActive" value="200" />
+		<property name="poolPreparedStatements" value="true" />
+	</bean>
+	</beans>

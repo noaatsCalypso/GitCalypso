@@ -1,0 +1,160 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header_ndf_fixing.html";
+</calypso-->
+
+<!--calypso>
+if (|MESSAGE_SUBACTION| == "NONE") {
+  inline "The purpose of this letter is to advise that |FXNDFSWAP_LEG_TYPE| leg of the non-deliverable swap trade (our trade reference |TRADE_ID|) has today been rate fixed.";
+}
+if (|MESSAGE_SUBACTION| == "AMEND") {
+  inline "The purpose of this letter is to advise that rate fixing of the |FXNDFSWAP_LEG_TYPE| leg of non-deliverable swap trade (our trade reference |TRADE_ID|) has today been amended.";
+}
+if (|MESSAGE_SUBACTION| == "CANCEL") {
+  inline "The purpose of this letter is to advise that rate fixing of the |FXNDFSWAP_LEG_TYPE| leg of non-deliverable swap trade (our trade reference |TRADE_ID|) has today been canceled.";
+}
+</calypso-->
+
+
+<b><u><p>NDF Rate Fixing Details:</u> <br />
+&nbsp; </p></b></FONT>
+<TABLE CELLSPACING=1 WIDTH=623>
+
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>Reference Currency and Amount</FONT></TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>|FXNDF_REF_CCY| |FXNDF_REF_AMOUNT|</FONT></TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>FX Forward Rate</FONT></TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>|FX_NEGOCIATEDPRICE|</FONT></TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>Fixing Rate</FONT></TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>|FXNDF_RESETPRICE|</FONT></TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>Fixing Valuation Date</FONT></TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>|FXNDF_RESET_DATETIME| </FONT></TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>Fixing Currency & Amount</FONT></TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>|FXNDF_SETTLE_CCY| |FXNDF_DELIVERABLE_AMOUNT|</FONT></TD>
+</TR>
+
+
+
+<!--calypso>
+if (|IS_QUANTO| == "true") {
+inline "<TR><TD WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Fixing Rate Reset Source</FONT></TD><TD WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_RESET_SOURCE|</FONT></TD></TR>";
+}
+</calypso-->
+
+<!--calypso>
+if (|IS_QUANTO| == "true") {
+    inline "<TR><TD WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>FX Quanto Rate</FONT></TD><TD WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_QUANTOPRICE|</FONT></TD></TR><TD WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Quanto Valuation Date</FONT></TD><TD WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_QUANTO_RESET_DATETIME| </FONT></TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Quanto Settlement Currency & Amount</FONT></TD><TD WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>";
+}
+if (|IS_QUANTO| == "true" && |FXNDF_WE_PAY| == "true") {
+	inline  "We pay ";
+}
+if (|IS_QUANTO| == "true" && |FXNDF_WE_PAY| == "false") {
+	inline "We receive";
+}
+if (|IS_QUANTO| == "true") {
+	inline "|FXNDF_QUANTO_CCY| |FXNDF_QUANTO_SETTLE_AMOUNT|</FONT></TD></TR>";
+}
+</calypso-->
+
+<!--calypso>
+if (|IS_QUANTO| == "false") {
+    inline "<TR><TD WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Settlement Currency & Amount</FONT></TD><TD WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>";
+}
+if (|IS_QUANTO| == "false" && |FXNDF_WE_PAY| == "true") {
+	inline  "We pay ";
+}
+if (|IS_QUANTO| == "false" && |FXNDF_WE_PAY| == "false") {
+	inline "We receive";
+}
+if (|IS_QUANTO| == "false") {
+	inline "|FXNDF_SETTLE_CCY| |FXNDF_SETTLE_AMOUNT|</FONT></TD></TR>";
+}
+</calypso-->
+
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>Settlement Date</FONT></TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>|SETTLE_DATE|</FONT></TD>
+</TR>
+
+<!--calypso>
+if (|IS_QUANTO| == "false") {
+    inline "<TR><TD WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Rate Reset Source</FONT></TD><TD WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_RESET_SOURCE|</FONT></TD></TR>";
+}
+</calypso-->
+
+<!--calypso>
+if (|IS_QUANTO| == "true") {
+    inline "<TR><TD WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Quanto Rate Reset Source</FONT></TD><TD WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_QUANTO_RESET_SOURCE|</FONT></TD></TR>";
+}
+</calypso-->
+
+
+<!--calypso>
+if (|IS_FX_SPLIT_DATE| == "true") {
+inline "
+<TR><TD>
+<FONT SIZE=2><p>Split Settlement Date</p></FONT></TD>
+<TD>
+<FONT SIZE=2><p>|FX_SPLIT_DATE|</p></FONT></TD>
+</TR>
+";
+}
+</calypso-->
+
+
+</TABLE>
+
+<p>&nbsp; </p>
+<FONT SIZE=2><p>|ADDITIONAL_FIXED_AMOUNT|</p>
+<p><!---End BizDays Table--><b><u> Settlement Instructions</p></u></b></FONT>
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=624>
+
+<TR><TD WIDTH="38%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>Payment to 
+<!--calypso>
+if (|FXNDF_WE_PAY| == "true")
+	inline "|RECEIVER_CODE|";
+	else inline "|SENDER_CODE|";
+</calypso-->
+:</FONT></TD>
+<TD WIDTH="62%" VALIGN="MIDDLE">
+<FONT SIZE=2><p>
+<!--calypso>
+if (|FXNDF_WE_PAY| == "true")
+	inline  "|COUNTERPARTY_INSTRUCTIONS|";
+	else inline "|PO_INSTRUCTIONS|";
+</calypso-->
+</FONT></TD>
+</TR>
+</TABLE>
+
+<p>&nbsp; </p>
+<p><!---End Account Details Table-->Please sign and return 
+this Confirmation as soon as possible to help safeguard against erroneous 
+settlement.</p>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

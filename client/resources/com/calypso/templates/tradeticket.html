@@ -1,0 +1,206 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+<p class="header2">Trade Information</p>
+<table>
+ <tr>
+  <td width="30%">Processing Organization</td>
+  <td>|TRADE_PROCESSING_ORGANIZATION|</td>
+ </tr>
+ <tr>
+  <td>Book</td>
+  <td>|TRADE_BOOK|</td>
+ </tr>
+ <tr>
+  <td>Trader</td>
+  <td>|TRADE_TRADER|</td>
+ </tr>
+ <tr>
+  <td>Input Date</td>
+  <td>|TRADE_ENTEREDDATE|</td>
+ </tr>
+ <tr>
+  <td>Trade Date</td>
+  <td>|TRADE_DATE|</td>
+ </tr>
+ <tr>
+  <td>Settle Date</td>
+  <td>|SETTLE_DATE|</td>
+ </tr>
+ <tr>
+  <td>Split Date</td>
+  <td>|ALTERNATE_DATE|</td>
+</tr>
+ <tr>
+  <td>Buyer</td>
+  <td>|TRADE_BUYER_NAME|</td>
+ </tr>
+ <tr>
+  <td>Seller</td>
+  <td>|TRADE_SELLER_NAME|</td>
+ </tr>
+ <tr>
+  <td>CounterParty</td>
+  <td>|TRADE_COUNTERPARTY|</td>
+ </tr>
+ <tr>
+  <td>Trade Status</td>
+  <td>|TRADE_STATUS|</td>
+ </tr>
+ <tr>
+  <td>Trade Quantity</td>
+  <td>|TRADE_QUANTITY|</td>
+ </tr>
+ <tr>
+  <td>Trade Price</td>
+  <td>|TRADE_PRICE|</td>
+ </tr>
+ <tr>
+  <td>Trade Accrual</td>
+  <td>|TRADE_ACCRUAL|</td>
+ </tr>
+ <tr>
+  <td>Currency</td>
+  <td>|TRADE_CURRENCY|</td>
+ </tr>
+</table>
+
+<br /><br />
+
+<p class="header2">Product Details</p>
+<table>
+ <tr>
+  <td width="30%">Product Class</td>
+  <td>|PRODUCT_CLASS|</td>
+ </tr>
+ <tr>
+  <td>Product Family</td>
+  <td>|PRODUCT_FAMILY|</td>
+ </tr>
+ <tr>
+  <td>Product Type</td>
+  <td>|PRODUCT_TYPE|</td>
+ </tr>
+ <tr>
+  <td>Product Description</td>
+  <td>|PRODUCT_DESCRIPTION|</td>
+ </tr>
+ <tr>
+  <td>Currency</td>
+  <td>|PRODUCT_CURRENCY|</td>
+ </tr>
+</table>
+                                                   
+<br>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0 && |PRODUCT_TYPE| == "EquityLinkedSwap") {
+  inline "<!-- FIXME: workout a way to allow dynamic includes to avoid hard links-->";
+  inline "<br><b>|PRODUCT_TYPE| specific keywords</b><br>";
+  include "EquityLinkedSwap_inc.html";
+} else if (Trade.getLongId() > 0 && |PRODUCT_TYPE| == "EquityStructuredOption") {
+  inline "<br><b>|PRODUCT_TYPE| specific keywords</b><br>";
+  include "EquityStructuredOption_inc.html";
+} else if (Trade.getLongId() > 0 && |PRODUCT_TYPE| == "ExternalTrade") {
+  include "ExternalTrade_inc.html";
+}
+
+if (Trade.isTerminated() == true || Trade.isTransfered() == true) {
+  include "termination_trade_keywords_inc.html";
+}
+</calypso-->
+
+<br /><br />
+
+<p class="header">Trade Flows</p>
+
+<table width='100%'>
+<tr>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Date</th>
+    <th>Reset Date</th>
+    <th>Day Count</th>
+    <th>Days</th>
+    <th>Rate</th>
+    <th>Spread</th>
+	<th>Final Rate</th>
+    <th>Amount</th>
+    <th>Currency</th>
+    <th>Notional</th>
+    <th>Type</th>
+</tr>
+<!--calypso>
+iterator ( "CashFlow" )
+    inline "
+<tr>
+    <td>|CASHFLOW_START_DATE|</td>
+    <td>|CASHFLOW_END_DATE|</td>
+    <td>|CASHFLOW_DATE|</td>
+    <td>|CASHFLOW_RESET_DATE|</td>
+    <td>|CASHFLOW_DAY_COUNT|</td>
+    <td>|CASHFLOW_DAYS|</td>
+    <td>|CASHFLOW_RATE|</td>
+    <td>|CASHFLOW_SPREAD|</td>
+	<td>|CASHFLOW_FINAL_RATE|</td>
+    <td>|CASHFLOW_AMOUNT|</td>
+    <td>|CASHFLOW_CURRENCY|</td>
+    <td>|CASHFLOW_NOTIONAL|</td>
+    <td>|CASHFLOW_TYPE|</td>
+</tr>
+    ";
+</calypso-->
+</table>
+
+<br /><br />
+
+<p class="header2">Trade Settlement Instructions</p>
+
+|TRADE_TRANSFER_RULES|
+<!--calypso>
+iterator("TransferRules")
+    inline "<br />";
+</calypso-->
+
+<!--calypso>
+if(|HAS_BROKER_FEES| != "No") {
+inline "<table>
+<tr><th colspan='3'>Broker Fee Amount</th></tr>";
+iterator("TradeFees")
+	inline "<tr>
+	<td>|BROKER_FEE_PAYER|</td>
+	<td>|BROKER_FEE_AMOUNT|</td>
+	<td>|BROKER_FEE_PAY_DATE|</td>
+</tr>";
+inline "</table>";
+}
+</calypso-->
+
+<p class="header2">Audit Trail</p>
+<table>
+<tr><th>Date</th>
+    <th>Field</th>
+    <th>Old</th>
+    <th>New </th>
+    <th>User</th></tr>
+<!--calypso>
+iterator("AuditTrail")
+    inline "<tr>
+    <td>|TRADE_AUDIT_DATE|</td>
+    <td>|TRADE_AUDIT_FIELD|</td>
+    <td>|TRADE_AUDIT_OLD_VALUE|</td>
+    <td>|TRADE_AUDIT_NEW_VALUE|</td>
+    <td>|TRADE_AUDIT_USER|</td>
+</tr>
+";
+</calypso-->
+</table>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

@@ -1,0 +1,59 @@
+bridge.counterparty.attribute.identifier=LCH_CPTY
+
+###########################################
+#										  #
+# Bridge original, work in progress and  #
+# final transformation directory of the   #
+# incoming message.						  #
+# If this option is not set, 			  #
+# <CALYPSO_HOME>/<Connection>			  #
+# will be used by default				  #	
+###########################################
+#file.bridge.log.directory=C:\\LCH
+
+DATADOCUMENT_SWAP_BRIDGE_XSLT=LCH_DATADOCUMENT_SWAP.xslt
+DATADOCUMENT_SWAP_BRIDGE_XSLT_CLASS=
+KEYWORDS_DATADOCUMENT_SWAP_XSLT=
+
+
+REQUESTCONSENT_SWAP_BRIDGE_XSLT=LCH_REQUESTCONSENT_SWAP.xslt
+REQUESTCONSENT_SWAP_BRIDGE_XSLT_CLASS=
+CLEARINGCONFIRMED_SWAP_BRIDGE_XSLT=LCH_CLEARINGCONFIRMED_SWAP.xslt
+CLEARINGCONFIRMED_SWAP_BRIDGE_XSLT_CLASS=
+SWAP_TRANSFORMER_CLASS=com.calypso.tk.bo.bridge.transformer.LCHSWAPMappingTransformer
+KEYWORDS_REQUESTCONSENT_SWAP_XSLT=KEYWORDS_LCH_REQUESTCONSENT_SWAP.xslt
+KEYWORDS_CLEARINGCONFIRMED_SWAP_XSLT=KEYWORDS_LCH_CLEARINGCONFIRMED_SWAP.xslt
+
+
+DATADOCUMENT_FRA_BRIDGE_XSLT=LCH_DATADOCUMENT_FRA.xslt
+DATADOCUMENT_FRA_BRIDGE_XSLT_CLASS=
+KEYWORDS_DATADOCUMENT_FRA_XSLT=
+
+
+REQUESTCONSENT_FRA_BRIDGE_XSLT=LCH_REQUESTCONSENT_FRA.xslt
+REQUESTCONSENT_FRA_BRIDGE_XSLT_CLASS=
+CLEARINGCONFIRMED_FRA_BRIDGE_XSLT=LCH_CLEARINGCONFIRMED_FRA.xslt
+CLEARINGCONFIRMED_FRA_BRIDGE_XSLT_CLASS=
+FRA_TRANSFORMER_CLASS=com.calypso.tk.bo.bridge.transformer.LCHFRAMappingTransformer
+KEYWORDS_REQUESTCONSENT_FRA_XSLT=KEYWORDS_LCH_REQUESTCONSENT_FRA.xslt
+KEYWORDS_CLEARINGCONFIRMED_FRA_XSLT=KEYWORDS_LCH_CLEARINGCONFIRMED_FRA.xslt
+
+RULE_HANDLER=com.calypso.tk.bo.bridge.handler.LCHRuleHandler
+
+
+# BRIDGE BO Messages default sender and receiver. 
+BridgeMessageDefaultSender=LCH
+BridgeMessageDefaultReceiver=CALYPSO
+
+ThreadPoolSize=5
+# Look for file changes every xx-seconds.
+interval=10
+###########################################
+#										  #
+# Message validator list                  #
+# A list of xslt files located in         #
+# /resources/calypso/mapping/             #
+# for incoming message validation by      #
+#  message structure					  #
+###########################################
+ValidatorFiles=exchange_feed_clearing_confirmed_check_fpml5.3.xslt,exchange_feed_lch_data_document_check_fpml5.5.xslt,exchange_feed_request_consent_check_fpml5.3.xslt,exchange_feed_consent_acknowledgement_check_fpml5.3.xslt,exchange_feed_clearing_status_check_fpml5.3.xslt,exchange_feed_clearing_refused_check_fpml5.3.xslt,exchange_feed_service_notification_check_fpml5.3.xslt,exchange_feed_position_report_check_fpml5.3.xslt,exchange_feed_message_rejected_check_fpml5.3.xslt

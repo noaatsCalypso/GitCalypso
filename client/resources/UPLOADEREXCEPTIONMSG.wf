@@ -1,0 +1,9 @@
+PSEventMessage;NONE;NEW;PENDING;true;true;false;UPLOADEREXCEPTIONMSG;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;PENDING;CANCEL;CANCELED;true;false;false;UPLOADEREXCEPTIONMSG;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;PENDING;COMPLETE;COMPLETED;true;false;false;UPLOADEREXCEPTIONMSG;ALL;CheckLink;;false;false;;;false;false;false;false;0;
+PSEventMessage;PENDING;FAILED_TO_SUBMIT;SUBMIT_FAILED;true;false;false;UPLOADEREXCEPTIONMSG;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;PENDING;REPROCESS;REPROCESSING;true;false;false;UPLOADEREXCEPTIONMSG;ALL;CheckLink;;false;false;;;false;false;false;false;0;
+PSEventMessage;PENDING;UPDATE;PENDING;true;false;false;UPLOADEREXCEPTIONMSG;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;REPROCESSING;COMPLETE;COMPLETED;true;false;false;UPLOADEREXCEPTIONMSG;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;REPROCESSING;FAILED_TO_SUBMIT;SUBMIT_FAILED;true;false;false;UPLOADEREXCEPTIONMSG;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;SUBMIT_FAILED;REPROCESS;REPROCESSING;true;false;false;UPLOADEREXCEPTIONMSG;ALL;CheckLink;;false;false;;;false;false;false;false;0;

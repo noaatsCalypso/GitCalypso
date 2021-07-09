@@ -1,0 +1,7 @@
+<module name = "riskcontrol" min-version="1.0.0.0" target-version="3.3.0">
+	<schema filename="RiskControlSchemaBase.xml" />
+	<schema filename="RiskControlSchemaData.xml"/>
+	<upgrade version="3.3.0">
+		<step name="HRC-771" version="2"/>
+	</upgrade>
+</module>

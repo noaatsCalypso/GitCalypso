@@ -1,0 +1,52 @@
+<Configuration xmlns:xi="http://www.w3.org/2001/XInclude" status="WARN">
+  <xi:include href="fragments/properties.log4j2.xml"/>
+  <Appenders>
+     <xi:include href="fragments/appender_alert_APPENDER.xml"/>
+     <xi:include href="fragments/appender_ElasticSearchAlert_APPENDER.xml"/>
+     <xi:include href="fragments/appender_ElasticSearchEngineMetrics_APPENDER.xml"/>
+     <xi:include href="fragments/appender_ElasticSearchRequest_APPENDER.xml"/>
+	 <xi:include href="fragments/appender_ElasticSearchIncomingRequest_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.ClientRequest_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.Engine_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.EngineAudit_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.MethodProfile_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.ServerRequest_APPENDER.xml"/>
+	 <xi:include href="fragments/appender_Monitoring.IncomingServerRequest_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.Sql_APPENDER.xml"/>
+  </Appenders>
+  <Loggers>
+    <Logger name="com.calypso.Monitoring.ServerRequest" additivity="false" level="DEBUG">
+      <AppenderRef ref="Monitoring.ServerRequest_APPENDER" />
+      <AppenderRef ref="ElasticSearchRequest_APPENDER" />
+    </Logger>
+	<Logger name="com.calypso.Monitoring.IncomingServerRequest" additivity="false" level="DEBUG">
+	  <AppenderRef ref="Monitoring.IncomingServerRequest_APPENDER"/>
+	  <AppenderRef ref="ElasticSearchIncomingRequest_APPENDER"/>
+    </Logger>
+    <Logger name="com.calypso.Monitoring.Sql" additivity="false" level="DEBUG">
+	  <AppenderRef ref="Monitoring.Sql_APPENDER"/>
+    </Logger>
+    <Logger name="com.calypso.Monitoring.ClientRequest" additivity="false" level="DEBUG">
+      <AppenderRef ref="Monitoring.ClientRequest_APPENDER" />
+    </Logger>
+    <Logger name="com.calypso.Monitoring.Engine" additivity="false" level="DEBUG">
+      <AppenderRef ref="Monitoring.Engine_APPENDER" />
+    </Logger>
+    <Logger name="com.calypso.Monitoring.MethodProfile" additivity="false" level="DEBUG">
+      <AppenderRef ref="Monitoring.MethodProfile_APPENDER" />
+    </Logger>
+    <Logger name="com.calypso.Monitoring.EngineAudit" additivity="false" level="DEBUG">
+      <AppenderRef ref="Monitoring.EngineAudit_APPENDER" />
+    </Logger>
+    <Logger name="com.calypso.SYSTEM.Monitoring.EngineAudit" additivity="false" level="INFO">
+      <AppenderRef ref="Monitoring.EngineAudit_APPENDER" />
+    </Logger>
+    <Logger name="com.calypso.alert" additivity="false" level="INFO">
+      <AppenderRef ref="alert_APPENDER" />
+      <AppenderRef ref="ElasticSearchAlert_APPENDER" />
+    </Logger>
+    <Logger name="com.calypso.SYSTEM.elasticsearch" additivity="false" level="INFO">
+      <AppenderRef ref="ElasticSearchEngineMetrics_APPENDER" />
+    </Logger>
+  </Loggers>
+</Configuration>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+  <table name="re_quote_rule_definition" xmlns="">
+  	<column name="rule_name" nullable="false" scale="60" type="string"/>
+  	<column name="rule_type" nullable="false" scale="32" type="string"/>
+  	<column name="class_name" nullable="false" scale="255" type="string"/>
+  	<column name="comments" nullable="true" scale="255" type="string"/>
+	<column name="version" nullable="false" scale="1" type="int" default="1"/>
+  	<index primary="true">
+	   <on>rule_name</on>
+    </index>
+  </table> 
+  <table name="re_quote_list" xmlns="">
+  	<column name="config_name" nullable="false" scale="32" type="string"/>
+  	<column name="quote_name" nullable="false" scale="255" type="string"/>
+  	<column name="instrument_type" nullable="false" scale="32" type="string"/>
+  	<column name="display_name" nullable="true" scale="255" type="string"/>
+  	<column name="group_name" nullable="true" scale="32" type="string"/>
+  	<column name="triangulation_set" nullable="true" scale="255" type="string"/>
+	<column name="version_num" nullable="false" scale="1" type="int" default="1"/>
+  	<column name="tx_id" nullable="false" scale="1" type="int" default="0"/>
+  	<index primary="true">
+	   <on>config_name</on>
+	   <on>quote_name</on>
+    </index>
+    <index primary="false">
+	   <on>config_name</on>
+	</index>
+	<index primary="false" unique="true">
+		<on>config_name</on>
+		<on>display_name</on>
+	</index>
+  </table>
+  <table name="re_quote_rule_config" xmlns="">
+  	<column name="config_id" nullable="false" scale="1" type="int"/>
+  	<column name="config_name" nullable="false" scale="32" type="string"/>
+  	<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+  	<index primary="true">
+	   <on>config_name</on>
+    </index>
+  </table>
+   <table name="re_quote_rules" xmlns="">
+  	<column name="rule_id" nullable="false" scale="1" type="int"/>
+  	<column name="config_name" nullable="false" scale="32" type="string"/>
+  	<column name="rule_name" nullable="false" scale="60" type="string"/>
+  	<column name="filter_type" nullable="false" scale="32" type="string"/>
+  	<column name="filter_value" nullable="false" scale="255" type="string"/>
+  	<column name="quote_type" nullable="false" scale="1" type="int"/>
+  	<column name="market_source" nullable="false" scale="64" type="string"/>
+  	<column name="is_active" nullable="false" scale="1" type="int"/>
+  	<index primary="true">
+	   <on>config_name</on>
+	   <on>rule_name</on>
+	   <on>filter_value</on>
+	   <on>market_source</on>
+    </index>
+    <index primary="false">
+	   <on>config_name</on>
+	</index>
+  </table>
+  <table name="re_quote_rules_params" xmlns="">
+  	<column name="rule_id" nullable="false" scale="1" type="int"/>
+  	<column name="param_name" nullable="false" scale="32" type="string"/>
+  	<column name="param_value" nullable="false" scale="32" type="string"/>
+  	<index primary="true">
+	   <on>rule_id</on>
+	   <on>param_name</on>
+    </index>
+    <index primary="false">
+	   <on>rule_id</on>
+	</index>
+  </table>
+  	<table name="re_quote_dynamic_subscription" xmlns="">
+		<column name="config_name" nullable="false" scale="32" type="string" />
+		<column name="instrument_type" nullable="false" scale="32" type="string" />
+		<column name="quote_name" nullable="false" scale="255" type="string" />
+		<column name="display_name" nullable="true" scale="255" type="string" />
+		<column name="subscription_time" nullable="false" type="timestamp" />
+	</table>
+	<table name="re_quote_manual_publish" xmlns="">
+		<column name="config_name" nullable="false" scale="32" type="string" />
+		<column name="instrument_type" nullable="true" scale="32" type="string" />
+        <column name="quote_name" nullable="false" scale="255" type="string"/>
+        <column name="bid" nullable="true" scale="1" type="float"/>
+        <column name="ask" nullable="true" scale="1" type="float"/>
+        <column name="quote_type" nullable="false" scale="64" type="string"/>
+        <column name="entered_datetime" nullable="true" type="timestamp"/>
+        <column name="entered_user" nullable="true" scale="32" type="string"/>
+        <column name="active" nullable="true" scale="1" type="int"/>
+		<column name="version" nullable="false" scale="1" type="int" default="0"/>        
+        <index primary="true">
+            <on>config_name</on>
+            <on>quote_name</on>
+        </index>         
+	</table>
+	<table name="re_quote_manual_publish_audit" xmlns="">
+		<column name="config_name" nullable="false" scale="32" type="string" />
+		<column name="instrument_type" nullable="true" scale="32" type="string" />
+        <column name="quote_name" nullable="false" scale="255" type="string"/>
+        <column name="bid" nullable="true" scale="1" type="float"/>
+        <column name="ask" nullable="true" scale="1" type="float"/>
+        <column name="quote_type" nullable="false" scale="64" type="string"/>
+        <column name="entered_datetime" nullable="true" type="timestamp"/>
+        <column name="entered_user" nullable="true" scale="32" type="string"/>
+        <column name="active" nullable="true" scale="1" type="int"/>
+		<column name="version" nullable="false" scale="1" type="int" default="0"/>        
+        <index primary="true">
+            <on>config_name</on>
+            <on>quote_name</on>
+            <on>version</on>
+        </index>         
+	</table>
+</database>
+
+
+

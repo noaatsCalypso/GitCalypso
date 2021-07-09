@@ -1,0 +1,2 @@
+update trade set quantity=1 from trade t , product_swap ps where t.product_id = ps.product_id and t.quantity =-1 and (ps.swap_type in('Swap','NDS','SwapNonDeliverable','SwapCrossCurrency','XCCySwap'))
+go

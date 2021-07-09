@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+
+  <table name="ers_rapm_lut" xmlns="">
+    <column name="table_id" nullable="false" type="int"/>
+    <column name="table_name" nullable="false" type="string" scale="255"/>
+    <column name="table_type" nullable="false" type="string" scale="64"/>
+    <index primary="true">
+      <on>table_id</on>
+    </index>
+    <index primary="false" unique="true">
+      <on>table_name</on>
+    </index>
+  </table>
+
+  <table name="ers_rapm_lut_metadata" xmlns="">
+    <column name="table_type" nullable="false" type="string" scale="64"/>
+    <column name="key1_type" nullable="true" type="string" scale="255"/>
+    <column name="key2_type" nullable="true" type="string" scale="255"/>
+    <column name="key3_type" nullable="true" type="string" scale="255"/>
+    <column name="key4_type" nullable="true" type="string" scale="255"/>
+    <column name="key5_type" nullable="true" type="string" scale="255"/>
+    <column name="key6_type" nullable="true" type="string" scale="255"/>
+    <column name="key7_type" nullable="true" type="string" scale="255"/>
+    <column name="key8_type" nullable="true" type="string" scale="255"/>
+    <column name="value_type" nullable="true" type="string" scale="255"/>
+    <index primary="true">
+      <on>table_type</on>
+    </index>
+  </table>
+
+  <table name="ers_rapm_lut_entry" xmlns="">
+    <column name="entry_id" nullable="false" type="int"/>
+    <column name="table_id" nullable="false" type="int"/>
+    <column name="key1" nullable="true" type="string" scale="255"/>
+    <column name="key2" nullable="true" type="string" scale="255"/>
+    <column name="key3" nullable="true" type="string" scale="255"/>
+    <column name="key4" nullable="true" type="string" scale="255"/>
+    <column name="key5" nullable="true" type="string" scale="255"/>
+    <column name="key6" nullable="true" type="string" scale="255"/>
+    <column name="key7" nullable="true" type="string" scale="255"/>
+    <column name="key8" nullable="true" type="string" scale="255"/>
+    <column name="value" nullable="true" type="string" scale="255"/>
+    <index primary="true">
+      <on>entry_id</on>
+    </index>
+    
+<!-- Removed since Sybase doesn't seem to like keys of this size
+    <index primary="false" unique="true">
+       <on>table_id</on>
+       <on>key1</on>
+       <on>key2</on>
+       <on>key3</on>
+       <on>key4</on>
+       <on>key5</on>
+       <on>key6</on>
+       <on>key7</on>
+       <on>key8</on>
+    </index>
+-->
+  </table>
+  
+  
+  <table name="ers_rapm_table_header_config" xmlns="">
+    <column name="header_type" nullable="false" type="string" scale="32"/>
+    <column name="table_name" nullable="false" type="string" scale="32"/>
+    <column name="column_name" nullable="false" type="string" scale="32"/>
+    <column name="header_short_name" nullable="false" type="string" scale="64"/>
+    <column name="header_desc" nullable="true" type="string" scale="255"/>
+  
+    <index primary="true">
+      <on>header_type</on>
+      <on>table_name</on>
+      <on>column_name</on>
+    </index>
+  </table>
+  
+  <table name="ers_rapm_resultset_config" xmlns="">
+   <column name="resultset_name" nullable="false" type="string" scale="64"/>
+   <column name="measure_name_1" nullable="true" type="string" scale="64"/>
+   <column name="measure_name_2" nullable="true" type="string" scale="64"/>
+   <column name="measure_name_3" nullable="true" type="string" scale="64"/>
+   <column name="measure_name_4" nullable="true" type="string" scale="64"/>
+   <column name="measure_name_5" nullable="true" type="string" scale="64"/>
+   <column name="measure_name_6" nullable="true" type="string" scale="64"/>
+   <column name="measure_name_7" nullable="true" type="string" scale="64"/>
+   <column name="measure_name_8" nullable="true" type="string" scale="64"/>
+   <column name="measure_name_9" nullable="true" type="string" scale="64"/>
+   <column name="measure_name_10" nullable="true" type="string" scale="64"/>
+   <column name="measure_name_11" nullable="true" type="string" scale="64"/>
+   <column name="measure_name_12" nullable="true" type="string" scale="64"/>
+   <column name="measure_name_13" nullable="true" type="string" scale="64"/>
+   <column name="measure_name_14" nullable="true" type="string" scale="64"/>
+   <column name="measure_name_15" nullable="true" type="string" scale="64"/>
+   <column name="measure_name_16" nullable="true" type="string" scale="64"/>
+   <index primary="true">
+        <on>resultset_name</on>
+   </index>
+  </table>
+  
+  <table name="ers_rapm_trade_result" xmlns="">
+   <column name="result_id" nullable="false" type="int"/>
+   <column name="julian_offset" nullable="false" type="int"/>
+   <column name="trade_id" nullable="false" type="int"/>
+   <column name="result_type" nullable="false" type="string" scale="64"/>
+   <column name="resultset_name" nullable="false" type="string" scale="64"/>
+   <column name="measure_value_1" nullable="true" type="float"/>
+   <column name="measure_value_2" nullable="true" type="float"/>
+   <column name="measure_value_3" nullable="true" type="float"/>
+   <column name="measure_value_4" nullable="true" type="float"/>
+   <column name="measure_value_5" nullable="true" type="float"/>
+   <column name="measure_value_6" nullable="true" type="float"/>
+   <column name="measure_value_7" nullable="true" type="float"/>
+   <column name="measure_value_8" nullable="true" type="float"/>
+   <column name="measure_value_9" nullable="true" type="float"/>
+   <column name="measure_value_10" nullable="true" type="float"/>
+   <column name="measure_value_11" nullable="true" type="float"/>
+   <column name="measure_value_12" nullable="true" type="float"/>
+   <column name="measure_value_13" nullable="true" type="float"/>
+   <column name="measure_value_14" nullable="true" type="float"/>
+   <column name="measure_value_15" nullable="true" type="float"/>
+   <column name="measure_value_16" nullable="true" type="float"/>
+   <index primary="true">
+       <on>result_id</on>
+   </index>
+   <index primary="false" unique="true">
+       <on>julian_offset</on>
+       <on>result_type</on>
+       <on>trade_id</on>       
+   </index>
+  </table>
+  
+  <table name="ers_rapm_position" xmlns="">
+      <column name="position_id" nullable="false" type="int"/>
+      <column name="portfolio_name" nullable="false" type="string" scale="255"/>
+      <index primary="true">
+        <on>position_id</on>
+      </index>
+      <index primary="false" unique="true">
+        <on>portfolio_name</on>
+      </index>
+  </table>
+  
+  <table name="ers_rapm_position_result" xmlns="">
+     <column name="result_id" nullable="false" type="int"/>
+     <column name="julian_offset" nullable="false" type="int"/>
+     <column name="position_id" nullable="false" type="int"/>
+     <column name="result_type" nullable="false" type="string" scale="64"/>
+     <column name="resultset_name" nullable="false" type="string" scale="64"/>
+     <column name="measure_value_1" nullable="true" type="float"/>
+     <column name="measure_value_2" nullable="true" type="float"/>
+     <column name="measure_value_3" nullable="true" type="float"/>
+     <column name="measure_value_4" nullable="true" type="float"/>
+     <column name="measure_value_5" nullable="true" type="float"/>
+     <column name="measure_value_6" nullable="true" type="float"/>
+     <column name="measure_value_7" nullable="true" type="float"/>
+     <column name="measure_value_8" nullable="true" type="float"/>
+     <column name="measure_value_9" nullable="true" type="float"/>
+     <column name="measure_value_10" nullable="true" type="float"/>
+     <column name="measure_value_11" nullable="true" type="float"/>
+     <column name="measure_value_12" nullable="true" type="float"/>
+     <column name="measure_value_13" nullable="true" type="float"/>
+     <column name="measure_value_14" nullable="true" type="float"/>
+     <column name="measure_value_15" nullable="true" type="float"/>
+     <column name="measure_value_16" nullable="true" type="float"/>
+     <index primary="true">
+         <on>result_id</on>
+     </index>
+     <index primary="false" unique="true">
+         <on>julian_offset</on>
+         <on>result_type</on>
+         <on>position_id</on>       
+     </index>
+  </table>
+  
+  <table name="ers_rapm_attribset_config" xmlns="">
+     <column name="attribset_name" nullable="false" type="string" scale="64"/>
+     <column name="attrib_name_1" nullable="true" type="string" scale="64"/>
+     <column name="attrib_name_2" nullable="true" type="string" scale="64"/>
+     <column name="attrib_name_3" nullable="true" type="string" scale="64"/>
+     <column name="attrib_name_4" nullable="true" type="string" scale="64"/>
+     <column name="attrib_name_5" nullable="true" type="string" scale="64"/>
+     <column name="attrib_name_6" nullable="true" type="string" scale="64"/>
+     <column name="attrib_name_7" nullable="true" type="string" scale="64"/>
+     <column name="attrib_name_8" nullable="true" type="string" scale="64"/>
+     <index primary="true">
+          <on>attribset_name</on>
+     </index>
+  </table>
+  
+  <table name="ers_rapm_trade_attrib" xmlns="">
+     <column name="attrib_id" nullable="false" type="int"/>
+     <column name="julian_offset" nullable="false" type="int"/>
+     <column name="trade_id" nullable="false" type="int"/>
+     <column name="portfolio_name" nullable="false" type="string" scale="255"/>
+     <column name="product_desc" nullable="true" type="string" scale="255"/>
+     <column name="attribset_name" nullable="false" type="string" scale="64"/>
+     <column name="attrib_value_1" nullable="true" type="string" scale="255"/>
+     <column name="attrib_value_2" nullable="true" type="string" scale="255"/>
+     <column name="attrib_value_3" nullable="true" type="string" scale="255"/>
+     <column name="attrib_value_4" nullable="true" type="string" scale="255"/>
+     <column name="attrib_value_5" nullable="true" type="string" scale="255"/>
+     <column name="attrib_value_6" nullable="true" type="string" scale="255"/>
+     <column name="attrib_value_7" nullable="true" type="string" scale="255"/>
+     <column name="attrib_value_8" nullable="true" type="string" scale="255"/>
+     <index primary="true">
+         <on>attrib_id</on>
+     </index>
+     <index primary="false" unique="true">
+         <on>julian_offset</on>
+         <on>portfolio_name</on>
+         <on>trade_id</on>
+         <on>attribset_name</on>
+     </index>
+    </table>
+    
+    <table name="ers_rapm_measure" xmlns="">
+       <column name="measure_name" nullable="false" type="string" scale="64"/>
+       <column name="measure_desc" nullable="true" type="string" scale="255"/>
+       <column name="expression_type" nullable="false" type="string" scale="20"/>
+       <column name="expression" nullable="true" type="string" scale="4000"/>
+       <index primary="true">
+            <on>measure_name</on>
+       </index>
+    </table>
+    
+    <table name="ers_rapm_config" xmlns="">
+        <column name="result_type" nullable="false" type="string" scale="64"/>
+        <column name="resultset_name" nullable="false" type="string" scale="64"/>
+        <column name="pricing_env_name" nullable="false" type="string" scale="32"/>
+        <index primary="true">
+            <on>result_type</on>
+        </index>
+    </table>
+    
+    <table name="ers_rapm_batch" xmlns="">
+        <column name="task_id" nullable="false" type="int"/>
+        <column name="batch_name" nullable="false" type="string" scale="32"/>
+        <column name="target_type" nullable="false" type="string" scale="32"/>
+        <column name="target_name" nullable="false" type="string" scale="255"/>
+        <column name="result_type" nullable="false" type="string" scale="64"/>
+        <index primary="true">
+            <on>task_id</on>
+        </index>
+        <index primary="false" unique="false">
+            <on>batch_name</on>
+        </index>
+    </table>
+  
+</database>
+

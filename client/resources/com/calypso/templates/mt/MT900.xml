@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 900: Confirmation of Debit -->
+<SwiftMsgDef>
+	<Name>MT900</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Transaction Reference Number" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Related Reference" tag=":21:" format="16x" value="RELATED_REF" modes="MMM"/>
+		<SwiftField name="Account Identification" tag=":25:" format="35x" value="???" modes="MMM"/>
+		<SwiftField name="Value Date, Currency Code, Amount" tag=":32A:" format="6!n3!a15d" value="DATE_CCY_AMOUN???T" modes="MMM"/>
+		<SwiftField name="Ordering Institution" tag=":52a:" value="PO_BENEFICIARY???" modes="OOO">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Sender to Receiver Information" tag=":72:" value="ADDITIONAL_INFO" format="6*35x" modes="OOO"/>
+	</SwiftSequence>
+</SwiftMsgDef>

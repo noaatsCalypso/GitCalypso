@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="domain_values" xmlns="">
+        <row cat="TriOptima">
+            <column name="name">domainName</column>
+            <column name="value">scheduledTask</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">scheduledTask</column>
+            <column name="value">TRI_REDUCE_IMPORT</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">scheduledTask</column>
+            <column name="value">TRI_REDUCE_FX_IMPORT</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">domainName</column>
+            <column name="value">REPORT.Types</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">REPORT.Types</column>
+            <column name="value">TriOptima</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">domainName</column>
+            <column name="value">eventType</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">eventType</column>
+            <column name="value">EX_TRIREDUCE_IMPORT</column>
+            <column name="description">The batch TriReduce import process encountered errors.</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">eventType</column>
+            <column name="value">PARTLY_COMPRESSED_TRADE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">exceptionType</column>
+            <column name="value">TRIREDUCE_IMPORT</column>
+            <column name="description">The batch TriReduce import process encountered errors.</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">CSVLine</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TransactionType</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">ExportDatetime</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TerminationTradeDatetime</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TerminationEffectiveDate</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TerminationFeeType</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TerminationFeeAmount</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TerminationFeeCurrency</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TerminationFeeDate</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">Nominal</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">NewNominal</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TerminationAction</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">PricingEnv</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TradeComment</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TradeKeywords</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">CompressionDate</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaBook</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaCcyPair</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaCounterParty</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaEventId</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaFxRate</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaLEI_Counterparty</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaLEI_ProcOrg</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaNewPayCCy</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaNewPayNominal</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaNewReceiveCcy</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaNewReceiveNominal</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaProcessingOrg</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaProductType</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaRISK_UNIT</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaTradeId</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaTradeDate</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaTradeSettleDate</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaTransactionType</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TriOptimaUniqueId</column>
+            <column name="description"></column>
+        </row>
+	    <row cat="TriOptima">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CreatedByCompression</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">tradeKeyword</column>
+            <column name="value">TerminatedByCompression</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">tradeKeyword</column>
+            <column name="value">TerminationReasonFar</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">tradeKeyword</column>
+            <column name="value">TerminationTypeFar</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">tradeKeyword</column>
+            <column name="value">TerminatedTradeDateFar</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">tradeKeyword</column>
+            <column name="value">TerminationDateFar</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">tradeKeyword</column>
+            <column name="value">TerminationActionFar</column>
+            <column name="description"></column>
+        </row>                                                
+        <row cat="TriOptima">
+            <column name="name">tradeKeyword</column>
+            <column name="value">TriOptimaUniqueId</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CompressionDate</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CompressionDateFar</column>
+            <column name="description"></column>
+        </row>
+		<row cat="TriOptima">
+            <column name="name">tradeKeyword</column>
+            <column name="value">TriOptimaEventId</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">addressMethod</column>
+            <column name="value">TRI_REDUCE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">domainName</column>
+            <column name="value">gateway</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">gateway</column>
+            <column name="value">TRI_REDUCE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">domainName</column>
+            <column name="value">formatType</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">formatType</column>
+            <column name="value">CSV</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">domainName</column>
+            <column name="value">messageType</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">messageType</column>
+            <column name="value">IMPORTED_TRI_REDUCE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">messageType</column>
+            <column name="value">FX_TRIOPTIMA_REDUCE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">workflowRuleMessage</column>
+            <column name="value">TriReduceApply</column>
+            <column name="description"/>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">workflowRuleMessage</column>
+            <column name="value">TriUnwindFX</column>
+            <column name="description"/>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">tradeStatus</column>
+            <column name="value">PARTLY_COMPRESSED</column>
+            <column name="description"/>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">tradeAction</column>
+            <column name="value">UNDO_COMPRESS</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">domainName</column>
+            <column name="value">TrioptimaCheckedFields.ALL</column>
+            <column name="description">List trade fields whose modification after export datetime prevent termination (part common to all products)</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TrioptimaCheckedFields.ALL</column>
+            <column name="value">_bookId</column>
+            <column name="description">Relates to trioptima message column BOOK</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TrioptimaCheckedFields.ALL</column>
+            <column name="value">_tradeCurrency</column>
+            <column name="description">Relates to trioptima message column CURR</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TrioptimaCheckedFields.ALL</column>
+            <column name="value">_counterPartyId</column>
+            <column name="description">Relates to trioptima message column CP_DTCC_CODE</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TrioptimaCheckedFields.ALL</column>
+            <column name="value">__quantity</column>
+            <column name="description">Relates to trioptima message column BUY_SELL</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TrioptimaCheckedFields.ALL</column>
+            <column name="value">Product._notional</column>
+            <column name="description">Relates to trioptima message column NOMINAL</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TrioptimaCheckedFields.ALL</column>
+            <column name="value">Product.SWAPLEG._fixedRate</column>
+            <column name="description">Relates to trioptima message column COUPON_RATE</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TrioptimaCheckedFields.ALL</column>
+            <column name="value">Product._maturityDate</column>
+            <column name="description">Relates to trioptima message column END_DATE</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TrioptimaCheckedFields.ALL</column>
+            <column name="value">Product.SWAPLEG._couponFrequency</column>
+            <column name="description">Relates to trioptima message column COUPON_PERIOD</column>
+        </row>
+
+        <row cat="TriOptima">
+            <column name="name">domainName</column>
+            <column name="value">TrioptimaCheckedFields.CreditDefaultSwap</column>
+            <column name="description">List CDS trade fields whose modification after export datetime prevent termination</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TrioptimaCheckedFields.CreditDefaultSwap</column>
+            <column name="value">Product.REF_ENTITY._legalEntityId</column>
+            <column name="description">Relates to trioptima message column RED_ID (6 first characters)</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TrioptimaCheckedFields.CreditDefaultSwap</column>
+            <column name="value">_settleDate</column>
+            <column name="description">Relates to trioptima message column ORIGINAL_EFFECTIVE_DATE</column>
+        </row>
+
+        <row cat="TriOptima">
+            <column name="name">domainName</column>
+            <column name="value">TrioptimaCheckedFields.CDSIndex</column>
+            <column name="description">List CDS Index trade fields whose modification after export datetime prevent termination</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TrioptimaCheckedFields.CDSIndex</column>
+            <column name="value">Product.CDS_INDEX_DEF_ID</column>
+            <column name="description">Relates to trioptima message columns RED_ID, ORIGINAL_EFFECTIVE_DATE and INDEX_SCALE_FACTOR</column>
+        </row>
+
+        <row cat="TriOptima">
+            <column name="name">domainName</column>
+            <column name="value">TrioptimaCheckedFields.CDSIndexTranche</column>
+            <column name="description">List CDS Index Tranche trade fields whose modification after export datetime prevent termination</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TrioptimaCheckedFields.CDSIndexTranche</column>
+            <column name="value">Product.CDS_INDEX_DEF_ID</column>
+            <column name="description">Relates to trioptima message columns RED_ID, ORIGINAL_EFFECTIVE_DATE, ATTACHMENT_POINT and DETACHMENT_POINT</column>
+        </row>
+    
+        <row cat="TriOptima">
+            <column name="name">TrioptimaUploadMessageType</column>
+            <column name="value">TRIOPTIMA_REDUCE</column>
+            <column name="description">Defines the type of Data Uploader BO Messages. Choose TRIOPTIMA_REDUCE if you want it identical to termination BO messages type</column>
+        </row>
+
+        <row cat="TriOptima">
+            <column name="name">domainName</column>
+            <column name="value">classAuditMode</column>
+            <column name="description"/>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">classAuditMode</column>
+            <column name="value">TriOptimaParam</column>
+            <column name="description"/>
+        </row>
+
+        <row cat="TriOptima">
+            <column name="name">domainName</column>
+            <column name="value">riskAnalysis</column>
+            <column name="description"/>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">riskAnalysis</column>
+            <column name="value">TriOptima</column>
+            <column name="description"/>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">domainName</column>
+            <column name="value">TriOptimaAnalysis</column>
+            <column name="description"/>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TriOptimaAnalysis</column>
+            <column name="value">TriOptima</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">domainName</column>
+            <column name="value">TerminationReason</column>
+            <column name="description"/>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">keyword.TerminationReason</column>
+            <column name="value">TriOptima</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">keyword.TerminationReasonFar</column>
+            <column name="value">TriOptima</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">keyword.TerminationTypeFar</column>
+            <column name="value">FullTerminationFar</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">domainName</column>
+            <column name="value">TriOptimaFx.TerminationMandatory</column>
+            <column name="description"/>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">domainName</column>
+            <column name="value">TriOptimaFx.TradeMandatory</column>
+            <column name="description"/>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TriOptimaFx.TerminationMandatory</column>
+            <column name="value">TRIOPTIMA_MATCH_KEY</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TriOptimaFx.TerminationMandatory</column>
+            <column name="value">EVENT_PROCESSING_ID</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TriOptimaFx.TerminationMandatory</column>
+            <column name="value">TRADE_ID</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TriOptimaFx.TerminationMandatory</column>
+            <column name="value">TRANSACTION_TYPE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TriOptimaFx.TerminationMandatory</column>
+            <column name="value">UNWIND_DATE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TriOptimaFx.TradeMandatory</column>
+            <column name="value">TRIOPTIMA_MATCH_KEY</column>
+            <column name="description"></column>
+        </row>         
+        <row cat="TriOptima">
+            <column name="name">TriOptimaFx.TradeMandatory</column>
+            <column name="value">TRANSACTION_TYPE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TriOptimaFx.TradeMandatory</column>
+            <column name="value">INS_TYPE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TriOptimaFx.TradeMandatory</column>
+            <column name="value">EVENT_PROCESSING_ID</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TriOptimaFx.TradeMandatory</column>
+            <column name="value">BOOK</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TriOptimaFx.TradeMandatory</column>
+            <column name="value">TRADE_DATE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TriOptimaFx.TradeMandatory</column>
+            <column name="value">END_DATE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TriOptimaFx.TradeMandatory</column>
+            <column name="value">NEW_RECEIVE_NOTIONAL</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TriOptimaFx.TradeMandatory</column>
+            <column name="value">RECEIVE_CURR</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TriOptimaFx.TradeMandatory</column>
+            <column name="value">NEW_PAY_NOTIONAL</column>
+            <column name="description"></column>
+        </row>
+        <row cat="TriOptima">
+            <column name="name">TriOptimaFx.TradeMandatory</column>
+            <column name="value">PAY_CURR</column>
+            <column name="description"></column>
+        </row>       
+    </table>
+
+    <table name="trade_filter" xmlns="">
+        <row cat="TriOptima">
+            <column name="trade_filter_name">TriOptima_CRD</column>
+            <column name="comments">TriOptima CRD</column>
+            <column name="caching_b">0</column>
+            <column name="setledt_tenor_min">360000</column>
+            <column name="setledt_tenor_max">360000</column>
+            <column name="matdt_tenor_min">0</column>
+            <column name="check_hol_b">0</column>
+            <column name="cache_expiry">0</column>
+            <column name="exchange_traded_b">1</column>
+            <!-- Did not find anything about include position based -->
+        </row>
+        <row cat="TriOptima">
+            <column name="trade_filter_name">TriOptima_IRD</column>
+            <column name="comments">TriOptima IRD</column>
+            <column name="caching_b">0</column>
+            <column name="setledt_tenor_min">360000</column>
+            <column name="setledt_tenor_max">360000</column>
+            <column name="matdt_tenor_min">0</column>
+            <column name="check_hol_b">0</column>
+            <column name="cache_expiry">0</column>
+            <column name="exchange_traded_b">1</column>
+            <!-- Did not find anything about include position based -->
+        </row>
+    </table>
+    <table name="trade_filter_crit" xmlns="">
+        <row cat="TriOptima">
+            <column name="trade_filter_name">TriOptima_CRD</column>
+            <column name="criterion_name">ProductType</column>
+            <column name="criterion_value">CDSIndex</column>
+            <column name="is_in_b">1</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="trade_filter_name">TriOptima_CRD</column>
+            <column name="criterion_name">ProductType</column>
+            <column name="criterion_value">CDSIndexTranche</column>
+            <column name="is_in_b">1</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="trade_filter_name">TriOptima_CRD</column>
+            <column name="criterion_name">ProductType</column>
+            <column name="criterion_value">CreditDefaultSwap</column>
+            <column name="is_in_b">1</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="trade_filter_name">TriOptima_IRD</column>
+            <column name="criterion_name">ProductType</column>
+            <column name="criterion_value">FRA</column>
+            <column name="is_in_b">1</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="trade_filter_name">TriOptima_IRD</column>
+            <column name="criterion_name">ProductType</column>
+            <column name="criterion_value">Swap</column>
+            <column name="is_in_b">1</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="trade_filter_name">TriOptima_IRD</column>
+            <column name="criterion_name">SubType</column>
+            <column name="criterion_value">FRA.InArrear</column>
+            <column name="is_in_b">1</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="trade_filter_name">TriOptima_IRD</column>
+            <column name="criterion_name">SubType</column>
+            <column name="criterion_value">FRA.Standard</column>
+            <column name="is_in_b">1</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="trade_filter_name">TriOptima_IRD</column>
+            <column name="criterion_name">SubType</column>
+            <column name="criterion_value">Swap.Arrear</column>
+            <column name="is_in_b">1</column>
+        </row>
+        <row cat="TriOptima">
+            <column name="trade_filter_name">TriOptima_IRD</column>
+            <column name="criterion_name">SubType</column>
+            <column name="criterion_value">Swap.Standard</column>
+            <column name="is_in_b">1</column>
+        </row>
+    </table>
+</database>

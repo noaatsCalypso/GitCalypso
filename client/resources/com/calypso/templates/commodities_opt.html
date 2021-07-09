@@ -1,0 +1,152 @@
+<!-- Start Exhibit II-B - see CAL-70850 for 2005 ISDA Commodity Definitions reference document -->
+<p></p>
+<!--calypso>
+	include "commodities_variables_option.html";
+</calypso-->
+<p>The terms of the particular Transaction to which this Confirmation relates are as follows:</p>
+<table cellspacing="10" border="0" width="*" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 41.9913%;">Trade Date:</td>
+<td style="width: 57.8644%;">|TRADE_DATE|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Commodity:</td>
+<td style="width: 57.8644%;">|COMMODITY_NAME|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Units</td>
+<td style="width: 57.8644%;">|COMMODITY_UNIT|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Option Style</td>
+<td style="width: 57.8644%;">|REPORT#Option Type|</td>
+</tr>
+<tr>
+<td colspan="2" style="width: 99.8557%;">
+<p class="header2">Part One:</p>
+</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Option Type</td>
+<td style="width: 57.8644%;">|KEYWORD_OPTION_TYPE_ONE|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Seller</td>
+<td style="width: 57.8644%;">|TRADE_SELLER_NAME|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Buyer</td>
+<td style="width: 57.8644%;">|TRADE_BUYER_NAME|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Notional Quantity per Calculation Period:</td>
+<td style="width: 57.8644%;">|COMMODITY_QTY_PER_PERIOD| per |COMMODITY_UNIT|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Total Notional Quantity:</td>
+<td style="width: 57.8644%;">|TOTAL_QUANTITY|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Strike Price Per Unit:</td>
+<td style="width: 57.8644%;">|COMMODITY_STRIKE_PRICE_PER_UNIT| per |COMMODITY_UNIT|</td>
+</tr>
+<tr>
+<td colspan="2" style="width: 99.8557%;">
+<p class="header2">Part Two:</p>
+</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Option Type</td>
+<td style="width: 57.8644%;">|KEYWORD_OPTION_TYPE_TWO|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Seller</td>
+<td style="width: 57.8644%;">|TRADE_SELLER_NAME|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Buyer</td>
+<td style="width: 57.8644%;">|TRADE_BUYER_NAME|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Notional Quantity per Calculation Period:</td>
+<td style="width: 57.8644%;">|COMMODITY_QTY_PER_PERIOD| per |COMMODITY_UNIT|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Total Notional Quantity:</td>
+<td style="width: 57.8644%;">|TOTAL_QUANTITY|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Strike Price Per Unit:</td>
+<td style="width: 57.8644%;">|COMMODITY_STRIKE_PRICE_PER_UNIT_TWO| per |COMMODITY_UNIT|</td>
+</tr>
+<tr>
+<td colspan="2" style="width: 99.8557%;">
+<p class="header2">The following details are applicable to both Part One and Part Two:</p>
+</td>
+</tr>
+<!-- START extra info: Calculation Period not part of exhibit IIB -->
+<tr>
+<td style="width: 41.9913%;">Calculation Period:</td>
+<td style="width: 57.8644%;">|CALCULATION_PERIOD|</td>
+</tr>
+<!-- END extra info: Calculation Period not part of exhibit IIB -->
+
+<tr>
+<td style="width: 41.9913%;"><b>Procedure for Exercise:</b></td>
+<td style="width: 57.8644%;"></td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Exercise Period(s):</td>
+<td style="width: 57.8644%;">|KEYWORD_EXERCISE_PERIODS|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Expiration Date(s) :</td>
+<td style="width: 57.8644%;">|KEYWORD_COMMODITY_EXPIRATION_DATES|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Automatic Exercise:</td>
+<td style="width: 57.8644%;">Applicable</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Rounding of Floating Price:</td>
+<td style="width: 57.8644%;">|KEYWORD_ROUNDING_PRICE|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;"><b>Cash Settlement Terms:</b></td>
+<td style="width: 57.8644%;"></td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Cash Settlement:</td>
+<td style="width: 57.8644%;">|KEYWORD_CASH_SETTLEMENT|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Settlement Date(s):</td>
+<td style="width: 57.8644%;">|KEYWORD_BUSINESS_DAYS| Business Days following each Expiration Date.</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Business Day:</td>
+<td style="width: 57.8644%;">|COMMODITY_PYMT_CALENDAR|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;"><b>Calculation Agent:</b></td>
+<td style="width: 57.8644%;">|SENDER_CODE|</td>
+</tr>
+<tr>
+<td style="width: 41.9913%;">Payment Date(s):</td>
+<td style="width: 57.8644%;">|COMMODITY_PYMT_LAG| |PAYMENT_DATE|</td>
+</tr>
+
+<!--calypso>
+	include "commodities_regions_fields.html";
+</calypso-->
+
+<tr>
+<td style="width: 41.9913%;">Business Day:</td>
+<td style="width: 57.8644%;">|COMMODITY_PYMT_CALENDAR|</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<!---End Exhibit II-B -->
+<p></p>

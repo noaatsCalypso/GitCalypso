@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="domain_values" xmlns="">
+        <row cat="domain">
+            <column name="name">classAuditMode</column>
+            <column name="value">DecSuppOrder</column>
+            <column name="description"></column>
+        </row>
+        <row cat="domain">
+            <column name="name">tradeKeyword</column>
+            <column name="value">Counterparty_Ref</column>
+            <column name="description"></column>
+        </row>
+    </table>
+</database>

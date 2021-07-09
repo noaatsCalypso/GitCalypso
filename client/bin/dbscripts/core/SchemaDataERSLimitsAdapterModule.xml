@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="domain_values" xmlns="">
+        <row cat="ERSLimitsAdapter">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_ADJUSTMENT_OPS</column>
+			<column name="description">Scheduled task to perform Add /Delete Operations for Limit Adjustments</column>
+        </row>
+        <row cat="ERSLimitsAdapter">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_DAILY_EXCESS_REPORT</column>
+			<column name="description">Scheduled run of ERS Daily Excess Report</column>
+        </row>
+        <row cat="ERSLimitsAdapter">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_HIERARCHY_OPS</column>
+			<column name="description">Scheduled task to perform Add/Edit/Delete Operations of ERS Hierarchy</column>
+        </row>
+        <row cat="ERSLimitsAdapter">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_LIMIT_EXPORT</column>
+			<column name="description">Scheduled Task to retrieve all limits in a specified XML format</column>
+        </row>
+        <row cat="ERSLimitsAdapter">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_LIMIT_OPS</column>
+			<column name="description">Scheduled Task to perform Add/Edit/Delete Operations for Limits</column>
+        </row>
+        <row cat="ERSLimitsAdapter">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_LIMITGROUP_OPS</column>
+			<column name="description">Scheduled task to perform Add/Edit/Delete Operations for Limit Groups</column>
+        </row>
+        <row cat="ERSLimitsAdapter">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_MONTHLY_REPORT</column>
+			<column name="description">Scheduled run of ERS Monthly Report</column>
+        </row>
+        <row cat="ERSLimitsAdapter">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_LIMITS_LOADER</column>
+			<column name="description">Scheduled task to import limit definitions from a CSV file into ERS Limits</column>
+        </row>
+    </table>
+</database>
+

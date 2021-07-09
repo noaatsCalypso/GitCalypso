@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+<table name="domain_values" xmlns="">
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_IR_CURVES_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_SECTOR_RATING_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_ENHANCED_SECTOR_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_CDS_INDEX_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_CDS_SPREAD_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_FCCDS_SPREAD_DATA</column>
+	<column name="description">Fixed Coupon CDS spreads scheduled task</column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_SD_FCCDS_SPREAD_DATA</column>
+	<column name="description">SameDay Fixed Coupon CDS spreads scheduled task</column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_SAMEDAY_SPREAD_DATA</column>
+	<column name="description">Loads same day quotes for cds</column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_RED_ENTITIES</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_RED_OBLIGATIONS</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_TRANCHE_QUOTES_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_CDS_ABS_INDEX_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_INDEX_QUOTES_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_LOAN_QUOTES_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_ABX_QUOTES_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_LCDS_SPREAD_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_LCDS_SD_SPREAD_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_INDEX_CONST_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_SFTP_CDS_INDEX_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_SFTP_CDS_SPREAD_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_SFTP_FCCDS_SPREAD_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_SFTP_INDEX_CONST_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_SFTP_INDEX_QUOTES_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_SFTP_LCDS_SD_SPREAD_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_SFTP_LCDS_SPREAD_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_SFTP_RED_ENTITIES</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_SFTP_RED_OBLIGATIONS</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_SFTP_SAMEDAY_SPREAD_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_SFTP_SD_FCCDS_SPREAD_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">scheduledTask</column>
+	<column name="value">LOAD_MARKIT_SFTP_TRANCHE_QUOTES_DATA</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_IR_MSG</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_IR_SUCCESS</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_IR_FAILURE</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_RED_MSG</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_RED_FAILURE</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_RED_SUCCESS</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_SPREAD_MSG</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_SPREAD_FAILURE</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_SPREAD_SUCCESS</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_INDEX_MSG</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_INDEX_FAILURE</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_INDEX_SUCCESS</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_TRANCHE_QT_MSG</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_TRANCHE_QT_FAILURE</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_TRANCHE_QT_SUCCESS</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_INDEX_QT_MSG</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_INDEX_QT_FAILURE</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">exceptionType</column>
+	<column name="value">MARKIT_INDEX_QT_SUCCESS</column>
+	<column name="description"> </column>
+</row>
+<row cat="default">
+	<column name="name">leAttributeType</column>
+	<column name="value">RED_TICKER</column>
+	<column name="description">Corresponds to element "ticker" in data file</column>
+</row>
+<row cat="default">
+	<column name="name">leAttributeType</column>
+	<column name="value">RED_PAIR</column>
+	<column name="description">Corresponds to element "red" in data file</column>
+</row>
+<row cat="default">
+	<column name="name">leAttributeType</column>
+	<column name="value">RED_CUSIP</column>
+	<column name="description">Corresponds to element "cusip" in data file</column>
+</row>
+<row cat="default">
+	<column name="name">leAttributeType</column>
+	<column name="value">RED_TYPE</column>
+	<column name="description">Corresponds to element "type" in data file</column>
+</row>
+<row cat="default">
+	<column name="name">leAttributeType</column>
+	<column name="value">RED_JURISDICTION</column>
+	<column name="description">Corresponds to element "jurisdiction" in data file</column>
+</row>
+<row cat="default">
+	<column name="name">leAttributeType</column>
+	<column name="value">RED_LIQUIDITY</column>
+	<column name="description">Corresponds to element "liquidity" in data file</column>
+</row>
+<row cat="default">
+	<column name="name">leAttributeType</column>
+	<column name="value">RED_SHORT_NAME</column>
+	<column name="description">Corresponds to element "shortname" in data file</column>
+</row>
+<row cat="default">
+	<column name="name">leAttributeType</column>
+	<column name="value">RED_SECTOR</column>
+	<column name="description">Corresponds to element "Sector" in data file</column>
+</row>
+<row cat="default">
+	<column name="name">leAttributeType</column>
+	<column name="value">RED_REGION</column>
+	<column name="description">Corresponds to element "Region" in data file</column>
+</row>
+<row cat="default">
+	<column name="name">leAttributeType</column>
+	<column name="value">RED_DEPTH</column>
+	<column name="description">Corresponds to element "depth" in Entity data file</column>
+</row>
+<row cat="default">
+	<column name="name">leAttributeType</column>
+	<column name="value">RED_MYTICKER</column>
+	<column name="description">Corresponds to element "myticker" in data file</column>
+</row>
+<row cat="default">
+	<column name="name">leAttributeType</column>
+	<column name="value">RED_ALTERNAMES</column>
+	<column name="description">Corresponds to element "alternativenames" in data file</column>
+</row>
+<row cat="default">
+	<column name="name">securityCode</column>
+	<column name="value">IsPreferred</column>
+	<column name="description">Used by bonds updated through MarkIT while loading Obligations.</column>
+</row>
+<row cat="default">
+	<column name="name">securityCode</column>
+	<column name="value">INDEX_FAMILY</column>
+	<column name="description">Used by MarkIT while loading Indices.</column>
+</row>
+<row cat="default">
+	<column name="name">securityCode</column>
+	<column name="value">INDEX_SUBFAMILY</column>
+	<column name="description">Used by MarkIT while loading Indices.</column>
+</row>
+<row cat="default">
+	<column name="name">securityCode</column>
+	<column name="value">INDEX_ACTIVE_VERSION</column>
+	<column name="description">Used by MarkIT while loading Indices.</column>
+</row>
+<row cat="default">
+	<column name="name">securityCode</column>
+	<column name="value">PREV_RED_INDEX</column>
+	<column name="description">Used by MarkIT while loading Indices.</column>
+</row>
+<row cat="default">
+	<column name="name">securityCode</column>
+	<column name="value">NEXT_RED_INDEX</column>
+	<column name="description">Used by MarkIT while loading Indices.</column>
+</row>
+<row cat="default">
+	<column name="name">domainName</column>
+	<column name="value">trancheFamily</column>
+	<column name="description">Tranche Family</column>
+</row>
+<row cat="default">
+	<column name="name">trancheFamily</column>
+	<column name="value">CDX</column>
+	<column name="description"></column>
+</row>
+<row cat="default">
+	<column name="name">trancheFamily</column>
+	<column name="value">ITRAXX-ASIA</column>
+	<column name="description"></column>
+</row>
+<row cat="default">
+	<column name="name">trancheFamily</column>
+	<column name="value">ITRAXX-EUROPE</column>
+	<column name="description"></column>
+</row>
+<row cat="default">
+	<column name="name">trancheFamily</column>
+	<column name="value">IBOXX Index</column>
+	<column name="description"></column>
+</row>
+<!-- CAL-138848 -->
+<row cat="default">
+	<column name="name">trancheFamily</column>
+	<column name="value">LCDX</column>
+	<column name="description"></column>
+</row>
+<!-- CAL-138848 -->
+<row cat="default">
+	<column name="name">trancheFamily</column>
+	<column name="value">MCDXNA</column>
+	<column name="description"></column>
+</row>
+<row cat="default">
+	<column name="name">trancheFamily</column>
+	<column name="value">TRAC-X Asia Index</column>
+	<column name="description"></column>
+</row>
+<row cat="default">
+	<column name="name">trancheFamily</column>
+	<column name="value">TRAC-X Europe Index</column>
+	<column name="description"></column>
+</row>
+<row cat="default">
+	<column name="name">trancheFamily</column>
+	<column name="value">TRAC-X NA Index</column>
+	<column name="description"></column>
+</row>
+<row cat="default">
+	<column name="name">trancheFamily</column>
+	<column name="value">ITRAXX-SDI</column>
+	<column name="description"></column>
+</row>
+<row cat="default">
+    <column name="name">dsInit</column>
+    <column name="value">MarkITServer</column>
+    <column name="description">MarkIT Service</column>
+</row>
+<row cat="default">
+    <column name="name">tradeKeyword</column>
+    <column name="value">LastMarkITRCDUpdate</column>
+    <column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">domainName</column>
+	<column name="value">leAttributeType.RED_TYPE</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">domainName</column>
+	<column name="value">leAttributeType.RED_SECTOR</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">domainName</column>
+	<column name="value">leAttributeType.RED_JURISDICTION</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">domainName</column>
+	<column name="value">leAttributeType.RED_REGION</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_TYPE</column>
+	<column name="value">Corp</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_TYPE</column>
+	<column name="value">Sov</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_TYPE</column>
+	<column name="value">Index</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_TYPE</column>
+	<column name="value">StatBody</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_TYPE</column>
+	<column name="value">State</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_TYPE</column>
+	<column name="value">Supra</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">Africa</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">Asia</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">E.Eur</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">Europe</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">India</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">Lat.Amer</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">MiddleEast</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">N.Amer</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">OffShore</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">Supra</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">Asia ex-Japan</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">Eastern Europe</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">Europe</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">Japan</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">Latin America</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">Middle East</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">North America</column>
+	<column name="description"></column>
+</row><row cat="demonstration">
+	<column name="name">leAttributeType.RED_REGION</column>
+	<column name="value">Oceania</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_SECTOR</column>
+	<column name="value">Consumer Goods</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_SECTOR</column>
+	<column name="value">Consumer Services</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_JURISDICTION</column>
+	<column name="value">Alabama (US)</column>
+	<column name="description"></column>
+</row>
+<row cat="demonstration">
+	<column name="name">leAttributeType.RED_JURISDICTION</column>
+	<column name="value">Alaska (US)</column>
+	<column name="description"></column>
+</row>
+<row cat="default">
+    <column name="name">ratingAgency</column>
+    <column name="value">Markit</column>
+    <column name="description">Markit</column>
+</row>
+	<row cat="default">
+		<column name="name">domainName</column>
+		<column name="value">sameDayIndexBatches</column>
+		<column name="description">Domain name that control batch names for same day index quotes</column>
+	</row>
+        <row cat="startup">
+            <column name="name">sameDayIndexBatches</column>
+            <column name="value">JP1600</column>
+            <column name="description"></column>
+        </row>
+        <row cat="startup">
+            <column name="name">sameDayIndexBatches</column>
+            <column name="value">JP1700</column>
+            <column name="description"></column>
+        </row>
+        <row cat="startup">
+            <column name="name">sameDayIndexBatches</column>
+            <column name="value">JP1800</column>
+            <column name="description"></column>
+        </row>        
+        <row cat="startup">
+            <column name="name">sameDayIndexBatches</column>
+            <column name="value">LN1200</column>
+            <column name="description"></column>
+        </row>
+        <row cat="startup">
+            <column name="name">sameDayIndexBatches</column>
+            <column name="value">LN1430</column>
+            <column name="description"></column>
+        </row>
+        <row cat="startup">
+            <column name="name">sameDayIndexBatches</column>
+            <column name="value">LN1530</column>
+            <column name="description"></column>
+        </row>        
+        <row cat="startup">
+            <column name="name">sameDayIndexBatches</column>
+            <column name="value">LN1700</column>
+            <column name="description"></column>
+        </row>
+        <row cat="startup">
+            <column name="name">sameDayIndexBatches</column>
+            <column name="value">LN1800</column>
+            <column name="description"></column>
+        </row>
+        <row cat="startup">
+            <column name="name">sameDayIndexBatches</column>
+            <column name="value">LN1930</column>
+            <column name="description"></column>
+        </row>
+        <row cat="startup">
+            <column name="name">sameDayIndexBatches</column>
+            <column name="value">NY1530</column>
+            <column name="description"></column>
+        </row>
+        <row cat="startup">
+            <column name="name">sameDayIndexBatches</column>
+            <column name="value">NY1700</column>
+            <column name="description"></column>
+        </row>
+        <row cat="startup">
+            <column name="name">sameDayIndexBatches</column>
+            <column name="value">NY1930</column>
+            <column name="description"></column>
+        </row>        
+</table>
+<table name="product_code" xmlns="">
+	<row cat="default">
+		<column name="product_code">RED</column>
+		<column name="code_type">string</column>
+		<column name="unique_b">0</column>
+		<column name="searchable_b">0</column>
+		<column name="mandatory_b">0</column>
+		<column name="product_list">CDSIndex</column>
+		<column name="version_num">0</column>
+	</row>
+	<row cat="default">
+		<column name="product_code">PREV_RED_INDEX</column>
+		<column name="code_type">string</column>
+		<column name="unique_b">0</column>
+		<column name="searchable_b">0</column>
+		<column name="mandatory_b">0</column>
+		<column name="product_list">CDSIndex</column>
+		<column name="version_num">0</column>
+	</row>
+	<row cat="default">
+		<column name="product_code">NEXT_RED_INDEX</column>
+		<column name="code_type">string</column>
+		<column name="unique_b">0</column>
+		<column name="searchable_b">0</column>
+		<column name="mandatory_b">0</column>
+		<column name="product_list">CDSIndex</column>
+		<column name="version_num">0</column>
+	</row>	
+	<row cat="default">
+		<column name="product_code">RED_PAIR</column>
+		<column name="code_type">string</column>
+		<column name="unique_b">0</column>
+		<column name="searchable_b">0</column>
+		<column name="mandatory_b">0</column>
+		<column name="product_list">Bond</column>
+		<column name="version_num">0</column>
+	</row>
+	<row cat="default">
+		<column name="product_code">IsPreferred</column>
+		<column name="code_type">boolean</column>
+		<column name="unique_b">0</column>
+		<column name="searchable_b">0</column>
+		<column name="mandatory_b">0</column>
+		<column name="product_list">Bond</column>
+		<column name="version_num">0</column>
+	</row>
+	<row cat="default">
+		<column name="product_code">INDEX_SUBFAMILY</column>
+		<column name="code_type">string</column>
+		<column name="unique_b">0</column>
+		<column name="searchable_b">0</column>
+		<column name="mandatory_b">0</column>
+		<column name="product_list">CDSIndex</column>
+		<column name="version_num">0</column>
+	</row>
+	<row cat="default">
+		<column name="product_code">INDEX_ACTIVE_VERSION</column>
+		<column name="code_type">string</column>
+		<column name="unique_b">0</column>
+		<column name="searchable_b">0</column>
+		<column name="mandatory_b">0</column>
+		<column name="product_list">CDSIndex</column>
+		<column name="version_num">0</column>
+	</row>	
+</table>
+<table name="rating_values" xmlns="">
+        <row cat="default">
+            <column name="agency_name">Markit</column>
+            <column name="rating_value">AAA</column>
+            <column name="order_id">0</column>
+            <column name="rating_type">Current</column>
+        </row>
+        <row cat="default">
+            <column name="agency_name">Markit</column>
+            <column name="rating_value">AA</column>
+            <column name="order_id">1</column>
+            <column name="rating_type">Current</column>
+        </row>
+        <row cat="default">
+            <column name="agency_name">Markit</column>
+            <column name="rating_value">A</column>
+            <column name="order_id">2</column>
+            <column name="rating_type">Current</column>
+        </row>
+        <row cat="default">
+            <column name="agency_name">Markit</column>
+            <column name="rating_value">BBB</column>
+            <column name="order_id">3</column>
+            <column name="rating_type">Current</column>
+        </row>
+        <row cat="default">
+            <column name="agency_name">Markit</column>
+            <column name="rating_value">BB</column>
+            <column name="order_id">4</column>
+            <column name="rating_type">Current</column>
+        </row>
+        <row cat="default">
+            <column name="agency_name">Markit</column>
+            <column name="rating_value">B</column>
+            <column name="order_id">5</column>
+            <column name="rating_type">Current</column>
+        </row>
+        <row cat="default">
+            <column name="agency_name">Markit</column>
+            <column name="rating_value">CCC</column>
+            <column name="order_id">6</column>
+            <column name="rating_type">Current</column>
+        </row>
+        <row cat="default">
+            <column name="agency_name">Markit</column>
+            <column name="rating_value">CC</column>
+            <column name="order_id">7</column>
+            <column name="rating_type">Current</column>
+        </row>
+        <row cat="default">
+            <column name="agency_name">Markit</column>
+            <column name="rating_value">C</column>
+            <column name="order_id">8</column>
+            <column name="rating_type">Current</column>
+        </row>
+        <row cat="default">
+            <column name="agency_name">Markit</column>
+            <column name="rating_value">DDD</column>
+            <column name="order_id">9</column>
+            <column name="rating_type">Current</column>
+        </row>
+        <row cat="default">
+            <column name="agency_name">Markit</column>
+            <column name="rating_value">DD</column>
+            <column name="order_id">10</column>
+            <column name="rating_type">Current</column>
+        </row>
+        <row cat="default">
+            <column name="agency_name">Markit</column>
+            <column name="rating_value">D</column>
+            <column name="order_id">11</column>
+            <column name="rating_type">Current</column>
+        </row>  
+</table>
+<table name="domain_values" xmlns="">
+		<row cat="default">
+			<column name="name">securityCode.DebtSeniority</column>
+			<column name="value">SENIOR_LOSS_ABSORBING_CAP</column>
+			<column name="description"/>
+		</row>
+</table>
+</database>

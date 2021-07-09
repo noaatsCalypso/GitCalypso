@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+   <table name="domain_values" xmlns="">
+      
+      <!-- SCHEDULED TASKS -->
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_TRANSLATE_TO_CDML</column>
+         <column name="description"></column>
+      </row>
+      <row cat="Required">
+         <column name="name">scheduledTask</column>
+         <column name="value">CLEARING_PROCESS_FROM_CDML</column>
+         <column name="description"></column>
+      </row>
+      <!-- END SCHEDULED TASKS -->
+      
+      <!-- CDML DOMAIN CONFIGURATION -->
+      <row cat="Required">
+         <column name="name">domainName</column>
+         <column name="value">Clearing.CDML.producerNames</column>
+         <column name="description">List of available CDML producer names</column>
+      </row>
+      <!-- END CDML DOMAIN CONFIGURATION -->
+   </table>
+</database>

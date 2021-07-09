@@ -1,0 +1,2734 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="product_banking_flows" xmlns="">
+        <column name="product_id" nullable="false" scale="1" type="int"/>
+        <column name="trade_type" nullable="false" scale="32" type="string"/>
+        <column name="currency_code" nullable="false" scale="3" type="string"/>
+        <column name="start_date" nullable="false" type="timestamp"/>
+        <column name="flow_generator_class" nullable="false" scale="255" type="string"/>
+        <index primary="true">
+            <on>product_id</on>
+        </index>
+    </table>
+
+    <table name="bk_flws_vf" xmlns="">
+        <column name="product_id" nullable="false" scale="1" type="int"/>
+        <column name="field_name" nullable="false" scale="64" type="string"/>
+        <column name="effective_from_date" nullable="false" type="timestamp"/>
+        <column name="effective_to_date" nullable="false" type="timestamp"/>
+        <column name="value" nullable="false" scale="1000" type="string"/>
+        <index primary="true">
+            <on>product_id</on>
+            <on>field_name</on>
+            <on>effective_from_date</on> 
+        </index>
+    </table>
+
+    <table name="bk_flws_vf_schd" xmlns="">
+        <column name="product_id" nullable="false" scale="1" type="int"/>
+        <column name="field_name" nullable="false" scale="64" type="string"/>
+        <column name="effective_from_date" nullable="false" type="timestamp"/>
+        <column name="schedule_date" nullable="false" type="timestamp"/>
+        <column name="value" nullable="false" scale="1000" type="string"/>
+        <index primary="true">
+            <on>product_id</on>
+            <on>field_name</on>
+            <on>effective_from_date</on>
+            <on>schedule_date</on>
+        </index>
+    </table>
+	<table name="bk_flws_vf_attrbt" xmlns="">
+	 	<column name="product_id" nullable="false" scale="1" type="int"/>
+        <column name="field_name" nullable="false" scale="64" type="string"/>
+        <column name="effective_from_date" nullable="false" type="timestamp"/>
+   	 	<column name="attrbt_collection_idx" nullable="false" scale="1" type="int"/>
+	 	<column name="attribute_name" nullable="false" scale="64" type="string"/>
+	 	<column name="attribute_value" nullable="false" scale="255" type="string"/>
+ 	    <index primary="true">
+            <on>product_id</on>
+            <on>field_name</on>
+            <on>effective_from_date</on>
+            <on>attrbt_collection_idx</on>
+            <on>attribute_name</on>
+        </index>
+    </table>
+    <table name="liq_expression" xmlns="">
+        <column name="expression_id" nullable="false" scale="1" type="int"/>
+        <column name="expression_name" nullable="false" scale="64" type="string"/>
+        <column name="expression_formula" nullable="true" scale="255" type="string"/>
+        <index primary="true">
+            <on>expression_id</on>
+        </index>
+    </table>
+    <table name="liq_expr_variable" xmlns="">
+        <column name="variable_id" nullable="false" scale="1" type="int"/>
+        <column name="variable_name" nullable="false" scale="64" type="string"/>
+        <column name="variable_type" nullable="false" scale="64" type="string"/>
+        <index primary="true">
+            <on>variable_id</on>
+        </index>
+    </table>
+    <table name="liq_expr_variable_params" xmlns="">
+        <column name="variable_id" nullable="false" scale="1" type="int"/>
+        <column name="param_name" nullable="false" scale="64" type="string"/>
+        <column name="param_value" nullable="true" scale="255" type="string"/>
+        <index primary="true">
+            <on>variable_id</on>
+            <on>param_name</on>
+        </index>
+    </table>    
+    <table name="product_repo_allocation" xmlns="">
+	    <column name="product_id" nullable="false" scale="1" type="int"/>
+	    <column name="security_id" nullable="true" scale="1" type="int"/>
+		<column name="rate" nullable="true" scale="1" type="float"/>
+		<column name="haircut" nullable="true" scale="1" type="float"/>
+		<column name="quantity" nullable="true" scale="1" type="float"/>
+		<column name="price" nullable="true" scale="1" type="float"/>
+		<column name="start_date" nullable="true" type="timestamp"/>
+		<column name="end_date" nullable="true" type="timestamp"/>
+	    <index primary="true">
+		    <on>product_id</on>
+	    </index>
+     </table>
+     <table name ="liq_floating_rate_note" xmlns="">
+		<column name = "id" nullable = "false" scale = "1" type = "int"/>
+		<column name = "rate_index_str" nullable = "false" scale = "128" type = "string"/>
+		<column name = "fwd_start_date" nullable = "false" type = "timestamp"/>
+		<column name = "reset_date" nullable="false" type="timestamp" default="1900-01-01 00:00:00.0"/>
+		<column name = "rate" nullable = "true" scale = "1" type = "float"/>
+		<column name = "version" nullable = "false" scale="1" type="int" default="1"/>
+		<column name = "rate_index_str2" nullable = "false" scale = "128" type = "string" default="SAME"/>
+		<column name = "rate2" nullable = "true" scale = "1" type = "float"/>
+
+		<index primary = "true">
+            <on>id</on>
+        </index>   
+        <index primary="false" unique="true">
+            <on>rate_index_str</on>
+            <on>rate_index_str2</on>
+            <on>fwd_start_date</on>
+        </index>    
+        <index primary="false">
+            <on>reset_date</on>
+        </index>     
+	</table>
+    <table name="liq_domain_attributes" xmlns="">
+        <column name="name" nullable="false" scale="64" type="string"/>
+        <column name="value" nullable="false" scale="64" type="string"/>
+        <column name="user_name" nullable="false" scale="32" type="string"/>
+        <column name="version" nullable="false" scale="1" type="int" default="1"/>
+        <index primary="true">
+            <on>name</on>
+            <on>value</on>
+        </index>
+    </table>
+    <table name="liq_trade_snapshot_def" xmlns="">
+        <column name="snapshot_datetime" nullable="false" type="timestamp"/>
+		<column name="update_time" nullable="false" type="timestamp"/>        
+		<column name="version" nullable="false"	scale="1" type="int" default="1"/>
+        <index primary="true">
+            <on>snapshot_datetime</on>
+        </index>
+    </table>         
+     <table name="liq_trade_snapshot" xmlns="">
+        <column name="trade_id" nullable="false" scale="1" type="bigint"/>
+        <column name="version" nullable="false" scale="1" type="int"/>
+        <column name="snapshot_datetime" nullable="false" type="timestamp"/>
+        <index primary="true">
+            <on>trade_id</on>
+            <on>snapshot_datetime</on>
+        </index>
+        <index primary="false">
+            <on>snapshot_datetime</on>
+        </index>        
+    </table>     
+    
+    <table name="liq_time_distribution" xmlns="">
+    	<column name="td_name" nullable="false" scale="64" type="string"/>
+    	<column name="td_time" nullable="false" scale="32" type="string"/>
+    	<column name="td_percentage" nullable="false" scale="1" type="int"/>
+    	<column name="version" nullable="false" scale="1" type="int" default="1"/>
+        <index primary="true">
+            <on>td_name</on>
+            <on>td_time</on>
+        </index>
+    </table>
+    
+    <table name="liq_object" xmlns="">
+    	<column name="id" nullable="false" scale="1" type="int"/>
+    	<column name="name" nullable="false" scale="64" type="string"/>
+    	<column name="category" nullable="false" scale="128" type="string"/>
+	    <column name="version" nullable="false" scale="1" type="int"/>
+    	<column name="user_name" nullable="false" scale="32" type="string"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>category</on>
+        </index>    
+    </table>
+    
+    <table name="liq_object_attr" xmlns="">
+    	<column name="id" nullable="false" scale="1" type="int"/>
+    	<column name="attr_name" nullable="false" scale="128" type="string"/>
+    	<column name="attr_value" nullable="false" scale="128" type="string"/>
+    	<index primary="true">
+            <on>id</on>
+            <on>attr_name</on>
+        </index>
+        <index primary="false">
+            <on>id</on>
+        </index>
+    </table>
+    
+    <table name="ba_behavioral_scenario" xmlns="">
+        <column name="behavioral_scenario_id" nullable="false" scale="1" type="int"/>
+        <column name="behavioral_scenario_name" nullable="false" scale="64" type="string"/>
+        <!--  Setting the pricing env as nullable for now since we are not allowing the user the save the PE-->
+        <column name="pricing_env_name" nullable="true" scale="64" type="string"/>
+        <column name="perturb_config_id" nullable="true" scale="1" type="int"/>
+        <column name="credit_downgrade_scenario_id" nullable="true" scale="1" type="int"/>
+        <column name="comments" nullable="true" scale="256" type="string"/>
+		<column name="version" nullable="false" scale="1" type="int"/>
+        <index primary="true">
+            <on>behavioral_scenario_id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>behavioral_scenario_name</on>
+        </index>        
+    </table>
+    <table name="ba_scenario_rule_mapping" xmlns="">
+        <column name="behavioral_scenario_id" nullable="false" scale="1" type="int"/>
+        <column name="assumption_rule_id" nullable="false" scale="1" type="int"/>
+        <column name="priority" nullable="false" scale="1" type="int"/>
+        <index primary="true">
+            <on>behavioral_scenario_id</on>
+            <on>assumption_rule_id</on>
+        </index>
+    </table>
+    <table name="ba_scenario_class_remap" xmlns="">
+        <column name="behavioral_scenario_id" nullable="false" scale="1" type="int"/>
+        <column name="classification_remap_id" nullable="false" scale="1" type="int"/>
+        <column name="priority" nullable="false" scale="1" type="int"/>
+        <index primary="true">
+            <on>behavioral_scenario_id</on>
+            <on>classification_remap_id</on>
+        </index>
+    </table>
+    <table name="ba_assumption_rule" xmlns="">
+        <column name="assumption_rule_id" nullable="false" scale="1" type="int"/>
+        <column name="name" nullable="false" scale="64" type="string"/>
+        <column name="trade_filter_name" nullable="true" scale="255" type="string"/>
+        <column name="criteria_id" nullable="false" scale="1" type="int"/>
+        <column name="action_id" nullable="false" scale="1" type="int"/> 
+        <column name="comments" nullable="true" scale="256" type="string"/>
+        <column name="classification_id" nullable="true" scale="1" type="int"/>
+        <column default="EXISTING_BUSINESS" name="rule_type"  nullable="false" scale="25" type="string" />
+        <column name="grouping" nullable="true" scale="128" type="string"/>
+		<column name="version" nullable="false" scale="1" type="int"/>
+        <index primary="true">
+            <on>assumption_rule_id</on>
+        </index>
+        <index primary="false">
+            <on>name</on>
+        </index>        
+    </table>
+    <table name="ba_assumption_action" xmlns="">
+        <column name="action_id" nullable="false" scale="1" type="int"/>
+        <column name="action_name" nullable="false" scale="255" type="string"/>
+        <index primary="true">
+            <on>action_id</on>
+        </index>
+    </table>
+    <table name="ba_assumption_action_params" xmlns="">
+        <column name="action_id" nullable="false" scale="1" type="int"/>
+        <column name="param_key" nullable="false" scale="255" type="string"/>
+        <column name="param_value" nullable="false" scale="255" type="string"/>
+        <index primary="true">
+            <on>action_id</on>
+            <on>param_key</on>
+        </index>
+    </table>
+    <table name="ba_perturbation_config" xmlns="">
+        <column name="perturb_config_id" nullable="false" scale="1" type="int"/>
+        <column name="config_name" nullable="false" scale="64" type="string"/>
+        <column name="comments" nullable="true" scale="250" type="string"/>
+		<column name="version" nullable="false" scale="1" type="int"/>
+        <index primary="true">
+            <on>perturb_config_id</on>
+        </index>
+        <index primary="false">
+            <on>config_name</on>
+        </index>        
+    </table>
+    <table name="ba_perturbation_rule" xmlns="">
+        <column name="perturb_config_id" nullable="false" scale="1" type="int"/>
+        <column name="scenario_rule" nullable="false" scale="255" type="string"/>
+        <column name="market_data_set" nullable="false" scale="255" type="string"/>
+        <column name="rule_order" nullable="false" scale="1" type="int"/>
+        <index primary="true">
+            <on>perturb_config_id</on>
+            <on>scenario_rule</on>
+            <on>market_data_set</on>
+        </index>
+    </table>
+    <table name="credit_downgrade_scenario" xmlns="">
+        <column name="scenario_id" nullable="false" scale="1" type="int"/>
+        <column name="scenario_name" nullable="false" scale="64" type="string"/>
+        <column name="version_num" nullable="false" scale="1" type="int"/>
+        <column name="user_name" nullable="false" scale="32" type="string"/>
+        
+        <index primary="true">
+            <on>scenario_id</on>
+        </index>
+        <index primary="false">
+            <on>scenario_name</on>
+        </index>        
+    </table>
+    <table name="credit_downgrade_details" xmlns="">
+        <column name="scenario_id" nullable="false" scale="1" type="int"/>
+        <column name="type" nullable="false" scale="64" type="string"/>
+        <column name="classification_id" nullable="false" scale="1" type="int"/>
+        <column name="rating_agency" nullable="false" scale="128" type="string"/>
+        <index primary="true">
+            <on>scenario_id</on>
+            <on>type</on>
+            <on>classification_id</on>
+            <on>rating_agency</on>
+        </index>
+    </table>
+    
+    <table name="credit_downgrade_rating" xmlns="">
+        <column name="scenario_id" nullable="false" scale="1" type="int"/>
+        <column name="scenario_name" nullable="false" scale="64" type="string"/>
+        <column name="obj_type" nullable="false" scale="64" type="string"/>
+        <column name="obj_id" nullable="false" scale="1" type="int"/>
+        <column name="rating_agency" nullable="false" scale="128" type="string"/>
+		<column name="debt_seniority" nullable="false" scale="128" type="string"/>
+        <column name="downgraded_rating" nullable="false" scale="64" type="string"/>
+        <column name="as_of_date" nullable="false" type="timestamp"/>
+        <index primary="true">
+            <on>scenario_id</on>
+            <on>obj_type</on>
+            <on>obj_id</on>
+            <on>rating_agency</on>
+			<on>debt_seniority</on>
+            <on>as_of_date</on>
+        </index>
+        <index primary="false">
+            <on>scenario_name</on>
+			<on>as_of_date</on>
+        </index> 
+        <index primary="false">
+            <on>scenario_id</on>
+  			<on>as_of_date</on>
+        </index>        
+    </table>    
+    
+    <table name="liq_class_factor" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="name" nullable="false" scale="64" type="string"/>
+        <column name="source" nullable="false" scale="64" type="string"/>
+        <column name="identifier" nullable="false" scale="128" type="string"/>
+        <column name="grouping" nullable="true" scale="128" type="string"/>
+        <column name="version" nullable="false" scale="1" type="int" default="1"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>name</on>
+        </index>        
+    </table>
+    
+    <table name="liq_class_attribute" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="name" nullable="false" scale="64" type="string"/>
+        <column name="grouping" nullable="true" scale="128" type="string"/>
+       	<column name="version" nullable="false" scale="1" type="int" default="1"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>name</on>
+        </index>        
+    </table>    
+
+    <table name="liq_class_attribute_rules" xmlns="">
+        <column name="attribute_id" nullable="false" scale="1" type="int"/>
+        <column name="factor_id" nullable="false" scale="1" type="int"/>
+        <column name="priority" nullable="false" scale="1" type="int"/>
+        <index primary="true">
+            <on>attribute_id</on>
+            <on>factor_id</on>
+        </index>      
+    </table> 
+
+    <table name="liq_class_criterion" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="name" nullable="false" scale="64" type="string"/>
+        <column name="expression_id" nullable="false" scale="1" type="int"/>
+        <column name="grouping" nullable="true" scale="128" type="string"/>
+        <column name="version" nullable="false" scale="1" type="int" default="1"/>
+        <index primary="true">
+            <on>id</on>
+        </index>   
+        <index primary="false" unique="true">
+            <on>name</on>
+        </index>            
+    </table> 
+    
+    <table name="liq_class_classification" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="name" nullable="false" scale="64" type="string"/>
+        <column name="grouping" nullable="true" scale="128" type="string"/>
+        <column name="version" nullable="false" scale="1" type="int" default="1"/>
+        <index primary="true">
+            <on>id</on>
+        </index>   
+        <index primary="false" unique="true">
+            <on>name</on>
+        </index>            
+    </table>     
+
+    <table name="liq_class_class_rules" xmlns="">
+        <column name="classification_id" nullable="false" scale="1" type="int"/>
+        <column name="priority" nullable="false" scale="1" type="int"/>
+        <column name="criterion_id" nullable="true" scale="1" type="int"/>
+        <column name="value_type" nullable="false" scale="1" type="int"/>
+        <column name="value" nullable="false" scale="64" type="string"/>
+        <index primary="true">
+            <on>classification_id</on>
+            <on>priority</on>
+        </index>             
+    </table>
+
+    <table name="liq_class_remap" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="name" nullable="false" scale="64" type="string"/>
+        <column name="source_type" nullable="false" scale="64" type="string"/>
+        <column name="source_id" nullable="false" scale="1" type="int"/>
+        <column name="target_id" nullable="false" scale="1" type="int"/>
+        <column name="grouping" nullable="true" scale="128" type="string"/>
+		<column name="version" nullable="false" scale="1" type="int" default="1"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>name</on>
+        </index>        
+    </table>
+
+    <table name="liq_class_named_list" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="name" nullable="false" scale="64" type="string"/>
+        <column name="list_type" nullable="false" scale="1" type="int"/>
+        <column name="grouping" nullable="true" scale="128" type="string"/>
+        <column name="version" nullable="false" scale="1" type="int" default="1"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>name</on>
+        </index>        
+    </table>
+    
+    <table name="liq_class_named_list_entry" xmlns="">
+        <column name="named_list_id" nullable="false" scale="1" type="int"/>
+        <column name="value" nullable="false" scale="64" type="string"/>
+        <index primary="true">
+            <on>named_list_id</on>
+            <on>value</on>
+        </index>
+        <index primary="false" unique="false">
+            <on>named_list_id</on>
+        </index>        
+    </table>
+    
+    <table name="liq_class_level" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="name" nullable="false" scale="64" type="string"/>
+        <column name="grouping" nullable="true" scale="128" type="string"/>
+        <column name="version" nullable="false" scale="1" type="int" default="1"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>name</on>
+        </index>        
+    </table>
+    
+    <table name="liq_class_level_entry" xmlns="">
+        <column name="level_id" nullable="false" scale="1" type="int"/>
+        <column name="class_index" nullable="false" scale="1" type="int"/>
+        <column name="class_id" nullable="false" scale="1" type="int"/>
+        <index primary="true">
+            <on>level_id</on>
+            <on>class_index</on>
+        </index>
+        <index primary="false" unique="false">
+            <on>level_id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>level_id</on>
+            <on>class_id</on>
+        </index>   
+    </table>
+    
+    <table name="liq_classification_level_item" xmlns="">
+    	<column name="id" nullable="false" scale="1" type="int"/>
+    	<column name="classification_level_id" nullable="false" scale="1" type="int"/>
+    	<column name="classification_value_1" nullable="true" scale="128" type="string"/>
+    	<column name="classification_value_2" nullable="true" scale="128" type="string"/>
+    	<column name="classification_value_3" nullable="true" scale="128" type="string"/>
+    	<column name="classification_value_4" nullable="true" scale="128" type="string"/>
+    	<column name="classification_value_5" nullable="true" scale="128" type="string"/>
+    	<column name="classification_value_6" nullable="true" scale="128" type="string"/>
+    	<index primary="true">
+    		<on>id</on>
+    	</index>
+    	<index primary="false" unique="true">
+    		<on>classification_level_id</on>
+    		<on>classification_value_1</on>
+    		<on>classification_value_2</on>
+    		<on>classification_value_3</on>
+    		<on>classification_value_4</on>
+    		<on>classification_value_5</on>
+    		<on>classification_value_6</on>
+    	</index>
+    </table>
+    
+    <table name="ftp_trade_cost_component" xmlns="">
+        <column name="trade_id" nullable="false" scale="1" type="bigint"/>
+        <column name="cost_comp_name" nullable="false" scale="64" type="string"/>
+        <column name="cost_comp_ccy" nullable="false" scale="3" type="string"/>
+        <column name="version" nullable="false" scale="1" type="int" default="0"/>
+        <index primary="true">
+            <on>trade_id</on>
+            <on>cost_comp_name</on>
+            <on>cost_comp_ccy</on>
+        </index>
+    </table>
+    <table name="ftp_trade_cost_component_attr" xmlns="">
+        <column name="trade_id" nullable="false" scale="1" type="bigint"/>
+        <column name="cost_comp_name" nullable="false" scale="64" type="string"/>
+        <column name="cost_comp_ccy" nullable="false" scale="3" type="string"/>
+        <column name="effective_from_date" nullable="false" type="timestamp" default="1975-01-01 00:00:00.0"/>
+        <column name="attribute_name" nullable="false" scale="128" type="string"/>
+        <column name="attribute_value" nullable="true" scale="128" type="string"/>
+        <column name="trade_version" nullable="false" scale="1" type="int" default="0"/>
+        <column name="version" nullable="false" scale="1" type="int" default="0"/>
+        <column name="user_name" type="string" scale="32" nullable="true"/>        
+        <index primary="true">
+            <on>trade_id</on>
+            <on>cost_comp_name</on>
+            <on>cost_comp_ccy</on>
+            <on>effective_from_date</on>
+            <on>attribute_name</on>
+        </index>    
+    </table>    
+    <table name="ftp_trade_cost_component_hist" xmlns="">
+        <column name="trade_id" nullable="false" scale="1" type="bigint"/>
+        <column name="cost_comp_name" nullable="false" scale="64" type="string"/>
+        <column name="cost_comp_ccy" nullable="false" scale="3" type="string"/>
+        <column name="version" nullable="false" scale="1" type="int" default="0"/>
+        <index primary="true">
+            <on>trade_id</on>
+            <on>cost_comp_name</on>
+            <on>cost_comp_ccy</on>
+        </index>
+    </table>
+    <table name="ftp_trade_cost_comp_attr_hist" xmlns="">
+        <column name="trade_id" nullable="false" scale="1" type="bigint"/>
+        <column name="cost_comp_name" nullable="false" scale="64" type="string"/>
+        <column name="cost_comp_ccy" nullable="false" scale="3" type="string"/>
+        <column name="effective_from_date" nullable="false" type="timestamp" default="1800-01-01 00:00:00.0"/>
+        <column name="attribute_name" nullable="false" scale="128" type="string"/>
+        <column name="attribute_value" nullable="true" scale="128" type="string"/>
+        <column name="trade_version" nullable="false" scale="1" type="int" default="0"/>
+        <column name="version" nullable="false" scale="1" type="int" default="0"/>
+        <column name="user_name" type="string" scale="32" nullable="true"/>        
+        <index primary="true">
+            <on>trade_id</on>
+            <on>cost_comp_name</on>
+            <on>cost_comp_ccy</on>
+            <on>effective_from_date</on>
+            <on>attribute_name</on>
+        </index> 
+    </table>
+    <table name="ftp_payment_schedule" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="name" nullable="false" scale="64" type="string"/>
+        <column default="0" name="source_book_from_trade_b" nullable="false" type="int" scale="1"/>
+        <column name="source_book_id" nullable="false" scale="1" type="int"/>
+        <column default="0" name="target_book_from_trade_b" nullable="false" type="int" scale="1"/>
+        <column name="target_book_id" nullable="false" scale="1" type="int"/>
+        <column name="schedule_type" nullable="false" scale="32" type="string"/>
+        <column name="payment_date_rule_name" nullable="true" scale="64" type="string"/>
+        <column name="from_trade_date_type" nullable="true" scale="64" type="string"/>
+        <column name="version" nullable="false" scale="1" type="int"/>
+        <column default="0" name="payout_type" nullable="false" scale="1" type="int"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>name</on>
+        </index>
+    </table>
+    <table name="ftp_rate_retrieval_config" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="name" nullable="false" scale="64" type="string"/>        
+        <column name="rate_retriever" nullable="false" scale="32" type="string"/>
+        <column name="rate_index" nullable="true" scale="128" type="string"/>
+        <column name="ref_rate" nullable="true" scale="1" type="float"/>
+        <column name="schedule_type" nullable="false" scale="32" type="string"/>
+        <column name="reset_date_rule_name" nullable="true" scale="64" type="string"/>
+        <column name="from_trade_date_type" nullable="true" scale="64" type="string"/>
+        <column name="comments" nullable="true" scale="255" type="string"/>
+        <column name="version" nullable="false" scale="1" type="int" default="0"/>
+        <column name="rate_index_type" nullable="true" scale="64" type="string"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>name</on>
+        </index>
+    </table>
+    <table name="ftp_rate_retrieval_config_attr" xmlns="">
+        <column name="ftp_rate_retrieval_config_id" nullable="false" scale="1" type="int"/>
+        <column name="attribute_name" nullable="false" scale="128" type="string"/>
+        <column name="attribute_value" nullable="false" scale="128" type="string"/>
+        <index primary="true">
+            <on>ftp_rate_retrieval_config_id</on>
+            <on>attribute_name</on>
+        </index>
+    </table>
+    <table name="ftp_cost_component_rule" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="name" nullable="false" scale="64" type="string"/>
+        <column name="cost_comp_ccy" nullable="true" scale="3" type="string"/>
+        <column name="priority" nullable="false" scale="1" type="int"/>
+        <column name="sd_filter_name" nullable="true" scale="64" type="string"/>
+        <column name="version" nullable="false" scale="1" type="int"/>
+        <column name="comments" nullable="true" scale="255" type="string"/>
+        <column name="classification_id" nullable="true" scale="1" type="int"/>
+       <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>name</on>
+            <on>cost_comp_ccy</on>
+        </index>
+        <index primary="false" unique="false">
+            <on>cost_comp_ccy</on>
+            <on>sd_filter_name</on>
+            <on>classification_id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>cost_comp_ccy</on>
+            <on>priority</on>
+        </index>
+    </table>
+    <table name="ftp_cost_component_rule_item" xmlns="">
+        <column name="rule_id" nullable="false" scale="1" type="int"/>
+        <column name="cost_comp_name" nullable="false" scale="64" type="string"/>
+        <column name="pmt_schedule_id" nullable="false" scale="1" type="int"/>
+        <column name="rate_retrieval_config_id" nullable="false" scale="1" type="int"/>
+        <index primary="true">
+            <on>rule_id</on>
+            <on>cost_comp_name</on>
+        </index>
+    </table>
+    <table name="ftp_cost_accrual" xmlns="">
+    	<column name="trade_id" nullable="false" scale="1" type="bigint"/>
+    	<column name="cost_comp_name" nullable="false" scale="64" type="string"/>
+    	<column name="payment_date" nullable="false" type="timestamp"/>
+    	<column name="start_date" nullable="false" type="timestamp"/>
+    	<column name="end_date" nullable="false" type="timestamp"/>
+    	<column name="rate_known_date" nullable="false" type="timestamp"/>
+    	<column name="rate" nullable="true" scale="1" type="float"/>
+    	<column name="risk_amount" nullable="true" scale="1" type="float"/>
+    	<column name="accrual_amount" nullable="true" scale="1" type="float"/>
+    	<column name="currency" nullable="false" scale="3" type="string"/>
+    	<column name="status" nullable="false" scale="1" type="int"/>
+    	<column name="source_book_id" nullable="false" scale="1" type="int"/>
+    	<column name="target_book_id" nullable="false" scale="1" type="int"/>
+    	<column default="0" name="ftp_trade_id" nullable="false" scale="1" type="int"/>
+    	<column name="entered_user" type="string" scale="32" nullable="false"/>
+    	<column default="0" name="payout_type" nullable="false" scale="1" type="int"/>
+    	<column default="0" name="rate_source_type" nullable="false" scale="1" type="int"/>
+    	<column name="rate_related_info" nullable="true" scale="255" type="string"/>
+    	<column default="TRADE" name="accrual_source_type" nullable="false" scale="32" type="string"/>
+		<column name = "version" nullable = "false" scale="1" type="int"/>
+		<column name = "transaction_id" nullable = "false" scale="1" type="int"/>
+    	<index primary="true">
+    		<on>trade_id</on>
+    		<on>cost_comp_name</on>
+    		<on>payment_date</on>
+    		<on>start_date</on>
+    		<on>end_date</on>
+    		<on>status</on>
+    		<on>ftp_trade_id</on>
+    		<on>source_book_id</on>
+    		<on>target_book_id</on>
+    		<on>accrual_source_type</on>
+    	</index>
+    	<index primary="false">
+    		<on>payment_date</on>
+    		<on>status</on>
+    	</index>
+    	<index primary="false">
+    		<on>trade_id</on>
+    		<on>status</on>
+    	</index>
+    	<index primary="false">
+    		<on>ftp_trade_id</on>
+    	</index>
+    </table>
+    <table name="ftp_cost_accrual_security" xmlns="">
+    	<column name="trade_id" nullable="false" scale="1" type="bigint"/>
+    	<column name="cost_comp_name" nullable="false" scale="64" type="string"/>
+    	<column name="payment_date" nullable="false" type="timestamp"/>
+    	<column name="start_date" nullable="false" type="timestamp"/>
+    	<column name="end_date" nullable="false" type="timestamp"/>
+    	<column name="risk_amount" nullable="true" scale="1" type="float"/>
+    	<column name="accrual_amount" nullable="true" scale="1" type="float"/>
+    	<column name="security_id" nullable="false" scale="1" type="int"/>
+    	<column name="status" nullable="false" scale="1" type="int"/>
+    	<column name="source_book_id" nullable="false" scale="1" type="int"/>
+    	<column name="target_book_id" nullable="false" scale="1" type="int"/>
+    	<column default="0" name="ftp_trade_id" nullable="false" scale="1" type="int"/>
+    	<column name="entered_user" type="string" scale="32" nullable="false"/>
+    	<column default="0" name="payout_type" nullable="false" scale="1" type="int"/>
+    	<column default="0" name="rate_source_type" nullable="false" scale="1" type="int"/>
+    	<column default="TRADE" name="accrual_source_type" nullable="false" scale="32" type="string"/>
+		<column name = "version" nullable = "false" scale="1" type="int"/>
+		<column name = "transaction_id" nullable = "false" scale="1" type="int"/>
+    	<index primary="true">
+    		<on>trade_id</on>
+    		<on>cost_comp_name</on>
+    		<on>payment_date</on>
+    		<on>start_date</on>
+    		<on>end_date</on>
+    		<on>status</on>
+    		<on>ftp_trade_id</on>
+    		<on>source_book_id</on>
+    		<on>target_book_id</on>
+    		<on>accrual_source_type</on>
+    	</index>
+    	<index primary="false">
+    		<on>payment_date</on>
+    		<on>status</on>
+    	</index>
+    	<index primary="false">
+    		<on>trade_id</on>
+    		<on>status</on>
+    	</index>
+    	<index primary="false">
+    		<on>ftp_trade_id</on>
+    	</index>
+    </table>
+    
+    <table name="liq_metric_cube" xmlns="">
+        <column name="liq_metric_cube_id" nullable="false" scale="1" type="int"/>
+        <column name="metric_config_id" nullable="false" scale="1" type="int"/>
+		<column name="metric_config_type" nullable="false" scale="32" type="string"/>
+        <column name="axis_name_1" nullable="true" scale="128" type="string"/>
+        <column name="axis_name_2" nullable="true" scale="128" type="string"/>
+        <column name="axis_name_3" nullable="true" scale="128" type="string"/>
+        <column name="axis_name_4" nullable="true" scale="128" type="string"/>
+        <column name="axis_name_5" nullable="true" scale="128" type="string"/>
+        <column name="axis_name_6" nullable="true" scale="128" type="string"/>
+        <column name="axis_name_7" nullable="true" scale="128" type="string"/>
+        <column name="axis_name_8" nullable="true" scale="128" type="string"/>
+        <column name="axis_name_9" nullable="true" scale="128" type="string"/>
+        <column name="axis_name_10" nullable="true" scale="128" type="string"/>
+        <column name="version" nullable="false" scale="1" type="int"/>
+        <index primary="true">
+            <on>liq_metric_cube_id</on>
+        </index>
+		<index primary="false" unique="true">
+            <on>metric_config_id</on>
+        </index>
+    </table>
+    <table name="liq_metric_cube_point_key" xmlns="">
+        <column name="liq_metric_cube_id" nullable="false" scale="1" type="int"/>
+        <column name="cube_point_key_id" nullable="false" scale="1" type="int"/>
+        <column name="cube_point_attr_1" nullable="true" scale="128" type="string"/>
+        <column name="cube_point_attr_2" nullable="true" scale="128" type="string"/>
+        <column name="cube_point_attr_3" nullable="true" scale="128" type="string"/>
+        <column name="cube_point_attr_4" nullable="true" scale="128" type="string"/>
+        <column name="cube_point_attr_5" nullable="true" scale="128" type="string"/>
+        <column name="cube_point_attr_6" nullable="true" scale="128" type="string"/>
+        <column name="cube_point_attr_7" nullable="true" scale="128" type="string"/>
+        <column name="cube_point_attr_8" nullable="true" scale="128" type="string"/>
+        <column name="cube_point_attr_9" nullable="true" scale="128" type="string"/>
+        <column name="cube_point_attr_10" nullable="true" scale="128" type="string"/>
+        <index primary="true">
+        	<on>liq_metric_cube_id</on>
+            <on>cube_point_key_id</on>
+        </index>
+		<index primary="false">
+            <on>liq_metric_cube_id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>liq_metric_cube_id</on>
+            <on>cube_point_attr_1</on>
+            <on>cube_point_attr_2</on>
+            <on>cube_point_attr_3</on>
+            <on>cube_point_attr_4</on>
+            <on>cube_point_attr_5</on>
+            <on>cube_point_attr_6</on>
+            <on>cube_point_attr_7</on>
+            <on>cube_point_attr_8</on>
+            <on>cube_point_attr_9</on>
+            <on>cube_point_attr_10</on>
+        </index>     
+    </table>
+    <table name="liq_metric_cube_point_value" xmlns="">
+        <column name="liq_metric_cube_id" nullable="false" scale="1" type="int"/>
+        <column name="cube_point_key_id" nullable="false" scale="1" type="int"/>
+        <column name="cube_point_time" nullable="false" scale="1" type="int"/>
+        <column name="cube_point_date" nullable="false" type="timestamp"/>
+        <column name="cube_point_data_name" nullable="false" scale="64" type="string"/>
+        <column name="cube_point_data_type" nullable="false" scale="16" type="string"/>
+        <column name="cube_point_data_str" nullable="true" scale="128" type="string"/>
+        <column name="cube_point_data_num" nullable="true" scale="1" type="float"/>
+        <index primary="true">
+            <on>liq_metric_cube_id</on>
+            <on>cube_point_key_id</on>
+            <on>cube_point_time</on>
+            <on>cube_point_date</on>
+            <on>cube_point_data_name</on>
+        </index>
+        <index primary="false">
+            <on>liq_metric_cube_id</on>
+            <on>cube_point_time</on>
+            <on>cube_point_date</on>
+        </index>        
+    </table>
+   
+	<table name="ctxt_pos_bucket_conf" xmlns="">
+		<column name="config_id" nullable="false" scale="1" type="int"/>
+        <column name="name" nullable="false" scale="64" type="string"/>
+        <column name="ctxt_pos_space" nullable="false" scale="32" type="string"/>
+        <column name="ctxt_pos_type" nullable="false" scale="32" type="string"/>
+        <column name="version_num" nullable="false" scale="1" type="int"/>
+        <column name="data_bkt_1_key" nullable="true" scale="1" type="int"/>
+        <column name="data_bkt_2_key" nullable="true" scale="1" type="int"/>
+        <column name="data_bkt_3_key" nullable="true" scale="1" type="int"/>
+        <column name="data_bkt_4_key" nullable="true" scale="1" type="int"/>
+        <column name="data_bkt_5_key" nullable="true" scale="1" type="int"/>
+        <column name="data_bkt_6_key" nullable="true" scale="1" type="int"/>
+        <column name="data_bkt_7_key" nullable="true" scale="1" type="int"/>
+        <column name="data_bkt_8_key" nullable="true" scale="1" type="int"/>
+        <column name="bucket_scope_id" nullable="true" scale="1" type="int" default="0"/>
+        <column default="1" name="active_b" nullable="false" type="int" scale="1"/>
+        <column default="0" name="config_type" nullable="false" type="int" scale="1"/>
+        <column name="persisted_bkt_config_id" nullable="false" type="int" scale="1"/>
+        <column name="user_name" nullable="false" scale="32" type="string" default="system" />
+        <index primary="true">
+            <on>config_id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>name</on>
+        </index> 
+	</table>
+	
+	<table name="ctxt_pos_bucket_conf_stat" xmlns="">
+		<column name="config_id" nullable="false" type="int" scale="1" />
+        <column name="position_dirty_b" nullable="true" scale="1" type="int" default="0"/>
+        <column name="syn_position_dirty_b" nullable="true" scale="1" type="int" default="0"/>
+        <column name="pos_reinit_datetime" nullable="true" type="timestamp"/>
+        <index primary="true">
+            <on>config_id</on>
+        </index>
+	</table>	
+	
+    <table name="ctxt_pos_filter" xmlns="">
+        <column name="cxt_pos_filter_id" nullable="false" scale="1" type="int"/>
+        <column name="name" nullable="false" scale="32" type="string"/>
+        <column name="ctxt_pos_space" nullable="false" scale="32" type="string"/>
+        <column name="cash_ctxt_pos_config_id" nullable="true" scale="1" type="int"/>
+        <column name="sec_ctxt_pos_config_id" nullable="true" scale="1" type="int"/>
+        <column name="idx_cash_ctxt_pos_config_id" nullable="true" scale="1" type="int"/>
+        <column name="exp_ctxt_pos_config_id" nullable="true" scale="1" type="int"/>
+        <column name="mar_cash_ctxt_pos_config_id" nullable="true" scale="1" type="int"/>
+        <column name="mar_sec_ctxt_pos_config_id" nullable="true" scale="1" type="int"/>
+        <column name="ext_banking_ctxt_pos_config_id" nullable="true" scale="1" type="int"/>
+        <column name="version_num" nullable="false" scale="1" type="int"/>
+        <column name="user_name" nullable="false" scale="32" type="string"/>
+        <index primary="true">
+            <on>cxt_pos_filter_id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>name</on>
+        </index>        
+    </table>	
+        
+    <table name="ctxt_pos_filter_crit" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="cxt_pos_filter_id" nullable="false" scale="1" type="int"/>
+        <column name="type" nullable="false" scale="32" type="string"/>
+        <column name="bckt_cfg_id" nullable="false" scale="1" type="int"/>
+        <column name="bckt_key_id" nullable="false" scale="1" type="int"/>
+        <column name="bckt_key_idx" nullable="false" scale="1" type="int"/>
+        <column name="crit_constraint" nullable="false" scale="1" type="int"/>
+        <column name="acceptor_name" nullable="false" scale="128" type="string"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="ctxt_pos_filter_crit_attr" xmlns="">
+        <column name="ctxt_pos_filter_crit_id" nullable="false" scale="1" type="int"/>
+        <column name="attr_name" nullable="false" scale="256" type="string"/>
+        <column name="attr_value" nullable="false" scale="256" type="string"/>
+        <index primary="true">
+            <on>ctxt_pos_filter_crit_id</on>
+            <on>attr_name</on>
+        </index>
+    </table>
+    <!--  The definition of the filter is maintained in the "entity_attributes" table. The definition of the table is in core calypso SchemaBase.xml -->
+
+
+    <!-- If updating this table, make sure the update the _reinit table as well -->
+    <table name="context_position_movements" xmlns="">
+    	<column name="movement_id" nullable="false" scale="1" type="int"/>
+        <column name="source" nullable="false" scale="25" type="string"/>
+        <column name="source_identifier" nullable="false" scale="128" type="string"/>
+		<column name="source_identifier_long" nullable="true" scale="1" type="int"/>
+        <column name="ctxt_pos_space_bitmap" nullable="false" type="int" scale="1"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="ctxt_pos_type" nullable="false" scale="32" type="string"/>		        
+        <column name="movement_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="false" type="timestamp"/>
+        <column name="quantity" nullable="false" scale="1" type="float"/>
+        <column name="amount" nullable="false" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+		<column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="reason" nullable="true" scale="128" type="string"/>
+        <column name="attrib_1" nullable="true" scale="64" type="string"/>
+        <column name="attrib_2" nullable="true" scale="64" type="string"/>
+        <column name="attrib_3" nullable="true" scale="64" type="string"/>
+        <column name="attrib_4" nullable="true" scale="64" type="string"/>
+        <column name="attrib_5" nullable="true" scale="64" type="string"/>
+        <column name="attrib_6" nullable="true" scale="64" type="string"/>
+        <column name="attrib_7" nullable="true" scale="64" type="string"/>
+        <column name="attrib_8" nullable="true" scale="64" type="string"/>
+        <column name="attrib_9" nullable="true" scale="64" type="string"/>
+        <column name="attrib_10" nullable="true" scale="64" type="string"/>
+        <column name="attrib_11" nullable="true" scale="64" type="string"/>
+        <column name="attrib_12" nullable="true" scale="64" type="string"/>
+        <column name="attrib_13" nullable="true" scale="64" type="string"/>
+        <column name="attrib_14" nullable="true" scale="64" type="string"/>
+        <column name="attrib_15" nullable="true" scale="64" type="string"/>
+        <column name="attrib_16" nullable="true" scale="64" type="string"/>
+        <column name="attrib_17" nullable="true" scale="64" type="string"/>
+        <column name="attrib_18" nullable="true" scale="64" type="string"/>
+        <column name="attrib_19" nullable="true" scale="64" type="string"/>
+        <column name="attrib_20" nullable="true" scale="64" type="string"/>        
+        <index primary="true">
+        	<on>movement_id</on>
+        </index>
+       <index primary="false">
+            <on>source</on>
+            <on>source_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source</on>
+            <on>source_identifier_long</on>
+        </index>
+        <index primary="false">
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_type</on>
+            <on>movement_date</on>
+        </index>
+    </table>
+
+    <table name="ctxt_pos_src_mvmt_trtx" xmlns="">
+        <column name="source_group_type" nullable="false" scale="25" type="string"/>
+        <column name="source_group_identifier" nullable="false" scale="128" type="string"/>
+        <column name="src_grp_identifier_long" nullable="true" scale="1" type="int"/>
+		<column name="movement_payload_blob" nullable="true" type="binary"/>
+		<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+		<column name="last_update_time" nullable="false" type="timestamp"/>
+		<column name="is_in_error" nullable="false" type="int" scale="1" default="0" />
+		<column name="trsry_trd_type" nullable="false" scale="1" type="int" default="0"/>
+		<column name="trs_mv_til_date" nullable="false" type="timestamp" default="1900-01-01 00:00:00.0"/>
+       <index primary="true">
+            <on>source_group_type</on>
+            <on>source_group_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source_group_type</on>
+            <on>src_grp_identifier_long</on>
+        </index>
+    </table> 
+    
+    <table name="ctxt_pos_src_mvmt_trtx_hist" xmlns="">
+        <column name="source_group_type" nullable="false" scale="25" type="string"/>
+        <column name="source_group_identifier" nullable="false" scale="128" type="string"/>
+        <column name="src_grp_identifier_long" nullable="true" scale="1" type="int"/>
+		<column name="movement_payload_blob" nullable="true" type="binary"/>
+		<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+		<column name="last_update_time" nullable="false" type="timestamp"/>
+		<column name="is_in_error" nullable="false" type="int" scale="1" default="0" />
+		<column name="trsry_trd_type" nullable="false" scale="1" type="int" default="0"/>
+        <column name="trs_mv_til_date" nullable="false" type="timestamp" default="1900-01-01 00:00:00.0"/>
+       <index primary="true">
+            <on>source_group_type</on>
+            <on>source_group_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source_group_type</on>
+            <on>src_grp_identifier_long</on>
+        </index>
+    </table>
+    
+    <table name="ctxt_pos_src_mvmt_msg" xmlns="">
+        <column name="source_group_type" nullable="false" scale="25" type="string"/>
+        <column name="source_group_identifier" nullable="false" scale="128" type="string"/>
+        <column name="src_grp_identifier_long" nullable="true" scale="1" type="int"/>
+		<column name="movement_payload_blob" nullable="true" type="binary"/>
+		<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+		<column name="last_update_time" nullable="false" type="timestamp"/>
+		<column name="is_in_error" nullable="false" type="int" scale="1" default="0" />
+		<column name="trsry_trd_type" nullable="false" scale="1" type="int" default="0"/>
+		<column name="trs_mv_til_date" nullable="false" type="timestamp" default="1900-01-01 00:00:00.0"/>
+       <index primary="true">
+            <on>source_group_type</on>
+            <on>source_group_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source_group_type</on>
+            <on>src_grp_identifier_long</on>
+        </index>
+    </table> 
+    
+    <table name="ctxt_pos_src_mvmt_msg_hist" xmlns="">
+        <column name="source_group_type" nullable="false" scale="25" type="string"/>
+        <column name="source_group_identifier" nullable="false" scale="128" type="string"/>
+        <column name="src_grp_identifier_long" nullable="true" scale="1" type="int"/>
+		<column name="movement_payload_blob" nullable="true" type="binary"/>
+		<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+		<column name="last_update_time" nullable="false" type="timestamp"/>
+		<column name="is_in_error" nullable="false" type="int" scale="1" default="0" />
+		<column name="trsry_trd_type" nullable="false" scale="1" type="int" default="0"/>
+        <column name="trs_mv_til_date" nullable="false" type="timestamp" default="1900-01-01 00:00:00.0"/>
+       <index primary="true">
+            <on>source_group_type</on>
+            <on>source_group_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source_group_type</on>
+            <on>src_grp_identifier_long</on>
+        </index>
+    </table> 
+    
+    <table name="ctxt_pos_src_mvmt_ext" xmlns="">
+        <column name="source_group_type" nullable="false" scale="25" type="string"/>
+        <column name="source_group_identifier" nullable="false" scale="128" type="string"/>
+        <column name="src_grp_identifier_long" nullable="true" scale="1" type="int"/>
+		<column name="movement_payload_blob" nullable="true" type="binary"/>
+		<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+		<column name="last_update_time" nullable="false" type="timestamp"/>
+		<column name="is_in_error" nullable="false" type="int" scale="1" default="0" />
+		<column name="trsry_trd_type" nullable="false" scale="1" type="int" default="0"/>
+		<column name="trs_mv_til_date" nullable="false" type="timestamp" default="1900-01-01 00:00:00.0"/>
+       <index primary="true">
+            <on>source_group_type</on>
+            <on>source_group_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source_group_type</on>
+            <on>src_grp_identifier_long</on>
+        </index>
+    </table> 
+    
+    <table name="ctxt_pos_src_mvmt_ext_hist" xmlns="">
+        <column name="source_group_type" nullable="false" scale="25" type="string"/>
+        <column name="source_group_identifier" nullable="false" scale="128" type="string"/>
+        <column name="src_grp_identifier_long" nullable="true" scale="1" type="int"/>
+		<column name="movement_payload_blob" nullable="true" type="binary"/>
+		<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+		<column name="last_update_time" nullable="false" type="timestamp"/>
+		<column name="is_in_error" nullable="false" type="int" scale="1" default="0" />
+		<column name="trsry_trd_type" nullable="false" scale="1" type="int" default="0"/>
+        <column name="trs_mv_til_date" nullable="false" type="timestamp" default="1900-01-01 00:00:00.0"/>
+       <index primary="true">
+            <on>source_group_type</on>
+            <on>source_group_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source_group_type</on>
+            <on>src_grp_identifier_long</on>
+        </index>
+    </table>   
+    
+    <table name="ctxt_pos_src_mvmt_synt" xmlns="">
+        <column name="source_group_type" nullable="false" scale="25" type="string"/>
+        <column name="source_group_identifier" nullable="false" scale="128" type="string"/>
+        <column name="src_grp_identifier_long" nullable="true" scale="1" type="int"/>
+		<column name="movement_payload_blob" nullable="true" type="binary"/>
+		<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+		<column name="last_update_time" nullable="false" type="timestamp"/>
+		<column name="is_in_error" nullable="false" type="int" scale="1" default="0" />
+		<column name="trsry_trd_type" nullable="false" scale="1" type="int" default="0"/>
+		<column name="trs_mv_til_date" nullable="false" type="timestamp" default="1900-01-01 00:00:00.0"/>
+       <index primary="true">
+            <on>source_group_type</on>
+            <on>source_group_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source_group_type</on>
+            <on>src_grp_identifier_long</on>
+        </index>
+    </table> 
+    
+    <table name="ctxt_pos_src_mvmt_synt_hist" xmlns="">
+        <column name="source_group_type" nullable="false" scale="25" type="string"/>
+        <column name="source_group_identifier" nullable="false" scale="128" type="string"/>
+        <column name="src_grp_identifier_long" nullable="true" scale="1" type="int"/>
+		<column name="movement_payload_blob" nullable="true" type="binary"/>
+		<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+		<column name="last_update_time" nullable="false" type="timestamp"/>
+		<column name="is_in_error" nullable="false" type="int" scale="1" default="0" />
+		<column name="trsry_trd_type" nullable="false" scale="1" type="int" default="0"/>
+        <column name="trs_mv_til_date" nullable="false" type="timestamp" default="1900-01-01 00:00:00.0"/>
+       <index primary="true">
+            <on>source_group_type</on>
+            <on>source_group_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source_group_type</on>
+            <on>src_grp_identifier_long</on>
+        </index>
+    </table>                     
+
+    <table name="liq_external_movement" xmlns="">
+		<column name="ext_ref_id" nullable="false" scale="128" type="string"/>
+        <column name="movement_idx" nullable="false" scale="1" type="int"/>
+        <column name="movement_date" nullable="false" type="timestamp"/>
+        <column name="movement_type" nullable="false" scale="32" type="string"/>
+        <column name="currency" nullable="true" scale="32" type="string"/>
+        <column name="sec_code_type" nullable="true" scale="32" type="string"/>
+        <column name="sec_code_value" nullable="true" scale="32" type="string"/>
+        <column name="mcc_id" nullable="true" scale="1" type="int"/>
+        <column name="movement_space" nullable="false" scale="32" type="string"/>
+        <column name="movement_origin" nullable="false" scale="32" type="string"/>
+        <column name="movement_intent" nullable="false" scale="32" type="string"/>
+        <column name="movement_direction" nullable="false" scale="32" type="string"/>
+        <column name="quantity" nullable="false" scale="1" type="float"/>
+        <column name="amount" nullable="false" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+		<column name="calypso_agent" nullable="true" scale="128" type="string"/>
+		<column name="calypso_account" nullable="true" scale="128" type="string"/>
+		<column name="calypso_processing_org" nullable="true" scale="128" type="string"/>
+		<column name="product_type" nullable="true" scale="128" type="string"/>
+		<column name="calypso_cpty" nullable="true" scale="128" type="string"/>
+		<column name="calypso_book" nullable="true" scale="128" type="string"/>
+		<column name="calypso_banking_prod" nullable="true" scale="128" type="string"/>
+		<column name="other_1" nullable="true" scale="128" type="string"/>
+		<column name="other_2" nullable="true" scale="128" type="string"/>
+		<column name="other_3" nullable="true" scale="128" type="string"/>
+		<column name="other_4" nullable="true" scale="128" type="string"/>
+		<column name="other_5" nullable="true" scale="128" type="string"/>
+		<column name="other_6" nullable="true" scale="128" type="string"/>		
+        <column name="record_id" nullable="true" scale="1" type="int"/>
+        <column name="last_update_time" nullable="false" type="timestamp"/>
+        <column name="version" nullable="true" scale="1" type="int"/>
+        <index primary="false">
+            <on>ext_ref_id</on>
+            <on>version</on>
+        </index>
+	</table>
+    
+	<table name="liq_ctxt_pos_reinit_job" xmlns="">
+		<column name="job_id" nullable="false" scale="1" type="int"/>
+		<column name="job_type" nullable="false" scale="24" type="string" default="REINITIALIZE_MOVEMENTS" />
+		<column name="ctxt_pos_config_id" nullable="true" scale="256" type="string"/>
+        <column name="job_status" nullable="false" scale="16" type="string"/>
+        <column name="description" nullable="true" scale="256" type="string"/>
+        <column name="processing_date" nullable="false" type="timestamp"/>
+        <column name="trade_batch_size" nullable="true" scale="1" type="int"/>
+        <column name="transfer_batch_size" nullable="true" scale="1" type="int"/>
+        <column name="message_batch_size" nullable="true" scale="1" type="int"/>
+        <column name="position_batch_size" nullable="true" scale="1" type="int"/>
+        <column name="user_name" nullable="false" scale="64" type="string"/>
+        <column name="version" nullable="false" scale="1" type="int"/>
+        <index primary="true">
+            <on>job_id</on>
+        </index>       
+    </table>    
+
+	<table name="liq_ctxt_pos_reinit_task" xmlns="">
+		<column name="job_id" nullable="false" scale="1" type="int"/>
+        <column name="task_index" nullable="false" scale="1" type="int"/>
+        <column name="task_type" nullable="false" scale="64" type="string"/>
+        <column name="task_status" nullable="false" scale="128" type="string"/>
+        <column name="batch_start_index" nullable="true" scale="1" type="int"/>
+        <column name="batch_end_index" nullable="true" scale="1" type="int"/>
+        <column name="last_update_time" nullable="false" type="timestamp"/>
+        <column name="task_progress_msg" nullable="true" scale="512" type="string"/>
+        <index primary="true">
+            <on>job_id</on>
+            <on>task_index</on>
+        </index>        
+    </table> 
+    
+    <table name="ctxt_pos_bucket_scope" xmlns="">
+        <column name="scope_id" nullable="false" scale="1" type="int"/>
+        <column name="name" nullable="false" scale="64" type="string"/>
+        <column name="version_num" nullable="false" scale="1" type="int"/>
+        <column name="user_name" nullable="false" scale="32" type="string" default="system" />
+        <index primary="true">
+            <on>scope_id</on>
+        </index>
+        <index primary="false" unique="true">
+            <on>name</on>
+        </index> 
+    </table>
+    <table name="ctxt_pos_bucket_scope_crit" xmlns="">
+        <column name="scope_id" nullable="false" scale="1" type="int"/>
+        <column name="attr_index" nullable="false" scale="1" type="int"/>
+        <column name="attr_class_id" nullable="false" scale="1" type="int"/>
+        <column name="operator" nullable="false" scale="1" type="int"/>
+        <column name="attr_named_list_id" nullable="false" scale="1" type="int"/>
+        <index primary="true">
+            <on>scope_id</on>
+            <on>attr_index</on>
+        </index>
+    </table>
+    
+   <table name="liq_limit_ccy_bucket" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="category" nullable="false" scale="64" type="string"/>
+        <column name="currency" nullable="false" scale="3" type="string"/>
+        <column name="bucket" nullable="true" scale="12" type="string"/>        
+        <column name="bucket_limit" nullable="true" scale="1" type="float"/>
+        <column name="min_limit" nullable="true" scale="1" type="float"/>
+        <column name="threshold" nullable="true" scale="1" type="float"/> 
+        <column name="min_threshold" nullable="true" scale="1" type="float"/> 
+        <column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+        <column name="user_name" nullable="true" scale="32" type="string"/>   
+        <column name="limit_date" nullable="true" type="timestamp"/>        
+    </table>
+    <table name="liq_limit_ccy_class_lvl" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="category" nullable="false" scale="64" type="string"/>
+        <column name="currency" nullable="false" scale="3" type="string"/>
+        <column name="classification_level_id" nullable="false" scale="1" type="int"/>
+        <column name="class_value_1" nullable="true" scale="64" type="string"/>
+        <column name="class_value_2" nullable="true" scale="64" type="string"/>
+        <column name="class_value_3" nullable="true" scale="64" type="string"/>
+        <column name="class_value_4" nullable="true" scale="64" type="string"/>
+        <column name="class_value_5" nullable="true" scale="64" type="string"/>
+        <column name="class_value_6" nullable="true" scale="64" type="string"/>
+        <column name="class_lvl_limit" nullable="true" scale="1" type="float"/>
+        <column name="min_limit" nullable="true" scale="1" type="float"/>  
+        <column name="threshold" nullable="true" scale="1" type="float"/> 
+        <column name="min_threshold" nullable="true" scale="1" type="float"/> 
+        <column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+        <column name="user_name" nullable="true" scale="32" type="string"/>
+        <column name="limit_date" nullable="true" type="timestamp"/>
+    </table>
+    <table name="liq_limit_ccy_class_lvl_bucket" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="category" nullable="false" scale="64" type="string"/>
+        <column name="currency" nullable="false" scale="3" type="string"/>
+        <column name="classification_level_id" nullable="false" scale="1" type="int"/>
+        <column name="bucket" nullable="true" scale="12" type="string"/>
+        <column name="class_value_1" nullable="true" scale="64" type="string"/>
+        <column name="class_value_2" nullable="true" scale="64" type="string"/>
+        <column name="class_value_3" nullable="true" scale="64" type="string"/>
+        <column name="class_value_4" nullable="true" scale="64" type="string"/>
+        <column name="class_value_5" nullable="true" scale="64" type="string"/>
+        <column name="class_value_6" nullable="true" scale="64" type="string"/>
+        <column name="lvl_bucket_limit" nullable="true" scale="1" type="float"/>
+        <column name="min_limit" nullable="true" scale="1" type="float"/>  
+        <column name="threshold" nullable="true" scale="1" type="float"/> 
+        <column name="min_threshold" nullable="true" scale="1" type="float"/> 
+        <column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+        <column name="user_name" nullable="true" scale="32" type="string"/>
+        <column name="limit_date" nullable="true" type="timestamp"/>
+    </table>     
+	<table name="liq_met_cfg_fwd_ladder" xmlns="">        
+        <column name="metric_config_id" nullable="false" scale="1" type="int"/>
+		<column name="metric_config_name" nullable="false" scale="32" type="string"/>
+		<column name="fwd_ladder_param" nullable="false" scale="32" type="string"/>
+		<column name="trade_filter" nullable="false" scale="32" type="string"/>
+		<column name="pricing_env" nullable="false" scale="32" type="string"/>
+		<column name="version" nullable="false" scale="1" type="int"/>
+
+        <index primary="true">
+            <on>metric_config_id</on>
+        </index>
+		<index primary="false" unique="true">
+			<on>metric_config_name</on>
+        </index>
+		<index primary="false" unique="true">
+            <on>fwd_ladder_param</on>
+			<on>trade_filter</on>
+        </index>
+    </table>	
+	<table name="liq_met_cfg_ref_template" xmlns="">        
+        <column name="metric_config_id" nullable="false" scale="1" type="int"/>
+		<column name="metric_config_name" nullable="false" scale="32" type="string"/>
+		<column name="template_type" nullable="false" scale="32" type="string"/>
+		<column name="template_identifier" nullable="false" scale="32" type="string"/>		
+		<column name="version" nullable="false" scale="1" type="int"/>
+	    <index primary="true">
+            <on>metric_config_id</on>
+        </index>
+		<index primary="false" unique="true">
+			<on>metric_config_name</on>
+        </index>
+    </table>	
+	<table name="liq_met_cfg_axes" xmlns="">        
+        <column name="metric_config_id" nullable="false" scale="1" type="int"/>
+		<column name="axis_idx" nullable="false" scale="1" type="int"/>
+		<column name="axis_name" nullable="false" scale="128" type="string"/>
+		<index primary="true">
+            <on>metric_config_id</on>
+			<on>axis_idx</on>
+			<on>axis_name</on>
+        </index>
+		<index primary="false">
+			<on>metric_config_id</on>
+        </index>
+    </table>
+		<table name="liq_met_cfg_data_cols" xmlns="">        
+        <column name="metric_config_id" nullable="false" scale="1" type="int"/>
+		<column name="data_col_name" nullable="false" scale="64" type="string"/>
+		<index primary="true">
+            <on>metric_config_id</on>
+			<on>data_col_name</on>
+        </index>
+		<index primary="false">
+			<on>metric_config_id</on>
+        </index>
+    </table>
+    
+    <table name="context_position_block" xmlns="">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+		<column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_id</on>
+        </index>
+        <index primary="false">
+            <on>ctxt_pos_bucket_config_id</on>
+        </index>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+
+    <table name="context_position_block_reduce" xmlns="" istemp="true">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+    </table>
+
+    <!--  Reinitialize Working Tables Start-->
+    <table name="ctxt_pos_mvmts_reinit_1" xmlns="">
+        <column name="movement_id" nullable="false" scale="1" type="int"/>
+        <column name="source" nullable="false" scale="25" type="string"/>
+        <column name="source_identifier" nullable="false" scale="128" type="string"/>
+        <column name="source_identifier_long" nullable="true" scale="1" type="int"/>
+        <column name="ctxt_pos_space_bitmap" nullable="false" type="int" scale="1"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="ctxt_pos_type" nullable="false" scale="32" type="string"/>                
+        <column name="movement_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="false" type="timestamp"/>
+        <column name="quantity" nullable="false" scale="1" type="float"/>
+        <column name="amount" nullable="false" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="reason" nullable="true" scale="128" type="string"/>
+        <column name="attrib_1" nullable="true" scale="64" type="string"/>
+        <column name="attrib_2" nullable="true" scale="64" type="string"/>
+        <column name="attrib_3" nullable="true" scale="64" type="string"/>
+        <column name="attrib_4" nullable="true" scale="64" type="string"/>
+        <column name="attrib_5" nullable="true" scale="64" type="string"/>
+        <column name="attrib_6" nullable="true" scale="64" type="string"/>
+        <column name="attrib_7" nullable="true" scale="64" type="string"/>
+        <column name="attrib_8" nullable="true" scale="64" type="string"/>
+        <column name="attrib_9" nullable="true" scale="64" type="string"/>
+        <column name="attrib_10" nullable="true" scale="64" type="string"/>
+        <column name="attrib_11" nullable="true" scale="64" type="string"/>
+        <column name="attrib_12" nullable="true" scale="64" type="string"/>
+        <column name="attrib_13" nullable="true" scale="64" type="string"/>
+        <column name="attrib_14" nullable="true" scale="64" type="string"/>
+        <column name="attrib_15" nullable="true" scale="64" type="string"/>
+        <column name="attrib_16" nullable="true" scale="64" type="string"/>
+        <column name="attrib_17" nullable="true" scale="64" type="string"/>
+        <column name="attrib_18" nullable="true" scale="64" type="string"/>
+        <column name="attrib_19" nullable="true" scale="64" type="string"/>
+        <column name="attrib_20" nullable="true" scale="64" type="string"/>
+       <index primary="false">
+            <on>source</on>
+            <on>source_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source</on>
+            <on>source_identifier_long</on>
+        </index>
+    </table>
+     <table name="ctxt_pos_blk_reinit_1" xmlns="">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_id</on>
+        </index>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+    <table name="ctxt_pos_blk_reinit_reduce_1" xmlns="" istemp="true">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+    
+    <table name="ctxt_pos_mvmts_reinit_2" xmlns="">
+        <column name="movement_id" nullable="false" scale="1" type="int"/>
+        <column name="source" nullable="false" scale="25" type="string"/>
+        <column name="source_identifier" nullable="false" scale="128" type="string"/>
+        <column name="source_identifier_long" nullable="true" scale="1" type="int"/>
+        <column name="ctxt_pos_space_bitmap" nullable="false" type="int" scale="1"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="ctxt_pos_type" nullable="false" scale="32" type="string"/>                
+        <column name="movement_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="false" type="timestamp"/>
+        <column name="quantity" nullable="false" scale="1" type="float"/>
+        <column name="amount" nullable="false" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="reason" nullable="true" scale="128" type="string"/>
+        <column name="attrib_1" nullable="true" scale="64" type="string"/>
+        <column name="attrib_2" nullable="true" scale="64" type="string"/>
+        <column name="attrib_3" nullable="true" scale="64" type="string"/>
+        <column name="attrib_4" nullable="true" scale="64" type="string"/>
+        <column name="attrib_5" nullable="true" scale="64" type="string"/>
+        <column name="attrib_6" nullable="true" scale="64" type="string"/>
+        <column name="attrib_7" nullable="true" scale="64" type="string"/>
+        <column name="attrib_8" nullable="true" scale="64" type="string"/>
+        <column name="attrib_9" nullable="true" scale="64" type="string"/>
+        <column name="attrib_10" nullable="true" scale="64" type="string"/>
+        <column name="attrib_11" nullable="true" scale="64" type="string"/>
+        <column name="attrib_12" nullable="true" scale="64" type="string"/>
+        <column name="attrib_13" nullable="true" scale="64" type="string"/>
+        <column name="attrib_14" nullable="true" scale="64" type="string"/>
+        <column name="attrib_15" nullable="true" scale="64" type="string"/>
+        <column name="attrib_16" nullable="true" scale="64" type="string"/>
+        <column name="attrib_17" nullable="true" scale="64" type="string"/>
+        <column name="attrib_18" nullable="true" scale="64" type="string"/>
+        <column name="attrib_19" nullable="true" scale="64" type="string"/>
+        <column name="attrib_20" nullable="true" scale="64" type="string"/>
+       <index primary="false">
+            <on>source</on>
+            <on>source_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source</on>
+            <on>source_identifier_long</on>
+        </index>
+    </table>
+     <table name="ctxt_pos_blk_reinit_2" xmlns="">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_id</on>
+        </index>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+    <table name="ctxt_pos_blk_reinit_reduce_2" xmlns="" istemp="true">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+    
+<table name="ctxt_pos_mvmts_reinit_3" xmlns="">
+        <column name="movement_id" nullable="false" scale="1" type="int"/>
+        <column name="source" nullable="false" scale="25" type="string"/>
+        <column name="source_identifier" nullable="false" scale="128" type="string"/>
+        <column name="source_identifier_long" nullable="true" scale="1" type="int"/>
+        <column name="ctxt_pos_space_bitmap" nullable="false" type="int" scale="1"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="ctxt_pos_type" nullable="false" scale="32" type="string"/>                
+        <column name="movement_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="false" type="timestamp"/>
+        <column name="quantity" nullable="false" scale="1" type="float"/>
+        <column name="amount" nullable="false" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="reason" nullable="true" scale="128" type="string"/>
+        <column name="attrib_1" nullable="true" scale="64" type="string"/>
+        <column name="attrib_2" nullable="true" scale="64" type="string"/>
+        <column name="attrib_3" nullable="true" scale="64" type="string"/>
+        <column name="attrib_4" nullable="true" scale="64" type="string"/>
+        <column name="attrib_5" nullable="true" scale="64" type="string"/>
+        <column name="attrib_6" nullable="true" scale="64" type="string"/>
+        <column name="attrib_7" nullable="true" scale="64" type="string"/>
+        <column name="attrib_8" nullable="true" scale="64" type="string"/>
+        <column name="attrib_9" nullable="true" scale="64" type="string"/>
+        <column name="attrib_10" nullable="true" scale="64" type="string"/>
+        <column name="attrib_11" nullable="true" scale="64" type="string"/>
+        <column name="attrib_12" nullable="true" scale="64" type="string"/>
+        <column name="attrib_13" nullable="true" scale="64" type="string"/>
+        <column name="attrib_14" nullable="true" scale="64" type="string"/>
+        <column name="attrib_15" nullable="true" scale="64" type="string"/>
+        <column name="attrib_16" nullable="true" scale="64" type="string"/>
+        <column name="attrib_17" nullable="true" scale="64" type="string"/>
+        <column name="attrib_18" nullable="true" scale="64" type="string"/>
+        <column name="attrib_19" nullable="true" scale="64" type="string"/>
+        <column name="attrib_20" nullable="true" scale="64" type="string"/>
+       <index primary="false">
+            <on>source</on>
+            <on>source_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source</on>
+            <on>source_identifier_long</on>
+        </index>
+    </table>
+     <table name="ctxt_pos_blk_reinit_3" xmlns="">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_id</on>
+        </index>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+    <table name="ctxt_pos_blk_reinit_reduce_3" xmlns="" istemp="true">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+
+<table name="ctxt_pos_mvmts_reinit_4" xmlns="">
+        <column name="movement_id" nullable="false" scale="1" type="int"/>
+        <column name="source" nullable="false" scale="25" type="string"/>
+        <column name="source_identifier" nullable="false" scale="128" type="string"/>
+        <column name="source_identifier_long" nullable="true" scale="1" type="int"/>
+        <column name="ctxt_pos_space_bitmap" nullable="false" type="int" scale="1"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="ctxt_pos_type" nullable="false" scale="32" type="string"/>                
+        <column name="movement_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="false" type="timestamp"/>
+        <column name="quantity" nullable="false" scale="1" type="float"/>
+        <column name="amount" nullable="false" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="reason" nullable="true" scale="128" type="string"/>
+        <column name="attrib_1" nullable="true" scale="64" type="string"/>
+        <column name="attrib_2" nullable="true" scale="64" type="string"/>
+        <column name="attrib_3" nullable="true" scale="64" type="string"/>
+        <column name="attrib_4" nullable="true" scale="64" type="string"/>
+        <column name="attrib_5" nullable="true" scale="64" type="string"/>
+        <column name="attrib_6" nullable="true" scale="64" type="string"/>
+        <column name="attrib_7" nullable="true" scale="64" type="string"/>
+        <column name="attrib_8" nullable="true" scale="64" type="string"/>
+        <column name="attrib_9" nullable="true" scale="64" type="string"/>
+        <column name="attrib_10" nullable="true" scale="64" type="string"/>
+        <column name="attrib_11" nullable="true" scale="64" type="string"/>
+        <column name="attrib_12" nullable="true" scale="64" type="string"/>
+        <column name="attrib_13" nullable="true" scale="64" type="string"/>
+        <column name="attrib_14" nullable="true" scale="64" type="string"/>
+        <column name="attrib_15" nullable="true" scale="64" type="string"/>
+        <column name="attrib_16" nullable="true" scale="64" type="string"/>
+        <column name="attrib_17" nullable="true" scale="64" type="string"/>
+        <column name="attrib_18" nullable="true" scale="64" type="string"/>
+        <column name="attrib_19" nullable="true" scale="64" type="string"/>
+        <column name="attrib_20" nullable="true" scale="64" type="string"/>
+       <index primary="false">
+            <on>source</on>
+            <on>source_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source</on>
+            <on>source_identifier_long</on>
+        </index>
+    </table>
+     <table name="ctxt_pos_blk_reinit_4" xmlns="">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_id</on>
+        </index>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+    <table name="ctxt_pos_blk_reinit_reduce_4" xmlns="" istemp="true">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+<table name="ctxt_pos_mvmts_reinit_5" xmlns="">
+        <column name="movement_id" nullable="false" scale="1" type="int"/>
+        <column name="source" nullable="false" scale="25" type="string"/>
+        <column name="source_identifier" nullable="false" scale="128" type="string"/>
+        <column name="source_identifier_long" nullable="true" scale="1" type="int"/>
+        <column name="ctxt_pos_space_bitmap" nullable="false" type="int" scale="1"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="ctxt_pos_type" nullable="false" scale="32" type="string"/>                
+        <column name="movement_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="false" type="timestamp"/>
+        <column name="quantity" nullable="false" scale="1" type="float"/>
+        <column name="amount" nullable="false" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="reason" nullable="true" scale="128" type="string"/>
+        <column name="attrib_1" nullable="true" scale="64" type="string"/>
+        <column name="attrib_2" nullable="true" scale="64" type="string"/>
+        <column name="attrib_3" nullable="true" scale="64" type="string"/>
+        <column name="attrib_4" nullable="true" scale="64" type="string"/>
+        <column name="attrib_5" nullable="true" scale="64" type="string"/>
+        <column name="attrib_6" nullable="true" scale="64" type="string"/>
+        <column name="attrib_7" nullable="true" scale="64" type="string"/>
+        <column name="attrib_8" nullable="true" scale="64" type="string"/>
+        <column name="attrib_9" nullable="true" scale="64" type="string"/>
+        <column name="attrib_10" nullable="true" scale="64" type="string"/>
+        <column name="attrib_11" nullable="true" scale="64" type="string"/>
+        <column name="attrib_12" nullable="true" scale="64" type="string"/>
+        <column name="attrib_13" nullable="true" scale="64" type="string"/>
+        <column name="attrib_14" nullable="true" scale="64" type="string"/>
+        <column name="attrib_15" nullable="true" scale="64" type="string"/>
+        <column name="attrib_16" nullable="true" scale="64" type="string"/>
+        <column name="attrib_17" nullable="true" scale="64" type="string"/>
+        <column name="attrib_18" nullable="true" scale="64" type="string"/>
+        <column name="attrib_19" nullable="true" scale="64" type="string"/>
+        <column name="attrib_20" nullable="true" scale="64" type="string"/>
+       <index primary="false">
+            <on>source</on>
+            <on>source_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source</on>
+            <on>source_identifier_long</on>
+        </index>
+    </table>
+     <table name="ctxt_pos_blk_reinit_5" xmlns="">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_id</on>
+        </index>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+    <table name="ctxt_pos_blk_reinit_reduce_5" xmlns="" istemp="true">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+<table name="ctxt_pos_mvmts_reinit_6" xmlns="">
+        <column name="movement_id" nullable="false" scale="1" type="int"/>
+        <column name="source" nullable="false" scale="25" type="string"/>
+        <column name="source_identifier" nullable="false" scale="128" type="string"/>
+        <column name="source_identifier_long" nullable="true" scale="1" type="int"/>
+        <column name="ctxt_pos_space_bitmap" nullable="false" type="int" scale="1"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="ctxt_pos_type" nullable="false" scale="32" type="string"/>                
+        <column name="movement_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="false" type="timestamp"/>
+        <column name="quantity" nullable="false" scale="1" type="float"/>
+        <column name="amount" nullable="false" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="reason" nullable="true" scale="128" type="string"/>
+        <column name="attrib_1" nullable="true" scale="64" type="string"/>
+        <column name="attrib_2" nullable="true" scale="64" type="string"/>
+        <column name="attrib_3" nullable="true" scale="64" type="string"/>
+        <column name="attrib_4" nullable="true" scale="64" type="string"/>
+        <column name="attrib_5" nullable="true" scale="64" type="string"/>
+        <column name="attrib_6" nullable="true" scale="64" type="string"/>
+        <column name="attrib_7" nullable="true" scale="64" type="string"/>
+        <column name="attrib_8" nullable="true" scale="64" type="string"/>
+        <column name="attrib_9" nullable="true" scale="64" type="string"/>
+        <column name="attrib_10" nullable="true" scale="64" type="string"/>
+        <column name="attrib_11" nullable="true" scale="64" type="string"/>
+        <column name="attrib_12" nullable="true" scale="64" type="string"/>
+        <column name="attrib_13" nullable="true" scale="64" type="string"/>
+        <column name="attrib_14" nullable="true" scale="64" type="string"/>
+        <column name="attrib_15" nullable="true" scale="64" type="string"/>
+        <column name="attrib_16" nullable="true" scale="64" type="string"/>
+        <column name="attrib_17" nullable="true" scale="64" type="string"/>
+        <column name="attrib_18" nullable="true" scale="64" type="string"/>
+        <column name="attrib_19" nullable="true" scale="64" type="string"/>
+        <column name="attrib_20" nullable="true" scale="64" type="string"/>
+       <index primary="false">
+            <on>source</on>
+            <on>source_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source</on>
+            <on>source_identifier_long</on>
+        </index>
+    </table>
+     <table name="ctxt_pos_blk_reinit_6" xmlns="">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_id</on>
+        </index>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+    <table name="ctxt_pos_blk_reinit_reduce_6" xmlns="" istemp="true">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+<table name="ctxt_pos_mvmts_reinit_7" xmlns="">
+        <column name="movement_id" nullable="false" scale="1" type="int"/>
+        <column name="source" nullable="false" scale="25" type="string"/>
+        <column name="source_identifier" nullable="false" scale="128" type="string"/>
+        <column name="source_identifier_long" nullable="true" scale="1" type="int"/>
+        <column name="ctxt_pos_space_bitmap" nullable="false" type="int" scale="1"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="ctxt_pos_type" nullable="false" scale="32" type="string"/>                
+        <column name="movement_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="false" type="timestamp"/>
+        <column name="quantity" nullable="false" scale="1" type="float"/>
+        <column name="amount" nullable="false" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="reason" nullable="true" scale="128" type="string"/>
+        <column name="attrib_1" nullable="true" scale="64" type="string"/>
+        <column name="attrib_2" nullable="true" scale="64" type="string"/>
+        <column name="attrib_3" nullable="true" scale="64" type="string"/>
+        <column name="attrib_4" nullable="true" scale="64" type="string"/>
+        <column name="attrib_5" nullable="true" scale="64" type="string"/>
+        <column name="attrib_6" nullable="true" scale="64" type="string"/>
+        <column name="attrib_7" nullable="true" scale="64" type="string"/>
+        <column name="attrib_8" nullable="true" scale="64" type="string"/>
+        <column name="attrib_9" nullable="true" scale="64" type="string"/>
+        <column name="attrib_10" nullable="true" scale="64" type="string"/>
+        <column name="attrib_11" nullable="true" scale="64" type="string"/>
+        <column name="attrib_12" nullable="true" scale="64" type="string"/>
+        <column name="attrib_13" nullable="true" scale="64" type="string"/>
+        <column name="attrib_14" nullable="true" scale="64" type="string"/>
+        <column name="attrib_15" nullable="true" scale="64" type="string"/>
+        <column name="attrib_16" nullable="true" scale="64" type="string"/>
+        <column name="attrib_17" nullable="true" scale="64" type="string"/>
+        <column name="attrib_18" nullable="true" scale="64" type="string"/>
+        <column name="attrib_19" nullable="true" scale="64" type="string"/>
+        <column name="attrib_20" nullable="true" scale="64" type="string"/>
+       <index primary="false">
+            <on>source</on>
+            <on>source_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source</on>
+            <on>source_identifier_long</on>
+        </index>
+    </table>
+     <table name="ctxt_pos_blk_reinit_7" xmlns="">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_id</on>
+        </index>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+    <table name="ctxt_pos_blk_reinit_reduce_7" xmlns="" istemp="true">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+<table name="ctxt_pos_mvmts_reinit_8" xmlns="">
+        <column name="movement_id" nullable="false" scale="1" type="int"/>
+        <column name="source" nullable="false" scale="25" type="string"/>
+        <column name="source_identifier" nullable="false" scale="128" type="string"/>
+        <column name="source_identifier_long" nullable="true" scale="1" type="int"/>
+        <column name="ctxt_pos_space_bitmap" nullable="false" type="int" scale="1"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="ctxt_pos_type" nullable="false" scale="32" type="string"/>                
+        <column name="movement_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="false" type="timestamp"/>
+        <column name="quantity" nullable="false" scale="1" type="float"/>
+        <column name="amount" nullable="false" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="reason" nullable="true" scale="128" type="string"/>
+        <column name="attrib_1" nullable="true" scale="64" type="string"/>
+        <column name="attrib_2" nullable="true" scale="64" type="string"/>
+        <column name="attrib_3" nullable="true" scale="64" type="string"/>
+        <column name="attrib_4" nullable="true" scale="64" type="string"/>
+        <column name="attrib_5" nullable="true" scale="64" type="string"/>
+        <column name="attrib_6" nullable="true" scale="64" type="string"/>
+        <column name="attrib_7" nullable="true" scale="64" type="string"/>
+        <column name="attrib_8" nullable="true" scale="64" type="string"/>
+        <column name="attrib_9" nullable="true" scale="64" type="string"/>
+        <column name="attrib_10" nullable="true" scale="64" type="string"/>
+        <column name="attrib_11" nullable="true" scale="64" type="string"/>
+        <column name="attrib_12" nullable="true" scale="64" type="string"/>
+        <column name="attrib_13" nullable="true" scale="64" type="string"/>
+        <column name="attrib_14" nullable="true" scale="64" type="string"/>
+        <column name="attrib_15" nullable="true" scale="64" type="string"/>
+        <column name="attrib_16" nullable="true" scale="64" type="string"/>
+        <column name="attrib_17" nullable="true" scale="64" type="string"/>
+        <column name="attrib_18" nullable="true" scale="64" type="string"/>
+        <column name="attrib_19" nullable="true" scale="64" type="string"/>
+        <column name="attrib_20" nullable="true" scale="64" type="string"/>
+       <index primary="false">
+            <on>source</on>
+            <on>source_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source</on>
+            <on>source_identifier_long</on>
+        </index>
+    </table>
+     <table name="ctxt_pos_blk_reinit_8" xmlns="">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_id</on>
+        </index>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+    <table name="ctxt_pos_blk_reinit_reduce_8" xmlns="" istemp="true">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+<table name="ctxt_pos_mvmts_reinit_9" xmlns="">
+        <column name="movement_id" nullable="false" scale="1" type="int"/>
+        <column name="source" nullable="false" scale="25" type="string"/>
+        <column name="source_identifier" nullable="false" scale="128" type="string"/>
+        <column name="source_identifier_long" nullable="true" scale="1" type="int"/>
+        <column name="ctxt_pos_space_bitmap" nullable="false" type="int" scale="1"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="ctxt_pos_type" nullable="false" scale="32" type="string"/>                
+        <column name="movement_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="false" type="timestamp"/>
+        <column name="quantity" nullable="false" scale="1" type="float"/>
+        <column name="amount" nullable="false" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="reason" nullable="true" scale="128" type="string"/>
+        <column name="attrib_1" nullable="true" scale="64" type="string"/>
+        <column name="attrib_2" nullable="true" scale="64" type="string"/>
+        <column name="attrib_3" nullable="true" scale="64" type="string"/>
+        <column name="attrib_4" nullable="true" scale="64" type="string"/>
+        <column name="attrib_5" nullable="true" scale="64" type="string"/>
+        <column name="attrib_6" nullable="true" scale="64" type="string"/>
+        <column name="attrib_7" nullable="true" scale="64" type="string"/>
+        <column name="attrib_8" nullable="true" scale="64" type="string"/>
+        <column name="attrib_9" nullable="true" scale="64" type="string"/>
+        <column name="attrib_10" nullable="true" scale="64" type="string"/>
+        <column name="attrib_11" nullable="true" scale="64" type="string"/>
+        <column name="attrib_12" nullable="true" scale="64" type="string"/>
+        <column name="attrib_13" nullable="true" scale="64" type="string"/>
+        <column name="attrib_14" nullable="true" scale="64" type="string"/>
+        <column name="attrib_15" nullable="true" scale="64" type="string"/>
+        <column name="attrib_16" nullable="true" scale="64" type="string"/>
+        <column name="attrib_17" nullable="true" scale="64" type="string"/>
+        <column name="attrib_18" nullable="true" scale="64" type="string"/>
+        <column name="attrib_19" nullable="true" scale="64" type="string"/>
+        <column name="attrib_20" nullable="true" scale="64" type="string"/>
+       <index primary="false">
+            <on>source</on>
+            <on>source_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source</on>
+            <on>source_identifier_long</on>
+        </index>
+    </table>
+     <table name="ctxt_pos_blk_reinit_9" xmlns="">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_id</on>
+        </index>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+    <table name="ctxt_pos_blk_reinit_reduce_9" xmlns="" istemp="true">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+    
+<table name="ctxt_pos_mvmts_reinit_10" xmlns="">
+        <column name="movement_id" nullable="false" scale="1" type="int"/>
+        <column name="source" nullable="false" scale="25" type="string"/>
+        <column name="source_identifier" nullable="false" scale="128" type="string"/>
+        <column name="source_identifier_long" nullable="true" scale="1" type="int"/>
+        <column name="ctxt_pos_space_bitmap" nullable="false" type="int" scale="1"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="ctxt_pos_type" nullable="false" scale="32" type="string"/>                
+        <column name="movement_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="false" type="timestamp"/>
+        <column name="quantity" nullable="false" scale="1" type="float"/>
+        <column name="amount" nullable="false" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="reason" nullable="true" scale="128" type="string"/>
+        <column name="attrib_1" nullable="true" scale="64" type="string"/>
+        <column name="attrib_2" nullable="true" scale="64" type="string"/>
+        <column name="attrib_3" nullable="true" scale="64" type="string"/>
+        <column name="attrib_4" nullable="true" scale="64" type="string"/>
+        <column name="attrib_5" nullable="true" scale="64" type="string"/>
+        <column name="attrib_6" nullable="true" scale="64" type="string"/>
+        <column name="attrib_7" nullable="true" scale="64" type="string"/>
+        <column name="attrib_8" nullable="true" scale="64" type="string"/>
+        <column name="attrib_9" nullable="true" scale="64" type="string"/>
+        <column name="attrib_10" nullable="true" scale="64" type="string"/>
+        <column name="attrib_11" nullable="true" scale="64" type="string"/>
+        <column name="attrib_12" nullable="true" scale="64" type="string"/>
+        <column name="attrib_13" nullable="true" scale="64" type="string"/>
+        <column name="attrib_14" nullable="true" scale="64" type="string"/>
+        <column name="attrib_15" nullable="true" scale="64" type="string"/>
+        <column name="attrib_16" nullable="true" scale="64" type="string"/>
+        <column name="attrib_17" nullable="true" scale="64" type="string"/>
+        <column name="attrib_18" nullable="true" scale="64" type="string"/>
+        <column name="attrib_19" nullable="true" scale="64" type="string"/>
+        <column name="attrib_20" nullable="true" scale="64" type="string"/>
+       <index primary="false">
+            <on>source</on>
+            <on>source_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source</on>
+            <on>source_identifier_long</on>
+        </index>
+    </table>
+     <table name="ctxt_pos_blk_reinit_10" xmlns="">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_id</on>
+        </index>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+    <table name="ctxt_pos_blk_reinit_reduce_10" xmlns="" istemp="true">
+        <column name="block_id" nullable="false" scale="1" type="bigint"/>
+        <column name="block_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="true" type="timestamp"/>
+        <column name="buy_quantity" nullable="true" scale="1" type="float"/>
+        <column name="sell_quantity" nullable="true" scale="1" type="float"/>
+        <column name="buy_amount" nullable="true" scale="1" type="float"/>
+        <column name="sell_amount" nullable="true" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="ctxt_pos_bucket_config_id" nullable="false" scale="1" type="int"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="data_bkt_1_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_2_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_3_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_4_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_5_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_6_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_7_value" nullable="false" scale="64" type="string"/>
+        <column name="data_bkt_8_value" nullable="false" scale="64" type="string"/>
+        <index primary="false">
+            <on>block_date</on>
+            <on>ctxt_pos_bucket_config_id</on>
+            <on>ctxt_pos_origin</on>
+            <on>ctxt_pos_intent</on>
+            <on>ctxt_pos_direction</on>
+            <on>data_bkt_1_value</on>
+            <on>data_bkt_2_value</on>
+            <on>data_bkt_3_value</on>
+            <on>data_bkt_4_value</on>
+            <on>data_bkt_5_value</on>
+            <on>data_bkt_6_value</on>
+            <on>data_bkt_7_value</on>
+            <on>data_bkt_8_value</on>
+        </index>
+    </table>
+    <!--  Reinitialize Working Tables End-->
+    
+    <table name="treasury_movements" xmlns="">
+        <column name="movement_id" nullable="false" scale="1" type="int"/>
+        <column name="source" nullable="false" scale="25" type="string"/>
+        <column name="source_identifier" nullable="false" scale="128" type="string"/>
+        <column name="source_identifier_long" nullable="true" scale="1" type="int"/>
+        <column name="ctxt_pos_space_bitmap" nullable="false" type="int" scale="1"/>
+        <column name="ctxt_pos_origin" nullable="false" scale="50" type="string"/>
+        <column name="ctxt_pos_intent" nullable="false" scale="40" type="string"/>
+        <column name="ctxt_pos_direction" nullable="false" scale="8" type="string"/>
+        <column name="ctxt_pos_type" nullable="false" scale="32" type="string"/>                
+        <column name="movement_date" nullable="false" type="timestamp"/>
+        <column name="update_time" nullable="false" type="timestamp"/>
+        <column name="quantity" nullable="false" scale="1" type="float"/>
+        <column name="amount" nullable="false" scale="1" type="float"/>
+        <column name="ntnl_at_risk" nullable="false" scale="1" type="float"/>
+        <column name="fwd_wght_ntnl" nullable="false" scale="1" type="float"/>
+        <column name="reason" nullable="true" scale="128" type="string"/>
+        <column name="attrib_1" nullable="true" scale="64" type="string"/>
+        <column name="attrib_2" nullable="true" scale="64" type="string"/>
+        <column name="attrib_3" nullable="true" scale="64" type="string"/>
+        <column name="attrib_4" nullable="true" scale="64" type="string"/>
+        <column name="attrib_5" nullable="true" scale="64" type="string"/>
+        <column name="attrib_6" nullable="true" scale="64" type="string"/>
+        <column name="attrib_7" nullable="true" scale="64" type="string"/>
+        <column name="attrib_8" nullable="true" scale="64" type="string"/>
+        <column name="attrib_9" nullable="true" scale="64" type="string"/>
+        <column name="attrib_10" nullable="true" scale="64" type="string"/>
+        <column name="attrib_11" nullable="true" scale="64" type="string"/>
+        <column name="attrib_12" nullable="true" scale="64" type="string"/>
+        <column name="attrib_13" nullable="true" scale="64" type="string"/>
+        <column name="attrib_14" nullable="true" scale="64" type="string"/>
+        <column name="attrib_15" nullable="true" scale="64" type="string"/>
+        <column name="attrib_16" nullable="true" scale="64" type="string"/>
+        <column name="attrib_17" nullable="true" scale="64" type="string"/>
+        <column name="attrib_18" nullable="true" scale="64" type="string"/>
+        <column name="attrib_19" nullable="true" scale="64" type="string"/>
+        <column name="attrib_20" nullable="true" scale="64" type="string"/>        
+       <index primary="false">
+            <on>source</on>
+            <on>source_identifier</on>
+        </index>
+        <index primary="false">
+            <on>source</on>
+            <on>source_identifier_long</on>
+        </index>
+    </table>
+    <table name="banking_product" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int"/>
+        <column name="identifier" nullable="false" scale="32" type="string"/>
+        <column name="display_name" nullable="true" scale="32" type="string"/>
+        <column name="type" nullable="false" scale="32" type="string"/>
+        <column name="template_type" nullable="false" scale="32" type="string"/>
+        <column name="template_id" nullable="false" scale="1" type="int"/>
+        <column name="start_date" nullable="false" type="timestamp"/>
+        <column name="maturity_date" nullable="true" type="timestamp"/>
+        <column name="version" nullable = "false" scale="1" type="int" default="1"/>
+		<column name="username" nullable="false" scale="32" type="string"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+		<index primary="false" unique="true">
+			<on>identifier</on>
+			<on>start_date</on>
+        </index>
+	</table>
+
+    <table name="liq_interest_projection" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="priority" nullable="false" scale="1" type="int"/>
+        <column name="banking_product_identifier" nullable="false" scale="32" type="string"/>
+        <column name="user_name" nullable="false" scale="32" type="string"/>
+        <column name="version" nullable="false" scale="1" type="int" default="1"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="liq_interest_proj_filter" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="classification_id" nullable="false" scale="1" type="int"/>
+        <column name="filter_value" nullable="false" scale="64" type="string"/>
+        <index primary="true">
+            <on>id</on>
+            <on>classification_id</on>
+        </index>
+    </table>
+    <table name="liq_interest_proj_override" xmlns="">
+        <column name="id" nullable="false" scale="1" type="int"/>
+        <column name="classification_id" nullable="false" scale="1" type="int"/>
+        <column name="override_value" nullable="false" scale="64" type="string"/>
+        <index primary="true">
+            <on>id</on>
+            <on>classification_id</on>
+        </index>
+    </table>
+</database>

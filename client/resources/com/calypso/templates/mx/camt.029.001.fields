@@ -1,0 +1,7 @@
+Business\ Message\ Identifier=//AppHdr/BizMsgIdr/text()
+Linked\ Original\ MsgId=//Document/RsltnOfInvstgtn/CxlDtls/TxInfAndSts/OrgnlGrpInf/OrgnlMsgId/text()
+Linked\ MessageType=//Document/RsltnOfInvstgtn/CxlDtls/TxInfAndSts/OrgnlGrpInf/OrgnlMsgNmId/text()
+Linked\ InstructionId=//Document/RsltnOfInvstgtn/CxlDtls/TxInfAndSts/OrgnlInstrId/text()
+Linked\ EndToEndId=//Document/RsltnOfInvstgtn/CxlDtls/TxInfAndSts/OrgnlEndToEndId/text()
+Linked\ UETR=//Document/RsltnOfInvstgtn/CxlDtls/TxInfAndSts/OrgnlUETR/text()
+Confirmation\ Status=//Document/RsltnOfInvstgtn/Sts/Conf/text() 

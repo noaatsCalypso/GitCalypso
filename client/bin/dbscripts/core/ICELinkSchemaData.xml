@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="book_attribute" xmlns="">
+		<row cat="icelink">
+			<column name="comments"/>
+			<column name="attribute_name">ICELinkBook</column>
+		</row>
+	</table>
+	<table name="domain_values" xmlns="">
+		<row cat="icelink">
+			<column name="name">UploadMessageFormatTypes</column>
+			<column name="value">ICELink</column>
+			<column name="description">Format for ICELink API based interface</column>
+		</row>
+		<row cat="icelink">
+			<column name="name">UploadMessageFormatTypes</column>
+			<column name="value">ICELinkCSV</column>
+			<column name="description">Format for ICELink CSV based interface</column>
+		</row>
+		<!-- engine name -->
+		<row cat="icelink">
+			<column name="description">Name of the ICELink Engine</column>
+			<column name="value">ICELinkEngine</column>
+			<column name="name">engineName</column>
+		</row>
+		<!-- event -->
+		<row cat="icelink">
+			<column name="description">Name of the ICELink Event</column>
+			<column name="value">PSEventICELink</column>
+			<column name="name">eventClass</column>
+		</row>
+		<!-- event Filter -->
+		<row cat="icelink">
+			<column name="description">Name of the ICELink Engine Event Filter</column>
+			<column name="value">ICELinkEngineEventFilter</column>
+			<column name="name">eventFilter</column>
+		</row>
+		<!-- engine sequence policy -->
+		<row cat="icelink">
+			<column name="description">tk.util.ICELinkEngineSequencePolicy</column>
+			<column name="value">ICELinkEngine</column>
+			<column name="name">engineEventPoolPolicyAliases</column>
+		</row>
+		<row cat="icelink">
+			<column name="description">New sequence created for ICELinkEngine</column>
+			<column name="value">tk.util.ICELinkEngineSequencePolicy</column>
+			<column name="name">engineEventPoolPolicies</column>
+		</row>
+		<!-- Attributes -->
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">ICELinkParticipant</column>
+			<column name="name">leAttributeType</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">ICELinkParent</column>
+			<column name="name">leAttributeType</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">ICELinkBook</column>
+			<column name="name">leAttributeType</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">Client Clearing Book</column>
+			<column name="name">leAttributeType</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">House Clearing Book</column>
+			<column name="name">leAttributeType</column>
+		</row>
+		<!-- Mapping -->
+		<row cat="icelink">
+			<column name="description">Calypso mapping for Interface types</column>
+			<column name="value">ICELinkCalypsoMapping.Types</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="icelink">
+			<column name="description">Calypso mapping for Interface types</column>
+			<column name="value">ICELink</column>
+			<column name="name">CalypsoMapping.Interfaces</column>
+		</row>
+		<row cat="icelink">
+			<column name="description">Calypso mapping for Interface types</column>
+			<column name="value">Frequency</column>
+			<column name="name">ICELinkCalypsoMapping.Types</column>
+		</row>
+		<row cat="icelink">
+			<column name="description">Calypso mapping for Interface types</column>
+			<column name="value">Traders</column>
+			<column name="name">ICELinkCalypsoMapping.Types</column>
+		</row>
+		<row cat="icelink">
+			<column name="description">Calypso mapping for Interface types</column>
+			<column name="value">ExternalReference</column>
+			<column name="name">ICELinkCalypsoMapping.Types</column>
+		</row>
+		<row cat="icelink">
+			<column name="description">Calypso mapping for Interface types</column>
+			<column name="value">SalesPerson</column>
+			<column name="name">ICELinkCalypsoMapping.Types</column>
+		</row>
+		<row cat="icelink">
+			<column name="description">Calypso mapping for Interface types</column>
+			<column name="value">Seniority</column>
+			<column name="name">ICELinkCalypsoMapping.Types</column>
+		</row>
+		<row cat="icelink">
+			<column name="description">Calypso mapping for Interface types</column>
+			<column name="value">SettlementMatrix</column>
+			<column name="name">ICELinkCalypsoMapping.Types</column>
+		</row>
+		<row cat="icelink">
+			<column name="description">Calypso mapping for Interface types</column>
+			<column name="value">Fees</column>
+			<column name="name">ICELinkCalypsoMapping.Types</column>
+		</row>
+		<row cat="icelink">
+			<column name="description">Calypso mapping for Interface types</column>
+			<column name="value">Keywords</column>
+			<column name="name">ICELinkCalypsoMapping.Types</column>
+		</row>
+		<!-- Trade keywords -->
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">TradeSource</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">USIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">USIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">PriorUSIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">PriorUSIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">BlockUSIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">BlockUSIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">ReportingParty</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">CCP</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">CCPClearingBroker</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">OriginalCounterparty</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">ICELinkTPApprovalStatus</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">ICELinkCPApprovalStatus</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">ICELinkTransactionRefId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">Platform</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">PlatformStatus</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">PlatformOriginalTransactionId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">CCPStatus</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">CCPClearedDate</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">CCPMessageTimestamp</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">CCPOriginCode</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">CCPAccount</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">CCPAccountReference</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">IS_CLIENT</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"></column>
+			<column name="value">AllocationClearingType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">ClearingConfirmedCorrelationID</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">ClearingConfirmedIncomingMessageID</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">IncomingMessageID</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">SendTo</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">SentBy</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">ClearingConfirmedSentTo</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">ClearingConfirmedSentBy</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"></column>
+			<column name="value">CCPRemainingTradeId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">WareHouse_TRI</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<!-- Trade Action -->
+		<row cat="icelink">
+			<column name="description"/>
+			<column name="value">VOID</column>
+			<column name="name">tradeAction</column>
+		</row>
+		<!-- Trade WorkFlow -->
+		<row cat="icelink">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">ICELinkCancelBlock</column>
+			<column name="description"/>
+		</row>
+		<row cat="icelink">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">ICELinkUpdateExternallyAllocated</column>
+			<column name="description"/>
+		</row>
+		<!-- Clearing removal keywords -->
+		<!-- <row cat="gateway">
+			<column name="name">ClearingKeywords</column>
+			<column name="value">CCPMessageTimestamp</column>
+		</row> -->
+		<!-- <row cat="icelink">
+			<column name="name">ClearingKeywords</column>
+			<column name="value">CCPTradeId</column>
+		</row> -->
+		<row cat="icelink">
+			<column name="name">ClearingKeywords</column>
+			<column name="value">OriginalCounterparty</column>
+		</row>
+		<!-- Allocation Leg removal keywords -->
+		<!-- <row cat="icelink">
+			<column name="description"></column>
+			<column name="value">CCPAccountReference</column>
+			<column name="name">AllocationKeywords</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"></column>
+			<column name="value">PlatformStatus</column>
+			<column name="name">AllocationKeywords</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"></column>
+			<column name="value">PlatformTradeId</column>
+			<column name="name">AllocationKeywords</column>
+		</row>
+		<row cat="icelink">
+			<column name="description"></column>
+			<column name="value">USIPrefix</column>
+			<column name="name">AllocationKeywords</column>
+		</row>								
+		<row cat="icelink">
+			<column name="description"></column>
+			<column name="value">USIValue</column>
+			<column name="name">AllocationKeywords</column>
+		</row> -->
+	</table>
+	<table name="calypso_mapping" xmlns="">
+		<row cat="icelink">
+			<column name="calypso_value">MTH</column>
+			<column name="interface_value">1</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_name">ICELink</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="icelink">
+			<column name="calypso_value">QTR</column>
+			<column name="interface_value">3</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_name">ICELink</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="icelink">
+			<column name="calypso_value">SA</column>
+			<column name="interface_value">6</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_name">ICELink</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="icelink">
+			<column name="calypso_value">PA</column>
+			<column name="interface_value">12</column>
+			<column name="type_name">Frequency</column>
+			<column name="interface_name">ICELink</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="icelink">
+			<column name="calypso_value">SENIOR_SECURED</column>
+			<column name="interface_value">SNR</column>
+			<column name="type_name">Seniority</column>
+			<column name="interface_name">ICELink</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="icelink">
+			<column name="calypso_value">SENIOR_UNSECURED</column>
+			<column name="interface_value">SNRFOR</column>
+			<column name="type_name">Seniority</column>
+			<column name="interface_name">ICELink</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="icelink">
+			<column name="calypso_value">SUBORDINATE</column>
+			<column name="interface_value">SUB</column>
+			<column name="type_name">Seniority</column>
+			<column name="interface_name">ICELink</column>
+			<column name="reverse_b">0</column>
+		</row>
+	</table>
+	<table name="ps_event_config" xmlns="">
+		<row cat="icelink">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventICELink</column>
+			<column name="engine_name">ICELinkEngine</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventPlatformPublish</column>
+			<column name="engine_name">ICELinkEngine</column>
+		</row>
+		<!-- <row cat="bidirectional">
+            <column name="event_config_name">Back-Office</column>
+            <column name="event_class">PSEventTask</column>
+            <column name="engine_name">ICELinkEngine</column>
+        </row> -->
+	</table>
+	<table name="engine_config" xmlns="">
+		<row cat="icelink">
+			<column name="engine_id">engine_config.max(engine_id)+1@1=1|engine_name='ICELinkEngine'</column>
+			<column name="engine_name">ICELinkEngine</column>
+			<column name="engine_comment"/>
+		</row>
+	</table>
+	<table name="ps_event_filter" xmlns="">
+		<row cat="icelink">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_filter">ICELinkEngineEventFilter</column>
+			<column name="engine_name">ICELinkEngine</column>
+		</row>
+	</table>
+	<table name="engine_param" xmlns="">
+		<row cat="icelink">
+			<column name="engine_name">ICELinkEngine</column>
+			<column name="param_name">CLASS_NAME</column>
+			<column name="param_value">com.calypso.tk.engine.ICELinkEngine</column>
+		</row>
+		<row cat="icelink">
+			<column name="engine_name">ICELinkEngine</column>
+			<column name="param_name">DISPLAY_NAME</column>
+			<column name="param_value">ICELink Engine</column>
+		</row>
+		<row cat="icelink">
+			<column name="engine_name">ICELinkEngine</column>
+			<column name="param_name">INSTANCE_NAME</column>
+			<column name="param_value">engineserver</column>
+		</row>
+		<row cat="icelink">
+			<column name="engine_name">ICELinkEngine</column>
+			<column name="param_name">STARTUP</column>
+			<column name="param_value">false</column>
+		</row>
+		<row cat="icelink">
+			<column name="engine_name">ICELinkEngine</column>
+			<column name="param_name">config</column>
+			<column name="param_value">icelink.properties</column>
+		</row>
+		<row cat="icelink">
+			<column name="engine_name">ICELinkEngine</column>
+			<column name="param_name">EVENT_POOL_POLICY</column>
+			<column name="param_value">ICELinkEngine</column>
+		</row>
+	</table>
+</database>

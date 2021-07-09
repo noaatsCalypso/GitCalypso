@@ -1,0 +1,87 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+<!--calypso>
+if ((|REPORT#Product Type| == "IslamicMM")&& (|REPORT#Product Name| == "Wakala"))
+   set TRANSACTION_TYPE = "Wakil Offer";
+</calypso-->
+
+
+
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" || |MESSAGE_SUBACTION|== "CANCEL")
+	inline  "Amend and Cancel";
+</calypso-->
+</p>
+
+<p class="header1"> |TRANSACTION_TYPE|: |REPORT#Product Type| Wakala</p>
+
+
+<br>
+<p>Our Transaction Reference: |TRADE_ID|</p>
+<p>Trade Date: |TRADE_DATE|</p>
+<br>
+
+<p class="indented">
+<br>
+<p>Dear:</p>
+
+<p class="indented">
+We refer to the Wakala Placement Agreement in which you indicate your wish to place an amount with us for investment
+by us in transactions under |REPORT#Contract Type|, permitted under Shariah on your behalf:
+</p>
+<TABLE CELLSPACING=1 WIDTH=623>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Investment Amount</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|TRADE_CURRENCY| |TRADE_NOMINAL|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Investment Date</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|STRUCTUREDFLOWS_START_DATE|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Maturity Date</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|STRUCTUREDFLOWS_END_DATE|</TD>
+</TR>
+<br>
+<TABLE CELLSPACING=1 WIDTH=623>
+<br>
+<p class="indented">
+We will invest the Investment Amount in transactions expected to generate for you an Anticipated
+Profit of |CAP_PERCENTAGE|.
+Any profit exceeding this, will be retained by us as an incentive.
+</p>
+<br>
+
+<TABLE CELLSPACING=1 WIDTH=623>
+<p>
+<b><u> Account Details:</p></u></b>
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=624>
+<TR><TD WIDTH='38%' VALIGN='MIDDLE'><p>Payment to |SENDER_CODE| :</TD>
+<TD WIDTH='62%' VALIGN='MIDDLE'><p>|PO_INSTRUCTIONS|</TD></TR>
+<TR><TD WIDTH='38%' VALIGN='MIDDLE'><p>Payment to |RECEIVER_CODE| :</TD>
+<TD WIDTH='62%' VALIGN='MIDDLE'><p>|COUNTERPARTY_INSTRUCTIONS|</TD></TR>
+</TABLE>
+<br>
+<p class="indented">
+This Offer is conditional upon receipt by us of the Investment Amount in cleared funds no later than the
+Investment Date.
+</p>
+<p class="indented">
+We shall be entitled to a Wakil Fee on |FEE_DATE#WAKIL_FEE| in the sum of |REPORT#Fee.WAKIL_FEE.Amount| |REPORT#Fee.WAKIL_FEE.Currency| in accordance
+with the provisions of the Wakala Placement Agreement.
+</p>
+<br>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

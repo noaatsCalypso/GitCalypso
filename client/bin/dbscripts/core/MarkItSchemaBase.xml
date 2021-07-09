@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+
+ <table name="cdsabs_markit_flows" xmlns="">
+    <column name="product_id" nullable="false" scale="1" type="int"/>
+	<column name="start_date" nullable="false" type="timestamp"/>
+	<column name="end_date" nullable="true" type="timestamp"/>
+	<column name="pmt_date" nullable="true" type="timestamp"/>
+	<column name="factor" nullable="true" scale="1" type="float"/>
+    <column name="pmt_amt" nullable="true" scale="1" type="float"/>
+	<column name="int_shfall" nullable="true" scale="1" type="float"/>
+    <column name="int_shfall_reim" nullable="true" scale="1" type="float"/>
+	<column name="prin_shfall" nullable="true" scale="1" type="float"/>
+    <column name="prin_shfall_reim" nullable="true" scale="1" type="float"/>
+	<column name="writedown" nullable="true" scale="1" type="float"/>
+    <column name="writedown_reim" nullable="true" scale="1" type="float"/>
+    <column name="fixed_corr" nullable="true" scale="1" type="float"/>
+    <column name="float_corr" nullable="true" scale="1" type="float"/>
+    <column name="rate" nullable="true" scale="1" type="float"/>
+      <index primary="true"> <on>product_id</on> <on>start_date</on>
+      </index>
+ </table> 
+
+<table name="markit_product_data" xmlns="">
+    <column name="product_id" nullable="false" scale="1" type="int"/>
+    <column name="name" nullable="false" scale="32" type="string"/>
+	<column name="value" nullable="true" scale="32" type="string"/>
+	<index primary="true"> 
+		<on>product_id</on> 
+		<on>name</on>
+     </index>
+ </table> 
+ 
+ <table name="cdsabs_markit_flows_version" xmlns="">
+    <column name="product_id" nullable="false" scale="1" type="int"/>
+	<column name="version_number" nullable="false" scale="1" type="int"/>
+    <index primary="true"> 
+		<on>product_id</on> 
+     </index>
+ </table> 
+ 
+   
+</database>
+

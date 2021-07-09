@@ -1,0 +1,3766 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+		<row cat="gateway">
+            <column name="name">domainName</column>
+            <column name="value">MarginAccount</column>
+            <column name="description">List of valid IMPortfolio names for What-If analysis</column>
+        </row>
+		<row cat="gateway">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">UpdateIMPortfolioName</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+            <column name="name">tradeAction</column>
+            <column name="value">FORCE_ACCEPT</column>
+            <column name="description"></column>
+        </row>
+		<row cat="gateway">
+            <column name="name">tradeAction</column>
+            <column name="value">FORCE_REJECT</column>
+            <column name="description"></column>
+        </row>
+		<row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">HRCRejectReason</column>
+            <column name="description"></column>
+        </row>
+		<row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">HRCStatus</column>
+            <column name="description"></column>
+        </row>
+        <row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CCPPackageTradeId</column>
+            <column name="description"></column>
+        </row>
+        <row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CCPPackageType</column>
+            <column name="description"></column>
+        </row>
+        <row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CCPPackageSize</column>
+            <column name="description"></column>
+        </row>
+        <row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CCPInternalReference</column>
+            <column name="description"></column>
+        </row>
+        <row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CCPSrcSysLEId</column>
+            <column name="description"></column>
+        </row>
+        <row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">IM_PORTFOLIO_NAME</column>
+            <column name="description"></column>
+        </row>
+        <row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">Service</column>
+            <column name="description"></column>
+        </row>
+        <row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">BusinessFlow</column>
+            <column name="description"></column>
+        </row>
+		<row cat="gateway">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CCPBackLoad</column>
+			<column name="description"></column>
+		</row>        
+		<row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">ReportingCFTCRepository</column>
+            <column name="description"></column>
+        </row>
+        <row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">ReportingESMARepository</column>
+            <column name="description"></column>
+        </row>
+		<row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CreditApprover</column>
+            <column name="description"></column>
+        </row>
+        <row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CreditApprovalId</column>
+            <column name="description"></column>
+        </row>
+        <row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CCPTradeID</column>
+            <column name="description"></column>
+        </row>
+        <row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">PlatformComment</column>
+            <column name="description"></column>
+        </row>
+        <row cat="gateway">
+			<column name="description"></column>
+			<column name="value">CCPRejectReason</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">CCPRejectCode</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+        <row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformBlockTradeId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformCCPNettingId</column>
+			<column name="name">tradeKeyword</column>
+		</row>	
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformTransactionId</column>
+			<column name="name">tradeKeyword</column>
+		</row>	
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformTradeId</column>
+			<column name="name">tradeKeyword</column>
+		</row> 
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformPO</column>
+			<column name="name">tradeKeyword</column>
+		</row> 
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformCP</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformAllegedTime</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Field to indicate the platform last modified time of a trade</column>
+			<column name="value">PlatformLastModifiedTime</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadValidateTrader</column>
+			<column name="description">Configuration for Reject action, this will be default action applied for Reject</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadValidateSalesPerson</column>
+			<column name="description">Configuration for Reject action, this will be default action applied for Reject</column>
+		</row>
+		<row cat="bidirectional">
+            <column name="name">tradeKeyword</column>
+            <column name="value">PlatformSubmitStatus</column>
+            <column name="description">Platform publish status</column>
+        </row>
+        <row cat="bidirectional">
+            <column name="name">tradeKeyword</column>
+            <column name="value">PlatformAllegeType</column>
+            <column name="description">Platform publish Allege Type</column>
+        </row>
+        <row cat="bidirectional">
+            <column name="name">tradeKeyword</column>
+            <column name="value">PlatformAllocation</column>
+            <column name="description">Platform Allocation</column>
+        </row>
+       	<row cat="bidirectional">
+      		<column name="name">tradeKeyword</column>
+            <column name="value">CounterpartyRejectReason</column>
+            <column name="description">Counterparty Reject Reason</column>
+        </row>
+		<row cat="gateway">
+  			<column name="description"></column> 
+  			<column name="value">UploadSenderConfig</column> 
+  			<column name="name">domainName</column> 
+  		</row>
+		<row cat="gateway">
+  			<column name="description"></column> 
+  			<column name="value">SkipWorkflowCheck</column> 
+  			<column name="name">domainName</column> 
+  		</row>
+		<row cat="gateway">
+  			<column name="description"></column> 
+  			<column name="value">SkipBookValidationForAmend</column> 
+  			<column name="name">domainName</column> 
+  		</row>
+		<row cat="gateway">
+			<column name="name">SkipBookValidationForAmend</column>
+			<column name="value">EurexETD</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+  			<column name="description"></column> 
+  			<column name="value">UploadReceiverConfig</column> 
+  			<column name="name">domainName</column> 
+  		</row>
+		<row cat="gateway">
+  			<column name="description"></column> 
+  			<column name="value">Clearing.Trade.AcceptStatus</column> 
+  			<column name="name">domainName</column> 
+  		</row>
+		<row cat="gateway">
+  			<column name="description"></column> 
+  			<column name="value">Clearing.Trade.RejectStatus</column> 
+  			<column name="name">domainName</column> 
+  		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">Clearing.Trade.RejectAction</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">DeClearing.Trade.RejectStatus</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">DeClearing.Trade.RejectAction</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">Clearing.Trade.AcceptAction</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">DeClearing.Trade.AcceptStatus</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">DeClearing.Trade.AcceptAction</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">Clearing.Message.RejectStatus</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">Clearing.Message.ReprocessAction</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">Clearing.Trade.ParkedStatus</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">Clearing.Trade.ParkedAction</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">Clearing.Trade.ReleaseStatus</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">Clearing.Trade.ReleaseAction</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">Clearing.Trade.NettingStatus</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">Clearing.Trade.NettingAction</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">Clearing.Trade.TransferStatus</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">Clearing.Trade.TransferAction</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Domain for Received Status</column>
+			<column name="value">Clearing.Message.ReceivedStatus</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Domain for DeClearing Parked Action</column>
+			<column name="value">DeClearing.Trade.ParkedAction</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Domain for DeClearing Parked Status</column>
+			<column name="value">DeClearing.Trade.ParkedStatus</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Domain for setting fee-types to be ignored by interfaces</column>
+			<column name="value">PlatformIgnoreFees</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Records a single file can contain while exporting quotes from Calypso</column>
+			<column name="value">NumberOfQuotesPerFile</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Domain for setting BOMessage incomplete states to be used by interfaces</column>
+			<column name="value">BOMessageIncompleteStates</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Domain for setting Source BOMessage incomplete states to be used by interfaces</column>
+			<column name="value">SourceBOMessageIncompleteStates</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Domain for setting DataPersistor BOMessage incomplete states to be used by interfaces</column>
+			<column name="value">DataPersistorBOMessageIncompleteStates</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+            <column name="name">domainName</column>
+            <column name="value">UploadJMSMessageAttributes</column>
+            <column name="description">List of additional JMS attribute</column>
+        </row>
+		<row cat="gateway">
+            <column name="name">domainName</column>
+            <column name="value">OISDiscountingMethodEXPCurrencies</column>
+            <column name="description"></column>
+        </row>
+		<row cat="gateway">
+            <column name="name">domainName</column>
+            <column name="value">CDSNettingKeys</column>
+            <column name="description"></column>
+        </row>
+		<row cat="gateway">
+            <column name="name">domainName</column>
+            <column name="value">IRDNettingKeys</column>
+            <column name="description"></column>
+        </row>
+		<row cat="gateway">
+            <column name="name">domainName</column>
+            <column name="value">UseFlexNettingCpty</column>
+            <column name="description"></column>
+        </row>
+		<row cat="gateway">
+			<column name="name">OISDiscountingMethodEXPCurrencies</column>
+			<column name="value">BRL</column>			
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PENDING</column>
+			<column name="name">DataPersistorBOMessageIncompleteStates</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">REPROCESSING</column>
+			<column name="name">DataPersistorBOMessageIncompleteStates</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">SUBMIT_FAILED</column>
+			<column name="name">DataPersistorBOMessageIncompleteStates</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PENDING_VALID</column>
+			<column name="name">BOMessageIncompleteStates</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PENDING_TRADE</column>
+			<column name="name">BOMessageIncompleteStates</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">BACKLOAD</column>
+			<column name="name">BOMessageIncompleteStates</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PENDING</column>
+			<column name="name">BOMessageIncompleteStates</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">REPROCESSING</column>
+			<column name="name">BOMessageIncompleteStates</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PENDING</column>
+			<column name="name">SourceBOMessageIncompleteStates</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">RECEIVED</column>
+			<column name="name">SourceBOMessageIncompleteStates</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">TRANSLATED</column>
+			<column name="name">SourceBOMessageIncompleteStates</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">TO_BE_LINKED</column>
+			<column name="name">SourceBOMessageIncompleteStates</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">REPROCESSING</column>
+			<column name="name">SourceBOMessageIncompleteStates</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PENDING</column>
+			<column name="name">PlatformTradeNettingErrorReason</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">REPROCESSING</column>
+			<column name="name">PlatformTradeNettingErrorReason</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">SUBMIT_FAILED</column>
+			<column name="name">PlatformTradeNettingErrorReason</column>
+		</row>
+		<row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">PlatformRejectCode</column>
+            <column name="description">Platform Reject Code</column>
+        </row>
+         <row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">PlatformRejectReason</column>
+            <column name="description"></column>
+        </row>    
+         <row cat="gateway">
+            <column name="name">tradeKeyword</column>
+            <column name="value">PlatformAPIUser</column>
+            <column name="description">Platform API User</column>
+        </row>
+        <row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformTradeNettingStatus</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformTradeNettingErrorReason</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformNettingStatus</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">CCPNettingEventType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">CCPHistory</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">CCPReplacementTradeId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformOriginalTradeId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformReplacementTradeId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformLinkedTradeId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">CCPTerminatingEvent</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">CCPOriginalClearedDate</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">CCPOriginatingEvent</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">CCPNettingString</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">CCPNettingId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">CCPNettingCount</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+        <row cat="gateway">
+			<column name="description">Platform Parent Attribute</column>
+			<column name="value">PlatformParent</column>
+			<column name="name">leAttributeType</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Platform Role Attribute</column>
+			<column name="value">PlatformRole</column>
+			<column name="name">leAttributeType</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Account attribute for HRC portfolio</column>
+			<column name="value">InitialMarginAccountName</column>
+			<column name="name">accountProperty</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">classAuditMode</column>
+			<column name="value">CalypsoMapping</column>
+			<column name="description">Audit support for CalypsoMapping</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">scheduledTask</column>
+			<column name="value">DATA_UPLOADER</column>
+			<column name="description">Scheduled Task for Datauploader</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">scheduledTask</column>
+			<column name="value">EXPORT_QUOTES</column>
+			<column name="description">Scheduled Task for Exporting quotes</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">scheduledTask</column>
+			<column name="value">NETTING_SERVICE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">scheduledTask</column>
+			<column name="value">OIS_COMPOUND_UPDATE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">scheduledTask</column>
+			<column name="value">NDS_SWAP_UPDATE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">messageType</column>
+			<column name="value">GATEWAYMSG</column>
+			<column name="description">Incoming message for the Gateway Service</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">messageType</column>
+			<column name="value">UPLOADSOURCEMSG</column>
+			<column name="description">Source Message Type</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">messageType</column>
+			<column name="value">PLATFORMMSG</column>
+			<column name="description">Platform Message Type</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">messageType</column>
+			<column name="value">DATAPERSISTORMSG</column>
+			<column name="description">Message Type created by DataPersistor</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">messageType</column>
+			<column name="value">INCOMINGFEEDMSG</column>
+			<column name="description">Realtime Incoming Message Type</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">messageType</column>
+			<column name="value">UPLOADEREXCEPTIONMSG</column>
+			<column name="description">Realtime Incoming Message Type</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">messageType</column>
+			<column name="value">OUTGOINGFEEDMSG</column>
+			<column name="description">Realtime Outgoing Message Type</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">ExceptionResolved</column>
+			<column name="description">Indicate if the DataPersistor Exception Resolved</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">UploadObject</column>
+			<column name="description">Calypso Object to be created</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">UploadObjectReason</column>
+			<column name="description">Upload Object Reason</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">LinkedTo</column>
+			<column name="description">LinkedTo Attribute</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">UploadObjectStatus</column>
+			<column name="description">Upload Object Status</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">UploadObjectExternalRef</column>
+			<column name="description">External Reference for Trade Obj</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">UploadObjectSourceMessageId</column>
+			<column name="description">Unique id for this source message</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">DataUploadServerImpl</column>
+			<column name="name">dsInit</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">UploadObjectID</column>
+			<column name="description">ID of the Object created</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">UploadObjectAction</column>
+			<column name="description">Action to be applied on Trade</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">UploadMode</column>
+			<column name="description">Data upload mode</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">UploadAdviceDocumentID</column>
+			<column name="description">Advice Document ID</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">UploadObjectSequence</column>
+			<column name="description">To indicate the sequence of the message for a single Trade</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">MsgAttributes</column>
+			<column name="value">PlatformAction</column>
+			<column name="description">To indicate the action to apply while publishing to Platform</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">MsgAttributes</column>
+			<column name="value">PlatformSequenceId</column>
+			<column name="description">To indicate the sequence id of the message for a single Trade</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">MessageStatus</column>
+			<column name="description">Incoming/Outgoing Feed Message Status</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">Service</column>
+			<column name="description">Name of IncomingFeed Service that received this message</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">BusinessFlow</column>
+			<column name="description">Name of Business Flow that generated this message</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">UploadObjectFailedAt</column>
+			<column name="description">Name of messaging component where this message failed</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">CorrelationID</column>
+			<column name="description">Correlation ID (used for message matching)</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">CompletionSize</column>
+			<column name="description">Size for a completed message group (used for message matching)</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">MatchingStatus</column>
+			<column name="description">Matching Status (used for message matching)</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">MatchedMessageIDsBlock1</column>
+			<column name="description">Matched BO Message IDs - Block 1 (used for message matching)</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">MatchedMessageIDsBlock2</column>
+			<column name="description">Matched BO Message IDs - Block 1 (used for message matching)</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">MatchedMessageIDsBlock3</column>
+			<column name="description">Matched BO Message IDs - Block 1 (used for message matching)</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">MatchedMessageIDsBlock4</column>
+			<column name="description">Matched BO Message IDs - Block 1 (used for message matching)</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MsgAttributes</column>
+			<column name="value">MatchedMessageIDsBlock5</column>
+			<column name="description">Matched BO Message IDs - Block 1 (used for message matching)</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">formatType</column>
+			<column name="value">GATEWAY</column>
+			<column name="description">To indicate the Object saved in binary form</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">formatType</column>
+			<column name="value">PLATFORM</column>
+			<column name="description">To indicate the Object saved in binary form</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">GATEWAY</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">GATEWAYMSG</column>
+			<column name="description">To capture the exceptions in the task station for message type GATEWAYMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">UPLOADSOURCEMSG</column>
+			<column name="description">To capture the exceptions in the task station for message type UPLOADSOURCEMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">GATEWAYMSG_REJECT</column>
+			<column name="description">To capture the exceptions in the task station for message type GATEWAYMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">GATEWAYMSG_IGNORE</column>
+			<column name="description">To capture the exceptions in the task station for message type GATEWAYMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">GATEWAYMSG_ERROR</column>
+			<column name="description">To capture the exceptions in the task station for message type GATEWAYMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">GATEWAYMSG_WARNING</column>
+			<column name="description">To capture the exceptions in the task station for message type GATEWAYMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">UPLOADSOURCEMSG_REJECT</column>
+			<column name="description">To capture the exceptions in the task station for message type UPLOADSOURCEMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">GATEWAYMSG_INFORMATION</column>
+			<column name="description">To capture the exceptions in the task station for message type GATEWAYMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">UPLOADSOURCEMSG_IGNORE</column>
+			<column name="description">To capture the exceptions in the task station for message type UPLOADSOURCEMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">UPLOADSOURCEMSG_ERROR</column>
+			<column name="description">To capture the exceptions in the task station for message type UPLOADSOURCEMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">UPLOADSOURCEMSG_WARNING</column>
+			<column name="description">To capture the exceptions in the task station for message type UPLOADSOURCEMSG</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">exceptionType</column>
+			<column name="value">PLATFORMMSG</column>
+			<column name="description">To capture the exceptions in the task station for message type PLATFORMMSG</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">exceptionType</column>
+			<column name="value">PLATFORMMSG_ERROR</column>
+			<column name="description">To capture the exceptions in the task station for message type PLATFORMMSG</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">exceptionType</column>
+			<column name="value">PLATFORMMSG_WARNING</column>
+			<column name="description">To capture the exceptions in the task station for message type PLATFORMMSG</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">exceptionType</column>
+			<column name="value">PLATFORMMSG_IGNORE</column>
+			<column name="description">To capture the exceptions in the task station for message type PLATFORMMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">INCOMINGFEEDMSG</column>
+			<column name="description">To capture the exceptions in the task station for message type INCOMINGFEEDMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">INCOMINGFEEDMSG_REJECT</column>
+			<column name="description">To capture the exceptions in the task station for message type INCOMINGFEEDMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">INCOMINGFEEDMSG_IGNORE</column>
+			<column name="description">To capture the exceptions in the task station for message type INCOMINGFEEDMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">INCOMINGFEEDMSG_ERROR</column>
+			<column name="description">To capture the exceptions in the task station for message type INCOMINGFEEDMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">INCOMINGFEEDMSG_WARNING</column>
+			<column name="description">To capture the exceptions in the task station for message type INCOMINGFEEDMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">UPLOADEREXCEPTIONMSG</column>
+			<column name="description">To capture the exceptions in the task station for message type UPLOADEREXCEPTIONMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">UPLOADEREXCEPTIONMSG_REJECT</column>
+			<column name="description">To capture the exceptions in the task station for message type UPLOADEREXCEPTIONMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">UPLOADEREXCEPTIONMSG_IGNORE</column>
+			<column name="description">To capture the exceptions in the task station for message type UPLOADEREXCEPTIONMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">UPLOADEREXCEPTIONMSG_ERROR</column>
+			<column name="description">To capture the exceptions in the task station for message type UPLOADEREXCEPTIONMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">UPLOADEREXCEPTIONMSG_WARNING</column>
+			<column name="description">To capture the exceptions in the task station for message type UPLOADEREXCEPTIONMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">DATAPERSISTORMSG</column>
+			<column name="description">To capture the exceptions in the task station for message type DATAPERSISTORMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">DATAPERSISTORMSG_REJECT</column>
+			<column name="description">To capture the exceptions in the task station for message type DATAPERSISTORMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">DATAPERSISTORMSG_IGNORE</column>
+			<column name="description">To capture the exceptions in the task station for message type DATAPERSISTORMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">DATAPERSISTORMSG_ERROR</column>
+			<column name="description">To capture the exceptions in the task station for message type DATAPERSISTORMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">DATAPERSISTORMSG_WARNING</column>
+			<column name="description">To capture the exceptions in the task station for message type DATAPERSISTORMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">OUTGOINGFEEDMSG</column>
+			<column name="description">To capture the exceptions in the task station for message type OUTGOINGFEEDMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">OUTGOINGFEEDMSG_REJECT</column>
+			<column name="description">To capture the exceptions in the task station for message type OUTGOINGFEEDMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">OUTGOINGFEEDMSG_IGNORE</column>
+			<column name="description">To capture the exceptions in the task station for message type OUTGOINGFEEDMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">OUTGOINGFEEDMSG_ERROR</column>
+			<column name="description">To capture the exceptions in the task station for message type OUTGOINGFEEDMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">OUTGOINGFEEDMSG_WARNING</column>
+			<column name="description">To capture the exceptions in the task station for message type OUTGOINGFEEDMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">REJECT</column>
+			<column name="description">To capture the exceptions in the task station related to a trade</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">IGNORE</column>
+			<column name="description">To capture the exceptions in the task station related to a trade</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">ERROR</column>
+			<column name="description">To capture the exceptions in the task station related to a trade</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">WARNING</column>
+			<column name="description">To capture the exceptions in the task station related to a trade</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_GATEWAY</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_GATEWAYMSG</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_GATEWAYMSG_REJECT</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_GATEWAYMSG_IGNORE</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_GATEWAYMSG_INFORMATION</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_GATEWAYMSG_WARNING</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_GATEWAYMSG_ERROR</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_UPLOADSOURCEMSG</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_UPLOADSOURCEMSG_REJECT</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_UPLOADSOURCEMSG_IGNORE</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_UPLOADSOURCEMSG_INFORMATION</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_UPLOADSOURCEMSG_WARNING</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_UPLOADSOURCEMSG_ERROR</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">eventType</column>
+			<column name="value">EX_PLATFORMMSG</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">eventType</column>
+			<column name="value">EX_PLATFORMMSG_ERROR</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">eventType</column>
+			<column name="value">EX_PLATFORMMSG_WARNING</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_DATAPERSISTORMSG_REJECT</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_DATAPERSISTORMSG_IGNORE</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_DATAPERSISTORMSG_WARNING</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_DATAPERSISTORMSG_ERROR</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_UPLOADEREXCEPTIONMSG_REJECT</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_UPLOADEREXCEPTIONMSG_IGNORE</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_UPLOADEREXCEPTIONMSG_WARNING</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_UPLOADEREXCEPTIONMSG_ERROR</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_INCOMINGFEEDMSG</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_INCOMINGFEEDMSG_REJECT</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_INCOMINGFEEDMSG_IGNORE</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_INCOMINGFEEDMSG_WARNING</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_INCOMINGFEEDMSG_ERROR</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_OUTGOINGFEEDMSG</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_OUTGOINGFEEDMSG_REJECT</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_OUTGOINGFEEDMSG_IGNORE</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_OUTGOINGFEEDMSG_WARNING</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_OUTGOINGFEEDMSG_ERROR</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_REJECT</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_IGNORE</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_WARNING</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_ERROR</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventClass</column>
+			<column name="value">PSEventDataPersistor</column>
+			<column name="description">Event for Resubmitting MessagePayload to DataPersistor</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventClass</column>
+			<column name="value">PSEventBundleChange</column>
+			<column name="description">Event for Trade Bundle status change</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventClass</column>
+			<column name="value">PSEventRepublish</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventClass</column>
+			<column name="value">PSEventUploadReprocess</column>
+			<column name="description">To reprocess the event from message workflow</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventClass</column>
+			<column name="value">PSEventUpload</column>
+			<column name="description">Event used the capture the Message and calls uploader when handled by engine</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">eventClass</column>
+			<column name="value">PSEventPlatformPublish</column>
+			<column name="description">To publish trade from trade/message workflow</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">workflowRuleTradeBundle</column>
+			<column name="value">GenerateBundleChange</column>
+			<column name="description">Workflowrule creating PSEventBundleChange</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">ReMap</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">ForceNew</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">DataBackLoad</column>
+			<column name="description">Workflow rule for Backload trade processing</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">DeClear</column>
+			<column name="description">Workflow rule for declearing process on verified trade</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">ApplyLinkedMsgAction</column>
+			<column name="name">workflowRuleMessage</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">UpdateLinkedToAttribute</column>
+			<column name="name">workflowRuleMessage</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PlatformReprocess</column>
+			<column name="name">workflowRuleMessage</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">messageAction</column>
+			<column name="value">FORCE_NEW</column>
+			<column name="description">NEW action for forcing amend to new</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">UpdateUndoTermination</column>
+			<column name="description">Workflowrule for processing undo terminations</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">UpdateRollOver</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">UpdateUndoRoll</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">CreateClearingMirrorTrades</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">CancelClearingMirrorTrades</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">Cancel</column>
+			<column name="description">Workflowrule for processing Cancellations</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">Reject</column>
+			<column name="description">Workflowrule for processing undo terminations</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">UpdateTermination</column>
+			<column name="description">Workflowrule to carryover external ref on terminations</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">UpdateAllocationChild</column>
+			<column name="description">Workflow rule to update ext ref of child trade of allocation</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">ApplyLinkedTradeAction</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">UpdateLinkedToKeyword</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PlatformAffirm</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PlatformModAffirm</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PlatformAllege</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PlatformCancel</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PlatformReject</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PlatformClear</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PlatformExit</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PlatformDeClear</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PlatformEnrich</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PlatformPull</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Workflow rule that changes the external ref of the child trade to append _EX</column>
+			<column name="value">UpdateExercise</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description">This rule will undo the changes to the last successful VERIFIED version</column>
+			<column name="value">PlatformUndo</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PlatformTransfer</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PlatformAcceptAffirm</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadNovationAction</column>
+			<column name="description">Configuration for novation action</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">MWRejectAction</column>
+			<column name="description">Required for Rejecting a Deal in Markitwire Bi-Directional. Expected value either Withdraw or Reject</column>
+		</row>
+		
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">NewExternalRef</column>
+			<column name="description">Domain for keyword used for rekey external ref</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">AllocationKeywords</column>
+			<column name="description">Domain used to capture the keywords to be removed from child trades while performing allocation </column>
+		</row>
+			<!--List of keywords that need to be removed from the AllocatedChildTrade at that time of Affirm-->
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformTransactionId</column>
+			<column name="name">AllocationKeywords</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformStatus</column>
+			<column name="name">AllocationKeywords</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformAllegeType</column>
+			<column name="name">AllocationKeywords</column>
+		</row>		
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformSubmitStatus</column>
+			<column name="name">AllocationKeywords</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformAllocation</column>
+			<column name="name">AllocationKeywords</column>
+		</row>		
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">USIPrefix</column>
+			<column name="name">AllocationKeywords</column>
+		</row>		
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">USIValue</column>
+			<column name="name">AllocationKeywords</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">TransitionTo</column>
+			<column name="name">AllocationKeywords</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">TransitionFrom</column>
+			<column name="name">AllocationKeywords</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">TransitionReason</column>
+			<column name="name">AllocationKeywords</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">UTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>		
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">UTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">USIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>		
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">USIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PriorUSIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>		
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PriorUSIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PriorUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>		
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PriorUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformTransitionTradeId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformTransitionReason</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">PlatformTransitionTradeIdType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">TransitionTo</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">TransitionFrom</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">TransitionReason</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		
+		<row cat="gateway">
+			<column name="name">AMOrderAction</column>
+			<column name="value">UPDATE</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">AMBlockOrderAction</column>
+			<column name="value">UPDATE</column>
+		</row>		
+		<!-- HD76207: CCP keywords are also populated to bilateral trades Start-->
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">ClearingKeywords</column>
+			<column name="description">Domain for clearing keywords</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">ClearingKeywords</column>
+			<column name="value">CCPClearedDate</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">ClearingKeywords</column>
+			<column name="value">CCPClearingBroker</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">ClearingKeywords</column>
+			<column name="value">CCPTradeID</column>
+		</row>
+		<!-- HD76207: CCP keywords are also populated to bilateral trades End-->
+		<!-- Actions-->
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">TradeRejectAction</column>
+			<column name="description">Configuration for Reject action, this will be default action applied for Reject</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadAmendAction</column>
+			<column name="description">Configuration for Amend action, this will be default action applied for amend</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadRejectAction</column>
+			<column name="description">Configuration for Reject(UNDO_TERMINATe) action, this will be default action applied for reject</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadAllowedAmendActions</column>
+			<column name="description">Configuration for Amend action, all allowed Amend actions need to specified here</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadAllowedExerciseActions</column>
+			<column name="description">Configuration for Exercise action, all allowed Exercise actions need to specified here</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadAllowedCancelActions</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadExerciseAction</column>
+			<column name="description">Configuration for Exercise action, this will be default action applied for Exercise</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadUndoExerciseAction</column>
+			<column name="description">Configuration for UNDO_EXERCISE action, this will be default action applied for Exercise</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadUndoExerciseAction</column>
+			<column name="value">UNEXERCISE</column>
+			<column name="description">Configuration for UNDO_EXERCISE action, this will be default action applied for Exercise</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadDefaultRoundingMethod</column>
+			<column name="description">Default rounding method can be specified in this domain value</column>
+		</row>
+		<!-- Actions-->
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadTerminationAction</column>
+			<column name="description">Configuration for termination action</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadExitAction</column>
+			<column name="description">Configuration for Exit action</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadUpdateAction</column>
+			<column name="description">Configuration for Update action, This action will be used while updating Calypso tradeKeywords</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadTerminationReason</column>
+			<column name="description">Termination reason for TERMINATE action</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadNovationReason</column>
+			<column name="description">Termination reason for Novate action</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadAllocationAction</column>
+			<column name="description">Configuration for ALLOCATE action</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadOrderUpdateAction</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">Trade_Default_Time</column>
+			<column name="description">default time for trade timing</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">domainName</column>
+			<column name="value">AllegeAmendAction</column>
+			<column name="description">Configuration forAllege Amend action, this will provide authorization support </column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">domainName</column>
+			<column name="value">AllegeTerminateAction</column>
+			<column name="description">Configuration forAllege Terminate action, this will provide authorization support </column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">domainName</column>
+			<column name="value">AllegeNovateAction</column>
+			<column name="description">Configuration forAllege Novate action, this will provide authorization support </column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">domainName</column>
+			<column name="value">AllegeExerciseAction</column>
+			<column name="description">Configuration forAllege Exercise action, this will provide authorization support </column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">domainName</column>
+			<column name="value">AllegeAllocateAction</column>
+			<column name="description">Configuration for Allege Allocate action, this will provide authorization support </column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadUndoAction</column>
+			<column name="description">Configuration for Undo Action </column>
+		</row>
+		<row cat="gateway">
+			<column name="name">engineName</column>
+			<column name="value">UploaderPublishEngine</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">engineName</column>
+			<column name="value">UploaderImportMessageEngine</column>
+			<column name="description">UploaderImportMessageEngine</column>
+		</row>
+		<row cat="gateway">
+  			<column name="description">tk.util.UploadPoolSequencePolicy</column> 
+  			<column name="value">UploaderImportMessageEngine</column> 
+  			<column name="name">engineEventPoolPolicyAliases</column> 
+  		</row>
+  		<row cat="gateway">
+  			<column name="description">New Policy created for UploaderImportMessageEngine</column> 
+  			<column name="value">tk.util.UploadPoolSequencePolicy</column> 
+  			<column name="name">engineEventPoolPolicies</column> 
+  		</row>
+		<row cat="gateway">
+			<column name="name">engineName</column>
+			<column name="value">DataUploaderEngine</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventFilter</column>
+			<column name="value">UploaderPublishEngineEventFilter</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventFilter</column>
+			<column name="value">UpdateManagerEngineEventFilter</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadTradeTime</column>
+			<column name="description">Trade Default Time</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadTradeTime</column>
+			<column name="value">08:00:00</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadMessageFormatTypes</column>
+			<column name="description">List of Sources supported in DataUploader</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadMessageFormatTypes</column>
+			<column name="value">UploaderXML</column>
+			<column name="description">Default DataUploader Source</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadMessageFormatTypes</column>
+			<column name="value">FCM</column>
+			<column name="description"></column>
+		</row>
+		<!-- Backloading report -->
+		<row cat="gateway">
+			<column name="name">REPORT.Types</column>
+			<column name="value">BackLoading</column>
+			<column name="description">Report for exporting trades</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">BackLoadingInterfaces</column>
+			<column name="description">This domain will hold all types supported</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">BackLoadingInterfaces</column>
+			<column name="value">MW</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">CalypsoMapping.Interfaces</column>
+				<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">MWCalypsoMapping.Types</column>
+				<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for uploader Interface types</column>
+				<column name="value">UploaderCalypsoMapping.Types</column>
+				<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">LCHCalypsoMapping.Types</column>
+				<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">CMECalypsoMapping.Types</column>
+				<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">MW</column>
+				<column name="name">CalypsoMapping.Interfaces</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">LCH</column>
+				<column name="name">CalypsoMapping.Interfaces</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">CME</column>
+				<column name="name">CalypsoMapping.Interfaces</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for uploader Interface types</column>
+				<column name="value">Uploader</column>
+				<column name="name">CalypsoMapping.Interfaces</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for uploader Interface types</column>
+				<column name="value">UBS</column>
+				<column name="name">CalypsoMapping.Interfaces</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for uploader Interface types</column>
+				<column name="value">MappingsTranslator</column>
+				<column name="name">UploaderCalypsoMapping.Types</column>
+		</row>
+		
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">BloombergRequestProducts</column>
+				<column name="name">UploaderCalypsoMapping.Types</column>
+		</row>
+		
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">UBSFieldMapping</column>
+				<column name="name">UploaderCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+			<column name="description"/>
+			<column name="value">EurexETDFieldMapping</column>
+			<column name="name">UploaderCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">Account</column>
+				<column name="name">UBSCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">AvgPriceB</column>
+				<column name="name">UBSCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">ClearingExchangeTicker</column>
+				<column name="name">UBSCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">ClientAccount</column>
+				<column name="name">UBSCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">Currency</column>
+				<column name="name">UBSCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">FieldMapping</column>
+				<column name="name">UBSCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">LegalEntity</column>
+				<column name="name">UBSCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">OptionType</column>
+				<column name="name">UBSCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">TradeAction</column>
+				<column name="name">UBSCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">TradeKeywords</column>
+				<column name="name">UBSCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">TradeType</column>
+				<column name="name">UBSCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">Translator</column>
+				<column name="name">UBSCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">Location</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">ProductType</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">DateRoll</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">RollDay</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">Holidays</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">Frequency</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">RateIndexSource</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>		
+		<row cat="bidirectional">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">CounterpartyTraders</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">RateIndex</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">SettlementRateIndex</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">TerminationReason</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">Traders</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">FieldKeywords</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">FXReset</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">MWBookingState</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">TimeZone</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Fees</column>
+				<column name="value">Fees</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">DayCount</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">IndexTenor</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">DefaultIndexTenor</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">Holidays</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">AccrualPeriod</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">Book</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">CounterParty</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">CurveName</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">DateRoll</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">DayCount</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">Frequency</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">IndexTenor</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">PayLegType</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">ProductType</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">QuoteSet</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">QuoteType</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">Quotes</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">RateIndex</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Mapping Types for Interface LCH</column>
+				<column name="value">HRCTradeAction_ToBeCleared</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Mapping Types for Interface LCH</column>
+				<column name="value">HRCTradeAction_Cleared</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Mapping Types for Interface LCH</column>
+				<column name="value">HRCTradeBundleAction</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Mapping Types for Interface LCH</column>
+				<column name="value">FCMTradeAction_Cleared</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Mapping Types for Interface LCH</column>
+				<column name="value">FCMTradeAction_ToBeCleared</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">RecLegType</column>
+				<column name="name">LCHCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">Currency</column>
+				<column name="name">CMECalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">RateIndex</column>
+				<column name="name">CMECalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">IndexTenor</column>
+				<column name="name">CMECalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">Quotes</column>
+				<column name="name">CMECalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">QuoteSet</column>
+				<column name="name">CMECalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">QuoteType</column>
+				<column name="name">CMECalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">QuotePrefix</column>
+				<column name="name">CMECalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description"></column>
+				<column name="value">CurveName</column>
+				<column name="name">CMECalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Mapping Types for Interface CME</column>
+				<column name="value">HRCTradeAction_ToBeCleared</column>
+				<column name="name">CMECalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Mapping Types for Interface CME</column>
+				<column name="value">HRCTradeAction_Cleared</column>
+				<column name="name">CMECalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Mapping Types for Interface CME</column>
+				<column name="value">HRCTradeBundleAction</column>
+				<column name="name">CMECalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Mapping Types for Interface CME</column>
+				<column name="value">FCMTradeAction_Cleared</column>
+				<column name="name">CMECalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Mapping Types for Interface CME</column>
+				<column name="value">FCMTradeAction_ToBeCleared</column>
+				<column name="name">CMECalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Function to allow Modify Access to Calypso Mappings</column>
+			<column name="value">ModifyCalypsoMapping</column>
+			<column name="name">function</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Function to allow View Access to Calypso Mappings</column>
+			<column name="value">ViewCalypsoMapping</column>
+			<column name="name">function</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Function to allow Modify Access to Uploader GUI</column>
+			<column name="value">RunDataUploaderWindow</column>
+			<column name="name">function</column>
+		</row>
+		<!-- ManualFee-->
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadPreserveFee</column>
+			<column name="description">Preserving fee in trade, when added manually</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploaderRemoveFeesForProduct</column>
+			<column name="description">All the fees will be removed from the trade for the product types present in this domain if in the uploader file no fees are given.</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">gateway</column>
+			<column name="value">Uploader</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">gateway</column>
+			<column name="value">TradeUploader</column>
+			<column name="description"></column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">domainName</column>
+			<column name="value">EX_TRADE_AUTH.Accept</column>
+			<column name="description">Actions required for Authorization</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="name">EX_TRADE_AUTH.Accept</column>
+			<column name="value">Affirm</column>
+			<column name="description">Actions required for Authorization</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">PlatformMessageSourceTypes</column>
+			<column name="description">Source values for platform</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadMessageFileTypes</column>
+			<column name="description">Source and supported file type values</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadMessageSourceWebUI</column>
+			<column name="description">Interfaces Source value to be enabled in WebUI</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadMessageSourceWebUI</column>
+			<column name="value">Uploader</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadMessageSourceTypes</column>
+			<column name="description">Source and Format values</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadMessageSourceTypes</column>
+			<column name="value">Uploader</column>
+			<column name="description">UploaderXML</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadMessageSourceTypes</column>
+			<column name="value">ICELink</column>
+			<column name="description">ICELinkCSV</column>
+		</row>	
+		<row cat="gateway">
+			<column name="name">UploadMessageSourceTypes</column>
+			<column name="value">Calypso</column>
+			<column name="description">FpML</column>
+		</row>		
+		<row cat="gateway">
+			<column name="name">UploadMessageSourceTypes</column>
+			<column name="value">DSMatch</column>
+			<column name="description">DSMatchFX</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadMessageSourceTypes</column>
+			<column name="value">Eurex</column>
+			<column name="description">EurexAPIXML</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadMessageSourceTypes</column>
+			<column name="value">UBS</column>
+			<column name="description">XML,FCM</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MirrorKeywords</column>
+			<column name="value">HRCStatus</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MirrorKeywords</column>
+			<column name="value">CCPClearedDate</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MirrorKeywords</column>
+			<column name="value">CCPStatus</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MirrorKeywords</column>
+			<column name="value">CCPOriginCode</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MirrorKeywords</column>
+			<column name="value">Service</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MirrorKeywords</column>
+			<column name="value">BusinessFlow</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">MirrorKeywords</column>
+			<column name="value">SubmitAction</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">engineName</column>
+			<column name="value">UpdateManagerEngine</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">tradeWorkflowType</column>
+			<column name="value">FCM</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">tradeWorkflowType</column>
+			<column name="value">FCMHRC</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">COPPClark.WorkingDay</column>
+			<column name="description">Defines Working Days as per COPP Clark</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">COPPClark.WorkingDay</column>
+			<column name="value">Weekend Goodbusinessday</column>
+			<column name="description">Working Day</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">kickoffDateCalculator</column>
+			<column name="value">Uploader</column>
+			<column name="description">Kickoff Date Calculator for Data-Uploader for Local mode</column>
+		</row>
+		<row cat="gateway">
+            <column name="name">domainName</column>
+            <column name="value">RepoSecLendingExporterAttributes</column>
+            <column name="description">List of additional fields to be exported for Repo and SecLending trade</column>
+        </row>
+	    <row cat="gateway">
+			<column name="name">scheduledTask</column>
+			<column name="value">SWAPSMONITORHOLIDAY_FEED</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">SwapsMonitorCalypsoMapping.Types</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Calypso mapping for Interface types</column>
+			<column name="value">SwapsMonitor</column>
+			<column name="name">CalypsoMapping.Interfaces</column>
+		</row>
+	    <row cat="gateway">
+	    	<column name="description">Calypso mapping for Interface types</column>
+		    <column name="value">Holidays</column>
+			<column name="name">SwapsMonitorCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadAllowTradeID</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadAllowTradeID</column>
+			<column name="value">FALSE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadMarginCallContractEffDtType</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadMarginCallContractEffDtType</column>
+			<column name="value">TRADE DATE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadMarginCallContractEffDtType</column>
+			<column name="value">SETTLE DATE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadMarginCallContractEffDtType</column>
+			<column name="value">REAL_SETTLEMENT</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadMarginCallContractEffDtType</column>
+			<column name="value">SETTLE_DATE_OFFSET</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadMarginCallContractEffDtType</column>
+			<column name="value">ETF_SETTLEMENT</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadPreserveExtRefCancelActionSrcType</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadSkipSpotDateValidation</column>
+			<column name="description">Configuration for Skipping Spot Date Validation</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadTakeupKeywords</column>
+			<column name="description">Configuration to add takeup keywords on child trade</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadBOMessageModeSource</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadAddUndoTakeUpKeywords</column>
+			<column name="description"></column>
+		</row>
+		<row cat="gateway">
+			<column name="name">domainName</column>
+			<column name="value">UploadAddUndoTakeUpAction</column>
+			<column name="description"></column>
+		</row>
+	</table>
+	<table name="mime_type" xmlns="">
+		<row cat="gateway">
+			<column name="mime_name">calypso/gatewayobject</column>
+			<column name="extension">GATEWAY</column>
+			<column name="default_ext_b">0</column>
+			<column name="comments">Calypso Gateway Java Object</column>
+		</row>
+	</table>	
+	<table name="calypso_mapping" xmlns="">
+		<row cat="gateway">
+			<column name="calypso_value">XML</column> 
+		  	<column name="interface_value">data</column> 
+		  	<column name="type_name">UBSFieldMapping</column> 
+		  	<column name="interface_name">Uploader</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">XML</column> 
+		  	<column name="interface_value">dataType</column> 
+		  	<column name="type_name">UBSFieldMapping</column> 
+		  	<column name="interface_name">Uploader</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">data</column> 
+		  	<column name="interface_value">sourceRootElement</column> 
+		  	<column name="type_name">UBSFieldMapping</column> 
+		  	<column name="interface_name">Uploader</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">row</column> 
+		  	<column name="interface_value">sourceRowElement</column> 
+		  	<column name="type_name">UBSFieldMapping</column> 
+		  	<column name="interface_name">Uploader</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">data</column> 
+		  	<column name="interface_value">templateRootElement</column> 
+		  	<column name="type_name">UBSFieldMapping</column> 
+		  	<column name="interface_name">Uploader</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">row</column> 
+		  	<column name="interface_value">templateRowElement</column> 
+		  	<column name="type_name">UBSFieldMapping</column> 
+		  	<column name="interface_name">Uploader</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">AvgPriceB</column> 
+		  	<column name="interface_value">APS_Trade</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">Account</column> 
+		  	<column name="interface_value">Account</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">ClientRef</column> 
+		  	<column name="interface_value">Client_Ref</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">Quantity</column> 
+		  	<column name="interface_value">Contracts</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">DecimalPricePremium</column> 
+		  	<column name="interface_value">Decimal_Price_Premium</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">GMIProduct</column> 
+		  	<column name="interface_value">GMI_Product</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">ExternalReference</column> 
+		  	<column name="interface_value">ID</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">Exchange</column> 
+		  	<column name="interface_value">Market</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">PricePremium</column> 
+		  	<column name="interface_value">Price_Premium</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">ClearingExchangeTicker</column> 
+		  	<column name="interface_value">Product</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">Expiration_Date</column> 
+		  	<column name="interface_value">Prompt_Date</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">Run_Date</column> 
+		  	<column name="interface_value">Run_date</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">StrikePrice</column> 
+		  	<column name="interface_value">Strike_Price</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">TradeType</column> 
+		  	<column name="interface_value">Trade_Type</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">Trade_Date</column> 
+		  	<column name="interface_value">Trade_date</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">Currency</column> 
+		  	<column name="interface_value">Traded_Currency_Code</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">TraderName</column> 
+		  	<column name="interface_value">Trader</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">Action</column> 
+		  	<column name="interface_value">Transaction_Type</column> 
+		  	<column name="type_name">FieldMapping</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">NEW</column> 
+		  	<column name="interface_value">NEWF</column> 
+		  	<column name="type_name">TradeAction</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">NEW</column> 
+		  	<column name="interface_value">NEWO</column> 
+		  	<column name="type_name">TradeAction</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">CANCEL</column> 
+		  	<column name="interface_value">DELF</column> 
+		  	<column name="type_name">TradeAction</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">CANCEL</column> 
+		  	<column name="interface_value">DELO</column> 
+		  	<column name="type_name">TradeAction</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">EXERCISE</column> 
+		  	<column name="interface_value">EXER</column> 
+		  	<column name="type_name">TradeAction</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">ASSIGN</column> 
+		  	<column name="interface_value">ASSN</column> 
+		  	<column name="type_name">TradeAction</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">PUT</column> 
+		  	<column name="interface_value">P</column> 
+		  	<column name="type_name">OptionType</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">CALL</column> 
+		  	<column name="interface_value">C</column> 
+		  	<column name="type_name">OptionType</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">Option</column> 
+		  	<column name="interface_value">C</column> 
+		  	<column name="type_name">TradeType</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">Option</column> 
+		  	<column name="interface_value">P</column> 
+		  	<column name="type_name">TradeType</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">Future</column> 
+		  	<column name="interface_value">F</column> 
+		  	<column name="type_name">TradeType</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">yyyyMMdd</column> 
+		  	<column name="interface_value">DateFormat</column> 
+		  	<column name="type_name">Translator</column> 
+		  	<column name="interface_name">UBS</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">Float</column> 
+		  	<column name="interface_value">FLOATFIXED</column> 
+		  	<column name="type_name">PayLegType</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">Float</column> 
+		  	<column name="interface_value">FLOATFLOAT</column> 
+		  	<column name="type_name">PayLegType</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">Fixed</column> 
+		  	<column name="interface_value">FIXEDFLOAT</column> 
+		  	<column name="type_name">PayLegType</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">Float</column> 
+		  	<column name="interface_value">FIXEDFLOAT</column> 
+		  	<column name="type_name">RecLegType</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">Fixed</column> 
+		  	<column name="interface_value">FLOATFIXED</column> 
+		  	<column name="type_name">RecLegType</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">Float</column> 
+		  	<column name="interface_value">FLOATFLOAT</column> 
+		  	<column name="type_name">RecLegType</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">EUR~EURIBOR~EURIBOR01</column> 
+		  	<column name="interface_value">EUR-EURIBOR-TELERATE</column> 
+		  	<column name="type_name">RateIndex</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">EUR~EURIBOR~EURIBOR01</column> 
+		  	<column name="interface_value">EUR-EURIBOR-Reuters</column> 
+		  	<column name="type_name">RateIndex</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">Price</column> 
+		  	<column name="interface_value">default</column> 
+		  	<column name="type_name">QuoteType</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">default</column> 
+		  	<column name="interface_value">default</column> 
+		  	<column name="type_name">QuoteSet</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">MM.AUD.BBSW.BBSW</column> 
+		  	<column name="interface_value">AUD~BBR~BBSW</column> 
+		  	<column name="type_name">Quotes</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">MM.AUD.BBSW.1M.BBSW</column> 
+		  	<column name="interface_value">AUD~BBR~1m~BBSW</column> 
+		  	<column name="type_name">Quotes</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">MM.USD.LIBOR.10M.T3750</column> 
+		  	<column name="interface_value">USD</column> 
+		  	<column name="type_name">Quotes</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">MM.CHF.LIBOR.10M.T3750</column> 
+		  	<column name="interface_value">CHF</column> 
+		  	<column name="type_name">Quotes</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">FX.EUR.CAD</column> 
+		  	<column name="interface_value">CAD/EUR</column> 
+		  	<column name="type_name">Quotes</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">FX.EUR.AUD</column> 
+		  	<column name="interface_value">AUD/EUR</column> 
+		  	<column name="type_name">Quotes</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">FX.GBP.AUD</column> 
+		  	<column name="interface_value">AUD/GBP</column> 
+		  	<column name="type_name">Quotes</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">InterestRateSwap</column> 
+		  	<column name="interface_value">IRS</column> 
+		  	<column name="type_name">ProductType</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">CrossCurrencySwap</column> 
+		  	<column name="interface_value">CCS</column> 
+		  	<column name="type_name">ProductType</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">InterestRateSwap</column> 
+		  	<column name="interface_value">OIS</column> 
+		  	<column name="type_name">ProductType</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">1Y</column> 
+		  	<column name="interface_value">1Y</column> 
+		  	<column name="type_name">IndexTenor</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">TARGET</column> 
+		  	<column name="interface_value">EUTA</column> 
+		  	<column name="type_name">Holidays</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">GBLO</column> 
+		  	<column name="interface_value">LON</column> 
+		  	<column name="type_name">Holidays</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">BRU</column> 
+		  	<column name="interface_value">BEBR</column> 
+		  	<column name="type_name">Holidays</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">VIE</column> 
+		  	<column name="interface_value">ATVI</column> 
+		  	<column name="type_name">Holidays</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">QTR</column> 
+		  	<column name="interface_value">3M</column> 
+		  	<column name="type_name">Frequency</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">SA</column> 
+		  	<column name="interface_value">6M</column> 
+		  	<column name="type_name">Frequency</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">PA</column> 
+		  	<column name="interface_value">12M</column> 
+		  	<column name="type_name">Frequency</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">PA</column> 
+		  	<column name="interface_value">1Y</column> 
+		  	<column name="type_name">Frequency</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">30/360</column> 
+		  	<column name="interface_value">360/360</column> 
+		  	<column name="type_name">DayCount</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">MOD_FOLLOW</column> 
+		  	<column name="interface_value">MODIFIEDF</column> 
+		  	<column name="type_name">DateRoll</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">AUD_BBSW</column> 
+		  	<column name="interface_value">AUD_BBSW_EOD</column> 
+		  	<column name="type_name">CurveName</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">USD_LIBOR</column> 
+		  	<column name="interface_value">USD_LIBOR_EOD</column> 
+		  	<column name="type_name">CurveName</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">CALYPSO</column> 
+		  	<column name="interface_value">LCHLGB22XXX</column> 
+		  	<column name="type_name">CounterParty</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">LCH</column> 
+		  	<column name="interface_value">LCH_Auction1</column> 
+		  	<column name="type_name">Book</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">LCH</column> 
+		  	<column name="interface_value">LCH_Auction2</column> 
+		  	<column name="type_name">Book</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">UNADJUSTED</column> 
+		  	<column name="interface_value">N</column> 
+		  	<column name="type_name">AccrualPeriod</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ADJUSTED</column> 
+		  	<column name="interface_value">Y</column> 
+		  	<column name="type_name">AccrualPeriod</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		
+		<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">SUBMIT_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">SUBMIT_N</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">RESUBMIT_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">RESUBMIT_N</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">FORCEACCEPT_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">FORCEACCEPT_N</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REFUSE</column> 
+		  	<column name="interface_value">REFUSE_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REVERT</column> 
+		  	<column name="interface_value">REVERT_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">CLEAR</column> 
+		  	<column name="interface_value">CLEAR_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">COMPRESS</column> 
+		  	<column name="interface_value">COMPRESS_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">COMPRESS</column> 
+		  	<column name="interface_value">COMPRESS_N</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">TERMINATE</column> 
+		  	<column name="interface_value">TERMINATE_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">TERMINATE_N</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">AMEND_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">AMEND_N</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">FORCEAMEND_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">FORCEAMEND_N</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">SUBMIT_Y</column> 
+		  	<column name="type_name">HRCTradeBundleAction</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">SUBMIT_N</column> 
+		  	<column name="type_name">HRCTradeBundleAction</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">RESUBMIT_Y</column> 
+		  	<column name="type_name">HRCTradeBundleAction</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">RESUBMIT_N</column> 
+		  	<column name="type_name">HRCTradeBundleAction</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">FORCEACCEPT_Y</column> 
+		  	<column name="type_name">HRCTradeBundleAction</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">FORCEREJECT_N</column> 
+		  	<column name="type_name">HRCTradeBundleAction</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	
+	  	<row cat="gateway">
+			<column name="calypso_value">NEW</column> 
+		  	<column name="interface_value">SUBMIT</column> 
+		  	<column name="type_name">FCMTradeAction_ToBeCleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">NEW</column> 
+		  	<column name="interface_value">CLEAR</column> 
+		  	<column name="type_name">FCMTradeAction_ToBeCleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">SUBMIT</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">RESUBMIT</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REFUSE</column> 
+		  	<column name="interface_value">REFUSE</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REVERT</column> 
+		  	<column name="interface_value">REVERT</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">CLEAR</column> 
+		  	<column name="interface_value">CLEAR</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">COMPRESS</column> 
+		  	<column name="interface_value">COMPRESS</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ABANDON</column> 
+		  	<column name="interface_value">ABANDONMENT</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">TERMINATE</column> 
+		  	<column name="interface_value">TERMINATE</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">EXERCISE</column> 
+		  	<column name="interface_value">EXERCISE</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">AMEND</column> 
+		  	<column name="interface_value">AMEND</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">EXERCISE</column> 
+		  	<column name="interface_value">EXPIRE</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">PTE_TERMINATE</column> 
+		  	<column name="interface_value">PTETERMINATE</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">LCH</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+		  <column name="calypso_value">ALG</column> 
+		  <column name="interface_value">CLR</column> 
+		  <column name="type_name">Holidays</column> 
+		  <column name="interface_name">CME</column> 
+		  <column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">USD</column> 
+		  	<column name="interface_value">IRSHQ</column> 
+		  	<column name="type_name">Currency</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">USD</column> 
+		  	<column name="interface_value">IRSDFR</column> 
+		  	<column name="type_name">Currency</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">1Y</column> 
+		  	<column name="interface_value">1Y</column> 
+		  	<column name="type_name">IndexTenor</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">USD~LIBOR~LIBOR01</column> 
+		  	<column name="interface_value">USD-LIBOR-CME</column> 
+		  	<column name="type_name">RateIndex</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">default</column> 
+		  	<column name="interface_value">default</column> 
+		  	<column name="type_name">QuoteSet</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">Yield</column> 
+		  	<column name="interface_value">default</column> 
+		  	<column name="type_name">QuoteType</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">USD_LIBOR_3M</column> 
+		  	<column name="interface_value">USD_LIBOR3M</column> 
+		  	<column name="type_name">CurveName</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">NEW</column> 
+		  	<column name="interface_value">SUBMIT</column> 
+		  	<column name="type_name">HRCTradeAction_ToBeCleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">NEW</column> 
+		  	<column name="interface_value">CLEAR</column> 
+		  	<column name="type_name">HRCTradeAction_ToBeCleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">SUBMIT_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">SUBMIT_N</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">RESUBMIT_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">RESUBMIT_N</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">FORCEACCEPT_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">FORCEACCEPT_N</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REFUSE</column> 
+		  	<column name="interface_value">REFUSE_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REVERT</column> 
+		  	<column name="interface_value">REVERT_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">CLEAR</column> 
+		  	<column name="interface_value">CLEAR_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">COMPRESS</column> 
+		  	<column name="interface_value">COMPRESS_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">COMPRESS</column> 
+		  	<column name="interface_value">COMPRESS_N</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">TERMINATE</column> 
+		  	<column name="interface_value">TERMINATE_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">TERMINATE_N</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">AMEND_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">AMEND_N</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">FORCEAMEND_Y</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">FORCEAMEND_N</column> 
+		  	<column name="type_name">HRCTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">SUBMIT_Y</column> 
+		  	<column name="type_name">HRCTradeBundleAction</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">SUBMIT_N</column> 
+		  	<column name="type_name">HRCTradeBundleAction</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">RESUBMIT_Y</column> 
+		  	<column name="type_name">HRCTradeBundleAction</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">RESUBMIT_N</column> 
+		  	<column name="type_name">HRCTradeBundleAction</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">FORCEACCEPT_Y</column> 
+		  	<column name="type_name">HRCTradeBundleAction</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REJECT</column> 
+		  	<column name="interface_value">FORCEREJECT_N</column> 
+		  	<column name="type_name">HRCTradeBundleAction</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	
+	  	<row cat="gateway">
+			<column name="calypso_value">NEW</column> 
+		  	<column name="interface_value">SUBMIT</column> 
+		  	<column name="type_name">FCMTradeAction_ToBeCleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">NEW</column> 
+		  	<column name="interface_value">CLEAR</column> 
+		  	<column name="type_name">FCMTradeAction_ToBeCleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">SUBMIT</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ACCEPT</column> 
+		  	<column name="interface_value">RESUBMIT</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REFUSE</column> 
+		  	<column name="interface_value">REFUSE</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">REVERT</column> 
+		  	<column name="interface_value">REVERT</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">CLEAR</column> 
+		  	<column name="interface_value">CLEAR</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">COMPRESS</column> 
+		  	<column name="interface_value">COMPRESS</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">ABANDON</column> 
+		  	<column name="interface_value">ABANDONMENT</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">TERMINATE</column> 
+		  	<column name="interface_value">TERMINATE</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">EXERCISE</column> 
+		  	<column name="interface_value">EXERCISE</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">AMEND</column> 
+		  	<column name="interface_value">AMEND</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">EXERCISE</column> 
+		  	<column name="interface_value">EXPIRE</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">PTE_TERMINATE</column> 
+		  	<column name="interface_value">PTETERMINATE</column> 
+		  	<column name="type_name">FCMTradeAction_Cleared</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="gateway">
+			<column name="calypso_value">USD_EURIBOR_6M</column> 
+		  	<column name="interface_value">USD_EURIBOR6M</column> 
+		  	<column name="type_name">CurveName</column> 
+		  	<column name="interface_name">CME</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		
+		<row cat="gateway">
+			<column name="calypso_value">CalypsoTrade/Product/Bond/ProductCodeType</column> 
+		  	<column name="interface_value">Bond-SecCodeNameXpath</column> 
+		  	<column name="type_name">BloombergRequestProducts</column> 
+		  	<column name="interface_name">Uploader</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">CalypsoTrade/Product/Bond/ProductCodeValue</column> 
+		  	<column name="interface_value">Bond-SecCodeValueXpath</column> 
+		  	<column name="type_name">BloombergRequestProducts</column> 
+		  	<column name="interface_name">Uploader</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		
+		<row cat="gateway">
+			<column name="calypso_value">CalypsoTrade/Product/EquityStructuredOption/UnderlyingDetails/ProductCodeType</column> 
+		  	<column name="interface_value">EquityStructuredOption-SecCodeNameXpath</column> 
+		  	<column name="type_name">BloombergRequestProducts</column> 
+		  	<column name="interface_name">Uploader</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">CalypsoTrade/Product/EquityStructuredOption/UnderlyingDetails/ProductCodeValue</column> 
+		  	<column name="interface_value">EquityStructuredOption-SecCodeValueXpath</column> 
+		  	<column name="type_name">BloombergRequestProducts</column> 
+		  	<column name="interface_name">Uploader</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		
+		
+		
+		
+		<row cat="gateway">
+			<column name="calypso_value">CalypsoTrade/Product/Equity/ProductCodeType</column> 
+		  	<column name="interface_value">Equity-SecCodeNameXpath</column> 
+		  	<column name="type_name">BloombergRequestProducts</column> 
+		  	<column name="interface_name">Uploader</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">CalypsoTrade/Product/Equity/ProductCodeValue</column> 
+		  	<column name="interface_value">Equity-SecCodeValueXpath</column> 
+		  	<column name="type_name">BloombergRequestProducts</column> 
+		  	<column name="interface_name">Uploader</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		
+		<row cat="gateway">
+			<column name="calypso_value">CalypsoTrade/Product/EquitySwap/ProductCodeType</column> 
+		  	<column name="interface_value">EquitySwap-SecCodeNameXpath</column> 
+		  	<column name="type_name">BloombergRequestProducts</column> 
+		  	<column name="interface_name">Uploader</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		<row cat="gateway">
+			<column name="calypso_value">CalypsoTrade/Product/EquitySwap/ProductCodeValue</column> 
+		  	<column name="interface_value">EquitySwap-SecCodeValueXpath</column> 
+		  	<column name="type_name">BloombergRequestProducts</column> 
+		  	<column name="interface_name">Uploader</column> 
+		  	<column name="reverse_b">0</column> 
+	  	</row>
+		
+		
+		
+		
+	 </table>
+	 
+	<table name="engine_config" xmlns="">
+        <row cat="gateway">
+            <column name="engine_id">engine_config.max(engine_id)+1@1=1|engine_name='UpdateManagerEngine'</column>
+            <column name="engine_name">UpdateManagerEngine</column>
+            <column name="engine_comment"></column>
+        </row>
+        <row cat="gateway">
+            <column name="engine_id">engine_config.max(engine_id)+1@1=1|engine_name='DataUploaderEngine'</column>
+            <column name="engine_name">DataUploaderEngine</column>
+            <column name="engine_comment"></column>
+        </row>
+        <row cat="gateway">
+            <column name="engine_id">engine_config.max(engine_id)+1@1=1|engine_name='UploaderImportMessageEngine'</column>
+            <column name="engine_name">UploaderImportMessageEngine</column>
+            <column name="engine_comment"></column>
+        </row>
+    </table>
+    
+	<!--  table name="ps_event_config" xmlns="">		
+		<row cat="gateway">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventMessage</column>
+			<column name="engine_name">UpdateManagerEngine</column>
+		</row>		
+		<row cat="gateway">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventTrade</column>
+			<column name="engine_name">UpdateManagerEngine</column>
+		</row>
+	</table>
+	<table name="ps_event_filter" xmlns="">
+		<row cat="gateway">
+			<column name="event_config_name">Back-Office</column>
+			<column name="engine_name">UpdateManagerEngine</column>
+			<column name="event_filter">UpdateManagerEngineEventFilter</column>
+		</row>
+	</table-->
+	
+	<table name="engine_param" xmlns="">
+		<row cat="gateway">
+			<column name="engine_name">UpdateManagerEngine</column>
+			<column name="param_name">CLASS_NAME</column>
+			<column name="param_value">com.calypso.tk.engine.UpdateManagerEngine</column>
+		</row>
+		<row cat="gateway">
+			<column name="engine_name">UpdateManagerEngine</column>
+			<column name="param_name">DISPLAY_NAME</column>
+			<column name="param_value">Update Manager Engine</column>
+		</row>
+		<row cat="gateway">
+			<column name="engine_name">UpdateManagerEngine</column>
+			<column name="param_name">INSTANCE_NAME</column>
+			<column name="param_value">engineserver</column>
+		</row>
+		<row cat="gateway">
+			<column name="engine_name">UpdateManagerEngine</column>
+			<column name="param_name">STARTUP</column>
+			<column name="param_value">false</column>
+		</row>
+		
+		<row cat="gateway">
+			<column name="engine_name">DataUploaderEngine</column>
+			<column name="param_name">CLASS_NAME</column>
+			<column name="param_value">com.calypso.tk.engine.DataUploaderEngine</column>
+		</row>
+		<row cat="gateway">
+			<column name="engine_name">DataUploaderEngine</column>
+			<column name="param_name">DISPLAY_NAME</column>
+			<column name="param_value">DataUploaderEngine</column>
+		</row>
+		<row cat="gateway">
+			<column name="engine_name">DataUploaderEngine</column>
+			<column name="param_name">INSTANCE_NAME</column>
+			<column name="param_value">engineserver</column>
+		</row>
+		<row cat="gateway">
+			<column name="engine_name">DataUploaderEngine</column>
+			<column name="param_name">STARTUP</column>
+			<column name="param_value">false</column>
+		</row>
+		<row cat="gateway">
+			<column name="engine_name">DataUploaderEngine</column>
+			<column name="param_name">config</column>
+			<column name="param_value">datauploader</column>
+		</row>
+		
+		<row cat="gateway">
+			<column name="engine_name">UploaderImportMessageEngine</column>
+			<column name="param_name">CLASS_NAME</column>
+			<column name="param_value">com.calypso.tk.engine.UploadImportMessageEngine</column>
+		</row>
+		<row cat="gateway">
+			<column name="engine_name">UploaderImportMessageEngine</column>
+			<column name="param_name">DISPLAY_NAME</column>
+			<column name="param_value">UploaderImportMessageEngine</column>
+		</row>
+		<row cat="gateway">
+			<column name="engine_name">UploaderImportMessageEngine</column>
+			<column name="param_name">INSTANCE_NAME</column>
+			<column name="param_value">engineserver</column>
+		</row>
+		<row cat="gateway">
+			<column name="engine_name">UploaderImportMessageEngine</column>
+			<column name="param_name">STARTUP</column>
+			<column name="param_value">false</column>
+		</row>
+		<row cat="gateway">
+			<column name="engine_name">UploaderImportMessageEngine</column>
+			<column name="param_name">config</column>
+			<column name="param_value">Uploader</column>
+		</row>
+		<row cat="gateway">
+			<column name="engine_name">UploaderImportMessageEngine</column>
+			<column name="param_name">EVENT_POOL_POLICY</column>
+			<column name="param_value">UploaderImportMessageEngine</column>
+		</row>
+		
+	</table>
+
+	<table name="sd_filter" xmlns="">
+		<row cat="gateway">
+			<column name="sd_filter_name">FCM_tradeWorkflow</column>
+			<column name="comments" />
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+		</row>
+		<row cat="gateway">
+			<column name="sd_filter_name">FCMHRC_tradeWorkflow</column>
+			<column name="comments" />
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+		</row>
+	</table>
+	<table name="sd_filter_domain" xmlns="">
+		<row cat="gateway">
+			<column name="sd_filter_name">FCM_tradeWorkflow</column>
+			<column name="element_name">KEYWORD.BusinessFlow</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">FCM</column>
+		</row>
+		<row cat="gateway">
+			<column name="sd_filter_name">FCMHRC_tradeWorkflow</column>
+			<column name="element_name">KEYWORD.BusinessFlow</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">FCMHRC</column>
+		</row>
+		<!-- <row cat="gateway">
+			<column name="sd_filter_name">FCMHRC_tradeWorkflow</column>
+			<column name="element_name">KEYWORD.BusinessFlow</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">HRC</column>
+		</row> -->
+	</table>
+	<table name="sd_filter_element" xmlns="">
+		<row cat="gateway">
+			<column name="sd_filter_name">FCM_tradeWorkflow</column>
+			<column name="element_name">KEYWORD.BusinessFlow</column>
+			<column name="element_type">1</column>
+			<column name="min_value" />
+			<column name="max_value" />
+			<column name="is_value">0</column>
+			<column name="like_value" />
+			<column name="domain_value" />
+		</row>
+		<row cat="gateway">
+			<column name="sd_filter_name">FCMHRC_tradeWorkflow</column>
+			<column name="element_name">KEYWORD.BusinessFlow</column>
+			<column name="element_type">1</column>
+			<column name="min_value"/>
+			<column name="max_value"/>
+			<column name="is_value">0</column>
+			<column name="like_value"/>
+			<column name="domain_value" />
+		</row>
+	</table>
+</database>

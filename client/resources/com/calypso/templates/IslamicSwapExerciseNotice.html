@@ -1,0 +1,185 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+<!--calypso>
+if ((|PRODUCT_TYPE| == "IslamicSwap")&& (|RECEIVELEG_TYPE| == "Float"))
+   set TRANSACTION_TYPE = "FLPR";
+else
+   set TRANSACTION_TYPE = "FPR";
+</calypso-->
+
+
+
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" || |MESSAGE_SUBACTION|== "CANCEL")
+	inline  "Amend and Cancel";
+</calypso-->
+</p>
+
+<p class="header1"> |TRANSACTION_TYPE| Exercise Notice</p>
+
+
+<br>
+<p>Our Transaction Reference: |TRADE_ID|</p>
+<br>
+
+<p class="indented">
+<br>
+<p>Dear:</p>
+<br>
+
+<p class="indented">
+We refer to the DFT Terms confirmation entered into by you and us dated |TRADE_DATE|(the &quot;DFT
+Terms confirmation&quot) which supplements, forms part of, and is subject to, the |LA_ISDA_AGREEMENT| (ISDA/IIFM Tahawwut
+Master Agreement) dated as of |LA_AGREEMENT_DATE|, as amended and supplemented from time to time (the &quot;Agreement&quot;), 
+between you and us |TRADE_DATE|.
+</p>
+
+<p class="indented">
+Unless the context requires otherwise, capitalised terms used in this Exercise Notice and not
+defined here in will have the same meaning as in the DFT Terms confirmation.
+</p>
+
+<p class="indented">
+The Seller hereby confirms to the Buyer that:
+</p>
+
+
+<br>
+<p class="indented">
+1. the undersigned is duly authorised to execute and deliver this Exercise Notice on behalf of the Seller;</p>
+<br>
+
+<p class="indented">
+2. the Seller is hereby exercising Buyer's Undertaking in respect of the Exercise Date specified
+below and accordingly the Buyer is hereby required to purchase from the Seller the following
+|TRANSACTION_TYPE| Assets on the following terms:
+</p>
+<br>
+
+
+<TABLE CELLSPACING=1 WIDTH=623>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Exercise Date</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|XFER_ATTR_ExerciseDate|</TD>
+</TR>
+
+<!--calypso>
+if (|RECEIVELEG_TYPE| == "Fixed") {
+inline "
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FRP Assets</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|RECEIVELEG_UNDERLYING_NAME|</TD>
+</TR>
+
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FRP Asset Quantity</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|RECEIVELEG_UNDERLYING_QUANTITY|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FRP Asset Price</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|RECEIVELEG_UNDERLYING_PRICE|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FRP Asset Value</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|RECEIVELEG_UNDERLYING_VALUE|</TD>
+</TR>
+";
+}
+</calypso-->
+
+<!--calypso>
+if (|RECEIVELEG_TYPE| == "Float") {
+inline "
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FLRP Assets</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|RECEIVELEG_UNDERLYING_NAME|</TD>
+</TR>
+
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FLRP Asset Quantity</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|RECEIVELEG_UNDERLYING_QUANTITY|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FLRP Asset Price</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|RECEIVELEG_UNDERLYING_PRICE|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FLRP Asset Value</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|RECEIVELEG_UNDERLYING_VALUE|</TD>
+</TR>
+";
+}
+</calypso-->
+
+
+
+<TR><TD WIDTH='39%' VALIGN="MIDDLE">
+<p>Purchase Date</TD>
+<TD WIDTH='59%' VALIGN="MIDDLE">
+<p>|PAYCASHFLOW_PURCHASE_DATE|</TD>
+</TR>
+
+<TR><TD WIDTH='39%' VALIGN="MIDDLE">
+<p>Payment Date</TD>
+<TD WIDTH='59%' VALIGN="MIDDLE">
+<p>|TRANSFER_VALUEDATE|</TD>
+</TR>
+
+<TR><TD WIDTH='39%' VALIGN="MIDDLE">
+<p>Cost Price</TD>
+<TD WIDTH='59%' VALIGN="MIDDLE">
+<p>|SWAP_NOTIONAL|</TD>
+</TR>
+
+<TR><TD WIDTH='39%' VALIGN="MIDDLE">
+<p>Profit</TD>
+<TD WIDTH='59%' VALIGN="MIDDLE">
+<p>|TRANSFER_SETTLEMENTCCY| |TRANSFER_SETTLEMENTAMOUNT| </TD>
+</TR>
+
+<TR><TD WIDTH='39%' VALIGN="MIDDLE">
+<p>Payment Amount</TD>
+<TD WIDTH='59%' VALIGN="MIDDLE">
+<p>|TRANSFER_SETTLEMENTCCY| |TRANSFER_SETTLEMENTAMOUNT|</TD>
+</TR>
+
+
+<TABLE CELLSPACING=1 WIDTH=623>
+
+
+
+<p class="indented">
+3. attached are the two copies of the Murabaha |TRANSACTION_TYPE| Asset Sale Confirmation to record the above
+transaction which the Buyer should arrange to be countersigned and for one executed original of
+such Murabaha |TRANSACTION_TYPE| Asset Sale Confirmation to then be returned to us on the same day as the
+date on which this Exercise Notice is effective (in accordance with Section 12 of the
+Agreement) (and the Murabaha |TRANSACTION_TYPE| Asset Sale Confirmation will constitute a "Confirmation"
+for the purposes of the Agreement); and
+4. the Buyer shall pay the Payment Amount (together with any applicable VAT) to the Seller in
+accordance with the terms of the Murabaha |TRANSACTION_TYPE| Asset Sale Confirmation.
+</p>
+
+
+<p class="indented">
+IN WITNESS WHEREOF, the Seller has executed and delivered this Exercise Notice on |XFER_ATTR_ExerciseDate|.
+</p>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

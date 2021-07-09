@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><module target-version="5.6.0" name="collateral" min-version="1.00.00">
+  <schema filename="CollateralSchemaBase.xml"/>
+  <schema filename="CollateralSchemaData.xml"/>
+  <upgrade version="3.00.00">
+    <step name="COLT-7787" version="1"/>
+  </upgrade>
+  <upgrade version="3.01.00">
+    <step name="COLT-8026" version="1"/>
+  </upgrade>
+  <upgrade version="3.05.00">
+    <step name="COLT-7627" version="1"/>
+  </upgrade>
+  <upgrade version="3.05.00">
+    <step name="COLT-6951" version="1"/>
+  </upgrade>
+  <upgrade version="3.05.00">
+    <step name="COLT-8636" version="1"/>
+  </upgrade>
+  <upgrade version="3.05.00">
+    <step name="COLT-8660" version="1"/>
+  </upgrade>
+  <upgrade version="3.05.01">
+    <step name="COLT-9009" version="1"/>
+  </upgrade>
+  <upgrade version="3.06.00">
+    <step name="COLT-8356" version="1"/>
+  </upgrade>
+  <upgrade version="3.06.00">
+    <step name="COLT-8093" version="1"/>
+  </upgrade>
+  <upgrade version="3.07.00">
+    <step name="COLT-9339" version="1"/>
+  </upgrade>
+  <upgrade version="3.08.00">
+    <step name="COLT-10210" version="1"/>
+  </upgrade>
+  <upgrade version="3.08.04">
+    <step name="COLT-10706" version="1"/>
+  </upgrade>
+  <upgrade version="3.10.00">
+    <step name="COLT-11015" version="1"/>
+  </upgrade>
+  <upgrade version="3.10.00">
+    <step name="COLT-11073" version="1"/>
+  </upgrade>
+  <upgrade version="4.00.00">
+    <step name="COLT-10630" version="1"/>
+  </upgrade>
+  <upgrade version="4.00.00">
+    <step name="COLT-10632" version="1"/>
+  </upgrade>
+  <upgrade version="4.03.00">
+    <step name="COLT-12323" version="1"/>
+  </upgrade>
+  <upgrade version="4.04.00">
+    <step name="COLT-12574" version="1"/>
+  </upgrade>
+  <upgrade version="4.04.00">
+    <step name="COLT-12982" version="1"/>
+  </upgrade>
+  <upgrade version="4.04.00">
+    <step name="COLT-11589" version="1"/>
+  </upgrade>
+  <upgrade version="5.02.00">
+    <step name="COLT-12800" version="1"/>
+  </upgrade>
+  <upgrade version="5.02.00">
+    <step name="COLT-13175" version="1"/>
+  </upgrade>
+  <upgrade version="5.02.03">
+    <step name="COLT-14269" version="1"/>
+  </upgrade>
+</module>

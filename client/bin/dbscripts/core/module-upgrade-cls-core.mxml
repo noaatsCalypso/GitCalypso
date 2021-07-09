@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><module target-version="3.4.6" name="cls-core" min-version="1.0.0">
+  <schema filename="CLSSchemaBase.xml"/>
+  <schema filename="CLSSchemaData.xml"/>
+  <upgrade version="1.00.00">
+    <step name="CLS-1.00.00-messsage" version="1"/>
+    <step name="CLS-1.00.00-payInSchedule" version="1"/>
+    <step name="CLS-1.00.00-tradeInfo" version="1"/>
+  </upgrade>
+</module>

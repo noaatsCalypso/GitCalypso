@@ -1,0 +1,95 @@
+<!-- ############################ -->
+<!-- #### Start Exhibit II-A #### -->
+<!-- ############################ -->
+
+<!--calypso>
+if (|PRODUCT_TYPE| == "SwapCrossCurrency" || |PRODUCT_TYPE| == "XCcySwap") {
+	if (|VARIABLE_CURRENCY_PAYER#NOVATED_TRADE| != "") {
+		inline "<p>The Swap Transaction to which this Confirmation relates is a Mark-to market Currency Swap, the terms of which are as follows:</p>";
+	} else {
+		inline "<p>The terms of the particular Transaction to which this Confirmation relates are as follows:</p>";
+	}
+}
+</calypso-->
+
+<table>
+<!--calypso>
+if (|PRODUCT_TYPE| != "SwapCrossCurrency")
+	inline "
+	<tr>
+		<td width='30%'>Notional Amount:</td>
+		<td>|TRADE_CURRENCY#NOVATED_TRADE| |SWAP_NOTIONAL_VALUE#NOVATED_TRADE|</td>
+	</tr>";
+</calypso-->
+<tr>
+	<td>Trade Date:</td>
+	<td>|TRADE_DATE#NOVATED_TRADE|</td>
+</tr>
+<tr>
+	<td>Effective Date:</td>
+	<td>|SETTLE_DATE#NOVATED_TRADE|</td>
+</tr>
+<tr>
+	<td>Termination Date:</td>
+	<td>|PRODUCT_MATURITYDATE#NOVATED_TRADE|, subject to adjustment in accordance with the Modified Following Business Day Convention.</td>
+</tr>
+</table>
+
+<!--calypso>
+if (|PRODUCT_TYPE| == "SwapCrossCurrency" || |PRODUCT_TYPE| == "XCcySwap") {
+	if (|VARIABLE_CURRENCY_PAYER#NOVATED_TRADE| like "%") {
+	inline "
+		<table>
+		<tr>
+			<td>Constant Currency Payer:</td>
+			<td>|CONSTANT_CURRENCY_PAYER#NOVATED_TRADE|</td>
+		</tr>
+		<tr>
+			<td>Variable Currency Payer:</td>
+			<td>|VARIABLE_CURRENCY_PAYER#NOVATED_TRADE|</td>
+		</tr>
+		<tr>
+			<td>Currency Exchange Rate:</td>
+			<td>|CONSTANT_CURRENCY_PAYER#NOVATED_TRADE|</td>
+		</tr>
+		</table>
+	";
+	}
+}
+</calypso-->
+
+<!--calypso>
+if(|HAS_AMORTIZING#NOVATED_TRADE| == "Yes") {
+	inline "
+<table>
+<tr>
+	<th>Calculation Period(s) Beginning</th>
+	<th>Notional Amount</th>
+	<th>Notional Reduction from Previous Calculation Period(s)</th>
+</tr>
+";
+	iterator("PayLegFlowInterest")
+		inline "
+		<tr>
+			<td>|CASHFLOW_CALCULATION_PERIOD_BEGINNING#NOVATED_TRADE|</td><td>|CASHFLOW_NOTIONAL#NOVATED_TRADE|</td><td>|CASHFLOW_NOTIONAL_REDUCTION#NOVATED_TRADE|</td>
+		</tr>";
+	}
+</calypso-->
+
+<!--calypso>
+if ( |HAS_FIXED_LEG#NOVATED_TRADE| == "true" && |HAS_FLOAT_LEG#NOVATED_TRADE| == "false")
+    include "exhibit_2a-fixfix_NovatedTrade.html";
+else if ( |HAS_FIXED_LEG#NOVATED_TRADE| == "true" && |HAS_FLOAT_LEG#NOVATED_TRADE| == "true")
+    include "exhibit_2a-fixfloat_NovatedTrade.html";
+else
+    include "exhibit_2a-floatfloat_NovatedTrade.html";    
+</calypso-->
+
+<!-- ########################## -->
+<!-- #### End Exhibit II-A #### -->
+<!-- ########################## -->
+
+
+
+
+

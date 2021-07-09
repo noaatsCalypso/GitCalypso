@@ -1,0 +1,239 @@
+<!-- Start Exhibit II-D - see CAL-70850 for 2005 ISDA Commodity Swaption Definitions reference document -->
+
+<p>
+<table CELLSPACING="0" BORDER="0" WIDTH="*">
+
+<tr>
+    <td>Trade Date:</td>
+    <td>|TRADE_DATE|</td>
+</tr>
+<tr>
+    <td>Option Style</td>
+    <td>|OPTION_STYLE|</td>
+</tr>
+<tr>
+    <td>Option Type</td>
+    <td>Swaption</td>
+</tr>
+<tr>
+    <td>Seller</td>
+    <td>|TRADE_SELLER_NAME|</td>
+</tr>
+<tr>
+    <td>Buyer</td>
+    <td>|TRADE_BUYER_NAME|</td>
+</tr>
+<tr>
+    <td>Total Premium:</td>
+    <td>|PREMIUM_AMOUNT|</td>
+</tr>
+<tr>
+    <td>Premium Payment Date(s):</td>
+    <td>|PREMIUM_DATE|, subject to adjustment in accordance with the |COMMODITY_PRICING_DATE_ROLL| Business Day convention.</td>
+</tr>
+<tr>
+    <td>Physical/Contract Settlement:</td>
+    <td><!--calypso>if ( |IS_PHYSICAL| == "false" ) inline "Not";</calypso--> Applicable</td>
+</tr>
+
+<!--calypso> 
+if ( |IS_PHYSICAL| == "false" ) {
+	inline "
+<tr>
+    <td colspan="2"><br/><b>Cash Settlement Terms:</b></td>
+</tr>
+<tr>
+    <td>Cash Settlement:</td>
+    <td>Applicable</td>
+</tr>";
+}
+
+if ( |IS_PHYSICAL| == "true" ) {
+    inline "
+<tr>
+    <td><b>Procedure For Exercise:</b></td>
+    <td>&nbsp;</td>
+</tr>
+
+<tr>
+    <td>Exercise Period:</td>
+    <td>";
+
+    if ( |OPTION_STYLE| == "American" ) {
+        inline "
+        From and including |REPORT#Start Date| 
+        to and including |REPORT#Option Expiry Date| 
+        ";
+    }
+
+    inline "
+    between 00:01 am and |EXPIRY_TIME|     (local time in |EXPIRY_TIMEZONE|).
+    </td>
+</tr>";
+
+    if ( |OPTION_STYLE| != "American" ) {
+        inline " 
+    <tr>
+        <td>Expiration Date:</td>
+        <td>|REPORT#Option Expiry Date|</td>
+    </tr>
+    <tr>
+        <td>Expiration Time:</td>
+        <td>|EXPIRY_TIME| |EXPIRY_TIMEZONE|</td>
+    </tr>
+        ";
+    }
+
+    inline "
+<tr>
+    <td>Automatic Exercise:</td>
+    <td>Not Applicable</td>
+</tr>
+
+<tr>
+    <td>Written Confirmation:</td>
+    <td>";
+
+    if ( |IS_WRITTEN_CONFIRMATION| == "true" ) {
+        inline " Applicable</td>
+    </tr>
+    <tr>
+        <td>Seller Business Day:</td>
+        <td>|REPORT#Sender.Holidays|</td>
+    <tr>
+        <td>Seller's telephone, telex or facsimile<br>number for purpose of giving notice:</td>
+        <td>|REPORT#Sender.Address Code|";
+    } else {
+        inline "Inapplicable";
+    }
+
+    inline "
+    </td>
+</tr>";
+} 
+</calypso-->
+
+
+<tr>
+    <td colspan="2"><br/><b>(b)The terms of the underlying Transaction to which this Swaption relates are as follows:</b><br/></td>
+</tr>
+<tr>
+    <td>Commodity:</td>
+    <td>|COMMODITY_NAME|</td>
+</tr>
+<tr>
+    <td>Total Notional Quantity:</td>
+    <td>|TOTAL_QUANTITY|</td>
+</tr>
+<tr>
+    <td>Notional Quantity per Calculation Period:</td>
+    <td>|COMMODITY_QTY_PER_PERIOD|</td>
+</tr>
+<tr>
+    <td>Effective Date:</td>
+    <td>|COMMODITY_START_DATE|</td>
+</tr>
+<tr>
+    <td>Termination Date:</td>
+    <td>|COMMODITY_END_DATE|</td>
+</tr>
+<tr>
+    <td>Calculation Period:</td>
+    <td>|COMMODITY_CALC_PERIOD|</td>
+</tr>
+<tr>
+    <td>Settlement Date(s):</td>
+    <td>|SETTLEMENT_DATES|</td> 
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2"><br/><b>Fixed Amount Details:</b></td>
+</tr>
+<tr>
+    <td>Fixed Price Payer:</td>
+    <td>|FIX_PAYER_CODE|</td>
+</tr>
+<tr>
+    <td>Fixed Price:</td>
+    <td>|FIX_FIXED_RATE|</td>
+</tr>
+
+<tr>
+    <td colspan="2"><br/><b>Floating Amount Details:</b></td>
+</tr>
+<tr>
+    <td>Floating Price Payer:</td>
+    <td>|FLT_PAYER_CODE|</td>
+</tr>
+
+<!--calypso>
+if ( |HAS_REFERENCE_PRICE| == "true")
+    inline "
+<tr>
+    <td>Commodity Reference Price:</td>
+    <td>|COMMODITY_RESET_REFERENCE_PRICE|</td>
+</tr>
+    ";
+else
+    inline "
+<tr>
+    <td>Unit:</td>
+    <td>|COMMODITY_UNIT|</td>
+</tr>
+<tr>
+    <td>Price Source/Reference Dealers:</td>
+    <td>|COMMODITY_PRICE_SOURCE|</td>
+</tr>
+<tr>
+    <td>Currency:</td>
+    <td>|COMMODITY_CCY|</td>
+</tr>
+    ";
+</calypso-->
+
+
+<tr>
+    <td>Specified Price:</td>
+    <td>Average</td>
+</tr>
+<tr>
+    <td>Delivery Date:</td>
+    <td>|COMMODITY_RESET_DELIVERY_DATE|</td>
+</tr>
+<tr>
+    <td>Pricing Date(s):</td>
+    <td>|COMMODITY_PRICING_DATES|</td>
+</tr>
+
+<tr>
+    <td>Currency Conversion Provision:</td>
+    <td>|CURRENCY_CONVERSION_PROVISION|</td>
+</tr>
+
+<tr>
+    <td><b>Market Disruption:</b></td>
+    <td>&nbsp;</td>
+</tr>
+
+<!--calypso>
+if ( |HAS_MARKET_DISRUPTION_EVENTS| == "true" ) 
+    inline "
+<tr>
+    <td>Market Disruption Events:</td>
+    <td>|COMMODITY_MODIFY_MARKET_DISRUPTION_EVENTS|</td>
+</tr>
+<tr>
+    <td>Additional Market Disruption Events:</td>
+    <td>|COMMODITY_ADDITIONAL_MARKET_DISRUPTION_EVENTS|</td>
+</tr>
+<tr>
+    <td>Disruption Fallback(s):</td>
+    <td>|COMMODITY_DISRUPTION_FALLBACKS|</td>
+</tr>
+    ";
+</calypso-->
+
+</table>
+
+<!---End Exhibit II-D -->

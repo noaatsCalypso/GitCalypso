@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clearingITDStatement urn="urn:com:calypso:clearing:statement:itd" generationDateTime="|GENERATION_DATE_TIME|">
+   <reportInformation>
+      <asOfDate>|AS_OF_DATE|</asOfDate>
+      <reportDate>|REPORT_DATE|</reportDate>
+      <clearingBroker>|CLEARING_BROKER_NAME|</clearingBroker>
+      <clearingBrokerLEI>|CLEARING_BROKER_LEI|</clearingBrokerLEI>
+   </reportInformation>
+   <accountDetails>
+      <clientAccountLegalName>|CLIENT_NAME|</clientAccountLegalName>
+      <clientAccountLEI>|CLIENT_LEI|</clientAccountLEI>
+      <!--calypso>
+      if (|CLIENT_ACCOUNT_ID| != "") {
+        inline "<clientAccountID>|CLIENT_ACCOUNT_ID|</clientAccountID>";
+      } else {
+        inline "<clientAccountID/>";
+      }
+      </calypso-->
+      <clearingBrokerAccountID>|CLEARING_BROKER_ACCOUNT_ID|</clearingBrokerAccountID>
+      <clearingHouse>|CCP|</clearingHouse>
+      <productType>|CLEARING_SERVICE|</productType>
+      <accountLocalCurrency>|CONTRACT_CURRENCY|</accountLocalCurrency>
+      <accountBaseCurrency>|BASE_CURRENCY|</accountBaseCurrency>
+      <reportingCurrency>|IS_USE_BASE_CURRENCY_FLAG|</reportingCurrency>
+      <accountConversionFXRateForCCPReporting>|FX_RATE_CCP_REPORTING|</accountConversionFXRateForCCPReporting>      
+      <accountConversionFXRateAgainstMCTrade>|FX_RATE_MC_TRADE|</accountConversionFXRateAgainstMCTrade>
+   </accountDetails>
+   <ITDCallInformation>
+      <IMRequirementSOD>|SOD_INITIAL_MARGIN|</IMRequirementSOD>
+      <totalRequirementSOD>|SOD_TOTAL_REQUIREMENT|</totalRequirementSOD>
+      <initialMargin>|INITIAL_MARGIN|</initialMargin>
+      <liquidityMultiplier>|LIQUIDITY_MARGIN|</liquidityMultiplier>
+      <additionalMargin>|ADDITIONAL_MARGIN|</additionalMargin>
+      <basisRisk>|BASIS_RISK_MARGIN|</basisRisk>
+      <creditMultiplier>|CREDIT_MULTIPLIER_MARGIN|</creditMultiplier>
+      <ITDMtMChange>|NPV_CHANGE|</ITDMtMChange>
+      <totalITDRequirement>|TOTAL_ITD_REQUIREMENT|</totalITDRequirement>
+      <SODCollateral>|SOD_COLLATERAL|</SODCollateral>
+      <SODPendingMoves>|SOD_PENDING_MOVES|</SODPendingMoves>
+      <ITDCashMoves>|ITD_CASH_MOVES|</ITDCashMoves>
+      <totalCollateral>|TOTAL_COLLATERAL|</totalCollateral>
+      <netITDCall>|NET_ITD_CALL|</netITDCall>
+   </ITDCallInformation>
+</clearingITDStatement>

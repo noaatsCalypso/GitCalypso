@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+		<row cat="BO Messaging Core">
+			<column name="name">domainName</column>
+			<column name="value">formatType</column>
+		</row>
+		<row cat="BO Messaging Core">
+			<column name="name">formatType</column>
+			<column name="value">XHTML</column>
+			<column name="description">application/xhtml+xml</column>
+		</row>
+		<row cat="BO Messaging Core">
+			<column name="name">domainName</column>
+			<column name="value">xmlFormatType</column>
+		</row>
+		<row cat="BO Messaging Core">
+			<column name="name">xmlFormatType</column>
+			<column name="value">XHTML</column>
+		</row>
+		<row cat="BO Messaging Core">
+			<column name="name">domainName</column>
+			<column name="value">XHTML.Templates</column>
+		</row>
+		<row cat="BO Messaging Core">
+			<column name="name">XHTML.Templates</column>
+			<column name="value">trade</column>
+		</row>
+	</table>
+	<table name="mime_type" xmlns="">
+		<row cat="BO Messaging Core">
+			<column name="mime_name">application/xhtml+xml</column>
+			<column name="extension">xhtml</column>
+			<column name="default_ext_b">1</column>
+			<column name="comments">XHTML Document</column>
+		</row>
+		<row cat="BO Messaging Core">
+			<column name="mime_name">text/csv</column>
+			<column name="extension">csv</column>
+			<column name="default_ext_b">1</column>
+			<column name="comments">CSV Document</column>
+		</row>
+		<row cat="BO Messaging Core">
+			<column name="mime_name">application/json</column>
+			<column name="extension">json</column>
+			<column name="default_ext_b">1</column>
+			<column name="comments">JSON Document</column>
+		</row>
+	</table>
+</database>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+
+
+
+	<table name="domain_values" xmlns="">
+		<row cat="Required">
+			<column name="name">engineName</column>
+			<column name="value">CollateralManagementEngine</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">applicationName</column>
+			<column name="value">CollateralManagementEngine</column>
+			<column name="description">CollateralManagementEngine</column>
+		</row>
+		<row cat="Required">
+            <column name="name">eventFilter</column>
+            <column name="value">CollateralManagementEventFilter</column>
+            <column name="description">CollateralManagement Event Filter</column>
+		</row>
+	</table>
+	<table name="ps_event_config" xmlns="">
+		<row cat="Required">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventMarginCallEntry</column>
+			<column name="engine_name">CollateralManagementEngine</column>
+		</row>
+		<row cat="Required">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventCollateralEngineCommand</column>
+			<column name="engine_name">CollateralManagementEngine</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventDomainChange</column>
+			<column name="engine_name">CollateralManagementEngine</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventTrade</column>
+			<column name="engine_name">CollateralManagementEngine</column>
+		</row>
+		<row cat="Required">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventTransfer</column>
+			<column name="engine_name">CollateralManagementEngine</column>
+		</row>
+		<row cat="Required">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventInventorySecPosition</column>
+			<column name="engine_name">CollateralManagementEngine</column>
+		</row>
+		<row cat="Required">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventInventoryCashPosition</column>
+			<column name="engine_name">CollateralManagementEngine</column>
+		</row>
+	</table>
+	<table name="ps_event_filter" xmlns="">
+		<row cat="Required">
+			<column name="event_config_name">Back-Office</column>
+			<column name="engine_name">CollateralManagementEngine</column>
+			<column name="event_filter">CollateralManagementEventFilter</column>
+		</row>
+	</table>
+		<table name="engine_param" xmlns="">
+		<row cat="Required">
+			<column name="engine_name">CollateralManagementEngine</column>
+			<column name="param_name">CLASS_NAME</column>
+			<column name="param_value">com.calypso.engine.collateral.CollateralManagementEngine</column>
+		</row>
+		<row cat="Required">
+			<column name="engine_name">CollateralManagementEngine</column>
+			<column name="param_name">DISPLAY_NAME</column>
+			<column name="param_value">Collateral Management Engine</column>
+		</row>
+		<row cat="Required">
+			<column name="engine_name">CollateralManagementEngine</column>
+			<column name="param_name">INSTANCE_NAME</column>
+			<column name="param_value">engineserver</column>
+		</row>
+	</table>
+</database>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 950: Statement Message -->
+<SwiftMsgDef>
+	<Name>MT950</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="M">
+		<SwiftField name="Transaction Reference Number" tag=":20:" format="16x" value="MESSAGE_REFERENCE" modes="M"/>
+		<SwiftField name="Account Identification" tag=":25:" format="35x" value="ACCOUNT_ID" modes="M"/>
+		<SwiftField name="Statement Number/Sequence Number" tag=":28C:" format="5n[/5n]" value="STATEMENT_NUMBER" modes="M"/>
+		<SwiftField name="Opening Balance" tag=":60a:" value="OPENING_BALANCE" modes="M">
+			<SwiftFieldOption letter="F" format="1!a6!n3!a15d" />
+			<SwiftFieldOption letter="M" format="1!a6!n3!a15d" />
+		</SwiftField>
+		<SwiftSequence name="StatementLine" modes="M" iterator="MT950">
+			<SwiftField name="Statement Line" tag=":61:" format="6!n[4!n]2a[1!a]15d1!a3!c16x[//16x][\n34x]" value="STATEMENT_LINE" modes="O"/>
+    		 </SwiftSequence>
+		 <SwiftField name="Closing Balance (Booked Funds)" tag=":62a:" value="CLOSING_BALANCE" modes="M">
+			<SwiftFieldOption letter="F" format="1!a6!n3!a15d" />
+			<SwiftFieldOption letter="M" format="1!a6!n3!a15d" />
+		</SwiftField>
+		<SwiftField name="Closing Available Balance (Available Funds)" tag=":64:" format="1!a6!n3!a15d" value="CLOSING_AVAILABLE_BALANCE" modes="-" condition="generateAvailableBalance()"/>
+	 </SwiftSequence>
+</SwiftMsgDef>

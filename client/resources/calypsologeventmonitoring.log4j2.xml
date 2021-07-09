@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration xmlns:xi="http://www.w3.org/2001/XInclude" status="WARN">
+  <xi:include href="fragments/properties.log4j2.xml"/>
+  <Appenders>
+     <xi:include href="fragments/appender_Monitoring.Events_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.MethodProfile_APPENDER.xml"/>
+  </Appenders>
+  <Loggers>
+	<logger name="com.calypso.Monitoring.Events" level="DEBUG" additivity="false">
+	  <AppenderRef ref="Monitoring.Events_APPENDER"/>
+	</logger>
+	  <logger name="com.calypso.Monitoring.MethodProfile" level="DEBUG" additivity="false">
+		<AppenderRef ref="Monitoring.MethodProfile_APPENDER"/>
+	  </logger>
+  </Loggers>
+</Configuration>

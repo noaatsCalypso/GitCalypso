@@ -1,0 +1,269 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+
+<p>
+<span style='font-size:10.0pt'>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The purpose of this 
+<!--calypso>
+if ( Message.getAddressMethod() == "FAX" )
+    inline "facsimile";
+else
+    inline "letter";
+</calypso-->
+(this "Confirmation") is to confirm the terms and conditions of the Novation Transaction 
+entered into between the parties on the Novation Date specified below.
+</span>
+</p>
+
+<p>
+<span style='font-size:10.0pt'>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The definitions and provisions contained in Article X
+of the 2003 ISDA Credit Derivatives Definitions (the "Novation Provisions"), as published
+by the International Swaps and Derivatives Association, Inc., are incorporated into this
+Novation Confirmation.  In the event of any inconsistency between the Novation Provisions
+and this Novation Confirmation, this Novation Confirmation will govern. This Novation Confirmation 
+is subject to the provisions set forth in the Novation Agreement attached as Exhibit E to the 2003 
+ISDA Credit Derivatives Definitions. In the event of any inconsistency between the Novation 
+Agreement and this Novation Confirmation, the provisions set forth in this Novation Confirmation 
+will govern.
+</span>
+</p>
+
+<p>
+<span style='font-size:10.0pt'>
+The terms of the Old Transaction to which this Novation Confirmation relates and the other Novation 
+terms are as follows:
+</span>
+</p>
+
+<p>
+<table CELLSPACING=0 BORDER=0 WIDTH=650>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Novation Date:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|NOVATION_DATE|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Novated Amount:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|NOVATED_AMOUNT|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Transferor:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|TRANSFEROR|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Transferee:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|TRANSFEREE|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Remaining Party:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|REMAINING_PARTY|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Trade Date of Old Transaction:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|OLD_TRADE_DATE|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Fixed Rate Payer of Old Transaction:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|OLD_FIX_RATE_PAYER|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Floating Rate Payer of Old Transaction:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|OLD_FLT_RATE_PAYER|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Calculation Amounts of Old Transaction:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|OLD_FEES|</FONT>
+	</td>
+</tr>
+</table>
+
+<p>
+The initial Fixed Rate Payer Calculation Period with respect to the Novated 
+Amount under the Novated Transaction shall commence on and include the Fixed 
+Rate Payer Payment Date immediately preceding the Novation Date.
+</p>
+
+<table CELLSPACING=0 BORDER=0 WIDTH=650>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Reference Entity:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|REFERENCE_ENTITY|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Scheduled Termination Date:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|TERMINATION_DATE|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Transferee Ref. No:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|TRANSFEREE_REFERENCE|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Transferor Ref. No:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|TRANSFEROR_REFERENCE|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Remaining Party Ref. No:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|REMAINING_PARTY_REFERENCE|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Governing Law of ISDA Form Governing New Transaction:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|ISDA_GOVERNING_LAW|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Credit Event Notice Delivered Under Old Transaction and Deemed Delivered Under New Transaction:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|CREDIT_EVENT_NOTICE|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Notice of Publicly Available Information Delivered Under Old Transaction and Deemed Delivered Under New Transaction:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|INFORMATION_NOTICE|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Notice of Physical Settlement Delivered Under Old Transaction, a copy of which is attached:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|PHYSICAL_SETTLEMENT|</FONT>
+	</td>
+</tr>
+
+</table>
+
+<p>
+<span style='font-size:10.0pt'>
+<b><u>Account Details:</u></b>
+</span>
+</p>
+
+<p>
+<table border=0 cellspacing=0 cellpadding=0 width=650>
+ <tr>
+  <td width="30%" align="LEFT" valign="TOP">
+  <p><span style='font-size:10.0pt'>Payments to |SENDER_CODE|:</span></p>
+  </td>
+  <td width="70%" align="LEFT" valign="TOP">
+  <p><span style='font-size:10.0pt'>|PO_INSTRUCTIONS|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="30%" align="LEFT" valign="TOP">
+  <!-- This forces a line break by printing the TAB char.  BR will cause a line break that looks too large. -->
+  &nbsp
+  </td>
+  <td width="70%" align="LEFT" valign="TOP">
+  </td>
+ </tr>
+ <tr>
+  <td width="30%" align="LEFT" valign="TOP">
+  <p><span style='font-size:10.0pt'>Payments to |RECEIVER_CODE|:</span></p>
+  </td>
+  <td width="70%" align="LEFT" valign="TOP">
+  <p><span style='font-size:10.0pt'>|COUNTERPARTY_INSTRUCTIONS|</span></p>
+  </td>
+ </tr>
+</table>
+</p>
+
+<br>
+<br>
+<!--calypso>
+if ( "LE_CREDITDOC(Y/N)" like "Y%" )
+    inline "
+<p>
+<span style='font-size:10.0pt'>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |RECEIVER_FULL_NAME| agrees to provide the following Credit
+Support Document:
+</span>
+</p>
+<p>
+<span style='font-size:10.0pt'>
+Offices:<br>
+(a)&nbsp;&nbsp;&nbsp; The Office of Party A for the Swap Transaction is |SENDER_ADDRESS| |SENDER_CITY| |SENDER_STATE| |SENDER_ZIPCODE| |SENDER_COUNTRY|; and<br>
+(b)&nbsp;&nbsp;&nbsp; The Office of Party B for the Swap Transaction is |RECEIVER_ADDRESS| |RECEIVER_CITY| |RECEIVER_STATE| |RECEIVER_ZIPCODE| |RECEIVER_COUNTRY|.
+</span>
+</p>
+    ";
+</calypso-->
+
+<p>
+<span style='font-size:10.0pt'>
+Please confirm your acceptance to be bound by this Novation Confirmation 
+as of the Novation Date by executing a copy of this Novation Confirmation 
+and returning it to us. 
+</span>
+</p>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->
+
+

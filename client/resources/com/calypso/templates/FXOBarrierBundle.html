@@ -1,0 +1,190 @@
+<!--calypso>
+if (|FXOPTION_BARRIERTYPE| == "UI" || |FXOPTION_BARRIERTYPE| == "DI")
+   set FXOPTION_EVENTTYPE = "Knock-In";
+else if (|FXOPTION_BARRIERTYPE| == "UO" || |FXOPTION_BARRIERTYPE| == "DO")
+   set FXOPTION_EVENTTYPE = "Knock-Out";
+else if (|FXOPTION_BARRIERTYPE| == "DKI")
+   set FXOPTION_EVENTTYPE = "Double Knock-In";
+else if (|FXOPTION_BARRIERTYPE| == "DKO")
+   set FXOPTION_EVENTTYPE = "Double Knock-Out";
+</calypso-->
+
+<!--calypso>
+if (|FXOPTION_BARRIERTYPE| == "UI" || |FXOPTION_BARRIERTYPE| == "UO")
+   set FXOPTION_RATE_DIRECTION = "Greater than or equal to the Barrier Level";
+else if (|FXOPTION_BARRIERTYPE| == "DI" || |FXOPTION_BARRIERTYPE| == "DO")
+   set FXOPTION_RATE_DIRECTION = "Less than or equal to the Barrier Level";
+</calypso-->
+
+<p>The terms of the one of the Transacion to which this Confirmation relates are as follows:</p>
+<br>
+<p><u>General Terms</u></p>
+<table width='100%'>
+    <tr>
+        <td WIDTH="39%"><b>Trade Reference</b></td>
+        <td WIDTH="59%">|TRADE_ID|</td>
+    </tr>
+    <tr>
+        <td>Trade Date</td>
+        <td>|TRADE_DATE|</td>
+    </tr>
+    <tr>
+		<td>Buyer</td>
+        <td>|TRADE_BUYER_NAME|</td>
+    </tr>
+    <tr>
+        <td>Seller</td>
+        <td>|TRADE_SELLER_NAME|</td>
+    </tr>
+    <tr>
+        <td>Currency Option Style</td>
+        <td>|REPORT#Exercise Type| |FXOPTION_EVENTTYPE| Option</td>
+    </tr>
+    <tr>
+        <td>Currency Option Type</td>
+        <td>|FXOPTION_SELL_CURRENCY| Put / |FXOPTION_BUY_CURRENCY| Call</td>
+    </tr>
+    <tr>
+        <td>Call Currency and Call Amount</td>
+        <td>|FXOPTION_BUY_CURRENCY|  |FXOPTION_BUY_AMOUNT|</td>
+    </tr>
+    <tr>
+        <td>Put Currency and Put Amount</td>
+        <td>|FXOPTION_SELL_CURRENCY|  |FXOPTION_SELL_AMOUNT|</td>
+    </tr>
+    <tr>
+        <td>Strike Price</td>
+        <td>|FXOPTION_STRIKE|</td>
+    </tr>
+	<tr>
+		<td>Expiration Date</td>
+		<td>|FXOPTION_EXPIRY_DATE|</td>
+	</tr>
+	<tr>
+		<td>Expiration Time</td>
+		<td>|FXOPTION_EXPIRY_TIMEZONE|</td>
+	</tr>
+<!--calypso>
+		if (|REPORT#Auto Exercise|=="false")
+		inline "
+		<tr>
+			<td>Automatic Exercise</td>
+			<td>Inapplicable</td>
+		</tr>
+		";
+		if (|REPORT#Auto Exercise|=="true")
+		inline "
+		<tr>
+			<td>Automatic Exercise</td>
+			<td>Applicable</td>
+		</tr>
+		";
+</calypso-->
+	<tr>
+		<td>Settlement</td>
+		<td>|REPORT#Settle Type|</td>
+	</tr>
+	<tr>
+		<td>Settlement Date</td>
+		<td>|FXOPTION_DELIVERY_DATE|</td>
+	</tr>
+<!--calypso>
+		if (|REPORT#Settle Type|=="Cash")
+		inline "
+		<tr>
+			<td>Settlement Rate Option</td>
+			<td>|FXOPTION_SETTLE_RATE_SOURCE|</td>
+		</tr>
+		";
+</calypso-->
+<!-- Premium details -->
+<!--calypso>
+if (|PREMIUM_CURRENCY|!= "None")
+    inline "
+	<tr>
+		<td>Premium</td>
+		<td>|PREMIUM_CURRENCY| |PREMIUM_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td>Premium Date</td>
+		<td>|PREMIUM_DATE|</td>
+	</tr>
+	";
+</calypso-->
+</table>
+
+<br>
+<p><u>Other terms and conditions</u></p>
+<table width='100%'>
+	<tr>
+		<td WIDTH="39%">Barrier Event</td>
+		<td WIDTH="59%">Applicable</td>
+	</tr>
+	<tr>
+		<td>Event Type</td>
+		<td>|FXOPTION_EVENTTYPE|  |FXOPTION_STYLE|</td>
+	</tr>
+	<tr>
+		<td>Spot Exchante Rate Direction</td>
+		<td>|FXOPTION_RATE_DIRECTION|</td>
+    </tr>
+    <tr>
+	<!--calypso>
+		if (|REPORT#Barrier.Double Type|== "") {
+			if (|FXOPTION_BARRIERTYPE| == "UI" || |FXOPTION_BARRIERTYPE| == "UO")
+			inline "
+			<tr>
+				<td>Barrier level</td>
+				<td>|REPORT#Barrier.Up Rate|  |REPORT#Barrier.Type|</td>
+			</tr>
+			";
+			if (|FXOPTION_BARRIERTYPE| == "DI" || |FXOPTION_BARRIERTYPE| == "DO")
+			inline "
+			<tr>
+				<td>Barrier level</td>
+				<td>|REPORT#Barrier.Down Rate|  |REPORT#Barrier.Type|</td>
+			</tr>
+			";
+			if ((|REPORT#Barrier.Dur Type| == "FULL") || (|REPORT#Barrier.Dur Type| == "PARTIAL"))
+			inline "
+				<tr>
+					<td>Event Period Start Date</td>
+					<td>|FXOPTION_BARRIER_STARTDATE|</td>
+				</tr>
+				<tr>
+					<td>Event Period End Date</td>
+					<td>|FXOPTION_BARRIER_ENDDATE|</td>
+				</tr>
+			";
+			}
+		if (|REPORT#Barrier.Double Type| != "") {
+			inline "
+			<tr>
+				<td>Upper Barrier Level</td>
+				<td>|REPORT#Barrier.Up Rate|  |REPORT#Barrier.Type|</td>
+			</tr>
+			<tr>
+				<td>Lower Barrier Level</td>
+				<td>|REPORT#Barrier.Down Rate|  |REPORT#Barrier.Type|</td>
+			</tr>";
+			if (|REPORT#Barrier.Dur Type| == "PARTIAL")
+			inline "
+				<tr>Barrier Dates</tr>
+				<tr>
+					<td>First Barrier</td>
+					<td>From&nbsp;|REPORT#Barrier.Start Date2|&nbsp;To&nbsp;|REPORT#Barrier.End Date2|</td>
+				</tr>
+				<tr>
+					<td>Second Barrier</td>
+					<td>|REPORT#Barrier.Start Date|&nbsp;To&nbsp;|REPORT#Barrier.End Date|</td>
+				</tr>
+				";
+	}
+	</calypso-->
+	<tr>
+		<td>Barrier Event Rate Source</td>
+		<td>|FXOPTION_SETTLE_RATE_SOURCE|</td>
+	</tr>
+</table>
+<hr>
+<br><br>

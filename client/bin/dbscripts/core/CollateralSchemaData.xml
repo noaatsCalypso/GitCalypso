@@ -1,0 +1,3176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+
+	<table name="calypso_seed" xmlns="">
+		<row cat="Required">
+			<column name="last_id">100000</column>
+			<column name="seed_name">collateral-importer</column>
+		</row>
+		<row cat="Required">
+			<column name="last_id">100000</column>
+			<column name="seed_name">collateral-static</column>
+		</row>
+		<row cat="Required">
+			<column name="last_id">100000</column>
+			<column name="seed_name">collateral-dashboard</column>
+		</row>
+		<row cat="Required">
+			<column name="last_id">100000</column>
+			<column name="seed_name">collateral-entry</column>
+		</row>
+		<row cat="Required">
+			<column name="last_id">100000</column>
+			<column name="seed_name">collateral-detail</column>
+		</row>
+		<row cat="Required">
+			<column name="last_id">100000</column>
+			<column name="seed_name">collateral-reconciliation</column>
+		</row>
+	</table>
+	
+	<table name="pc_pricer" xmlns="">
+		<row cat="Required">
+			<column name="pricer_config_name">default</column>
+			<column name="product_type">CollateralExposure.ANY.ANY</column>
+			<column name="product_pricer">PricerCollateralExposure</column>
+		</row>
+		<row cat="Required">
+			<column name="pricer_config_name">BACKOFFICE</column>
+			<column name="product_type">CollateralExposure.ANY.ANY</column>
+			<column name="product_pricer">PricerCollateralExposure</column>
+		</row>
+		<row cat="Required">
+			<column name="pricer_config_name">default</column>
+			<column name="product_type">CoverDistribution.ANY.ANY</column>
+			<column name="product_pricer">PricerCoverDistribution</column>
+		</row>
+		<row cat="Required">
+			<column name="pricer_config_name">BACKOFFICE</column>
+			<column name="product_type">CoverDistribution.ANY.ANY</column>
+			<column name="product_pricer">PricerCoverDistribution</column>
+		</row>
+		<row cat="Required">
+			<column name="pricer_config_name">default</column>
+			<column name="product_type">CollateralDistribution.ANY.ANY</column>
+			<column name="product_pricer">PricerCollateralDistribution</column>
+		</row>
+		<row cat="Required">
+			<column name="pricer_config_name">BACKOFFICE</column>
+			<column name="product_type">CollateralDistribution.ANY.ANY</column>
+			<column name="product_pricer">PricerCollateralDistribution</column>
+		</row>
+		<row cat="Required">
+			<column name="pricer_config_name">default</column>
+			<column name="product_type">ClearingDistribution.ANY.ANY</column>
+			<column name="product_pricer">PricerClearingDistribution</column>
+		</row>
+		<row cat="Required">
+			<column name="pricer_config_name">BACKOFFICE</column>
+			<column name="product_type">ClearingDistribution.ANY.ANY</column>
+			<column name="product_pricer">PricerClearingDistribution</column>
+		</row>
+		<row cat="Required">
+			<column name="pricer_config_name">default</column>
+			<column name="product_type">AccommodationCharge.ANY.ANY</column>
+			<column name="product_pricer">PricerAccommodationCharge</column>
+		</row>
+		<row cat="Required">
+			<column name="pricer_config_name">BACKOFFICE</column>
+			<column name="product_type">AccommodationCharge.ANY.ANY</column>
+			<column name="product_pricer">PricerAccommodationCharge</column>
+		</row>
+	</table>
+	
+	<table name="domain_values" xmlns="">
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralConfigLevel</column>
+			<column name="description">Schedule Task Collateral Manager Config Level</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralConfigLevel</column>
+			<column name="value">BOTH</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralConfigLevel</column>
+			<column name="value">MASTER</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralConfigLevel</column>
+			<column name="value">EXPOSURE_GROUP</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.Threshold</column>
+			<column name="description">User customized threshold calculators.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.MTA</column>
+			<column name="description">User customized MTA calculators.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.RatingSelector</column>
+			<column name="description">User customized RatingSelector.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.PercentageBasis</column>
+			<column name="description">Defined or user customized percent basis types.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.PercentageBasis</column>
+			<column name="value">NOMINAL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.PercentageBasis</column>
+			<column name="value">PRINCIPAL_AMOUNT</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.PercentageBasis</column>
+			<column name="value">SEC_FIN_SECURITY_VALUE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.PercentageBasis</column>
+			<column name="value">SEC_FIN_SECURITY_CLEAN_VALUE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.PercentageBasis</column>
+			<column name="value">SEC_FIN_LIABILITY</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.PercentageBasis</column>
+			<column name="value">MARGIN_CALL</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.RoundFxRate</column>
+			<column name="description">Add the domain YES, Y, TRUE or T to round the FxRate based on the CurrencyPair Quote rounding value.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">workflowRuleCollateral</column>
+			<column name="description">Workflow rules to check Collateral Management</column>
+		</row>
+		<row cat="Required">
+			<column name="name">genericObjectClass</column>
+			<column name="value">Collateral</column>
+			<column name="description">Collateral generic comment Class</column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowType</column>
+			<column name="value">Collateral</column>
+			<column name="description">Collateral Workflow Type</column>
+		</row>
+
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">SendNotification</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">SendStatement</column>
+			<column name="description"></column>
+		</row>
+
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">CheckPosition</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">Reserve</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">Release</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">CheckFullExecution</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">CheckNoCall</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">CheckPay</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">CheckPrice</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">CheckCalculatePricing</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">CheckProcessPricing</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">CheckReceive</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">Close</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">Execute</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">AccommodationCharge</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">CancelExecution</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">CheckBookAccess</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">CheckDispute</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">AgreeDispute</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">ResetDispute</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">ResolveDispute</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">ResolveDisputeWithPOAmount</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">ResolveDisputeWithCPAmount</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">CheckFullAllocation</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">AutoAdjust</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">Return</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">CheckConfirmation</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">CheckMonitorEntryEvent</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">StartMonitorEntryEvent</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">StopMonitorEntryEvent</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">Distribute</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">AutoAccept</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">AutoReject</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">workflowRuleCollateral</column>
+			<column name="value">UpdateTripartyExposureTrade</column>
+			<column name="description"></column>
+		</row>		
+		<row cat="Required">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">CheckCollateralEligibility</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">ReservationValidation</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleTransfer</column>
+			<column name="value">AuthorizeSubstitution</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleTransfer</column>
+			<column name="value">CheckSubstitution</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">CancelReconciliation</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">CheckAvailableDeposit</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">customEntityObject</column>
+			<column name="value">Collateral</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">MESSAGE.Templates</column>
+			<column name="value">CollateralStatement</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">SWIFT.Templates</column>
+			<column name="value">MT527BONYCollateral</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">SWIFT.Templates</column>
+			<column name="value">MT527ClearstreamCollateral</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">SWIFT.Templates</column>
+			<column name="value">MT527EuroclearCollateral</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">SWIFT.Templates</column>
+			<column name="value">MT527JPMorganCollateral</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">SWIFT.Templates</column>
+			<column name="value">MT527BPSSCollateral</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">MarginCallPositions</column>
+			<column name="description">List of Positions in the Margin Call Engine</column>
+		</row>
+		<row cat="Required">
+			<column name="name">MarginCallPositions</column>
+			<column name="value">MARGIN_CALL-THEORETICAL-TRADE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">MarginCallPositions</column>
+			<column name="value">MARGIN_CALL-THEORETICAL-SETTLE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">MarginCallPositions</column>
+			<column name="value">MARGIN_CALL-THEORETICAL-AVAILABLE</column>
+			<column name="description"></column>
+		</row>
+
+		<row cat="Required">
+			<column name="name">MarginCallPositions</column>
+			<column name="value">MARGIN_CALL-ACTUAL-TRADE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">MarginCallPositions</column>
+			<column name="value">MARGIN_CALL-ACTUAL-SETTLE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">MarginCallPositions</column>
+			<column name="value">MARGIN_CALL-ACTUAL-AVAILABLE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">MarginCallPositions</column>
+			<column name="value">MARGIN_CALL-FAILED-TRADE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">MarginCallPositions</column>
+			<column name="value">MARGIN_CALL-FAILED-SETTLE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">MarginCallPositions</column>
+			<column name="value">MARGIN_CALL-FAILED-AVAILABLE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">MarginCallPositions</column>
+			<column name="value">MARGIN_CALL-EXPECTED-TRADE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">MarginCallPositions</column>
+			<column name="value">MARGIN_CALL-EXPECTED-SETTLE</column>
+			<column name="description"></column>
+		</row>     
+		<row cat="Required">
+			<column name="name">MarginCallPositions</column>
+			<column name="value">MARGIN_CALL-EXPECTED-AVAILABLE</column>
+			<column name="description"></column>
+		</row>             
+		<row cat="Required">
+			<column name="name">CustomStaticDataFilter</column>
+			<column name="value">Collateral</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">measuresForAdjustment</column>
+			<column name="value">MARGIN_CALL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">measuresForAdjustment</column>
+			<column name="value">PM_SIMM</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">measuresForAdjustment</column>
+			<column name="value">PM_SCHEDULE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">productFamily</column>
+			<column name="value">CollateralExposure</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CustomStaticDataFilter</column>
+			<column name="value">CollateralExposure</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralExposure.Pricer</column>
+			<column name="description">Pricers for Collateral Exposure</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralExposure.Pricer</column>
+			<column name="value">PricerCollateralExposure</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CoverDistribution.Pricer</column>
+			<column name="description">Pricers for CoverDistribution</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CoverDistribution.Pricer</column>
+			<column name="value">PricerCoverDistribution</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralDistribution.Pricer</column>
+			<column name="description">Pricers for CollateralDistribution</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralDistribution.Pricer</column>
+			<column name="value">PricerCollateralDistribution</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">ClearingDistribution.Pricer</column>
+			<column name="description">Pricers for ClearingDistribution</column>
+		</row>
+		<row cat="Required">
+			<column name="name">ClearingDistribution.Pricer</column>
+			<column name="value">PricerClearingDistribution</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">ClearingDistribution.flowType</column>
+			<column name="description">Flow types for ClearingDistribution trades</column>
+		</row>
+		<row cat="Required">
+			<column name="name">ClearingDistribution.flowType</column>
+			<column name="value">Collateral</column>
+			<column name="description">Flow types for ClearingDistribution trades</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CoverDistribution.subType</column>
+			<column name="description">SubTypes for CoverDistribution trades</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CoverDistribution.subType</column>
+			<column name="value">CoverDistribution</column>
+			<column name="description">SubTypes for CoverDistribution trades</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">AccommodationCharge.Pricer</column>
+			<column name="description">Pricers for AccommodationCharge</column>
+		</row>
+		<row cat="Required">
+			<column name="name">AccommodationCharge.Pricer</column>
+			<column name="value">PricerAccommodationCharge</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralExposureContext</column>
+			<column name="description">Attribute list of Collateral Exposure</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralExposureContext</column>
+			<column name="value">Enable-Description</column>
+			<column name="description">Show Description of an product property in Collateral Exposure Trade Window</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralExposureContext</column>
+			<column name="value">Enable-ButtonBar</column>
+			<column name="description">Show Button Bar in Collateral Exposure Trade Window</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.IncrementLotSize</column>
+			<column name="description">Define the product security code under which the increment lot size is set.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.ConcentrationLimitType</column>
+			<column name="description">List of class name for custom concentration limit type.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralExposure.Category</column>
+			<column name="description">Category of Collateral Exposure Attributes</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralExposure.subtype</column>
+			<column name="description">Types of Collateral Exposure</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralExposure.subtype</column>
+			<column name="value">Repo</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralExposure.subtype</column>
+			<column name="value">SecLending</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralExposure.subtype</column>
+			<column name="value">Swap</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralExposure.subtype</column>
+			<column name="value">Initial Margin</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralExposure.subtype</column>
+			<column name="value">PAI</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralExposure.subtype</column>
+			<column name="value">Maintenance Fee</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralExposure.subtype</column>
+			<column name="value">Swap Exposure</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">VM_CASH_OFFSET</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">CET_Subtype</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">optimizationConfig</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">SUBSTITUTION_ID</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">COLLATERAL_EXECUTION_ID</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">COLLATERAL_RESERVATION_ID</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ACCOMMODATION_CHARGE_ID</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">marginCallContractValue</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">collValue</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">collateralAllocationType</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">collateralCategory</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">optimizationCategory</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">coverDistribution</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">distributionType</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">bookingType</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">masterConfigId</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">BookNameSourceContract</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">BookNameDestinationContract</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">FromMarginCallTrade</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">Rehypothecation</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">expGroupConfigId</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ExpGroupPoId</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">tradeKeyword</column>
+			<column name="value">SourceContractId</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">nettingType</column>
+			<column name="value">CollateralPool-NettingConfig</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">InventoryAggregations</column>
+			<column name="value">CollateralPool-NettingConfig</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">keyword.Rehypothecation</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Rehypothecation</column>
+			<column name="value">Rehypothecable</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Rehypothecation</column>
+			<column name="value">Non Rehypothecable</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">keyword.Rehypothecation</column>
+			<column name="value">PO Assets</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">XferAttributes</column>
+			<column name="value">MarginCall</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">XferAttributes</column>
+			<column name="value">bookingType</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">XferAttributes</column>
+			<column name="value">collateralAllocationType</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">XferAttributes</column>
+			<column name="value">ClearingDepositId</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">XferAttributes</column>
+			<column name="value">ClearingMemberId</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">XferAttributes</column>
+			<column name="value">Rehypothecation</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">XferAttributes</column>
+			<column name="value">sourceId</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">XferAttributes</column>
+			<column name="value">expGroupConfigId</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">XferAttributes</column>
+			<column name="value">ExpGroupPoId</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">XferAttributes</column>
+			<column name="value">SourceContractId</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">XferAttributes.Rehypothecation</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">XferAttributes.Rehypothecation</column>
+			<column name="value">Rehypothecable</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">XferAttributes.Rehypothecation</column>
+			<column name="value">Non Rehypothecable</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">XferAttributes.Rehypothecation</column>
+			<column name="value">PO Assets</column>
+			<column name="description"/>
+		</row>
+		<row cat="Required">
+			<column name="name">legalAgreementType</column>
+			<column name="value">VM</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">legalAgreementType</column>
+			<column name="value">IM</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CCP_FACING_REFERENCE</column>
+			<column name="value">H</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CCP_FACING_REFERENCE</column>
+			<column name="value">NSEG</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CCP_FACING_REFERENCE</column>
+			<column name="value">C</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CCP_FACING_REFERENCE</column>
+			<column name="value">CUST</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CLIENT_CONTRACT_SUBTYPE</column>
+			<column name="value">House</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CLIENT_CONTRACT_SUBTYPE</column>
+			<column name="value">Client</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">productType</column>
+			<column name="value">CollateralExposure</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">productType</column>
+			<column name="value">CoverDistribution</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">productType</column>
+			<column name="value">CollateralDistribution</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">productType</column>
+			<column name="value">ClearingDistribution</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">productType</column>
+			<column name="value">AccommodationCharge</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">productType</column>
+			<column name="value">InitialMargin</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">productTypeReportStyle</column>
+			<column name="value">CollateralExposure</column>
+			<column name="description">CollateralExposure ReportStyle</column>
+		</row>
+		<row cat="Required">
+			<column name="name">productTypeReportStyle</column>
+			<column name="value">CoverDistribution</column>
+			<column name="description">CoverDistribution ReportStyle</column>
+		</row>
+		<row cat="Required">
+			<column name="name">productTypeReportStyle</column>
+			<column name="value">CollateralDistribution</column>
+			<column name="description">CollateralDistribution ReportStyle</column>
+		</row>
+		<row cat="Required">
+			<column name="name">productTypeReportStyle</column>
+			<column name="value">ClearingDistribution</column>
+			<column name="description">ClearingDistribution ReportStyle</column>
+		</row>
+		<row cat="Required">
+			<column name="name">productTypeReportStyle</column>
+			<column name="value">AccommodationCharge</column>
+			<column name="description">AccommodationCharge ReportStyle</column>
+		</row>
+		<row cat="Required">
+			<column name="name">productTypeReportStyle</column>
+			<column name="value">InitialMargin</column>
+			<column name="description">InitialMargin ReportStyle</column>
+		</row>
+		<row cat="Required">
+			<column name="name">REPORT.Types</column>
+			<column name="value">MarginCallEntry</column>
+			<column name="description">Margin Call Entry Report</column>
+		</row>
+		<row cat="Required">
+			<column name="name">REPORT.Types</column>
+			<column name="value">MarginCallDetailEntry</column>
+			<column name="description">Margin Call Detail Entry Report</column>
+		</row>
+		<row cat="Required">
+			<column name="name">REPORT.Types</column>
+			<column name="value">MarginCallAllocationEntry</column>
+			<column name="description">Margin Call Allocation Report</column>
+		</row>
+		<row cat="Required">
+			<column name="name">REPORT.Types</column>
+			<column name="value">MarginCallForward</column>
+			<column name="description">Margin Call Forward Exposure Report</column>
+		</row>
+		<row cat="Required">
+			<column name="name">REPORT.Types</column>
+			<column name="value">MarginCallPositionEntry</column>
+			<column name="description">Margin Call Position Entry Report</column>
+		</row>
+		<row cat="Required">
+			<column name="name">REPORT.Types</column>
+			<column name="value">MarginCallPositionValuation</column>
+			<column name="description">Margin Call Position Valuation Report</column>
+		</row>
+		<row cat="Required">
+			<column name="name">REPORT.Types</column>
+			<column name="value">LiabilityGroupEntryReport</column>
+			<column name="description">Liability Group Entry Report</column>
+		</row>
+		<row cat="Required">
+			<column name="name">eventClass</column>
+			<column name="value">PSEventCollateralStatement</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">eventClass</column>
+			<column name="value">PSEventMarginCallEntry</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">eventClass</column>
+			<column name="value">PSEventCollateralEngineCommand</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuthMode</column>
+			<column name="value">OptimizationConfiguration</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuditMode</column>
+			<column name="value">OptimizationConfiguration</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAccessMode</column>
+			<column name="value">OptimizationConfiguration</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuthMode</column>
+			<column name="value">LiabilityGroupContext</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuditMode</column>
+			<column name="value">LiabilityGroupContext</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuthMode</column>
+			<column name="value">TargetConfiguration</column>
+			<column name="description">tk.refdata.optimization</column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuditMode</column>
+			<column name="value">TargetConfiguration</column>
+			<column name="description">tk.refdata.optimization</column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAccessMode</column>
+			<column name="value">TargetConfiguration</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuthMode</column>
+			<column name="value">ConcentrationRule</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuditMode</column>
+			<column name="value">ConcentrationRule</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuditMode</column>
+			<column name="value">MarginCallEntry</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuditMode</column>
+			<column name="value">BilateralEntry</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuthMode</column>
+			<column name="value">EligibilityExclusionConfiguration</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuditMode</column>
+			<column name="value">EligibilityExclusionConfiguration</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuthMode</column>
+			<column name="value">CollateralContext</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuditMode</column>
+			<column name="value">CollateralContext</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuthMode</column>
+			<column name="value">CollateralExposureContext</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuditMode</column>
+			<column name="value">CollateralExposureContext</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuthMode</column>
+			<column name="value">CollateralInventoryPool</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuthMode</column>
+			<column name="value">CollateralSource</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuditMode</column>
+			<column name="value">GlobalRatingConfiguration</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuthMode</column>
+			<column name="value">GlobalRatingConfiguration</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuditMode</column>
+			<column name="value">MarginCallCreditRatingConfiguration</column>
+			<column name="description">tk.marketdata</column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuthMode</column>
+			<column name="value">MarginCallCreditRatingConfiguration</column>
+			<column name="description">tk.marketdata</column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuthMode</column>
+			<column name="value">ETLJob</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuditMode</column>
+			<column name="value">ETLJob</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuthMode</column>
+			<column name="value">ClearingService</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuditMode</column>
+			<column name="value">ClearingService</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuthMode</column>
+			<column name="value">CollateralConfig</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">classAuditMode</column>
+			<column name="value">CollateralConfig</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">AddETLJob</column>
+			<column name="description">Access permission to Add ETL Job</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">ModifyETLJob</column>
+			<column name="description">Access permission to Modify ETL Job</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">RemoveETLJob</column>
+			<column name="description">Access permission to Remove ETL Job</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">ModifyMarginCallCreditRating</column>
+			<column name="description">Access permission to modify MarginCallCreditRating</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">RemoveMarginCallCreditRating</column>
+			<column name="description">Access permission to remove MarginCallCreditRating</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">CreateMarginCallCreditRating</column>
+			<column name="description">Access permission to create MarginCallCreditRating</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">ModifyHaircutRule</column>
+			<column name="description">Access permission to Modify HaircutRule</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">CreateHaircutRule</column>
+			<column name="description">Access permission to Add HaircutRule</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">RemoveHaircutRule</column>
+			<column name="description">Access permission to Remove HaircutRule</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">AllowEditDisputeAgeOffset</column>
+			<column name="description">Access permission to edit the dispute age offset column</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">AllowEditDirectionalDisputeAgeOffset</column>
+			<column name="description">Access permission to edit the directional dispute age offset column</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">AuthorizeGlobalRatingConfiguration</column>
+			<column name="description">Access permission to Authorize Global Rating Configuration</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">ModifyGlobalRatingConfiguration</column>
+			<column name="description">Access permission to Modify Global Rating Configuration</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">CreateGlobalRatingConfiguration</column>
+			<column name="description">Access permission to Add Global Rating Configuration</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">RemoveGlobalRatingConfiguration</column>
+			<column name="description">Access permission to Remove Global Rating Configuration</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">AuthorizeCollateralContext</column>
+			<column name="description">Access permission to Authorize Collateral Context</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">ModifyCollateralContext</column>
+			<column name="description">Access permission to Modify Collateral Context</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">CreateCollateralContext</column>
+			<column name="description">Access permission to Add Collateral Context</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">RemoveCollateralContext</column>
+			<column name="description">Access permission to Remove Collateral Context</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">AuthorizeOptimizationConfiguration</column>
+			<column name="description">Access permission to Authorize Optimization Configuration</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">ModifyOptimizationConfiguration</column>
+			<column name="description">Access permission to Modify Optimization Configuration</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">CreateOptimizationConfiguration</column>
+			<column name="description">Access permission to Add Optimization Configuration</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">RemoveOptimizationConfiguration</column>
+			<column name="description">Access permission to Remove Optimization Configuration</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">RemoveMarginCallEntry</column>
+			<column name="description">Access permission to remove Margin Call Entry</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">PriceMarginCallEntry</column>
+			<column name="description">Access permission to price Margin Call Entry</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">RepriceMarginCallEntry</column>
+			<column name="description">Access permission to re-price Margin Call Entry</column>
+		</row>		
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">AuthorizeCollateralConfig</column>
+			<column name="description">Access permission to authorize Collateral Config</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">ModifyCollateralConfig</column>
+			<column name="description">Access permission to modify Collateral Config</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">CreateCollateralConfig</column>
+			<column name="description">Access permission to create Collateral Config</column>
+		</row>
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">RemoveCollateralConfig</column>
+			<column name="description">Access permission to remove Collateral Config</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">reconMsgStatusToProcess</column>
+			<column name="description">Enter the statuses that should be processed by the scheduled task PROCESS_RECON_MSGS</column>
+		</row>
+		<row cat="Required">
+			<column name="name">reconMsgStatusToProcess</column>
+			<column name="value">SENT</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">addressMethod</column>
+			<column name="value">COLLATERAL RECONCILIATION</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">formatType</column>
+			<column name="value">CSV</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">formatType</column>
+			<column name="value">XLS</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">COLLATERAL_MANAGEMENT</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">COLLATERAL_ARCHIVING</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">COVER_DISTRIBUTION</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">COLLATERAL_EXPOSURE_INDEXATION</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">PROCESS_RECON_MSGS</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">IMPORT_RECON_MSGS</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">EOD_SEC_MARGINCALL_VALUATION</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">MESSAGE.Templates</column>
+			<column name="value">MarginCallStatement.html</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">messageType</column>
+			<column name="value">MC_STATEMENT</column>
+			<column name="description">Margin Call Statement</column>
+		</row>
+		<row cat="Required">
+			<column name="name">messageType</column>
+			<column name="value">MC_NOTIFICATION</column>
+			<column name="description">Margin Call Notification</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">mccAdditionalField</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">DETAIL_TEMPLATE_ID</column>
+			<column name="description">Contains the ID of the default template to load the Margin Call Details report</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">RISK_CCY</column>
+			<column name="description">Risk Currency</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">SLM</column>
+			<column name="description">Stress Loss Margin</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">CVD_ROUNDING_DECIMAL</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">mccAdditionalField.SLM</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.SLM</column>
+			<column name="value">True</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.SLM</column>
+			<column name="value">False</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">MC_PROPERTY_TEMPLATE_ID</column>
+			<column name="description">Contains the ID of the default template to load the Margin Call Property template</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">MC_DETAIL_PROPERTY_TEMPLATE_ID</column>
+			<column name="description">Contains the ID of the default template to load the Margin Call Details Property template</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">USE_MARGIN_CALL_ACCOUNT</column>
+			<column name="description">If you set to true, and ORDERER_ROLE = Client, the Cash margin call will also be generated to a dedicated account, allowing separate interest payments.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">USE_SECURITY_MARGIN_CALL_ACCOUNT</column>
+			<column name="description">If you set to true, and ORDERER_ROLE = Client, the Security margin call will also be generated to a dedicated account, allowing separate interest payments.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">CLIENT_TRANSFERS</column>
+			<column name="description">If you set to Include, client transfers will be included in the Margin Call position for this contract.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">mccAdditionalField.CLIENT_TRANSFERS</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.CLIENT_TRANSFERS</column>
+			<column name="value">Include as Client</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.CLIENT_TRANSFERS</column>
+			<column name="value">Include as Internal</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.CLIENT_TRANSFERS</column>
+			<column name="value">Exclude</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">ORDERER_ROLE</column>
+			<column name="description">To set the role (client or customer) of the legal entity in case of USE_MARGIN_CALL_ACCOUNT and/or USE_SECURITY_MARGIN_CALL_ACCOUNT is set to true</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">LE_HOLDING_BOOK</column>
+			<column name="description">The book name you define here - if it belongs to a child LE of the PO - will be available as a default book (in panel details > General Info > Book drop down). Otherwise, only books belonging to the PO appear there.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">EXCLUDE_SECLENDING_INTEREST</column>
+			<column name="description">True to exclude interest on the SecLending trade from the margin calculation. False if you want the SecLending interest to be included. Default is false.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">EXCLUDE_REPO_INTEREST</column>
+			<column name="description">True to exclude interest on the Repo trade from the margin calculation. False if you want the SecLending interest to be included. Default is false.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">REINVEST_COUPON</column>
+			<column name="description">If true, the related corporate action coupon trades will be included in the collateral valuation.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">INTEREST_DATERULEONLY</column>
+			<column name="description">True if you want interest to be computed only based on frequency of date rule regardless of positive or negative MTM move. False if you want a compute interest based on frequency UNLESS there is a switch in the MTM move.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">DISPUTE_COMMENT_MANDATORY</column>
+			<column name="description">True if a dispute comment is mandatory when resolving a dispute false otherwise. Default is false.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">BOTH_MARGIN</column>
+			<column name="description">For CFD MC contracts, if BOTH_MARGIN is true with negative variation margin (VM), NB will be negative. If BOTH_MARGIN is false with negative VM, NB will only show deposit annex (Initial Margin). With positive VM, NB will be positive.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">USE_RECONCILIATION</column>
+			<column name="description">True if Reconciliation will be used for this contract. False otherwise.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">NO_MARGIN</column>
+			<column name="description">For CFD MC contracts, if NO_MARGIN is true, NB will show only deposit annex (initial margin). If it is false and variation margin is negative, NB will show only deposit annex. If variation margin is positive, NB will be positive.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">RST</column>
+			<column name="description">For CFD margin call contracts. In RST define the legal entity (short name) the provider will pay the dividend to if the provider has a long position.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">IGNORE_ALLOW_EX_DIVIDEND</column>
+			<column name="description">Ignore the ALLOW_EX_DIVIDEND pricing parameters during the bond evaluation</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">mccAdditionalField.BOTH_MARGIN</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.BOTH_MARGIN</column>
+			<column name="value">True</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.BOTH_MARGIN</column>
+			<column name="value">False</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">mccAdditionalField.NO_MARGIN</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.NO_MARGIN</column>
+			<column name="value">True</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.NO_MARGIN</column>
+			<column name="value">False</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField</column>
+			<column name="value">ACCOUNT_NAME</column>
+			<column name="description">Contains the account name</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">mccAdditionalField.DISPUTE_COMMENT_MANDATORY</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.DISPUTE_COMMENT_MANDATORY</column>
+			<column name="value">True</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.DISPUTE_COMMENT_MANDATORY</column>
+			<column name="value">False</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">mccAdditionalField.EXCLUDE_SECLENDING_INTEREST</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.EXCLUDE_SECLENDING_INTEREST</column>
+			<column name="value">True</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.EXCLUDE_SECLENDING_INTEREST</column>
+			<column name="value">False</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">mccAdditionalField.EXCLUDE_REPO_INTEREST</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.EXCLUDE_REPO_INTEREST</column>
+			<column name="value">True</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.EXCLUDE_REPO_INTEREST</column>
+			<column name="value">False</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">mccAdditionalField.REINVEST_COUPON</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.REINVEST_COUPON</column>
+			<column name="value">True</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.REINVEST_COUPON</column>
+			<column name="value">False</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">mccAdditionalField.INTEREST_DATERULEONLY</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.INTEREST_DATERULEONLY</column>
+			<column name="value">True</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.INTEREST_DATERULEONLY</column>
+			<column name="value">False</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">mccAdditionalField.USE_RECONCILIATION</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.USE_RECONCILIATION</column>
+			<column name="value">True</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.USE_RECONCILIATION</column>
+			<column name="value">False</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">mccAdditionalField.USE_MARGIN_CALL_ACCOUNT</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.USE_MARGIN_CALL_ACCOUNT</column>
+			<column name="value">True</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.USE_MARGIN_CALL_ACCOUNT</column>
+			<column name="value">False</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">mccAdditionalField.USE_SECURITY_MARGIN_CALL_ACCOUNT</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.USE_SECURITY_MARGIN_CALL_ACCOUNT</column>
+			<column name="value">True</column>
+		</row>
+		<row cat="Required">
+			<column name="name">mccAdditionalField.USE_SECURITY_MARGIN_CALL_ACCOUNT</column>
+			<column name="value">False</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralContext</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext</column>
+			<column name="value">READ_ONLY_MC_FILTER</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralContext.READ_ONLY_MC_FILTER</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.READ_ONLY_MC_FILTER</column>
+			<column name="value">true</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.READ_ONLY_MC_FILTER</column>
+			<column name="value">false</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext</column>
+			<column name="value">COPY_PRICING_ENV</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralContext.COPY_PRICING_ENV</column>
+		</row>
+
+		<row cat="Required">
+			<column name="name">CollateralContext.COPY_PRICING_ENV</column>
+			<column name="value">true</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.COPY_PRICING_ENV</column>
+			<column name="value">false</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralContext.RatioBase</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.RatioBase</column>
+			<column name="value">Net Exposure</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.RatioBase</column>
+			<column name="value">Net Balance</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.RatioBase</column>
+			<column name="value">Trade Margin</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.RatioBase</column>
+			<column name="value">Margin Required</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.RatioBase</column>
+			<column name="value">Constituted Mrg</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.RatioBase</column>
+			<column name="value">Global Required Mrg</column>
+		</row>
+		<!--
+		<row cat="Required">
+			<column name="name">CollateralContext</column> 
+			<column name="value">DEFAULT_LOAD_METHOD</column>
+		</row>
+		-->
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralContext.DEFAULT_LOAD_METHOD</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.DEFAULT_LOAD_METHOD</column>
+			<column name="value">LOAD_METHOD_SIMPLE</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.DEFAULT_LOAD_METHOD</column>
+			<column name="value">LOAD_METHOD_REFRESH_SIMPLE</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.DEFAULT_LOAD_METHOD</column>
+			<column name="value">LOAD_METHOD_FULL</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.DEFAULT_LOAD_METHOD</column>
+			<column name="value">LOAD_METHOD_REFRESH_FULL</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext</column>
+			<column name="value">POSITION_AGGREGATION_LEVEL</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralContext.POSITION_AGGREGATION_LEVEL</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.POSITION_AGGREGATION_LEVEL</column>
+			<column name="value">Book</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.POSITION_AGGREGATION_LEVEL</column>
+			<column name="value">Global</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext</column>
+			<column name="value">RECOMPUTE_FINAL_CALL</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralContext.RECOMPUTE_FINAL_CALL</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.RECOMPUTE_FINAL_CALL</column>
+			<column name="value">true</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralContext.RECOMPUTE_FINAL_CALL</column>
+			<column name="value">false</column>
+		</row>
+		<row cat="Required">
+			<column name="name">messageType</column>
+			<column name="value">RECONCILIATION</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">ETLFilterTypes</column>
+			<column name="description">ETLFilterTypes</column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLFilterTypes</column>
+			<column name="value">StringCheck</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">ETLReaderTypes</column>
+			<column name="description">ETLReaderTypes</column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLReaderTypes</column>
+			<column name="value">CSV</column>
+			<column name="description">CSV File Reader</column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLReaderTypes</column>
+			<column name="value">ExcelSpreadsheet</column>
+			<column name="description">XLS File Reader</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">ETLWriterTypes</column>
+			<column name="description">ETLWriterTypes</column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLWriterTypes</column>
+			<column name="value">ReconciliationMessage</column>
+			<column name="description">Reconciliation Message Writer</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">ETLPostProcessorTypes</column>
+			<column name="description">ETLPostProcessorTypes</column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLPostProcessorTypes</column>
+			<column name="value">FileMover</column>
+			<column name="description">A Post Processor for files.</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">ETLConverterTypes</column>
+			<column name="description">ETLConverterTypes</column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLConverterTypes</column>
+			<column name="value">Math</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLConverterTypes</column>
+			<column name="value">StringToInt</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLConverterTypes</column>
+			<column name="value">DateToDatetime</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLConverterTypes</column>
+			<column name="value">DateToString</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLConverterTypes</column>
+			<column name="value">DatetimeToString</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLConverterTypes</column>
+			<column name="value">DoubleToString</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLConverterTypes</column>
+			<column name="value">StringToDouble</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLConverterTypes</column>
+			<column name="value">StringToString</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLConverterTypes</column>
+			<column name="value">StringToDate</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLConverterTypes</column>
+			<column name="value">StringToDatetime</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">ETLClassTypes</column>
+			<column name="description">ETLClassTypes</column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLClassTypes</column>
+			<column name="value">String</column>
+			<column name="description">java.lang.String</column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLClassTypes</column>
+			<column name="value">Integer</column>
+			<column name="description">java.lang.Integer</column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLClassTypes</column>
+			<column name="value">Double</column>
+			<column name="description">java.lang.Double</column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLClassTypes</column>
+			<column name="value">Date</column>
+			<column name="description">com.calypso.tk.core.JDate</column>
+		</row>
+		<row cat="Required">
+			<column name="name">ETLClassTypes</column>
+			<column name="value">Datetime</column>
+			<column name="description">com.calypso.tk.core.JDatetime</column>
+		</row>
+		<row cat="Required">
+			<column name="name">MsgAttributes</column>
+			<column name="value">ETL Job Id</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">MsgAttributes</column>
+			<column name="value">ETL Execution Id</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">MsgAttributes</column>
+			<column name="value">ETL Execution Time</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.Optimization.Constraint</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Contract-Attribute</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.Optimization.AllocationRule</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.Optimization.Substitution</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.LiabilityGroup.Rule</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.Pool.Constraint</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.LiabilityGroup.Rule</column>
+			<column name="value">Excess-Buffer</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.LiabilityGroup.Rule</column>
+			<column name="value">Liability-Grouping</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.LiabilityGroup.Rule</column>
+			<column name="value">Liability-Offsetting</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.Optimization.Solver</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Solver</column>
+			<column name="value">Default</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Solver</column>
+			<column name="value">Simplex</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Solver</column>
+			<column name="value">ConjugateGradient</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Solver</column>
+			<column name="value">Allocation-Rule</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Solver</column>
+			<column name="value">Distribution-Rule</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Solver</column>
+			<column name="value">Collateral-Quantity</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Solver</column>
+			<column name="value">Money-Value</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Solver</column>
+			<column name="value">Targeted-Allocation</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Solver</column>
+			<column name="value">Exposure-Based</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Collateral-Currency</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Collateral-Haircut</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Collateral-Category</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Collateral-CoverPreference</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Liability-Currency</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Liability-Name</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Required-Margin</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Contract-Type</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Contract-Subtype</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Contract-Currency</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Available-Quantity</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Collateral-Source</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Collateral-Maturity</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Trade-Counterparty</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Trade-Principal</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Group-Currency</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.AllocationRule</column>
+			<column name="value">Group-Margin</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Collateral-Distribution</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Exposure Group Collateral-Pool</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Increment Lot Size</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Margin-Filter</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Required-Liability</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Liability-Concentration</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Deposit</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Liability-Eligibility</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Liability-Eligibility-Exclusion</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Required-Margin</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Eligibility</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Inventory</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Concentration</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Eligibility-Exclusion</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Book-Eligibility</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">StaticData-Filter</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Dividend</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Coupon</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Cash-Threshold</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Security-Threshold</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Reset-Allocations</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Clear-Trade-Allocations</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Bond-Maturity</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Fill-Category</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Min-Allocation-Number</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Max-Allocation-Number</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Trade-Bond-Maturity</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">CollateralPool</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Source</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">LegalAgreement-Eligibility</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Required-Collateral</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Bond-Min-Purchase</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Repo Principal Adjustment</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Mono-Collateral-Only</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Constraint</column>
+			<column name="value">Trade-Bond-Coupon</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Pool.Constraint</column>
+			<column name="value">Coupon</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Pool.Constraint</column>
+			<column name="value">Dividend</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Pool.Constraint</column>
+			<column name="value">MaximumUsage</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Pool.Constraint</column>
+			<column name="value">SDFilter</column>
+			<column name="description"></column>
+		</row>
+		<!-- not implemented in 2.2.0
+		<row cat="Required">
+			<column name="name">Collateral.Pool.Constraint</column>
+			<column name="value">SourceConcentration</column>
+			<column name="description"></column>
+		</row>
+		-->
+		<row cat="Required">
+			<column name="name">Collateral.Pool.Constraint</column>
+			<column name="value">Volatility</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Substitution</column>
+			<column name="value">Eligibility</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Substitution</column>
+			<column name="value">Eligibility-Exclusion</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Substitution</column>
+			<column name="value">Coupon</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Substitution</column>
+			<column name="value">Dividend</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Substitution</column>
+			<column name="value">StaticData-Filter</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Substitution</column>
+			<column name="value">Cover-Short</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Substitution</column>
+			<column name="value">Cover-Short-Pool-Position</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Substitution</column>
+			<column name="value">Concentration</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Substitution</column>
+			<column name="value">Bond-Maturity</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Optimization.Target.Default</column>
+			<column name="value">Category</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.CoverDistribution.Type.Final</column>
+			<column name="value">Final Distribution</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.CoverDistribution.Type.Intraday</column>
+			<column name="value">IntraDay Distribution</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Config.Subtype</column>
+			<column name="value">Master</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Config.Subtype</column>
+			<column name="value">Facade</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Config.Subtype</column>
+			<column name="value">Child</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Config.Subtype</column>
+			<column name="value">Independent Amount</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.Config.Subtype</column>
+			<column name="value">Initial Margin</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralPool.sourceTypes</column>
+			<column name="description">List all the source types possible</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralPool.sourceTypes</column>
+			<column name="value">Rehypothecable Assets</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralPool.sourceTypes</column>
+			<column name="value">Other</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralPool.sourceTypes</column>
+			<column name="value">External Assets</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralPool.sourceTypes</column>
+			<column name="value">Fund Ownership</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralPool.sourceTypes</column>
+			<column name="value">Own Assets</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.TripartyAcadiaAllocationModel</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.TripartyAcadiaAllocationModel</column>
+			<column name="value">TRIPARTYALCT, MT569</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.TripartyAcadiaAllocationModel</column>
+			<column name="value">TRIPARTYALCT</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.TripartyAcadiaAllocationModel</column>
+			<column name="value">MT569</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.TripartyAcadiaCalculationType</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.TripartyAcadiaCalculationType</column>
+			<column name="value">Delta</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.TripartyAllocationModel</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.TripartyAllocationModel</column>
+			<column name="value">Import MT569</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.TripartyAllocationModel</column>
+			<column name="value">Manual</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.TripartyCalculationType</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.TripartyCalculationType</column>
+			<column name="value">Delta</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.TripartyCalculationType</column>
+			<column name="value">Net Exposure</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Allocation.AutoAdjustType</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Allocation.AutoAdjustType</column>
+			<column name="value">NONE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Allocation.AutoAdjustType</column>
+			<column name="value">Standard - Default Currency</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Allocation.AutoAdjustType</column>
+			<column name="value">Return</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">Allocation.AutoAdjustType</column>
+			<column name="value">Return &amp; New Margin</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.TripartyCancelationStatus</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">Collateral.TripartyCancelationStatus</column>
+			<column name="value">TRIPARTY_TRANSATION_CANCELED</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralPool.PositionClass</column>
+			<column name="description">Position class of the default collateral pool</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralPool.PositionType</column>
+			<column name="description">Position type of the default collateral pool</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralPool.DateType</column>
+			<column name="description">Date type of the default collateral pool</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralPool.MovementType</column>
+			<column name="description">Movement type of the default collateral pool</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralPool.Book</column>
+			<column name="description">Book of the default collateral pool</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">bookAttribute.Margin_Book_Type</column>
+		</row>
+		<row cat="Required">
+			<column name="name">bookAttribute.Margin_Book_Type</column>
+			<column name="value">Rehypothecable</column>
+		</row>
+		<row cat="Required">
+			<column name="name">bookAttribute.Margin_Book_Type</column>
+			<column name="value">Non Rehypothecable</column>
+		</row>
+		<row cat="Required">
+			<column name="name">bookAttribute.Margin_Book_Type</column>
+			<column name="value">PO Assets</column>
+		</row>
+		<row cat="Required">
+			<column name="name">InventoryCashBucketFactory</column>
+			<column name="value">CollateralCashPersistent</column>
+		</row>
+		<row cat="Required">
+			<column name="name">InventorySecBucketFactory</column>
+			<column name="value">CollateralSecurityPersistent</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">CollateralCostProductCodes</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralCostProductCodes</column>
+			<column name="value">COLT_COST_RATE</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralCostProductCodes</column>
+			<column name="value">INT_LEND_RATE</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralCostProductCodes</column>
+			<column name="value">EXT_LEND_RATE</column>
+		</row>
+		<row cat="Required">
+			<column name="name">CollateralCostProductCodes</column>
+			<column name="value">AGENCY_LEND_BENCH_RATE</column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">Collateral.CollateralSourceConnector</column>
+			<column name="description">Types of Collateral Source Connector</column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.CollateralSourceConnector</column>
+			<column name="value">Inventory</column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.CollateralSourceConnector</column>
+			<column name="value">CSV</column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.CollateralSourceConnector</column>
+			<column name="value">Rehypotecable</column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.CollateralSourceConnector</column>
+			<column name="value">Ownership Table</column>
+		</row>
+		<row cat="Required">
+			<column name="name">Collateral.CollateralSourceConnector</column>
+			<column name="value">Own Asset</column>
+		</row>
+		<row cat="Required">
+			<column name="name">userAccessPermAttributes</column>
+			<column name="value">Max.Collateral</column>
+		</row>
+		<row cat="Required">
+				<column name="name">userAccessPermAttributes</column>
+				<column name="value">Max.MarginCallEntry</column>
+				<column name="description">Max number of MarginCallEntry allowed</column>
+		</row>
+		<row cat="Required">
+				<column name="name">userAccessPermAttributes</column>
+				<column name="value">Max.MarginCallDetailEntry</column>
+				<column name="description">Max number of MarginCallDetailEntry allowed</column>
+		</row>
+		<row cat="Required">
+				<column name="name">userAccessPermAttributes</column>
+				<column name="value">Max.MarginCallAllocation</column>
+				<column name="description">Max number of MarginCallAllocation allowed</column>
+		</row>
+		<row cat="Required">
+				<column name="name">userAccessPermAttributes</column>
+				<column name="value">Max.MarginCallPosition</column>
+				<column name="description">Max number of MarginCallPosition allowed</column>
+		</row>	
+	</table>
+	
+	<table name="book_attribute" xmlns="">
+		<row cat="Required">
+			<column name="attribute_name">Margin_Book_Type</column>
+		</row>
+	</table>
+
+	<table name="collateral_context" xmlns="">
+		<row cat="Required">
+			<column name="id">1</column>
+			<column name="version">0</column>
+			<column name="name">default</column>
+			<column name="description">default collateral context</column>
+			<column name="currency">USD</column>
+			<column name="is_default">1</column>
+			<column name="value_date_days">1</column>
+			<column name="underlying_template_id">0</column>
+			<column name="interest_template_id">0</column>
+			<column name="position_template_id">0</column>
+			<column name="allocation_template_id">0</column>
+		</row>
+	</table>
+	
+	<table name="collateral_product_definition" xmlns="">
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">1</column>
+			<column name="product_type">Collateral</column>
+			<column name="data_type">Property</column>
+			<column name="data">Par (Original)</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">2</column>
+			<column name="product_type">Collateral</column>
+			<column name="data_type">Property</column>
+			<column name="data">Haircut</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">1</column>
+			<column name="product_type">Collateral</column>
+			<column name="data_type">Measure</column>
+			<column name="data">PRICE</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">2</column>
+			<column name="product_type">Collateral</column>
+			<column name="data_type">Measure</column>
+			<column name="data">SEC_FIN_SECURITY_ACCRUAL</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">3</column>
+			<column name="product_type">Collateral</column>
+			<column name="data_type">Measure</column>
+			<column name="data">SEC_FIN_SECURITY_VALUE</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">4</column>
+			<column name="product_type">Collateral</column>
+			<column name="data_type">Measure</column>
+			<column name="data">SEC_FIN_SECURITY_CLEAN_VALUE</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">1</column>
+			<column name="product_type">Repo</column>
+			<column name="data_type">Property</column>
+			<column name="data">Fixed Rate</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">2</column>
+			<column name="product_type">Repo</column>
+			<column name="data_type">Property</column>
+			<column name="data">Init Principal</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">3</column>
+			<column name="product_type">Repo</column>
+			<column name="data_type">Property</column>
+			<column name="data">Haircut</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">1</column>
+			<column name="product_type">Repo</column>
+			<column name="data_type">Measure</column>
+			<column name="data">PRICE</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">2</column>
+			<column name="product_type">Repo</column>
+			<column name="data_type">Measure</column>
+			<column name="data">SEC_FIN_SECURITY_ACCRUAL</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">3</column>
+			<column name="product_type">Repo</column>
+			<column name="data_type">Measure</column>
+			<column name="data">SEC_FIN_SECURITY_VALUE</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">4</column>
+			<column name="product_type">Repo</column>
+			<column name="data_type">Measure</column>
+			<column name="data">SEC_FIN_SECURITY_CLEAN_VALUE</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">5</column>
+			<column name="product_type">Repo</column>
+			<column name="data_type">Measure</column>
+			<column name="data">SEC_FIN_LIABILITY</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">6</column>
+			<column name="product_type">Repo</column>
+			<column name="data_type">Measure</column>
+			<column name="data">DIRTY_PRICE</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">7</column>
+			<column name="product_type">Repo</column>
+			<column name="data_type">Measure</column>
+			<column name="data">ACCRUAL</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">1</column>
+			<column name="product_type">SecLending</column>
+			<column name="data_type">Property</column>
+			<column name="data">Fixed Rate</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">2</column>
+			<column name="product_type">SecLending</column>
+			<column name="data_type">Property</column>
+			<column name="data">Haircut</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">3</column>
+			<column name="product_type">SecLending</column>
+			<column name="data_type">Property</column>
+			<column name="data">Init Principal</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">1</column>
+			<column name="product_type">SecLending</column>
+			<column name="data_type">Measure</column>
+			<column name="data">PRICE</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">2</column>
+			<column name="product_type">SecLending</column>
+			<column name="data_type">Measure</column>
+			<column name="data">SEC_FIN_SECURITY_ACCRUAL</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">3</column>
+			<column name="product_type">SecLending</column>
+			<column name="data_type">Measure</column>
+			<column name="data">SEC_FIN_SECURITY_VALUE</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">4</column>
+			<column name="product_type">SecLending</column>
+			<column name="data_type">Measure</column>
+			<column name="data">SEC_FIN_SECURITY_CLEAN_VALUE</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">5</column>
+			<column name="product_type">SecLending</column>
+			<column name="data_type">Measure</column>
+			<column name="data">SEC_FIN_LIABILITY</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">6</column>
+			<column name="product_type">SecLending</column>
+			<column name="data_type">Measure</column>
+			<column name="data">DIRTY_PRICE</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">7</column>
+			<column name="product_type">SecLending</column>
+			<column name="data_type">Measure</column>
+			<column name="data">ACCRUAL</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">1</column>
+			<column name="product_type">Swap</column>
+			<column name="data_type">Property</column>
+			<column name="data">Pay Leg Floating Rate</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">2</column>
+			<column name="product_type">Swap</column>
+			<column name="data_type">Property</column>
+			<column name="data">Pay Leg Rate Index Spread</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">3</column>
+			<column name="product_type">Swap</column>
+			<column name="data_type">Property</column>
+			<column name="data">Pay Leg Fixed Rate</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">4</column>
+			<column name="product_type">Swap</column>
+			<column name="data_type">Property</column>
+			<column name="data">Pay Leg Principal</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">5</column>
+			<column name="product_type">Swap</column>
+			<column name="data_type">Property</column>
+			<column name="data">Pay Leg Principal Ccy</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">6</column>
+			<column name="product_type">Swap</column>
+			<column name="data_type">Property</column>
+			<column name="data">Rcv Floating Rate</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">7</column>
+			<column name="product_type">Swap</column>
+			<column name="data_type">Property</column>
+			<column name="data">Rcv Rate Index Spread</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">8</column>
+			<column name="product_type">Swap</column>
+			<column name="data_type">Property</column>
+			<column name="data">Rcv Fixed Rate</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">9</column>
+			<column name="product_type">Swap</column>
+			<column name="data_type">Property</column>
+			<column name="data">Rcv Principal</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">1</column>
+			<column name="product_type">Swap</column>
+			<column name="data_type">Property</column>
+			<column name="data">Rcv Principal Ccy</column>
+		</row>
+
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">1</column>
+			<column name="product_type">FX</column>
+			<column name="data_type">Property</column>
+			<column name="data">Ccy Pair</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">2</column>
+			<column name="product_type">FX</column>
+			<column name="data_type">Property</column>
+			<column name="data">Prim Amt</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">3</column>
+			<column name="product_type">FX</column>
+			<column name="data_type">Property</column>
+			<column name="data">Prim Cur</column>
+		</row>
+
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">1</column>
+			<column name="product_type">FXForward</column>
+			<column name="data_type">Property</column>
+			<column name="data">Ccy Pair</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">2</column>
+			<column name="product_type">FXForward</column>
+			<column name="data_type">Property</column>
+			<column name="data">Prim Amt</column>
+		</row>
+		<row cat="Required">
+			<column name="context_id">1</column>
+			<column name="sort_id">3</column>
+			<column name="product_type">FXForward</column>
+			<column name="data_type">Property</column>
+			<column name="data">Prim Cur</column>
+		</row>
+	</table>
+
+	<table name="allocation_validator" xmlns="">
+		<row cat="Required">
+			<column name="collateral_context_id">1</column>
+			<column name="name">AllocationPriceValidator</column>
+			<column name="type">AllocationPriceValidator</column>
+			<column name="dto_id">1</column>
+		</row>
+		<row cat="Required">
+			<column name="collateral_context_id">1</column>
+			<column name="name">EligibilityAllocationValidator</column>
+			<column name="type">EligibilityAllocationValidator</column>
+			<column name="dto_id">3</column>
+		</row>
+	</table>
+	
+	
+	<table name="allocation_validator_kv" xmlns="">
+		<row cat="Required"> 
+			<column name="id">1</column> 
+			<column name="name">Allocation-Types</column>
+			<column name="type">TYPE_ENUM_LIST</column>
+			<column name="value">2</column>
+		</row>
+		<row cat="Required"> 
+			<column name="id">1</column> 
+			<column name="name">Type</column>
+			<column name="type">TYPE_STRING</column>
+			<column name="value">AllocationPriceValidator</column>
+		</row>
+		<row cat="Required"> 
+			<column name="id">1</column> 
+			<column name="name">Warning-Type</column>
+			<column name="type">TYPE_ENUM</column>
+			<column name="value">HARD</column>
+		</row>
+		<row cat="Required"> 
+			<column name="id">2</column> 
+			<column name="name">0</column>
+			<column name="type">TYPE_STRING</column>
+			<column name="value">Margin</column>
+		</row>
+		<row cat="Required"> 
+			<column name="id">2</column> 
+			<column name="name">1</column>
+			<column name="type">TYPE_STRING</column>
+			<column name="value">Substitution</column>
+		</row>
+		<row cat="Required"> 
+			<column name="id">2</column> 
+			<column name="name">2</column>
+			<column name="type">TYPE_STRING</column>
+			<column name="value">Return</column>
+		</row>
+		<row cat="Required"> 
+			<column name="id">2</column> 
+			<column name="name">3</column>
+			<column name="type">TYPE_STRING</column>
+			<column name="value">Remaining position</column>
+		</row>
+		
+
+		<row cat="Required"> 
+			<column name="id">3</column> 
+			<column name="name">Allocation-Types</column>
+			<column name="type">TYPE_ENUM_LIST</column>
+			<column name="value">4</column>
+		</row>
+		<row cat="Required"> 
+			<column name="id">3</column> 
+			<column name="name">Type</column>
+			<column name="type">TYPE_STRING</column>
+			<column name="value">EligibilityAllocationValidator</column>
+		</row>
+		<row cat="Required"> 
+			<column name="id">3</column> 
+			<column name="name">Warning-Type</column>
+			<column name="type">TYPE_ENUM</column>
+			<column name="value">HARD</column>
+		</row>
+		<row cat="Required"> 
+			<column name="id">4</column> 
+			<column name="name">0</column>
+			<column name="type">TYPE_STRING</column>
+			<column name="value">Margin</column>
+		</row>
+		<row cat="Required"> 
+			<column name="id">4</column> 
+			<column name="name">1</column>
+			<column name="type">TYPE_STRING</column>
+			<column name="value">Substitution</column>
+		</row>
+		<row cat="Required"> 
+			<column name="id">4</column> 
+			<column name="name">2</column>
+			<column name="type">TYPE_STRING</column>
+			<column name="value">Return</column>
+		</row>
+		<row cat="Required"> 
+			<column name="id">4</column> 
+			<column name="name">3</column>
+			<column name="type">TYPE_STRING</column>
+			<column name="value">Remaining position</column>
+		</row>
+	</table>
+
+	<table name="arch_registry" xmlns="">
+		<row cat="Required">
+			<column name="table_type">entry</column>
+			<column name="table_size">0</column>
+		</row>
+		<row cat="Required">
+			<column name="table_type">concentration</column>
+			<column name="table_size">0</column>
+		</row>
+		<row cat="Required">
+			<column name="table_type">position</column>
+			<column name="table_size">0</column>
+		</row>
+		<row cat="Required">
+			<column name="table_type">detailEntry</column>
+			<column name="table_size">0</column>
+		</row>
+		<row cat="Required">
+			<column name="table_type">liability</column>
+			<column name="table_size">0</column>
+		</row>
+		<row cat="Required">
+			<column name="table_type">allocation</column>
+			<column name="table_size">0</column>
+		</row>
+	</table>
+
+	<table name="netting_config" xmlns="">
+		<row cat="Required">
+			<column name="netting_type">CollateralPool-NettingConfig</column>
+			<column name="netting_key">IsAggregation</column>
+		</row>
+		<row cat="Required">
+			<column name="netting_type">CollateralPool-NettingConfig</column>
+			<column name="netting_key">sourceId</column>
+		</row>
+		<row cat="Required">
+			<column name="netting_type">CollateralPool-NettingConfig</column>
+			<column name="netting_key">ExpGroupPoId</column>
+		</row>
+		<row cat="Required">
+			<column name="netting_type">CollateralPool-NettingConfig</column>
+			<column name="netting_key">SourceContractId</column>
+		</row>
+	</table>
+
+	<table name="product_code" xmlns="">
+		<row cat="Required">
+			<column name="product_code">COLT_COST_RATE</column>
+			<column name="code_type">double</column>
+			<column name="unique_b">1</column>
+			<column name="searchable_b">1</column>
+			<column name="mandatory_b">0</column>
+			<column name="product_list">Bond,Equity</column>
+			<column name="version_num">0</column>
+		</row>
+		<row cat="Required">
+			<column name="product_code">EXT_LEND_RATE</column>
+			<column name="code_type">double</column>
+			<column name="unique_b">1</column>
+			<column name="searchable_b">1</column>
+			<column name="mandatory_b">0</column>
+			<column name="product_list">Bond,Equity</column>
+			<column name="version_num">0</column>
+		</row>
+		<row cat="Required">
+			<column name="product_code">AGENCY_LEND_BENCH_RATE</column>
+			<column name="code_type">double</column>
+			<column name="unique_b">1</column>
+			<column name="searchable_b">1</column>
+			<column name="mandatory_b">0</column>
+			<column name="product_list">Bond,Equity</column>
+			<column name="version_num">0</column>
+		</row>
+		<row cat="Required">
+			<column name="product_code">INT_LEND_RATE</column>
+			<column name="code_type">double</column>
+			<column name="unique_b">1</column>
+			<column name="searchable_b">1</column>
+			<column name="mandatory_b">0</column>
+			<column name="product_list">Bond,Equity</column>
+			<column name="version_num">0</column>
+		</row>
+	</table>
+	<table name="referring_object" xmlns="">
+		<row cat="startup">
+			<column name="rfg_obj_id">801</column>
+			<column name="ref_obj_id">1</column>
+			<column name="rfg_tbl_name">concentration_limit</column>
+			<column name="rfg_tbl_sel_cols">rule_id</column>
+			<column name="rfg_tbl_sel_types">1</column>
+			<column name="rfg_tbl_join_cols">sd_filter</column>
+			<column name="rfg_obj_class_name">ConcentrationLimit</column>
+			<column name="rfg_obj_window">apps.refdata.concentration.ConcentrationRuleWindow</column>
+			<column name="rfg_obj_desc">ConcentrationLimit - Rule Definition - Securities Filter</column>
+		</row>
+	</table>
+	<table name="referring_object" xmlns="">
+		<row cat="startup">
+			<column name="rfg_obj_id">802</column>
+			<column name="ref_obj_id">1</column>
+			<column name="rfg_tbl_name">eligible_books_kv</column>
+			<column name="rfg_tbl_sel_cols">id</column>
+			<column name="rfg_tbl_sel_types">1</column>
+			<column name="rfg_tbl_join_cols">value</column>
+			<column name="rfg_obj_class_name">MarginCallConfig</column>
+			<column name="rfg_obj_window">apps.refdata.BOMarginCallConfigWindow</column>
+			<column name="rfg_obj_desc">Collateral Eligible Books Filter</column>
+		</row>
+	</table>	
+</database>

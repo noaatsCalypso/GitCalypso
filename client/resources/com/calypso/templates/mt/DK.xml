@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<FieldTemplate>
+	<Switch condition="|USE_SWIFT_SENDER_BIC|">
+		<Target condition="True">MESSAGE FROM |MESSAGE_SENDERADDRESSCODE| |SENDER_FULL_NAME|
+		</Target>
+	</Switch>
+    <Switch condition="ANY">
+	        <Target condition="(.)*">ATTN: 
+WE HAVE RECEIVED YOUR CONFIRMATION
+FOR A TRADE WE DO NOT RECOGNIZE: 
+YOUR REFERENCE: |MSG_ATTR_CntpRef|
+PLEASE REVIEW 
+AS SOON AS POSSIBLE
+REGARDS 
+|SENDER_FULL_NAME|</Target>
+	</Switch>
+</FieldTemplate>

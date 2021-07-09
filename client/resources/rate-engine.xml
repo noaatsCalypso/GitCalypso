@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:broker="http://activemq.apache.org/schema/core"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+       http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd">
+       
+	<bean id="RateBlendingEngine" class="com.calypso.tk.marketdata.rate.RateBlendingEngine"
+		scope="prototype" factory-method="getInstance">
+		<property name="configName" value="${reconfig}" />
+	</bean>
+	<bean id="quoteValueToStringProcessor" class="com.calypso.tk.messaging.QuoteValueToStringProcessor" />
+    <bean id="rateEngineMessageProcessor" class="com.calypso.tk.messaging.RateEngineMessageProcessor" >
+        <property name="engine" ref="RateBlendingEngine" />
+        <property name="instrumentSelectorId" ref="instrumentSelectorId" />
+    </bean>
+    <!-- constructor arg1 = 'tickPeriod' , constructor arg2 = 'units eg. in Second,Min,Hour' and constructor arg3 = 'messageFrequency' -->
+    <bean id="instrumentBasedThrottler" class="com.calypso.tk.messaging.InstrumentBasedThrottler" >
+    	<constructor-arg value="${RATE_ENGINE_THROTTLER_PERIOD:250}" />
+    	<constructor-arg value="${RATE_ENGINE_THROTTLER_UNITS:MILLISECONDS}" />
+    	<constructor-arg value="${RATE_ENGINE_THROTTLER_FREQ:1}" />
+    	<property name="instrumentSelectorId" ref="instrumentSelectorId" />
+    </bean>
+	<bean id="rateEngineCommandProcessor" class="com.calypso.tk.messaging.RateEngineCommandProcessor"  >
+        <property name="engine" ref="RateBlendingEngine" />
+    </bean>
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean >
+    
+	<bean id="instrumentSelectorId" class="java.lang.String">
+		<constructor-arg value="INSTRUMENT_ID" />
+	</bean>
+
+	<bean id="jmsConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="${RATE_ENGINE_LLMEVENTSERVERURL:${CALYPSO_TRANSIENT_MESSAGING_SERVER_URL}}" />
+	</bean>
+	<bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory"
+		init-method="start" destroy-method="stop">
+		<property name="maxConnections" value="8" />
+		<property name="connectionFactory" ref="jmsConnectionFactory" />
+	</bean>
+	<bean id="jmsConfig" class="org.apache.camel.component.jms.JmsConfiguration">
+		<property name="connectionFactory" ref="pooledConnectionFactory" />
+		<!-- property name="concurrentConsumers" value="10" / -->
+	</bean>
+
+	<bean id="activemq" class="org.apache.camel.component.activemq.ActiveMQComponent">
+		<property name="configuration" ref="jmsConfig" />
+	</bean>
+	
+	<camelContext id="rateEngCamelContext" xmlns="http://camel.apache.org/schema/spring"
+		autoStartup="true">
+		<template id="camelTemplate" />
+        <threadPool id="dataLoggerPool" threadName="dataLogger" poolSize="10" maxPoolSize="10" maxQueueSize="10" />
+        <endpoint id="rein" uri="seda:marketquotes?size=${RATE_ENGINE_MARKET_DATA_QUEUE_SIZE:50000}&amp;concurrentConsumers=1"/>
+	    <endpoint id="reout" uri="activemq:topic:rateengine.${retopic}"/>
+	    
+	    <endpoint id="reMonitoringIn" uri="seda:monitoringqueue?size=${RATE_ENGINE_MONITORING_QUEUE_SIZE:50000}&amp;concurrentConsumers=1"/>
+	    <endpoint id="reMonitoringOut" uri="activemq:topic:rateengine.${retopic}_monitoring?deliveryPersistent=false"/>
+	    
+	    <endpoint id="heartbeattimer" uri="timer://heartbeat?fixedRate=true&amp;period=${RATE_ENGINE_HEARTBEAT_INTERVAL:400}"/>
+	    <endpoint id="healthcheckq" uri="activemq:topic:quoteserver.healthmonitoring?deliveryPersistent=false"/>
+	    <endpoint id="query_in" uri="activemq:queue:rateengine.request?selector=OBJECT_TYPE='INIT_DATA'"/>
+	    
+<!--         <redeliveryPolicyProfile id="myPolicy" maximumRedeliveries="0" redeliveryDelay="0" retryAttemptedLogLevel="WARN" logStackTrace="true"/>
+ -->		
+		<route id="marketquote2rateEngineroute">
+            <from  uri="ref:rein" />
+<!--        
+		      <onException redeliveryPolicyRef="myPolicy">
+                <exception>java.lang.Exception</exception>
+                <handled><constant>true</constant></handled>
+                <to uri="activemq:DLQ.validator" />
+            </onException>  
+ -->            
+ 			<process ref="instrumentBasedThrottler" />
+<!--   		<wireTap uri="log:com.calypso.tk.messaging.log1?level=DEBUG" executorServiceRef="dataLoggerPool" processorRef="quoteValueToStringProcessor"/>
+-->
+    		<process ref="rateEngineMessageProcessor"/>
+    		<split>
+				<method ref="rateEngineMessageProcessor" method="split" />
+				<to uri="ref:reout" />
+			</split>
+		</route>
+		<route id="debugRateEngineroute">
+            <from uri="ref:reMonitoringIn" />
+			<to uri="bean:rateEngineMessageProcessor?method=processDebug" />
+			<to uri="ref:reMonitoringOut" />
+		</route>
+		<route id="rateEngineHeartBeatRoute">
+  			<from uri="ref:heartbeattimer" />
+  			<to uri="bean:rateEngineMessageProcessor?method=createHeartBeatMessage" />
+  			<to uri="ref:healthcheckq" />
+		</route>
+		
+		<!-- 
+		For enabling Lo4j Logging... use the below log4j setting inside Jboss standalone-edealingserver.xml
+		
+		    <size-rotating-file-handler name="RATE_ENGINE_RULE_LOG" autoflush="true">
+                <formatter>
+                    <pattern-formatter pattern="%c , %d{yyyy/MM/dd HH:mm:ss} ,  %m%n"/>
+                </formatter>
+                <file relative-to="jboss.server.log.dir" path="rateengine-rule.log"/>
+                <append value="true"/>
+				<rotate-size value="100m" />
+				<max-backup-index value="10" />
+			</size-rotating-file-handler>
+            <size-rotating-file-handler name="RATE_ENGINE_RULE_FAILED_LOG" autoflush="true">
+                <formatter>
+                    <pattern-formatter pattern="%c , %d{yyyy/MM/dd HH:mm:ss} ,  %m%n"/>
+                </formatter>
+                <file relative-to="jboss.server.log.dir" path="rateengine-rule-failed.log"/>
+                <append value="true"/>
+				<rotate-size value="100m" />
+				<max-backup-index value="10" />
+			</size-rotating-file-handler>
+		
+            <logger category="RateEngine" use-parent-handlers="false">
+                <level name="DEBUG"/>
+                <handlers>
+                    <handler name="RATE_ENGINE_RULE_LOG"/>
+                </handlers>
+            </logger>
+            <logger category="RateEngineFailure" use-parent-handlers="false">
+                <level name="DEBUG"/>
+                <handlers>
+                    <handler name="RATE_ENGINE_RULE_FAILED_LOG"/>
+                </handlers>
+            </logger>
+		 -->
+		<route id="queryRequestroute">
+			<from uri="ref:query_in"/>
+			<to uri="bean:rateEngineCommandProcessor?method=getPublishableCachedQuotes" />
+			<inOut uri="bean:rateEngineCommandProcessor?method=response"/>
+ 		</route>
+		<route id="rateEngineLogging">
+			<from uri="ref:reMonitoringOut" />
+			<to uri="log:RateEngine?level=DEBUG"/>
+			<choice>
+				<when>
+					<simple>${header.BLENDING_STATUS} == 'FAILED'</simple>
+					<to uri="log:RateEngineFailure?level=DEBUG"/>
+				</when>
+				<!-- otherwise>
+					<to uri="log:RateEngine?level=DEBUG"/>
+				</otherwise-->
+			</choice>
+		</route>
+	</camelContext>
+</beans>

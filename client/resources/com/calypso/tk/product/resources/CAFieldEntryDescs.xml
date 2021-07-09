@@ -1,0 +1,46 @@
+<!--
+Defines a default view (categories, selected fields for each).
+The field and category labels are defined in the .properties resource file with the same name.
+-->
+<config>
+	<view>
+
+	<category>
+	    <categoryId>GENERAL</categoryId>
+	    <fieldId>TRADE_DATE</fieldId>
+	    <fieldId>SETTLE_DATE</fieldId>
+		<fieldId>PAY_RECEIVE</fieldId>
+	    <fieldId>CA_TYPE</fieldId>
+	    <fieldId>TYPE</fieldId>
+	    <fieldId>SUB_TYPE</fieldId>
+	    <fieldId>CORP_AC</fieldId>
+	    <fieldId>UNDERLYING</fieldId>
+	    <fieldId>UNDERLYING_CCY</fieldId>
+		<fieldId>SEC_CODE_TYPE</fieldId>
+	    <fieldId>SEC_CODE</fieldId>
+	    <fieldId>CCY</fieldId>
+	    <fieldId>QUANTITY</fieldId>
+	    <fieldId>CA_UNIT_AMOUNT</fieldId>
+	    <fieldId>INITIAL_AMOUNT</fieldId>
+	    <fieldId>NOMINAL</fieldId>
+		<fieldId>SETTLEMENT_AMOUNT</fieldId>
+	    <fieldId>SETTLE_CCY</fieldId>
+	    <fieldId>RELATED_TRADE_ID</fieldId>
+	  </category>
+	  <category>
+	    <categoryId>TRANSFORMATION_CAT</categoryId>
+	    <fieldId>QTY</fieldId>
+	    <fieldId>SECURITY</fieldId>
+		<fieldId>PRICE</fieldId>
+	    <fieldId>ACCRUAL</fieldId>
+	    <fieldId>DIRTY_PRICE</fieldId>
+	    <fieldId>SEC_CODE_TYPE2</fieldId>
+	    <fieldId>SEC_CODE2</fieldId>
+	  </category>
+	  <category>
+	    <categoryId>OTHER_AMOUNT_CAT</categoryId>
+	    <fieldId>FX_RATE</fieldId>
+	    <fieldId>OTHER_AMOUNT</fieldId>
+	  </category>
+	</view>
+</config>

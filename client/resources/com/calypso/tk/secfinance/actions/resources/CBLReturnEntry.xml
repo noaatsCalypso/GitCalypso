@@ -1,0 +1,18 @@
+<!-- 
+Defines a default view (categories, selected fields for each). 
+The field and category labels are defined in the .properties resource file with the same name.  
+-->
+<config>
+	<view>
+	  <category>
+	    <categoryId>RETURN</categoryId>
+	    <fieldId>REMAINING_QUANTITY_CURRENT</fieldId>
+	    <fieldId>RETURN_QUANTITY</fieldId>
+	    <fieldId>REMAINING_QUANTITY_NEW</fieldId>
+	    <fieldId>RETURN_CLEANUP</fieldId>
+	    <fieldId>CBLActionEntry.CASH_VALUE_CURRENT</fieldId>
+	    <fieldId>CBLActionEntry.CASH_VALUE_NEW</fieldId>
+	    <fieldId>CBLActionEntry.CASH_VALUE_DIFFERENCE</fieldId>
+	  </category>
+	</view>
+</config>

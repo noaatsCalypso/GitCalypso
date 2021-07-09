@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type x91: Request for Payment of Charges, Interest and Other Expenses -->
+<SwiftMsgDef>
+    <Name>MTx91</Name>
+    <ModeSelectionList>
+        <ModeSelection qualifier="NEW" />
+        <ModeSelection qualifier="AMEND" />
+        <ModeSelection qualifier="CANCEL" />
+    </ModeSelectionList>
+    <SwiftSequence name="A:General Information" modes="MMM">
+        <SwiftField name="Sender's Reference" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM" />
+        <SwiftField name="Related Reference" tag=":21:" format="16x" value="MESSAGE_LINKEDID" modes="MMM" />
+	<SwiftField name="Currency Code, Amount" tag=":32B:" format="3!a15d" value="CCY_AMOUNT" modes="MMM" />
+        <SwiftField name="Ordering Institution" tag=":52a:" value="PO_BENEFICIARY" condition="isPOBeneficiaryFinancial()" modes="---">
+		<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+	</SwiftField>
+        <SwiftField name="Account With Institution" tag=":57a:" value="CPTY_RECEIVING_AGENT" modes="OOO">
+		<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		<SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+		<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+	</SwiftField>
+        <SwiftField name="Details of Charges" tag=":71B:" value="DETAILS_CHARGES" format="6*35x" modes="MMM" />
+        <SwiftField name="Sender to Receiver Information" tag=":72:" value="ADDITIONAL_INFO" format="6*35x" modes="OOO" />
+    </SwiftSequence>
+</SwiftMsgDef>

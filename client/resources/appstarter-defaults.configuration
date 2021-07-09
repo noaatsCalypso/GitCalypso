@@ -1,0 +1,23 @@
+Navigator-Col,com.calypso.apps.startup.StartNavigator,"-Dswing.systemlaf=com.lipstikLF.LipstikLookAndFeel -Xms200m -Xmx700m -XX:MaxMetaspaceSize=256m -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5001",-log -user calypso_user,"Navigator"
+Navigator,com.calypso.apps.startup.StartNavigator,-Xmx512m -XX:MaxMetaspaceSize=512m,-log,"Navigator,HOTFIX"
+Navigator (debug),com.calypso.apps.startup.StartNavigator,"-Xmx512m -XX:MaxMetaspaceSize=512m -ea -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044",-log,"Navigator,HOTFIX"
+Execute SQL,com.calypso.apps.startup.StartExecuteSQL,-Xmx128m,-log
+Middle Tier Execute SQL,com.calypso.apps.startup.StartExecuteSQL,-Xmx128m,-log -config MiddleTier
+Dispatcher,com.calypso.apps.startup.StartDispatcher,-Xmx512m -XX:MaxMetaspaceSize=256m -Dswing.systemlaf=com.lipstikLF.LipstikLookAndFeel,"-log -config default"
+Calculator,com.calypso.apps.startup.StartCalculator,-Xmx1024m -XX:MaxMetaspaceSize=512m -Dswing.systemlaf=com.lipstikLF.LipstikLookAndFeel,-log
+DB Browser,com.calypso.apps.startup.StartDBBrowser,-Xmx256m,-log
+CAM,com.calypso.apps.datamigration.MigratorGUI,-Xmx512m -XX:MaxMetaspaceSize=256m,-log
+CM Tool,com.calypso.apps.datamigration.MigratorCMGUI,-Xmx512m -XX:MaxMetaspaceSize=256m,-log
+Task Enrichment Configs Editor,com.calypso.apps.startup.StartTaskEnrichmentConfigsEditor,-Xmx512m -XX:MaxMetaspaceSize=256m,-log
+Data Grid Node 1,com.calypso.apps.startup.StartDataGridNode,"-Dswing.systemlaf=com.lipstikLF.LipstikLookAndFeel -Xmx512m -XX:MaxMetaspaceSize=256m -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6001",-log
+Data Grid Node 2,com.calypso.apps.startup.StartDataGridNode,-Dswing.systemlaf=com.lipstikLF.LipstikLookAndFeel -Xmx512m -XX:MaxMetaspaceSize=256m,-log
+Data Grid Node 3,com.calypso.apps.startup.StartDataGridNode,-Dswing.systemlaf=com.lipstikLF.LipstikLookAndFeel -Xmx512m -XX:MaxMetaspaceSize=256m,-log
+Data Grid Node 4,com.calypso.apps.startup.StartDataGridNode,-Dswing.systemlaf=com.lipstikLF.LipstikLookAndFeel -Xmx512m -XX:MaxMetaspaceSize=256m,-log
+Data Grid Node 5,com.calypso.apps.startup.StartDataGridNode,-Dswing.systemlaf=com.lipstikLF.LipstikLookAndFeel -Xmx512m -XX:MaxMetaspaceSize=256m,-log
+Data Grid Enabled Calc 1,com.calypso.infra.computegrid.StartDataGridEnabledCalculator,"-Dswing.systemlaf=com.lipstikLF.LipstikLookAndFeel -Xmx512m -XX:MaxMetaspaceSize=256m -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=6001",-log
+Data Grid Enabled Calc 2,com.calypso.infra.computegrid.StartDataGridEnabledCalculator,-Dswing.systemlaf=com.lipstikLF.LipstikLookAndFeel -Xmx512m -XX:MaxMetaspaceSize=256m,-log
+Data Grid Enabled Calc 3,com.calypso.infra.computegrid.StartDataGridEnabledCalculator,-Dswing.systemlaf=com.lipstikLF.LipstikLookAndFeel -Xmx512m -XX:MaxMetaspaceSize=256m,-log
+Data Grid Enabled Calc 4,com.calypso.infra.computegrid.StartDataGridEnabledCalculator,-Dswing.systemlaf=com.lipstikLF.LipstikLookAndFeel -Xmx512m -XX:MaxMetaspaceSize=256m,-log
+Data Grid Enabled Calc 5,com.calypso.infra.computegrid.StartDataGridEnabledCalculator,-Dswing.systemlaf=com.lipstikLF.LipstikLookAndFeel -Xmx512m -XX:MaxMetaspaceSize=256m,-log
+Data Grid Enabled Calc 6,com.calypso.infra.computegrid.StartDataGridEnabledCalculator,-Dswing.systemlaf=com.lipstikLF.LipstikLookAndFeel -Xmx512m -XX:MaxMetaspaceSize=256m,-log
+Scheduler,com.calypso.apps.startup.StartCalypsoScheduler,-Dswing.systemlaf=com.lipstikLF.LipstikLookAndFeel -Xmx512m -XX:MaxMetaspaceSize=256m,-log

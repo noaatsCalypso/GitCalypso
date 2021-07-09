@@ -1,0 +1,25 @@
+#####################################################################
+#
+# File: MktDataServerStartup.txt
+# 1st line: Configuration:<Configuration Name>|<PricingEnv name>
+# Next lines: <Quote name> or <Market data item id>
+# Comment lines start with the symbol # 
+#
+#####################################################################
+#
+## Example:
+#
+#Configuration:MyConfig|MyPE
+#FX.USD.JPY
+#FX.EUR.USD
+#FX.GBP.USD
+#Equity.GM
+#1001
+#1002
+#1003
+#Configuration:AnotherConfig|AnotherPE
+#FX.EUR.USD
+#1202
+#FX.USD.JPY
+#18210
+#

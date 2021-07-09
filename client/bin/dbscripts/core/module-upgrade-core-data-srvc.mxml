@@ -1,0 +1,9 @@
+<module name="core-data-srvc" min-version="1.0.0" target-version="4.7.1">
+    <schema filename="CoreServiceSchemaBase.xml" />
+    <schema filename="CoreServiceSchemaData.xml" />
+
+    <upgrade version="4.7.1">
+        <step name="CAL-389691" version="1"/>
+    </upgrade>
+    
+</module>

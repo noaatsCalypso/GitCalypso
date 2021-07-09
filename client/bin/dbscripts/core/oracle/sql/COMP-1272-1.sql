@@ -1,0 +1,4 @@
+delete from DOMAIN_VALUES where value = 'ERSC_COMPLIANCE_RULE_EXPORT'
+;
+delete from DOMAIN_VALUES where value = 'ERSC_COMPLIANCE_RULE_IMPORT'
+;

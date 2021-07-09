@@ -1,0 +1,111 @@
+<!-- ################################################### -->
+<!-- #### Start Early Termination for Callable Swap #### -->
+<!-- ################################################### -->
+
+
+<p class="header2">Special Conditions</p>
+<p><b>Early Termination</b></p>
+<table width='100%'>
+	<tr>
+		<td width="30%">Optional Early Termination:</td>
+		<td width='68%'>Applicable</td>
+	</tr>
+	<tr>
+		<td>Option Style:</td>
+		<td>|OPTION_TYPE|</td>
+	</tr>
+	<!--calypso>
+		if (|OPTION_TYPE|== "American")
+		    inline "
+			<tr>
+				<td>Commencement Date:</td>
+				<td>|FIRST_EXPIRATION_DATE|</td>
+			</tr>
+		";
+	</calypso-->
+	<tr>
+		<td>Option Early Termination Date:</td>
+		<td>
+	<!--calypso>
+		if (|OPTION_TYPE|== "Bermudan" && |EXTENDED_TYPE|=="Cancellable") {
+		    inline "|SCHEDULE_DELIVERY_DATES_FREQ|, from |FIRST_SCHEDULE_DELIVERY_DATE| to |LAST_SCHEDULE_DELIVERY_DATE| subject to adjustment in accordance with the |SCHEDULE_DELIVERY_DATES_DATE_ROLL| Business Day convention. The exercise of such right by the Counterparty to change the Termination Date is not subject to the payment of any fee by either |TRADE_PROCESSING_ORGANIZATION| or the Counterparty.";
+		} else {
+			inline "|REPORT#Delivery Date| subject to adjustement with the Modified Following Business Day Convention";
+		}
+	</calypso-->
+		</td>
+	</tr>
+	<tr>
+		<td>Seller:</td>
+		<td>|OPTION_SELLER|</td>
+	</tr>
+	<tr>
+		<td>Buyer:</td>
+		<td>|OPTION_BUYER|</td>
+	</tr>
+</table>
+<p><b>Procedure for Exercise</b></p>
+<table width='100%'>
+	<tr>
+		<td width="30%">Expiration Date:</td>
+		<td width='68%'>|SETTLEMENT_LAG_DAYS| |SETTLEMENT_LAG_DAYS_TYPE| day(s) preceding the Optional Early Termination Date</td>
+	</tr>
+	<tr>
+		<td>Expiration Time:</td>
+		<td>|REPORT#Option Expiry Time| on the Expiration Date</td>
+	</tr>
+	<!--calypso>
+	if (|OPTION_TYPE|== "Bermudan" && |EXTENDED_TYPE| == "Cancellable") {
+		inline "
+		<tr>
+			<td>Earliest Exercise Time:</td>
+			<td>|EARLIEST_EXERCISE_TIME|</td>
+		</tr>
+		<tr>
+			<td>Latest Exercise Time:</td>
+			<td>|LATEST_EXERCISE_TIME|</td>
+		</tr>";
+	}
+	</calypso-->
+	<tr>
+		<td>Partial Exercise:</td>
+		<td>Inapplicable</td>
+	</tr>
+</table>
+<table width='100%'>
+<p><b>Settlement Terms</b></p>
+	<tr>
+		<td width="30%">Cash Settlement:</td>
+		<td width='68%'>Inapplicable</td>
+	</tr>
+</table>
+<p>The exercise of this early termination right by |OPTION_BUYER| will have the effect of releasing and discharging both parties from their future obligations in respect of this Swap Transaction. </p>
+<!--calypso>
+if(|HAS_CALLABLE_FEE| == "true") {
+	inline "<p class=header2>Callable Fee Schedule</p>
+	<table CELLSPACING=0 border='1' width='100%'>
+	<tr>
+		<th width='28%'>Expiry Fee Date</th>
+		<th width='28%'>Delivery Fee Date</th>
+		<th width='15%'>Fee Amount</th>
+		<th width='15%'>Fee Percentage</th>
+		<th width='14%'>Fee Currency</th>
+	</tr>
+	";
+	iterator("CallableFeeSchedule")
+		inline "
+		<tr>
+			<td width='28%'>|EXPIRY_FEE_DATE|</td>
+			<td width='28%'>|DELIVERY_FEE_DATE|</td>
+			<td width='15%'>|FEE_AMOUNT|</td>
+			<td width='15%'>|FEE_PERCENT|</td>
+			<td width='14%'>|FEE_CURRENCY|</td>
+		</tr>
+		";
+	inline "</table>";
+	}
+</calypso-->
+<!-- ########################## -->
+<!-- ###### End Exhibit ####### -->
+<!-- ########################## -->
+

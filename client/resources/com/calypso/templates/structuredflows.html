@@ -1,0 +1,143 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+<p class="indented">The purpose of this communication is to confirm
+	the terms and conditions of the transaction (the "Transaction") entered
+	into between |SENDER_FULL_NAME| and |RECEIVER_FULL_NAME| on the trade
+	date specified below. This communication constitutes a "Confirmation".</p>
+
+<p>The terms of the particular Transaction to which this
+	Confirmation relates are as follows:</p>
+
+
+			<table  width='90%'>
+
+				<tr>
+					<td width='48%'><b class="header2">Operation Details</b></td>
+                    <td width='48%'>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>Our reference</td>
+					<td>|TRADE_ID|</td>
+				</tr>
+				<tr>
+					<td>Instrument name</td>
+					<td>|PRODUCT_DESCRIPTION|</td>
+				</tr>
+				<tr>
+					<td>Lender</td>
+					<td>|TRADE_SELLER_NAME|</td>
+				</tr>
+				<tr>
+					<td>Broker</td>
+					<td>|BROKER_FULL_NAME_CLEAN|</td>
+				</tr>
+				<tr>
+					<td>Borrower</td>
+					<td>|TRADE_BUYER_NAME|</td>
+				</tr>
+				<tr>
+					<td>Trade date</td>
+					<td>|TRADE_DATE|</td>
+				</tr>
+				<tr>
+					<td>Settlement date</td>
+					<td>|SETTLE_DATE|</td>
+				</tr>
+				<tr>
+					<td>Maturity date</td>
+					<td>|PRODUCT_MATURITYDATE|</td>
+				</tr>
+				<tr>
+					<td>Principal Exchange</td>
+					<td>|PRINCIPAL_EXCHANGE_REQUIRED|</td>
+				</tr>
+				<tr>
+					<td>Nominal</td>
+					<td>|TRADE_CURRENCY| |TRADE_NOMINAL|</td>
+				</tr>
+
+<!--calypso>         
+if (|IS_MULTI_CCY| == "true") inline "<tr><td>Settlement Currency</td><td>|TRADE_SETTLECCY|</td></tr>";
+
+if (|IS_MULTI_CCY| == "true") inline "<tr><td>FX Rate TYPE</td><td>|STRUCTURED_FLOWS_FX_RATE_TYPE|</td></tr>";
+
+if (|IS_MULTI_CCY| == "true") inline "<tr><td>FX Rate Value</td><td>|STRUCTURED_FLOWS_FX_RATE|</td></tr>";
+        
+</calypso-->
+				
+				<tr>
+					<td>Rate type</td>
+					<td>|RATE_TYPE|</td>
+				</tr>
+				<tr>
+					<td>Rate value / spread</td>
+					<td>|CASH_RATE|</td>
+				</tr>
+				<tr>
+					<td>Payment Day count</td>
+					<td>|CASH_DAY_COUNT|</td>
+				</tr>
+				<tr>
+					<td>Payment frequency</td>
+					<td>|CASH_FREQUENCY|</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+<div style="page-break-inside:avoid">
+
+			<p><b class="header2">Cash Flows</b></p>
+				|STRUCTUREDFLOWS_CASHFLOWS|</td><br>
+</div>
+<div style="page-break-inside:avoid">
+
+			 <p><b class="header2">Settlement Delivery Instructions</b></p>
+				<!--calypso>
+					iterator("TransferRules")
+						inline "<p>Payment for |TRADE_PARTY_LONG_NAME|</p>
+						        <table width='100%'>
+										<tr>
+                                            <th width='38%'>|SETTLEMENT_ACTION|</th>
+                                            <th width='68%'>&nbsp;</th>
+                                        </tr>
+                                        <tr>
+                                            <td>To</td>
+                                            <td>|SETTLEMENT_TO|</td>
+                                        </tr>
+                                        <tr>
+                                            <td>|SETTLEMENT_ROUTING|</td>
+                                            <td>|SETTLEMENT_METHOD|</td>
+                                        </tr>
+                                        <tr>
+                                            <td>A/C &#8470;</td>
+                                            <td>|SETTLEMENT_ACCOUNT_NUMBER|</td>
+                                        </tr>
+                                        <tr>
+                                            <td>In favour of</td>
+                                            <td>|SETTLEMENT_FAVOR_OF|</td>
+                                        </tr>
+                                </table>";
+					</calypso-->
+				
+</div>
+
+<p class="indented">Please sign and return this Confirmation at your
+	earliest convenience. Because of the importance of confirming
+	transactions promptly and accurately, we regret that any Confirmations
+	which are not signed and returned within ten days may result in a delay
+	in payments.</p>
+
+<p class="indented">Please confirm that the foregoing correctly sets
+	forth the terms of our agreement by executing this Confirmation and
+	returning it to us.</p>
+
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

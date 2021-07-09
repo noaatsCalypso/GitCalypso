@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="limits_telemetry" xmlns="">
+        <column name="msg_id" nullable="false" scale="255" type="string"/>
+        <column name="msg_type" nullable="false" scale="255" type="string"/>
+        <column name="msg_description" nullable="false" scale="255" type="string"/>
+        <column name="limits_processor" nullable="false" scale="255" type="string"/>
+        <column name="telemetry_type" nullable="false" scale="255" type="string"/>
+        <column name="telemetry_time" nullable="false" scale="1" type="timestamp"/>
+        <index primary="true">
+            <on>msg_id</on>
+            <on>limits_processor</on>
+            <on>telemetry_type</on>
+        </index>
+    </table>
+</database>

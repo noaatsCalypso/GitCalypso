@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+
+	<table name="ers_system_defaults" xmlns="">
+	<row cat="ERSDataWarehouse">
+		<column name="system_id">0</column>		
+		<column name="parameter_name">sysname</column>		
+		<column name="parameter_value">ERS</column>		
+        </row>
+	<row cat="ERSDataWarehouse">
+		<column name="system_id">0</column>		
+		<column name="parameter_name">username</column>		
+		<column name="parameter_value">IMPORT_USER</column>		
+        </row>
+	<row cat="ERSDataWarehouse">
+		<column name="system_id">0</column>		
+		<column name="parameter_name">pricingenv</column>		
+		<column name="parameter_value">IMPORT_ENV</column>		
+        </row>
+	<row cat="ERSDataWarehouse">
+		<column name="system_id">0</column>		
+		<column name="parameter_name">paramset</column>		
+		<column name="parameter_value">IMPORT_PARAM</column>		
+        </row>
+      </table>
+
+	<table name="ers_system_defaults" xmlns="">
+	<row cat="ERSDataWarehouse">
+		<column name="system_id">1</column>		
+		<column name="parameter_name">sysname</column>		
+		<column name="parameter_value">ELS</column>		
+	</row>
+	<row cat="ERSDataWarehouse">
+		<column name="system_id">1</column>		
+		<column name="parameter_name">username</column>		
+		<column name="parameter_value">IMPORT_USER</column>		
+	</row>
+	<row cat="ERSDataWarehouse">
+		<column name="system_id">1</column>		
+		<column name="parameter_name">pricingenv</column>		
+		<column name="parameter_value">IMPORT_ENV</column>		
+	</row>
+	<row cat="ERSDataWarehouse">
+		<column name="system_id">1</column>		
+		<column name="parameter_name">paramset</column>		
+		<column name="parameter_value">IMPORT_PARAM</column>		
+	</row>
+	</table>	
+       
+   <table name="domain_values" xmlns="">
+   <!-- start engine server database configuration -->
+		<row cat="Required">
+			<column name="name">engineName</column>
+			<column name="value">RiskEventListener</column>
+			<column name="description"> </column>
+		</row>
+		<row cat="Required">
+			<column name="name">eventClass</column>
+			<column name="value">PSEventLiveVaRNotif</column>
+			<column name="description"> </column>
+		</row>   
+		<row cat="Required">
+			<column name="name">engineName</column>
+			<column name="value">ERSWebServiceEngine</column>
+			<column name="description"> </column>
+		</row>
+		<row cat="Required">
+			<column name="name">eventClass</column>
+			<column name="value">PSEventRiskRequest</column>
+			<column name="description"> </column>
+		</row>
+		<row cat="Required">
+			<column name="name">eventClass</column>
+			<column name="value">PSEventRiskEngineLogMsg</column>
+			<column name="description"> </column>
+		</row>
+		<row cat="Required">
+            <column name="name">eventClass</column>
+            <column name="value">PSEventERSHierarchy</column>
+            <column name="description"> </column>
+        </row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">ERSRiskServer.engines</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">ERSRiskServer.instances</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">engineserver.types</column>
+			<column name="value">ERSRiskServer</column>
+			<column name="description">ERS Risk Server Engine Container</column>
+		</row>
+		<row cat="Required">
+			<column name="name">ERSRiskServer.engines</column>
+			<column name="value">DataWareHouseRiskEngine</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_EOD_ARCHIVE</column>
+			<column name="description"></column>
+		</row>		
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_ANALYSIS</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_HOUSEKEEPING</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_RISK_IMPORT</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_RELATIVEVOL_CONVERSION</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_RISK_EXPORT</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_SCENARIO_IMPORT</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_SCENARIO_EXPORT</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">ModifyERSHierarchy</column>
+			<column name="description">permission to Create and Modify portfolio hierarchy</column>
+		</row>	
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">RunERSAdhoc</column>
+			<column name="description">permission to Run Adhoc analysis in ERS</column>
+		</row>	
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">ViewERSJobs</column>
+			<column name="description">permission to View ERS Job Viewer</column>
+		</row>	
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">ModifyERSBatch</column>
+			<column name="description">permission to Create and Modify ERS overnight batch</column>
+		</row>
+		<row cat="Required">
+            <column name="name">function</column>
+            <column name="value">ViewERSScenarioSet</column>
+            <column name="description">permission to view Scenario Engine Manager</column>
+        </row>  
+        <row cat="Required">
+            <column name="name">function</column>
+            <column name="value">ModifyERSScenarioSet</column>
+            <column name="description">permission to modify Scenario Engine Manager</column>
+        </row>  	
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">AllowERSMakeOfficial</column>
+			<column name="description">permission to make ERS adhoc report results official</column>
+		</row>	
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">ModifyERSRiskAttribution</column>
+			<column name="description">permission to Create and Modify risk attribution</column>
+		</row>	
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">UseERSManagementConsole</column>
+			<column name="description">permission to use ERS Management Console</column>
+		</row>	
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">ViewERSHierarchy</column>
+			<column name="description">permission to view ERS portfolio hierarchy</column>
+		</row>	
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">ERSApproveRiskParameter</column>
+			<column name="description">permission to authorise ERS hierarchy and risk attributions</column>
+		</row>	
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">ERSRMSWorkflowPending</column>
+			<column name="description">permission to authorise Pending to RMS exceptions</column>
+		</row>	
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">ERSRMSWorkflowAnalysed</column>
+			<column name="description">permission to authorise Analysed to RMS exceptions</column>
+		</row>	
+		<row cat="Required">
+			<column name="name">function</column>
+			<column name="value">ERSRMSWorkflowReviewed</column>
+			<column name="description">permission to authorise Reviewed to RMS exceptions</column>
+		</row>	
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">workflowRuleERSReport</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">ERSReportStatus</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">ERSReportAction</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">workflowType</column>
+			<column name="value">ERSReport</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">workflowRuleERSReport</column>
+			<column name="value">ERSManualCheck</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">ERSReportAction</column>
+			<column name="value">UPDATE</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">ERSReportStatus</column>
+			<column name="value">NEEDS_CORRECTION</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">ERSReportStatus</column>
+			<column name="value">PENDING</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">ERSReportStatus</column>
+			<column name="value">VERIFIED</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">ERSReportStatus</column>
+			<column name="value">INVESTIGATION</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">ersAnalysisPostprocessorClass</column>
+			<column name="value">risk.util.postproc.PLVectorAggregation</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">ersAnalysisPostprocessorClass</column>
+			<column name="value">risk.util.postproc.PLVectorAggregationSens:*</column>
+			<column name="description"></column>
+		</row>
+		<row cat="Required">
+			<column name="name">domainName</column>
+			<column name="value">RMS_Cycle</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">ERSRiskServer.engines</column>
+			<column name="value">DataWareHouseRiskEngine</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+			<column name="name">engineName</column>
+			<column name="value">DataWareHouseRiskEngine</column>
+			<column name="description">ERS</column>
+		</row>	
+		<row cat="Required">
+			<column name="name">aaaa</column>
+			<column name="value">ERSRMSWorkflowReviewed</column>
+			<column name="description"></column>
+		</row>	
+		<row cat="Required">
+            <column name="name">EnabledOptionalModules</column>
+            <column name="value">MarketRisk</column>
+            <column name="description"></column>
+        </row>
+   </table>
+   
+   <!-- end engine server database configuration -->
+
+    <table name="group_access" xmlns="">
+        <row cat="startup">
+            <column name="group_name">calypso_group</column>
+            <column name="access_id">1</column>
+            <column name="access_value">ModifyERSHierarchy</column>
+            <column name="read_only_b">0</column>
+        </row>
+		<row cat="startup">
+            <column name="group_name">calypso_group</column>
+            <column name="access_id">1</column>
+            <column name="access_value">RunERSAdhoc</column>
+            <column name="read_only_b">0</column>
+        </row>
+		<row cat="startup">
+            <column name="group_name">calypso_group</column>
+            <column name="access_id">1</column>
+            <column name="access_value">ViewERSJobs</column>
+            <column name="read_only_b">0</column>
+        </row>
+		<row cat="startup">
+            <column name="group_name">calypso_group</column>
+            <column name="access_id">1</column>
+            <column name="access_value">ModifyERSBatch</column>
+            <column name="read_only_b">0</column>
+        </row>
+		<row cat="startup">
+            <column name="group_name">calypso_group</column>
+            <column name="access_id">1</column>
+            <column name="access_value">AllowERSMakeOfficial</column>
+            <column name="read_only_b">0</column>
+        </row>
+		<row cat="startup">
+            <column name="group_name">calypso_group</column>
+            <column name="access_id">1</column>
+            <column name="access_value">ModifyERSRiskAttribution</column>
+            <column name="read_only_b">0</column>
+        </row>
+		<row cat="startup">
+            <column name="group_name">calypso_group</column>
+            <column name="access_id">1</column>
+            <column name="access_value">UseERSManagementConsole</column>
+            <column name="read_only_b">0</column>
+        </row>
+		<row cat="startup">
+            <column name="group_name">calypso_group</column>
+            <column name="access_id">1</column>
+            <column name="access_value">ViewERSHierarchy</column>
+            <column name="read_only_b">0</column>
+        </row>		
+	</table>  
+    
+   
+	<table name="engine_param" xmlns="">
+		<row cat="Required">
+			<column name="engine_name">DataWarehouseRiskEngine</column>
+			<column name="param_name">CLASS_NAME</column>
+			<column name="param_value">com.calypso.engine.warehouse.DataWareHouseRiskEngine</column>
+		</row>
+		<row cat="Required">
+			<column name="engine_name">DataWarehouseRiskEngine</column>
+			<column name="param_name">DISPLAY_NAME</column>
+			<column name="param_value">Data Warehouse Risk Engine</column>
+		</row>
+		<row cat="Required">
+			<column name="engine_name">DataWarehouseRiskEngine</column>
+			<column name="param_name">INSTANCE_NAME</column>
+			<column name="param_value">enterpriseriskserver</column>
+		</row>
+		<row cat="Required">
+			<column name="engine_name">DataWarehouseRiskEngine</column>
+			<column name="param_name">STARTUP</column>
+			<column name="param_value">true</column>
+		</row>		
+	</table>
+	
+</database>

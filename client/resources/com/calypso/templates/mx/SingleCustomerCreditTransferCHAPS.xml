@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+	<contents>
+						<element name="FIToFICstmrCdtTrf">
+							<contents>
+								<element name="GrpHdr">
+									<contents>
+										<element name="MsgId">
+											<contents>
+												<report>
+													<column>MESSAGE_ID</column>
+												</report>
+											</contents>
+										</element>
+										<element name="CreDtTm">
+											<contents>
+												<report>
+													<column>CREATION_SYSTEM_DATE_ISOVERSION</column>
+												</report>
+											</contents>
+										</element>
+										<element name="NbOfTxs">
+											<contents>
+												<text>
+													<value>1</value>
+												</text>
+											</contents>
+										</element>
+										<element name="SttlmInf">
+											<contents>
+												<element name="SttlmMtd">
+													<contents>
+														<text>
+															<value>CLRG</value>
+														</text>
+													</contents>
+												</element>
+												<element name="ClrSys">
+				                                    <contents>
+				                                        <element name="Cd">
+				                                            <contents>
+				                                                <text>
+				                                                    <value>STG</value>
+				                                                </text>
+				                                            </contents>
+				                                        </element>
+				                                    </contents>
+				                                </element>
+											</contents>
+										</element>
+									</contents>
+								</element>
+								<element name="CdtTrfTxInf">
+									<contents>
+										<element name="PmtId">
+											<contents>
+												<element name="InstrId">
+													<contents>
+														<report>
+															<column>MESSAGE_ID</column>
+														</report>
+													</contents>
+												</element>
+												<element name="EndToEndId">
+													<contents max="1">
+														<report>
+															<condition>
+																<expression>
+																	!isEmpty(getReportValue("REMITTANCE_INFO")) 
+																	&amp;&amp; (contains(getReportValue("REMITTANCE_INFO"), "/ROC") || contains(getReportValue("REMITTANCE_INFO"), "ROC/"))
+																</expression>
+															</condition>
+															<column>REMITTANCE_INFO</column>
+															<transformations>
+                                   								<transformation type="regexp">
+                                   									<from>\/ROC/</from>
+                               									</transformation>
+                                   								<transformation type="regexp">
+                                   									<from>\ROC/</from>
+                                   								</transformation>
+																<transformation type="regexp">
+                                   									<from>\/ROC</from>
+                                   								</transformation>
+															</transformations>
+														</report>
+														<text>
+															<value>NOTPROVIDED</value>
+														</text>
+													</contents>
+												</element>
+												<element name="UETR">
+													<contents>
+														<report>
+															<column>Msg_Attr.UETR</column>
+														</report>
+													</contents>
+												</element>
+											</contents>
+										</element>
+										<element name="PmtTpInf">
+											<contents>
+												<element name="SvcLvl">
+													<contents>
+														<element name="Cd">
+															<contents>
+																<report>
+                        											<column>GPI</column>
+                        										</report>
+															</contents>
+														</element>
+													</contents>
+												</element>
+												<element name="LclInstrm">
+													<contents>
+														<element name="Prtry">
+															<contents max="1">
+																<report>
+																	<column>TRADE_KEYWORD.ServiceLvlPmtCode</column>
+																</report>
+																<text>
+																	<value>CRED</value>
+																</text>
+															</contents>
+														</element>
+													</contents>
+												</element>
+												<element name="CtgyPurp">
+													<contents>
+														<element name="Cd">
+															<contents>
+																<report>
+                                               						<column>CATEGORY_PURPOSE_CODE</column>
+                                            					</report>
+															</contents>
+														</element>
+													</contents>
+												</element>
+											</contents>
+										</element>
+										<element name="IntrBkSttlmAmt">
+											<attributes>
+												<attribute name="Ccy">
+													<value>
+														<report>
+															<column>SettleCurrency</column>
+														</report>
+													</value>
+												</attribute>
+											</attributes>
+											<contents>
+												<report format="######.######">
+													<column>Settle Amount</column>
+												</report>
+											</contents>
+										</element>
+										<element name="IntrBkSttlmDt">
+											<contents>
+												<report format="yyyy-MM-dd">
+													<column>Settle Date</column>
+												</report>
+											</contents>
+										</element>
+										<element name="SttlmPrty">
+											<contents>
+												<report>
+													<column>Payer.SDIAttributes.CHAPSSttlmPrty</column>
+												</report>
+											</contents>
+										</element>
+										<element name="InstdAmt" hideifempty="true">
+											<attributes>
+												<attribute name="Ccy">
+													<value>
+														<report>
+															<column>INSTRUCTED_CCY</column>
+														</report>
+													</value>
+												</attribute>
+											</attributes>
+											<contents>
+												<report>
+													<column>INSTRUCTED_AMOUNT</column>
+												</report>
+											</contents>
+										</element>
+										<element name="XchgRate" hideifempty="true">
+											<contents>
+												<report>
+													<column>EXCHANGE_RATE</column>
+												</report>
+											</contents>
+										</element>
+										<element name="ChrgBr">
+											<contents>
+												<report>
+													<column>DETAILS_OF_CHARGE</column>
+												</report>
+											</contents>
+										</element>
+										<!-- For DEBT one ChrgsInf Receiver Charge-->
+										<element name="ChrgsInf" hideifempty="true">
+											<condition>
+												<expression>getReportValue("DETAILS_OF_CHARGE") == "DEBT" &amp;&amp; !isEmpty(getReportValue("RECEIVER_CHARGE_CCY"))</expression>
+											</condition>
+											<contents>
+												<element name="Amt">
+													<attributes>
+														<attribute name="Ccy">
+															<value>
+																<report>
+																	<column>RECEIVER_CHARGE_CCY</column>
+																</report>
+															</value>
+														</attribute>
+													</attributes>
+													<contents>
+														<report>
+															<column>RECEIVER_CHARGE_AMOUNT</column>
+														</report>
+													</contents>
+												</element>
+												<element name="Agt" hideifempty="true">
+													<contents>
+														<element name="FinInstnId">
+															<contents>
+																<element name="BICFI" hideifempty="true">
+																	<contents>
+																		<report>
+																			<column>Payer.Agent.Swift</column>
+                                                                            <transformations>
+                                                                                <transformation type="function">
+                                                                                    <to>completeSwiftBranch</to>
+                                                                                </transformation>
+                                                                            </transformations>
+																		</report>
+																	</contents>
+																</element>
+																<element name="ClrSysMmbId" hideifempty="true">
+																	<contents>
+																		<element name="ClrSysId">
+																			<contents>
+																				<element name="Cd">
+																					<contents>
+																						<report>
+																							<column>PO_AGENT_CLEARING_SYS_ID</column>
+																						</report>
+																					</contents>
+																				</element>
+																			</contents>
+																		</element>
+																		<element name="MmbId">
+																			<contents>
+																				<report>
+																					<column>PO_AGENT_CLEARING_MEMBER_ID</column>
+																				</report>
+																			</contents>
+																		</element>
+																	</contents>
+																</element>
+															</contents>
+														</element>
+													</contents>
+												</element>
+											</contents>
+										</element>
+										<!-- For CRED unbounded ChrgsInf : Sender Charges -->
+										<element name="ChrgsInf" hideifempty="true">
+											<context>
+                                				<to>SplitSenderCharges</to>
+                           					</context>
+											<condition>
+												<expression>getReportValue("DETAILS_OF_CHARGE") == "CRED"  &amp;&amp; !isEmpty(getReportValue("SENDER_CHARGES_CCY"))</expression>
+											</condition>
+											<contents>
+												<element name="Amt">
+													<attributes>
+														<attribute name="Ccy">
+															<value>
+																<report>
+																	<column>SENDER_CHARGES_CCY</column>
+																</report>
+															</value>
+														</attribute>
+													</attributes>
+													<contents>
+														<report>
+															<column>SENDER_CHARGES_AMOUNT</column>
+														</report>
+													</contents>
+												</element>
+												<element name="Agt" hideifempty="true">
+													<contents>
+														<element name="FinInstnId">
+															<contents>
+																<element name="BICFI" hideifempty="true">
+																	<contents>
+																		<report>
+																			<column>Receiver.Agent.Swift</column>
+                                                                            <transformations>
+                                                                                <transformation type="function">
+                                                                                    <to>completeSwiftBranch</to>
+                                                                                </transformation>
+                                                                            </transformations>
+																		</report>
+																	</contents>
+																</element>
+																<element name="ClrSysMmbId" hideifempty="true">
+																	<contents>
+																		<element name="ClrSysId">
+																			<contents>
+																				<element name="Cd">
+																					<contents>
+																						<report>
+																							<column>CPTY_AGENT_CLEARING_SYS_ID</column>
+																						</report>
+																					</contents>
+																				</element>
+																			</contents>
+																		</element>
+																		<element name="MmbId">
+																			<contents>
+																				<report>
+																					<column>CPTY_AGENT_CLEARING_MEMBER_ID</column>
+																				</report>
+																			</contents>
+																		</element>
+																	</contents>
+																</element>
+															</contents>
+														</element>
+													</contents>
+												</element>
+											</contents>
+										</element>
+										<element name="InstgAgt">
+		                                    <contents>
+		                                        <element name="FinInstnId">
+		                                        	<contents>
+														<element name="BICFI" hideifempty="true">
+															<contents>
+																<report>
+																	<column>Sender.Swift</column>
+                                                                    <transformations>
+                                                                        <transformation type="function">
+                                                                            <to>completeSwiftBranch</to>
+                                                                        </transformation>
+                                                                    </transformations>
+																</report>
+															</contents>
+														</element>
+													</contents>
+		                                        </element>
+		                                    </contents>
+		                                </element>
+		                                <element name="InstdAgt">
+		                                    <contents>
+		                                        <element name="FinInstnId">
+		                                        	<contents>
+														<element name="BICFI" hideifempty="true">
+															<contents>
+																<report>
+																	<column>Receiver.Swift</column>
+                                                                    <transformations>
+                                                                        <transformation type="function">
+                                                                            <to>completeSwiftBranch</to>
+                                                                        </transformation>
+                                                                    </transformations>
+																</report>
+															</contents>
+														</element>
+													</contents>
+		                                        </element>
+		                                    </contents>
+		                                </element>
+		                                <element name="IntrmyAgt1" hideifempty="true">
+											<contents>
+												<element name="FinInstnId">
+													<contents>
+														<element name="BICFI" hideifempty="true">
+															<contents>
+																<report>
+																	<column>CPTY_RECEIVING_INT1_BIC_CODE</column>
+																</report>
+															</contents>
+														</element>
+														<element name="ClrSysMmbId" hideifempty="true">
+				                                            <contents>
+				                                                <element name="ClrSysId">
+				                                                    <contents>
+				                                                        <element name="Cd">
+				                                                            <contents>
+				                                                                <report>
+				                                                                    <column>CPTY_INT1_CLEARING_SYS_ID</column>
+				                                                                </report>
+				                                                            </contents>
+				                                                        </element>
+				                                                    </contents>
+				                                                </element>
+				                                                <element name="MmbId">
+				                                                    <contents>
+				                                                        <report>
+				                                                            <column>CPTY_INT1_CLEARING_MEMBER_ID</column>
+				                                                        </report>
+				                                                    </contents>
+				                                                </element>
+				                                            </contents>
+				                                        </element>
+													</contents>
+												</element>
+											</contents>
+										</element>
+										<element name="IntrmyAgt1Acct" hideifempty="true">
+											<contents>
+												<element name="Id">
+													<contents max="1">
+														<element name="IBAN" hideifempty="true">
+															<condition>
+																<expression>isTrue(getReportValue("Receiver.SDIAttributes.IBAN.Intermediary2"))</expression>
+															</condition>
+															<contents>
+																<report>
+																	<column>CPTY_RECEIVING_INT2_ACC</column>
+																</report>
+															</contents>
+														</element>
+														<element name="Othr">
+															<contents>
+																<element name="Id">
+																	<contents>
+																		<report>
+																			<column>CPTY_RECEIVING_INT2_ACC</column>
+																		</report>
+																	</contents>
+																</element>
+															</contents>
+														</element>
+													</contents>
+												</element>
+											</contents>
+										</element>
+										<element name="Dbtr" hideifempty="true">
+				                            <contents>
+				                            	<element name="Id">
+				                                    <contents>
+				                                        <element name="OrgId">
+				                                            <contents>
+				                                                <element name="AnyBIC">
+				                                                    <contents>
+				                                                        <report>
+				                                                            <column>PO_BENEFICIARY_BIC_CODE</column>
+				                                                        </report>
+				                                                    </contents>
+				                                                </element>
+				                                            </contents>
+				                                        </element>
+				                                        <element name="PrvtId" hideifempty="true">
+															<contents>
+																<element name="Othr">
+																	<condition>
+																		<expression>isEmpty(getReportValue("PO_BENEFICIARY_BIC_CODE"))</expression>
+																	</condition>
+																	<contents>
+																		<element name="Id">
+																			<contents max="1">
+																				<report>
+																					<column>PO_BENEFICIARY_NATIONAL_ID</column>
+																				</report>
+																				<report>
+																					<column>PO_BENEFICIARY_CUSTOMER_ID</column>
+																				</report>
+																			</contents>
+																		</element>
+																		<element name="SchmeNm">
+																			<contents>
+																				<element name="Cd">
+																					<contents max="1">
+																						<text>
+																							<condition>
+																								<expression>!isEmpty(getReportValue("PO_BENEFICIARY_NATIONAL_ID"))</expression>
+																							</condition>
+																							<value>NIDN</value>
+																						</text>
+																						<text>
+																							<condition>
+																								<expression>!isEmpty(getReportValue("PO_BENEFICIARY_CUSTOMER_ID"))</expression>
+																							</condition>
+																							<value>CUST</value>
+																						</text>
+																					</contents>
+																				</element>
+																			</contents>
+																		</element>
+																	</contents>
+																</element>
+															</contents>
+														</element>
+				                                    </contents>
+				                                </element>
+				                            </contents>
+				                        </element>
+										<element name="DbtrAcct" hideifempty="true">
+											<contents>
+												<element name="Id">
+													<contents max="1">
+														<element name="IBAN" hideifempty="true">
+															<condition>
+																<expression>isTrue(getReportValue("Payer.SDIAttributes.IBAN.Agent"))</expression>
+															</condition>
+															<contents>
+																<report>
+																	<column>Payer.Agent.Account</column>
+																</report>
+															</contents>
+														</element>
+														<element name="Othr">
+															<contents>
+																<element name="Id">
+																	<contents>
+																		<report>
+																			<column>Payer.Agent.Account</column>
+																		</report>
+																	</contents>
+																</element>
+															</contents>
+														</element>
+													</contents>
+												</element>
+											</contents>
+										</element>
+										<element name="DbtrAgt">
+											<contents>
+												<element name="FinInstnId">
+													<contents>
+														<element name="BICFI" hideifempty="true">
+															<contents>
+																<report>
+																	<column>Payer.Agent.Swift</column>
+                                                                    <transformations>
+                                                                        <transformation type="function">
+                                                                            <to>completeSwiftBranch</to>
+                                                                        </transformation>
+                                                                    </transformations>
+																</report>
+															</contents>
+														</element>
+														<element name="ClrSysMmbId" hideifempty="true">
+															<contents>
+																<element name="ClrSysId">
+																	<contents>
+																		<element name="Cd">
+																			<contents>
+																				<report>
+																					<column>PO_AGENT_CLEARING_SYS_ID</column>
+																				</report>
+																			</contents>
+																		</element>
+																	</contents>
+																</element>
+																<element name="MmbId">
+																	<contents>
+																		<report>
+																			<column>PO_AGENT_CLEARING_MEMBER_ID</column>
+																		</report>
+																	</contents>
+																</element>
+															</contents>
+														</element>
+													</contents>
+												</element>
+											</contents>
+										</element>
+										<element name="DbtrAgtAcct" hideifempty="true">
+											<contents>
+												<element name="Id">
+													<contents max="1">
+														<element name="IBAN" hideifempty="true">
+															<condition>
+																<expression>isTrue(getReportValue("Payer.SDIAttributes.IBAN.Agent"))</expression>
+															</condition>
+															<contents>
+																<report>
+																	<column>PO_INT1_ACCT</column>
+																</report>
+															</contents>
+														</element>
+														<element name="Othr">
+															<contents>
+																<element name="Id">
+																	<contents>
+																		<report>
+																			<column>PO_INT1_ACCT</column>
+																		</report>
+																	</contents>
+																</element>
+															</contents>
+														</element>
+													</contents>
+												</element>
+											</contents>
+											</element>
+											<element name="CdtrAgt">
+												<contents>
+													<element name="FinInstnId">
+														<contents>
+															<element name="BICFI" hideifempty="true">
+																<contents>
+																	<report>
+																		<column>Receiver.Agent.Swift</column>
+                                                                        <transformations>
+                                                                            <transformation type="function">
+                                                                                <to>completeSwiftBranch</to>
+                                                                            </transformation>
+                                                                        </transformations>
+																	</report>
+																</contents>
+															</element>
+															<element name="ClrSysMmbId" hideifempty="true">
+					                                            <contents>
+					                                                <element name="ClrSysId">
+					                                                    <contents>
+					                                                        <element name="Cd">
+					                                                            <contents>
+					                                                                <report>
+					                                                                    <column>CPTY_AGENT_CLEARING_SYS_ID</column>
+					                                                                </report>
+					                                                            </contents>
+					                                                        </element>
+					                                                    </contents>
+					                                                </element>
+					                                                <element name="MmbId">
+					                                                    <contents>
+					                                                        <report>
+					                                                            <column>CPTY_AGENT_CLEARING_MEMBER_ID</column>
+					                                                        </report>
+					                                                    </contents>
+					                                                </element>
+					                                            </contents>
+					                                        </element>
+														</contents>
+													</element>
+												</contents>
+											</element>
+											<element name="CdtrAgtAcct" hideifempty="true">
+												<contents>
+													<element name="Id">
+														<contents max="1">
+															<element name="IBAN" hideifempty="true">
+																<condition>
+																	<expression>isTrue(getReportValue("Receiver.SDIAttributes.IBAN.Intermediary"))</expression>
+																</condition>
+																<contents>
+																	<report>
+																		<column>CPTY_RECEIVING_INT1_ACC</column>
+																	</report>
+																</contents>
+															</element>
+															<element name="Othr">
+																<contents>
+																	<element name="Id">
+																		<contents>
+																			<report>
+																				<column>CPTY_RECEIVING_INT1_ACC</column>
+																			</report>
+																		</contents>
+																	</element>
+																</contents>
+															</element>
+														</contents>
+													</element>
+												</contents>
+											</element>
+											<element name="Cdtr" hideifempty="true">
+												<contents>
+													<element name="Id">
+														<contents>
+															<!-- This will be present if there is Swift code in the contact used 
+																in the PO SDI. -->
+															<element name="OrgId">
+																<contents>
+																	<element name="AnyBIC">
+																		<contents>
+																			<report>
+																				<!--Swift Code/Bic of the Contact used in the PO SDI -->
+																				<column>CPTY_BENEFICIARY_BIC_CODE</column>
+																			</report>
+																		</contents>
+																	</element>
+																</contents>
+															</element>
+														</contents>
+													</element>
+                                                    <element name="Nm">
+                                                        <condition>
+                                                            <expression>isEmpty(getReportValue("CPTY_BENEFICIARY_BIC_CODE"))</expression>
+                                                        </condition>
+                                                        <contents>
+                                                            <report>
+                                                                <column>CPTY_BENEFICIARY_NAME</column>
+                                                                <transformations>
+                                                                    <transformation type="substring">
+                                                                        <from>0</from>
+                                                                        <to>66</to>
+                                                                    </transformation>
+                                                                </transformations>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                    <element name="PstlAdr">
+                                                        <condition>
+                                                            <expression>isEmpty(getReportValue("CPTY_BENEFICIARY_BIC_CODE"))</expression>
+                                                        </condition>
+                                                        <contents>
+                                                            <element name="StrtNm">
+                                                                <contents>
+                                                                    <report>
+                                                                        <column>CPTY_BENEFICIARY_CONTACT_STREET_NAME</column>
+                                                                        <transformations>
+                                                                            <transformation type="substring">
+                                                                                <from>0</from>
+                                                                                <to>66</to>
+                                                                            </transformation>
+                                                                        </transformations>
+                                                                    </report>
+                                                                </contents>
+                                                            </element>
+                                                            <element name="TwnNm">
+                                                                <contents>
+                                                                    <report>
+                                                                        <column>CPTY_BENEFICIARY_CONTACT_TOWN_NAME</column>
+                                                                        <transformations>
+                                                                            <transformation type="substring">
+                                                                                <from>0</from>
+                                                                                <to>30</to>
+                                                                            </transformation>
+                                                                        </transformations>
+                                                                    </report>
+                                                                </contents>
+                                                            </element>
+                                                            <element name="Ctry">
+                                                                <contents>
+                                                                    <report>
+                                                                        <column>CPTY_BENEFICIARY_CONTACT_COUNTRY</column>
+                                                                    </report>
+                                                                </contents>
+                                                            </element>
+                                                            <element name="AdrLine">
+                                                                <contents>
+                                                                    <report>
+                                                                        <column>CPTY_BENEFICIARY_CONTACT_ADDRESS_STREET</column>
+                                                                        <transformations>
+                                                                            <transformation type="substring">
+                                                                                <from>0</from>
+                                                                                <to>30</to>
+                                                                            </transformation>
+                                                                        </transformations>
+                                                                    </report>
+                                                                </contents>
+                                                            </element>
+                                                        </contents>
+                                                    </element>
+												</contents>
+											</element>
+											<element name="CdtrAcct" hideifempty="true">
+			                                    <contents>
+			                                        <element name="Id">
+			                                            <contents max="1">
+			                                            	<element name="IBAN" hideifempty="true">
+			                                            		<condition>
+																	<expression>isTrue(getReportValue("Receiver.SDIAttributes.IBAN.Agent"))</expression>
+																</condition>
+			                                                    <contents>
+			                                                       <report>
+			                                                          <column>CPTY_AGENT_ACCT</column>
+			                                                        </report>
+			                                                    </contents>
+			                                                </element>
+			                                                <element name="Othr">
+			                                                    <contents>
+			                                                        <element name="Id">
+			                                                            <contents>
+			                                                                <report>
+			                                                                    <column>CPTY_AGENT_ACCT</column>
+			                                                                </report>
+			                                                            </contents>
+			                                                        </element>
+			                                                    </contents>
+			                                                </element>
+			                                            </contents>
+			                                        </element>
+			                                    </contents>
+                               				 </element>
+											 <element name="InstrForCdtrAgt">
+												<contents>
+													<element name="Cd">
+														<contents>
+															<report>
+															   <!--
+															 	TODO because the value CORT is not supported by XSD :
+															 	 it can be one of the following value:
+                                       							 	CHQB
+                                        						 	HOLD
+                                        							PHOB
+                                        							TELB
+                                       							 -->
+																<column>INSTRUCTION_CODE</column>
+															</report>
+														</contents>
+													</element>
+													<element name="InstrInf">
+														<condition>
+															<expression>!isEmpty(getReportValue("INSTRUCTION_CODE"))</expression>
+														</condition>
+														<contents>
+															<report>
+																<column>TRADE_KEYWORD.Instruction Code</column>
+															</report>
+														</contents>
+													</element>
+												</contents>
+											 </element>
+                                        <element name="InstrForNxtAgt" hideifempty="true">
+                                            <context>
+                                                <to>SplitInstructionForNextAgent4lines</to>
+                                            </context>
+                                            <contents>
+                                                <element name="InstrInf">
+                                                    <contents>
+                                                        <report>
+                                                            <column>MSG_ATTR_T2_INSTRUCTION_FOR_NEXT_AGENT</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+											<element name="Purp" hideifempty="true">
+					                            <contents>
+					                                <element name="Prtry">
+					                                    <contents>
+					                                        <report>
+					                                            <column>TRADE_KEYWORD.26T</column>
+					                                        </report>
+					                                    </contents>
+					                                </element>
+					                            </contents>
+					                       	 </element>
+                              				 <element name="RmtInf" hideifempty="true">
+			                                    <contents>
+			                                        <element name="Ustrd">
+			                                            <contents>
+			                                                <report>
+			                                                	<column>REMITTANCE_INFO</column>
+			                                                </report>
+			                                            </contents>
+			                                        </element>
+			                                    </contents>
+                               				 </element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+	</contents>
+</template>
+

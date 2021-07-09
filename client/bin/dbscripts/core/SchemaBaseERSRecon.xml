@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="ers_recon_status" xmlns="">
+		<column name="status_id" nullable="false" type="int" scale="1"/>
+		<column name="portfolio" nullable="false" type="string" scale="255"/>
+		<column name="run_id" nullable="false" type="int" scale="1"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="status" nullable="false" type="string" scale="255"/>
+		<column name="value_date" nullable="false" type="int" scale="1"/>
+		<column name="status_comment" nullable="false" type="string" scale="255"/>
+		<column name="added_date" nullable="false" type="timestamp"/>
+	</table>
+	
+		<table name="domain_values" xmlns="">
+		
+		<row cat="ReconScheduledTasks">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_RECON_CURVE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReconScheduledTasks">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_RECON_PAI</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReconScheduledTasks">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_RECON_REPORT</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReconScheduledTasks">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_RECON_RR</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReconScheduledTasks">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_RECON_SFTP</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReconScheduledTasks">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERS_RECON_STATUS_REPORT</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">domainName</column>
+			<column name="value">ersFREFactor</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">domainName</column>
+			<column name="value">ersFXGapFactor</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">domainName</column>
+			<column name="value">ersMarginCalcHierarchyName</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">domainName</column>
+			<column name="value">ersMarginReports</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">domainName</column>
+			<column name="value">ersMarginReportsTYPEA</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">domainName</column>
+			<column name="value">ersMarginReportsTYPEB</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">domainName</column>
+			<column name="value">ersMarginReportsTYPEC</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">domainName</column>
+			<column name="value">ersMarginReportsTYPED</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">domainName</column>
+			<column name="value">ersMarginReportsTYPEG</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">domainName</column>
+			<column name="value">ersMarginReportsTYPEH</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">domainName</column>
+			<column name="value">ERSOTCMarginAddIns</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">domainName</column>
+			<column name="value">ERSPAIQuoteName</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">domainName</column>
+			<column name="value">ERSSystemDefault</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">domainName</column>
+			<column name="value">ersTradeArrayLoader</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersMarginReports</column>
+			<column name="value">CreditEventMargin.default</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersMarginReports</column>
+			<column name="value">HistVaR.Aggr</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersMarginReports</column>
+			<column name="value">OTCMarginReport.default</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersMarginReports</column>
+			<column name="value">LiquidityAdj.default</column>
+			<column name="description"></column>
+		</row>
+		
+	
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersMarginReportsTYPEB</column>
+			<column name="value">HistVaR.Aggr</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersMarginReportsTYPEB</column>
+			<column name="value">OTCMarginReport.default</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersMarginReportsTYPEC</column>
+			<column name="value">CreditEventMargin.default</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersMarginReportsTYPEC</column>
+			<column name="value">OTCMarginReport.default</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersMarginReportsTYPEG</column>
+			<column name="value">HistVaR.Standard</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersMarginReportsTYPEG</column>
+			<column name="value">Min.StandardPEGGED</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersMarginReportsTYPEG</column>
+			<column name="value">OTCMarginReport.default</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersMarginReportsTYPEH</column>
+			<column name="value">Min.Aggr</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersMarginReportsTYPEH</column>
+			<column name="value">OTCMarginReport.TYPEH</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ERSPAIQuoteName</column>
+			<column name="value">MM.USD.LIBOR.0D.PAI</column>
+			<column name="description"></column>
+		</row>
+		
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersFREFactor</column>
+			<column name="value">Swap|USD:0</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersFXGapFactor</column>
+			<column name="value">Swap|USD:0</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersTradeArrayLoader</column>
+			<column name="value">tk.risk.data.CMLTradeReader</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">domainName</column>
+			<column name="value">ersMarginTYPEG.peggedPrefix</column>
+			<column name="description"></column>
+		</row>
+		<row cat="MarginCalculatorDomainValues">
+			<column name="name">ersMarginTYPEG.peggedPrefix</column>
+			<column name="value">PEGGED_</column>
+			<column name="description"></column>
+		</row>
+		
+		
+	</table>
+
+</database>

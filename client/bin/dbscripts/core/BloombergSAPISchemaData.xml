@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+  <table name="domain_values" xmlns="">
+	<row cat="Bloombergsapi">
+		<column name="name">domainName</column>
+		<column name="value">BloombergOSInfoImplClass</column>
+		<column name="description">Custom OSInfoProvider implementation classname</column>
+	</row>
+  </table>
+</database>
+
+
+

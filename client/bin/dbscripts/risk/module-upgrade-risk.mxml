@@ -1,0 +1,12 @@
+<module name = "risk" min-version="1.0.0.000" target-version="16.1.0.75">
+	<schema filename="MiddleTierSchemaBase.xml" />
+	<schema filename="BOReportSchemaBase.xml" />
+	<schema filename="BOReportSchemaData.xml" />
+	
+	<upgrade version="15.0.0.008">
+		<step name="CAL-294363" version="1"/>
+	</upgrade>
+	<upgrade version="16.1.0.073">
+		<step name="CAL-401300" version="1"/>
+	</upgrade>
+</module>

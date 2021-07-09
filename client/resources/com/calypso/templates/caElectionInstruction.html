@@ -1,0 +1,71 @@
+<!--calypso>
+    include "message_header.html";
+</calypso-->
+
+<h3>In regards to the below corporate action</h3>
+<ul>
+<li>Ticker: |REPORT#Underlying.Product Code.TICKER|
+<li>ISIN: |REPORT#Underlying.Product Code.ISIN|
+<li>Asset: |REPORT#Underlying.Security|
+<li>Ex Date: |REPORT#Ex Date|
+<li>Record Date: |REPORT#Record Date| 
+<li>Pay Date: |REPORT#Payment Date| 
+<li>Rate: |REPORT#Amount|
+<li>Event: |REPORT#Swift Event Code|
+<li>Default Currency Option: |REPORT#Currency|
+</ul>
+
+<h3> Election details </h3>
+<ul>
+<li>Id: |REPORT#Election Id|
+<li>Book: |REPORT#Book|
+<li>Owner: |REPORT#Owner|
+<li>Position Type: |REPORT#Position Type|
+<li>Party: |REPORT#CounterParty|
+<li>Last Update: |REPORT#Last Update|
+<li>Position To Elect: |REPORT#Position To Elect|
+<li>Total Elected Position: |REPORT#Elected Position|
+<li>Total Unelected Position: |REPORT#Unelected Position|
+</ul>
+
+<!--calypso>
+inline "
+<table border=1>
+    <tr>
+        <th>#</th>
+        <th>Option</th>
+        <th>Model/Subtype</th>
+        <th>Elected Position</th>
+        <th>Unelected Position</th>
+    </tr>
+";
+
+iterator("CAElectedOption")
+    inline "
+    <tr>
+        <td>|ITERATOR_CURRENT_COUNT|</td>
+        <td>|ELECTED_QUANTITY#Outcome Display Name|</td>
+        <td>|ELECTED_QUANTITY#CA Type|/|ELECTED_QUANTITY#CA SubType|</td>
+        <td>|ELECTED_QUANTITY#Elected Position|</td>
+        <td>|ELECTED_QUANTITY#Unelected Position|</td>
+    </tr>
+    ";
+
+inline "</table><p>";
+
+if ( |STANDING_INSTRUCTION_ID| > "1" ) {
+    inline "Please note that this election results from a previously received standing instruction (|STANDING_INSTRUCTION_ID|)";
+} else {
+    inline "Please advise us your instruction by |REPORT#Attribute.Market Deadline (MKDT)| otherwise cash default will be applied." 
+}
+</calypso-->
+
+</p><p>
+Please advise us if you have any issues adhering to this date. 
+</p>
+<p>
+Thank you,
+</p>
+</body>
+</html>
+

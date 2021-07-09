@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+        <row cat="SWIFT MX Cash">
+            <column name="name">domainName</column>
+            <column name="value">MX.T2</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">MX.T2</column>
+            <column name="value">SAA.Receiver</column>
+            <column name="description">SWHTBEB3XXX</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">messageType</column>
+            <column name="value">INC_PACS009</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">messageType</column>
+            <column name="value">INC_PACS008</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">incomingType</column>
+            <column name="value">PACS008</column>
+            <column name="description">INC_PACS008</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">incomingType</column>
+            <column name="value">PACS009</column>
+            <column name="description">INC_PACS009</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">ExternalMessageField.MessageMapper</column>
+            <column name="value">PACS009</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">ExternalMessageField.MessageMapper</column>
+            <column name="value">PACS008</column>
+        </row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">PaymentCOVMX.selector</column>
+		</row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">MX.Templates</column>
+            <column name="value">PaymentCOVMXT2.selector</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">MX.Templates</column>
+            <column name="value">PaymentCOVMXSIX.selector</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">MX.Templates</column>
+            <column name="value">PaymentCOVMXCBPR.selector</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">MX.Templates</column>
+            <column name="value">PaymentCOVMXCHAPS.selector</column>
+        </row>        
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.008.001</column>
+			<column name="description">06</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.009.001</column>
+			<column name="description">06</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.008.001.T2</column>
+			<column name="description">08</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.008.001.CBPR</column>
+			<column name="description">08</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.009.001.T2</column>
+			<column name="description">08</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.009.001.CBPR</column>
+			<column name="description">08</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">camt.050.001.T2</column>
+			<column name="description">05</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.004.001.T2</column>
+			<column name="description">09</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.004.001.CBPR</column>
+			<column name="description">09</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.010.001.T2</column>
+			<column name="description">03</column>
+		</row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">workflowRuleTransfer</column>
+            <column name="value">CheckTarget2Valid</column>
+            <column name="description"></column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">leAttributeType</column>
+            <column name="value">SIXClrSysID_Code</column>
+            <column name="description"></column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">leAttributeType</column>
+            <column name="value">SIXMmbId_ID</column>
+            <column name="description"></column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">sdiAttribute</column>
+            <column name="value">SIXInstructionToRTGS</column>
+            <column name="description"></column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">ExternalMessageField.MessageMapper</column>
+            <column name="value">PACS009</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">ExternalMessageField.MessageMapper</column>
+            <column name="value">PACS008</column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">sdiAttribute</column>
+            <column name="value">IBAN.Intermediary</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">sdiAttribute</column>
+            <column name="value">IBAN.Intermediary2</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">sdiAttribute</column>
+            <column name="value">IBAN.Agent</column>
+            <column name="description"></column>
+        </row>
+        <row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates.COV</column>
+			<column name="value">pacs.009.001.COV.T2</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates.COV</column>
+			<column name="value">pacs.009.001.COV.CBPR</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates.COV</column>
+			<column name="value">pacs.009.001.COV.CHAPS</column>
+		</row>		
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">pacs.008.001.CBPR</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">pacs.004.001.CBPR</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">pacs.009.001.CBPR</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">LinkedMessageIdentifier</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">LinkedMessageType</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">LinkedInstructionId</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">LinkedEndToEndId</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">LinkedUETR</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">LinkedInterbankSettleAmount</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">LinkedInterbankSettleDate</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">ReturnInstructingAgentBIC</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">ReturnInstructedAgentBIC</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">ReturnReason</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">ReturnAdditionalInformation</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LinkedMessageIdentifier</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LinkedMessageType</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LinkedInstructionId</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LinkedEndToEndId</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LinkedUETR</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LinkedInterbankSettleAmount</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">tradeKeyword</column>
+			<column name="value">LinkedInterbankSettleDate</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ReturnInstructingAgentBIC</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ReturnInstructedAgentBIC</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ReturnReason</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">tradeKeyword</column>
+			<column name="value">ReturnAdditionalInformation</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">PropagateTradeKeyword</column>
+			<column name="value">LinkedMessageIdentifier</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">PropagateTradeKeyword</column>
+			<column name="value">LinkedMessageType</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">PropagateTradeKeyword</column>
+			<column name="value">LinkedInstructionId</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">PropagateTradeKeyword</column>
+			<column name="value">LinkedEndToEndId</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">PropagateTradeKeyword</column>
+			<column name="value">LinkedUETR</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">PropagateTradeKeyword</column>
+			<column name="value">LinkedInterbankSettleAmount</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">PropagateTradeKeyword</column>
+			<column name="value">LinkedInterbankSettleDate</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">PropagateTradeKeyword</column>
+			<column name="value">ReturnInstructingAgentBIC</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">PropagateTradeKeyword</column>
+			<column name="value">ReturnInstructedAgentBIC</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">PropagateTradeKeyword</column>
+			<column name="value">ReturnReason</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">PropagateTradeKeyword</column>
+			<column name="value">ReturnAdditionalInformation</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.Versions</column>
+			<column name="value">pacs.008.001.CBPR</column>
+			<column name="description">02</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.Versions</column>
+			<column name="value">pacs.004.001.CBPR</column>
+			<column name="description">02</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.Versions</column>
+			<column name="value">pacs.009.001.CBPR</column>
+			<column name="description">02</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">SWIFT.Templates.GPI</column>
+			<column name="value">pacs.008.001.T2</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">SWIFT.Templates.GPI</column>
+			<column name="value">pacs.009.001.T2</column>
+		</row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">SWIFT.Templates.GPI</column>
+            <column name="value">pacs.009.001.CHAPS</column>
+        </row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">SWIFT.Templates.GPI</column>
+			<column name="value">pacs.009.001.COV.T2</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">SWIFT.Templates.GPI</column>
+			<column name="value">pacs.008.001.CBPR</column>
+		</row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">SWIFT.Templates.GPI</column>
+            <column name="value">pacs.008.001.CHAPS</column>
+        </row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">SWIFT.Templates.GPI</column>
+			<column name="value">pacs.009.001.CBPR</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">SWIFT.Templates.GPI</column>
+			<column name="value">pacs.009.001.COV.CBPR</column>
+		</row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">SWIFT.Templates.GPI</column>
+            <column name="value">pacs.009.001.COV.CHAPS</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.002.001.CBPR</column>
+			<column name="description">10</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.Versions</column>
+			<column name="value">pacs.002.001.CBPR</column>
+			<column name="description">02</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">pacs.002.001.CBPR</column>
+		</row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">function</column>
+            <column name="value">AddModifyValueDateControl</column>
+            <column name="description">Access permission to create and modify value date control config</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">function</column>
+            <column name="value">RemoveValueDateControl</column>
+            <column name="description">Access permission to remove value date control config</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">MessageIdentifier</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">messageType</column>
+            <column name="value">INC_PACS004</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">messageType</column>
+            <column name="value">INC_PACS002</column>
+            <column name="description"></column>
+        </row>        
+		<row cat="SWIFT MX Cash">
+            <column name="name">incomingType</column>
+            <column name="value">PACS004</column>
+            <column name="description">INC_PACS004</column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">incomingType</column>
+            <column name="value">PACS002</column>
+            <column name="description">INC_PACS002</column>
+        </row>        
+		<row cat="SWIFT MX Cash">
+            <column name="name">ExternalMessageField.MessageMapper</column>
+            <column name="value">PACS004</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">ExternalMessageField.MessageMapper</column>
+            <column name="value">PACS002</column>
+            <column name="description"></column>
+        </row>        
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">BusinessMessageIdentifier</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">LinkedOriginalMsgId</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">LinkedMessageType</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">LinkedInstructionId</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">LinkedEndToEndId</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">LinkedUETR</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">LinkedSettlementAmount</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">LinkedSettlementAmountCcy</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">LinkedSettlementDate</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">ReturnedAmount</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">ReturnedAmountCcy</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">ReturnSettlementDate</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">InstructingAgentBIC</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">InstructedAgentBIC</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">ReturnReasonCode</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">ReturnReasonCodeDescription</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">AdditionalInformation</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TransactionStatus</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">StatusReasonInformation</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">ClearingSystemReference</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MsgAttributes</column>
+            <column name="value">EffectiveInterbankSettlementDate</column>
+            <column name="description"></column>
+        </row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">pacs.009.001.T2</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">pacs.008.001.T2</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">pacs.004.001.T2</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">workflowRuleTransfer</column>
+			<column name="value">RemoveXferAttributes</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">workflowRuleTransfer</column>
+			<column name="value">AddRecallDateAttribute</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">workflowRuleTransfer</column>
+			<column name="value">AddRequestDateAttribute</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">workflowRuleMessage</column>
+            <column name="value">PACS002Rejection</column>
+            <column name="description"></column>
+        </row>		
+		<row cat="SWIFT MX Cash">
+			<column name="name">transferAction</column>
+			<column name="value">RETURN</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">ReturnTransfer</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">PACS004Direction</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">ReturnedXferId</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">MessageIdentifier</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">MessageType</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">InstructionId</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">EndToEndId</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">UETR</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">InterbankSettleAmount</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">InterbankSettleDate</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">InstructingAgentBIC</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">InstructedAgentBIC</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">ReturnedTransfer</column>
+			<column name="description"></column>
+		</row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">SimpleTransfer.subtype</column>
+            <column name="value">RETURN</column>
+            <column name="description"></column>
+        </row>	
+	<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">camt.057.001.CBPR</column>
+			<column name="description">06</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.Versions</column>
+			<column name="value">camt.057.001.CBPR</column>
+			<column name="description">02</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">camt.057.001.CBPR</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.008.001.CHAPS</column>
+			<column name="description">08</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.Versions</column>
+			<column name="value">pacs.008.001.CHAPS</column>
+			<column name="description">02</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">pacs.008.001.CHAPS</column>
+		</row>	
+		<row cat="SWIFT MX Cash">
+            <column name="name">workflowRuleMessage</column>
+            <column name="value">HandleMXReceipt</column>
+            <column name="description"></column>
+        </row>	
+		<row cat="SWIFT MX Cash">
+            <column name="name">workflowRuleMessage</column>
+            <column name="value">HandleMXRsltnOfInvstgtn</column>
+            <column name="description"></column>
+        </row>                
+        <row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.009.001.CHAPS</column>
+			<column name="description">08</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.Versions</column>
+			<column name="value">pacs.009.001.CHAPS</column>
+			<column name="description">02</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">pacs.009.001.CHAPS</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.004.001.CHAPS</column>
+			<column name="description">09</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.Versions</column>
+			<column name="value">pacs.004.001.CHAPS</column>
+			<column name="description">02</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">pacs.004.001.CHAPS</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">leAttributeType</column>
+            <column name="value">CHAPSClrSysID_Code</column>
+            <column name="description"></column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">leAttributeType</column>
+            <column name="value">CHAPSMmbId_ID</column>
+            <column name="description"></column>
+        </row>	
+	<row cat="SWIFT MX Cash">
+            <column name="name">messageType</column>
+            <column name="value">INC_CAMT054</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">incomingType</column>
+            <column name="value">CAMT054</column>
+            <column name="description">INC_CAMT054</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">ExternalMessageField.MessageMapper</column>
+            <column name="value">CAMT054</column>
+        </row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">camt.054.001.CBPR</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">camt.054.001.T2</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">camt.054.001.SIX</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">MX.Templates</column>
+            <column name="value">PaymentCOVMXMEPS.selector</column>
+        </row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">pacs.009.001.MEPS</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates.COV</column>
+			<column name="value">pacs.009.001.COV.MEPS</column>
+		</row>	
+		<row cat="SWIFT MX Cash">
+			<column name="name">SWIFT.Templates.GPI</column>
+			<column name="value">pacs.009.001.MEPS</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">SWIFT.Templates.GPI</column>
+			<column name="value">pacs.009.001.COV.MEPS</column>
+		</row>
+		 <row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.009.001.MEPS</column>
+			<column name="description">08</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.Versions</column>
+			<column name="value">pacs.009.001.MEPS</column>
+			<column name="description">02</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.Versions</column>
+			<column name="value">pacs.004.001.SIX</column>
+			<column name="description">01</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">pacs.004.001.SIX</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">messageType</column>
+            <column name="value">INC_PACS010</column>
+        </row>
+		<row cat="SWIFT MX Cash">
+            <column name="name">incomingType</column>
+            <column name="value">PACS010</column>
+            <column name="description">INC_PACS010</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">ExternalMessageField.MessageMapper</column>
+            <column name="value">PACS010</column>
+        </row>
+	<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.BusinessService.Versions</column>
+			<column name="value">pacs.009.001.CHAPS</column>
+			<column name="description">01</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.BusinessService.Versions</column>
+			<column name="value">pacs.008.001.CHAPS</column>
+			<column name="description">01</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.BusinessService.Versions</column>
+			<column name="value">pacs.004.001.CHAPS</column>
+			<column name="description">01</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">camt.050.001.SIX</column>
+			<column name="description">03.ch.01</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.004.001.SIX</column>
+			<column name="description">02.ch.02</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.008.001.SIX</column>
+			<column name="description">02.ch.02</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.009.001.SIX</column>
+			<column name="description">02.ch.02</column>
+		</row>
+		
+    <row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">camt.050.001.SIX</column>
+    </row>
+    <row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">pacs.008.001.MEPS</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">SWIFT.Templates.GPI</column>
+			<column name="value">pacs.008.001.COV.MEPS</column>
+		</row>
+		 <row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">pacs.008.001.MEPS</column>
+			<column name="description">08</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.Versions</column>
+			<column name="value">pacs.008.001.MEPS</column>
+			<column name="description">02</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">iso20022Type</column>
+			<column name="value">PaymentCancellationRejection</column>
+		</row>		
+		<row cat="SWIFT MX Cash">
+			<column name="name">iso20022Type</column>
+			<column name="value">InvestigationExecutionConf</column>
+		</row>		
+		<row cat="SWIFT MX Cash">
+			<column name="name">iso20022Type</column>
+			<column name="value">ReturnReason</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">MXJurisdiction</column>
+		</row>		
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">ConfirmationStatus</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">CancellationReason</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">CancellationReasonProp</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">XferAttributes</column>
+			<column name="value">CancelAdditionalInformation</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">transferAction</column>
+			<column name="value">REJECT_REQUEST</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">camt.029.001.SIX</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">camt.029.001.SIX</column>
+			<column name="description">03.ch.02</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">camt.029.001.MEPS</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">camt.029.001.MEPS</column>
+			<column name="description">09</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.Versions</column>
+			<column name="value">camt.029.001.MEPS</column>
+			<column name="description">02</column>
+		</row>				
+		<row cat="SWIFT MX Cash">
+			<column name="name">domainName</column>
+			<column name="value">jurisdiction</column>
+			<column name="description">Used to populate Juridisction drop down in ISO20022 window</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">domainName</column>
+			<column name="value">MXRsltnOfInvstgtn.Action</column>
+			<column name="description">Used to customize action while handling incoming camt 029</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MXRsltnOfInvstgtn.Action</column>
+			<column name="value">CNCL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MXRsltnOfInvstgtn.Action</column>
+			<column name="value">RJCR</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">camt.029.001.MEPS</column>
+			<column name="description">09</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">transferAction</column>
+			<column name="value">RECALL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">iso20022Type</column>
+			<column name="value">CancelReason</column>
+		</row>		
+		<row cat="SWIFT MX Cash">
+			<column name="name">iso20022Type</column>
+			<column name="value">CancelReasonProp</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">iso20022Type</column>
+			<column name="value">CancellationReason</column>
+		</row>					
+		<row cat="SWIFT MX Cash">
+			<column name="name">iso20022Type</column>
+			<column name="value">CancellationReasonProp</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">camt.056.001.MEPS</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">camt.056.001.MEPS</column>
+			<column name="description">08</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.Versions</column>
+			<column name="value">camt.056.001.MEPS</column>
+			<column name="description">02</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">camt.056.001.SIX</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">camt.056.001.SIX</column>
+			<column name="description">01.ch.01</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.BAH.Versions</column>
+			<column name="value">camt.056.001.SIX</column>
+			<column name="description">01</column>
+		</row>
+		  <row cat="SWIFT MX Cash">
+            <column name="name">messageType</column>
+            <column name="value">INC_CAMT056</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">incomingType</column>
+            <column name="value">CAMT056</column>
+            <column name="description">INC_CAMT056</column>
+        </row>
+        <row cat="SWIFT MX Cash">
+            <column name="name">ExternalMessageField.MessageMapper</column>
+            <column name="value">CAMT056</column>
+        </row>	
+        <row cat="SWIFT MX Cash">
+			<column name="name">domainName</column>
+			<column name="value">MXPmtCancellationMessage.Action</column>
+			<column name="description">Used to customize action while handling incoming camt 056</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MXPmtCancellationMessage.Action</column>
+			<column name="value">REQUEST</column>
+			<column name="description"></column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Templates</column>
+			<column name="value">camt.056.001.T2</column>
+		</row>
+		<row cat="SWIFT MX Cash">
+			<column name="name">MX.Versions</column>
+			<column name="value">camt.056.001.T2</column>
+			<column name="description">08</column>
+		</row>	
+    </table>
+</database>

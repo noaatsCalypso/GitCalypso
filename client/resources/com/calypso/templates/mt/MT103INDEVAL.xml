@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 103: Single Customer Credit Transfer -->
+<SwiftMsgDef>
+	<Name>MT103</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Sender's Reference" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Time Indication" tag=":13C:" format="/8c/4!n1!x4!n" value="TIME_INDICATION" modes="OOO"/>
+		<SwiftField name="Bank Operation Code" tag=":23B:" format="4!c" value="BANK_OP_CODE" modes="MMM"/>
+		<SwiftField name="Instruction Code" tag=":23E:" format="4!c[/30x]" value="INSTRUCTION_CODE" modes="OOO"/>
+		<SwiftField name="Transaction Type Code" tag=":26T:" value="TRADE_KEYWORD_26T" format="3!c" modes="OOO"/>
+		<SwiftField name="Value Date/Currency/Interbank Settled Amount" tag=":32A:" format="6!n3!a15d" value="DATE_CCY_AMOUNT" modes="MMM"/>
+		<SwiftField name="Currency/Instructed Amount" tag=":33B:" format="3!a15d" value="CCY_AMOUNT" modes="OOO"/>
+		<SwiftField name="Exchange Rate" tag=":36:" format="12d" value="EXCHANGE_RATE" modes="OOO"/>
+		<SwiftField name="Ordering Customer" tag=":50a:" value="ORDERING_CUSTOMER" modes="MMM">
+			<SwiftFieldOption letter="A" format="[/34x\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="K" format="[/34x\n]4*35x" />
+			<SwiftFieldOption letter="F" format="5*35x" />
+		</SwiftField>
+		<SwiftField name="Ordering Institution" tag=":52a:" value="PO_BENEFICIARY" condition="isPOBeneficiaryFinancial()" modes="---">	
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Sender's Correspondent" tag=":53a:" value="PO_DELIVERY_AGENT" modes="+++" condition = "isCoverMessageRequired()">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Sender's Correspondent" tag=":53B:" value="AGENT_ACCOUNT" modes="---" condition = "!isCoverMessageRequired() AND hasMultiAccountsWithAgent">
+		    <SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />		    
+		</SwiftField>
+		<SwiftField name="Receiver's Correspondent" tag=":54a:" value="CPTY_INTERMEDIARY2" modes="---" condition = "hasIntermediary2()">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Receiver's Correspondent" tag=":54a:" value="CPTY_INTERMEDIARY" modes="---" condition = "isCoverMessageRequired() AND !hasIntermediary2()">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Receiver's Correspondent" tag=":54A:" value="ACCOUNT_HOLDER" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" modes="---" condition = "hasTARGET2Correspondent()"/>
+		<SwiftField name="Third Reimbursement Institution" tag=":55a:" value="CPTY_INTERMEDIARY" modes="---" condition = "isCoverMessageRequired() AND hasIntermediary2() AND isCoverMessageToAgent()">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Intermediary Institution" tag=":56a:" value="CPTY_INTERMEDIARY" modes="---" condition = "!isCoverMessageRequired()" hasValue="LEDifferentFromReceiver">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="C" format="/34x" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Account With Institution" tag=":57a:" value="CPTY_RECEIVING_AGENT" modes="---" condition = "!isMEPS() AND !isZAR() AND isAgentNotBeneficiaryOrReceiver()" hasValue="LEDifferentFromReceiver">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+			<SwiftFieldOption letter="C" format="/34x" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Account With Institution" tag=":57a:" value="CPTY_RECEIVING_AGENT" modes="---" condition = "!isMEPS() AND !isZAR() AND !isAgentNotBeneficiaryOrReceiver()" hasField = ":56A:">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+			<SwiftFieldOption letter="C" format="/34x" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Account With Institution" tag=":57a:" value="CPTY_RECEIVING_AGENT" modes="---" condition = "isMEPS() OR isZAR()">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+			<SwiftFieldOption letter="C" format="/34x" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Beneficiary Customer" tag=":59a:" value="CPTY_BENEFICIARY" modes="OOO">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="" format="[/34x\n]4*35x" />
+			<SwiftFieldOption letter="F" format="5*35x" />
+		</SwiftField>
+		<SwiftField name="Remittance Information" tag=":70:" value="REMITTANCE_INFO" format="4*35x" modes="OOO"/>
+		<SwiftField name="Details of Charges" tag=":71A:" value="DETAILS_CHARGES" format="3!a" modes="MMM"/>
+		<SwiftSequence name="C:Settlement Details" modes="OOO" iterator="SenderFeesBeneficiaryCharge">
+			<SwiftField name="Sender's Charges" tag="71F:" value="SENDER_CHARGE" format="3!a15d" modes="OOO"/>
+		</SwiftSequence>
+		<SwiftField name="Receiver's Charges" tag=":71G:" value="RECEIVER_CHARGES" format="3!a15d" modes="OOO"/>
+		<SwiftField name="Sender to Receiver Information" tag=":72:" value="ADDITIONAL_INFO" format="6*35x" modes="OOO"/>
+	</SwiftSequence>
+</SwiftMsgDef>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 362: Interest Rate Reset/Advice of Payment -->
+<SwiftMsgDef>
+	<Name>MT362</Name>
+	<CancellationName>MT3xC</CancellationName>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" openTag=":15A:" modes="MMM">
+		<SwiftField name="Sender's Reference" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Related Reference" tag=":21:" format="16x" value="RELATED_REF" modes="OOO"/>
+		<SwiftField name="Type of Operation" tag=":22A:" format="4!c" value="TYPE_OPERATION" modes="MMM"/>
+		<SwiftField name="Scope of Operation" tag=":94A:" format="4!c" value="SCOPE_OPERATION" modes="OOO"/>
+		<SwiftField name="Common Reference" tag=":22C:" format="4!a2!c4!n4!a2!c" value="COMMON_REF" modes="MMM"/>
+		<SwiftField name="Identification of the Swap" tag=":23A:" format="10a/5a" value="SWAP_TYPE" modes="MMM"/>
+		<SwiftField name="Contract Number Party A" tag=":21N:" format="16x" value="TRADE_ID" modes="MMM"/>
+		<SwiftField name="Contract Number Party B" tag=":21B:" format="16x" value="TRADE_EXTERNALREFERENCE" modes="OOO"/>
+		<SwiftField name="Effective Date" tag=":30V:" format="8!n" value="START_DATE" modes="MMM"/>
+		<SwiftField name="Termination Date" tag=":30P:" format="8!n" value="MATURITY_DATE" modes="MMM"/>
+		<SwiftField name="Party A" tag=":82a:" value="PARTY_A" modes="MMM">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Party B" tag=":87a:" value="PARTY_B" modes="MMM">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Contact Information" tag=":29A:" value="CONTACT_INFO" format="4*35x" modes="OOO"/>
+		<SwiftField name="Sender to Receiver Information" tag=":72:" format="6*35x" value="SENDER_TO_RECEIVER" modes="OOO"/>
+	</SwiftSequence>
+	<SwiftSequence name="B:Interest Rate/Principal Payable by Party B" condition="hasPartyBRateResetFlow" openTag=":15B:" modes="---">
+		<SwiftField name="Calculation Notional Currency and Amount" tag=":33F:" format="3!a15d" value="PB_NOTIONAL_AMOUNT" modes="MMM"/>
+		<SwiftField name="Period Start Date" tag=":30X:" format="8!n" value="PB_PERIOD_START" modes="MMM"/>
+		<SwiftField name="Period End Date" tag=":30Q:" format="8!n" value="PB_PERIOD_END" modes="OOO"/>
+		<SwiftField name="Reset Rate" tag=":37G:" format="[N]12d" value="PB_RESET_RATE" modes="MMM"/>
+		<SwiftField name="Cap Rate" tag=":37V:" format="[N]12d" value="CAP_RATE" modes="OOO"/>
+		<SwiftField name="Floor Rate" tag=":37G:" format="[N]12d" value="FLOOR_RATE" modes="OOO"/>
+		<SwiftField name="Spread" tag=":37R:" format="[N]12d" value="PB_SPREAD" modes="MMM"/>
+		<SwiftField name="Total Rate" tag=":37M:" format="[N]12d" value="PB_TOTAL_RATE" modes="MMM"/>
+		<SwiftField name="Payment Date" tag=":30F:" format="8!n" value="PB_PAYMENT_DATE" modes="MMM"/>
+		<SwiftField name="Currency, Interest Amount" tag=":32H:" format="[N]3!a15d" value="PB_INTEREST_AMOUNT" modes="OOO"/>
+`		<SwiftField name="Currency, Principal Amount" tag=":33E:" format="3!a15d" value="PB_PRINCIPAL_AMOUNT" modes="OOO"/>
+	</SwiftSequence>
+	<SwiftSequence name="C:(Net) Amount(s) Payable by Party B" condition="isPartyBPayment()" openTag=":15C:" modes="---">
+		<SwiftField name="Number of Repetitions" tag=":18A:" format="5n" value="PB_PERIOD_COUNT" modes="+++"/>
+		<SwiftField name="Payment Date" tag=":30F:" format="8!n" value="PB_PERIOD_DATE" modes="MMM"/>
+		<SwiftField name="Currency, Payment Amount" tag=":32M:" format="3!a15d" value="PB_PERIOD_AMOUNT" modes="MMM"/>
+		<SwiftField name="Delivery Agent" tag=":53a:" value="CPTY_DELIVERY_AGENT" condition="isTransferPaymentBased()" modes="---">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Intermediary" tag=":56a:" value="CPTY_INTERMEDIARY" condition="isTransferPaymentBased()" modes="---">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Receiving Agent" tag=":57a:" value="PO_RECEIVING_AGENT" condition="isTransferPaymentBased()" modes="+++">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Receiving Agent" tag=":57D:" value="NONE" format="[[/1!a][/34x]\n]4*35x" condition="!isTransferPaymentBased()" modes="+++"/>
+	</SwiftSequence>
+	<SwiftSequence name="D:Interest Rate/Principal Payable by Party A" condition="hasPartyARateResetFlow" openTag=":15D:" modes="---">
+		<SwiftField name="Calculation Notional Currency and Amount" tag=":33F:" format="3!a15d" value="PA_NOTIONAL_AMOUNT" modes="MMM"/>
+		<SwiftField name="Period Start Date" tag=":30X:" format="8!n" value="PA_PERIOD_START" modes="MMM"/>
+		<SwiftField name="Period End Date" tag=":30Q:" format="8!n" value="PA_PERIOD_END" modes="OOO"/>
+		<SwiftField name="Reset Rate" tag=":37G:" format="[N]12d" value="PA_RESET_RATE" modes="MMM"/>
+		<SwiftField name="Cap Rate" tag=":37V:" format="[N]12d" value="CAP_RATE" modes="OOO"/>
+		<SwiftField name="Floor Rate" tag=":37G:" format="[N]12d" value="FLOOR_RATE" modes="OOO"/>
+		<SwiftField name="Spread" tag=":37R:" format="[N]12d" value="PA_SPREAD" modes="MMM"/>
+		<SwiftField name="Total Rate" tag=":37M:" format="[N]12d" value="PA_TOTAL_RATE" modes="MMM"/>
+		<SwiftField name="Payment Date" tag=":30F:" format="8!n" value="PA_PAYMENT_DATE" modes="MMM"/>
+		<SwiftField name="Currency, Interest Amount" tag=":32H:" format="[N]3!a15d" value="PA_INTEREST_AMOUNT" modes="OOO"/>
+		<SwiftField name="Currency, Principal Amount" tag=":33E:" format="3!a15d" value="PA_PRINCIPAL_AMOUNT" modes="OOO"/>
+	</SwiftSequence>
+	<SwiftSequence name="E:(Net) Amount(s) Payable by Party A" condition="isPartyAPayment()" openTag=":15E:" modes="---">
+		<SwiftField name="Number of Repetitions" tag=":18A:" format="5n" value="PA_PERIOD_COUNT"  modes="MMM"/>
+		<SwiftField name="Payment Date" tag=":30F:" format="8!n" value="PA_PERIOD_DATE" modes="MMM"/>
+		<SwiftField name="Currency, Payment Amount" tag=":32M:" format="3!a15d" value="PA_PERIOD_AMOUNT" modes="MMM"/>
+		<SwiftField name="Delivery Agent" tag=":53a:" value="PO_DELIVERY_AGENT" condition="isTransferPaymentBased()" modes="---">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Intermediary" tag=":56a:" value="PO_INTERMEDIARY" condition="isTransferPaymentBased()"  modes="---">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Receiving Agent" tag=":57a:" value="CPTY_RECEIVING_AGENT" condition="isTransferPaymentBased()" modes="+++">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Receiving Agent" tag=":57D:" value="NONE" format="[[/1!a][/34x]\n]4*35x" condition="!isTransferPaymentBased()" modes="+++"/>		
+	</SwiftSequence>
+</SwiftMsgDef>

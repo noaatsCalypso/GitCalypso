@@ -1,0 +1,35 @@
+#File Watcher Properties
+#This is the folder where we place the files.
+fileDir=C:\\uploader
+interval=10000
+
+#This is the folder where output files will be published when engine is running in TEST MODE.
+TestResultLocation =C:\\uploader\\publish
+
+#This tells the file watcher to call the CSVUploader
+fileWatcherType=mw
+uploadSource=MW
+uploadFormat=SWML
+
+#This tells the file watcher to monitor CSV & XML Files only
+fileFilter=xml
+
+#Valid combination for uploadMode and persistMessage
+#
+#					|------------------------------------------------------------------------|
+#					|						PERSIST MESSAGES							     |
+#	|---------------|-------------------|-------------------------------|--------------------|
+#	|				|		None		|		Failure					|		All			 |
+#	|---------------|-------------------|-------------------------------|--------------------|
+#	| Local			|	No BOMessage	|  BOMessage will be created	|  BOMessage will be |
+#	|				|	will be created | only in case of failure		|  always created    |
+#	|---------------|-------------------|-------------------------------|--------------------|
+#	| BOMessage		|	Not Supported	| 		Not Supported			|	BOMessage will be|
+#	|				|					|								|	always created	 |
+#	|---------------|-------------------|-------------------------------|--------------------|
+#
+#	For better performance it is recommended to use uploadMode as Local with persistMessages as None.
+#
+
+uploadMode=Local
+persistMessages=Failure

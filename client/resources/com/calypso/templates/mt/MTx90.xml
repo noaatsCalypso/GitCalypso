@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type x90: Advice of Charges, Interest and Other Adjustments -->
+<SwiftMsgDef>
+    <Name>MTx90</Name>
+    <ModeSelectionList>
+        <ModeSelection qualifier="NEW" />
+        <ModeSelection qualifier="AMEND" />
+        <ModeSelection qualifier="CANCEL" />
+    </ModeSelectionList>
+    <SwiftSequence name="A:General Information" modes="MMM">
+        <SwiftField name="Sender's Reference" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM" />
+        <SwiftField name="Related Reference" tag=":21:" format="16x" value="MESSAGE_LINKEDID" modes="MMM" />
+	<SwiftField name="Account Identification" tag=":25:" format="35x" value="ACCOUNT_IDENTIFICATION" modes="MMM" />
+	<SwiftField name="Value Date, Currency Code, Amount" tag=":32a:" value="DATE_CCY_AMOUNT" modes="MMM">
+		<SwiftFieldOption letter="C" format="6!n3!a15d" />
+		<SwiftFieldOption letter="D" format="6!n3!a15d" />
+	</SwiftField>
+        <SwiftField name="Ordering Institution" tag=":52a:" value="PO_BENEFICIARY" condition="isPOBeneficiaryFinancial()" modes="---">
+		<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+	</SwiftField>
+        <SwiftField name="Details of Charges" tag=":71B:" value="DETAILS_CHARGES" format="6*35x" modes="MMM" />
+        <SwiftField name="Sender to Receiver Information" tag=":72:" value="ADDITIONAL_INFO" format="6*35x" modes="OOO" />
+    </SwiftSequence>
+</SwiftMsgDef>

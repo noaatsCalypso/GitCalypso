@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 102: Multiple Customer Credit Transfer -->
+<SwiftMsgDef>
+	<Name>MT102</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="File Reference" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Bank Operation Code" tag=":23:" format="6a" value="BANK_OP_CODE" modes="MMM"/>
+		<SwiftField name="Ordering Customer" tag=":50a:" value="PO_BENEFICIARY" format="[/34x\n]4!a2!a2!c[3!c]" condition="!isOrdererFinancial()" modes="+++">
+			<SwiftFieldOption letter="A" format="[/34x\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="F" format="5*35x" />
+		</SwiftField>
+		<SwiftField name="Ordering Institution" tag=":52a:" value="PO_BENEFICIARY" condition="isPOBeneficiaryFinancial()" modes="---">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		</SwiftField>
+		<SwiftField name="Transaction Type Code" tag=":26T:" value="TRADE_KEYWORD_26T" format="3!c" modes="OOO"/>
+		<SwiftField name="Regulatory Reporting" tag=":77B:" value="REGULATORY_REPORTING" format="3*35x" modes="OOO"/>
+		<SwiftField name="Details of Charges" tag=":71A:" value="DETAILS_CHARGES" format="3!a" modes="OOO"/>
+		<SwiftField name="Exchange Rate" tag=":36:" value="MSGGRP_EXCHANGE_RATE" format="12d" modes="OOO"/>
+	</SwiftSequence>
+	<SwiftSequence name="B:Transaction Details" modes="MMM" iterator="MessageGroup">
+		<SwiftField name="Transaction Reference" tag=":21:" format="16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Transaction Amount" tag=":32B:" format="3!a15d" value="CCY_AMOUNT" modes="MMM"/>
+		<SwiftField name="Ordering Customer" tag=":50A:" value="PO_BENEFICIARY" format="[/34x\n]4!a2!a2!c[3!c]" condition="!isOrdererFinancial() AND hasSwiftCodePOBeneficiary()" modes="+++"/>
+		<SwiftField name="Ordering Institution" tag=":52a:" value="PO_BENEFICIARY" condition="isPOBeneficiaryFinancial()" modes="---">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		</SwiftField>
+		<SwiftField name="Account With Institution" tag=":57a:" value="CPTY_RECEIVING_AGENT" modes="OOO">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		</SwiftField>
+		<SwiftField name="Beneficiary Customer" tag=":59a:" value="CPTY_BENEFICIARY" modes="OOO">
+			<SwiftFieldOption letter="A" format="[/34x\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="" format="[/34x\n]4*35x" />
+			<SwiftFieldOption letter="F" format="5*35x" />
+		</SwiftField>
+		<SwiftField name="Remittance Information" tag=":70:" value="REMITTANCE_INFO" format="4*35x" modes="OOO"/>
+		<SwiftField name="Transaction Type Code" tag=":26T:" value="TRADE_KEYWORD_26T" format="3!c" modes="OOO"/>
+		<SwiftField name="Regulatory Reporting" tag=":77B:" value="REGULATORY_REPORTING" format="3*35x" modes="OOO"/>
+		<SwiftField name="Currency/Instructed Amount" tag=":33B:" value="CCY_INSTRUCTED_AMT" format="3!a15d" modes="OOO"/>
+		<SwiftField name="Details of Charges" tag=":71A:" value="DETAILS_CHARGES" format="3!a" modes="OOO"/>
+		<SwiftSequence name="C:Settlement Details" modes="OOO" iterator="SenderFees">
+			<SwiftField name="Sender's Charges" tag="71F:" value="SENDER_CHARGE" format="3!a15d" modes="OOO"/>
+		</SwiftSequence>
+		<SwiftField name="Receiver's Charges" tag=":71G:" value="RECEIVER_CHARGES" format="3!a15d" modes="OOO"/>
+		<SwiftField name="Exchange Rate" tag=":36:" value="EXCHANGE_RATE" format="12d" modes="OOO"/>
+	</SwiftSequence>
+	<SwiftSequence name="C:Settlement Details" modes="MMM">
+		<SwiftField name="Value Date, Currency Code, Amount" tag=":32A:" value="MSGGRP_VALDATE_CCY_AMT" format="6!n3!a15d" modes="MMM"/>
+		<SwiftField name="Sum of Amounts" tag=":19:" value="MSGGRP_SUM_OF_AMOUNTS" format="17d" modes="OOO"/>
+		<SwiftField name="Sum of Receiver's Charges" tag=":71G:" value="MSGGRP_RECEIVER_CHARGES" format="3!a15d" modes="OOO"/>
+		<SwiftSequence name="C:Settlement Details" modes="OOO" iterator="TimeIndication">
+			<SwiftField name="Time Indication" tag=":13C:" value="TIME_INDICATION" format="/8c/4!n1!x4!n" modes="OOO"/>
+		</SwiftSequence>
+		<SwiftField name="Sender's Correspondent" tag=":53a:" value="PO_DELIVERY_AGENT" modes="OOO">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="C" format="/34x" />
+		</SwiftField>
+		<SwiftField name="Receiver's Correspondent" tag=":54a:" value="CPTY_DELIVERY_AGENT" modes="OOO">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		</SwiftField>
+		<SwiftField name="Sender to Receiver Information" tag=":72:" value="ADDITIONAL_INFO" format="6*35x" modes="OOO"/>
+	</SwiftSequence>
+</SwiftMsgDef>

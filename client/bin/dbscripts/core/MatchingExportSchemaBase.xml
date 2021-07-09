@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="engine_config" xmlns="">
+	<row cat="Required">
+	  <column name="engine_id">engine_config.max(engine_id)+1@1=1|engine_name='MatchingExportEngine'</column>
+	  <column name="engine_name">MatchingExportEngine</column>
+	  <column name="engine_comment">MatchingExportEngine</column>
+	</row>
+    </table>
+</database>
+
+
+

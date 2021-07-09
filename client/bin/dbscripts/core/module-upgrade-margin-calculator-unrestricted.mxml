@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><module target-version="8.7.1" name="margin-calculator-unrestricted" min-version="1.0.0">
+  <schema filename="MarginCalculatorUnrestrictedSchemaBase.xml"/>
+  <schema filename="MarginCalculatorUnrestrictedSchemaData.xml"/>
+  <schema filename="MarginCalculatorBilateralMarginSchemaData.xml"/>
+  <schema filename="MarginCalculatorSchemaBase.xml"/>
+  <schema filename="MarginCalculatorSchemaData.xml"/>
+  <upgrade version="3.2.0">
+    <step name="MGNC-102" version="2"/>
+  </upgrade>
+  <upgrade version="3.5.0">
+    <step name="MGNC-148" version="1"/>
+  </upgrade>
+  <upgrade version="3.6.0">
+    <step name="MGNC-169" version="1"/>
+  </upgrade>
+  <upgrade version="4.4.0">
+    <step name="MGNC-365" version="2"/>
+  </upgrade>
+  <upgrade version="4.5.0">
+    <step name="MGNC-390" version="1"/>
+    <step name="MGNC-400" version="1"/>
+    <step name="MGNC-417" version="3"/>
+  </upgrade>
+  <upgrade version="4.7.0">
+    <step name="MGNC-416" version="1"/>
+    <step name="MGNC-416" version="2"/>
+    <step name="MGNC-416" version="3"/>
+  </upgrade>
+  <upgrade version="4.8.0">
+    <step name="MGNC-548" version="1"/>
+  </upgrade>
+  <upgrade version="4.10.0">
+    <step name="MGNC-676" version="1"/>
+  </upgrade>
+  <upgrade version="4.11.0">
+    <step name="MGNC-776" version="1"/>
+  </upgrade>
+  <upgrade version="5.0.0">
+    <step name="MGNC-432-ACC" version="1"/>
+    <step name="MGNC-432-RF" version="1"/>
+  </upgrade>
+  <upgrade version="5.3.0">
+    <step name="MGNC-986" version="1"/>
+    <step name="MGNC-1040" version="1"/>
+  </upgrade>
+  <upgrade version="5.4.0">
+    <step name="MGNC-451" version="1"/>
+  </upgrade>
+  <upgrade version="5.7.0">
+    <step name="MGNC-1178" version="1"/>
+  </upgrade>
+  <upgrade version="5.8.0">
+    <step name="MGNC-536" version="1"/>
+  </upgrade>
+  <upgrade version="6.2.0">
+    <step name="MGNC-1338" version="1"/>
+  </upgrade>
+  <upgrade version="7.5.0">
+    <step name="MGNC-1432" version="1"/>
+  </upgrade>
+  <upgrade version="7.6.0">
+    <step name="MGNC-1493" version="1"/>
+  </upgrade>
+  <upgrade version="7.6.7">
+    <step name="MGNC-1619" version="1"/>
+  </upgrade>
+  <upgrade version="7.7.0">
+    <step name="MGNC-1601" version="1"/>
+  </upgrade>
+  <upgrade version="8.2.0">
+    <step name="MGNC-1699" version="1"/>
+  </upgrade>
+  <upgrade version="8.6.0">
+    <step name="MGNC-1937" version="1"/>
+  </upgrade>
+</module>

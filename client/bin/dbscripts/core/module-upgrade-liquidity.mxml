@@ -1,0 +1,43 @@
+<module name="liquidity" min-version="1.0.0" target-version="16.1.0.75">
+	<schema filename="LiquiditySchemaBase.xml" />
+	<schema filename="LiquiditySchemaData.xml" />
+	<upgrade version="1.1.0">
+		<step name="LQDEV-396" version="1"/>
+	</upgrade>
+	<upgrade version="1.2.0">
+		<step name="LQDEV-524" version="1"/>
+	</upgrade>
+	<upgrade version="2.4.0">
+		<step name="LQDEV-906" version="1"/>
+		<step name="LIQ-1772" version="1"/>
+		<step name="LIQ-2415" version="1"/>
+	</upgrade>
+	<upgrade version="2.5.0">
+		<step name="LQDEV-926" version="1"/>
+	</upgrade>
+	<upgrade version="2.12.0">
+		<step name="LIQ-1335" version="1"/>
+	</upgrade>
+	<upgrade version="4.0.0">
+		<step name="LIQ-2821" version="1"/>
+		<step name="LIQ-3256" version="1"/>
+	</upgrade>
+	<upgrade version="4.0.6">
+		<step name="LIQ-3756" version="1"/>
+	</upgrade>			
+	<upgrade version="5.0.2">
+		<step name="LIQ-3850" version="1"/>
+	</upgrade>	
+	<upgrade version="6.0.0">
+		<step name="LIQ-4782" version="1"/>
+	</upgrade>	
+	<upgrade version="6.1.0">
+		<step name="LIQ-7125" version="1"/>
+	</upgrade>	
+	<upgrade version="8.31.0">
+		<step name="LIQ-7520" version="1"/>
+	</upgrade>
+	<upgrade version="8.32.0">
+		<step name="LIQ-7588" version="1"/>
+	</upgrade>
+</module>

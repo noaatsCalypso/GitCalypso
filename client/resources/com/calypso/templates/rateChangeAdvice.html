@@ -1,0 +1,38 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+<br><br>
+
+<table width=200px>
+<!--calypso>
+    inline "
+
+    <tr><td class='smallfont' width=100px>Advice Date:</td><td class='smallfont'>|DATE|</td></tr>
+    <tr><td class='smallfont'>Account Type:</td><td class='smallfont'>|CALL_ACCOUNT_TYPE|  //  |CALL_ACCOUNT_SUBTYPE|</td></tr>
+    <tr><td class='smallfont'>Account Number:</td><td class='smallfont'>|ACCOUNT_NAME|</td></tr>
+    <tr><td class='smallfont'>Account Currency:</td><td class='smallfont'>|TRANSFER_SETTLEMENTCCY|</td></tr>
+    <tr><td class='smallfont'>Current Balance:</td><td class='smallfont'> |ACCOUNT_ACTUALBALANCE|</td></tr>
+
+    ";
+</calypso-->
+</table>
+
+
+<p>With effect from |TRANSFER_VALUEDATE|, interest on the above account will be paid at the |TRANSFER_RateChangeName| rate of |TRANSFER_RateChangeValue|</p>
+
+<p>This rate is calculated as gross AER. 'Gross' is the interest paid before the deduction of
+tax at the standard rate. 'AER' stands for the Annual Equivalent Rate and illustrates what
+the interest rate would be if interest was paid and compounded once a year.</p>
+
+
+<p>Should you have any questions regarding this interest rate advice, please contact your
+personal Client Services team (see above).</p>
+
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

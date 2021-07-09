@@ -1,0 +1,129 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+
+<h3 align="center">BOND TOTAL RETURN SWAP TRANSACTION SUPPLEMENT</h3>
+<p>
+	This Transaction Supplement is entered into between |SENDER_FULL_NAME| (&quot;Party A&quot;) and |RECEIVER_FULL_NAME| (&quot;Party B&quot;) on the Trade Date specified below.
+	The purpose of this communication is to confirm the terms and conditions of the Bond Total Return Swap Transaction entered into between Party A and Party B on the Trade Date specified below (the &quot;Transaction&quot;).  
+	This Transaction Supplement is entered into under the 2007 Master Corporate Bond Total Return Swap Confirmation Agreement dated as of |MASTER_CONFIRMATION_DATE| between us, as may be amended from time to time, and, together with the 2007 Master Corporate Bond Total Return Swap Confirmation Agreement and the Convertible Bond TRS General Terms Confirmation attached thereto, constitutes a "Confirmation" as referred to in the Master Agreement between the parties. 
+	The terms of the Transaction to which this Transaction Supplement relates are as follows:
+</p>
+
+<!--1. General Terms:-->
+
+<p><b><u>1. General Terms:</u></b></p>
+<table border=0 cellspacing=0 cellpadding=0 width=900>
+	<tr>
+		<td width="40%">Trade Date:</td>
+		<td>|TRADE_DATE|</td>
+	</tr>
+	<tr>
+		<td width="40%">Effective Date:</td>
+		<td>|SETTLE_DATE|</td>
+	</tr>
+	<tr>
+		<td width="40%">Settlement Currency:</td>
+		<td>|TRADE_SETTLECCY|</td>
+	</tr>
+	<tr>
+		<td width="40%">Bonds:</td>
+		<td>|REFERENCE_ASSET|</td>
+	</tr>
+	<tr>
+		<td width="40%">Scheduled Maturity Date of Bonds:</td>
+		<td>|REFERENCE_ASSET_MATURITY_DATE|</td>
+	</tr>
+	<tr>
+		<td width="40%">Transaction Face Amount:</td>
+		<td>|REFERENCE_ASSET_NOTIONAL|</td>
+	</tr>
+	<tr>
+		<td width="40%">Initial Price:</td>
+		<td>|INITIAL_PRICE|</td>
+	</tr>
+	<tr>
+		<td width="40%">Valuation Time:</td>
+		<td>Bond valuation time</td>
+	</tr>
+	<tr>
+		<td width="40%">Value Date(s):</td>
+		<td>Three Bond Business Days prior to the Termination Date</td>
+	</tr>
+	<tr>
+		<td width="40%">Total Return Amount Payer:</td>
+		<td>|PERFORMANCE_AMOUNT_PAYER|</td>
+	</tr>
+	<tr>
+		<td width="40%">Floating Amount Payer:</td>
+		<td>|INTEREST_AMOUNT_PAYER|</td>
+	</tr>
+	<tr>
+		<td width="40%">Floating Amount Payer Payment Dates:</td>
+		<td>|INTEREST_CPN_FREQ| on the |INTEREST_ROLL_DAY|, subject to adjustment in accordance with the |INTEREST_CPN_DATE_ROLL| Business Day convention.</td>
+	</tr>
+	<tr>
+		<td width="40%">Business Days:</td>
+		<td>|INTEREST_CPN_HOL|</td>
+	</tr>
+<!--calypso>
+if (|INTEREST_FIX_FLOAT| == "FIX") inline "
+	<tr>
+		<td width='40%'>Fixed Rate:</td>
+		<td>|INTEREST_FIXED_RATE|</td>
+	</tr>
+	";
+
+else inline "
+	<tr>
+		<td width='40%'>First Floating Amount Payer Payment Date:</td>
+		<td>|INTEREST_FIRST_PAYMENT_DATE|</td>
+	</tr>
+	<tr>
+		<td width='40%'>Floating Rate Option:</td>
+		<td>|INTEREST_RATE_INDEX|</td>
+	</tr>
+	<tr>
+		<td width='40%'>Designated Maturity:</td>
+		<td>|INTEREST_INDEX_TENOR|</td>
+	</tr>
+	<tr>
+		<td width='40%'>Spread:</td>
+		<td>|INTEREST_RATE_SPREAD|</td>
+	</tr>
+	<tr>
+		<td width='40%'>Floating Rate for the initial Calculation Period (inclusive of Spread):</td>
+		<td>|INTEREST_FIRST_RESET_RATE|</td>
+	</tr>
+	";
+	
+</calypso-->	
+	<tr>
+		<td width="40%">Floating Rate Day Count Fraction:</td>
+		<td>|INTEREST_DAY_COUNT|</td>
+	</tr>
+</table>
+
+<p></p>
+<!-- 2. Optional Termination Provisions: -->
+<!-- not yet implemented-->
+<table border=0 cellspacing=0 cellpadding=0 width=900>
+	<tr>
+		<td width="40%"> </td>
+		<td></td>
+	</tr>
+</table>
+
+ 
+Please confirm your agreement to be bound by the terms of the foregoing by executing a copy of this Transaction Supplement and returning it to us or by sending us a letter substantially similar to this letter, which letter sets forth the material terms to which this Confirmation relates and indicates your agreement to those terms.
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->
+
+</body>
+</html>
+

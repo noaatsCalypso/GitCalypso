@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="calypso_seed" xmlns="">
+		<row cat="ReutersDSS">
+			<column name="last_id">1000</column>
+			<column name="seed_name">reutersdss_config</column>
+			<column name="seed_alloc_size">1</column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="last_id">1000</column>
+			<column name="seed_name">reutersdss_instruments</column>
+			<column name="seed_alloc_size">1</column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="last_id">1000</column>
+			<column name="seed_name">reutersdss_rptcols</column>
+			<column name="seed_alloc_size">1</column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="last_id">1000</column>
+			<column name="seed_name">reutersdss_rptTmplt</column>
+			<column name="seed_alloc_size">1</column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="last_id">1000</column>
+			<column name="seed_name">reutersdss_schedules</column>
+			<column name="seed_alloc_size">1</column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="last_id">1000</column>
+			<column name="seed_name">reutersdss_mapping</column>
+			<column name="seed_alloc_size">1</column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="last_id">1000</column>
+			<column name="seed_name">reutersdss_prod_mapping</column>
+			<column name="seed_alloc_size">1</column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="last_id">1000</column>
+			<column name="seed_name">reutersdss_rule_group</column>
+			<column name="seed_alloc_size">1</column>
+		</row>
+	</table>
+	<table name="domain_values" xmlns="">
+		<row cat="ReutersDSS">
+			<column name="name">engineName</column>
+			<column name="value">ReutersDssEngine</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">eventClass</column>
+			<column name="value">PSEventReutersDSS</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">eventFilter</column>
+			<column name="value">ReutersDSSEventFilter</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">scheduledTask</column>
+			<column name="value">REUTERS_DSS_IMPORT</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">feed</column>
+			<column name="value">ReutersDSS</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">feedType</column>
+			<column name="value">ReutersDSS</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">leAttributeType</column>
+			<column name="value">REUTERS_DSS</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">RIC</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">Reuters_CCME_ID</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">Reuters_DIVME_ID</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">CA.subtype</column>
+			<column name="value">INFORMATIONAL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">eventType</column>
+			<column name="value">REUTERSDSS_MSG_INFORMATION</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">eventType</column>
+			<column name="value">REUTERSDSS_MSG_ERROR</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">eventType</column>
+			<column name="value">REUTERSDSS_MSG_WARNING</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">exceptionType</column>
+			<column name="value">REUTERSDSS_MSG_INFORMATION</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">exceptionType</column>
+			<column name="value">REUTERSDSS_MSG_ERROR</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">exceptionType</column>
+			<column name="value">REUTERSDSS_MSG_WARNING</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">classAuditMode</column>
+			<column name="value">ReportTemplates</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">classAuditMode</column>
+			<column name="value">ReportColumns</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">classAuditMode</column>
+			<column name="value">Instruments</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">classAuditMode</column>
+			<column name="value">Schedules</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">classAuditMode</column>
+			<column name="value">ReutersDSSMapping</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">classAuditMode</column>
+			<column name="value">ReutersDSSMappingRules</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">classAuditMode</column>
+			<column name="value">ProductMapping</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">dsInit</column>
+			<column name="value">ReutersDSSServer</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">function</column>
+			<column name="value">ModifyReutersDSSConfiguration</column>
+			<column name="description">Permission to modify Reuters DSS Configurations</column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">function</column>
+			<column name="value">ViewReutersDSSConfiguration</column>
+			<column name="description">Permission to view Reuters DSS Configurations</column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">genericCommentType</column>
+			<column name="value">Reuters DSS CA Comments</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Bond Seniority</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Bond Seniority Description</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Bond Type</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Bond Type Description</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID COFIA Liquidity Flag</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Complex Instrument Flag</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Complex Instrument Reason</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Index Identifier</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Index Name</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Index Term</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Trading Adm. Appr Date</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Trading Adm. Req Date</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID PostTrade LIS THold Floor</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID PostTrade LIS THold Value</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID PostTrade LIS Trade PCTL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID PostTrade LIS Volume PCTL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID PreTrade LIS THold Floor</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID PreTrade LIS THold Value</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID PreTrade LIS Trade PCTL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID PostTrade SSTI THold Floor</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID PostTrade SSTI THold Value</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID PostTrade SSTI Volume PCTL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID PostTrade SSTI Trade PCTL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID PreTrade SSTI THold Floor</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID PreTrade SSTI THold Value</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID PreTrade SSTI Trade PCTL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Issuance Date - ESMA</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Index Name - ESMA</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">CFI Code</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Asset Class of the Underlying</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFIDAssetClassOfUnderlyingDesc</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFIDAvgDlyNotionalAmtPerInst</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFIDAvgDlyNumOfTradesPerInstr</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Avg Daily Turnover-ESMA</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Average Daily Turnover Currency Code</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Average Value Of Transactions - ESMA</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Avg Val Of TXN Ccy Code</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Clearing Obligation Flag</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Contract Type</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Contract Type Description</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Emiss ALW SubType</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Emiss ALW SubType Desc</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Free Float - ESMA</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Free Float Currency Code</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MIFID Indicator</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MIFID Indicator Description</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Most Relevant Market-ESMA</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFIDPcntTradingUnderWaivers12M</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Regulated</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Standard Market Size-ESMA</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Std. Market Size Ccy Code</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Trade Obligation Flag</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Underlying Index Name</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Underlying Type</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersDSS">
+			<column name="name">securityCode</column>
+			<column name="value">MiFID Underlying Type Description</column>
+			<column name="description"></column>
+		</row>
+	</table>
+	<table name="engine_config" xmlns="">
+		<row cat="ReutersDSS">
+			<column name="engine_id">engine_config.max(engine_id)+1@1=1|engine_name='ReutersDssEngine'</column>
+			<column name="engine_name">ReutersDssEngine</column>
+			<column name="engine_comment">ReutersDSS Engine</column>
+		</row>
+	</table>
+	<table name="ps_event_config" xmlns="">
+		<row cat="ReutersDSS">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventReutersDSS</column>
+			<column name="engine_name">ReutersDssEngine</column>
+		</row>
+	</table>
+	 <table name="product_code" xmlns="">
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Bond Seniority</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Bond Seniority Description</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Bond Type</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Bond Type Description</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID COFIA Liquidity Flag</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Complex Instrument Flag</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Complex Instrument Reason</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Index Identifier</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Index Name</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Index Term</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Issuance Date - ESMA</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Index Name - ESMA</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">CFI Code</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Trading Adm. Appr Date</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond,Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Trading Adm. Req Date</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond,Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID PostTrade LIS THold Floor</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID PostTrade LIS THold Value</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID PostTrade LIS Trade PCTL</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID PostTrade LIS Volume PCTL</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID PreTrade LIS THold Floor</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID PreTrade LIS THold Value</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID PreTrade LIS Trade PCTL</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID PostTrade SSTI THold Floor</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID PostTrade SSTI THold Value</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID PostTrade SSTI Volume PCTL</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID PostTrade SSTI Trade PCTL</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID PreTrade SSTI THold Floor</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID PreTrade SSTI THold Value</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID PreTrade SSTI Trade PCTL</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Bond</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Asset Class of Underlying</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Avg Daily Turnover-ESMA</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Contract Type</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Contract Type Description</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Free Float - ESMA</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Free Float Currency Code</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MIFID Indicator</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MIFID Indicator Description</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+         <row cat="ReutersDSS">
+            <column name="product_code">MiFID Regulated</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+         <row cat="ReutersDSS">
+            <column name="product_code">MiFID Underlying Type</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+         <row cat="ReutersDSS">
+            <column name="product_code">MiFID Underlying Index Name</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+         <row cat="ReutersDSS">
+            <column name="product_code">MiFID Underlying Type Desc</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+         <row cat="ReutersDSS">
+            <column name="product_code">MiFID Trade Obligation Flag</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+         <row cat="ReutersDSS">
+            <column name="product_code">MiFID Clearing Obligation Flag</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+         <row cat="ReutersDSS">
+            <column name="product_code">MiFID Most Relevant Market-ESMA</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Standard Market Size-ESMA</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Std. Market Size Ccy Code</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Avg Dly Turnover Ccy Code</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Avg Val Of TXN Ccy Code</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Emiss ALW SubType</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFID Emiss ALW SubType Desc</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFIDAssetClassOfUnderlyingDesc</column>
+            <column name="code_type">string</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFIDAvgDlyNotionalAmtPerInst</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+        <row cat="ReutersDSS">
+            <column name="product_code">MiFIDAvgDlyNumOfTradesPerInstr</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+         <row cat="ReutersDSS">
+            <column name="product_code">MiFIDPcntTradingUnderWaivers12M</column>
+            <column name="code_type">double</column>
+            <column name="unique_b">0</column>
+            <column name="searchable_b">1</column>
+            <column name="mandatory_b">0</column>
+            <column name="product_list">Equity,EquityIndex</column>
+        </row>
+     </table>
+</database>

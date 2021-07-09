@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MT 564  -->
+<SwiftMsgDef>
+	<Name>MT564</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="GENL" value="GENL" modes="MMM"/>
+			<SwiftField name="Sender's Reference" tag=":20C:" format=":4!c//16x" value="MESSAGE_ID" modes="MMM"/>
+			<SwiftField name="Sender's Product Reference" tag=":20C:" format=":4!c//16x" value="CA_REF" modes="MMM"/>
+			<SwiftField name="Function of the Message" tag=":23G:" format="4!c[/4!c]" value="MESSAGE_SUBACTION" modes="MMM"/>
+			<SwiftField name="Ca event indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="CA_EVENT_CODE" modes="MMM"/>
+			<SwiftField name="Mandatory voluntary indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="CA_EVENT_CHOICE" modes="MMM"/>
+			<SwiftField name="Preparation Date/Time" tag=":98C:" format=":4!c//8!n6!n" value="MESSAGE_CREATIONDATE" modes="MMM"/>
+			<SwiftField name="Status" tag=":25D:" format=":4!c/[8c]/4!c" value="STATUS" modes="MMM"/>
+		<SwiftField name="End of Block" tag=":16S:" format="GENL" value="GENL" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="B:Underlying Securities " modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="USECU" value="USECU" modes="MMM"/>
+			<SwiftField name="Identification of the Financial Instrument" tag=":35B:" format="4*35x" value="SECURITY_DESCRIPTION" modes="+++"/>
+	
+			<SwiftField name="Start of Block Financial Instrument Attribute" tag=":16R:" format="FIA" value="FIA" modes="MMM"/>
+				<SwiftField name="Currency of Denomination" tag=":11A:" format=":4!c//3!a" value="FIA_11A" modes="OOO"/>
+				<SwiftField name="Coupon annual interest rate" tag=":92A:" format=":4!c//[N]15d" value="FIA_92A_INTR" modes="---" condition="isINTR()"/>
+				<SwiftField name="Next Factor" tag=":92A:" format=":4!c//[N]15d" value="FIA_92A_NWFC" modes="MMM"/>
+				<SwiftField name="Quantity of Financial Instrument to be Settled" tag=":36B:" format=":4!c//4!c/15d" value="FIA_36B" modes="MMM"/>
+			<SwiftField name="End of Block" tag=":16S:" format="FIA" value="FIA" modes="MMM"/>
+			
+			<SwiftField name="Start of Block Corporate Action Details" tag=":16R:" format="ACCTINFO" value="ACCTINFO" modes="MMM"/>
+				<SwiftField name="SafeKeeping Account" tag=":97A:" format=":4!c//35x" value="ACCTINFO_97A" modes="MMM"/>
+				<SwiftField name="Balance" tag=":93B:" format=":4!c/[8c]/4!c/[N]15d" value="ACCTINFO_93B" modes="OOO"/>	
+			<SwiftField name="End of Block" tag=":16S:" format="ACCTINFO" value="ACCTINFO" modes="MMM"/>
+		
+		<SwiftField name="End of Block" tag=":16S:" format="USECU" value="USECU" modes="MMM"/>	
+	</SwiftSequence>
+	
+	<SwiftSequence name="Start of Block Corporate Action Details " modes="MMM">
+		
+		<SwiftField name="Start of Block" tag=":16R:" format="CADETL" value="CADETL" modes="MMM"/>
+			<SwiftField name="Payment Date" tag=":98A:" format=":4!c//8!n" value="CADETL_98A_PAYMENT_DATE" modes="OOO"/>
+			<SwiftField name="Amortization Date" tag=":98A:" format=":4!c//8!n" value="EX_DATE" modes="---" condition="!isINTR()"/>
+			<SwiftField name="Interest Period" tag=":69A:" format=":4!c//8!n/8!n" value="CADETL_69A" modes="OOO"/>
+			<SwiftField name="Coupon Id" tag=":13B:" format=":4!c//4!c" value="CADETL_13B" modes="OOO"/>
+		<SwiftField name="End of Block" tag=":16S:" format="CADETL" value="CADETL" modes="MMM"/>	
+		
+		</SwiftSequence>
+		
+	<SwiftSequence name="Start of Block Corporate Action Details " modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="CAOPTN" value="CAOPTN" modes="MMM"/>
+			<SwiftField name="Corporate Action Option Number" tag=":13A:" format=":4!c//3!c" value="CAOPTN_13A" modes="OOO"/>
+			<SwiftField name="Corporate Action Option Code Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="CAOPTN_22F" modes="MMM"/>
+			<SwiftField name="Corporate Action Option Number" tag=":11A:" format=":4!c//3!c" value="CAOPTN_11A" modes="OOO"/>
+			<SwiftField name="Default Processing Flag" tag=":17B:" format=":4!c//1!c" value="CAOPTN_17B" modes="OOO"/>
+			<SwiftField name="Interest Rate Used for Payment" tag=":92A:" format=":4!c//[N]15d" value="CAOPTN_92A" modes="MMM"/>
+			
+			<SwiftSequence name="Has secmove block" modes="---" condition="hasSecMoveTags()">
+				<SwiftField name="Start of Block" tag=":16R:" format="SECMOVE" value="SECMOVE" modes="OOO"/>
+					<SwiftField name="Credit/Debit Indicator" tag=":22H:" format=":4!c//4!c" value="SECMOVE_22H" modes="OOO"/>
+					<SwiftField name="Identification of the instrument" tag=":35B:" format=":2!c/4!c/5!c" value="SECMOVE_35B" modes="OOO"/>
+					<SwiftField name="Entitled Quantity" tag=":36B:" format=":4!c//4!c/15d" value="SECMOVE_36B" modes="OOO"/>
+					<SwiftField name="Payment Date" tag=":98A:" format=":4!c//8!n" value="SECMOVE_98A" modes="OOO"/>
+				<SwiftField name="End of Block" tag=":16S:" format="SECMOVE" value="SECMOVE" modes="MMM"/>
+			</SwiftSequence>
+			
+			<SwiftField name="Start of Block" tag=":16R:" format="CASHMOVE" value="CASHMOVE" modes="MMM"/>
+				<SwiftField name="Credit/Debit Indicator" tag=":22H:" format=":4!c//4!c" value="CASHMOVE_22H" modes="OOO"/>
+				<SwiftField name="Interest Amount" tag=":19A:" format=":4!c//3!a15d" value="CASHMOVE_19A_INTEREST" modes="OOO"/>
+				<SwiftField name="Indemnity Amount" tag=":19A:" format=":4!c//3!a15d" value="CASHMOVE_19A_INDEMNITY" modes="OOO"/>
+				<SwiftField name="Premium Amount" tag=":19A:" format=":4!c//3!a15d" value="CASHMOVE_19A_PREMIUM" modes="OOO"/>
+				<SwiftField name="Sundry/Other Income Amount" tag=":19A:" format=":4!c//3!a15d" value="CASHMOVE_19A_OTHER_INCOME" modes="OOO"/>
+				<SwiftField name="Payment Date" tag=":98A:" format=":4!c//8!n" value="CASHMOVE_98A" modes="OOO"/>
+			<SwiftField name="End of Block" tag=":16S:" format="CASHMOVE" value="CASHMOVE" modes="MMM"/>		
+		<SwiftField name="End of Block" tag=":16S:" format="CAOPTN" value="CAOPTN" modes="MMM"/>
+	</SwiftSequence>
+	
+	<SwiftSequence name="Start of Block of Additional Information" modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="ADDINFO" value="ADDINFO" modes="MMM"/>
+			<SwiftField name="Issuer Agent" tag=":95Q:" format=":4!c//10*35x" value="ADDINFO_95Q" modes="OOO"/>	
+		<SwiftField name="End of Block" tag=":16S:" format="ADDINFO" value="ADDINFO" modes="MMM"/>
+		
+	</SwiftSequence>
+	
+	
+</SwiftMsgDef>

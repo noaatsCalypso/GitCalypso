@@ -1,0 +1,2338 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">applicationName</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">applicationName</column>
+			<column name="value">TraxEngine</column>
+			<column name="description">TraxEngine</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">engineName</column>
+		</row>
+        <row cat="TRAX Core">
+            <column name="name">domainName</column>
+            <column name="value">TRAXTradeKeywordUTI</column>
+        </row>
+		<row cat="TRAX Core">
+			<column name="name">engineName</column>
+			<column name="value">TraxEngine</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">newEventTypeTradeAction</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">newEventTypeTradeAction</column>
+			<column name="value">ROLLOVER</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">newEventTypeTradeAction</column>
+			<column name="value">RERATE</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">newEventTypeTradeAction</column>
+			<column name="value">REPRICE</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">newEventTypeTradeAction</column>
+			<column name="value">PTA_TERMINATE</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">TradeRejectAction</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TradeRejectAction</column>
+			<column name="value">REJECT</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TradeRejectAction</column>
+			<column name="value">PTA_REJECT</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">tradeTerminationAction</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">tradeTerminationAction</column>
+			<column name="value">TERMINATE</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">tradeTerminationAction</column>
+			<column name="value">PTA_TERMINATE</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">exceptionType</column>
+			<column name="value">TRAX_APP_ERROR</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">eventFilter</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">eventFilter</column>
+			<column name="value">TraxMessageEventFilter</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">eventFilter</column>
+			<column name="value">NotTraxMessageEventFilter</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">gateway</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">gateway</column>
+			<column name="value">TRAX</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">xmlFormatType</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">xmlFormatType</column>
+			<column name="value">TRAX</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">formatType</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">formatType</column>
+			<column name="value">TRAX</column>
+			<column name="description">text/xml</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">addressMethod</column>
+			<column name="value">TRAX</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">addressMethod</column>
+			<column name="value">FSA</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">messageType</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">messageType</column>
+			<column name="value">TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">messageType</column>
+			<column name="value">TRAX_PTA_CONFIRM</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">messageType</column>
+			<column name="value">TRAX_PTA_INCOMING</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">messageType</column>
+			<column name="value">TRAX_INCOMING</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">securityCode</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">securityCode</column>
+			<column name="value">ICMA_REPORTABLE</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">securityCode.ICMA_REPORTABLE</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">securityCode.ICMA_REPORTABLE</column>
+			<column name="value">Y</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">securityCode.ICMA_REPORTABLE</column>
+			<column name="value">N</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">securityCode</column>
+			<column name="value">FSA_REPORTABLE</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">securityCode.FSA_REPORTABLE</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">securityCode.FSA_REPORTABLE</column>
+			<column name="value">Y</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">securityCode.FSA_REPORTABLE</column>
+			<column name="value">N</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">leAttributeType</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">leAttributeType</column>
+			<column name="value">ICMA_MEMBER</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">leAttributeType</column>
+			<column name="value">FSA_COUNTERPARTY</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">leAttributeType</column>
+			<column name="value">TRAX_STP_COUNTERPARTY</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">SetTRAXForceCancel</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">workflowRuleTrade</column>
+			<column name="value">SetTRAXRepoType</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">SupersedeTRAXTransactionRequest</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">SupersedeTRAXStatementResponse</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">MatchTRAXAdvisory</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">DenyTRAXAdvisory</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">UpdateTRAXTransactionRequest</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">UpdateTRAXMessageFunction</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">SetTRAXForceCancel</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">UpdateTRAXTrade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">CheckTRAXAdvisory</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">workflowRuleMessage</column>
+			<column name="value">CheckTRAXNotAdvisory</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">TRAX.Templates</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAX.Templates</column>
+			<column name="value">TransactionRequest_TRAD.xml</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAX.Templates</column>
+			<column name="value">TransactionRequest_XMAT.xml</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAX.Templates</column>
+			<column name="value">TransactionRequest_REPO.xml</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAX.Templates</column>
+			<column name="value">TransactionRequest_PTA.xml</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">TRAXTradeAction</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeAction</column>
+			<column name="value">UPDATE</column>
+			<column name="description">Workflow action used by the UpdateTRAXTrade workflow rule when updating a trade.</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">TRAXMessageSupersedeAction</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXMessageSupersedeAction</column>
+			<column name="value">SUPERSEDE</column>
+			<column name="description">Workflow action applied by the SupersedeTRAXTransactionRequest workflow rule on superseded messages.</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">TRAXMessageMatchAction</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXMessageMatchAction</column>
+			<column name="value">MATCH</column>
+			<column name="description">Workflow action applied by the MatchTRAXAdvisory workflow rule on advisory messages matched by TRAX.</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">tradeKeyword</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">systemKeyword</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">tradeKeyword</column>
+			<column name="value">TRAXReferenceNumber</column>
+			<column name="description">TRAX Reference Number</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">systemKeyword</column>
+			<column name="value">TRAXReferenceNumber</column>
+			<column name="description">TRAX Reference Number</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">tradeKeyword</column>
+			<column name="value">TRAXPreviousReferenceNumber</column>
+			<column name="description">TRAX Previous Reference Number</column>
+		</row>
+        <row cat="TRAX Core">
+            <column name="name">tradeKeyword</column>
+            <column name="value">TRAXUTI</column>
+            <column name="description">TRAX UTI</column>
+        </row>
+		<row cat="TRAX Core">
+			<column name="name">systemKeyword</column>
+			<column name="value">TRAXPreviousReferenceNumber</column>
+			<column name="description">TRAX Previous Reference Number</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">tradeKeyword</column>
+			<column name="value">TRAXVersionNumber</column>
+			<column name="description">TRAX Version Number</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">systemKeyword</column>
+			<column name="value">TRAXVersionNumber</column>
+			<column name="description">TRAX Version Number</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">systemKeyword</column>
+			<column name="value">TRAXRepoType</column>
+			<column name="description">TRAX Repo Type</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">systemKeyword</column>
+			<column name="value">TRAXForceCancel</column>
+			<column name="description">TRAX Force Cancel</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">tradeKeyword</column>
+			<column name="value">TRAXTransactionStatus</column>
+			<column name="description">TRAX Transaction Status</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">systemKeyword</column>
+			<column name="value">TRAXTransactionStatus</column>
+			<column name="description">TRAX Transaction Status</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">keyword.TRAXTransactionStatus</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXTransactionStatus</column>
+			<column name="value">ADV</column>
+			<column name="description">Advisory</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXTransactionStatus</column>
+			<column name="value">AWC</column>
+			<column name="description">Matched, awaiting cancellation</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXTransactionStatus</column>
+			<column name="value">CAN</column>
+			<column name="description">Cancelled</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXTransactionStatus</column>
+			<column name="value">DEN</column>
+			<column name="description">Denied unmatched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXTransactionStatus</column>
+			<column name="value">DKA</column>
+			<column name="description">Not known advisory</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXTransactionStatus</column>
+			<column name="value">MAS</column>
+			<column name="description">Matched, advisory settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXTransactionStatus</column>
+			<column name="value">MAT</column>
+			<column name="description">Matched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXTransactionStatus</column>
+			<column name="value">MCS</column>
+			<column name="description">Matched, conflicting settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXTransactionStatus</column>
+			<column name="value">MKC</column>
+			<column name="description">Matched, marked for cancellation</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXTransactionStatus</column>
+			<column name="value">MMS</column>
+			<column name="description">Matched, matched settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXTransactionStatus</column>
+			<column name="value">MNS</column>
+			<column name="description">Matched, non matchable settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXTransactionStatus</column>
+			<column name="value">MUS</column>
+			<column name="description">Matched, unmatched settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXTransactionStatus</column>
+			<column name="value">NMT</column>
+			<column name="description">Non matchable trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXTransactionStatus</column>
+			<column name="value">UNM</column>
+			<column name="description">Unmatched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXTransactionStatus</column>
+			<column name="value">REJ</column>
+			<column name="description">Rejected trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXTransactionStatus</column>
+			<column name="value">MSM</column>
+			<column name="description">Mismatched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">tradeKeyword</column>
+			<column name="value">TRAXRepoEndLegStatus</column>
+			<column name="description">TRAX Repo End Leg Status</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">systemKeyword</column>
+			<column name="value">TRAXRepoEndLegStatus</column>
+			<column name="description">TRAX Repo End Leg Status</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">keyword.TRAXRepoEndLegStatus</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoEndLegStatus</column>
+			<column name="value">ADV</column>
+			<column name="description">Advisory</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoEndLegStatus</column>
+			<column name="value">AWC</column>
+			<column name="description">Matched, awaiting cancellation</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoEndLegStatus</column>
+			<column name="value">CAN</column>
+			<column name="description">Cancelled</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoEndLegStatus</column>
+			<column name="value">DEN</column>
+			<column name="description">Denied unmatched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoEndLegStatus</column>
+			<column name="value">DKA</column>
+			<column name="description">Not known advisory</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoEndLegStatus</column>
+			<column name="value">MAS</column>
+			<column name="description">Matched, advisory settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoEndLegStatus</column>
+			<column name="value">MAT</column>
+			<column name="description">Matched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoEndLegStatus</column>
+			<column name="value">MCS</column>
+			<column name="description">Matched, conflicting settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoEndLegStatus</column>
+			<column name="value">MKC</column>
+			<column name="description">Matched, marked for cancellation</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoEndLegStatus</column>
+			<column name="value">MMS</column>
+			<column name="description">Matched, matched settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoEndLegStatus</column>
+			<column name="value">MNS</column>
+			<column name="description">Matched, non matchable settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoEndLegStatus</column>
+			<column name="value">MUS</column>
+			<column name="description">Matched, unmatched settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoEndLegStatus</column>
+			<column name="value">NMT</column>
+			<column name="description">Non matchable trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoEndLegStatus</column>
+			<column name="value">UNM</column>
+			<column name="description">Unmatched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoEndLegStatus</column>
+			<column name="value">REJ</column>
+			<column name="description">Rejected trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoEndLegStatus</column>
+			<column name="value">MSM</column>
+			<column name="description">Mismatched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">tradeKeyword</column>
+			<column name="value">TRAXTransactionConditions</column>
+			<column name="description">TRAX Transaction Conditions</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">tradeKeyword</column>
+			<column name="value">TRAXRepoType</column>
+			<column name="description">TRAX Repo Type</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">keyword.TRAXRepoType</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoType</column>
+			<column name="value">Open</column>
+			<column name="description">Open Term Repo</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXRepoType</column>
+			<column name="value">Term</column>
+			<column name="description">Fixed Term Repo</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">tradeKeyword</column>
+			<column name="value">TRAXForceCancel</column>
+			<column name="description">TRAX Force Cancel</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">keyword.TRAXForceCancel</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXForceCancel</column>
+			<column name="value">Y</column>
+			<column name="description">Yes</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">keyword.TRAXForceCancel</column>
+			<column name="value">N</column>
+			<column name="description">No</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXMessageFunction</column>
+			<column name="description">TRAX Message Function</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">MsgAttributes.TRAXMessageFunction</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageFunction</column>
+			<column name="value">NEWM</column>
+			<column name="description">New Trade Status</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageFunction</column>
+			<column name="value">INST</column>
+			<column name="description">New Trade Status</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageFunction</column>
+			<column name="value">REPL</column>
+			<column name="description">Amend Trade Status</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageFunction</column>
+			<column name="value">REST</column>
+			<column name="description">Amend Trade Status</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageFunction</column>
+			<column name="value">CANC</column>
+			<column name="description">Cancel Trade Status</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageFunction</column>
+			<column name="value">CAST</column>
+			<column name="description">Cancel Trade Status</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageFunction</column>
+			<column name="value">DENY</column>
+			<column name="description">Deny Trade Status</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageFunction</column>
+			<column name="value">DEST</column>
+			<column name="description">Deny Trade Status</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageFunction</column>
+			<column name="value">ERST</column>
+			<column name="description">Error Status</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageFunction</column>
+			<column name="value">FAST</column>
+			<column name="description">Fatal Error Status</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXTradeIndicator</column>
+			<column name="description">TRAX Trade Indicator</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">MsgAttributes.TRAXTradeIndicator</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTradeIndicator</column>
+			<column name="value">FULL</column>
+			<column name="description">TRAX Trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTradeIndicator</column>
+			<column name="value">TDEL</column>
+			<column name="description">TRAX Trade Delete</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTradeIndicator</column>
+			<column name="value">RPTA</column>
+			<column name="description">TRAX PTA</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTradeIndicator</column>
+			<column name="value">RDEL</column>
+			<column name="description">TRAX PTA Delete</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXMessageType</column>
+			<column name="description">TRAX Message Type</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">MsgAttributes.TRAXMessageType</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageType</column>
+			<column name="value">GeneralRequest</column>
+			<column name="description">TRAX General Request</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageType</column>
+			<column name="value">GeneralResponse</column>
+			<column name="description">TRAX General Response</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageType</column>
+			<column name="value">TransactionRequest</column>
+			<column name="description">TRAX Transaction Request</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageType</column>
+			<column name="value">TransactionResponse</column>
+			<column name="description">TRAX Transaction Response</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageType</column>
+			<column name="value">StatementRequest</column>
+			<column name="description">TRAX Statement Request</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageType</column>
+			<column name="value">StatementResponse</column>
+			<column name="description">TRAX Statement Response</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageType</column>
+			<column name="value">SearchRequest</column>
+			<column name="description">TRAX Search Request</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXMessageType</column>
+			<column name="value">SearchResponse</column>
+			<column name="description">TRAX Search Response</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXReferenceNumber</column>
+			<column name="description">TRAX Reference Number for the trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXPreviousReferenceNumber</column>
+			<column name="description">Previous TRAX Reference Number for the trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXVersionNumber</column>
+			<column name="description">TRAX Version Number for the trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXPTAType</column>
+			<column name="description">TRAX PTA Type</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">MsgAttributes.TRAXPTAType</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAType</column>
+			<column name="value">CLOS</column>
+			<column name="description">Close out</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAType</column>
+			<column name="value">ENDD</column>
+			<column name="description">End date</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAType</column>
+			<column name="value">RATE</column>
+			<column name="description">Rate</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAType</column>
+			<column name="value">RPRI</column>
+			<column name="description">Price</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAType</column>
+			<column name="value">PREP</column>
+			<column name="description">Partial repayment</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXPTADate</column>
+			<column name="description">TRAX PTA Date</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXRPUType</column>
+			<column name="description">TRAX RPU Type</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">MsgAttributes.TRAXRPUType</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRPUType</column>
+			<column name="value">ENDD</column>
+			<column name="description">End date</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXRPUDate</column>
+			<column name="description">TRAX RPU Date</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXPTAReferenceNumber</column>
+			<column name="description">TRAX PTA Reference Number</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXPTAPreviousReferenceNumber</column>
+			<column name="description">Previous TRAX PTA Reference Number</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXPTAVersionNumber</column>
+			<column name="description">TRAX PTA Version Number</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXTransactionType</column>
+			<column name="description">TRAX Transaction Type</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">MsgAttributes.TRAXTransactionType</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionType</column>
+			<column name="value">TRAD</column>
+			<column name="description">Standard Trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionType</column>
+			<column name="value">REPO</column>
+			<column name="description">Repo Trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXTransactionStatus</column>
+			<column name="description">TRAX Transaction Status</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">MsgAttributes.TRAXTransactionStatus</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionStatus</column>
+			<column name="value">ADV</column>
+			<column name="description">Advisory</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionStatus</column>
+			<column name="value">AWC</column>
+			<column name="description">Matched, awaiting cancellation</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionStatus</column>
+			<column name="value">CAN</column>
+			<column name="description">Cancelled</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionStatus</column>
+			<column name="value">DEN</column>
+			<column name="description">Denied unmatched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionStatus</column>
+			<column name="value">DKA</column>
+			<column name="description">Not known advisory</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionStatus</column>
+			<column name="value">MAS</column>
+			<column name="description">Matched, advisory settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionStatus</column>
+			<column name="value">MAT</column>
+			<column name="description">Matched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionStatus</column>
+			<column name="value">MCS</column>
+			<column name="description">Matched, conflicting settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionStatus</column>
+			<column name="value">MKC</column>
+			<column name="description">Matched, marked for cancellation</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionStatus</column>
+			<column name="value">MMS</column>
+			<column name="description">Matched, matched settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionStatus</column>
+			<column name="value">MNS</column>
+			<column name="description">Matched, non matchable settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionStatus</column>
+			<column name="value">MUS</column>
+			<column name="description">Matched, unmatched settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionStatus</column>
+			<column name="value">NMT</column>
+			<column name="description">Non matchable trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionStatus</column>
+			<column name="value">UNM</column>
+			<column name="description">Unmatched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionStatus</column>
+			<column name="value">REJ</column>
+			<column name="description">Rejected trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXTransactionStatus</column>
+			<column name="value">MSM</column>
+			<column name="description">Mismatched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXRepoEndLegStatus</column>
+			<column name="description">TRAX Repo End Leg Status for the trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">MsgAttributes.TRAXRepoEndLegStatus</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoEndLegStatus</column>
+			<column name="value">ADV</column>
+			<column name="description">Advisory</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoEndLegStatus</column>
+			<column name="value">AWC</column>
+			<column name="description">Matched, awaiting cancellation</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoEndLegStatus</column>
+			<column name="value">CAN</column>
+			<column name="description">Cancelled</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoEndLegStatus</column>
+			<column name="value">DEN</column>
+			<column name="description">Denied unmatched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoEndLegStatus</column>
+			<column name="value">DKA</column>
+			<column name="description">Not known advisory</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoEndLegStatus</column>
+			<column name="value">MAS</column>
+			<column name="description">Matched, advisory settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoEndLegStatus</column>
+			<column name="value">MAT</column>
+			<column name="description">Matched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoEndLegStatus</column>
+			<column name="value">MCS</column>
+			<column name="description">Matched, conflicting settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoEndLegStatus</column>
+			<column name="value">MKC</column>
+			<column name="description">Matched, marked for cancellation</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoEndLegStatus</column>
+			<column name="value">MMS</column>
+			<column name="description">Matched, matched settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoEndLegStatus</column>
+			<column name="value">MNS</column>
+			<column name="description">Matched, non matchable settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoEndLegStatus</column>
+			<column name="value">MUS</column>
+			<column name="description">Matched, unmatched settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoEndLegStatus</column>
+			<column name="value">NMT</column>
+			<column name="description">Non matchable trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoEndLegStatus</column>
+			<column name="value">UNM</column>
+			<column name="description">Unmatched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoEndLegStatus</column>
+			<column name="value">REJ</column>
+			<column name="description">Rejected</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoEndLegStatus</column>
+			<column name="value">MSM</column>
+			<column name="description">Mismatched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXRepoType</column>
+			<column name="description">TRAX Repo Type for the trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">MsgAttributes.TRAXRepoType</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoType</column>
+			<column name="value">Open</column>
+			<column name="description">Open Term Repo</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXRepoType</column>
+			<column name="value">Term</column>
+			<column name="description">Fixed Term Repo</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXForceCancel</column>
+			<column name="description">TRAX Force Cancel for the trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">MsgAttributes.TRAXForceCancel</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXForceCancel</column>
+			<column name="value">Y</column>
+			<column name="description">Yes</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXForceCancel</column>
+			<column name="value">N</column>
+			<column name="description">No</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXPTAStatus</column>
+			<column name="description">TRAX PTA Status for the trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">MsgAttributes.TRAXPTAStatus</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAStatus</column>
+			<column name="value">ADV</column>
+			<column name="description">Advisory</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAStatus</column>
+			<column name="value">AWC</column>
+			<column name="description">Matched, awaiting cancellation</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAStatus</column>
+			<column name="value">CAN</column>
+			<column name="description">Cancelled</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAStatus</column>
+			<column name="value">DEN</column>
+			<column name="description">Denied unmatched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAStatus</column>
+			<column name="value">DKA</column>
+			<column name="description">Not known advisory</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAStatus</column>
+			<column name="value">MAS</column>
+			<column name="description">Matched, advisory settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAStatus</column>
+			<column name="value">MAT</column>
+			<column name="description">Matched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAStatus</column>
+			<column name="value">MCS</column>
+			<column name="description">Matched, conflicting settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAStatus</column>
+			<column name="value">MKC</column>
+			<column name="description">Matched, marked for cancellation</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAStatus</column>
+			<column name="value">MMS</column>
+			<column name="description">Matched, matched settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAStatus</column>
+			<column name="value">MNS</column>
+			<column name="description">Matched, non matchable settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAStatus</column>
+			<column name="value">MUS</column>
+			<column name="description">Matched, unmatched settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAStatus</column>
+			<column name="value">NMT</column>
+			<column name="description">Non matchable trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAStatus</column>
+			<column name="value">UNM</column>
+			<column name="description">Unmatched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAStatus</column>
+			<column name="value">REJ</column>
+			<column name="description">Rejected trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes.TRAXPTAStatus</column>
+			<column name="value">MSM</column>
+			<column name="description">Mismatched trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXReasonCode</column>
+			<column name="description">Reason code for rejected message</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MsgAttributes</column>
+			<column name="value">TRAXReasonNarrative</column>
+			<column name="description">Reason narrative for rejected message</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">rateIndexAttributes</column>
+			<column name="value">TRAXRateIndexCode</column>
+			<column name="description">TRAX Code Name for the Rate Index</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">incomingStatus</column>
+			<column name="value">ADV</column>
+			<column name="description">Advisory</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">incomingStatus</column>
+			<column name="value">AWC</column>
+			<column name="description">Matched, awaiting cancellation</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">incomingStatus</column>
+			<column name="value">CAN</column>
+			<column name="description">Cancelled</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">incomingStatus</column>
+			<column name="value">DEN</column>
+			<column name="description">Denied unmatched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">incomingStatus</column>
+			<column name="value">DKA</column>
+			<column name="description">Not known advisory</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">incomingStatus</column>
+			<column name="value">MAS</column>
+			<column name="description">Matched, advisory settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">incomingStatus</column>
+			<column name="value">MAT</column>
+			<column name="description">Matched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">incomingStatus</column>
+			<column name="value">MCS</column>
+			<column name="description">Matched, conflicting settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">incomingStatus</column>
+			<column name="value">MKC</column>
+			<column name="description">Matched, marked for cancellation</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">incomingStatus</column>
+			<column name="value">MMS</column>
+			<column name="description">Matched, matched settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">incomingStatus</column>
+			<column name="value">MNS</column>
+			<column name="description">Matched, non matchable settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">incomingStatus</column>
+			<column name="value">MUS</column>
+			<column name="description">Matched, unmatched settlement</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">incomingStatus</column>
+			<column name="value">NMT</column>
+			<column name="description">Non matchable trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">incomingStatus</column>
+			<column name="value">UNM</column>
+			<column name="description">Unmatched</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">incomingStatus</column>
+			<column name="value">REJ</column>
+			<column name="description">Rejected trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">incomingStatus</column>
+			<column name="value">MSM</column>
+			<column name="description">Mismatched trade</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">TRAXTradeFieldsNotAmendment</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">_status</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">ADDKEY#TRAXPreviousReferenceNumber</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">MODKEY#TRAXPreviousReferenceNumber</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">DELKEY#TRAXPreviousReferenceNumber</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">ADDKEY#TRAXReferenceNumber</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">MODKEY#TRAXReferenceNumber</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">DELKEY#TRAXReferenceNumber</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">ADDKEY#TRAXVersionNumber</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">MODKEY#TRAXVersionNumber</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">DELKEY#TRAXVersionNumber</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">ADDKEY#TRAXTransactionStatus</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">MODKEY#TRAXTransactionStatus</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">DELKEY#TRAXTransactionStatus</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">ADDKEY#TRAXRepoEndLegStatus</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">MODKEY#TRAXRepoEndLegStatus</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">DELKEY#TRAXRepoEndLegStatus</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">ADDKEY#TRAXRepoType</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">MODKEY#TRAXRepoType</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">TRAXTradeFieldsNotAmendment</column>
+			<column name="value">DELKEY#TRAXRepoType</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">TRAXFeeNotAmendment</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MessageViewer.MsgAttributes.DateAttributesToKeep</column>
+			<column name="value">TRAXPTADate</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">MessageViewer.MsgAttributes.DateAttributesToKeep</column>
+			<column name="value">TRAXRPUDate</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">domainName</column>
+			<column name="value">messageExcludeStatus</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">messageExcludeStatus</column>
+			<column name="value">FAILED</column>
+		</row>
+		<row cat="TRAX Matching">
+			<column name="name">MatchingContext</column>
+			<column name="value">TRAX</column>
+		</row>
+		<row cat="TRAX Matching">
+			<column name="name">MatchingContext.HandlerName</column>
+			<column name="value">TRAXTracking</column>
+		</row>
+		<row cat="TRAX Matching">
+			<column name="name">domainName</column>
+			<column name="value">ExternalMessageField.MessageMapper</column>
+		</row>
+		<row cat="TRAX Matching">
+			<column name="name">ExternalMessageField.MessageMapper</column>
+			<column name="value">TRAX</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">tradeAction</column>
+			<column name="value">RERATE</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">tradeAction</column>
+			<column name="value">REPRICE</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">tradeAction</column>
+			<column name="value">PTA_TERMINATE</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="name">tradeAction</column>
+			<column name="value">PTA_REJECT</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">ALLEGE</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">AUTHORIZE</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">AWC</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">CAN</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">CANCEL</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">DEN</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">DENY</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">DKA</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">ERROR</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">MAS</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">MAT</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">MATCH</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">MCS</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">MKC</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">MMS</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">MNS</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">MUS</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">NEW</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">NMT</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">REJ</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">MSM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">RESEND</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">SEND</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">SUPERSEDE</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageAction</column>
+			<column name="value">UNM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">domainName</column>
+			<column name="value">messageStatus</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">ALLEGED</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">AWC</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">CAN</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">CANCELED</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">DEN</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">DENIED</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">DKA</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">FAILED</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">MAS</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">MAT</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">MATCHED</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">MCS</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">MKC</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">MMS</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">MNS</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">MUS</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">NMT</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">PENDING</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">PROCESSED</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">REJ</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">SENT</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">SUPERSEDED</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">TO_SEND</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">UNM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">messageStatus</column>
+			<column name="value">MSM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">domainName</column>
+			<column name="value">eventType</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">AWC_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">CAN_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">CANCELED_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">DEN_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">DKA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">FAILED_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">MAS_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">MAT_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">MCS_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">MKC_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">MMS_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">MNS_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">MUS_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">NMT_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">PENDING_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">REJ_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">SENT_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">SUPERSEDED_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">TO_SEND_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">UNM_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">ALLEGED_TRAX_INCOMING</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">DENIED_TRAX_INCOMING</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">MATCHED_TRAX_INCOMING</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">PENDING_TRAX_INCOMING</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">PROCESSED_TRAX_INCOMING</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">SUPERSEDED_TRAX_INCOMING</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">AWC_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">CAN_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">CANCELED_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">DEN_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">DKA_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">FAILED_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">MAS_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">MAT_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">MCS_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">MKC_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">MMS_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">MNS_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">MUS_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">NMT_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">PENDING_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">REJ_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">SENT_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">SUPERSEDED_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">TO_SEND_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">UNM_PTA_TRAX_CONFIRM</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">ALLEGED_PTA_TRAX_INCOMING</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">DENIED_PTA_TRAX_INCOMING</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">MATCHED_PTA_TRAX_INCOMING</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">PENDING_PTA_TRAX_INCOMING</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">PROCESSED_PTA_TRAX_INCOMING</column>
+		</row>
+		<row cat="TRAX Message Workflow">
+			<column name="name">eventType</column>
+			<column name="value">SUPERSEDED_PTA_TRAX_INCOMING</column>
+		</row>
+
+        <row cat="TRAX Core">
+          <column name="name">MsgAttributes</column>
+          <column name="value">TRAXMessageCategory</column>
+          <column name="description">TRAXMessageCategory</column>
+        </row>
+        <row cat="TRAX Core">
+          <column name="name">MsgAttributes</column>
+          <column name="value">TRAX_FIX_TradeID</column>
+          <column name="description">TRAX_FIX_TradeID</column>
+        </row>
+        <row cat="TRAX Core">
+            <column name="name">MsgAttributes</column>
+            <column name="value">TRAX_FIX_UTI</column>
+            <column name="description">TRAX_FIX_UTI</column>
+        </row>
+        <row cat="TRAX Core">
+          <column name="name">MsgAttributes</column>
+          <column name="value">TRAX_FIX_FirmTradeID</column>
+          <column name="description">TRAX_FIX_FirmTradeID</column>
+        </row>
+        <row cat="TRAX Core">
+          <column name="name">MsgAttributes</column>
+          <column name="value">TRAX_FIX_ProcessingOrgSideTradeID</column>
+          <column name="description">TRAX_FIX_ProcessingOrgSideTradeID</column>
+        </row>
+        <row cat="TRAX Core">
+          <column name="name">MsgAttributes</column>
+          <column name="value">TRAX_FIX_CounterPartySideTradeID</column>
+          <column name="description">TRAX_FIX_CounterPartySideTradeID</column>
+        </row>
+	</table>
+	<table name="product_code" xmlns="">
+		<row cat="TRAX Core">
+			<column name="product_code">ICMA_REPORTABLE</column>
+			<column name="code_type">string</column>
+			<column name="unique_b">0</column>
+			<column name="searchable_b">1</column>
+			<column name="mandatory_b">0</column>
+			<column name="version_num">0</column>
+		</row>
+		<row cat="TRAX Core">
+			<column name="product_code">FSA_REPORTABLE</column>
+			<column name="code_type">string</column>
+			<column name="unique_b">0</column>
+			<column name="searchable_b">1</column>
+			<column name="mandatory_b">0</column>
+			<column name="version_num">0</column>
+		</row>
+	</table>
+	<table name="sd_filter" xmlns="">
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">FSA Counterparty</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">FSA Security</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Member</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Member / FSA Not ICMA Sec</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Member / ICMA Sec</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Non Member / ICMA Sec</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Security</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Confirm or RPU</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matchable</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matched</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Not Matched</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX PTA</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report Confirm</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report Confirm or RPU</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report PTA</column>
+			<column name="user_name">calypso_user</column>
+			<column name="version_num">0</column>
+			<column name="groups">ANY</column>
+		</row>
+	</table>
+	<table name="sd_filter_domain" xmlns="">
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">FSA Counterparty</column>
+			<column name="element_name">CPTY_ATTRIBUTE.FSA_COUNTERPARTY</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">Y</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">FSA Security</column>
+			<column name="element_name">UNDERLYING_SEC_CODE.FSA_REPORTABLE</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">Y</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Member</column>
+			<column name="element_name">CPTY_ATTRIBUTE.ICMA_MEMBER</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">Y</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Member / FSA Not ICMA Sec</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">2</column>
+			<column name="domain_value">ICMA Security</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Member / FSA Not ICMA Sec</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="domain_value">FSA Security</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Member / FSA Not ICMA Sec</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="domain_value">ICMA Member</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Member / ICMA Sec</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="domain_value">ICMA Member</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Member / ICMA Sec</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="domain_value">ICMA Security</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Non Member / ICMA Sec</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">2</column>
+			<column name="domain_value">ICMA Member</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Non Member / ICMA Sec</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="domain_value">FSA Counterparty</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Non Member / ICMA Sec</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="domain_value">ICMA Security</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Security</column>
+			<column name="element_name">UNDERLYING_SEC_CODE.ICMA_REPORTABLE</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">Y</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Confirm or RPU</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">2</column>
+			<column name="domain_value">TRAX PTA</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matchable</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">ALLEGED</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matchable</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">AWC</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matchable</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">CAN</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matchable</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">DEN</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matchable</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">MAS</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matchable</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">MAT</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matchable</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">MCS</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matchable</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">MKC</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matchable</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">MMS</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matchable</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">MNS</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matchable</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">MUS</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matchable</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">NMT</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matchable</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">UNM</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matched</column>
+			<column name="element_name">KEYWORD.TRAXTransactionStatus</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">MMS</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Not Matched</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">2</column>
+			<column name="domain_value">TRAX Matched</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX PTA</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="domain_value">TRAX Matched</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX PTA</column>
+			<column name="element_name">Trade Action</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">REPRICE</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX PTA</column>
+			<column name="element_name">Trade Action</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">RERATE</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX PTA</column>
+			<column name="element_name">Trade Action</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">ROLLBACK</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX PTA</column>
+			<column name="element_name">Trade Action</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">ROLLOVER</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX PTA</column>
+			<column name="element_name">Trade Action</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">PTA_TERMINATE</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX PTA</column>
+			<column name="element_name">Trade Action</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">PTA_REJECT</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">ICMA Member / FSA Not ICMA Sec</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">ICMA Member / ICMA Sec</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">1</column>
+			<column name="domain_value">ICMA Non Member / ICMA Sec</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report Confirm</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="domain_value">TRAX Not Matched</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report Confirm</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="domain_value">TRAX Report</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report Confirm or RPU</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="domain_value">TRAX Confirm or RPU</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report Confirm or RPU</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="domain_value">TRAX Report</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report PTA</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="domain_value">TRAX PTA</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report PTA</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="domain_value">TRAX Report</column>
+		</row>
+	</table>
+	<table name="sd_filter_element" xmlns="">
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">FSA Counterparty</column>
+			<column name="element_name">CPTY_ATTRIBUTE.FSA_COUNTERPARTY</column>
+			<column name="element_type">1</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">FSA Security</column>
+			<column name="element_name">UNDERLYING_SEC_CODE.FSA_REPORTABLE</column>
+			<column name="element_type">1</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Member</column>
+			<column name="element_name">CPTY_ATTRIBUTE.ICMA_MEMBER</column>
+			<column name="element_type">1</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Member / FSA Not ICMA Sec</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">2</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Member / FSA Not ICMA Sec</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Member / ICMA Sec</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Non Member / ICMA Sec</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">2</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Non Member / ICMA Sec</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">ICMA Security</column>
+			<column name="element_name">UNDERLYING_SEC_CODE.ICMA_REPORTABLE</column>
+			<column name="element_type">1</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Confirm or RPU</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">2</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matchable</column>
+			<column name="element_name">Message Matching</column>
+			<column name="element_type">8</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">1</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matchable</column>
+			<column name="element_name">Message Status</column>
+			<column name="element_type">1</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Matched</column>
+			<column name="element_name">KEYWORD.TRAXTransactionStatus</column>
+			<column name="element_type">1</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Not Matched</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">2</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX PTA</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX PTA</column>
+			<column name="element_name">Trade Action</column>
+			<column name="element_type">1</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">1</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report Confirm</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report Confirm or RPU</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+		<row cat="TRAX Filters">
+			<column name="sd_filter_name">TRAX Report PTA</column>
+			<column name="element_name">IN Static Data Filter</column>
+			<column name="element_type">14</column>
+			<column name="is_min_inclusive">0</column>
+			<column name="is_max_inclusive">0</column>
+			<column name="is_value">0</column>
+		</row>
+	</table>
+
+</database>

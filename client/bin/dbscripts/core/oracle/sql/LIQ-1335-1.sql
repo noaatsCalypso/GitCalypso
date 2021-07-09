@@ -1,0 +1,2 @@
+update an_param_items set attribute_value = 'com.calypso.tk.risk.forwardladder.objective.ForwardLadderObjectiveNettedReporting' where attribute_value ='com.calypso.tk.risk.forwardladder.objective.ForwardLadderObjectiveBOEPosition'
+;

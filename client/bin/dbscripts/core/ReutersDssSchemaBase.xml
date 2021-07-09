@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="reutersdss_config_name" xmlns="">
+		<column name="config_id" nullable="false" scale="1" type="int"/>
+		<column name="config_name" nullable="false" scale="64" type="string"/>
+		<column name="rpt_typ" nullable="false" scale="32" type="string"/>
+		<column name="config_status" nullable="true" scale="1" type="int"/>
+		<column name="rpt_tmplt_id" nullable="false" scale="1" type="int"/>
+		<column name="rpt_col_id" nullable="false" scale="1" type="int"/>
+		<column name="instrument_id" nullable="false" scale="1" type="int"/>
+		<column name="schedules_id" nullable="false" scale="1" type="int"/>
+		<column name="output_filename" nullable="true" type="string" scale="255"/>
+		<column name="pricingenv" nullable="true" type="string" scale="100"/>
+		<column name="updated_date_time" nullable="true" type="timestamp"/>
+		<column name="updated_by" nullable="true" scale="32" type="string"/>
+		<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+		<index primary="true">
+			<on>config_id</on>
+		</index>
+	</table>
+	<table name="reutersdss_rpt_templates" xmlns="">
+		<column name="rpt_tmplt_id" nullable="false" scale="1" type="int"/>
+		<column name="rpt_typ" nullable="false" scale="32" type="string"/>
+		<column name="rpt_tmplt_name" nullable="false" scale="64" type="string"/>
+		<column name="compress_format" nullable="true" scale="10" type="string"/>
+		<column name="report_template_type" nullable="true" scale="10" type="string"/>
+		<column name="header" nullable="true" scale="2" type="string"/>
+		<column name="start_date" nullable="true" type="timestamp"/>
+		<column name="end_date" nullable="true" type="timestamp"/>
+		<column name="curry_scaling" nullable="true" scale="2" type="string"/>
+		<column name="delta_extract" nullable="true" scale="2" type="string"/>
+		<column name="delta_extract_date" nullable="true" type="timestamp"/>
+		<column name="delta_extract_days" nullable="false" scale="1" type="int"/>
+		<column name="fitch_rating" nullable="true" scale="2" type="string"/>
+		<column name="moody_rating" nullable="true" scale="2" type="string"/>
+		<column name="sp_rating" nullable="true" scale="2" type="string"/>	
+		<column name="updated_date_time" nullable="true" type="timestamp"/>
+		<column name="updated_by" nullable="true" scale="255" type="string"/>
+		<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+		<index primary="true">
+			<on>rpt_tmplt_id</on>
+		</index>
+	</table>
+	<table name="reutersdss_rpt_cols" xmlns="">
+		<column name="rpt_col_id" nullable="false" scale="1" type="int"/>
+		<column name="rpt_col_tmplt_name" nullable="false" scale="64" type="string"/>
+		<column name="rpt_typ" nullable="false" scale="32" type="string"/>
+		<column name="col_name" nullable="false" scale="255" type="string"/>
+		<column name="mapping_type" nullable="true" scale="255" type="string"/>
+		<column name="sequence" nullable="false" scale="1" type="int"/>
+		<column name="updated_date_time" nullable="true" type="timestamp"/>
+		<column name="updated_by" nullable="true" scale="32" type="string"/>
+		<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+	</table>
+	<table name="reutersdss_instruments" xmlns="">
+		<column name="instrument_id" nullable="false" scale="1" type="int"/>
+		<column name="instrument_tmplt_name" nullable="false" scale="64" type="string"/>
+		<column name="rpt_typ" nullable="false" scale="32" type="string"/>
+		<column name="iden_name" nullable="false" scale="255" type="string"/>
+		<column name="iden_type" nullable="false" scale="40" type="string"/>
+		<column name="iden_desc" nullable="false" type="string" scale="64"/>
+		<column name="prod_type" nullable="true" type="string" scale="60"/>
+		<column name="updated_date_time" nullable="true" type="timestamp"/>
+		<column name="updated_by" nullable="true" type="string" scale="32"/>
+		<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+	</table>
+	<table name="reutersdss_schedules" xmlns="">
+		<column name="schedules_id" nullable="false" scale="1" type="int"/>
+		<column name="schedules_tmplt_name" nullable="false" scale="64" type="string"/>
+		<column name="rpt_typ" nullable="false" scale="32" type="string"/>
+		<column name="price_flag" nullable="true" scale="30" type="string"/>
+		<column name="extract_time" nullable="true" scale="255" type="string"/>
+		<column name="eod_price_typ" nullable="true" type="string" scale="10"/>
+		<column name="extract_expiry_time" nullable="true" type="timestamp"/>
+		<column name="extract_expiry_day" nullable="true" type="string" scale="1"/>
+		<column name="extract_days" nullable="true" type="timestamp"/>
+		<column name="extract_days_typ" nullable="true" type="string" scale="32"/>
+		<column name="extract_weekly_days" nullable="true" type="string" scale="20"/>
+		<column name="extract_monthly" nullable="true" type="string" scale="20"/>
+		<column name="updated_date_time" nullable="true" type="timestamp"/>
+		<column name="updated_by" nullable="true" type="string" scale="32"/>
+		<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+		<index primary="true">
+			<on>schedules_id</on>
+		</index>
+	</table>
+	<table name="reutersdss_mapping" xmlns="">
+		<column name="intf_type" nullable="false" scale="50" type="string"/>
+		<column name="typename" nullable="false" scale="96" type="string"/>
+		<column name="intf_value" nullable="false" scale="255" type="string"/>
+		<column name="calypso_value" nullable="true" scale="255" type="string"/>
+		<column name="complex_typ" nullable="true" scale="255" type="string"/>
+		<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+	</table>
+	<table name="reutersdss_mapping_rules" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int"/>
+		<column name="intf_value" nullable="false" scale="64" type="string"/>
+		<column name="calypso_value" nullable="true" scale="64" type="string"/>
+		<column name="rule_name" nullable="false" scale="255" type="string"/>
+		<column name="rule_value" nullable="false" scale="255" type="string"/>
+		<column name="rule_group" nullable="false" scale="64" type="string"/>
+		<column name="mandatory" nullable="true" scale="10" type="string"/>
+		<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+	</table>
+	<table name="reutersdss_prod_mapping" xmlns="">
+		<column name="id" nullable="false" scale="1" type="int"/>
+		<column name="product_type" nullable="false" scale="255" type="string"/>
+		<column name="template_name" nullable="true" scale="255" type="string"/>
+		<column name="sub_type" nullable="true" scale="255" type="string"/>
+		<column name="description" nullable="true" scale="255" type="string"/>
+		<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+	</table>
+</database>

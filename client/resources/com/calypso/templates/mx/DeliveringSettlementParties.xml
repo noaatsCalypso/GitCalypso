@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<template>
+    <contents>
+        <element name="DlvrgSttlmPties">
+            <contents>
+                <element name="Dpstry">
+                    <condition>
+                        <expression>hasDeliveringDepository()</expression>
+                    </condition>
+                    <contents>
+                        <include>
+                            <context>
+                                <to>DeliveringDepository</to>
+                            </context>
+                            <path>SecuritiesSettlementParty.xml</path>
+                        </include>
+                    </contents>
+                </element>
+                <element name="Pty1">
+                    <condition>
+                        <expression>hasDeliveringParty1()</expression>
+                    </condition>
+                    <contents>
+                        <include>
+                            <context>
+                                <to>DeliveringParty1</to>
+                            </context>
+                            <path>SecuritiesSettlementParty.xml</path>
+                        </include>
+                    </contents>
+                </element>
+                <element name="Pty2">
+                    <condition>
+                        <expression>hasDeliveringParty2()</expression>
+                    </condition>
+                    <contents>
+                        <include>
+                            <context>
+                                <to>DeliveringParty2</to>
+                            </context>
+                            <path>SecuritiesSettlementParty.xml</path>
+                        </include>
+                    </contents>
+                </element>
+                <element name="Pty3">
+                    <condition>
+                        <expression>hasDeliveringParty3()</expression>
+                    </condition>
+                    <contents>
+                        <include>
+                            <context>
+                                <to>DeliveringParty3</to>
+                            </context>
+                            <path>SecuritiesSettlementParty.xml</path>
+                        </include>
+                    </contents>
+                </element>
+                <element name="Pty4">
+                    <condition>
+                        <expression>hasDeliveringParty4()</expression>
+                    </condition>
+                    <contents>
+                        <include>
+                            <context>
+                                <to>DeliveringParty4</to>
+                            </context>
+                            <path>SecuritiesSettlementParty.xml</path>
+                        </include>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

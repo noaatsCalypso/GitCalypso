@@ -1,0 +1,13 @@
+begin 
+drop_table_if_exists('inv_cashposition');
+drop_table_if_exists('inv_cashpos_hist');
+drop_table_if_exists('inv_secposition');
+drop_table_if_exists('inv_secpos_hist');
+drop_table_if_exists('inv_cash_balance_back152');
+drop_table_if_exists('inv_cash_movement_back152');
+drop_table_if_exists('inv_sec_balance_back152');
+drop_table_if_exists('inv_sec_movement_back152');
+drop_table_if_exists('inv_movement_history');
+drop_table_if_exists('inv_secposition_new');
+end;
+/

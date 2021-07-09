@@ -1,0 +1,12 @@
+PSEventTrade;NC_ACCEPTED;AMEND;NC_ACCEPTED;true;false;false;ALL;ALL;;;false;true;;;false;false;false;false;
+PSEventTrade;NC_ACCEPTED;APPROVE;NC_ACCEPTED;true;false;false;ALL;ALL;;;false;true;;;false;false;false;false;
+PSEventTrade;NC_ACCEPTED;EXECUTE;TERMINATED;true;true;false;ALL;ALL;;;false;true;;;false;false;false;false;
+PSEventTrade;NC_ACCEPTED;PENDING;NC_PENDING;true;false;false;ALL;ALL;;;false;true;;;false;false;false;false;
+PSEventTrade;NC_ACCEPTED;UPDATE;NC_ACCEPTED;true;false;false;ALL;ALL;;;false;true;;;false;false;false;false;
+PSEventTrade;NC_PENDING;AMEND;NC_PENDING;true;false;false;ALL;ALL;;;false;true;;;false;false;false;false;
+PSEventTrade;NC_PENDING;APPROVE;NC_ACCEPTED;true;false;false;ALL;ALL;;;false;true;;;false;false;false;false;
+PSEventTrade;NC_PENDING;PENDING;NC_PENDING;true;false;false;ALL;ALL;;;false;true;;;false;false;false;false;
+PSEventTrade;NC_PENDING;REJECT;VERIFIED;true;false;false;ALL;ALL;Reject;;false;true;;;false;false;false;false;
+PSEventTrade;NC_PENDING;UPDATE;NC_PENDING;true;false;false;ALL;ALL;;;false;true;;;false;false;false;false;
+PSEventTrade;VERIFIED;TERMINATE;NC_PENDING;true;false;false;ALL;ALL;CheckDTCCNovation;;false;true;;;false;false;false;false;
+PSEventTrade;VERIFIED;TERMINATE;TERMINATED;true;false;false;ALL;ALL;CheckNotDTCCNovation;;false;false;;;false;false;false;false;

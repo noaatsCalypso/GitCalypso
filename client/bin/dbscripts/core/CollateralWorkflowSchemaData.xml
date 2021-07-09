@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+
+	<table name="domain_values" xmlns="">
+		<row cat="collateral-workflow">
+			<column name="name">domainName</column>
+			<column name="value">CollateralAction</column>
+			<column name="description">Possible actions for a Collateral Management</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">domainName</column>
+			<column name="value">CollateralStatus</column>
+			<column name="description">Lifecycle status of an Collateral Management</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralStatus</column>
+			<column name="value">NONE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralStatus</column>
+			<column name="value">ALLOCATED</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralStatus</column>
+			<column name="value">DISPUTED</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralStatus</column>
+			<column name="value">EXECUTED</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralStatus</column>
+			<column name="value">EXPOSURE_AGREED</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralStatus</column>
+			<column name="value">PRICED_NO_CALL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralStatus</column>
+			<column name="value">PRICED_PAY</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralStatus</column>
+			<column name="value">PRICED_RECEIVE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralStatus</column>
+			<column name="value">PRICING</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralStatus</column>
+			<column name="value">RECEIVE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralStatus</column>
+			<column name="value">RETURNED</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralStatus</column>
+			<column name="value">CLOSED</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralStatus</column>
+			<column name="value">VALIDATED</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralStatus</column>
+			<column name="value">CALCULATED</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralStatus</column>
+			<column name="value">PROCESSED</column>
+			<column name="description"></column>
+		</row>		
+		<row cat="collateral-workflow">
+			<column name="name">CollateralStatus</column>
+			<column name="value">TRIPARTY_TRANSATION_CANCELED</column>
+			<column name="description"></column>
+		</row>		
+		<row cat="collateral-workflow">
+			<column name="name">CollateralAction</column>
+			<column name="value">NEW</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralAction</column>
+			<column name="value">AMEND</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralAction</column>
+			<column name="value">VALIDATE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralAction</column>
+			<column name="value">RESOLVE_DISPUTE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralAction</column>
+			<column name="value">AGREE_EXPOSURE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralAction</column>
+			<column name="value">ALLOCATE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralAction</column>
+			<column name="value">CLOSE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralAction</column>
+			<column name="value">DISPUTE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralAction</column>
+			<column name="value">EXECUTE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralAction</column>
+			<column name="value">PRICE</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralAction</column>
+			<column name="value">RETURN</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">CollateralAction</column>
+			<column name="value">CANCELTRIPARTY</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">eventType</column>
+			<column name="value">ALLOCATED_COLLATERAL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">eventType</column>
+			<column name="value">DISPUTED_COLLATERAL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">eventType</column>
+			<column name="value">EXECUTED_COLLATERAL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">eventType</column>
+			<column name="value">EXPOSURE_AGREED_COLLATERAL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">eventType</column>
+			<column name="value">PRICED_NO_CALL_COLLATERAL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">eventType</column>
+			<column name="value">PRICED_PAY_COLLATERAL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">eventType</column>
+			<column name="value">PRICED_RECEIVE_COLLATERAL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">eventType</column>
+			<column name="value">PRICING_COLLATERAL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">eventType</column>
+			<column name="value">RECEIVE_COLLATERAL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">eventType</column>
+			<column name="value">RETURNED_COLLATERAL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">eventType</column>
+			<column name="value">CLOSED_COLLATERAL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">eventType</column>
+			<column name="value">VALIDATED_COLLATERAL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">eventType</column>
+			<column name="value">CALCULATED_COLLATERAL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">eventType</column>
+			<column name="value">PROCESSED_COLLATERAL</column>
+			<column name="description"></column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="name">eventType</column>
+			<column name="value">TRIPARTY_TRANSATION_CANCELED_COLLATERAL</column>
+			<column name="description"></column>
+		</row>
+	</table>
+
+	<table name="ps_event_config" xmlns="">
+		<row cat="collateral-workflow">
+			<column name="event_config_name">Back-Office</column>
+			<column name="event_class">PSEventCollateralStatement</column>
+			<column name="engine_name">MessageEngine</column>
+		</row>
+	</table>
+
+	<table name="wfw_transition" xmlns="">
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2300</column>
+			<column name="event_class">PSEventMessage</column>
+			<column name="status">NONE</column>
+			<column name="possible_action">NEW</column>
+			<column name="resulting_status">SENT</column>
+			<column name="use_stp_b">0</column>
+			<column name="same_user_b">0</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="msg_type">RECONCILIATION</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2301</column>
+			<column name="event_class">PSEventMessage</column>
+			<column name="status">SENT</column>
+			<column name="possible_action">REJECT</column>
+			<column name="resulting_status">INVALID</column>
+			<column name="use_stp_b">0</column>
+			<column name="same_user_b">0</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="msg_type">RECONCILIATION</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2302</column>
+			<column name="event_class">PSEventMessage</column>
+			<column name="status">SENT</column>
+			<column name="possible_action">PROCESS</column>
+			<column name="resulting_status">PROCESSED</column>
+			<column name="use_stp_b">0</column>
+			<column name="same_user_b">0</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="msg_type">RECONCILIATION</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2303</column>
+			<column name="event_class">PSEventMessage</column>
+			<column name="status">PROCESSED</column>
+			<column name="possible_action">CANCEL</column>
+			<column name="resulting_status">CANCELED</column>
+			<column name="use_stp_b">0</column>
+			<column name="same_user_b">0</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="msg_type">RECONCILIATION</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2501</column>
+			<column name="event_class">Collateral</column>
+			<column name="status">NONE</column>
+			<column name="possible_action">NEW</column>
+			<column name="resulting_status">PRICING</column>
+			<column name="use_stp_b">1</column>
+			<column name="same_user_b">1</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="prefered_b">1</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2502</column>
+			<column name="event_class">Collateral</column>
+			<column name="status">PRICING</column>
+			<column name="possible_action">PRICE</column>
+			<column name="resulting_status">PRICED_NO_CALL</column>
+			<column name="use_stp_b">1</column>
+			<column name="same_user_b">1</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="prefered_b">1</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2503</column>
+			<column name="event_class">Collateral</column>
+			<column name="status">PRICING</column>
+			<column name="possible_action">PRICE</column>
+			<column name="resulting_status">PRICED_RECEIVE</column>
+			<column name="use_stp_b">1</column>
+			<column name="same_user_b">1</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="prefered_b">0</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2504</column>
+			<column name="event_class">Collateral</column>
+			<column name="status">PRICING</column>
+			<column name="possible_action">PRICE</column>
+			<column name="resulting_status">PRICED_PAY</column>
+			<column name="use_stp_b">1</column>
+			<column name="same_user_b">1</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="prefered_b">0</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2505</column>
+			<column name="event_class">Collateral</column>
+			<column name="status">PRICED_NO_CALL</column>
+			<column name="possible_action">AGREE_EXPOSURE</column>
+			<column name="resulting_status">EXPOSURE_AGREED</column>
+			<column name="use_stp_b">0</column>
+			<column name="same_user_b">1</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="prefered_b">1</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2506</column>
+			<column name="event_class">Collateral</column>
+			<column name="status">PRICED_RECEIVE</column>
+			<column name="possible_action">AGREE_EXPOSURE</column>
+			<column name="resulting_status">EXPOSURE_AGREED</column>
+			<column name="use_stp_b">0</column>
+			<column name="same_user_b">1</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="prefered_b">1</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2507</column>
+			<column name="event_class">Collateral</column>
+			<column name="status">PRICED_PAY</column>
+			<column name="possible_action">AGREE_EXPOSURE</column>
+			<column name="resulting_status">EXPOSURE_AGREED</column>
+			<column name="use_stp_b">0</column>
+			<column name="same_user_b">1</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="prefered_b">1</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2508</column>
+			<column name="event_class">Collateral</column>
+			<column name="status">EXPOSURE_AGREED</column>
+			<column name="possible_action">ALLOCATE</column>
+			<column name="resulting_status">ALLOCATED</column>
+			<column name="use_stp_b">0</column>
+			<column name="same_user_b">1</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="prefered_b">1</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2509</column>
+			<column name="event_class">Collateral</column>
+			<column name="status">ALLOCATED</column>
+			<column name="possible_action">VALIDATE</column>
+			<column name="resulting_status">VALIDATED</column>
+			<column name="use_stp_b">0</column>
+			<column name="same_user_b">1</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="prefered_b">1</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2510</column>
+			<column name="event_class">Collateral</column>
+			<column name="status">VALIDATED</column>
+			<column name="possible_action">EXECUTE</column>
+			<column name="resulting_status">EXECUTED</column>
+			<column name="use_stp_b">0</column>
+			<column name="same_user_b">1</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="prefered_b">1</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2511</column>
+			<column name="event_class">Collateral</column>
+			<column name="status">EXPOSURE_AGREED</column>
+			<column name="possible_action">CLOSE</column>
+			<column name="resulting_status">CLOSED</column>
+			<column name="use_stp_b">0</column>
+			<column name="same_user_b">1</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="prefered_b">0</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2512</column>
+			<column name="event_class">Collateral</column>
+			<column name="status">EXPOSURE_AGREED</column>
+			<column name="possible_action">RETURN</column>
+			<column name="resulting_status">RETURNED</column>
+			<column name="use_stp_b">0</column>
+			<column name="same_user_b">1</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="prefered_b">0</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2513</column>
+			<column name="event_class">Collateral</column>
+			<column name="status">ALLOCATED</column>
+			<column name="possible_action">DISPUTE</column>
+			<column name="resulting_status">DISPUTED</column>
+			<column name="use_stp_b">0</column>
+			<column name="same_user_b">1</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="prefered_b">0</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="workflow_id">2514</column>
+			<column name="event_class">Collateral</column>
+			<column name="status">DISPUTED</column>
+			<column name="possible_action">RESOLVE_DISPUTE</column>
+			<column name="resulting_status">ALLOCATED</column>
+			<column name="use_stp_b">0</column>
+			<column name="same_user_b">1</column>
+			<column name="product_type">ALL</column>
+			<column name="log_completed_b">0</column>
+			<column name="kick_cutoff_b">0</column>
+			<column name="create_task_b">0</column>
+			<column name="update_only_b">0</column>
+			<column name="gen_int_event_b">0</column>
+			<column name="prefered_b">0</column>
+		</row>
+	</table>
+	
+	<table name="bo_workflow_rule" xmlns="">
+		<row cat="collateral-workflow">
+			<column name="id">2303</column>
+			<column name="rule_name">CancelReconciliation</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="id">2502</column>
+			<column name="rule_name">CheckNoCall</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="id">2503</column>
+			<column name="rule_name">CheckReceive</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="id">2504</column>
+			<column name="rule_name">CheckPay</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="id">2506</column>
+			<column name="rule_name">AutoAdjust</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="id">2510</column>
+			<column name="rule_name">Execute</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="id">2511</column>
+			<column name="rule_name">Close</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="id">2512</column>
+			<column name="rule_name">Return</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="id">2513</column>
+			<column name="rule_name">ResetRequiredValue</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="id">2514</column>
+			<column name="rule_name">AutoReturn</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="id">2515</column>
+			<column name="rule_name">AutoReturnAndAdjust</column>
+		</row>
+	   <row cat="collateral-workflow">
+			<column name="id">2516</column>
+			<column name="rule_name">AutoAccept</column>
+		</row>
+		<row cat="collateral-workflow">
+			<column name="id">2517</column>
+			<column name="rule_name">AutoReject</column>
+		</row>
+		
+	</table>
+
+</database>

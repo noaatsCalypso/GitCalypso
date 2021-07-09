@@ -1,0 +1,39 @@
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="objstore_files" xmlns="">
+        <column name="id" scale="64" type="string"/>
+        <column name="version" scale="1" type="int"/>
+        <column name="tenant_id" scale="1" type="int"/>
+        <column name="creation_user" scale="255" type="string"/>
+        <column name="creation_date" scale="1" type="int"/>
+        <column name="creation_user_type" scale="255" type="string" default="user"/>
+        <column name="last_update_user" scale="255" type="string"/>
+        <column name="last_update_date" scale="1" type="int"/>
+        <column name="last_update_user_type" scale="255" type="string" default="user"/>
+        <column name="file_name" scale="1024" type="string"></column>
+        <column name="file_key" scale="64" type="string"></column>
+        <column name="mime_type" scale="64" type="string"></column>
+        <column name="file_size" scale="1" type="bigint"></column>
+        <column name="app_name" type="VARCHAR(64)"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+    <table name="objstore_files_content" xmlns="">
+        <column name="id" scale="64" type="string"/>
+        <column name="version" scale="1" type="int"/>
+        <column name="tenant_id" scale="1" type="int"/>
+        <column name="creation_user" scale="255" type="string"/>
+        <column name="creation_date" scale="1" type="int"/>
+        <column name="creation_user_type" scale="255" type="string" default="user"/>
+        <column name="last_update_user" scale="255" type="string"/>
+        <column name="last_update_date" scale="1" type="int"/>
+        <column name="last_update_user_type" scale="255" type="string" default="user"/>
+        <column name="file_name" scale="64" type="string"></column>
+        <column name="file_size" scale="64" type="string"></column>
+        <column name="file_content" type="binary"></column>
+        <column name="app_name" type="VARCHAR(64)"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+    </table>
+</database>

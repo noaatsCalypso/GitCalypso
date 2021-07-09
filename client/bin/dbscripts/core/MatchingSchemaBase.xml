@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="matching_context" xmlns="">
+        <column name="context_type" nullable="false" scale="64" type="string"/>
+        <column name="context_name" nullable="false" scale="64" type="string"/>
+        <column name="contents" nullable="true" type="binary"/>
+        <column name="version_num" nullable="true" scale="1" type="int"/>
+        <column name="user_name" nullable="true" scale="32" type="string"/>
+        <index primary="true">
+            <on>context_name</on>
+        </index>
+    </table>
+    <table name="matching_property_def" xmlns="">
+        <column name="key_name" nullable="false" scale="255" type="string"/>
+        <column name="key_type" nullable="false" scale="255" type="string"/>
+        <column name="column_name" nullable="false" scale="30" type="string"/>
+        <column name="column_type" nullable="false" scale="255" type="string"/>
+        <column name="column_size" nullable="false" scale="1" type="int"/>
+        <column name="column_nullable" nullable="false" scale="1" type="int"/>
+        <column name="calypso_domain" nullable="true" scale="255" type="string"/>
+        <index primary="true">
+            <on>key_name</on>
+        </index>
+    </table>
+    <table name="sub_type_map" xmlns="">
+        <column name="sub_type" nullable="false" scale="1" type="int"/>
+        <column name="name" nullable="false" scale="32" type="string" />
+        <index primary="true">
+            <on>sub_type</on>
+            <on>name</on>
+        </index>
+    </table>
+    <table name="matching_alias" xmlns="">
+        <column name="alias_id" nullable="false" scale="1" type="int"/>
+        <column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+        <column name="value_hash" nullable="false" scale="1" type="int"/>
+        <column name="alias_type" nullable="false" scale="255" type="string" default="java.lang.String" />
+        <column name="key_value" nullable="false" scale="255" type="string"/>
+        <column name="mapped_value" nullable="false" scale="255" type="string"/>
+        <index primary="true">
+            <on>alias_id</on>
+        </index>
+        <index primary="false">
+            <on>value_hash</on>
+        </index>
+    </table>
+    <table name="matching_alias_link" xmlns="">
+        <column name="alias_link_id" nullable="false" scale="1" type="int"/>
+        <column name="alias_id" nullable="false" scale="1" type="int"/>
+        <column name="context_name" nullable="false" scale="64" type="string"/>
+        <column name="le_id" nullable="false" scale="1" type="int"/>
+        <column name="po_id" nullable="false" scale="1" type="int"/>
+        <column name="key_name" nullable="false" scale="64" type="string"/>
+        <index primary="true">
+            <on>alias_link_id</on>
+        </index>
+        <index primary="false">
+            <on>alias_id</on>
+        </index>
+        <index primary="false">
+            <on>context_name</on>
+        </index>
+    </table>
+    <table name="bo_matchable" xmlns="">
+        <column name="object_id" nullable="false" scale="1" type="int"/>
+        <column name="object_class" nullable="false" scale="255" type="string"/>
+        <column name="object_version" nullable="false" scale="1" type="int"/>
+        <column name="object_name" nullable="true" scale="255" type="string"/>
+        <column name="context_name" nullable="false" scale="64" type="string"/>
+        <column name="is_incoming" nullable="false" type="int" scale="1"/>
+        <column name="is_matchable" nullable="false" type="int" scale="1"/>
+        <column name="cut_off" nullable="true" type="timestamp"/>
+        <column name="matching_status" default="dummy" nullable="false" scale="32" type="string"/>
+        <column name="po_id" default="-1" nullable="false" type="int" scale="1"/>
+        <column name="le_id" default="-1" nullable="false" type="int" scale="1"/>
+        <column name="blob_matchable" nullable="true" type="binary"/>
+        <index primary="true">
+            <on>object_id</on>
+            <on>object_class</on>
+            <on>context_name</on>
+        </index>
+        <index primary="false">
+            <on>object_id</on>
+            <on>object_class</on>
+        </index>
+        <index primary="false">
+            <on>context_name</on>
+            <on>is_incoming</on>
+            <on>is_matchable</on>
+        </index>
+        <index primary="false"> <!-- for the Matching Monitor -->
+            <on>cut_off</on>
+            <on>context_name</on>
+            <on>matching_status</on>
+            <on>le_id</on>
+            <on>po_id</on>
+        </index>
+    </table>
+    <table name="bo_matchable_hist" xmlns="">
+        <column name="object_id" nullable="false" scale="1" type="int"/>
+        <column name="object_class" nullable="false" scale="255" type="string"/>
+        <column name="object_version" nullable="false" scale="1" type="int"/>
+        <column name="object_name" nullable="true" scale="255" type="string"/>
+        <column name="context_name" nullable="false" scale="64" type="string"/>
+        <column name="is_incoming" nullable="false" type="int" scale="1"/>
+        <column name="is_matchable" nullable="false" type="int" scale="1"/>
+        <column name="cut_off" nullable="true" type="timestamp"/>
+        <column name="matching_status" default="dummy" nullable="false" scale="32" type="string"/>
+        <column name="po_id" default="-1" nullable="false" type="int" scale="1"/>
+        <column name="le_id" default="-1" nullable="false" type="int" scale="1"/>
+        <column name="blob_matchable" nullable="true" type="binary"/>
+        <index primary="true">
+            <on>object_id</on>
+            <on>object_class</on>
+            <on>context_name</on>
+        </index>
+        <index primary="false"> <!-- for the Matching Monitor -->
+            <on>cut_off</on>
+            <on>context_name</on>
+            <on>matching_status</on>
+            <on>le_id</on>
+            <on>po_id</on>
+        </index>
+    </table>
+    <table name="bo_matchable_three_way" xmlns="">
+        <column name="matchable_version" nullable="false" scale="1" type="int"/>
+        <column name="object_id" nullable="false" scale="1" type="int"/>
+        <column name="object_class" nullable="false" scale="255" type="string"/>
+        <column name="object_version" nullable="false" scale="1" type="int"/>
+        <column name="object_name" nullable="true" scale="255" type="string"/>
+        <column name="context_name" nullable="false" scale="64" type="string"/>
+        <column name="is_incoming" nullable="false" type="int" scale="1"/>
+        <column name="is_matchable" nullable="false" type="int" scale="1"/>
+        <column name="is_broker" nullable="false" type="int" scale="1"/>
+        <column name="is_broker_indexable" nullable="false" type="int" scale="1"/>
+        <column name="cut_off" nullable="true" type="timestamp"/>
+        <column name="matching_status" default="dummy" nullable="false" scale="32" type="string"/>
+        <column name="po_id" default="-1" nullable="false" type="int" scale="1"/>
+        <column name="le_id" default="-1" nullable="false" type="int" scale="1"/>
+        <column name="blob_matchable" nullable="true" type="binary"/>
+        <index primary="true">
+            <on>object_id</on>
+            <on>object_class</on>
+            <on>context_name</on>
+        </index>
+        <index primary="false"> <!-- for the Matching queries -->
+            <on>context_name</on>
+            <on>is_incoming</on>
+            <on>is_matchable</on>
+        </index>
+        <index primary="false"> <!-- for the Broker queries -->
+            <on>context_name</on>
+            <on>is_broker</on>
+            <on>is_broker_indexable</on>
+        </index>
+        <index primary="false"> <!-- for the Matching Monitor -->
+            <on>cut_off</on>
+            <on>context_name</on>
+            <on>matching_status</on>
+            <on>le_id</on>
+            <on>po_id</on>
+        </index>
+    </table>
+    <table name="bo_matchable_three_way_hist" xmlns="">
+        <column name="matchable_version" nullable="false" scale="1" type="int"/>
+        <column name="object_id" nullable="false" scale="1" type="int"/>
+        <column name="object_class" nullable="false" scale="255" type="string"/>
+        <column name="object_version" nullable="false" scale="1" type="int"/>
+        <column name="object_name" nullable="true" scale="255" type="string"/>
+        <column name="context_name" nullable="false" scale="64" type="string"/>
+        <column name="is_incoming" nullable="false" type="int" scale="1"/>
+        <column name="is_matchable" nullable="false" type="int" scale="1"/>
+        <column name="is_broker" nullable="false" type="int" scale="1"/>
+        <column name="is_broker_indexable" nullable="false" type="int" scale="1"/>
+        <column name="cut_off" nullable="true" type="timestamp"/>
+        <column name="matching_status" default="dummy" nullable="false" scale="32" type="string"/>
+        <column name="po_id" default="-1" nullable="false" type="int" scale="1"/>
+        <column name="le_id" default="-1" nullable="false" type="int" scale="1"/>
+        <column name="blob_matchable" nullable="true" type="binary"/>
+        <index primary="true">
+            <on>object_id</on>
+            <on>object_class</on>
+            <on>context_name</on>
+        </index>
+        <index primary="false"> <!-- for the Matching Monitor -->
+            <on>cut_off</on>
+            <on>context_name</on>
+            <on>matching_status</on>
+            <on>le_id</on>
+            <on>po_id</on>
+        </index>
+    </table>
+    <table name="bo_matchable_dyn" xmlns="">
+        <column name="matchable_version" nullable="false" scale="1" type="int"/>
+        <column name="object_id" nullable="false" scale="1" type="int"/>
+        <column name="object_class" nullable="false" scale="255" type="string"/>
+        <column name="object_version" nullable="false" scale="1" type="int"/>
+        <column name="object_name" nullable="true" scale="255" type="string"/>
+        <column name="context_name" nullable="false" scale="64" type="string"/>
+        <column name="is_incoming" nullable="false" type="int" scale="1"/>
+        <column name="is_matchable" nullable="false" type="int" scale="1"/>
+        <column name="cut_off" nullable="true" type="timestamp"/>
+        <column name="matching_status" default="dummy" nullable="false" scale="32" type="string"/>
+        <column name="po_id" default="-1" nullable="false" type="int" scale="1"/>
+        <column name="le_id" default="-1" nullable="false" type="int" scale="1"/>
+        <column name="blob_matchable" nullable="true" type="binary"/>
+        <index primary="true">
+            <on>object_id</on>
+            <on>object_class</on>
+            <on>context_name</on>
+        </index>
+        <index primary="false"> <!-- for the Matching queries -->
+            <on>context_name</on>
+            <on>is_incoming</on>
+            <on>is_matchable</on>
+        </index>
+        <index primary="false"> <!-- for the Matching Monitor -->
+            <on>cut_off</on>
+            <on>context_name</on>
+            <on>matching_status</on>
+            <on>le_id</on>
+            <on>po_id</on>
+        </index>
+    </table>
+    <table name="bo_matchable_dyn_hist" xmlns="">
+        <column name="matchable_version" nullable="false" scale="1" type="int"/>
+        <column name="object_id" nullable="false" scale="1" type="int"/>
+        <column name="object_class" nullable="false" scale="255" type="string"/>
+        <column name="object_version" nullable="false" scale="1" type="int"/>
+        <column name="object_name" nullable="true" scale="255" type="string"/>
+        <column name="context_name" nullable="false" scale="64" type="string"/>
+        <column name="is_incoming" nullable="false" type="int" scale="1"/>
+        <column name="is_matchable" nullable="false" type="int" scale="1"/>
+        <column name="cut_off" nullable="true" type="timestamp"/>
+        <column name="matching_status" default="dummy" nullable="false" scale="32" type="string"/>
+        <column name="po_id" default="-1" nullable="false" type="int" scale="1"/>
+        <column name="le_id" default="-1" nullable="false" type="int" scale="1"/>
+        <column name="blob_matchable" nullable="true" type="binary"/>
+        <index primary="true">
+            <on>object_id</on>
+            <on>object_class</on>
+            <on>context_name</on>
+        </index>
+        <index primary="false"> <!-- for the Matching Monitor -->
+            <on>cut_off</on>
+            <on>context_name</on>
+            <on>matching_status</on>
+            <on>le_id</on>
+            <on>po_id</on>
+        </index>
+    </table>
+    <table name="engine_config" xmlns="">
+	<row cat="Required">
+	  <column name="engine_id">engine_config.coalesce(max(engine_id)+1,100)@1=1|engine_name='MatchingEngine'</column>
+	  <column name="engine_name">MatchingEngine</column>
+	  <column name="engine_comment">MatchingEngine</column>
+	</row>
+	<row cat="Required">
+	  <column name="engine_id">engine_config.coalesce(max(engine_id)+1,100)@1=1|engine_name='MatchableBuilderEngine'</column>
+	  <column name="engine_name">MatchableBuilderEngine</column>
+	  <column name="engine_comment">MatchableBuilderEngine</column>
+	</row>
+    </table>
+</database>
+
+
+

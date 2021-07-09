@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 601: Precious Metal Option Confirmation  -->
+<SwiftMsgDef>
+	<Name>MT601</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information"  openTag=":15A:" modes="MMM">
+		<SwiftField name="Transaction Reference Number" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Related Reference" tag=":21:" format="16x" value="MESSAGE_LINKEDID" modes="MMM"/>
+		<SwiftField name="Code/Common Reference" tag=":22:" format="8a/4!a2!c4!n4!a2!c" value="CODE_COMMON_REF" modes="MMM"/>
+		<SwiftField name="Party A" tag=":82a:" value="PARTY_A" modes="MMM">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		    <SwiftFieldOption letter="J" format="5*40x" />
+		</SwiftField>
+		<SwiftField name="Party B" tag=":87a:" value="PARTY_B" modes="MMM">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		    <SwiftFieldOption letter="J" format="5*40x" />
+		</SwiftField>
+		<SwiftField name="Further Identification" tag=":23:" format="16x" value="FURTHER_IDENTIFICATION" modes="MMM"/>
+		<SwiftField name="Date Contract Agreed/Amended" tag=":30:" format="6!n" value="CONTRACT_DATE" modes="MMM"/>
+		<SwiftField name="Identification of the Metal and the Metal Account" tag=":26C:" format="[3!a]/15x/5!a4!a[4x][//8x]" value="METAL" modes="MMM"/>
+		<SwiftField name="Earliest Exercise Date" tag=":31C:" format="6!n" value="FIRSTEXERCISEDATE" condition="isExerciseAmericanStyle()" modes="---"/>
+		<SwiftField name="Expire Details" tag=":31G:" format="6!n/4!n/12a" value="EXPIRYDETAILS" modes="MMM"/>
+		<SwiftField name="Final Settlement Date" tag=":31E:" format="6!n" value="FINALSETTLEMENTDATE" modes="MMM"/>
+		<SwiftField name="Settlement Type" tag=":26F:" format="9a" value="SETTLEMENT_TYPE" modes="MMM"/>
+		<SwiftField name="Quantity of the Metal" tag=":32F:" format="3!a15d" value="QUANTITY" modes="MMM"/>
+		<SwiftField name="Strike Price" tag=":32B:" format="3!a15d" value="STRIKEPRICE" modes="MMM"/>
+		<SwiftField name="Premium Price" tag=":33B:" format="3!a15d" value="PREMIUN_PRICE" modes="MMM"/>
+		<SwiftField name="Premium Payment" tag=":34a:" value="PREMIUM_AMOUNT" modes="MMM">
+			<SwiftFieldOption letter="P" format="6!n3!a15d" />
+			<SwiftFieldOption letter="R" format="6!n3!a15d" />
+		</SwiftField>
+		<SwiftField name="Account With Instituition" tag=":57a:" value="CPTY_RECEIVING_AGENT" modes="MMM">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Type, Date, Version of the Agreement" tag=":77H:" format="6a[/8!n][//4!n]" value="AGREEMENT_INFO" modes="MMM" />
+		<SwiftField name="Terms and Conditions" tag=":77D:" format="6*35x" value="TERMS_AND_CONDITIONS" modes="OOO"/>
+		<SwiftField name="Year of Definitions" tag=":14C:" format="4!n" value="YEAR_DEFINITIONS" modes="MMM" />
+		<SwiftField name="Sender to Receiver Information" tag=":72:" format="6*35x" value="UNDERLYING_INFO" modes="OOO"/>
+	</SwiftSequence>
+	<SwiftSequence name="B:Reporting Information" condition="hasReportingParties()" modes="---">
+		<SwiftField name="B:Reporting Information" tag=":15B:" format="" modes="MMM"/>
+		<SwiftSequence name="D1" modes="---" iterator="JuridictionIterator">
+			<SwiftField name="Reporting Jurisdiction" tag=":22L:" format="35x" value="REPORTING_JURISDICTION" modes="MMM"/>
+			<SwiftField name="UTI/USI Issuer Code" tag=":22M:" format="30x" value="ISSUER_CODE" modes="MMM"/>
+			<SwiftField name="UTI/USI Transaction identifier" tag=":22N:" format="32x" value="TRANSACTION_IDENTIFIER" modes="MMM"/>
+		</SwiftSequence>	
+	</SwiftSequence> 
+</SwiftMsgDef>

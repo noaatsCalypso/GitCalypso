@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+  <table name="calypso_mapping" xmlns="">
+	<column name="interface_name" nullable="false" scale="32" type="string"/>
+    <column name="type_name" nullable="false" scale="32" type="string"/>
+	<column name="calypso_value" nullable="true" scale="255" type="string"/>
+    <column name="interface_value" nullable="false" scale="255" type="string"/>
+	<column name="reverse_b" default="0" nullable="false" type="int" scale="1"/>
+	<column name="version_num" nullable="false" scale="1" type="int" default="0"/>
+		<index primary="true"> 
+			<on>interface_name</on>
+			<on>type_name</on> 
+			<on>interface_value</on>
+		</index>
+  </table>
+</database>

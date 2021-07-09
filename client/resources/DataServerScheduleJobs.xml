@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:lang="http://www.springframework.org/schema/lang"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+  	
+  
+  	<bean id="eventPurgeTrigger" class="com.calypso.infra.scheduling.CalypsoSimpleTriggerBean">
+	    <property name="jobDetail">
+	    	<bean id="eventPurger" parent="methodInvokingJob">
+			  <property name="targetObject" >
+			  	<bean class="com.calypso.tk.event.ConsumedEventPurger">
+					<property name="remoteTrade" ref="RemoteTrade" />
+				</bean>
+			  </property>
+			  <property name="targetMethod" value="run" />
+			</bean>	
+		</property>
+	    <property name="startDelay" value="${EventPurgeTimeout}" />
+	    <property name="repeatInterval" value="${EventPurgeTimeout}" />
+	    
+	</bean>
+	
+	<bean id="seedWatcherTrigger" class="com.calypso.infra.scheduling.CalypsoSimpleTriggerBean">
+	    <property name="jobDetail">
+	    	<bean id="seedWatcher" parent="methodInvokingJob">
+			  <property name="targetObject" >
+			  	<bean class="com.calypso.tk.event.SeedWatcher">
+					<property name="remoteAccess" ref="RemoteAccess" />
+				</bean>
+			  </property>
+			  <property name="targetMethod" value="run" />
+			</bean>	
+		</property>
+	    <property name="startDelay" value="10000" />
+	    <property name="repeatInterval" value="86400000" />
+	    <!-- <property name="repeatInterval" value="50000" />-->
+	    
+	</bean>
+	<bean id="applicationShutdownHandler" class="com.calypso.infra.starter.DataServerShutdownHandler">
+		<property name="rmiRegistryPort" value="${RMI_REGISTRY_PORT}" />
+	</bean>
+	<!-- <bean name="triggerFilter" class="com.calypso.infra.scheduler.TriggerFilter" >-->
+	<bean name="triggerFilter" class="com.calypso.infra.scheduling.TriggerFilter" >
+		   <property name="triggers">
+	        <list>
+	            <ref bean="tokenRenewTrigger" />
+	            <ref bean="eventPurgeTrigger" />
+	            <ref bean="seedWatcherTrigger" />	            
+	        </list>
+	    </property>
+	</bean>
+	
+	<bean id="triggerFilterFactory" factory-bean="triggerFilter" factory-method="getFilteredTriggers"/>
+	
+	<!--<bean parent="schedulingFactory">
+	    <property name="triggers"  ref="triggerFilterFactory" />
+    </bean>-->
+	
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- JIDE pivot data constants -->
+	<!-- TODO: can be moved into general UI resources -->
+
+	<bean id="com.jidesoft.pivot.PivotConstants.AREA_COLUMN"
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+	<bean id="com.jidesoft.pivot.PivotConstants.AREA_ROW"
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+	<bean id="com.jidesoft.pivot.PivotConstants.AREA_DATA"
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+
+	<bean id="com.jidesoft.grid.Field.SORT_ORDER_ASCENDING"
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+	<bean id="com.jidesoft.grid.Field.SORT_ORDER_DESCENDING"
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+	<bean id="com.jidesoft.grid.Field.SORT_ORDER_UNSORTED"
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" />
+
+</beans>

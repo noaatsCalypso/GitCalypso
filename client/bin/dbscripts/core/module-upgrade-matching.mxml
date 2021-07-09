@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><module target-version="2.9.41" name="matching" min-version="1.00.00">
+  <schema filename="MatchingSchemaBase.xml"/>
+  <schema filename="MatchingSchemaData.xml"/>
+  <upgrade version="2.9.4">
+    <step name="MCHFW-1099" version="1"/>
+  </upgrade>
+  <upgrade version="2.9.24">
+    <step name="MCHFW-1368" version="1"/>
+  </upgrade>
+  <upgrade version="2.9.25">
+    <step name="MCHFW-1367" version="1"/>
+  </upgrade>
+</module>

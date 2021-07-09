@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="domain_values" xmlns="">
+		<row cat="SWIFT MX FXTR">
+			<column name="name">MX.Templates</column>
+			<column name="value">FXTradeInstruction.selector</column>
+		</row>
+		<row cat="SWIFT MX FXTR">
+			<column name="name">MX.Templates</column>
+			<column name="value">fxtr.014.001</column>
+		</row>
+		<row cat="SWIFT MX FXTR">
+			<column name="name">MX.Templates</column>
+			<column name="value">fxtr.015.001</column>
+		</row>
+		<row cat="SWIFT MX FXTR">
+			<column name="name">MX.Templates</column>
+			<column name="value">fxtr.016.001</column>
+		</row>
+		<row cat="SWIFT MX FXTR">
+			<column name="name">MX.Versions</column>
+			<column name="value">fxtr.014.001</column>
+			<column name="description">04</column>
+		</row>
+		<row cat="SWIFT MX FXTR">
+			<column name="name">MX.Versions</column>
+			<column name="value">fxtr.015.001</column>
+			<column name="description">04</column>
+		</row>
+		<row cat="SWIFT MX FXTR">
+			<column name="name">MX.Versions</column>
+			<column name="value">fxtr.016.001</column>
+			<column name="description">04</column>
+		</row>
+<!--
+		<row cat="SWIFT MX FXTR Demo">
+			<column name="name">messageType</column>
+			<column name="value">FXTR_CONFIRM</column>
+		</row>
+-->
+	</table>
+<!--
+	<table name="advice_config" xmlns="">
+		<row cat="SWIFT MX FXTR Demo">
+			<column name="advice_config_id">200220401</column>
+			<column name="po_id">0</column>
+			<column name="event_type">VERIFIED_TRADE</column>
+			<column name="product_type">FX</column>
+			<column name="message_type">MX_CONFIRM</column>
+			<column name="send_contact_type">Default</column>
+			<column name="receiver_role">Agent</column>
+			<column name="rec_contact_type">Default</column>
+			<column name="default_language">English</column>
+			<column name="address_method">SWIFT</column>
+			<column name="gateway">MX</column>
+			<column name="always_send">0</column>
+			<column name="template_name">FXTradeInstruction.selector</column>
+			<column name="matching">0</column>
+			<column name="inactive">0</column>
+			<column name="format_type">MX</column>
+			<column name="sd_filter">NONE</column>
+			<column name="receiver_id">0</column>
+		</row>
+		<row cat="SWIFT MX FXTR Demo">
+			<column name="advice_config_id">200220402</column>
+			<column name="po_id">0</column>
+			<column name="event_type">CANCELED_TRADE</column>
+			<column name="product_type">FX</column>
+			<column name="message_type">MX_CONFIRM</column>
+			<column name="send_contact_type">Default</column>
+			<column name="receiver_role">Agent</column>
+			<column name="rec_contact_type">Default</column>
+			<column name="default_language">English</column>
+			<column name="address_method">SWIFT</column>
+			<column name="gateway">MX</column>
+			<column name="always_send">0</column>
+			<column name="template_name">FXTradeInstruction.selector</column>
+			<column name="matching">0</column>
+			<column name="inactive">0</column>
+			<column name="format_type">MX</column>
+			<column name="sd_filter">NONE</column>
+			<column name="receiver_id">0</column>
+		</row>
+		<row cat="SWIFT MX FXTR Demo">
+			<column name="advice_config_id">200220403</column>
+			<column name="po_id">0</column>
+			<column name="event_type">VERIFIED_TRADE</column>
+			<column name="product_type">FXForward</column>
+			<column name="message_type">MX_CONFIRM</column>
+			<column name="send_contact_type">Default</column>
+			<column name="receiver_role">Agent</column>
+			<column name="rec_contact_type">Default</column>
+			<column name="default_language">English</column>
+			<column name="address_method">SWIFT</column>
+			<column name="gateway">MX</column>
+			<column name="always_send">0</column>
+			<column name="template_name">FXTradeInstruction.selector</column>
+			<column name="matching">0</column>
+			<column name="inactive">0</column>
+			<column name="format_type">MX</column>
+			<column name="sd_filter">NONE</column>
+			<column name="receiver_id">0</column>
+		</row>
+		<row cat="SWIFT MX FXTR Demo">
+			<column name="advice_config_id">200220404</column>
+			<column name="po_id">0</column>
+			<column name="event_type">CANCELED_TRADE</column>
+			<column name="product_type">FXForward</column>
+			<column name="message_type">MX_CONFIRM</column>
+			<column name="send_contact_type">Default</column>
+			<column name="receiver_role">Agent</column>
+			<column name="rec_contact_type">Default</column>
+			<column name="default_language">English</column>
+			<column name="address_method">SWIFT</column>
+			<column name="gateway">MX</column>
+			<column name="always_send">0</column>
+			<column name="template_name">FXTradeInstruction.selector</column>
+			<column name="matching">0</column>
+			<column name="inactive">0</column>
+			<column name="format_type">MX</column>
+			<column name="sd_filter">NONE</column>
+			<column name="receiver_id">0</column>
+		</row>
+		<row cat="SWIFT MX FXTR Demo">
+			<column name="advice_config_id">200220405</column>
+			<column name="po_id">0</column>
+			<column name="event_type">VERIFIED_TRADE</column>
+			<column name="product_type">FXSwap</column>
+			<column name="message_type">MX_CONFIRM</column>
+			<column name="send_contact_type">Default</column>
+			<column name="receiver_role">Agent</column>
+			<column name="rec_contact_type">Default</column>
+			<column name="default_language">English</column>
+			<column name="address_method">SWIFT</column>
+			<column name="gateway">MX</column>
+			<column name="always_send">0</column>
+			<column name="template_name">FXTradeInstruction.selector</column>
+			<column name="matching">0</column>
+			<column name="inactive">0</column>
+			<column name="format_type">MX</column>
+			<column name="sd_filter">NONE</column>
+			<column name="receiver_id">0</column>
+		</row>
+		<row cat="SWIFT MX FXTR Demo">
+			<column name="advice_config_id">200220406</column>
+			<column name="po_id">0</column>
+			<column name="event_type">CANCELED_TRADE</column>
+			<column name="product_type">FXSwap</column>
+			<column name="message_type">MX_CONFIRM</column>
+			<column name="send_contact_type">Default</column>
+			<column name="receiver_role">Agent</column>
+			<column name="rec_contact_type">Default</column>
+			<column name="default_language">English</column>
+			<column name="address_method">SWIFT</column>
+			<column name="gateway">MX</column>
+			<column name="always_send">0</column>
+			<column name="template_name">FXTradeInstruction.selector</column>
+			<column name="matching">0</column>
+			<column name="inactive">0</column>
+			<column name="format_type">MX</column>
+			<column name="sd_filter">NONE</column>
+			<column name="receiver_id">0</column>
+		</row>
+	</table>
+-->
+</database>

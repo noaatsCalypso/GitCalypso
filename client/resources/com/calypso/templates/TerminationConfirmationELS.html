@@ -1,0 +1,258 @@
+	<!--calypso>
+	if (Trade.getLongId() > 0)
+		include "message_header.html";
+	</calypso-->
+
+<!--calypso>
+if (|PRODUCT_TYPE| == "EquityLinkedSwap")
+   set TRANSACTION_TYPE = "Equity Swap";
+else
+   set TRANSACTION_TYPE = |PRODUCT_TYPE|;
+</calypso-->
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" || |MESSAGE_SUBACTION|== "CANCEL")
+	inline "<p class='header2'>Amend and Cancel"</p>;
+if (|MESSAGE_SUBACTION|== "AMEND")
+	 inline "<p class='header2'>This Confirmation cancels and supersedes the previous confirmation under the same reference.</p>";
+	else if (|MESSAGE_SUBACTION|== "CANCEL")
+	 inline "<p class='header2'>This Confirmation cancels the previous confirmation under the same reference.</p>";
+</calypso-->
+
+<!--calypso>
+if (|KEYWORD_TerminationType| == "FullTermination") {
+	set TERMINATION_TYPE = "Termination";
+	inline "
+	<p class='header1'>|TERMINATION_TYPE| Agreement</p>
+
+	<br>
+	<p>Our Transaction Reference: |TRADE_ID|</p>
+
+	<br>
+	<p class='indented'>
+	The purpose of this |TERMINATION_TYPE| Agreement is to confirm the terms and conditions of the |TERMINATION_TYPE|
+	as of |LONG_TERMINATION_DATE| ('the |TERMINATION_TYPE| Effective Date') of the transaction with the trade reference number indicated above and made between
+	|SENDER_FULL_NAME| and |RECEIVER_FULL_NAME| on the Trade Date as specified below (the 'Transaction').
+	</p>
+	<p>
+	<b>Details of the initial Transaction are as follows:</b>
+	<br>
+	<table>
+	<tr>
+		<td>Trade Date:</td>
+		<td>|TRADE_DATE|</td>
+	</tr>
+	<tr>
+		<td>Notional Amount:</td>
+		<td>|TRADE_CURRENCY| |PRODUCT_PRINCIPAL|</td>
+	</tr>
+		<tr><td>Effective Date:</td>
+		<td>|SETTLE_DATE|</td>
+	</tr>
+	<tr>
+		<td>Termination Date:</td>
+		<td>|PRODUCT_MATURITYDATE|</td>
+	</tr>
+	<tr>
+		<td>Type of Transaction:</td>
+		<td>|TRANSACTION_TYPE|</td>
+	</tr>
+	<tr>
+		<td>Description:</td>
+	<td>|PRODUCT_DESCRIPTION|</td>
+	</tr>
+	</table>
+	</p>
+
+	<b>The terms of this |TERMINATION_TYPE| are as follows:</b>
+	<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.
+	";
+
+	if (|FEE_PAYER#TERMINATION_FEE| != "NONE" ) {
+		inline "
+
+		In consideration of the payment by |FEE_PAYER#TERMINATION_FEE| to |FEE_RECEIVER#TERMINATION_FEE| of
+		<b>|FEE_CURRENCY#TERMINATION_FEE| |FEE_AMOUNT#TERMINATION_FEE| 	</b> on the <b>|FEE_DATE#TERMINATION_FEE|</b>,";
+	}
+
+	inline "
+		|SENDER_FULL_NAME| and |RECEIVER_FULL_NAME| agree that the Transaction shall be terminated and cancelled with respect to <b>|TRADE_CURRENCY| |TERMINATED_AMOUNT|</b>
+		(the 'Terminated Notional Amount') and all rights, duties, claims and obligations of the parties thereunder shall be released
+		and discharged with respect to the Terminated Notional Amount with effect from the |TERMINATION_TYPE| Effective Date.</br>
+		Fixing Price : See Below</br>
+		Terminated Quantity : See Below
+	</p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. No other transaction between the parties hereto is affected by this Termination Agreement.</p>
+	";
+}
+if (|KEYWORD_TransferType| == "PartialTermination") {
+	set TERMINATION_TYPE = "Partial Termination";
+	inline "
+	<p class='header1'>|TERMINATION_TYPE| Agreement</p>
+
+	<br>
+	<p>Our Transaction Reference: |TRADE_ID#PARENT_TRADE| // Partial |TRADE_ID|</p>
+	<br>
+	<p class='indented'>
+	The purpose of this |TERMINATION_TYPE| Agreement is to confirm the terms and conditions of the |TERMINATION_TYPE|
+	as of |LONG_TERMINATION_DATE#PARENT_TRADE| ('the |TERMINATION_TYPE| Effective Date') of the transaction with the trade reference number indicated above and made between
+	|SENDER_FULL_NAME| and |RECEIVER_FULL_NAME| on the Trade Date as specified below (the 'Transaction').
+	</p>
+	<p>
+	<b>Details of the initial Transaction are as follows:</b>
+	<br>
+	<table>
+	<tr>
+		<td>Trade Date:</td>
+		<td>|TRADE_DATE#PARENT_TRADE|
+	</td>
+	</tr>
+	<tr>
+		<td>Notional Amount:</td>
+		<td>|TRADE_CURRENCY| |PRODUCT_PRINCIPAL#PARENT_TRADE|</td>
+	</tr>
+		<tr><td>Effective Date:</td>
+		<td>|SETTLE_DATE#PARENT_TRADE|</td>
+	</tr>
+	<tr>
+		<td>Termination Date:</td>
+		<td>|PRODUCT_MATURITYDATE#PARENT_TRADE|</td>
+	</tr>
+	<tr>
+		<td>Type of Transaction:</td>
+		<td>|TRANSACTION_TYPE#PARENT_TRADE|</td>
+	</tr>
+	<tr>
+		<td>Description:</td>
+		<td>|PRODUCT_DESCRIPTION#PARENT_TRADE|</td>
+	</tr>
+	</table>
+	</p>
+
+	<b>The terms of this |TERMINATION_TYPE| are as follows:</b>
+	<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.
+	";
+	if (|FEE_PAYER#TERMINATION_FEE#PARENT_TRADE| != "NONE" ) {
+		inline "
+		In consideration of the payment by |FEE_PAYER#TERMINATION_FEE#PARENT_TRADE| to |FEE_RECEIVER#TERMINATION_FEE#PARENT_TRADE| of
+		<b>|FEE_CURRENCY#TERMINATION_FEE#PARENT_TRADE| |FEE_AMOUNT#TERMINATION_FEE#PARENT_TRADE| 	</b> on the <b>|FEE_DATE#TERMINATION_FEE#PARENT_TRADE|</b>,";
+	}
+	inline "
+		|SENDER_FULL_NAME| and |RECEIVER_FULL_NAME| agree that the Transaction shall be terminated and cancelled with respect to <b>|TRADE_CURRENCY| |TERMINATED_AMOUNT#PARENT_TRADE|</b>
+		(the 'Terminated Notional Amount') and all rights, duties, claims and obligations of the parties thereunder shall be released
+		and discharged with respect to the Terminated Notional Amount with effect from the |TERMINATION_TYPE| Effective Date.</br>
+		Fixing Price : See Below</br>
+		Terminated Quantity : See Below
+		</p>
+		<br>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. After the |TERMINATION_TYPE| Effective Date, the Notional Amount applicable to the Transaction shall be <b>|TRADE_CURRENCY|  |PRODUCT_PRINCIPAL|</b><br></p>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Notwithstanding the above, any other terms and conditions of the initial Transaction shall remain in full force and effect and no other transaction between
+		the parties hereto is affected by this |TERMINATION_TYPE| Agreement.</p>
+	";
+}
+</calypso-->
+
+<!--calypso>
+if (|KEYWORD_TerminationType| == "FullTermination") {
+inline "
+<h3>Underlying asset
+number: |BASKET_COMP_NUMBER|";
+inline "
+<table border=1>
+    <tr>
+        <th>#</th>
+        <th>Asset</th>
+        <th>Asset Ccy</th>
+        <th>Initial Quantity</th>
+        <th>Terminated Quantity</th>
+        <th>Termination Price</th>
+        <th>Termination FX Rate</th>
+        <th>Sector</th>
+        <th>Security Code</th>
+        <th>Corporate Name</th>
+        <th>Market Place</th>
+    </tr>
+";
+iterator("BasketComponent") {
+    inline "
+    <tr>
+        <td>|ITERATOR_CURRENT_COUNT|</td>
+        <td>|BASKET_COMP_ASSET|</td>
+        <td>|BASKET_COMP_CCY|</td>
+        <td>|BASKET_COMP_INITIAL_QUANTITY|</td>
+        <td>|BASKET_COMP_TERMINATED_QUANTITY|</td>
+        <td>|BASKET_COMP_TERMINATION_PRICE|</td>
+        <td>|BASKET_COMP_TERMINATION_FX_RATE|</td>
+        <td>|BASKET_COMP_ISSUER_ATTR#Sector|</td>
+        <td>|BASKET_COMP_SECURITY_CODE#ISIN|</td>
+        <td>|BASKET_COMP_SECURITY#Corporate|</td>
+        <td>|BASKET_COMP_SECURITY#Underlying.Market Place|</td>
+    </tr>
+    ";
+}
+inline "</table>";
+}
+</calypso-->
+
+<!--calypso>
+if (|KEYWORD_TransferType| == "PartialTermination") {
+inline "
+<h3>Underlying asset
+number: |BASKET_COMP_NUMBER|";
+inline "
+<table border=1>
+    <tr>
+        <th>#</th>
+        <th>Asset</th>
+        <th>Asset Ccy</th>
+        <th>Initial Quantity</th>
+        <th>Terminated Quantity</th>
+        <th>Remaining Quantity</th>
+        <th>Termination Price</th>
+        <th>Termination FX Rate</th>
+        <th>Corporate Name</th>
+        <th>Market Place</th>
+    </tr>
+";
+iterator("BasketComponent") {
+    inline "
+    <tr>
+        <td>|ITERATOR_CURRENT_COUNT|</td>
+        <td>|BASKET_COMP_ASSET|</td>
+        <td>|BASKET_COMP_CCY|</td>
+        <td>|BASKET_COMP_INITIAL_QUANTITY#PARENT_TRADE|</td>
+        <td>|BASKET_COMP_TERMINATED_QUANTITY#PARENT_TRADE|</td>
+        <td>|BASKET_COMP_INITIAL_QUANTITY|</td>
+        <td>|BASKET_COMP_TERMINATION_PRICE#PARENT_TRADE|</td>
+        <td>|BASKET_COMP_TERMINATION_FX_RATE|</td>
+        <td>|BASKET_COMP_SECURITY#Corporate|</td>
+        <td>|BASKET_COMP_SECURITY#Underlying.Market Place|</td>
+    </tr>
+    ";
+}
+inline "</table>";
+}
+</calypso-->
+
+	<br>
+	<p class="header2">Account Details:</p>
+	<table width="100%">
+		<tr>
+			<td width="30%"><b>Payments to |SENDER_CODE|:</b></td>
+			<td width="68%">|PO_INSTRUCTIONS|</td>
+		</tr>
+		<tr>
+			<td><b>Payments to |RECEIVER_CODE|:</b></td>
+			<td>|COUNTERPARTY_INSTRUCTIONS|</td>
+		</tr>
+	</table>
+
+<br>
+<br>Please confirm that the foregoing correctly sets forth the terms of our agreement by executing the copy of this |TERMINATION_TYPE| Agreement enclosed for that purpose and returning it to us.
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->
+</html>

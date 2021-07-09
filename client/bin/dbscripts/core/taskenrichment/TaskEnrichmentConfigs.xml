@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database xmlns="http://www.calypso.com/schemer"> 
+  <table xmlns="" name="task_enrichment_field_config"> 
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Book Location</column>  
+      <column name="field_db_name">book_location</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.Task</column>  
+      <column name="workflow_type">CrossWorkflows</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getLocation</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Direction</column>  
+      <column name="field_db_name">direction</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.Task</column>  
+      <column name="workflow_type">CrossWorkflows</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getDirection</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">GL Account</column>  
+      <column name="field_db_name">gl_account</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.Task</column>  
+      <column name="workflow_type">CrossWorkflows</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getGLAccountName</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Is Client</column>  
+      <column name="field_db_name">is_client</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.Task</column>  
+      <column name="workflow_type">CrossWorkflows</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">isClient</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Is ThirdParty</column>  
+      <column name="field_db_name">is_third_party</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.Task</column>  
+      <column name="workflow_type">CrossWorkflows</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">isThirdParty</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">ISIN</column>  
+      <column name="field_db_name">isin</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.Task</column>  
+      <column name="workflow_type">CrossWorkflows</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getISIN</column>  
+      <column name="field_domain_finder">SecCodeDomain|ISIN</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="link_db_name">trade_maturity_date</column>  
+      <column name="field_display_name">Days from Maturity</column>  
+      <column name="field_db_name">days_from_maturity</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.Task</column>  
+      <column name="workflow_type">Dynamic</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getDaysFromMaturity</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="link_db_name">trade_maturity_date</column>  
+      <column name="field_display_name">Days to Maturity</column>  
+      <column name="field_db_name">days_to_maturity</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.Task</column>  
+      <column name="workflow_type">Dynamic</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getDaysToMaturity</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Duration Hours</column>  
+      <column name="field_db_name">task_duration_hours</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.Task</column>  
+      <column name="workflow_type">Dynamic</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getDurationHours</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Msg Id</column>  
+      <column name="field_db_name">msg_id</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getLongId</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Msg LE</column>  
+      <column name="field_db_name">msg_le</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getMessageLegalEntityName</column>  
+      <column name="field_domain_finder">LegalEntityDomain</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Msg LE Address Code</column>  
+      <column name="field_db_name">msg_le_address_code</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getMessageLegalEntityAddressCode</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Msg LE Role</column>  
+      <column name="field_db_name">msg_le_role</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getMessageLegalEntityRole</column>  
+      <column name="field_domain_finder">DomainValueDomain|role</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Msg Linked Id</column>  
+      <column name="field_db_name">msg_linked_id</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getLinkedLongId</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Msg Process issue</column>  
+      <column name="field_db_name">msg_process_issue</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getAttribute</column>  
+      <column name="extra_arguments">Process Issue</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Msg Sub-Action</column>  
+      <column name="field_db_name">msg_sub_action</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getSubAction.toString</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Msg Template Name</column>  
+      <column name="field_db_name">msg_template_name</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getTemplateName</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Msg Type</column>  
+      <column name="field_db_name">msg_type</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getMessageType</column>  
+      <column name="field_domain_finder">DomainValueDomain|messageType</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">UploadAdviceDocumentID</column>  
+      <column name="field_db_name">upload_advice_document_id</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getAttribute</column>  
+      <column name="extra_arguments">UploadAdviceDocumentID</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">UploadError</column>  
+      <column name="field_db_name">upload_error</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getAttribute</column>  
+      <column name="extra_arguments">UploadError</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">UploadMode</column>  
+      <column name="field_db_name">upload_mode</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getAttribute</column>  
+      <column name="extra_arguments">UploadMode</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">UploadObject</column>  
+      <column name="field_db_name">upload_object</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getAttribute</column>  
+      <column name="extra_arguments">UploadObject</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">UploadObjectAction</column>  
+      <column name="field_db_name">upload_object_action</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getAttribute</column>  
+      <column name="extra_arguments">UploadObjectAction</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">UploadObjectExternalRef</column>  
+      <column name="field_db_name">upload_object_external_ref</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getAttribute</column>  
+      <column name="extra_arguments">UploadObjectExternalRef</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">UploadObjectFailedAt</column>  
+      <column name="field_db_name">upload_object_failed_at</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getAttribute</column>  
+      <column name="extra_arguments">UploadObjectFailedAt</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">UploadObjectID</column>  
+      <column name="field_db_name">upload_object_id</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getAttribute</column>  
+      <column name="extra_arguments">UploadObjectID</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">UploadReason</column>  
+      <column name="field_db_name">upload_reason</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getAttribute</column>  
+      <column name="extra_arguments">UploadReason</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">UploadSequence</column>  
+      <column name="field_db_name">upload_sequence</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getAttribute</column>  
+      <column name="extra_arguments">UploadSequence</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">UploadSourceMessageId</column>  
+      <column name="field_db_name">upload_source_message_id</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getAttribute</column>  
+      <column name="extra_arguments">UploadSourceMessageId</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">UploadSourceStatus</column>  
+      <column name="field_db_name">upload_source_status</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOMessage</column>  
+      <column name="workflow_type">Message</column>  
+      <column name="data_source_getter_name">getAttribute</column>  
+      <column name="extra_arguments">UploadSourceStatus</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">CA Id</column>  
+      <column name="field_db_name">ca_id</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="data_source_getter_name">getKeywordValue</column>  
+      <column name="extra_arguments">CAReference</column>  
+      <column name="field_conversion_class">java.lang.Integer</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Product Type</column>  
+      <column name="field_db_name">product_type</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="data_source_getter_name">getProductType</column>  
+      <column name="field_domain_finder">DomainValueDomain|productType</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Trade Broker</column>  
+      <column name="field_db_name">trade_broker</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="data_source_getter_name">getKeywordValue</column>  
+      <column name="extra_arguments">Broker</column>  
+      <column name="field_domain_finder">LegalEntityDomain|Broker</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Trade Bundle Name</column>  
+      <column name="field_db_name">trade_bundle_name</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="data_source_getter_name">getBundle.getName</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Trade Bundle Type</column>  
+      <column name="field_db_name">trade_bundle_type</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="data_source_getter_name">getBundle.getType</column>  
+      <column name="field_domain_finder">DomainValueDomain|bundleType</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Trade Counter Party</column>  
+      <column name="field_db_name">trade_cpty</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="data_source_getter_name">getCounterParty.getCode</column>  
+      <column name="field_domain_finder">LegalEntityDomain</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Trade Currency</column>  
+      <column name="field_db_name">trade_currency</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="data_source_getter_name">getTradeCurrency</column>  
+      <column name="field_domain_finder">DomainValueDomain|currency</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Trade Date</column>  
+      <column name="field_db_name">trade_date</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="data_source_getter_name">getTradeDate</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Trade External Reference</column>  
+      <column name="field_db_name">trade_external_reference</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="data_source_getter_name">getExternalReference</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Trade Internal Reference</column>  
+      <column name="field_db_name">trade_internal_reference</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="data_source_getter_name">getInternalReference</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Trade Maturity Date</column>  
+      <column name="field_db_name">trade_maturity_date</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="data_source_getter_name">getMaturityDate</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Current Principal</column>  
+      <column name="field_db_name">trade_principal_amount</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getPrincipalAmount</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Trade Product Desc.</column>  
+      <column name="field_db_name">trade_product_desc</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="data_source_getter_name">getProduct.getDescription</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Trade Quantity</column>  
+      <column name="field_db_name">trade_quantity</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="data_source_getter_name">getQuantity</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Trade Settle Amount</column>  
+      <column name="field_db_name">trade_settle_amount</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getSettlementAmount</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Trade Settle Currency</column>  
+      <column name="field_db_name">trade_settle_currency</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="data_source_getter_name">getSettleCurrency</column>  
+      <column name="field_domain_finder">DomainValueDomain|currency</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Trade Settle Date</column>  
+      <column name="field_db_name">trade_settle_date</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="data_source_getter_name">getSettleDate</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Trader Name</column>  
+      <column name="field_db_name">trader_name</column>  
+      <column name="data_source_class_name">com.calypso.tk.core.Trade</column>  
+      <column name="workflow_type">Trade</column>  
+      <column name="data_source_getter_name">getTraderName</column>  
+      <column name="field_domain_finder">DomainValueDomain|trader</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">External Inst. Status</column>  
+      <column name="field_db_name">external_inst_status</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getExternalInstructionStatus</column>  
+      <column name="field_domain_finder">DomainValueDomain|sdiStatus</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">External Inst.</column>  
+      <column name="field_db_name">external_instruction</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getExternalInstructionName</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Internal Inst. Status</column>  
+      <column name="field_db_name">internal_inst_status</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getInternalInstructionStatus</column>  
+      <column name="field_domain_finder">DomainValueDomain|sdiStatus</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Internal Inst.</column>  
+      <column name="field_db_name">internal_instruction</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getInternalInstructionName</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Netted Transfer Id</column>  
+      <column name="field_db_name">netted_transfer_id</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="data_source_getter_name">getNettedTransferLongId</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Delivery Type</column>  
+      <column name="field_db_name">xfer_delivery_type</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="data_source_getter_name">getDeliveryType</column>  
+      <column name="field_domain_finder">DomainValueDomain|deliveryType</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer External Agent</column>  
+      <column name="field_db_name">xfer_external_agent</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getExternalAgentName</column>  
+      <column name="field_domain_finder">LegalEntityDomain|Agent</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer External LE</column>  
+      <column name="field_db_name">xfer_external_le</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getExternalLEName</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Id</column>  
+      <column name="field_db_name">xfer_id</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="data_source_getter_name">getLongId</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Internal Agent</column>  
+      <column name="field_db_name">xfer_internal_agent</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getInternalAgentName</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Is Fixed</column>  
+      <column name="field_db_name">xfer_is_fixed</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="data_source_getter_name">getIsFixedB</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Is Known</column>  
+      <column name="field_db_name">xfer_is_known</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="data_source_getter_name">getIsKnownB</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Is Netted</column>  
+      <column name="field_db_name">xfer_is_netted</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="data_source_getter_name">getNettedTransfer</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Is Return</column>  
+      <column name="field_db_name">xfer_is_return</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="data_source_getter_name">getIsReturnB</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Linked Id</column>  
+      <column name="field_db_name">xfer_linked_id</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="data_source_getter_name">getLinkedLongId</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Netting Type</column>  
+      <column name="field_db_name">xfer_netting_type</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="data_source_getter_name">getNettingType</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Original Cpty</column>  
+      <column name="field_db_name">xfer_original_cpty</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getOriginalCptyName</column>  
+      <column name="field_domain_finder">LegalEntityDomain</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Other Amount</column>  
+      <column name="field_db_name">xfer_other_amount</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="data_source_getter_name">getOtherAmount</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Product Type</column>  
+      <column name="field_db_name">xfer_product_type</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="data_source_getter_name">getProductType</column>  
+      <column name="field_domain_finder">DomainValueDomain|productType</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Settle Date</column>  
+      <column name="field_db_name">xfer_settle_date</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="data_source_getter_name">getSettleDate</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Settlement Amount</column>  
+      <column name="field_db_name">xfer_settlement_amount</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="custom_class_name">com.calypso.taskenrichment.data.enrichment.DefaultTaskEnrichmentCustom</column>  
+      <column name="data_source_getter_name">getSettlementAmount</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Settlement Currency</column>  
+      <column name="field_db_name">xfer_settlement_currency</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="data_source_getter_name">getSettlementCurrency</column>  
+      <column name="field_domain_finder">DomainValueDomain|currency</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Settlement Method</column>  
+      <column name="field_db_name">xfer_settlement_method</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="data_source_getter_name">getSettlementMethod</column>  
+      <column name="field_domain_finder">DomainValueDomain|settlementMethod</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Type</column>  
+      <column name="field_db_name">xfer_type</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="data_source_getter_name">getTransferType</column>  
+      <column name="field_domain_finder">DomainValueDomain|flowType</column> 
+    </row>  
+    <row cat="taskenrichment"> 
+      <column name="field_display_name">Xfer Value Date</column>  
+      <column name="field_db_name">xfer_value_date</column>  
+      <column name="data_source_class_name">com.calypso.tk.bo.BOTransfer</column>  
+      <column name="workflow_type">Transfer</column>  
+      <column name="data_source_getter_name">getValueDate</column> 
+    </row> 
+  </table>  
+  <table xmlns="" name="task_enrichment">
+    <column name="task_id" nullable="false" scale="1" type="int"/>
+    <column name="workflow_type" nullable="false" scale="64" type="string"/>
+    <column name="book_location" nullable="true" scale="128" type="string"/>
+    <column name="direction" nullable="true" scale="32" type="string"/>
+    <column name="gl_account" nullable="true" scale="132" type="string"/>
+    <column name="is_client" nullable="true" scale="1" type="int"/>
+    <column name="is_third_party" nullable="true" scale="1" type="int"/>
+    <column name="isin" nullable="true" scale="32" type="string"/>
+    <column name="days_from_maturity" nullable="true" scale="1" type="int"/>
+    <column name="days_to_maturity" nullable="true" scale="1" type="int"/>
+    <column name="task_duration_hours" nullable="true" scale="1" type="int"/>
+    <column name="msg_id" nullable="true" scale="1" type="int"/>
+    <column name="msg_le" nullable="true" scale="128" type="string"/>
+    <column name="msg_le_address_code" nullable="true" scale="255" type="string"/>
+    <column name="msg_le_role" nullable="true" scale="32" type="string"/>
+    <column name="msg_linked_id" nullable="true" scale="1" type="int"/>
+    <column name="msg_process_issue" nullable="true" scale="2000" type="string"/>
+    <column name="msg_sub_action" nullable="true" scale="32" type="string"/>
+    <column name="msg_template_name" nullable="true" scale="64" type="string"/>
+    <column name="msg_type" nullable="true" scale="128" type="string"/>
+    <column name="upload_advice_document_id" nullable="true" scale="2000" type="string"/>
+    <column name="upload_error" nullable="true" scale="2000" type="string"/>
+    <column name="upload_mode" nullable="true" scale="2000" type="string"/>
+    <column name="upload_object" nullable="true" scale="2000" type="string"/>
+    <column name="upload_object_action" nullable="true" scale="2000" type="string"/>
+    <column name="upload_object_external_ref" nullable="true" scale="2000" type="string"/>
+    <column name="upload_object_failed_at" nullable="true" scale="2000" type="string"/>
+    <column name="upload_object_id" nullable="true" scale="2000" type="string"/>
+    <column name="upload_reason" nullable="true" scale="2000" type="string"/>
+    <column name="upload_sequence" nullable="true" scale="2000" type="string"/>
+    <column name="upload_source_message_id" nullable="true" scale="2000" type="string"/>
+    <column name="upload_source_status" nullable="true" scale="2000" type="string"/>
+    <column name="ca_id" nullable="true" scale="1" type="int"/>
+    <column name="product_type" nullable="true" scale="32" type="string"/>
+    <column name="trade_broker" nullable="true" scale="128" type="string"/>
+    <column name="trade_bundle_name" nullable="true" scale="128" type="string"/>
+    <column name="trade_bundle_type" nullable="true" scale="32" type="string"/>
+    <column name="trade_cpty" nullable="true" scale="128" type="string"/>
+    <column name="trade_currency" nullable="true" scale="32" type="string"/>
+    <column name="trade_date" nullable="true" scale="1" type="timestamp"/>
+    <column name="trade_external_reference" nullable="true" scale="255" type="string"/>
+    <column name="trade_internal_reference" nullable="true" scale="255" type="string"/>
+    <column name="trade_maturity_date" nullable="true" scale="1" type="timestamp"/>
+    <column name="trade_principal_amount" nullable="true" scale="1" type="float"/>
+    <column name="trade_product_desc" nullable="true" scale="255" type="string"/>
+    <column name="trade_quantity" nullable="true" scale="1" type="float"/>
+    <column name="trade_settle_amount" nullable="true" scale="1" type="float"/>
+    <column name="trade_settle_currency" nullable="true" scale="4" type="string"/>
+    <column name="trade_settle_date" nullable="true" scale="1" type="timestamp"/>
+    <column name="trader_name" nullable="true" scale="32" type="string"/>
+    <column name="external_inst_status" nullable="true" scale="32" type="string"/>
+    <column name="external_instruction" nullable="true" scale="255" type="string"/>
+    <column name="internal_inst_status" nullable="true" scale="32" type="string"/>
+    <column name="internal_instruction" nullable="true" scale="255" type="string"/>
+    <column name="netted_transfer_id" nullable="true" scale="1" type="int"/>
+    <column name="xfer_delivery_type" nullable="true" scale="8" type="string"/>
+    <column name="xfer_external_agent" nullable="true" scale="128" type="string"/>
+    <column name="xfer_external_le" nullable="true" scale="128" type="string"/>
+    <column name="xfer_id" nullable="true" scale="1" type="int"/>
+    <column name="xfer_internal_agent" nullable="true" scale="128" type="string"/>
+    <column name="xfer_is_fixed" nullable="true" scale="1" type="int"/>
+    <column name="xfer_is_known" nullable="true" scale="1" type="int"/>
+    <column name="xfer_is_netted" nullable="true" scale="1" type="int"/>
+    <column name="xfer_is_return" nullable="true" scale="1" type="int"/>
+    <column name="xfer_linked_id" nullable="true" scale="1" type="int"/>
+    <column name="xfer_netting_type" nullable="true" scale="32" type="string"/>
+    <column name="xfer_original_cpty" nullable="true" scale="128" type="string"/>
+    <column name="xfer_other_amount" nullable="true" scale="1" type="float"/>
+    <column name="xfer_product_type" nullable="true" scale="32" type="string"/>
+    <column name="xfer_settle_date" nullable="true" scale="1" type="timestamp"/>
+    <column name="xfer_settlement_amount" nullable="true" scale="1" type="float"/>
+    <column name="xfer_settlement_currency" nullable="true" scale="4" type="string"/>
+    <column name="xfer_settlement_method" nullable="true" scale="64" type="string"/>
+    <column name="xfer_type" nullable="true" scale="32" type="string"/>
+    <column name="xfer_value_date" nullable="true" scale="1" type="timestamp"/>
+    <index primary="true">
+      <on>task_id</on>
+    </index>
+  </table>
+  <table xmlns="" name="task_enrichment_hist">
+    <column name="task_id" nullable="false" scale="1" type="int"/>
+    <column name="workflow_type" nullable="false" scale="64" type="string"/>
+    <column name="book_location" nullable="true" scale="128" type="string"/>
+    <column name="direction" nullable="true" scale="32" type="string"/>
+    <column name="gl_account" nullable="true" scale="132" type="string"/>
+    <column name="is_client" nullable="true" scale="1" type="int"/>
+    <column name="is_third_party" nullable="true" scale="1" type="int"/>
+    <column name="isin" nullable="true" scale="32" type="string"/>
+    <column name="days_from_maturity" nullable="true" scale="1" type="int"/>
+    <column name="days_to_maturity" nullable="true" scale="1" type="int"/>
+    <column name="task_duration_hours" nullable="true" scale="1" type="int"/>
+    <column name="msg_id" nullable="true" scale="1" type="int"/>
+    <column name="msg_le" nullable="true" scale="128" type="string"/>
+    <column name="msg_le_address_code" nullable="true" scale="255" type="string"/>
+    <column name="msg_le_role" nullable="true" scale="32" type="string"/>
+    <column name="msg_linked_id" nullable="true" scale="1" type="int"/>
+    <column name="msg_process_issue" nullable="true" scale="2000" type="string"/>
+    <column name="msg_sub_action" nullable="true" scale="32" type="string"/>
+    <column name="msg_template_name" nullable="true" scale="64" type="string"/>
+    <column name="msg_type" nullable="true" scale="128" type="string"/>
+    <column name="upload_advice_document_id" nullable="true" scale="2000" type="string"/>
+    <column name="upload_error" nullable="true" scale="2000" type="string"/>
+    <column name="upload_mode" nullable="true" scale="2000" type="string"/>
+    <column name="upload_object" nullable="true" scale="2000" type="string"/>
+    <column name="upload_object_action" nullable="true" scale="2000" type="string"/>
+    <column name="upload_object_external_ref" nullable="true" scale="2000" type="string"/>
+    <column name="upload_object_failed_at" nullable="true" scale="2000" type="string"/>
+    <column name="upload_object_id" nullable="true" scale="2000" type="string"/>
+    <column name="upload_reason" nullable="true" scale="2000" type="string"/>
+    <column name="upload_sequence" nullable="true" scale="2000" type="string"/>
+    <column name="upload_source_message_id" nullable="true" scale="2000" type="string"/>
+    <column name="upload_source_status" nullable="true" scale="2000" type="string"/>
+    <column name="ca_id" nullable="true" scale="1" type="int"/>
+    <column name="product_type" nullable="true" scale="32" type="string"/>
+    <column name="trade_broker" nullable="true" scale="128" type="string"/>
+    <column name="trade_bundle_name" nullable="true" scale="128" type="string"/>
+    <column name="trade_bundle_type" nullable="true" scale="32" type="string"/>
+    <column name="trade_cpty" nullable="true" scale="128" type="string"/>
+    <column name="trade_currency" nullable="true" scale="32" type="string"/>
+    <column name="trade_date" nullable="true" scale="1" type="timestamp"/>
+    <column name="trade_external_reference" nullable="true" scale="255" type="string"/>
+    <column name="trade_internal_reference" nullable="true" scale="255" type="string"/>
+    <column name="trade_maturity_date" nullable="true" scale="1" type="timestamp"/>
+    <column name="trade_principal_amount" nullable="true" scale="1" type="float"/>
+    <column name="trade_product_desc" nullable="true" scale="255" type="string"/>
+    <column name="trade_quantity" nullable="true" scale="1" type="float"/>
+    <column name="trade_settle_amount" nullable="true" scale="1" type="float"/>
+    <column name="trade_settle_currency" nullable="true" scale="4" type="string"/>
+    <column name="trade_settle_date" nullable="true" scale="1" type="timestamp"/>
+    <column name="trader_name" nullable="true" scale="32" type="string"/>
+    <column name="external_inst_status" nullable="true" scale="32" type="string"/>
+    <column name="external_instruction" nullable="true" scale="255" type="string"/>
+    <column name="internal_inst_status" nullable="true" scale="32" type="string"/>
+    <column name="internal_instruction" nullable="true" scale="255" type="string"/>
+    <column name="netted_transfer_id" nullable="true" scale="1" type="int"/>
+    <column name="xfer_delivery_type" nullable="true" scale="8" type="string"/>
+    <column name="xfer_external_agent" nullable="true" scale="128" type="string"/>
+    <column name="xfer_external_le" nullable="true" scale="128" type="string"/>
+    <column name="xfer_id" nullable="true" scale="1" type="int"/>
+    <column name="xfer_internal_agent" nullable="true" scale="128" type="string"/>
+    <column name="xfer_is_fixed" nullable="true" scale="1" type="int"/>
+    <column name="xfer_is_known" nullable="true" scale="1" type="int"/>
+    <column name="xfer_is_netted" nullable="true" scale="1" type="int"/>
+    <column name="xfer_is_return" nullable="true" scale="1" type="int"/>
+    <column name="xfer_linked_id" nullable="true" scale="1" type="int"/>
+    <column name="xfer_netting_type" nullable="true" scale="32" type="string"/>
+    <column name="xfer_original_cpty" nullable="true" scale="128" type="string"/>
+    <column name="xfer_other_amount" nullable="true" scale="1" type="float"/>
+    <column name="xfer_product_type" nullable="true" scale="32" type="string"/>
+    <column name="xfer_settle_date" nullable="true" scale="1" type="timestamp"/>
+    <column name="xfer_settlement_amount" nullable="true" scale="1" type="float"/>
+    <column name="xfer_settlement_currency" nullable="true" scale="4" type="string"/>
+    <column name="xfer_settlement_method" nullable="true" scale="64" type="string"/>
+    <column name="xfer_type" nullable="true" scale="32" type="string"/>
+    <column name="xfer_value_date" nullable="true" scale="1" type="timestamp"/>
+    <index primary="true">
+      <on>task_id</on>
+    </index>
+  </table>
+</database>

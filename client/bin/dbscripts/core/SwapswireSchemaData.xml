@@ -1,0 +1,2506 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="book_attribute" xmlns="">
+		<row cat="markitwire">
+			<column name="comments"></column>
+			<column name="attribute_name">SwapswireBook</column>
+		</row>
+	</table>
+	<table name="domain_values" xmlns="">
+		<row cat="markitwire">
+			<column name="description">Function to allow Modify Access to MW Mappings</column>
+			<column name="value">ModifyMWMappings</column>
+			<column name="name">function</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Function to allow View Access to MW Mappings</column>
+			<column name="value">ViewMWMappings</column>
+			<column name="name">function</column>
+		</row>		
+		<row cat="markitwire">
+			<column name="description">Keyword will store Modification Trade Date from MarkitWire</column>
+			<column name="value">SWModificationTradeDate</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Keyword will Compression Type from MarkitWire</column>
+			<column name="value">CompressionType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Keyword will store Execution Method Date from MarkitWire</column>
+			<column name="value">ExecutionMethod</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Keyword will store SWForwardPremium tag value from MarkitWire</column>
+			<column name="value">CancellationWithForwardPremium</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPTerminationDate</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPTerminationEffectiveDate</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPClearingBroker</column>
+			<column name="name">tradeKeyword</column>
+		</row>		 
+		<row cat="markitwire">
+			<column name="description">Keyword will store Modification Effective Date from MarkitWire</column>
+			<column name="value">SWModificationEffectiveDate</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Keyword will store New State from MarkitWire</column>
+			<column name="value">SWProcessState</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWDealId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWBrokerTradeId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWBookState</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWContractVer</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWPrivateVer</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWSide</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWSingleSided</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWValidated</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ClientTradeID</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWLoginHandleIdentifier</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">TradeSource</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWExitReason</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">InitialMarginAmount</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">InitialMarginCcy</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">InitialMarginType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">InitialMarginDirection</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">DeliveryDate</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">DeliveryDateHolidays</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">DeliveryDateConvention</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWPBGiveupDealID</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWPBMirrorDealID</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<!-- clearing support -->
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWOriginalCounterparty</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWMasterAgreementType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWContractualDefinitions</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWAutoSendForClearing</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWEligibleForClearing</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWSendForClearing</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWSendForClearingTimestamp</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPTradeID</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWClientClearingDeal</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWGiveUpTradeId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWClearingStatus</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCP</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWContractState</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPClearedDate</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPClearedDatetime</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		
+		<!-- clearing support -->
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPAccount</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPClientTradeType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">IS_CLIENT</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPOriginCode</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPStatus</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPMessageTimestamp</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<!-- Client clearing support -->
+		<!-- Exchange clearing support -->
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">LinkedTo</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPRejectReason</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">Platform</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPFCM</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWOriginalPayStartDate</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWOriginalRecStartDate</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<!-- MKTWR-304 -->
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPClearedVer</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<!-- MKTWR-290 -->
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWOriginalDealType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<!-- MKTWR-331 -->
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPGroupId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<!-- MKTWR-369 -->
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWAmendmentType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWCancellationType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<!-- MKTWR-331 -->
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPFund</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<!-- DF Reporting Keywords -->
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCJurisdiction</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCCounterparty</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCPreferenceRT</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCPreferencePET</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCPreferenceConfirm</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCPreferencePostTradeEvent</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCRegulatorType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCRepositoryDestination</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCRepositoryIntermediary</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCPriceForming</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCRegulatoryReportable</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCNonStandard</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCClearingMandatory</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCClearingException</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCMidMarketPriceType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCMidMarketPriceValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCMidMarketPriceCurrency</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCUSIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCUSIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCPriorUSIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCPriorUSIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingHKMAPriorUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingHKMAPriorUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingASICPriorUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingASICPriorUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingMASPriorUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingMASPriorUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCANPriorUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCANPriorUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCBlockUSIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCBlockUSIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJFSAJurisdiction</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJFSAPreferencePriorToConfirmation</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJFSAPreferenceConfirmation</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJFSARepositoryDestination</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJFSARepositoryIntermediary</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJFSAUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJFSAUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJFSAPriorUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJFSAPriorUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJFSABlockUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJFSABlockUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingESMAJurisdiction</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingESMAPreferencePriorToConfirmation</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingESMAPreferenceConfirmation</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingESMARepositoryDestination</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingESMARepositoryIntermediary</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingESMAUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingESMAUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingESMAPriorUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingESMAPriorUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingESMABlockUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingESMABlockUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingBranchLocation</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingTradingCapacity</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingBenificiaryIDName</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingBenificiaryIDValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<!--  row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCommercialActivity</column>
+			<column name="name">tradeKeyword</column>
+		</row-->
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingGTRReportEventId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingGTRBulkEventProcessingId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+<!-- 		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingExecutionOffPlatformVerified</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingExecutionTime</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingExecutionVenueType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingExecutionOffPlatformConfirmed</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingExecutionConfirmationTime</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingExecutionCollateralized</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingExecutionCollateralPortfolioCode</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingExecutionCompression</column>
+			<column name="name">tradeKeyword</column>
+		</row> -->
+		<!-- Execution keywords -->
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ExecutionVerificationType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ExecutionDateTime</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ExecutionVenueType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ExecutionConfirmationType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ExecutionConfirmationDateTime</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ExecutionCollateralizationType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ExecutionCollateralPortfolioCode</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ExecutionCompression</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ExecutionTradeType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingBrokerLocation</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingSalesLocation</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingTraderLocation</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingDeskLocation</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingBranchId</column>
+			<column name="name">tradeKeyword</column>
+		</row>		
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingParty</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ESMAUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ESMAUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ESMAPriorUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ESMAPriorUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ESMABlockUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ESMABlockUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">JFSAUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">JFSAUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">JFSAPriorUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">JFSAPriorUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">JFSABlockUTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">JFSABlockUTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJurisdictionCFTC</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJurisdictionJFSA</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJurisdictionESMA</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJFSAPTC</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJFSACONF</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingESMAPTC</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingESMACONF</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCCPLEG</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCompression</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCommercialActivity</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingPrimaryAssetClass</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingProduct</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingProductID</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCDestination</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCIntermediary</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingESMADestination</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingESMAIntermediary</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJFSADestination</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingJFSAIntermediary</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">USIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">USIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">PriorUSIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">PriorUSIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+			<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">BlockUSIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+			<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">BlockUSIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+			<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingPriceForming</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<!-- row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingVenue</column>
+			<column name="name">tradeKeyword</column>
+		</row-->
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingPostTrade</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingEventID</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingBlkEventID</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingLocationBroker</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingLocationDesk</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingLocationTrader</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingLocationSales</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingRegulatorType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingClearingMandatory</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingClearingException</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingNonStandard</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingRegulatoryReportable</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingMidMarketPriceType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingMidMarketPriceValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingMidMarketPriceCurrency</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SEFTradeSource</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">AutoProcessing</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">AnonymousTrading</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReportingCFTCCooperativeClearingException</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Set Domain Name to set default values for ReportingMidMarketPriceType keyword</column>
+			<column name="value">keyword.ReportingMidMarketPriceType</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Set default values for ReportingMidMarketPriceType keyword</column>
+			<column name="value">BasisPoints</column>
+			<column name="name">keyword.ReportingMidMarketPriceType</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Set default values for ReportingMidMarketPriceType keyword</column>
+			<column name="value">Level</column>
+			<column name="name">keyword.ReportingMidMarketPriceType</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Set default values for ReportingMidMarketPriceType keyword</column>
+			<column name="value">Percentage</column>
+			<column name="name">keyword.ReportingMidMarketPriceType</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Set default values for ReportingMidMarketPriceType keyword</column>
+			<column name="value">Price</column>
+			<column name="name">keyword.ReportingMidMarketPriceType</column>
+		</row>
+		<!-- Exchange clearing support -->
+			<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWCorrelationID</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">IncomingCPTrader</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+			<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWPOClearingExemption</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWCPClearingExemption</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWMandatoryClearable </column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CounterpartyTrader</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CounterpartyTraderGroup</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">MasterConfirmationType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">MasterConfirmationDate</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWCorporateAction</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">InitialMarginPercentage</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ExecutedToClear</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ESMAFrontLoadingCategory</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ESMAClearingExemption</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWBulkAction</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">PricedToClearCCP</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">To indicate that CCPCLearedDate keyword is migrated for date format</column>
+			<column name="value">MigratedCCPClearedDate</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWPayLegSwapStreamId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWRecLegSwapStreamId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPNettingSubCategory</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CounterpartyLEI</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CounterpartyPLI</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ComplexTradeId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">BrokerComplexTradeId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ComplexPrice</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ComplexPriceType</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ComplexPriceCurrency</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWPriceNotation</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWPriceNotationUnit</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">PlatformAgreedDiscountRate</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">PlatformTransitionToOIS</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWTransferTrader</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWTransferMessage</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationKeywords</column>
+			<column name="value">SWDealId</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationKeywords</column>
+			<column name="value">SWContractVer</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationKeywords</column>
+			<column name="value">SWPrivateVer</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationKeywords</column>
+			<column name="value">SWContractState</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationKeywords</column>
+			<column name="value">SWProcessState</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationKeywords</column>
+			<column name="value">SWSide</column>
+		</row>
+
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationKeywords</column>
+			<column name="value">SWLoginHandleIdentifier</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationKeywords</column>
+			<column name="value">SWSingleSided</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationKeywords</column>
+			<column name="value">PlatformTransitionTradeId</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationKeywords</column>
+			<column name="value">PlatformTransitionReason</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationKeywords</column>
+			<column name="value">PlatformTransitionTradeIdType</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationPreserveTradeKeywords</column>
+			<column name="value">SWDealId</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationPreserveTradeKeywords</column>
+			<column name="value">PlatformAllegeType</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationPreserveTradeKeywords</column>
+			<column name="value">PlatformSubmitStatus</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationPreserveTradeKeywords</column>
+			<column name="value">SWContractVer</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationPreserveTradeKeywords</column>
+			<column name="value">SWPrivateVer</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationPreserveTradeKeywords</column>
+			<column name="value">SWContractState</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationPreserveTradeKeywords</column>
+			<column name="value">SWProcessState</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationPreserveTradeKeywords</column>
+			<column name="value">SWSide</column>
+		</row>
+
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationPreserveTradeKeywords</column>
+			<column name="value">SWLoginHandleIdentifier</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationPreserveTradeKeywords</column>
+			<column name="value">SWSingleSided</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="name">AllocationPreserveTradeKeywords</column>
+			<column name="value">PlatformAllocation</column>
+		</row>
+		
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">PSEventSwapswire</column>
+			<column name="name">eventClass</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">PSEventSwapswireScheduleTask</column>
+			<column name="name">eventClass</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">PSEventRepublish</column>
+			<column name="name">eventClass</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SwapswireTradeEngine</column>
+			<column name="name">engineName</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SwapswireTradeEngineEventFilter</column>
+			<column name="name">eventFilter</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Scheduled task to create recon report</column>
+			<column name="value">MW_RECON_REPORT</column>
+			<column name="name">scheduledTask</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SW_DO_RECOVERY</column>
+			<column name="name">scheduledTask</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">MW_MIGRATE</column>
+			<column name="name">scheduledTask</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">MW_ZCFIXEDAMT_MIGRATE</column>
+			<column name="name">scheduledTask</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">MW_REPORTINGKWD_MIGRATE</column>
+			<column name="name">scheduledTask</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Updates the RegulatoryReporting Keyword Names</column>
+			<column name="value">MW_REG_REPORTING_KWD_MIGRATE</column>
+			<column name="name">scheduledTask</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">MW_CCPFUNDKWD_MIGRATE</column>
+			<column name="name">scheduledTask</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Updates the ExternalReference of the Transferred Trade</column>
+			<column name="value">MW_UPDATECCP_TRANSFERREDTRADE</column>
+			<column name="name">scheduledTask</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">MW_LEGACY_TRADE_DIVISION</column>
+			<column name="name">scheduledTask</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">This Scheduled task is to be used in CCP mode to fetch netting response in cases where it could not be normally fetched.</column>
+			<column name="value">MW_NETTING_RESPONSE</column>
+			<column name="name">scheduledTask</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Converts the dateformat of the keyword from MM/dd/yyyy to the one specified in mapping window</column>
+			<column name="value">MW_MIGRATE_CCPCLEAREDDATE</column>
+			<column name="name">scheduledTask</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Task to add the FpML leg ids as trade keywords for cleared trades for CCP usage</column>
+			<column name="value">MW_CCPNETTINGKWD_UPDATE</column>
+			<column name="name">scheduledTask</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SwapswireParticipant</column>
+			<column name="name">leAttributeType</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SwapswireLongName</column>
+			<column name="name">leAttributeType</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SwapswireBroker</column>
+			<column name="name">leAttributeType</column>
+		</row>
+		<!-- MKTWR-331 -->
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SwapswireParent</column>
+			<column name="name">leAttributeType</column>
+		</row>	
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPClientBook</column>
+			<column name="name">leAttributeType</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CCPHouseBook</column>
+			<column name="name">leAttributeType</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SwapswireBook</column>
+			<column name="name">leAttributeType</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ChangeFullCoupon</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWValidateUpdate</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWErrorUpdate</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">MWExit</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<!-- Exchange clearing support Start-->
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ApplyLinkedTradeAction</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">UpdateLinkedToKeyword</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">DeclearAction</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWStatusUpdate</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PlatformRelease</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+			<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PlatformPickUp</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+			<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">MWSource</column>
+			<column name="name">workflowRuleTrade</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ApplyLinkedMsgAction</column>
+			<column name="name">workflowRuleMessage</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">UpdateLinkedToAttribute</column>
+			<column name="name">workflowRuleMessage</column>
+		</row>
+		<row cat="markitwire">
+			<column name="name">MsgAttributes</column>
+			<column name="value">Rejected</column>
+			<column name="description">Value Yes implies rejected in PreValidation </column>
+		</row>
+		<row cat="markitwire">
+			<column name="name">MsgAttributes</column>
+			<column name="value">CCPRejectReason</column>
+			<column name="description">RejectReason for rejection in PreValidation</column>
+		</row>
+		<!-- Exchange clearing support End -->
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ReMap</column>
+			<column name="name">workflowRuleMessage</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ForceAmend</column>
+			<column name="name">workflowRuleMessage</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">ForceNew</column>
+			<column name="name">workflowRuleMessage</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">MWExitKeywords</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Domain name to specify new state filter for SwapswireTradeEngine</column>
+			<column name="value">MWProcessState</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Domain name for all trade statuses to migrate from old to new version of interface</column>
+			<column name="value">MWMigrateTradeStatus</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Domain name for enabling MarkitWire amend validation</column>
+			<column name="value">MWEnforceEffectiveDate</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="markitwire">
+  			<column name="description">Domain name to specify new Contract state filter for SwapswireTradeEngine</column> 
+  			<column name="value">MWContractState.PreRelease</column> 
+  			<column name="name">domainName</column> 
+  		</row>
+   		<row cat="markitwire">
+  			<column name="description">Domain to define custom Workflow message</column> 
+  			<column name="value">MWUploadMessageType</column> 
+  			<column name="name">domainName</column> 
+  		</row>
+		<row cat="markitwire">
+  			<column name="description"></column> 
+  			<column name="value">UploadDeClearAction</column> 
+  			<column name="name">domainName</column> 
+  		</row>
+  		<!-- end for exchange Clearing -->
+ 		<row cat="markitwire">
+  			<column name="description">Domain for backloading keywords</column> 
+  			<column name="value">BackloadingKeywords</column> 
+  			<column name="name">domainName</column> 
+  		</row>
+  		<row cat="gateway">
+			<column name="description"></column>
+			<column name="value">Clearing.Trade.ReprocessAction</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="gateway">
+			<column name="description">Domain for setting fee-types to be ignored by interfaces</column>
+			<column name="value">PlatformIgnoreFees</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">MWUploadAmendAction</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">MWUploadUpdateAction</column>
+			<column name="name">domainName</column>
+		</row>
+		<row cat="markitwire">
+  			<column name="description"></column> 
+  			<column name="value">MWUserRole</column> 
+  			<column name="name">domainName</column> 
+  		</row>
+  		<row cat="markitwire">
+  			<column name="description">Message type for workflow</column> 
+  			<column name="value">MWGATEWAYMSG</column> 
+  			<column name="name">MWUploadMessageType</column> 
+  		</row>
+  		<row cat="markitwire">
+  			<column name="description">MarkitWire Incoming message for the Gateway Service</column> 
+  			<column name="value">MWGATEWAYMSG</column> 
+  			<column name="name">messageType</column> 
+  		</row>
+  		<row cat="markitwire">
+  			<column name="description">tk.util.SwapswireTradeEngineSequencePolicy</column> 
+  			<column name="value">SwapswireTradeEngine</column> 
+  			<column name="name">engineEventPoolPolicyAliases</column> 
+  		</row>
+  		<row cat="markitwire">
+  			<column name="description">New sequence created for Swapswire trade engine</column> 
+  			<column name="value">tk.util.SwapswireTradeEngineSequencePolicy</column> 
+  			<column name="name">engineEventPoolPolicies</column> 
+  		</row>
+  		<row cat="markitwire">
+  			<column name="description"></column> 
+  			<column name="value">MWReportingJurisdictions</column> 
+  			<column name="name">MWCalypsoMapping.Types</column> 
+  		</row>
+  		<row cat="markitwire">
+			<column name="description">Calypso mapping for Interface Categories</column>
+			<column name="value">Translator</column>
+			<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Calypso mapping for discounting method</column>
+			<column name="value">DiscountingMethod</column>
+			<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Calypso mapping for ExternalReference prefix</column>
+			<column name="value">ExternalReference</column>
+			<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Calypso mapping for KeywordName</column>
+			<column name="value">KeywordName</column>
+			<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Calypso mapping for KeywordValue</column>
+			<column name="value">KeywordValue</column>
+			<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Calypso mapping for Undelying Type</column>
+			<column name="value">UnderlyingProductCodeType</column>
+			<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Calypso mapping for Undelying Value</column>
+			<column name="value">UnderlyingProductCodeValue</column>
+			<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description">Calypso mapping for Master confirmation</column>
+			<column name="value">MasterConfirmationType</column>
+			<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">PlatformAgreedDiscountRate</column>
+			<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="markitwire">
+			<column name="value">SpreadCalculationMethod</column>
+			<column name="name">MWCalypsoMapping.Types</column>
+			<column name="description"></column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CLEAR</column>
+			<column name="name">UploadAllowedAmendActions</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">REFUSE</column>
+			<column name="name">UploadAllowedAmendActions</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CLEAR</column>
+			<column name="name">tradeAction</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">REFUSE</column>
+			<column name="name">tradeAction</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">CLEAR</column>
+			<column name="name">Clearing.Trade.AcceptAction</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">REFUSE</column>
+			<column name="name">Clearing.Trade.RejectAction</column>
+		</row>
+  		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">MWGATEWAYMSG_REJECT</column>
+			<column name="description">To capture the exceptions in the task station for message type GATEWAYMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">MWGATEWAYMSG_ERROR</column>
+			<column name="description">To capture the exceptions in the task station for message type GATEWAYMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">MWGATEWAYMSG_WARNING</column>
+			<column name="description">To capture the exceptions in the task station for message type GATEWAYMSG</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">exceptionType</column>
+			<column name="value">MWGATEWAYMSG</column>
+			<column name="description">To capture the exceptions in the task station for message type MWGATEWAYMSG</column>
+		</row>
+				<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_MWGATEWAYMSG_REJECT</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_MWGATEWAYMSG_WARNING</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_MWGATEWAYMSG_ERROR</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">eventType</column>
+			<column name="value">EX_MWGATEWAYMSG</column>
+			<column name="description">To capture the exceptions in the task station</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadMessageFormatTypes</column>
+			<column name="value">SWML</column>
+			<column name="description">Source for Markitwire</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadMessageFormatTypes</column>
+			<column name="value">NettingGrid</column>
+			<column name="description">Source for Markitwire Netting Grid XML</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadMessageFormatTypes</column>
+			<column name="value">ClearingSWML</column>
+			<column name="description">Source for Markitwire Exchange Clearing</column>
+		</row>
+		<row cat="gateway">
+			<column name="name">UploadMessageSourceTypes</column>
+			<column name="value">MW</column>
+			<column name="description">SWML,ClearingSWML,NettingGrid</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">PlatformBackload</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Affirm</column>
+			<column name="name">MWProcessState</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Sent</column>
+			<column name="name">MWProcessState</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Pending</column>
+			<column name="name">MWProcessState</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PickedUp</column>
+			<column name="name">MWProcessState</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Cancelled</column>
+			<column name="name">MWProcessState</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">CptyAffirm</column>
+			<column name="name">MWProcessState</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Done</column>
+			<column name="name">MWProcessState</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">PrimaryAffirm</column>
+			<column name="name">MWProcessState</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">RegisteredForClearing</column>
+			<column name="name">MWProcessState</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">RejectedForClearing</column>
+			<column name="name">MWProcessState</column>
+		</row>
+			<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Released</column>
+			<column name="name">MWProcessState</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">SentForClearing</column>
+			<column name="name">MWProcessState</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">SentForClearingUpdate</column>
+			<column name="name">MWProcessState</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">UpdateForClearing</column>
+			<column name="name">MWProcessState</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Withdrawn</column>
+			<column name="name">MWProcessState</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">WithdrawnByMatch</column>
+			<column name="name">MWProcessState</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Transferred</column>
+			<column name="name">MWProcessState</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Amended</column>
+			<column name="name">MWContractState.PreRelease</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Cancelled</column>
+			<column name="name">MWContractState.PreRelease</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Clearing</column>
+			<column name="name">MWContractState.PreRelease</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">New-Clearing</column>
+			<column name="name">MWContractState.PreRelease</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">Amended-Clearing</column>
+			<column name="name">MWContractState.PreRelease</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Clearing-Takeup</column>
+			<column name="name">MWContractState.PreRelease</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Exercised</column>
+			<column name="name">MWContractState.PreRelease</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Exercised-Cash</column>
+			<column name="name">MWContractState.PreRelease</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Exercised-Physical</column>
+			<column name="name">MWContractState.PreRelease</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Exit</column>
+			<column name="name">MWContractState.PreRelease</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">New</column>
+			<column name="name">MWContractState.PreRelease</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">New-Match</column>
+			<column name="name">MWContractState.PreRelease</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Novated</column>
+			<column name="name">MWContractState.PreRelease</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">Novated-Partial</column>
+			<column name="name">MWContractState.PreRelease</column>
+		</row>
+		<row cat="bidirectional">
+			<column name="description"></column>
+			<column name="value">New-Novated</column>
+			<column name="name">MWContractState.PreRelease</column>
+		</row>
+		<row cat="bidirectional">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">CounterpartyTradersGroup</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="gateway">
+				<column name="description">Calypso mapping for Interface types</column>
+				<column name="value">FCMAction</column>
+				<column name="name">MWCalypsoMapping.Types</column>
+		</row>
+		<row cat="markitwire">
+				<column name="description"></column>
+				<column name="value">SkipAllocatedParentExistsValidation</column>
+				<column name="name">domainName</column>
+		</row>
+		<row cat="markitwire">
+			<column name="description"></column>
+			<column name="value">SWBlockDealId</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+	</table>
+	<table name="calypso_mapping" xmlns="">
+		<row cat="markitwire">
+		  <column name="calypso_value">4W</column> 
+		  <column name="interface_value">28D</column> 
+		  <column name="type_name">IndexTenor</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="markitwire">
+		  <column name="calypso_value">AdditionalFld1</column> 
+		  <column name="interface_value">1</column> 
+		  <column name="type_name">FieldKeywords</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		</row>
+		<row cat="markitwire">
+		  <column name="calypso_value">AdditionalFld2</column> 
+		  <column name="interface_value">2</column> 
+		  <column name="type_name">FieldKeywords</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+  		</row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">AdditionalFld3</column> 
+		  <column name="interface_value">3</column> 
+		  <column name="type_name">FieldKeywords</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">AdditionalFld4</column> 
+		  <column name="interface_value">4</column> 
+		  <column name="type_name">FieldKeywords</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">AdditionalFld5</column> 
+		  <column name="interface_value">5</column> 
+		  <column name="type_name">FieldKeywords</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">FEE</column> 
+		  <column name="interface_value">AmendmentFee</column> 
+		  <column name="type_name">Fees</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">EXERCISE_FEE</column> 
+		  <column name="interface_value">Cash Exercise</column> 
+		  <column name="type_name">Fees</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">TERMINATION_FEE</column> 
+		  <column name="interface_value">PartialTermination</column> 
+		  <column name="type_name">Fees</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">TERMINATION_FEE</column> 
+		  <column name="interface_value">Cancellation</column> 
+		  <column name="type_name">Fees</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">BRK</column> 
+		  <column name="interface_value">swBrokerageAmount</column> 
+		  <column name="type_name">Fees</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">FEE</column> 
+		  <column name="interface_value">swSalesCredit</column> 
+		  <column name="type_name">Fees</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">PREMIUM</column> 
+		  <column name="interface_value">Premium</column> 
+		  <column name="type_name">Fees</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">UPFRONT_FEE</column> 
+		  <column name="interface_value">UpfrontFee</column> 
+		  <column name="type_name">Fees</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">FEE</column> 
+		  <column name="interface_value">UnclassifiedFee</column> 
+		  <column name="type_name">Fees</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">TERMINATION_FEE</column> 
+		  <column name="interface_value">NovationStepIn</column> 
+		  <column name="type_name">Fees</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">FEE</column> 
+		  <column name="interface_value">FixedAmount</column> 
+		  <column name="type_name">Fees</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">TERMINATION_FEE</column> 
+		  <column name="interface_value">NovationStepOut</column> 
+		  <column name="type_name">Fees</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">PREMIUM</column> 
+		  <column name="interface_value">CancellablePremium</column> 
+		  <column name="type_name">Fees</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">Error</column> 
+		  <column name="interface_value">Error</column> 
+		  <column name="type_name">MWBookingState</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">Saved</column> 
+		  <column name="interface_value">Saved</column> 
+		  <column name="type_name">MWBookingState</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">Validated</column> 
+		  <column name="interface_value">Validated</column> 
+		  <column name="type_name">MWBookingState</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">1/1</column> 
+		  <column name="interface_value">1/1</column> 
+		  <column name="type_name">DayCount</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">30E*/360</column> 
+		  <column name="interface_value">30E/360.ISDA</column> 
+		  <column name="type_name">DayCount</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">ACT/365</column> 
+		  <column name="interface_value">ACT/365.FIXED</column> 
+		  <column name="type_name">DayCount</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">ACT/365</column> 
+		  <column name="interface_value">ACT/365.ISDA</column> 
+		  <column name="type_name">DayCount</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">ACT/365I</column> 
+		  <column name="interface_value">ACT/365L</column> 
+		  <column name="type_name">DayCount</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">ACT/ACT29</column> 
+		  <column name="interface_value">ACT/ACT.AFB</column> 
+		  <column name="type_name">DayCount</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">ACTB/ACTB</column> 
+		  <column name="interface_value">ACT/ACT.ICMA</column> 
+		  <column name="type_name">DayCount</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		 <row cat="markitwire">
+		  <column name="calypso_value">ACT/ACT</column> 
+		  <column name="interface_value">ACT/ACT.ISDA</column> 
+		  <column name="type_name">DayCount</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">BU/252</column> 
+		  <column name="interface_value">BUS/252</column> 
+		  <column name="type_name">DayCount</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>		  
+		  <row cat="markitwire">
+		  <column name="calypso_value">IMM_MON</column> 
+		  <column name="interface_value">IMMCAD</column> 
+		  <column name="type_name">DateRoll</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">MOD_FOLLOW</column> 
+		  <column name="interface_value">MODFOLLOWING</column> 
+		  <column name="type_name">DateRoll</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">MOD_PRECED</column> 
+		  <column name="interface_value">MODPRECEDING</column> 
+		  <column name="type_name">DateRoll</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">NO_CHANGE</column> 
+		  <column name="interface_value">NONE</column> 
+		  <column name="type_name">DateRoll</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">NO_CHANGE</column> 
+		  <column name="interface_value">NotApplicable</column> 
+		  <column name="type_name">DateRoll</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">IMM</column> 
+		  <column name="interface_value">IMMCAD</column> 
+		  <column name="type_name">RollDay</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">IMM</column> 
+		  <column name="interface_value">IMM</column> 
+		  <column name="type_name">RollDay</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">U</column> 
+		  <column name="interface_value">CPURNSA</column> 
+		  <column name="type_name">RateIndexSource</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>  
+		  <row cat="markitwire">
+		  <column name="calypso_value">MTH</column> 
+		  <column name="interface_value">1M</column> 
+		  <column name="type_name">Frequency</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">ZC</column> 
+		  <column name="interface_value">1T</column> 
+		  <column name="type_name">Frequency</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">WK</column> 
+		  <column name="interface_value">1W</column> 
+		  <column name="type_name">Frequency</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">DLY</column> 
+		  <column name="interface_value">1D</column> 
+		  <column name="type_name">Frequency</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">QTR</column> 
+		  <column name="interface_value">3M</column> 
+		  <column name="type_name">Frequency</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">SA</column> 
+		  <column name="interface_value">6M</column> 
+		  <column name="type_name">Frequency</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">PA</column> 
+		  <column name="interface_value">12M</column> 
+		  <column name="type_name">Frequency</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">PA</column> 
+		  <column name="interface_value">1Y</column> 
+		  <column name="type_name">Frequency</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">1W</column> 
+		  <column name="interface_value">USD-SIFMA Municipal Swap Index</column> 
+		  <column name="type_name">DefaultIndexTenor</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">USD/CMS/5Y/ISDA</column> 
+		  <column name="interface_value">USD-5Y</column> 
+		  <column name="type_name">SettlementRateIndex</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">CrossCurrencySwap</column> 
+		  <column name="interface_value">CrossCurrencySwap</column> 
+		  <column name="type_name">ProductType</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">NonDeliverableSwap</column> 
+		  <column name="interface_value">NonDeliverableSwap</column> 
+		  <column name="type_name">ProductType</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">CFTC</column> 
+		  <column name="interface_value">DoddFrank</column> 
+		  <column name="type_name">MWReportingJurisdictions</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">JFSA</column> 
+		  <column name="interface_value">JFSA</column> 
+		  <column name="type_name">MWReportingJurisdictions</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">ESMA</column> 
+		  <column name="interface_value">ESMA</column> 
+		  <column name="type_name">MWReportingJurisdictions</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">HKMA</column> 
+		  <column name="interface_value">HKMA</column> 
+		  <column name="type_name">MWReportingJurisdictions</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">ASIC</column> 
+		  <column name="interface_value">ASIC</column> 
+		  <column name="type_name">MWReportingJurisdictions</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">MAS</column> 
+		  <column name="interface_value">MAS</column> 
+		  <column name="type_name">MWReportingJurisdictions</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">CAN</column> 
+		  <column name="interface_value">CAN</column> 
+		  <column name="type_name">MWReportingJurisdictions</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">MIFID</column> 
+		  <column name="interface_value">MIFID</column> 
+		  <column name="type_name">MWReportingJurisdictions</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">SEC</column> 
+		  <column name="interface_value">SEC</column> 
+		  <column name="type_name">MWReportingJurisdictions</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		  <row cat="markitwire">
+		  <column name="calypso_value">FCA</column> 
+		  <column name="interface_value">FCA</column> 
+		  <column name="type_name">MWReportingJurisdictions</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">1</column> 
+		  </row>
+		  <row cat="markitwire">
+			<column name="calypso_value">SwapswireLongName</column>
+			<column name="interface_value">RefBankIdLEAttribute</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">MW</column>
+			<column name="reverse_b">0</column>
+		  </row>
+		  <row cat="markitwire">
+			<column name="calypso_value"></column>
+			<column name="interface_value">DoRecoveryLagMins</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">MW</column>
+			<column name="reverse_b">0</column>
+		  </row>
+		  <row cat="markitwire">
+			<column name="calypso_value"></column>
+			<column name="interface_value">SkipEventsOnDisconnect</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">MW</column>
+			<column name="reverse_b">0</column>
+		  </row>
+		  <row cat="markitwire">
+			<column name="calypso_value"></column>
+			<column name="interface_value">SkipAutoRecoveryOnReconnect</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">MW</column>
+			<column name="reverse_b">0</column>
+		  </row>
+		  <row cat="markitwire">
+			<column name="calypso_value">DUAL_DISC</column>
+			<column name="interface_value">AFMA</column>
+			<column name="type_name">DiscountingMethod</column>
+			<column name="interface_name">MW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="markitwire">
+			<column name="calypso_value">FWD_DISC</column>
+			<column name="interface_value">ISDA</column>
+			<column name="type_name">DiscountingMethod</column>
+			<column name="interface_name">MW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="markitwire">
+			<column name="calypso_value">DUAL_DISC</column>
+			<column name="interface_value">ISDAYield</column>
+			<column name="type_name">DiscountingMethod</column>
+			<column name="interface_name">MW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="markitwire">
+			<column name="calypso_value">NONE</column>
+			<column name="interface_value">NONE</column>
+			<column name="type_name">DiscountingMethod</column>
+			<column name="interface_name">MW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="markitwire">
+		  <column name="calypso_value">CLEAR</column> 
+		  <column name="interface_value">CLEAR</column> 
+		  <column name="type_name">FCMAction</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="markitwire">
+		  <column name="calypso_value">REFUSE</column> 
+		  <column name="interface_value">REFUSE</column> 
+		  <column name="type_name">FCMAction</column> 
+		  <column name="interface_name">MW</column> 
+		  <column name="reverse_b">0</column> 
+	  	</row>
+	  	<row cat="markitwire">
+			<column name="calypso_value">Par/Par</column>
+			<column name="interface_value">ParPar</column>
+			<column name="type_name">SpreadCalculationMethod</column>
+			<column name="interface_name">MW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="markitwire">
+			<column name="calypso_value">Dirty Price</column>
+			<column name="interface_value">Proceeds</column>
+			<column name="type_name">SpreadCalculationMethod</column>
+			<column name="interface_name">MW</column>
+			<column name="reverse_b">0</column>
+		</row>
+		<row cat="markitwire">
+			<column name="calypso_value"></column>
+			<column name="interface_value">TransitionToOISAsRateIndexUpdate</column>
+			<column name="type_name">Translator</column>
+			<column name="interface_name">MW</column>
+			<column name="reverse_b">0</column>
+		  </row>
+  	</table>
+</database>

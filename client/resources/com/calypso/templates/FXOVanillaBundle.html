@@ -1,0 +1,117 @@
+<p>The terms of the one of the Transacion to which this Confirmation relates are as follows:</p>
+<br>
+<p><u>General Terms: </u></p> 
+<br>
+<table>
+    <tr>
+        <td WIDTH="39%"><b>Trade Reference</b></td>
+        <td WIDTH="59%">|TRADE_ID|</td>
+    </tr>
+    <tr>
+        <td>Trade Date</td>
+        <td>|TRADE_DATE|</td>
+    </tr>
+    <tr>
+		<td>Buyer</td>
+        <td>|TRADE_BUYER_NAME|</td>
+    </tr>
+    <tr>
+        <td>Seller</td>
+        <td>|TRADE_SELLER_NAME|</td>
+    </tr>
+    <tr>
+        <td>Currency Option Style</td>
+        <td>|REPORT#Exercise Type|</td>
+    </tr>
+    <tr>
+        <td>Currency Option Type</td>
+		<td>|FXOPTION_SELL_CURRENCY| Put / |FXOPTION_BUY_CURRENCY| Call</td>
+    </tr>
+    <tr>
+        <td>Call Currency and Call Amount</td>
+        <td>|FXOPTION_BUY_CURRENCY|  |FXOPTION_BUY_AMOUNT|</td>
+    </tr>	
+    <tr>
+        <td>Put Currency and Put Amount</td>
+        <td>|FXOPTION_SELL_CURRENCY|  |FXOPTION_SELL_AMOUNT|</td>
+    </tr>
+    <tr>
+        <td>Strike Price</td>
+        <td>|FXOPTION_STRIKE|</td>
+    </tr>
+	<tr>
+		<td>Expiration Date</td>
+		<td>|FXOPTION_EXPIRY_DATE|</td>
+	</tr>
+	<tr>
+		<td>Expiration Time</td>
+		<td>|FXOPTION_EXPIRY_TIMEZONE|</td>
+	</tr>
+<!--calypso>
+		if (|REPORT#Auto Exercise|=="false")
+		inline "
+		<tr>
+			<td>Automatic Exercise</td>
+			<td>Inapplicable</td>
+		</tr>
+		";
+		if (|REPORT#Auto Exercise|=="true")
+		inline "
+		<tr>
+			<td>Automatic Exercise</td>
+			<td>Applicable</td>
+		</tr>
+		";
+</calypso-->
+	<tr>
+		<td>Settlement</td>
+		<td>|REPORT#Settle Type|</td>
+	</tr>
+	<tr>
+		<td>Settlement Date</td>
+		<td>|FXOPTION_DELIVERY_DATE|</td>
+	</tr>
+<!--calypso>
+		if (|REPORT#Settle Type|=="Cash")
+		inline "
+		<tr>
+			<td>Settlement Rate Option</td>
+			<td>|FXOPTION_SETTLE_RATE_SOURCE|</td>
+		</tr>
+		";
+</calypso-->	
+<!-- European Option -->
+<!--calypso>
+if (|REPORT#Exercise Type|== "European")
+    inline "
+<tr>
+	<td>Settlement Currency:</td>
+	<td>|REPORT#Payout Ccy|</td>
+</tr>
+    ";
+if (|REPORT#Exercise Type|== "American")
+    inline "
+<tr>
+	<td>First Exercise Date:</td>
+	<td>|FXOPTION_FIRST_EXERCISE_DATE|</td>
+</tr>
+    ";
+</calypso-->
+
+<!-- Premium details -->
+<!--calypso>
+if (|PREMIUM_CURRENCY|!= "None")
+    inline "
+	<tr>
+		<td>Premium</td>
+		<td>|PREMIUM_CURRENCY| |PREMIUM_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td>Premium Date</td>
+		<td>|PREMIUM_DATE|</td>
+	</tr>
+	";
+</calypso-->
+</table>
+<hr>
+<br><br>

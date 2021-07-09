@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!--
+		Login handler to handle the Authentication based on Calypso default user details provided from args etc
+		as part of spring initialization
+	 -->	
+	<bean id="loginHandler" class="com.calypso.infra.authentication.service.LoginTask">
+		<property name="authenticationService" ref="authService" />
+		<property name="userServiceable" ref="userServiceable" />
+		<property name="appName" value="${APPLICATION_NAME}" />
+		<property name="instanceName" value="${INSTANCE_NAME}" />
+  	</bean>
+
+	<!--
+		Helper class that is useful to provide a handle to the token after login to be made available to other beans during wiring 
+	 -->
+	<bean id="tokenFactory" class="com.calypso.infra.authentication.service.TokenFactory" depends-on="loginHandler" init-method="init"/>
+</beans>

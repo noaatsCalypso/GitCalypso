@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+    <contents>
+        <element name="FinInstrmId">
+            <contents>
+                <element name="ISIN">
+                    <contents>
+                        <report>
+                            <column>Xfer_SecCode.ISIN</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="Desc">
+                    <contents>
+                        <report>
+                            <column>Security</column>
+                        </report>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

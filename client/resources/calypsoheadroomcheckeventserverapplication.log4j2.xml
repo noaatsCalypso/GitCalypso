@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Default configuration for non-engine applications -->
+<Configuration xmlns:xi="http://www.w3.org/2001/XInclude" status="WARN">
+  <xi:include href="fragments/properties.log4j2.xml"/>
+  <Appenders>
+    <xi:include href="fragments/appender_console.xml"/>
+    <xi:include href="fragments/appender_default.xml"/>
+    <xi:include href="fragments/appender_event.xml"/>
+    <xi:include href="fragments/appender_ThirdParty.xml"/>
+  </Appenders>
+  <Loggers>
+    <Logger name="com.calypso" additivity="false" level="ERROR">
+      <AppenderRef ref="default" />
+      <AppenderRef ref="event" />
+    </Logger>
+    <Logger name="org.apache.activemq.broker.BrokerService" additivity="false" level="INFO">
+      <AppenderRef ref="console" />
+    </Logger>
+    <xi:include href="fragments/root_logger.log4j2.xml"/>
+  </Loggers>
+</Configuration>

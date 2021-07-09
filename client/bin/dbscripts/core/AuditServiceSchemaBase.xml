@@ -1,0 +1,49 @@
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="audit_record" xmlns="">
+        <column name="id" scale="64" type="string"/>
+        <column name="version" scale="1" type="int"/>
+        <column name="tenant_id" scale="1" type="int"/>
+        <column name="creation_user" scale="255" type="string"/>
+        <column name="creation_date" scale="1" type="int"/>
+        <column name="creation_user_type" scale="255" type="string" default="user"/>
+        <column name="last_update_user" scale="255" type="string"/>
+        <column name="last_update_date" scale="1" type="int"/>
+        <column name="last_update_user_type" scale="255" type="string" default="user"/>
+        <column name="capture_time" scale="1" type="int"/>
+        <column name="acting_user_type" scale="255" type="string"/>
+        <column name="acting_user_id" scale="64" type="string"/>
+        <column name="app" scale="64" type="string"/>
+        <column name="type" scale="64" type="string"/>
+        <column name="class_name" scale="255" type="string"/>
+        <column name="entity_id" scale="64" type="string"/>
+        <column name="entity_version_before" scale="1" type="int"/>
+        <column name="property" nullable="true" scale="255" type="string"/>
+        <column name="before" nullable="true" scale="255" type="string"/>
+        <column name="after" nullable="true" scale="255" type="string"/>
+        <column name="group_tag" scale="64" type="string"/>
+        <column name="recalled" scale="1" type="int"/>
+        <index primary="true">
+            <on>id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>capture_time</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>app</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>acting_user_id</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>acting_user_type</on>
+        </index>
+        <index primary="false">
+            <on>tenant_id</on>
+            <on>class_name</on>
+        </index>
+    </table>
+</database>

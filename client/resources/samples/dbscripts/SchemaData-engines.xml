@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<calypso:database xmlns:calypso="http://www.calypso.com/schemer">
+  <table name="domain_values">
+    <row cat="engines">
+      <column name="name">ERSLimitServer.instances</column>
+      <column name="value">enterpriseriskserver</column>
+      <column name="description"/>
+    </row>
+    <row cat="engines">
+      <column name="name">ERSLimitServer.instances</column>
+      <column name="value">erslimitserver</column>
+      <column name="description"/>
+    </row>
+    <row cat="engines">
+      <column name="name">ERSRiskServer.instances</column>
+      <column name="value">enterpriseriskserver</column>
+      <column name="description"/>
+    </row>
+    <row cat="engines">
+      <column name="name">ERSRiskServer.instances</column>
+      <column name="value">ersriskserver</column>
+      <column name="description"/>
+    </row>
+    <row cat="engines">
+      <column name="name">EngineServer.instances</column>
+      <column name="value">engineserver</column>
+      <column name="description">Default engine server instance</column>
+    </row>
+    <row cat="engines">
+      <column name="name">PositionKeepingServer.instances</column>
+      <column name="value">positionkeepingserver</column>
+      <column name="description"/>
+    </row>
+  </table>
+  <table name="engine_param">
+    <row cat="engines">
+      <column name="engine_name">AccountingEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.accounting.AccountingEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">AccountingEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Accounting Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">AccountingEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">AccountingEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">true</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BONYImportMessageEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.advice.ImportMessageEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BONYImportMessageEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">BONY Import Message Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BONYImportMessageEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BONYImportMessageEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BONYImportMessageEngine</column>
+      <column name="param_name">config</column>
+      <column name="param_value">GSCC</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BalanceEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.balance.BalanceEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BalanceEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Balance Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BalanceEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BalanceEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BillingEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.billing.BillingEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BillingEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Billing Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BillingEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BillingEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BloombergEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.bloomberg.BloombergEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BloombergEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Bloomberg Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BloombergEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BloombergEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BloombergSAPIEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.bloombergsapi.BloombergSAPIEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BloombergSAPIEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">BloombergSAPI Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BloombergSAPIEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BloombergSAPIEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">BloombergSAPIEngine</column>
+      <column name="param_name">config</column>
+      <column name="param_value">BloombergSAPI</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">CLSImportMessageEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.advice.ImportMessageEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">CLSImportMessageEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">CLS Import Message Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">CLSImportMessageEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">CLSImportMessageEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">CreEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.accounting.CreEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">CreEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Cre Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">CreEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">CreEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">CreSenderEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.accounting.CreSenderEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">CreSenderEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Cre Sender Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">CreSenderEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">CreSenderEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DSMatchImportMessageEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.tk.engine.DSMatchImportMessageEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DSMatchImportMessageEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">DS Match Import Message Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DSMatchImportMessageEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DSMatchImportMessageEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DSMatchImportMessageEngine</column>
+      <column name="param_name">config</column>
+      <column name="param_value">DSMatchFX</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCDSMatchImportMessageEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.advice.ImportMessageEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCDSMatchImportMessageEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">DTCC DS Match Import Message Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCDSMatchImportMessageEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCDSMatchImportMessageEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCDSMatchImportMessageEngine</column>
+      <column name="param_name">config</column>
+      <column name="param_value">DTCC</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCGTRCreditImportMessageEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.advice.ImportMessageEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCGTRCreditImportMessageEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">DTCC GTR Credit Import Message Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCGTRCreditImportMessageEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCGTRCreditImportMessageEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCGTRCreditImportMessageEngine</column>
+      <column name="param_name">config</column>
+      <column name="param_value">DTCCGTRCredit</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCGTRFXImportMessageEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.advice.ImportMessageEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCGTRFXImportMessageEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">DTCC GTR FX Import Message Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCGTRFXImportMessageEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCGTRFXImportMessageEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCGTRFXImportMessageEngine</column>
+      <column name="param_name">config</column>
+      <column name="param_value">DTCCGTRFX</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCGTRRatesImportMessageEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.advice.ImportMessageEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCGTRRatesImportMessageEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">DTCC GTR Rates Import Message Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCGTRRatesImportMessageEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCGTRRatesImportMessageEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DTCCGTRRatesImportMessageEngine</column>
+      <column name="param_name">config</column>
+      <column name="param_value">DTCCGTRIntRate</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DataUploaderEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.tk.engine.DataUploaderEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DataUploaderEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">DataUploader Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DataUploaderEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DataUploaderEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DataUploaderEngine</column>
+      <column name="param_name">config</column>
+      <column name="param_value">datauploader.properties</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DiaryEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.diary.DiaryEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DiaryEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Diary Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DiaryEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">DiaryEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">true</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ERSLimitEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.ers_limit.ERSLimitEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ERSLimitEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">ERS Limit Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ERSLimitEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">enterpriseriskserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ERSLimitEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">true</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ExchangeFeedBridgeEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.tk.engine.ExchangeFeedBridgeEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ExchangeFeedBridgeEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">ExchangeFeedBridge Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ExchangeFeedBridgeEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ExchangeFeedBridgeEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">FTPEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.ftp.FTPEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">FTPEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">FTP Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">FTPEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">FTPEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">GSCCImportMessageEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.advice.ImportMessageEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">GSCCImportMessageEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">GSCC Import Message Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">GSCCImportMessageEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">GSCCImportMessageEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">GSCCImportMessageEngine</column>
+      <column name="param_name">config</column>
+      <column name="param_value">GSCC</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">HedgeRelationshipEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.hedgeRelationship.HedgeRelationshipEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">HedgeRelationshipEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Hedge Relationship Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">HedgeRelationshipEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">HedgeRelationshipEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ICELinkEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.tk.engine.ICELinkEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ICELinkEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">ICELink Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ICELinkEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ICELinkEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ICELinkEngine</column>
+      <column name="param_name">config</column>
+      <column name="param_value">icelink.properties</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">IncomingEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.advice.IncomingMessageEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">IncomingEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Incoming Message Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">IncomingEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">IncomingEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">InventoryEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.inventory.InventoryEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">InventoryEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Inventory Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">InventoryEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">InventoryEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">true</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">LifeCycleEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.lifecycle.LifeCycleEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">LifeCycleEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">LifeCycle Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">LifeCycleEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">LifeCycleEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">true</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">LiquidationEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.position.LiquidationEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">LiquidationEngine</column>
+      <column name="param_name">EXCLUDE_PRODUCTTYPE</column>
+      <column name="param_value">FX,FXNDF,FXSwap,FXForward,PLSweep,PositionFXNDF</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">LiquidationEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Liquidation Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">LiquidationEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">LiquidationEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">TRUE</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MarginCallEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.inventory.MarginCallEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MarginCallEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Margin Call Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MarginCallEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MarginCallEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MatchableBuilderEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.matching.MatchableBuilderEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MatchableBuilderEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">MatchableBuilder Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MatchableBuilderEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MatchableBuilderEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MatchingEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.matching.MatchingEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MatchingEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Matching Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MatchingEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MatchingEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MessageEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.advice.MessageEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MessageEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Message Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MessageEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MessageEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">true</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MutationEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.mutation.MutationEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MutationEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Mutation Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MutationEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">MutationEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">PositionEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.position.PositionEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">PositionEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Position Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">PositionEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">PositionEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">true</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">PositionKeepingPersistenceEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.tk.positionkeeping.processing.engine.PositionKeepingPersistenceEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">PositionKeepingPersistenceEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Position Keeping Persistence Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">PositionKeepingPersistenceEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">positionkeepingserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">PositionKeepingPersistenceEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">true</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">PostingSenderEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.accounting.PostingSenderEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">PostingSenderEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Posting Sender Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">PostingSenderEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">PostingSenderEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">RelationshipManagerEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.hedgeaccounting.RelationshipManagerEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">RelationshipManagerEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Relationship Manager Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">RelationshipManagerEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">RelationshipManagerEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ReutersDssEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.reutersdss.ReutersDSSEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ReutersDssEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">ReutersDSS Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ReutersDssEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">ReutersDssEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">RiskEngineBroker</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.risk.RiskEngineBroker</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">RiskEngineBroker</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Risk Engine Broker</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">RiskEngineBroker</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">enterpriseriskserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">RiskEngineBroker</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">true</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SenderAccountingEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.accounting.SenderAccountingEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SenderAccountingEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Sender Accounting Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SenderAccountingEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SenderAccountingEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SenderEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.advice.SenderEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SenderEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Sender Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SenderEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SenderEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SwapswireTradeEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.advice.SwapswireTradeEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SwapswireTradeEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Swapswire Trade Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SwapswireTradeEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SwapswireTradeEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SwiftImportMessageEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.advice.ImportMessageEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SwiftImportMessageEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Swift Import Message Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SwiftImportMessageEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SwiftImportMessageEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">SwiftImportMessageEngine</column>
+      <column name="param_name">config</column>
+      <column name="param_value">Swift</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TRUploaderEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.tk.engine.DataUploaderEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TRUploaderEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">TRUploader Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TRUploaderEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TRUploaderEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TRUploaderEngine</column>
+      <column name="param_name">config</column>
+      <column name="param_value">truploader.properties</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TaskEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.task.TaskEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TaskEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Task Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TaskEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TaskEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">true</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TransferEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.payment.TransferEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TransferEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Transfer Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TransferEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TransferEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">true</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TraxEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.engine.advice.TraxEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TraxEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Trax Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TraxEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">TraxEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">UploaderImportMessageEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.tk.engine.UploadImportMessageEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">UploaderImportMessageEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">Uploader Import Message Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">UploaderImportMessageEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">UploaderImportMessageEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">UploaderImportMessageEngine</column>
+      <column name="param_name">config</column>
+      <column name="param_value">Uploader</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">UploaderPublishEngine</column>
+      <column name="param_name">CLASS_NAME</column>
+      <column name="param_value">com.calypso.tk.engine.UploaderPublishEngine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">UploaderPublishEngine</column>
+      <column name="param_name">DISPLAY_NAME</column>
+      <column name="param_value">UploaderPublish Engine</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">UploaderPublishEngine</column>
+      <column name="param_name">INSTANCE_NAME</column>
+      <column name="param_value">engineserver</column>
+    </row>
+    <row cat="engines">
+      <column name="engine_name">UploaderPublishEngine</column>
+      <column name="param_name">STARTUP</column>
+      <column name="param_value">false</column>
+    </row>
+  </table>
+</calypso:database>

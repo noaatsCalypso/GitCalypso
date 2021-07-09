@@ -1,0 +1,131 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+<!--calypso>
+if ((|PRODUCT_TYPE| == "Swap") || (|PRODUCT_TYPE| == "CappedSwap"))
+   set TRANSACTION_TYPE = "Interest Rate Swap";
+else  if (|PRODUCT_TYPE| == "SwapCrossCurrency" || |PRODUCT_TYPE| == "XCcySwap")
+   set TRANSACTION_TYPE = "Cross-Currency Rate Swap";
+else if (|PRODUCT_TYPE| == "FRA")
+   set TRANSACTION_TYPE = "Forward Rate Agreement";
+else if (|PRODUCT_TYPE| == "SwapNonDeliverable")
+   set TRANSACTION_TYPE = "Non-Deliverable Interest Rate Swap";   
+else
+   set TRANSACTION_TYPE = |PRODUCT_TYPE|;
+</calypso-->
+
+<p class='header1'>Payment Advice</p>
+<p class="header2">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" || |MESSAGE_SUBACTION|== "CANCEL")
+	inline  "Amend and Cancel the previous advice";
+</calypso-->
+</p>
+
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND")
+	set MESSAGE_ACTION = "amend";
+else if (|MESSAGE_SUBACTION|== "CANCEL")
+	set MESSAGE_ACTION = "cancel";
+else if (|MESSAGE_SUBACTION|== "NONE")
+	set MESSAGE_ACTION = "confirm";
+</calypso-->
+<br>
+<br>
+
+We |MESSAGE_ACTION| the following Payment Advice. For value date, |TRANSFER_VALUEDATE|, we will |TRANSFER_PAYRECEIVE|  |TRANSFER_SETTLEMENTCCY| |TRANSFER_SETTLEMENTAMOUNT|.</p>
+
+
+<p class='header2'>Cash Flows Details</p>
+
+<br><br>
+
+<table border="1">
+<tr>
+    <th font-size="7pt" width="8%">Type</th>
+    <th font-size="8pt" width="8%">Start Date</th>
+    <th font-size="8pt" width="8%">End Date</th>
+    <th font-size="8pt" width="6%">Days</th>
+    <th font-size="8pt" width="6%">Day Count</th>
+    <th font-size="8pt" width="6%">Rate</th>
+    <th font-size="8pt" width="7%">Spread</th>
+    <th font-size="8pt" width="7%">Rate Index</th>
+	<th font-size="8pt" width="7%">Final Rate</th>
+    <th font-size="8pt" width="7%">Payment Date</th>
+    <th font-size="8pt" width="7%">Notional</th>
+    <th font-size="8pt" width="6%">Currency</th>
+    <th font-size="8pt" width="9%">Amount</th>
+    <th font-size="8pt" width="8%">Interm. Amount</th>
+</tr>
+<!--calypso>
+iterator ( "TransferDetails" )
+    inline "
+<tr>
+    <td font-size='8pt'>|CASHFLOW_TYPE|</td>
+    <td font-size='8pt'>|CASHFLOW_START_DATE|</td>
+    <td font-size='8pt'>|CASHFLOW_END_DATE|</td>
+    <td font-size='8pt'>|CASHFLOW_DAYS|</td>
+    <td font-size='8pt'>|CASHFLOW_DAY_COUNT|</td>
+    <td font-size='8pt'>|CASHFLOW_RATE|</td>
+    <td font-size='8pt'>|CASHFLOW_SPREAD|</td>
+    <td font-size='8pt'>|CASHFLOW_RATE_INDEX|</td>
+	<td font-size='8pt'>|CASHFLOW_FINAL_RATE|</td>
+    <td font-size='8pt'>|CASHFLOW_PAYMENT_DATE|</td>
+    <td font-size='8pt'>|CASHFLOW_NOTIONAL|</td>
+    <td font-size='8pt'>|CASHFLOW_CURRENCY|</td>
+    <td font-size='8pt'>|CASHFLOW_AMOUNT|</td>
+    <td font-size='8pt'>|CASHFLOW_INT_AMOUNT|</td>
+</tr>
+    ";
+</calypso-->
+</table>
+
+<p class=header2>Settlement Instructions are as follows:</p>
+
+<table border="1">
+	<tr>
+		<th font-size='8pt'width="9%">Settlement Instruction</th>
+		<th font-size='7pt'width="5%">Pay/Rec</th>
+		<th font-size='7pt'width="6%">Currency</th>
+		<th font-size='8pt'width="8%">To</th>
+		<th font-size='7pt'width="10%">Code</th>
+		<th font-size='8pt'width="8%">Favor of:</th>
+		<th font-size='8pt'width="8%">Account Number:</th>
+		<th font-size='8pt'width="10%">To Intermediary</th>
+		<th font-size='8pt'width="8%">Code</th>
+		<th font-size='8pt'width="10%">To Intermediary 2</th>
+		<th font-size='8pt'width="8%">Code</th>
+		<th font-size='8pt'width="8%">if Direct Account</th>
+
+	</tr>
+<!--calypso>
+	iterator("AdviceTransferRules")
+		inline "	
+			<tr>
+			<td  font-size='8pt'>|SETTLEMENT_TO_SDI_TYPE|</td>
+			<td  font-size='8pt'>|SETTLEMENT_TO_PAYREC|</td>
+			<td  font-size='8pt'>|SETTLEMENT_TO_CURRENCY|</td>
+			<td  font-size='8pt'>|SETTLEMENT_TO_AGENT|</td>
+			<td  font-size='8pt'>|SETTLEMENT_METHOD|</td>
+			<td  font-size='8pt'>|SETTLEMENT_FAVOR_OF|</td>
+			<td  font-size='8pt'>|SETTLEMENT_ACCOUNT_NUMBER|</td>
+			<td  font-size='8pt'>|SETTLEMENT_TO_INTERMEDIARY|</td>
+			<td  font-size='8pt'>|SETTLEMENT_TO_METHOD_INTERMEDIARY|</td>
+			<td  font-size='8pt'>|SETTLEMENT_TO_INTERMEDIARY2|</td>
+			<td  font-size='8pt'>|SETTLEMENT_TO_METHOD_INTERMEDIARY2|</td>
+			<td  font-size='8pt'>|SETTLEMENT_TO_DDA_ACCOUNT|</td>
+			</tr>
+		";
+</calypso-->
+</table>
+
+<p>Please refer to our reference number |TRANSFER_ID| in your correspondence concerning this
+payment.</p>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

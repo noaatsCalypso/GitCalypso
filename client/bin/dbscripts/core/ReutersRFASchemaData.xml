@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="reuters_open_dacs_entitlement" xmlns="">
+		<column name="feed_name" nullable="false" scale="32" type="string"/>
+		<column name="feed_address" nullable="false" scale="255" type="string"/>
+		<column name="dacs_lock" nullable="false" type="binary"/>
+		<index primary="true">
+			<on>feed_name</on>
+			<on>feed_address</on>
+		</index>
+	</table>
+	<table name="domain_values" xmlns="">
+		<row cat="ReutersRFA">
+			<column name="name">engineName</column>
+			<column name="value">ReutersOpenDACSEngine</column>
+			<column name="description">Reuters Open DACS Engine</column>
+		</row>
+		<row cat="ReutersRFA">
+			<column name="name">feedType</column>
+			<column name="value">RFAOpenDACS</column>
+			<column name="description">Reuters RFA with Open DACS</column>
+		</row>
+		<row cat="ReutersRFA">
+			<column name="name">userAttributes</column>
+			<column name="value">Reuters Open DACS User IP</column>
+			<column name="description">The IP address of the Reuters RFA Open DACS User</column>
+		</row>
+		<row cat="ReutersRFA">
+			<column name="name">userAttributes</column>
+			<column name="value">Reuters Open DACS User Mode</column>
+			<column name="description">The flag indicating whether the Reuters RFA Open DACS Feed Handler is in User Mode</column>
+		</row>
+		<row cat="ReutersRFA">
+			<column name="name">userAttributes</column>
+			<column name="value">Reuters Open DACS User Name</column>
+			<column name="description">The user name of the Reuters RFA Open DACS User</column>
+		</row>
+		<row cat="ReutersRFA">
+			<column name="name">userAttributes</column>
+			<column name="value">Reuters Open DACS Site</column>
+			<column name="description">The Open DACS Site to which the user connects</column>
+		</row>
+		
+		<row cat="ReutersRFA">
+			<column name="name">ReutersRFA.DateFormat</column>
+			<column name="value">dd MMM yyyy</column>
+			<column name="description"></column>
+		</row>
+		<row cat="ReutersRFA">
+			<column name="name">ReutersRFA.DateFormat</column>
+			<column name="value">dd MM yyyy</column>
+			<column name="description"></column>
+		</row>
+	</table>
+</database>

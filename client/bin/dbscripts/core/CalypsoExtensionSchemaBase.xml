@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="product_gridtaylor" xmlns="">
+        <column name="product_id" nullable="false" scale="1" type="int"/>
+        <column name="ccy" nullable="false" scale="3" type="string"/>
+        <column name="value_date" nullable="false" scale="1" type="int"/>
+        <column name="ref_pv" nullable="false" scale="1" type="float"/>
+        <column name="scaling" nullable="false" scale="1" type="int"/>
+        <column default="0" name="mtm_source_b" nullable="false" type="int" scale="1"/>
+        <column name="entered_date" nullable="true" type="timestamp"/>
+        <column name="entered_user" nullable="true" scale="32" type="string"/>
+        <index primary="true">
+            <on>product_id</on>
+            <on>value_date</on>
+        </index>
+    </table>
+    <table name="product_gridtaylor_grid" xmlns="">
+        <column name="product_id" nullable="false" scale="1" type="int"/>
+        <column name="value_date" nullable="false" scale="1" type="int"/>
+        <column name="quote_name" nullable="false" scale="128" type="string"/>
+        <column name="quote_value" nullable="false" scale="1" type="float"/>
+        <column name="pv_change" nullable="false" scale="1" type="float"/>
+        <index primary="false">
+            <on>value_date</on>
+        </index>
+    </table>
+    <table name="product_gridtaylor_taylor" xmlns="">
+        <column name="product_id" nullable="false" scale="1" type="int"/>
+        <column name="value_date" nullable="false" scale="1" type="int"/>
+        <column name="item_name" nullable="false" scale="128" type="string"/>
+        <column name="item_value" nullable="false" scale="1" type="float"/>
+        <column name="first_order" nullable="true" scale="1" type="float"/>
+        <column name="second_order" nullable="true" scale="1" type="float"/>
+        <index primary="true">
+            <on>product_id</on>
+            <on>value_date</on>
+            <on>item_name</on>
+        </index>
+    </table>
+</database>

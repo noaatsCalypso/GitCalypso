@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="product_ftp" xmlns="">
+        <column name="product_id" nullable="false" scale="1" type="int"/>
+        <column name="original_security_id" nullable="false" scale="1" type="int"/>
+        <column name="original_trade_id" nullable="false" scale="1" type="bigint"/>
+        <column name="original_trade_version" nullable="false" scale="1" type="int"/>
+        <column name="original_trade_model" nullable="false" scale="1" type="int"/>
+        <column name="original_trade_blob" nullable="true" type="binary"/>
+        <column name="product_sub_type" nullable="false" scale="32" type="string"/>
+        <column name="funding_cost" nullable="false" scale="32" type="string"/>
+		<!-- <column name="mirror" nullable="false" type="int" scale="1"/> -->
+		<column name="is_mirror" nullable="false" type="int" scale="1"/>
+        <column name="maturity_date" nullable="false" type="timestamp"/>
+		<column name="principal" nullable="true" scale="1" type="float"/>
+		<column name="kpi_ms" nullable="false" type="int" scale="1"/>
+		<column name="kpi_ms_remote" nullable="false" type="int" scale="1"/>
+		<column name="kpi_ms_explode" nullable="false" type="int" scale="1"/>
+		<column name="kpi_ms_generate" nullable="false" type="int" scale="1"/>
+		<column name="kpi_ms_measures" nullable="false" type="int" scale="1"/>
+		<column name="num_legs" nullable="false" type="int" scale="1"/>
+		<column name="num_error" nullable="false" type="int" scale="1"/>
+		<column name="num_reconventions" nullable="false" type="int" scale="1"/>
+		<column name="num_effective_dates" nullable="false" type="int" scale="1"/>
+        <column name="update_time" nullable="false" type="timestamp"/>
+        <column name="update_revision" nullable="false" scale="32" type="string"/>
+        <index primary="true">
+            <on>product_id</on>
+        </index>
+    </table>
+    <table name="product_ftp_leg" xmlns="">
+        <column name="product_id" nullable="false" scale="1" type="int"/>
+        <column name="trade_date_time" nullable="false" type="timestamp"/>
+        <column name="effective_date" nullable="false" type="timestamp"/>
+        <column name="end_date" nullable="false" type="timestamp"/>
+        <column name="original_trade_version" nullable="false" scale="1" type="int"/>
+        <column name="trade_blob" nullable="true" type="binary"/>
+		<column name="trade_measures" nullable="true" type="binary"/>
+        <column name="trade_status" nullable="true" scale="32" type="string"/>
+        <column name="trade_error" nullable="true" scale="255" type="string"/>
+        <column name="update_time" nullable="false" type="timestamp"/>
+        <index primary="true">
+            <on>product_id</on>
+            <on>effective_date</on>
+            <on>end_date</on>
+        </index>
+    </table>
+</database>

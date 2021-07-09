@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+	<table name="ers_addon" xmlns="">
+		<column name="addon_setname" nullable="false" type="string" scale="255"/>
+		<column name="addon_key" nullable="false" type="string" scale="255"/>
+		<column name="addon_amount" nullable="false" type="float" scale="1"/>
+		<column name="seq_id" nullable="false" type="int" scale="1"/>
+		<column name="sheet_name" nullable="false" type="string" scale="255"/>
+		<column name="range_name" nullable="false" type="string" scale="255"/>
+		<column name="order_id" nullable="false" type="int" scale="1"/>
+		<index primary="true">
+			<on>addon_setname</on>
+			<on>addon_key</on>
+		</index>
+	</table>
+	<table name="ers_addon_buckets" xmlns="">
+		<column name="bucket" nullable="false" type="string" scale="4"/>
+		<index primary="true"><on>bucket</on></index>
+	</table>
+	<table name="ers_exposure" xmlns="">
+		<column name="trade_id" nullable="false" type="string" scale="64"/>
+		<column name="le_name" nullable="false" type="string" scale="128"/>
+		<column name="issuer_name" nullable="false" type="string" scale="128"/>
+		<column name="trade_status" nullable="false" type="string" scale="64"/>
+		<column name="trader_name" nullable="false" type="string" scale="64"/>
+		<column name="source_system" nullable="false" type="string" scale="64"/>
+		<column name="country" nullable="false" type="string" scale="64"/>
+		<column name="sector" nullable="false" type="string" scale="64"/>
+		<column name="rating1" nullable="false" type="string" scale="64"/>
+		<column name="rating2" nullable="false" type="string" scale="64"/>
+		<column name="rating3" nullable="false" type="string" scale="64"/>
+		<column name="buy_sell" nullable="false" type="string" scale="1"/>
+		<column name="product_type" nullable="false" type="string" scale="64"/>
+		<column name="product_subtype" nullable="false" type="string" scale="64"/>
+		<column name="product_group" nullable="false" type="string" scale="255"/>
+		<column name="product_family" nullable="false" type="string" scale="64"/>
+		<column name="product_class" nullable="false" type="string" scale="64"/>
+		<column name="value_date" nullable="false" type="timestamp"/>
+		<column name="trade_date" nullable="false" type="timestamp"/>
+		<column name="maturity_date" nullable="false" type="timestamp"/>
+		<column name="ccy" nullable="false" type="string" scale="3"/>
+		<column name="ccy2" nullable="false" type="string" scale="3"/>
+		<column name="notional" nullable="false" type="float" scale="1"/>
+		<column name="mtm" nullable="false" type="float" scale="1"/>
+		<column name="add_on" nullable="false" type="float" scale="1"/>
+		<column name="exposure" nullable="false" type="float" scale="1"/>
+		<column name="julian_offset" nullable="false" type="int" scale="1"/>
+		<column name="notional_base" nullable="false" type="float" scale="1"/>
+		<column name="issuer_notional" nullable="false" type="float" scale="1"/>
+		<column name="issuer_notional_base" nullable="false" type="float" scale="1"/>
+		<column name="book_name" nullable="false" type="string" scale="255"/>
+		<column name="base_ccy" nullable="false" type="string" scale="3"/>
+		<column name="country_risk" nullable="false" type="string" scale="64"/>
+		<column name="issuer_country" nullable="false" type="string" scale="64"/>
+		<column name="issuer_country_risk" nullable="false" type="string" scale="64"/>
+		<column name="issue" nullable="false" type="string" scale="64"/>
+		<column name="agreement_id" nullable="false" type="string" scale="255"/>
+		<column name="legal_entity_id" nullable="false" type="int" scale="1"/>
+		<column name="issuer_rating1" nullable="false" type="string" scale="64"/>
+		<column name="issuer_rating2" nullable="false" type="string" scale="64"/>
+		<column name="issuer_rating3" nullable="false" type="string" scale="64"/>
+		<column name="issuer_id" nullable="false" type="int" scale="1"/>
+		<column name="product_rating1" nullable="false" type="string" scale="64"/>
+		<column name="product_rating2" nullable="false" type="string" scale="64"/>
+		<column name="product_rating3" nullable="false" type="string" scale="64"/>
+		<column name="settle_date" nullable="true" type="timestamp"/>
+		<column name="addon_set" nullable="false" type="string" scale="64"/>
+		<column name="index_id" nullable="false" type="int" scale="1"/>
+		<column name="trade_quantity" nullable="false" type="float" scale="1"/>
+		<column name="issuer_sector" nullable="false" type="string" scale="64"/>
+		<column name="issuer_mtm" nullable="false" type="float" scale="1"/>
+		<column name="imported" nullable="false" type="int" scale="1"/>
+		<column name="agreement_types" nullable="false" type="string" scale="255"/>
+		<column name="long_short" nullable="false" type="string" scale="5"/>
+		<column name="effective_date" nullable="true" type="timestamp"/>
+		<column name="collateral_type" nullable="false" type="string" scale="64"/>
+		<column name="clearing_date" nullable="true" type="timestamp"/>
+		<column name="country_origin" nullable="false" type="string" scale="64"/>
+		<column name="issuer_country_origin" nullable="false" type="string" scale="64"/>
+		<column name="tenor_end_date" nullable="true" type="timestamp"/>
+		<column name="custom_start_date" nullable="true" type="timestamp"/>
+		<column name="custom_end_date" nullable="true" type="timestamp"/>
+		<column name="user_attribute" nullable="false" type="string" scale="255"/>
+		<column name="margin_attribute" nullable="false" type="string" scale="255"/>
+		<column name="external_ref" nullable="false" type="string" scale="64"/>
+		<column name="booked_date" nullable="false" type="timestamp" default="1900-01-01 00:00:00.0" />
+		<index primary="true">
+			<on>trade_id</on>
+			<on>source_system</on>
+			<on>julian_offset</on>
+		</index>
+		<index primary="false">
+			<on>julian_offset</on>
+			<on>book_name</on>
+		</index>
+	</table>
+	<table name="ers_exposure_log" xmlns="">
+		<column name="job_id" nullable="false" type="int" scale="1"/>
+		<column name="trade_id" nullable="false" type="string" scale="64"/>
+		<column name="msg" nullable="false" type="string" scale="1000"/>
+		<column name="msg_time" nullable="false" type="timestamp"/>
+		<column name="batch_name" nullable="false" type="string" scale="50"/>
+		<column name="value_julian" nullable="false" type="int" scale="1"/>
+		<index primary="false">
+			<on>job_id</on>
+			<on>trade_id</on>
+		</index>
+	</table>
+	<table name="ers_exposure_measure" xmlns="">
+		<column name="julian_offset" nullable="false" type="int" scale="1"/>
+		<column name="trade_id" nullable="false" type="string" scale="64"/>
+		<column name="source_system" nullable="false" type="string" scale="64" default="Calypso"/>
+		<column name="measure" nullable="false" type="string" scale="255"/>
+		<column name="ccy" nullable="false" type="string" scale="3"/>
+		<column name="base_ccy" nullable="false" type="string" scale="3"/>
+		<column name="amount" nullable="false" type="float" scale="1"/>
+		<column name="amount_base" nullable="false" type="float" scale="1"/>
+		<column name="book_name" nullable="true" type="string" scale="255"/>
+		<column name="start_date" nullable="true" type="timestamp"/>
+		<column name="end_date" nullable="true" type="timestamp"/>
+		<column name="add_on" nullable="true" type="float" scale="1"/>
+		<index primary="false">
+			<on>julian_offset</on>
+			<on>trade_id</on>
+			<on>source_system</on>
+			<on>measure</on>
+		</index>
+		<index primary="false">
+			<on>book_name</on>
+			<on>julian_offset</on>
+		</index>
+	</table>
+	<table name="ers_exposure_position_attr" xmlns="">
+		<column name="element_type" nullable="false" type="string" scale="255"/>
+		<column name="element_id" nullable="false" type="string" scale="255"/>
+		<column name="source_system" nullable="false" type="string" scale="64" default="Calypso"/>
+		<column name="julian_offset" nullable="false" type="int" scale="1"/>
+		<column name="meta_data" nullable="false" type="string" scale="255" default=" "/>
+		<column name="key_type" nullable="false" type="string" scale="255"/>
+		<column name="key_value" nullable="false" type="string" scale="255"/>
+		<column name="row_type" nullable="false" type="string" scale="255"/>
+		<column name="row_value" nullable="false" type="string" scale="255"/>
+		<column name="col_type" nullable="false" type="string" scale="255" />
+		<column name="col_value" nullable="false" type="string" scale="255"/>
+		<column name="is_processed" nullable="false" type="int" scale="1"  default="0"/>
+		<index primary="false">
+			<on>julian_offset</on>
+			<on>element_type</on>
+			<on>element_id</on>
+			<on>source_system</on>
+		</index>
+		<index primary="false">
+			<on>element_type</on>
+			<on>key_value</on>
+			<on>key_type</on>
+			<on>julian_offset</on>
+			<on>is_processed</on>
+		</index>
+	</table>
+	<table name="ers_exp_pos_attr_drilldown" xmlns="">
+		<column name="limit_id" nullable="true" type="int" scale="1"/>
+		<column name="element_id" nullable="false" type="string" scale="255"/>
+		<column name="source_system" nullable="false" type="string" scale="64" default="Calypso"/>
+		<column name="row_value" nullable="false" type="string" scale="255"/>
+		<column name="col_type" nullable="false" type="string" scale="255" />
+		<column name="col_value" nullable="false" type="float" scale="1"/>
+		<column name="julian_offset" nullable="false" type="int" scale="1"/>
+		<index primary="false">
+			<on>julian_offset</on>
+			<on>limit_id</on>
+		</index>
+	</table>
+
+	<table name="ers_issuer_parent" xmlns="">
+		<column name="issuer_name" nullable="false" type="string" scale="128"/>
+		<column name="parent_name" nullable="false" type="string" scale="128"/>
+		<index primary="false">
+			<on>issuer_name</on>
+		</index>
+	</table>
+	<table name="ers_legal_parent" xmlns="">
+		<column name="le_name" nullable="false" type="string" scale="128"/>
+		<column name="parent_name" nullable="false" type="string" scale="128"/>
+		<index primary="false">
+			<on>le_name</on>
+		</index>
+	</table>
+	<table name="ers_measure_parms" xmlns="">
+		<column name="measure" nullable="false" type="string" scale="255"/>
+		<column name="parameter_name" nullable="false" type="string" scale="64"/>
+		<column name="parameter_value" nullable="false" type="string" scale="255"/>
+		<index primary="true">
+			<on>measure</on>
+			<on>parameter_name</on>
+		</index>
+	</table>
+	<table name="ers_meta_regex" xmlns="">
+		<column name="netting_key" nullable="false" type="string" scale="255"/>
+		<column name="grouping_type" nullable="false" type="string" scale="255"/>
+		<column name="value" nullable="false" type="string" scale="255"/>
+	</table>
+	<table name="ers_netting_group" xmlns="">
+		<column name="le_name" nullable="false" type="string" scale="128"/>
+		<column name="measure" nullable="false" type="string" scale="255"/>
+		<column name="ccy" nullable="false" type="string" scale="3"/>
+		<column name="product_groups" nullable="false" type="string" scale="255"/>
+		<column name="products" nullable="false" type="string" scale="255"/>
+		<index primary="false">
+			<on>le_name</on>
+		</index>
+	</table>
+	<table name="ers_notional_pricers" xmlns="">
+		<column name="product_type" nullable="false" type="string" scale="64"/>
+		<column name="product_subtype" nullable="false" type="string" scale="64"/>
+		<column name="buy_sell" nullable="true" type="string" scale="1"/>
+		<column name="pricer" nullable="false" type="string" scale="255"/>
+		<column name="reverse" nullable="false" type="int" scale="1"/>
+		<column name="sign" nullable="false" type="int" scale="1"/>
+		<column name="absolute" nullable="false" type="int" scale="1"/>
+		<index primary="false">
+			<on>product_type</on>
+			<on>product_subtype</on>
+			<on>buy_sell</on>
+		</index>
+	</table>
+	<table name="ers_product_measure" xmlns="">
+		<column name="product" nullable="false" type="string" scale="64"/>
+		<column name="measure" nullable="false" type="string" scale="255"/>
+	</table>
+	<table name="ers_rating_list" xmlns="">
+		<column name="rating_key" nullable="false" type="string" scale="64"/>
+		<column name="rating_name" nullable="false" type="string" scale="64"/>
+		<index primary="true">
+			<on>rating_key</on>
+		</index>
+	</table>
+	<table name="ers_settlement" xmlns="">
+		<column name="trade_id" nullable="false" type="string" scale="64"/>
+		<column name="source_system" nullable="false" type="string" scale="64" default="Calypso"/>
+		<column name="value_date" nullable="false" type="timestamp"/>
+		<column name="settle_date" nullable="false" type="timestamp"/>
+		<column name="settle_ccy" nullable="false" type="string" scale="3"/>
+		<column name="settle_amount" nullable="true" type="float" scale="1"/>
+		<column name="settle_amount_base" nullable="true" type="float" scale="1"/>
+		<column name="value_julian" nullable="false" type="int" scale="1"/>
+		<column name="settle_julian" nullable="false" type="int" scale="1"/>
+		<column name="base_ccy" nullable="false" type="string" scale="3"/>
+		<column name="book_name" nullable="true" type="string" scale="255"/>
+		<column name="product_type" nullable="true" type="string" scale="64"/>
+		<column name="delivery_type" nullable="true" type="string" scale="64"/>
+		<index primary="false">
+			<on>trade_id</on>
+			<on>source_system</on>
+			<on>value_julian</on>
+		</index>
+		<index primary="false">
+			<on>book_name</on>
+			<on>value_julian</on>
+		</index>
+	</table>
+	<table name="ers_tenor_violation" xmlns="">
+		<column name="trade_id" nullable="false" type="string" scale="64"/>
+		<column name="source_system" nullable="false" type="string" scale="64" default="Calypso"/>
+		<column name="limit_id" nullable="false" type="int" scale="1"/>
+		<column name="le_name" nullable="false" type="string" scale="128"/>
+		<column name="ccy" nullable="false" type="string" scale="3"/>
+		<column name="product" nullable="false" type="string" scale="64"/>
+		<column name="trader_name" nullable="false" type="string" scale="64"/>
+		<column name="julian_offset" nullable="false" type="int" scale="1"/>
+		<column name="violation_time" nullable="true" type="timestamp"/>
+		<index primary="false">
+			<on>julian_offset</on>
+		</index>
+	</table>
+
+	<table name="ers_limit" xmlns="">
+		<column name="limit_id" nullable="false" type="int" scale="1"/>
+		<column name="group_id" nullable="false" type="int" scale="1"/>
+		<column name="version" nullable="false" type="int" scale="1"/>
+		<column name="service" nullable="false" type="string" scale="32"/>
+		<column name="measure" nullable="false" type="string" scale="255"/>
+		<column name="hierarchy" nullable="false" type="string" scale="255"/>
+		<column name="node_name" nullable="false" type="string" scale="255"/>
+		<column name="attr1_name" nullable="false" type="string" scale="32"/>
+		<column name="attr1_value" nullable="false" type="string" scale="128"/>
+		<column name="limit_bucket" nullable="false" type="string" scale="64"/>
+		<column name="limit_type" nullable="false" type="string" scale="32"/>
+		<column name="limit_min" nullable="false" type="float" scale="1"/>
+		<column name="limit_max" nullable="false" type="float" scale="1"/>
+		<column name="limit_ccy" nullable="false" type="string" scale="3"/>
+		<column name="effective_date" nullable="false" type="timestamp"/>
+		<column name="expires_date" nullable="false" type="timestamp"/>
+		<column name="modified_date" nullable="false" type="timestamp"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="seq_id" nullable="false" type="int" scale="1"/>
+		<column name="is_netting" nullable="false" type="int" scale="1"/>
+		<column name="is_russian_doll" nullable="false" type="int" scale="1"/>
+		<column name="warning_level" nullable="false" type="int" scale="1"/>
+		<column name="buy_sell" nullable="false" type="string" scale="4"/>
+		<column name="is_daily" nullable="false" type="int" scale="1"/>
+		<column name="is_frozen" nullable="false" type="int" scale="1"/>
+		<column name="is_hardlimit" nullable="false" type="int" scale="1"/>
+		<column name="service_class" nullable="false" type="string" scale="32"/>
+		<column name="attr2_name" nullable="false" type="string" scale="32"/>
+		<column name="attr2_value" nullable="false" type="string" scale="64"/>
+		<column name="attr3_name" nullable="false" type="string" scale="32"/>
+		<column name="attr3_value" nullable="false" type="string" scale="64"/>
+		<column name="attr4_name" nullable="false" type="string" scale="32"/>
+		<column name="attr4_value" nullable="false" type="string" scale="64"/>
+		<column name="severity" nullable="true" type="int" scale="1"/>
+		<column name="is_predeal" nullable="true" type="int" scale="1" default="1"/>
+		<column name="pis_flag" nullable="true" type="string" scale="3"/>
+		<column name="local_ccy" nullable="false" type="int" scale="1" default="0"/>
+		<column name="entitlement_from" nullable="false" type="int" scale="1" default="0"/>
+		<column name="entitlement_to" nullable="false" type="int" scale="1" default="0"/>
+		<column name="is_resetable" nullable="true" type="int" scale="1"/>
+		<column name="is_lockable" nullable="true" type="int" scale="1"/>
+		<column name="limit_status" nullable="true" type="string" scale="64"/>
+		<column name="netting_key" nullable="true" type="string" scale="255"/>
+		<index primary="true">
+			<on>limit_id</on>
+			<on>version</on>
+		</index>
+		<index primary="false">
+			<on>version</on>
+			<on>service</on>
+		</index>
+	</table>
+	<table name="ers_limit_acknowledge" xmlns="">
+		<column name="acknowledge_id" nullable="false" type="int" scale="1"/>
+		<column name="limit_id" nullable="false" type="int" scale="1"/>
+		<column name="remark" nullable="false" type="string" scale="255"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="remark_type" nullable="false" type="string" scale="32"/>
+		<column name="remark_status" nullable="false" type="int" scale="1" default="1"/>
+		<column name="added_date" nullable="false" type="timestamp"/>
+	</table>
+	<table name="ers_limit_acknowledgement" xmlns="">
+		<column name="violation_id" nullable="false" type="int" scale="1"/>
+		<column name="limit_id" nullable="false" type="int" scale="1"/>
+		<column name="violation_type" nullable="false" type="string" scale="32"/>
+		<column name="status" nullable="false" type="int" scale="1"/>
+		<column name="status_value" nullable="false" type="string" scale="32"/>
+		<column name="remark" nullable="false" type="string" scale="255"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="delegate_name" nullable="false" type="string" scale="32"/>
+		<column name="added_date" nullable="false" type="timestamp"/>
+		<column name="added_julian" nullable="false" type="int" scale="1"/>
+		<column name="override" nullable="false" type="int" scale="1" default="0"/>
+		<column name="sanction_amount" nullable="false" type="float" scale="1"/>
+	</table>
+	<table name="ers_limit_adjustment" xmlns="">
+		<column name="adjustment_id" nullable="false" type="int" scale="1"/>
+		<column name="limit_id" nullable="false" type="int" scale="1"/>
+		<column name="group_id" nullable="false" type="int" scale="1"/>
+		<column name="adjust_type" nullable="false" type="string" scale="10"/>
+		<column name="related_limit_id" nullable="false" type="int" scale="1"/>
+		<column name="effective_date" nullable="false" type="timestamp"/>
+		<column name="expires_date" nullable="false" type="timestamp"/>
+		<column name="effective_julian" nullable="false" type="int" scale="1"/>
+		<column name="expires_julian" nullable="false" type="int" scale="1"/>
+		<column name="amount" nullable="false" type="float" scale="1"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="authorised_by" nullable="false" type="string" scale="32"/>
+		<column name="narrative" nullable="false" type="string" scale="512"/>
+		<index primary="true">
+			<on>adjustment_id</on>
+		</index>
+		<index primary="false">
+			<on>effective_julian</on>
+			<on>expires_julian</on>
+		</index>
+	</table>
+	<table name="ers_limit_adjustment_authorise" xmlns="">
+		<column name="adjustment_id" nullable="false" type="int" scale="1"/>
+		<column name="reason" nullable="false" type="string" scale="32"/>
+		<column name="limit_id" nullable="false" type="int" scale="1"/>
+		<column name="group_id" nullable="false" type="int" scale="1"/>
+		<column name="adjust_type" nullable="false" type="string" scale="10"/>
+		<column name="related_limit_id" nullable="false" type="int" scale="1"/>
+		<column name="effective_date" nullable="false" type="timestamp"/>
+		<column name="expires_date" nullable="false" type="timestamp"/>
+		<column name="effective_julian" nullable="false" type="int" scale="1"/>
+		<column name="expires_julian" nullable="false" type="int" scale="1"/>
+		<column name="modified_date" nullable="true" type="timestamp"/>
+		<column name="amount" nullable="false" type="float" scale="1"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="authorised_by" nullable="false" type="string" scale="32"/>
+		<column name="narrative" nullable="false" type="string" scale="512"/>
+	</table>
+	<table name="ers_limit_adjustment_pending" xmlns="">
+		<column name="adjustment_id" nullable="false" type="int" scale="1"/>
+		<column name="reason" nullable="false" type="string" scale="32"/>
+		<column name="limit_id" nullable="false" type="int" scale="1"/>
+		<column name="group_id" nullable="false" type="int" scale="1"/>
+		<column name="adjust_type" nullable="false" type="string" scale="10"/>
+		<column name="related_limit_id" nullable="false" type="int" scale="1"/>
+		<column name="effective_date" nullable="false" type="timestamp"/>
+		<column name="expires_date" nullable="false" type="timestamp"/>
+		<column name="effective_julian" nullable="false" type="int" scale="1"/>
+		<column name="expires_julian" nullable="false" type="int" scale="1"/>
+		<column name="modified_date" nullable="true" type="timestamp"/>
+		<column name="amount" nullable="false" type="float" scale="1"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="authorised_by" nullable="false" type="string" scale="32"/>
+		<column name="narrative" nullable="false" type="string" scale="512"/>
+	</table>
+	<table name="ers_limit_adjustment_reject" xmlns="">
+		<column name="adjustment_id" nullable="false" type="int" scale="1"/>
+		<column name="reason" nullable="false" type="string" scale="32"/>
+		<column name="limit_id" nullable="false" type="int" scale="1"/>
+		<column name="group_id" nullable="false" type="int" scale="1"/>
+		<column name="adjust_type" nullable="false" type="string" scale="10"/>
+		<column name="related_limit_id" nullable="false" type="int" scale="1"/>
+		<column name="effective_date" nullable="false" type="timestamp"/>
+		<column name="expires_date" nullable="false" type="timestamp"/>
+		<column name="effective_julian" nullable="false" type="int" scale="1"/>
+		<column name="expires_julian" nullable="false" type="int" scale="1"/>
+		<column name="modified_date" nullable="true" type="timestamp"/>
+		<column name="amount" nullable="false" type="float" scale="1"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="authorised_by" nullable="false" type="string" scale="32"/>
+		<column name="narrative" nullable="false" type="string" scale="512"/>
+	</table>
+	<table name="ers_limit_audit" xmlns="">
+		<column name="audit_id" nullable="false" type="int" scale="1"/>
+		<column name="audit_type" nullable="false" type="string" scale="32"/>
+		<column name="audit_table" nullable="false" type="string" scale="64"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="modified_date" nullable="false" type="timestamp"/>
+		<column name="audit_description" nullable="false" type="string" scale="255"/>
+	</table>
+	<table name="ers_limit_authorise" xmlns="">
+		<column name="limit_id" nullable="false" type="int" scale="1"/>
+		<column name="reason" nullable="false" type="string" scale="32"/>
+		<column name="group_id" nullable="false" type="int" scale="1"/>
+		<column name="pending_id" nullable="false" type="int" scale="1" default="1"/>
+		<column name="service" nullable="false" type="string" scale="32"/>
+		<column name="measure" nullable="false" type="string" scale="255"/>
+		<column name="hierarchy" nullable="false" type="string" scale="255"/>
+		<column name="node_name" nullable="false" type="string" scale="255"/>
+		<column name="attr1_name" nullable="false" type="string" scale="32"/>
+		<column name="attr1_value" nullable="false" type="string" scale="128"/>
+		<column name="limit_bucket" nullable="false" type="string" scale="64"/>
+		<column name="limit_type" nullable="false" type="string" scale="32"/>
+		<column name="limit_min" nullable="false" type="float" scale="1"/>
+		<column name="limit_max" nullable="false" type="float" scale="1"/>
+		<column name="limit_ccy" nullable="false" type="string" scale="3"/>
+		<column name="effective_date" nullable="false" type="timestamp"/>
+		<column name="expires_date" nullable="false" type="timestamp"/>
+		<column name="modified_date" nullable="false" type="timestamp"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="seq_id" nullable="false" type="int" scale="1"/>
+		<column name="is_netting" nullable="false" type="int" scale="1"/>
+		<column name="is_russian_doll" nullable="false" type="int" scale="1"/>
+		<column name="warning_level" nullable="false" type="int" scale="1"/>
+		<column name="buy_sell" nullable="false" type="string" scale="4"/>
+		<column name="is_daily" nullable="false" type="int" scale="1"/>
+		<column name="is_frozen" nullable="false" type="int" scale="1"/>
+		<column name="is_hardlimit" nullable="false" type="int" scale="1"/>
+		<column name="service_class" nullable="false" type="string" scale="32"/>
+		<column name="authorised_by" nullable="false" type="string" scale="32"/>
+		<column name="attr2_name" nullable="false" type="string" scale="32"/>
+		<column name="attr2_value" nullable="false" type="string" scale="64"/>
+		<column name="attr3_name" nullable="false" type="string" scale="32"/>
+		<column name="attr3_value" nullable="false" type="string" scale="64"/>
+		<column name="attr4_name" nullable="false" type="string" scale="32"/>
+		<column name="attr4_value" nullable="false" type="string" scale="64"/>
+		<column name="severity" nullable="true" type="int" scale="1"/>
+		<column name="is_predeal" nullable="true" type="int" scale="1"/>
+		<column name="pis_flag" nullable="true" type="string" scale="3"/>
+		<column name="local_ccy" nullable="false" type="int" scale="1" default="0"/>
+		<column name="entitlement_from" nullable="false" type="int" scale="1" default="0"/>
+		<column name="entitlement_to" nullable="false" type="int" scale="1" default="0"/>
+		<column name="is_resetable" nullable="true" type="int" scale="1"/>
+		<column name="is_lockable" nullable="true" type="int" scale="1"/>
+		<column name="netting_key" nullable="true" type="string" scale="255"/>
+	</table>
+	<table name="ers_limit_authorise_reject" xmlns="">
+		<column name="limit_id" nullable="false" type="int" scale="1"/>
+		<column name="reason" nullable="false" type="string" scale="32"/>
+		<column name="group_id" nullable="false" type="int" scale="1"/>
+		<column name="pending_id" nullable="false" type="int" scale="1" default="1"/>
+		<column name="service" nullable="false" type="string" scale="32"/>
+		<column name="measure" nullable="false" type="string" scale="255"/>
+		<column name="hierarchy" nullable="false" type="string" scale="255"/>
+		<column name="node_name" nullable="false" type="string" scale="255"/>
+		<column name="attr1_name" nullable="false" type="string" scale="32"/>
+		<column name="attr1_value" nullable="false" type="string" scale="128"/>
+		<column name="limit_bucket" nullable="false" type="string" scale="64"/>
+		<column name="limit_type" nullable="false" type="string" scale="32"/>
+		<column name="limit_min" nullable="false" type="float" scale="1"/>
+		<column name="limit_max" nullable="false" type="float" scale="1"/>
+		<column name="limit_ccy" nullable="false" type="string" scale="3"/>
+		<column name="effective_date" nullable="false" type="timestamp"/>
+		<column name="expires_date" nullable="false" type="timestamp"/>
+		<column name="modified_date" nullable="false" type="timestamp"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="seq_id" nullable="false" type="int" scale="1"/>
+		<column name="is_netting" nullable="false" type="int" scale="1"/>
+		<column name="is_russian_doll" nullable="false" type="int" scale="1"/>
+		<column name="warning_level" nullable="false" type="int" scale="1"/>
+		<column name="buy_sell" nullable="false" type="string" scale="4"/>
+		<column name="is_daily" nullable="false" type="int" scale="1"/>
+		<column name="is_frozen" nullable="false" type="int" scale="1"/>
+		<column name="is_hardlimit" nullable="false" type="int" scale="1"/>
+		<column name="service_class" nullable="false" type="string" scale="32"/>
+		<column name="authorised_by" nullable="false" type="string" scale="32"/>
+		<column name="attr2_name" nullable="false" type="string" scale="32"/>
+		<column name="attr2_value" nullable="false" type="string" scale="64"/>
+		<column name="attr3_name" nullable="false" type="string" scale="32"/>
+		<column name="attr3_value" nullable="false" type="string" scale="64"/>
+		<column name="attr4_name" nullable="false" type="string" scale="32"/>
+		<column name="attr4_value" nullable="false" type="string" scale="64"/>
+		<column name="severity" nullable="true" type="int" scale="1"/>
+		<column name="is_predeal" nullable="true" type="int" scale="1"/>
+		<column name="pis_flag" nullable="true" type="string" scale="3"/>
+		<column name="local_ccy" nullable="false" type="int" scale="1" default="0"/>
+		<column name="entitlement_from" nullable="false" type="int" scale="1" default="0"/>
+		<column name="entitlement_to" nullable="false" type="int" scale="1" default="0"/>
+		<column name="is_resetable" nullable="true" type="int" scale="1"/>
+		<column name="is_lockable" nullable="true" type="int" scale="1"/>
+		<column name="netting_key" nullable="true" type="string" scale="255"/>
+	</table>
+	<table name="ers_limit_batch" xmlns="">
+		<column name="batch_id" nullable="false" type="int" scale="1"/>
+		<column name="batch_name" nullable="false" type="string" scale="32"/>
+		<column name="hierarchy" nullable="false" type="string" scale="255"/>
+		<column name="book_name" nullable="false" type="string" scale="255"/>
+		<column name="pricing_env" nullable="false" type="string" scale="255"/>
+		<column name="roll_exposures" nullable="false" type="int" scale="1" default="0"/>
+	</table>
+	<table name="ers_limit_batch_audit" xmlns="">
+		<column name="audit_id" nullable="false" type="int" scale="1"/>
+		<column name="batch_id" nullable="false" type="int" scale="1"/>
+		<column name="batch_name" nullable="false" type="string" scale="32"/>
+		<column name="hierarchy" nullable="false" type="string" scale="255"/>
+		<column name="book_name" nullable="false" type="string" scale="255"/>
+		<column name="pricing_env" nullable="false" type="string" scale="255"/>
+		<column name="roll_exposures" nullable="false" type="int" scale="1" default="0"/>
+	</table>
+	<table name="ers_limit_breach" xmlns="">
+		<column name="trade_id" nullable="false" type="string" scale="64"/>
+		<column name="source_system" nullable="false" type="string" scale="64" default="Calypso"/>
+		<column name="le_name" nullable="false" type="string" scale="128"/>
+		<column name="ccy" nullable="false" type="string" scale="3"/>
+		<column name="product" nullable="false" type="string" scale="64"/>
+		<column name="trader_name" nullable="false" type="string" scale="64"/>
+		<column name="julian_offset" nullable="false" type="int" scale="1"/>
+		<column name="breach_time" nullable="true" type="timestamp"/>
+		<column name="breach_comment" nullable="false" type="string" scale="255"/>
+		<column name="breach_type" nullable="true" type="string" scale="64"/>
+		<column name="breach_measures" nullable="true" type="string" scale="255"/>
+		<index primary="false">
+			<on>julian_offset</on>
+			<on>le_name</on>
+		</index>
+	</table>
+	<table name="ers_limit_comment" xmlns="">
+		<column name="limit_id" nullable="false" type="int" scale="1"/>
+		<column name="limit_comment" nullable="false" type="string" scale="255"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="added_date" nullable="false" type="timestamp"/>
+		<column name="trade_id" nullable="true" type="string" scale="64"/>
+		<column name="source_system" nullable="true" type="string" scale="64" default="Calypso"/>
+		<index primary="false">
+			<on>trade_id</on>
+			<on>source_system</on>
+		</index>
+	</table>
+	<table name="ers_limit_drilldown" xmlns="">
+		<column name="limit_id" nullable="true" type="int" scale="1"/>
+		<column name="trade_id" nullable="true" type="string" scale="64"/>
+		<index primary="false">
+			<on>limit_id</on>
+		</index>
+	</table>
+	<table name="ers_limit_entitlement" xmlns="">
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="seq_id" nullable="false" type="int" scale="1" default="0"/>
+		<column name="entitlement_from" nullable="false" type="int" scale="1" default="0"/>
+		<column name="entitlement_to" nullable="true" type="int" scale="1" default="0"/>
+		<column name="node_name" nullable="false" type="string" scale="32"/>
+	</table>
+	<table name="ers_limit_entitlement_audit" xmlns="">
+		<column name="audit_id" nullable="false" type="int" scale="1"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="seq_id" nullable="false" type="int" scale="1" default="0"/>
+		<column name="entitlement_from" nullable="false" type="int" scale="1" default="0"/>
+		<column name="entitlement_to" nullable="true" type="int" scale="1" default="0"/>
+		<column name="node_name" nullable="false" type="string" scale="32"/>
+	</table>
+    <table name="ers_limit_groups" xmlns="">
+		<column name="group_type" nullable="false" type="string" scale="64"/>
+		<column name="group_name" nullable="false" type="string" scale="64"/>
+		<column name="group_value" nullable="false" type="string" scale="64"/>
+		<column name="multi_entity_id" nullable="true" type="string" scale="64"/>
+	</table>
+	<table name="ers_limit_groups_audit" xmlns="">
+		<column name="audit_id" nullable="false" type="int" scale="1"/>
+		<column name="group_type" nullable="false" type="string" scale="64"/>
+		<column name="group_name" nullable="false" type="string" scale="64"/>
+		<column name="group_value" nullable="false" type="string" scale="64"/>
+		<column name="multi_entity_id" nullable="true" type="string" scale="64"/>
+	</table>
+	<table name="ers_limit_job" xmlns="">
+		<column name="job_id" nullable="false" type="int" scale="1"/>
+		<column name="batch_name" nullable="false" type="string" scale="32"/>
+		<column name="hierarchy" nullable="false" type="string" scale="255"/>
+		<column name="book_name" nullable="false" type="string" scale="255"/>
+		<column name="pricing_env" nullable="false" type="string" scale="255"/>
+		<column name="value_date" nullable="false" type="timestamp"/>
+		<column name="exec_status" nullable="false" type="string" scale="32"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="submit_time" nullable="false" type="timestamp"/>
+		<column name="exec_time" nullable="false" type="timestamp"/>
+		<column name="end_time" nullable="false" type="timestamp"/>
+		<column name="addon_set" nullable="true" type="string" scale="32"/>
+		<column name="roll_exposures" nullable="false" type="int" scale="1" default="0"/>
+		<column name="value_julian" nullable="false" type="int" scale="1"/>
+		<index primary="true">
+			<on>job_id</on>
+		</index>
+	</table>
+	<table name="ers_limit_log" xmlns="">
+		<column name="limit_id" nullable="true" type="int" scale="1"/>
+		<column name="batch_name" nullable="false" type="string" scale="50"/>
+		<column name="msg_level" nullable="false" type="string" scale="50"/>
+		<column name="msg" nullable="false" type="string" scale="1000"/>
+		<column name="msg_time" nullable="false" type="timestamp"/>
+		<column name="exception_msg" nullable="true" type="string" scale="1000"/>
+		<column name="value_julian" nullable="false" type="int" scale="1"/>
+		<column name="increment_id" nullable="false" type="int" scale="1"/>
+		<index primary="false">
+			<on>batch_name</on>
+			<on>value_julian</on>
+		</index>
+	</table>
+	<table name="ers_limit_pending" xmlns="">
+		<column name="limit_id" nullable="false" type="int" scale="1"/>
+		<column name="reason" nullable="false" type="string" scale="32"/>
+		<column name="group_id" nullable="false" type="int" scale="1"/>
+		<column name="pending_id" nullable="false" type="int" scale="1" default="1"/>
+		<column name="service" nullable="false" type="string" scale="32"/>
+		<column name="measure" nullable="false" type="string" scale="255"/>
+		<column name="hierarchy" nullable="false" type="string" scale="255"/>
+		<column name="node_name" nullable="false" type="string" scale="255"/>
+		<column name="attr1_name" nullable="false" type="string" scale="32"/>
+		<column name="attr1_value" nullable="false" type="string" scale="128"/>
+		<column name="limit_bucket" nullable="false" type="string" scale="64"/>
+		<column name="limit_type" nullable="false" type="string" scale="32"/>
+		<column name="limit_min" nullable="false" type="float" scale="1"/>
+		<column name="limit_max" nullable="false" type="float" scale="1"/>
+		<column name="limit_ccy" nullable="false" type="string" scale="3"/>
+		<column name="effective_date" nullable="false" type="timestamp"/>
+		<column name="expires_date" nullable="false" type="timestamp"/>
+		<column name="modified_date" nullable="false" type="timestamp"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="seq_id" nullable="false" type="int" scale="1"/>
+		<column name="is_netting" nullable="false" type="int" scale="1"/>
+		<column name="is_russian_doll" nullable="false" type="int" scale="1"/>
+		<column name="warning_level" nullable="false" type="int" scale="1"/>
+		<column name="buy_sell" nullable="false" type="string" scale="4"/>
+		<column name="is_daily" nullable="false" type="int" scale="1"/>
+		<column name="is_frozen" nullable="false" type="int" scale="1"/>
+		<column name="is_hardlimit" nullable="false" type="int" scale="1"/>
+		<column name="service_class" nullable="false" type="string" scale="32"/>
+		<column name="authorised_by" nullable="false" type="string" scale="32"/>
+		<column name="attr2_name" nullable="false" type="string" scale="32"/>
+		<column name="attr2_value" nullable="false" type="string" scale="64"/>
+		<column name="attr3_name" nullable="false" type="string" scale="32"/>
+		<column name="attr3_value" nullable="false" type="string" scale="64"/>
+		<column name="attr4_name" nullable="false" type="string" scale="32"/>
+		<column name="attr4_value" nullable="false" type="string" scale="64"/>
+		<column name="severity" nullable="true" type="int" scale="1"/>
+		<column name="is_predeal" nullable="true" type="int" scale="1"/>
+		<column name="pis_flag" nullable="true" type="string" scale="3"/>
+		<column name="local_ccy" nullable="false" type="int" scale="1" default="0"/>
+		<column name="entitlement_from" nullable="false" type="int" scale="1" default="0"/>
+		<column name="entitlement_to" nullable="false" type="int" scale="1" default="0"/>
+		<column name="is_resetable" nullable="true" type="int" scale="1"/>
+		<column name="is_lockable" nullable="true" type="int" scale="1"/>
+		<column name="netting_key" nullable="true" type="string" scale="255"/>
+	</table>
+	<table name="ers_limit_portlet" xmlns="">
+		<column name="portlet_id" nullable="false" type="string" scale="32"/>
+		<column name="user_name" nullable="false" type="string" scale="64"/>
+		<column name="screen" nullable="false" type="string" scale="64"/>
+		<column name="tab" nullable="false" type="string" scale="255"/>
+		<column name="panel_row" nullable="false" type="string" scale="64"/>
+		<column name="panel_column" nullable="false" type="string" scale="64"/>
+		<column name="panel_height" nullable="false" type="string" scale="64"/>
+		<column name="panel_classname" nullable="false" type="string" scale="255"/>
+		<column name="panel_type" nullable="false" type="string" scale="64"/>
+	</table>
+	<table name="ers_limit_portlet_item" xmlns="">
+		<column name="portlet_id" nullable="false" type="string" scale="32"/>
+		<column name="user_name" nullable="false" type="string" scale="64"/>
+		<column name="screen" nullable="false" type="string" scale="64"/>
+		<column name="tab" nullable="false" type="string" scale="255"/>
+		<column name="factor1" nullable="false" type="string" scale="255"/>
+		<column name="factor2" nullable="false" type="string" scale="255"/>
+		<column name="factor3" nullable="false" type="string" scale="255"/>
+		<column name="factor4" nullable="false" type="string" scale="255"/>
+		<column name="factor5" nullable="false" type="string" scale="255"/>
+		<column name="factor6" nullable="false" type="string" scale="255"/>
+	</table>
+	<table name="ers_limit_preferences" xmlns="">
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="pref_class" nullable="false" type="string" scale="32"/>
+		<column name="pref_key" nullable="false" type="string" scale="32"/>
+		<column name="pref_value" nullable="false" type="string" scale="4000"/>
+	</table>
+	<table name="ers_limit_remark" xmlns="">
+		<column name="group_id" nullable="false" type="int" scale="1"/>
+		<column name="version" nullable="false" type="int" scale="1"/>
+		<column name="remark" nullable="false" type="string" scale="255"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="remark_type" nullable="false" type="string" scale="32" default="LIMIT"/>
+		<column name="added_date" nullable="false" type="timestamp"/>
+	</table>
+	<table name="ers_limit_report" xmlns="">
+		<column name="report_id" nullable="false" type="int" scale="1"/>
+		<column name="report_type" nullable="false" type="string" scale="32"/>
+		<column name="report_name" nullable="false" type="string" scale="32"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+	</table>
+	<table name="ers_limit_report_detail" xmlns="">
+		<column name="report_id" nullable="false" type="int" scale="1"/>
+		<column name="report_key" nullable="false" type="string" scale="128"/>
+		<column name="report_value" nullable="false" type="string" scale="1000"/>
+	</table>
+	<table name="ers_limit_reserve" xmlns="">
+		<column name="trade_id" nullable="false" type="string" scale="64"/>
+		<column name="reserve_status" nullable="false" type="string" scale="64"/>
+		<column name="reserve_date" nullable="false" type="timestamp"/>
+		<column name="julian_offset" nullable="false" type="int" scale="1"/>
+		<column name="reserve_timeout" nullable="false" type="int" scale="1"/>
+		<column name="modified_date" nullable="false" type="timestamp"/>
+	</table>
+	<table name="ers_limit_restriction" xmlns="">
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="restrict_class" nullable="false" type="string" scale="32"/>
+		<column name="restrict_key" nullable="false" type="string" scale="255"/>
+		<column name="restrict_value" nullable="false" type="string" scale="32"/>
+	</table>
+	<table name="ers_limit_settle_drilldown" xmlns="">
+		<column name="limit_id" nullable="true" type="int" scale="1"/>
+		<column name="settle_julian" nullable="true" type="int" scale="1"/>
+		<index primary="false">
+			<on>limit_id</on>
+		</index>
+	</table>
+	<table name="ers_limit_share" xmlns="">
+		<column name="share_type" nullable="false" type="string" scale="32"/>
+		<column name="share_sub_type" nullable="false" type="string" scale="32"/>
+		<column name="share_id" nullable="false" type="int" scale="1"/>
+		<column name="data" nullable="false" type="string" scale="32"/>
+		<column name="data_category" nullable="false" type="string" scale="32"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="owner_user_name" nullable="false" type="string" scale="32"/>
+	</table>	
+	<table name="ers_limit_template" xmlns="">
+		<column name="template_id" nullable="false" type="int" scale="1"/>
+		<column name="template_name" nullable="false" type="string" scale="64"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="service" nullable="false" type="string" scale="32"/>
+		<column name="service_class" nullable="false" type="string" scale="32"/>
+		<column name="measure" nullable="false" type="string" scale="255"/>
+		<column name="modified_date" nullable="false" type="timestamp"/>
+		<column name="is_netting" nullable="false" type="int" scale="1"/>
+		<column name="is_russian_doll" nullable="false" type="int" scale="1"/>
+		<column name="warning_level" nullable="false" type="int" scale="1"/>
+		<column name="buy_sell" nullable="false" type="string" scale="4"/>
+		<column name="is_daily" nullable="false" type="int" scale="1"/>
+		<column name="is_hardlimit" nullable="false" type="int" scale="1"/>
+		<column name="attr2_name" nullable="false" type="string" scale="32"/>
+		<column name="attr2_value" nullable="false" type="string" scale="64"/>
+		<column name="attr3_name" nullable="false" type="string" scale="32"/>
+		<column name="attr3_value" nullable="false" type="string" scale="64"/>
+		<column name="attr4_name" nullable="false" type="string" scale="32"/>
+		<column name="attr4_value" nullable="false" type="string" scale="64"/>
+		<column name="limit_ccy" nullable="false" type="string" scale="3"/>
+		<column name="severity" nullable="true" type="int" scale="1"/>
+		<column name="is_predeal" nullable="true" type="int" scale="1"/>
+		<column name="pis_flag" nullable="true" type="string" scale="3"/>
+		<column name="local_ccy" nullable="false" type="int" scale="1" default="0"/>
+		<column name="is_resetable" nullable="true" type="int" scale="1"/>
+		<column name="is_lockable" nullable="true" type="int" scale="1"/>
+		<column name="limit_bucket" nullable="false" type="string" scale="64"/>
+		<column name="limit_type" nullable="false" type="string" scale="32"/>
+		<column name="limit_min" nullable="false" type="float" scale="1"/>
+		<column name="limit_max" nullable="false" type="float" scale="1"/>
+		<column name="expires_timeframe"  nullable="false" type="string" scale="64"/>
+		<column name="seq_id" nullable="false" type="int" scale="1"/>
+		<column name="netting_key" nullable="true" type="string" scale="255"/>
+	</table>	
+	<table name="ers_limit_sanction_detail" xmlns="">
+		<column name="sanction_id" nullable="false" type="int" scale="1"/>
+		<column name="description" nullable="false" type="string" scale="64"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="service" nullable="false" type="string" scale="32"/>
+		<column name="category" nullable="false" type="string" scale="32"/>
+		<column name="category_value" nullable="false" type="string" scale="64"/>
+		<column name="violation_group_name" nullable="false" type="string" scale="64"/>
+		<column name="bucket" nullable="false" type="string" scale="64"/>
+		<column name="severity" nullable="true" type="int" scale="1"/>
+		<column name="percentage" nullable="false" type="float" scale="1"/>
+		<column name="amount"  nullable="false" type="string" scale="64"/>
+		<column name="override" nullable="false" type="int" scale="1" default="0"/>
+		<column name="measure" nullable="false" type="string" scale="32"/>
+	</table>	
+	<table name="ers_limit_sanction" xmlns="">
+		<column name="sanction_seed" nullable="false" type="int" scale="1"/>
+		<column name="sanction_id" nullable="false" type="int" scale="1"/>
+		<column name="description" nullable="false" type="string" scale="64"/>
+		<column name="entitlement_from" nullable="false" type="int" scale="1" default="0"/>
+		<column name="entitlement_to" nullable="true" type="int" scale="1" default="0"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="delegate_name" nullable="false" type="string" scale="32"/>
+		<column name="from_date_julian" nullable="false" type="int" scale="1"/>
+		<column name="to_date_julian" nullable="false" type="int" scale="1"/>
+	</table>	
+	<table name="ers_limit_usage" xmlns="">
+		<column name="limit_id" nullable="false" type="int" scale="1"/>
+		<column name="version" nullable="false" type="int" scale="1"/>
+		<column name="event_id" nullable="false" type="string" scale="64"/>
+		<column name="source_system" nullable="false" type="string" scale="64" default="Calypso"/>
+		<column name="amount" nullable="false" type="float" scale="1"/>
+		<column name="usage" nullable="false" type="float" scale="1"/>
+		<column name="sanction_amount" nullable="false" type="float" scale="1"/>
+		<column name="sanction_usage" nullable="false" type="float" scale="1"/>
+		<column name="usage_time" nullable="false" type="timestamp"/>
+		<column name="julian_offset" nullable="false" type="int" scale="1"/>
+		<column name="warning_level" nullable="false" type="int" scale="1"/>
+		<column name="value_date" nullable="true" type="timestamp"/>
+		<column name="value_date_julian" nullable="false" type="int" scale="1"/>
+		<column name="acknowledge" nullable="false" type="int" scale="1" default="0"/>
+		<index primary="false">
+			<on>limit_id</on>
+			<on>value_date_julian</on>
+			<on>version</on>
+		</index>
+		<index primary="false">
+			<on>event_id</on>
+		</index>
+		<index primary="false">
+			<on>julian_offset</on>
+			<on>version</on>
+			<on>usage_time</on>
+		</index>
+	</table>
+	<table name="ers_limit_consistency_check" xmlns="">
+		<column name="check_id" nullable="false" type="int" scale="1"/>
+		<column name="check_group" nullable="false" type="int" scale="1"/>
+		<column name="table_name" nullable="false" type="string" scale="255"/>
+		<column name="column_name" nullable="false" type="string" scale="255"/>
+		<column name="data_value" nullable="false" type="string" scale="255"/>
+		<column name="row_count" nullable="false" type="int" scale="1"/>
+		<column name="action_code" nullable="false" type="int" scale="1"/>
+		<column name="user_name" nullable="false" type="string" scale="32"/>
+		<column name="modified_date" nullable="false" type="timestamp"/>
+	</table>
+	<table name="ers_limit_usage_import" xmlns="">
+		<column name="limit_id" nullable="false" type="int" scale="1"/>
+		<column name="source" nullable="false" type="string" scale="64"/>
+		<column name="value_date" nullable="true" type="timestamp"/>
+		<column name="value_date_julian" nullable="false" type="int" scale="1"/>
+		<column name="ccy" nullable="false" type="string" scale="3"/>
+		<column name="amount" nullable="false" type="float" scale="1"/>
+		<column name="amount_base" nullable="false" type="float" scale="1"/>
+		<index primary="false">
+			<on>limit_id</on>
+			<on>value_date_julian</on>
+		</index>
+	</table>
+
+	<table name="ers_measure_config" xmlns="">
+		<column name="service" nullable="false" type="string" scale="64"/>
+		<column name="measure" nullable="false" type="string" scale="255"/>
+		<column name="risk_type" nullable="false" type="string" scale="64"/>
+		<column name="display_name" nullable="false" type="string" scale="64"/>
+		<column name="netting_calculator" nullable="false" type="string" scale="255"/>
+		<column name="product_breach_rule" nullable="false" type="string" scale="255"/>
+		<column name="legal_agreement_type" nullable="false" type="string" scale="64"/>
+		<column name="cpty_measure_name" nullable="false" type="string" scale="255"/>
+		<column name="issuer_measure_name" nullable="false" type="string" scale="255"/>
+		<column name="use_profile" nullable="false" type="int" scale="1" default="0"/>
+		<index primary="true">
+			<on>service</on>
+			<on>measure</on>
+		</index>
+	</table>
+	<table name="ers_measure_formula" xmlns="">
+		<column name="measure" nullable="false" type="string" scale="255"/>
+		<column name="product_type" nullable="false" type="string" scale="64"/>
+		<column name="product_subtype" nullable="false" type="string" scale="64"/>
+		<column name="buy_sell" nullable="false" type="string" scale="1"/>
+		<column name="calculation_method" nullable="false" type="string" scale="255"/>
+		<column name="start_date_type" nullable="false" type="string" scale="64"/>
+		<column name="start_date_adjust" nullable="false" type="int" scale="1"/>
+		<column name="start_date_adjust_type" nullable="false" type="string" scale="3"/>
+		<column name="end_date_type" nullable="false" type="string" scale="64"/>
+		<column name="end_date_adjust" nullable="false" type="int" scale="1"/>
+		<column name="end_date_adjust_type" nullable="false" type="string" scale="3"/>
+		<column name="addon_setname" nullable="false" type="string" scale="255"/>
+		<index primary="true">
+			<on>measure</on>
+			<on>product_type</on>
+			<on>product_subtype</on>
+			<on>buy_sell</on>
+		</index>
+	</table>
+
+	<table name="ers_predeal_check" xmlns="">
+		<column name="trade_id" nullable="false" type="string" scale="64"/>
+		<column name="limit_id" nullable="false" type="int" scale="1"/>
+		<column name="amount" nullable="false" type="float" scale="1"/>
+		<column name="usage" nullable="false" type="float" scale="1"/>
+		<column name="usage_time" nullable="false" type="timestamp"/>
+		<column name="julian_offset" nullable="false" type="int" scale="1"/>
+		<column name="warning_level" nullable="false" type="int" scale="1"/>
+		<column name="source_system" nullable="false" type="string" scale="64" default="Calypso"/>
+		<index primary="false">
+			<on>trade_id</on>
+			<on>source_system</on>
+			<on>limit_id</on>
+		</index>
+	</table>
+	<table name="ers_product_groups" xmlns="">
+		<column name="product_group" nullable="false" type="string" scale="64"/>
+		<column name="product_type" nullable="false" type="string" scale="64"/>
+	</table>
+
+	<table name="ers_violation" xmlns="">
+		<column name="violation_id" nullable="false" type="int" scale="1"/>
+		<column name="limit_id" nullable="false" type="int" scale="1"/>
+		<column name="trade_id" nullable="false" type="string" scale="64"/>
+		<column name="system" nullable="false" type="string" scale="64"/>
+		<column name="violation_type" nullable="false" type="string" scale="64"/>
+		<column name="violation_sub_type" nullable="false" type="string" scale="64"/>
+		<column name="violation_amount" nullable="false" type="float" scale="1"/>
+		<column name="violation_usage" nullable="false" type="float" scale="1"/>
+		<column name="violation_direction" nullable="false" type="int" scale="1"/>
+		<column name="violation_time" nullable="true" type="timestamp"/>
+		<column name="violation_julian" nullable="true" type="int" scale="1"/>
+		<column name="sanction_amount" nullable="false" type="float" scale="1"/>
+		<column name="sanction_usage" nullable="false" type="float" scale="1"/>
+		<index primary="true">
+			<on>violation_id</on>
+		</index>
+	</table>
+
+	<table name="ers_compound_measure" xmlns="">
+		<column name="measure_name" nullable="false" type="string" scale="255"/>
+		<column name="exposure_key" nullable="false" type="string" scale="255"/>
+		<column name="exposure_value" nullable="false" type="string" scale="255"/>
+		<column name="measures" nullable="false" type="string" scale="255"/>
+	</table>
+	<table name="ers_credit_log" xmlns="">
+		<column name="job_id" nullable="false" type="int" scale="1"/>
+		<column name="msg_level" nullable="false" type="string" scale="50"/>
+		<column name="msg" nullable="false" type="string" scale="1000"/>
+		<column name="msg_time" nullable="false" type="timestamp"/>
+		<column name="exception_msg" nullable="false" type="string" scale="1000"/>
+		<column name="batch_name" nullable="false" type="string" scale="50"/>
+		<column name="value_julian" nullable="false" type="int" scale="1"/>
+		<index primary="false">
+			<on>job_id</on>
+		</index>
+	</table>
+	<table name="ers_credit_exposure" xmlns="">
+		<column name="trade_id" nullable="false" type="string" scale="64"/>
+		<column name="source_system" nullable="false" type="string" scale="64"/>
+		<column name="julian_offset" nullable="false" type="int" scale="1"/>
+  
+		<column name="bundle_id" nullable="true" type="string" scale="64"/>
+		<column name="product_type" nullable="false" type="string" scale="64"/>
+		<column name="product_subtype" nullable="false" type="string" scale="64"/>
+		<column name="buy_sell" nullable="false" type="string" scale="1"/>
+		<column name="product_family" nullable="false" type="string" scale="64"/>
+		<column name="product_class" nullable="false" type="string" scale="64"/>
+		<column name="trade_status" nullable="false" type="string" scale="64"/>
+		<column name="trader_name" nullable="false" type="string" scale="64"/>
+		<column name="book_name" nullable="false" type="string" scale="255"/>
+		<column name="long_short" nullable="false" type="string" scale="5"/>
+
+		<column name="user_attribute" nullable="false" type="string" scale="255"/>
+		<column name="margin_attribute" nullable="false" type="string" scale="255"/>
+		<column name="external_ref" nullable="false" type="string" scale="64"/>
+		<column name="collateral_type" nullable="false" type="string" scale="255"/>
+
+		<column name="ccy" nullable="false" type="string" scale="3"/>
+		<column name="ccy2" nullable="false" type="string" scale="3"/>
+		<column name="base_ccy" nullable="false" type="string" scale="3"/>
+
+		<column name="le_name" nullable="false" type="string" scale="128"/>
+		<column name="country" nullable="false" type="string" scale="64"/>
+		<column name="sector" nullable="false" type="string" scale="64"/>
+		<column name="rating1" nullable="false" type="string" scale="64"/>
+		<column name="rating2" nullable="false" type="string" scale="64"/>
+		<column name="rating3" nullable="false" type="string" scale="64"/>
+		<column name="country_risk" nullable="false" type="string" scale="64"/>
+		<column name="country_origin" nullable="false" type="string" scale="64"/>
+		<column name="index_id" nullable="false" type="int" scale="1"/>
+
+		<column name="value_date" nullable="false" type="timestamp"/>
+		<column name="trade_date" nullable="false" type="timestamp"/>
+		<column name="booked_date" nullable="false" type="timestamp"/>
+		<column name="effective_date" nullable="true" type="timestamp"/>
+		<column name="settle_date" nullable="true" type="timestamp"/>
+		<column name="maturity_date" nullable="false" type="timestamp"/>
+		<column name="clearing_date" nullable="true" type="timestamp"/>
+
+		<column name="addon_set" nullable="false" type="string" scale="64"/>
+
+		<index primary="true">
+			<on>trade_id</on>
+			<on>source_system</on>
+			<on>julian_offset</on>
+		</index>
+		<index primary="false">
+			<on>julian_offset</on>
+			<on>book_name</on>
+		</index>
+	</table>
+	<table name="ers_credit_exposure_attribute" xmlns="">
+		<column name="trade_id" nullable="false" type="string" scale="64"/>
+		<column name="source_system" nullable="false" type="string" scale="64"/>
+		<column name="julian_offset" nullable="false" type="int" scale="1"/>
+
+		<column name="key_type" nullable="false" type="string" scale="255"/>
+		<column name="key_value" nullable="false" type="string" scale="255"/>
+		<column name="row_key" nullable="false" type="string" scale="255"/>
+		<column name="row_value" nullable="false" type="string" scale="255"/>
+
+        <index primary="false" unique="false">
+	        <on>trade_id</on>
+            <on>source_system</on>
+	        <on>julian_offset</on>
+        </index>
+		<index primary="false">
+			<on>julian_offset</on>
+			<on>key_type</on>
+		</index>
+	</table>
+	<table name="ers_credit_exposure_measure" xmlns="">
+		<column name="trade_id" nullable="false" type="string" scale="64"/>
+		<column name="source_system" nullable="false" type="string" scale="64"/>
+		<column name="julian_offset" nullable="false" type="int" scale="1"/>
+		<column name="measure" nullable="false" type="string" scale="64"/>
+
+		<column name="ccy" nullable="false" type="string" scale="3"/>
+		<column name="amount" nullable="true" type="float" scale="1"/>
+		<column name="amount_base" nullable="true" type="float" scale="1"/>
+		<column name="start_date" nullable="false" type="timestamp"/>
+		<column name="end_date" nullable="false" type="timestamp"/>
+		<index primary="true">
+			<on>trade_id</on>
+			<on>source_system</on>
+			<on>julian_offset</on>
+			<on>measure</on>
+		</index>
+		<index primary="false">
+			<on>julian_offset</on>
+		</index>
+	</table>
+	<table name="ers_credit_log_entry" xmlns="">
+		<column name="request_id" nullable="false" type="int" scale="1"/>
+		<column name="entry_id" nullable="false" type="int" scale="1"/>
+		<column name="parent_entry_id" nullable="false" type="int" scale="1"/>
+		<column name="message_level" nullable="false" type="string" scale="64"/>
+		<column name="message_category" nullable="false" type="string" scale="64"/>
+		<column name="message" nullable="false" type="string" scale="64"/>
+		<column name="message_time" nullable="false" type="timestamp"/>
+		<column name="message_exception" nullable="false" type="string" scale="1000"/>
+		<column name="message_duration" nullable="false" type="float" scale="1"/>
+		<column name="message_type" nullable="false" type="string" scale="64"/>
+		<column name="julian_offset" nullable="false" type="int" scale="1"/>
+		<index primary="true">
+			<on>request_id</on>
+			<on>entry_id</on>
+			<on>julian_offset</on>
+		</index>
+	</table>
+</database>

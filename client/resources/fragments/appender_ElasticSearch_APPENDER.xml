@@ -1,0 +1,4 @@
+<CalypsoAppender envName="${sys:calypso.envname}" factoryClass="com.calypso.operations.dashboard.monitoring.appender.ElasticSearchLogAppenderDelegateFactory" name="ElasticSearch_APPENDER">
+  <ThresholdFilter level="${sys:calypso.centralizedlogging.applog.level:-ERROR}" onMatch="ACCEPT" onMismatch="DENY"/>
+  <CalypsoLayout appName="${cal:calypso.appname}" buildDate="${sys:calypso.builddate}" buildNumber="${sys:calypso.buildnumber}" fileName="${sys:calypso.logfilename}" patchVersionDate="${sys:calypso.patchversiondate}" pattern="%d{yyyy-MM-dd HH:mm:ss,SSSZ} %-5p [%c] (%t) [%X{clientHost}-%X{clientDesc}] [%X{Aggregation}] %m%n" version="${sys:calypso.version}" versionDate="${sys:calypso.versiondate}"/>
+</CalypsoAppender>

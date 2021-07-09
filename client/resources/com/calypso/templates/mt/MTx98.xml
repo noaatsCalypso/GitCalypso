@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type x98: Proprietary Message -->
+<SwiftMsgDef>
+    <Name>MTx98</Name>
+    <ModeSelectionList>
+        <ModeSelection qualifier="NEW" />
+        <ModeSelection qualifier="AMEND" />
+        <ModeSelection qualifier="CANCEL" />
+    </ModeSelectionList>
+    <SwiftSequence name="A:General Information" modes="MMM">
+        <SwiftField name="Transaction Reference Number" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM" />
+        <SwiftField name="Sub-Message Type" tag=":12:" format=":3!n:" value="MESSAGE_LINKEDID" modes="MMM" />
+	<SwiftField name="Proprietary Message" tag=":77E:" format="73x[\n125*78x]" value="" modes="MMM" />
+    </SwiftSequence>
+</SwiftMsgDef>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="engine_config" xmlns="">
+        <row cat="fix">
+            <column name="engine_id">engine_config.coalesce(max(engine_id)+1,100)@1=1|engine_name='FIXEngine'</column>
+            <column name="engine_name">FIXEngine</column>
+            <column name="engine_comment"></column>
+        </row>
+    </table>
+    
+	<table name="engine_param" xmlns="">
+		<row cat="fix">
+			<column name="engine_name">FIXEngine</column>
+			<column name="param_name">CLASS_NAME</column>
+			<column name="param_value">com.calypso.tk.engine.FIXEngine</column>
+		</row>
+		<row cat="fix">
+			<column name="engine_name">FIXEngine</column>
+			<column name="param_name">DISPLAY_NAME</column>
+			<column name="param_value">FIX Engine</column>
+		</row>
+		<row cat="fix">
+			<column name="engine_name">FIXEngine</column>
+			<column name="param_name">INSTANCE_NAME</column>
+			<column name="param_value">engineserver</column>
+		</row>
+		<row cat="fix">
+			<column name="engine_name">FIXEngine</column>
+			<column name="param_name">STARTUP</column>
+			<column name="param_value">false</column>
+		</row>
+		<row cat="fix">
+			<column name="engine_name">FIXEngine</column>
+			<column name="param_name">config</column>
+			<column name="param_value">fix.properties</column>
+		</row>
+	</table>
+	
+	<table name="domain_values" xmlns="">
+		<!-- engine name -->
+		<row cat="fix">
+  			<column name="description">Name of the FIX Engine</column> 
+  			<column name="value">FIXEngine</column> 
+  			<column name="name">engineName</column> 
+  		</row>
+		
+		<!-- event -->
+		<row cat="fix">
+  			<column name="description">Name of the FIX Event</column> 
+  			<column name="value">PSEventFIXMessage</column> 
+  			<column name="name">eventClass</column> 
+  		</row>
+		
+		<!-- event Filter -->
+		<row cat="fix">
+  			<column name="description">Name of the FIX Engine Event Filter</column> 
+  			<column name="value">FIXEngineEventFilter</column> 
+  			<column name="name">eventFilter</column> 
+  		</row>
+  		
+  		<!-- engine sequence policy -->
+  		<row cat="fix">
+  			<column name="description">tk.util.FIXEngineSequencePolicy</column> 
+  			<column name="value">FIXEngine</column> 
+  			<column name="name">engineEventPoolPolicyAliases</column> 
+  		</row>
+  		<row cat="fix">
+  			<column name="description">New sequence created for FIXEngine</column> 
+  			<column name="value">tk.util.FIXEngineSequencePolicy</column> 
+  			<column name="name">engineEventPoolPolicies</column> 
+  		</row>
+  		
+		<!-- Trade keywords -->
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">TradeSource</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">USIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">USIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">UTIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">UTIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">PriorUSIPrefix</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">PriorUSIValue</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">CCP</column>
+			<column name="name">tradeKeyword</column>
+		</row>		
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">CCPClearingBroker</column>
+			<column name="name">tradeKeyword</column>
+		</row>	
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">OriginalCounterparty</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">Platform</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">PlatformStatus</column>
+			<column name="name">tradeKeyword</column>
+		</row>		
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">ReportingRepository</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">CCPStatus</column>
+			<column name="name">tradeKeyword</column>
+		</row>		
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">CCPClearedDate</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">CCPTradeID</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">CCPMessageTimestamp</column>
+			<column name="name">tradeKeyword</column>
+		</row>		
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">PlatformRejectReason</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">CCPOriginCode</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">CCPAccount</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">CCPAccountReference</column>
+			<column name="name">tradeKeyword</column>
+		</row>
+		<row cat="fix">
+			<column name="description"></column>
+			<column name="value">PlatformOrderId</column>
+			<column name="name">tradeKeyword</column>
+		</row>	
+		<!-- Clearing removal keywords -->
+		<row cat="fix">
+			<column name="name">ClearingKeywords</column>
+			<column name="value">OriginalCounterparty</column>
+		</row>
+	</table>
+	
+	<table name="ps_event_config" xmlns="">
+        <row cat="fix">
+            <column name="event_config_name">Back-Office</column>
+            <column name="event_class">PSEventFIXMessage</column>
+            <column name="engine_name">FIXEngine</column>
+        </row>
+    </table>
+    
+	<table name="ps_event_filter" xmlns="">
+        <row cat="fix">
+            <column name="event_config_name">Back-Office</column>
+            <column name="event_filter">FIXEngineEventFilter</column>
+            <column name="engine_name">FIXEngine</column>
+        </row>
+    </table>
+    
+    <table name="engine_param" xmlns="">
+        <row cat="fix">
+            <column name="engine_name">FIXEngine</column>
+            <column name="param_name">EVENT_POOL_POLICY</column>
+            <column name="param_value">FIXEngine</column>
+        </row>    
+    </table>	
+</database>

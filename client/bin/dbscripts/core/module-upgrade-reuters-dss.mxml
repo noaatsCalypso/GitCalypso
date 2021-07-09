@@ -1,0 +1,18 @@
+<module name="reuters-dss" min-version="1.00.00" target-version="2.9.00">
+	<schema filename="ReutersDssSchemaBase.xml"/>
+	<schema filename="ReutersDssSchemaData.xml"/>
+	<schema filename="ReutersDssSchemaMappingData.xml"/>
+	<!-- Ensure that the below upgrade versions are same as the target-version -->
+	<upgrade version="2.4.02">
+		<step name="RDSS-461" version="1"/>
+	</upgrade>
+	<upgrade version="2.5.02">
+		<step name="RDSS-505" version="1"/>
+	</upgrade>
+	<upgrade version="2.7.02">
+		<step name="RDSS-517" version="1"/>
+	</upgrade>
+	<upgrade version="2.9.00">
+		<step name="RDSS-579" version="1"/>
+	</upgrade>
+</module>

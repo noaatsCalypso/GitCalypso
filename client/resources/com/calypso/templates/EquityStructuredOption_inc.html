@@ -1,0 +1,117 @@
+<!-- Demonstrates some of the available EquityStructuredOption Message Keywords -->
+<p>
+
+<p>
+<br>Payout: |REPORT#Payout|
+<br>Premium: |REPORT#Premium %|
+<br>Premium Payment Date: |REPORT#Premium Date|
+</p>
+
+<h3>Built-in Option MessageFormatter keywords</h3>
+<p>
+<br>AUTOMATIC_EXERCISE: |AUTOMATIC_EXERCISE|
+<br>BERMUDA_EXERCISE_DATES: |BERMUDA_EXERCISE_DATES|
+<br>CASH_SETTLEMENT_DATE: |CASH_SETTLEMENT_DATE|
+<br>CASH_SETTLEMENT_DATES: |CASH_SETTLEMENT_DATES|
+<br>DELIVERY_DATE: |DELIVERY_DATE|
+<br>EARLIEST_EXERCISE_TIME: |EARLIEST_EXERCISE_TIME|
+<br>EFFECTIVE_DATE: |EFFECTIVE_DATE|
+<br>EXERCISED_QUANTITY: |EXERCISED_QUANTITY|
+<br>EXERCISED_UNDER: |EXERCISED_UNDER|
+<br>EXPIRATION_DATE: |EXPIRATION_DATE|
+<br>EXPIRATION_TIME: |EXPIRATION_TIME|
+<br>FIRST_EXERCISE_DATE: |FIRST_EXERCISE_DATE|
+<br>IS_CASH_EXERCISED: |IS_CASH_EXERCISED|
+<br>NOTIONAL: |NOTIONAL|
+<br>OPTION_BUYER: |OPTION_BUYER|
+<br>OPTION_PRICE: |OPTION_PRICE|
+<br>OPTION_QUOTITY: |OPTION_QUOTITY|
+<br>OPTION_SELLER: |OPTION_SELLER|
+<br>OPTION_STYLE: |OPTION_STYLE|
+<br>OPTION_TYPE: |OPTION_TYPE|
+<br>REMAINING_QUANTITY: |REMAINING_QUANTITY|
+<br>SELLER_AGENT: |SELLER_AGENT|
+<br>SETTLEMENT_TYPE: |SETTLEMENT_TYPE|
+<br>SHARES_DESCRIPTION: |SHARES_DESCRIPTION|
+<br>TRADE_PRICE: |TRADE_PRICE|
+<br>UNDERLYING_QUOTITY: |UNDERLYING_QUOTITY|
+</p>
+
+
+<h3>Barrier Details</h3>
+
+<br>REPORT#Option Down Barrier: |REPORT#Option Down Barrier|
+<br>REPORT#Option Down Barrier Type: |REPORT#Option Down Barrier Type|
+<br>REPORT#Option Up Barrier: |REPORT#Option Up Barrier|
+<br>REPORT#Option Up Barrier Type: |REPORT#Option Up Barrier Type|
+<br>REPORT#Option Has Barrier: |REPORT#Option Has Barrier|
+<br>REPORT#Barrier.Rebate.InstantTiming.Date Roll: |REPORT#Barrier.Rebate.InstantTiming.Date Roll|
+<br>REPORT#Barrier.Rebate.InstantTiming.Holidays: |REPORT#Barrier.Rebate.InstantTiming.Holidays|
+<br>REPORT#Barrier.Rebate.InstantTiming.Offset Days: |REPORT#Barrier.Rebate.InstantTiming.Offset Days|
+<br>REPORT#Barrier.Rebate.InstantTiming.Offset Lag: |REPORT#Barrier.Rebate.InstantTiming.Offset Lag|
+<br>REPORT#Barrier.Rebate.Currency: |REPORT#Barrier.Rebate.Currency|
+<br>REPORT#Barrier.Rebate.Payment Date: |REPORT#Barrier.Rebate.Payment Date|
+<br>REPORT#Barrier.Rebate.Timing Type: |REPORT#Barrier.Rebate.Timing Type|
+<br>REPORT#Barrier.Rebate.Way: |REPORT#Barrier.Rebate.Way|
+<br>REPORT#Barrier.Monitoring Frequency: |REPORT#Barrier.Monitoring Frequency|
+<br>REPORT#Barrier.Observation End Date: |REPORT#Barrier.Observation End Date|
+<br>REPORT#Barrier.Observation Start Date: |REPORT#Barrier.Observation Start Date|
+<br>REPORT#Barrier.Window Type: |REPORT#Barrier.Window Type|
+
+
+
+<h3>Sample display of exotic option ArrayVariable</h3>
+<p>
+<li>ARRAY_VARIABLE_NAME#QuantityAbove: |ARRAY_VARIABLE_NAME#QuantityAbove|
+<li>ARRAY_VARIABLE_VALUE#QuantityAbove: |ARRAY_VARIABLE_VALUE#QuantityAbove|
+
+<br>
+<!--calypso>
+  if (|ARRAY_VARIABLE_NAME#QuantityAbove| like "QuantityAbove") 
+    inline "if ARRAY_VARIABLE_NAME like 'QuantityAbove' ... |ARRAY_VARIABLE_VALUE#QuantityAbove|";
+</calypso-->
+<br>
+<br>EXOTIC_SUMMARY: |EXOTIC_SUMMARY|
+</p>
+
+
+
+<!-- the below is printed only in case of underlying Basket -->
+
+<!--calypso>
+if ( |IS_UNDERLYING_BASKET| == "true" ) {
+    inline "
+<h3>Underlying basket (comp. number: |BASKET_COMP_NUMBER|):</h3>
+
+<table border=1>
+    <tr>
+        <th>#</th>
+        <th>Asset</th>   
+        <th>Asset Ccy</th>
+        <th>Weight/Quantity</th>
+        <th>FX Reset/Quanto</th>
+        <th>Sector</th>
+        <th>Security Code</th>
+        <th>Corporate Name</th>
+        <th>Market Place</th>
+    </tr>
+";
+
+iterator("BasketComponent")
+    inline "
+    <tr>
+        <td>|ITERATOR_CURRENT_COUNT|</td>
+        <td>|BASKET_COMP_ASSET|</td>   
+        <td>|BASKET_COMP_CCY|</td>
+        <td>|BASKET_COMP_WEIGHT_QTY|</td>
+        <td>|BASKET_COMP_FXRESET_QTO|</td>
+        <td>|BASKET_COMP_ISSUER_ATTR#Sector|</td>
+        <td>|BASKET_COMP_SECURITY_CODE#ISIN|</td>       
+        <td>|BASKET_COMP_SECURITY#Corporate|</td>
+        <td>|BASKET_COMP_SECURITY#Underlying.Market Place|</td>
+    </tr>
+    ";
+
+inline "</table>";
+}
+</calypso-->

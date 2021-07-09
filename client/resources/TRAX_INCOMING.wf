@@ -1,0 +1,16 @@
+PSEventMessage;ALLEGED;DENY;DENIED;true;false;false;TRAX_INCOMING;ALL;DenyTRAXAdvisory;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventMessage;ALLEGED;MATCH;MATCHED;true;false;false;TRAX_INCOMING;ALL;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventMessage;ALLEGED;SUPERSEDE;SUPERSEDED;true;false;false;TRAX_INCOMING;ALL;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventMessage;NONE;NEW;PENDING;true;true;false;TRAX_INCOMING;ALL;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventMessage;PENDING;ALLEGE;ALLEGED;true;true;false;TRAX_INCOMING;ALL;CheckTRAXAdvisory,SupersedeTRAXStatementResponse;;false;true;;;false;false;false;false;0;;;Always;false;
+PSEventMessage;PENDING;AUTHORIZE;PROCESSED;true;true;false;TRAX_INCOMING;ALL;CheckTRAXNotAdvisory,MatchTRAXAdvisory,UpdateTRAXTrade,UpdateTRAXTransactionRequest;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventMessage;SUPERSEDED;DENY;SUPERSEDED;true;false;false;TRAX_INCOMING;ALL;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventMessage;SUPERSEDED;MATCH;SUPERSEDED;true;false;false;TRAX_INCOMING;ALL;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+RuleAdditionalInfo 7
+ALL/PSEventMessage/TRAX_INCOMING/ALL/ALLEGED/DENY/DENIED;DenyTRAXAdvisory;;;
+ALL/PSEventMessage/TRAX_INCOMING/ALL/PENDING/ALLEGE/ALLEGED;CheckTRAXAdvisory;;;
+ALL/PSEventMessage/TRAX_INCOMING/ALL/PENDING/ALLEGE/ALLEGED;SupersedeTRAXStatementResponse;;;
+ALL/PSEventMessage/TRAX_INCOMING/ALL/PENDING/AUTHORIZE/PROCESSED;CheckTRAXNotAdvisory;;;
+ALL/PSEventMessage/TRAX_INCOMING/ALL/PENDING/AUTHORIZE/PROCESSED;MatchTRAXAdvisory;;;
+ALL/PSEventMessage/TRAX_INCOMING/ALL/PENDING/AUTHORIZE/PROCESSED;UpdateTRAXTrade;;;
+ALL/PSEventMessage/TRAX_INCOMING/ALL/PENDING/AUTHORIZE/PROCESSED;UpdateTRAXTransactionRequest;;;

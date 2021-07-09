@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+
+	<table name="domain_values" xmlns="">
+	
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceRuleViewRole</column>
+			<column name="description">Permission to view rules in Compliance</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceConfigurationRuleGroupViewRole</column>
+			<column name="description">Permission to view rule groups in Compliance</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceConfigurationMeasureViewRole</column>
+			<column name="description">Permission to view measures in Compliance</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceConfigurationAnalysisViewRole</column>
+			<column name="description">Permission to view reference analyses in Compliance</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceConfigurationFormulaViewRole</column>
+			<column name="description">Permission to view column formulae in Compliance</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceViolationViewRole</column>
+			<column name="description">Permission to view results in Compliance</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceDashboardViewRole</column>
+			<column name="description">Permission to view dashboard in Compliance
+			</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceRuleEditRole</column>
+			<column name="description">Permission to edit rules in Compliance</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceRuleProcessRole</column>
+			<column name="description">Permission to process rules in Compliance</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceConfigurationRuleGroupEditRole</column>
+			<column name="description">Permission to edit rule groups in Compliance</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceConfigurationMeasureEditRole</column>
+			<column name="description">Permission to edit measures in Compliance</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceConfigurationAnalysisEditRole</column>
+			<column name="description">Permission to edit reference analyses in	Compliance</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceConfigurationFormulaEditRole</column>
+			<column name="description">Permission to edit column formulae in Compliance</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceViolationEditRole</column>
+			<column name="description">Permission to edit violation status in Compliance</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceApproveChangeRole</column>
+			<column name="description">Permission to edit violation status in Compliance</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceRuleSanctioningLevelViewRole</column>
+			<column name="description">Sanctioning level view access</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceRuleSanctioningLevelEditRole</column>
+			<column name="description">Sanctioning level edit access</column>
+		</row>
+		<row cat="complianceinstall">
+			<column name="name">function</column>
+			<column name="value">ComplianceAnalyzerViewRole</column>
+			<column name="description">Compliance Analyzer view access</column>
+		</row>
+		
+		<row cat="complianceinstall">
+			<column name="name">classAccessMode</column>
+			<column name="value">ComplianceRules</column>
+			<column name="description"></column>
+		</row>
+
+		<row cat="complianceinstall">
+			<column name="name">classAccessMode</column>
+			<column name="value">ComplianceRuleGroups</column>
+			<column name="description"></column>
+		</row>
+
+		<row cat="complianceinstall">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERSC_COMPLIANCE_BATCH</column>
+			<column name="description">Generate Compliance Results based on filter criteria provided</column>
+		</row>
+
+		<row cat="complianceinstall">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERSC_COMPLIANCE_CONFIGURATION_EXPORT</column>
+			<column name="description">Export compliance configuration objects</column>
+		</row>
+		
+		<row cat="complianceinstall">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERSC_COMPLIANCE_CONFIGURATION_IMPORT</column>
+			<column name="description">Import compliance configuration objects</column>
+		</row>
+
+		<row cat="complianceinstall">
+			<column name="name">scheduledTask</column>
+			<column name="value">ERSC_RESULT_EXPORT</column>
+			<column name="description">Export Compliance Results based on filter criteria provided</column>
+		</row>
+
+		<row cat="complianceinstall">
+			<column name="name">domainName</column>
+			<column name="value">Compliance.Email.Event</column>
+			<column name="description">Email Notification Event in Compliance</column>
+		</row>
+				
+		<row cat="complianceinstall">
+			<column name="name">domainName</column>
+			<column name="value">Compliance.Email.ViolationTypes</column>
+			<column name="description">Violation Types configuration for Email Notifications</column>
+		</row>
+		
+        <row cat="complianceinstall">
+            <column name="name">REPORT.Types</column>
+            <column name="value">ComplianceLEHeadroom</column>
+            <column name="description">ComplianceLEHeadroom Report</column>
+        </row>
+		
+	</table>
+
+</database>

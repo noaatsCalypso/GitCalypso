@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<enrichments xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/com/calypso/tk/bo/enrichment/enrichments.xsd">
+  <context name="TradeTest"  source_name="com.calypso.tk.core.Trade" source_table_name="trade" table_name="trade_enrichment_test"  synchronous="false" trigger_events="PSEventTrade,PSEventProcessTrade,PSEventRateReset">
+    <primary_key name="Trade Id" column="trade_id" getter="getLongId" type="Long"></primary_key>
+    <field name="Product Type" column="product_type" getter="getProduct.getType" type="String" scale="64"></field>
+    <field name="Final Maturity Date" column="final_maturity_date" getter="getMaturityDate" type="JDatetime" nullable="true" ></field>
+  </context>
+  <context name="TransferTest" source_name="com.calypso.tk.bo.BOTransfer" source_table_name="bo_transfer" table_name="transfer_enrichment_test" synchronous="false" trigger_events="PSEventTransfer">
+    <primary_key name="Transfer Id" column="transfer_id" getter="getId" type="Integer"></primary_key>
+    <field name="Split Key" column="split_key" getter="getSplitKey" type="String" scale="12"></field>
+    <field name="Delivery Method" column="delivery_method" getter="getDeliveryMethod" type="String" scale="10"></field>
+  </context>
+</enrichments>

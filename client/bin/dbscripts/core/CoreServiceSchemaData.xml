@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="domain_values" xmlns="">
+        <row cat="domain">
+            <column name="name">function</column>
+            <column name="value">CORE_SERVICE_MANAGERRole</column>
+            <column name="description">Core service role</column>
+        </row>
+        <row cat="domain">
+            <column name="name">function</column>
+            <column name="value">CORE_SERVICE_USERRole</column>
+            <column name="description">Core service role</column>
+        </row>
+    </table>
+</database>

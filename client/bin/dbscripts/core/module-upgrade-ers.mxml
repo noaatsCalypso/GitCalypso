@@ -1,0 +1,227 @@
+<module name = "ers" min-version="9.0.0.001" target-version="16.1.0.75">
+<schema filename="SchemaBaseERS.xml" />
+<schema filename="SchemaDataERS.xml" />
+<schema filename="SchemaBaseERSRAPM.xml"/>
+<schema filename="SchemaBaseERSRecon.xml"/>
+<schema filename="SchemaDataERSRAPM.xml"/>
+<schema filename="SchemaDataERSLimitsAdapterModule.xml"/>
+
+<upgrade version="9.0.0.002">
+<step name="CAL-276786" version="1"/>
+</upgrade>
+<upgrade version="9.0.0.003">
+<step name="CAL-276788" version="1"/>
+
+</upgrade>
+<upgrade version="10.0.0.000">
+<step name="CAL-276791" version="1"/>
+
+</upgrade>
+
+<upgrade version="10.0.0.002">
+<step name="CAL-276793" version="1"/>
+
+</upgrade>
+<upgrade version="10.0.0.003">
+<step name="CAL-276795" version="1"/>
+
+</upgrade>
+<upgrade version="10.0.0.004">
+<step name="CAL-276797" version="1"/>
+
+</upgrade>
+<upgrade version="11.0.0.000">
+<step name="CAL-276801" version="1"/>
+
+</upgrade>
+<upgrade version="11.0.0.001">
+<step name="CAL-276803" version="1"/>
+
+</upgrade>
+<upgrade version="11.1.0.002">
+<step name="CAL-277273" version="1"/>
+
+</upgrade>
+
+<upgrade version="11.1.0.003">
+<step name="CAL-277276" version="1"/>
+
+</upgrade>
+
+<upgrade version="11.1.0.004">
+<step name="CAL-277293" version="1"/>
+
+</upgrade>
+
+<upgrade version="12.0.0.000">
+<step name="CAL-277503" version="1"/>
+</upgrade>
+
+<upgrade version="13.0.0.002">
+<step name="CAL-277504" version="1"/>
+</upgrade>
+
+<upgrade version="14.1.0.013">
+<step name="CAL-277520" version="1"/>
+</upgrade>
+
+
+<upgrade version="14.1.0.020">
+<step name="CAL-277522" version="1"/>
+</upgrade>
+
+<upgrade version="14.1.0.021">
+<step name="CAL-277524" version="1"/>
+</upgrade>
+
+<upgrade version="14.1.0.022">
+<step name="CAL-278668" version="1"/>
+</upgrade>
+
+<upgrade version="14.1.0.024">
+<step name="CAL-278680" version="1"/>
+</upgrade>
+<upgrade version="14.1.0.025">
+<step name="CAL-278684" version="1"/>
+</upgrade>
+<upgrade version="14.1.0.026">
+<step name="CAL-278688" version="1"/>
+</upgrade>
+<upgrade version ="14.2.0.000">
+<step name="CAL-278690" version="1"/>
+</upgrade>
+<upgrade version ="14.2.0.001">
+<step name="CAL-278692" version="1"/>
+</upgrade>
+<upgrade version ="14.2.0.002">
+<step name="CAL-278694" version="1"/>
+</upgrade>
+<upgrade version ="14.2.0.003">
+<step name="CAL-278696" version="1"/>
+</upgrade>
+<upgrade version ="14.2.0.004">
+<step name="CAL-278698" version="1"/>
+</upgrade>
+<upgrade version ="14.2.0.005">
+<step name="CAL-278701" version="1"/>
+</upgrade>
+<upgrade version ="14.2.0.006">
+<step name="CAL-278711" version="1"/>
+</upgrade>
+
+<upgrade version ="14.2.0.007">
+<step name="CAL-278713" version="1"/>
+</upgrade>
+
+<upgrade version ="14.3.0.000">
+<step name="CAL-278715" version="1"/>
+ </upgrade>
+
+
+<upgrade version ="14.3.0.001">
+<step name="CAL-278717" version="1"/>
+</upgrade>
+
+<upgrade version ="14.3.0.002">
+<step name="CAL-278721" version="1"/>
+</upgrade>
+<upgrade version ="14.3.0.003">
+<step name="CAL-278723" version="1"/>
+</upgrade>
+<upgrade version ="14.3.0.004">
+<step name="CAL-278725" version="1"/>
+</upgrade>
+<upgrade version ="14.3.0.005">
+<step name="CAL-278727" version="1"/>
+</upgrade>
+<upgrade version ="14.4.0.000">
+<step name="CAL-278825" version="1"/>
+</upgrade>
+<upgrade version ="14.4.0.001">
+<step name="CAL-278827" version="1"/>
+</upgrade>
+<upgrade version ="14.4.0.002">
+<step name="CAL-278830" version="1"/>
+</upgrade>
+
+<upgrade version ="14.4.0.003">
+<step name="CAL-278836" version="1"/>
+</upgrade>
+
+<upgrade version ="14.4.0.004">
+<step name="CAL-286598" version="1"/>
+</upgrade>
+<upgrade version ="15.0.0.000">
+<step name="CAL-286599" version="1"/>
+</upgrade>
+<upgrade version ="15.0.0.001">
+<step name="CAL-286600" version="1"/>
+</upgrade>
+<upgrade version ="15.0.0.002">
+<step name="CAL-286601" version="1"/>
+</upgrade>
+<upgrade version ="15.0.0.003">
+<step name="CAL-288225" version="1"/>
+</upgrade>
+<upgrade version ="15.0.0.004">
+<step name="CAL-288227" version="1"/>
+</upgrade>
+<upgrade version ="15.0.0.005">
+<step name="CAL-288229" version="1"/>
+</upgrade>
+<upgrade version ="15.0.0.007">
+<step name="CAL-294312" version="1"/>
+</upgrade>
+<upgrade version ="15.0.0.008">
+<step name="CAL-294343" version="1"/>
+</upgrade>
+<upgrade version="15.0.0.010">
+<step name="CAL-295046" version="1"/>
+</upgrade>
+<upgrade version="15.0.0.011">
+<step name="CAL-295238" version="1"/>
+</upgrade>
+<upgrade version="15.0.0.012">
+<step name="CAL-295597" version="1"/>
+</upgrade>
+<upgrade version="15.0.0.012">
+<step name="CAL-312464" version="1"/>
+</upgrade>
+<upgrade version="15.1.0.001">
+<step name="CAL-297436" version="1"/>
+</upgrade>
+<upgrade version="15.1.0.002">
+<step name="CAL-315777" version="1"/>
+</upgrade>
+<upgrade version="15.1.0.003">
+<step name="CAL-317541" version="1"/>
+</upgrade>
+<upgrade version="16.0.0.000">
+<step name="CAL-334414" version="2"/>
+</upgrade>
+<upgrade version="16.0.0.000">
+<step name="CAL-335088" version="1"/>
+</upgrade>
+<upgrade version="16.0.0.000">
+<step name="CAL-335090" version="1"/>
+</upgrade>
+<upgrade version="16.0.0.000">
+<step name="CAL-334904" version="1"/>
+</upgrade>
+<upgrade version="16.0.0.000">
+<step name="CAL-335656" version="1"/>
+</upgrade>
+<upgrade version="16.1.0.000">
+<step name="CAL-342296" version="1"/>
+<step name="CAL-335268" version="2"/>
+</upgrade>
+<upgrade version="16.1.0.004">
+<step name="CAL-347697" version="2"/>
+</upgrade>
+<upgrade version="16.1.0.015">
+<step name="CAL-359787" version="1"/>
+</upgrade>
+<upgrade version="16.1.0.017">
+<step name="CAL-363658" version="1"/>
+</upgrade>
+</module>

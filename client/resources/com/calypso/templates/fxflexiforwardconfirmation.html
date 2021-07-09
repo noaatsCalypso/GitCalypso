@@ -1,0 +1,404 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+<br>
+<br>
+<br>
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND") {
+  inline "I am pleased to confirm the amended details of the following |PRODUCT_TYPE| trade, traded on |TRADE_DATE| and settling on |SETTLE_DATE|.<o:p></o:p></span></p>";
+}
+else if (|MESSAGE_SUBACTION|== "CANCEL") {
+  inline "Please be advised that the following |PRODUCT_TYPE| trade has been canceled, traded on |TRADE_DATE| and settling on |SETTLE_DATE|.<o:p></o:p></span></p>";
+}
+else if (|MESSAGE_ACTION| == "confirm") {
+	if (|IS_FLEXI_FULLTERM|== "true") {
+	  inline "Please be advised that the following |PRODUCT_TYPE| trade has been terminated on |FLEXI_TERM_DATE|.<o:p></o:p></span></p>";
+	} else if (|IS_FLEXI_PARTIALTERM|=="true") {
+	  inline "Please be advised that the following |PRODUCT_TYPE| trade has been partially terminated on |FLEXI_TERM_DATE|.<o:p></o:p></span></p>";
+	} else if (|IS_FLEXI_FULLROLL|== "true") {
+	  inline "Please be advised that the following |PRODUCT_TYPE| trade has been rolled on |FLEXI_ROLL_DATE|.<o:p></o:p></span></p>";
+	} else if (|IS_FLEXI_PARTIALROLL|== "true") {
+	  inline "Please be advised that the following |PRODUCT_TYPE| trade has been partially rolled on |FLEXI_ROLL_DATE|.<o:p></o:p></span></p>";
+	} else {
+	  inline "I am pleased to confirm the details of the following |PRODUCT_TYPE| / |REPORT#Product Subtype| trade , traded on |TRADE_DATE| and settling on |SETTLE_DATE|.<o:p></o:p></span></p>";
+	}
+}
+</calypso-->
+
+<!--calypso>
+if (|REPORT#Product Subtype| == "TakeUpSchedule") {
+inline "
+<b><b>Trade details</b></b><br><br>
+
+<table>
+	<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+
+
+	<tr>
+		<td WIDTH='30%'>Our Trade Number:</td>
+		<td>|TRADE_ID|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Operation Type:</td>
+		<td>|PRODUCT_TYPE|</td>
+	</tr>
+
+	<tr>
+		<td WIDTH='30%'>Instrument Description:</td>
+		<td>|PRODUCT_DESCRIPTION|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Buyer:</td>
+		<td>|TRADE_BUYER_NAME|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Seller:</td>
+		<td>|TRADE_SELLER_NAME|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Trade Date:</td>
+		<td>|TRADE_DATE|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Start Date:</td>
+		<td>|FLEXI_SCH_START_DATE|</td>
+	</tr>
+		<tr>
+		<td WIDTH='30%'>End Date:</td>
+		<td>|FLEXI_SCH_END_DATE|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Maturity Date:</td>
+		<td>|FLEXI_TRADE_MAT_DATE|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Bought Amount:</td>
+		<td>|FLEXI_BUY_CURRENCY| |FLEXI_BUY_AMOUNT|</td>
+	</tr>
+		<tr>
+		<td WIDTH='30%'>Sold Amount:</td>
+		<td>|FLEXI_SELL_CURRENCY| |FLEXI_SELL_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Market Spot Rate:</td>
+		<td>|FLEXI_SPOTPRICE|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Spot Margin:</td>
+		<td>|FLEXI_SPOTMARGIN|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Start Rate:</td>
+		<td>|FLEXI_STARTRATE|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>All-In Points:</td>
+		<td>|FLEXI_ALLINPOINTS|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>FX Final Rate:</td>
+		<td>|FLEXI_NEGOCIATEDPRICE|</td>
+	</tr>
+	</table>";
+
+}
+</calypso-->
+
+<br>
+<!--calypso>
+if (|REPORT#Product Subtype| == "TakeUpSchedule") {
+inline "
+<b><b>FlexiForward details</b></b><br><br>
+<table>
+
+	<tr>
+		<td WIDTH='30%'>Take-Up Type:</td>
+		<td>|FLEXI_TAKEUP_TYPE_W|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Window Frequency:</td>
+		<td>|FLEXI_FREQ_TYPE_W|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Number of Window/Periods:</td>
+		<td>|NO_OF_WINDOWS|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Short Days:</td>
+		<td>|FLEXI_SHORT_DAYS_W|</td>
+	</tr>
+
+	</table>
+";
+}
+</calypso-->
+
+<br>
+<!--calypso>
+if (|REPORT#Product Subtype| == "TakeUpSchedule") {
+inline "
+
+<b><b>FlexiForward schedule:</b></b><br><br>
+|FLEXI_SCHEDULE|
+<br><br>
+|ADDITIONAL_FIXED_AMOUNT|<br><br>
+";
+}
+</calypso-->
+
+<!--calypso>
+if (|REPORT#Product Subtype| == "WindowForward") {
+inline "
+
+<b><b>Trade details</b></b><br><br>
+
+<table>
+
+	<tr>
+		<td WIDTH='30%'>Our Trade Number:</td>
+		<td>|TRADE_ID|</td>
+	</tr>
+
+	<tr>
+		<td WIDTH='30%'>Operation Type:</td>
+		<td>|PRODUCT_TYPE| |REPORT#Product Subtype|</td>
+	</tr>
+
+	<tr>
+		<td WIDTH='30%'>Instrument Description:</td>
+		<td>|PRODUCT_DESCRIPTION|</td>
+	</tr>
+
+	<tr>
+		<td WIDTH='30%'>Buyer:</td>
+		<td>|TRADE_BUYER_NAME|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Seller:</td>
+		<td>|TRADE_SELLER_NAME|</td>
+	</tr>
+
+	<tr>
+		<td WIDTH='30%'>Trade Date:</td>
+		<td>|TRADE_DATE|</td>
+	</tr>
+
+	<tr>
+		<td WIDTH='30%'>Window Start Date:</td>
+		<td>|FLEXI_SCH_START_DATE|</td>
+	</tr>
+
+	<tr>
+		<td WIDTH='30%'>Window End Date:</td>
+		<td>|FLEXI_SCH_END_DATE|</td>
+	</tr>
+
+	<tr>
+		<td WIDTH='30%'>Bought Amount:</td>
+		<td>|FLEXI_BUY_CURRENCY| |FLEXI_BUY_AMOUNT|</td>
+	</tr>
+
+	<tr>
+		<td WIDTH='30%'>Sold Amount:</td>
+		<td>|FLEXI_SELL_CURRENCY| |FLEXI_SELL_AMOUNT| </td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Market Spot Rate:</td>
+		<td>|FLEXI_SPOTPRICE|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Spot Margin:</td>
+		<td>|FLEXI_SPOTMARGIN|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>All-In Points:</td>
+		<td>|FLEXI_ALLINPOINTS|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>FX Final Rate:</td>
+		<td>|FLEXI_NEGOCIATEDPRICE|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Outstanding Bought Amount:</td>
+		<td>|REPORT#Primary Outstanding| </td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Outstanding Sold Amount:</td>
+		<td>|REPORT#Secondary Outstanding|</td>
+	</tr>
+
+</table>
+";
+}
+</calypso-->
+
+<br>
+<br>
+<!--calypso>
+if (|IS_FLEXI_FULLTERM|== "true") {
+inline "
+<b><b>FlexiForward Termination details</b></b><br><br>
+
+<table>
+
+
+	<tr>
+		<td WIDTH='30%'>Termination Date:</td>
+		<td>|FLEXI_TERM_DATE|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Terminated Bought Amount:</td>
+		<td>|FLEXI_BUY_CURRENCY| |FLEXI_TERM_BUY_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Terminated Sold Amount:</td>
+		<td>|FLEXI_SELL_CURRENCY| |FLEXI_TERM_SELL_AMOUNT|</td>
+	</tr>
+</table>
+
+<br>
+
+Termination Fee Amount of <b>|FEE_CURRENCY#WINDOW_FORWARD_FEE| |FEE_AMOUNT#WINDOW_FORWARD_FEE|. </b> <br><br>
+Paid on the <b>|FEE_DATE#WINDOW_FORWARD_FEE| by |FEE_PAYER#WINDOW_FORWARD_FEE| to |FEE_RECEIVER#WINDOW_FORWARD_FEE|. <br><br>
+
+";
+}
+</calypso-->
+
+
+
+<!--calypso>
+if (|IS_FLEXI_PARTIALTERM|== "true") {
+inline "<b><b>FlexiForward Partial Termination details</b></b><br><br>
+
+<table>
+
+
+	<tr>
+		<td WIDTH='30%'>Termination Date:</td>
+		<td>|FLEXI_TERM_DATE|</td>
+	</tr>
+			<tr>
+		<td WIDTH='30%'>Terminated Bought Amount:</td>
+		<td>|FLEXI_BUY_CURRENCY| |FLEXI_TERM_BUY_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Terminated Sold Amount:</td>
+		<td>|FLEXI_SELL_CURRENCY| |FLEXI_TERM_SELL_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Outstanding Bought Amount:</td>
+		<td>|FLEXI_BUY_CURRENCY| |OUTSTANDING_BUY_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Outstanding Sold Amount:</td>
+		<td>|FLEXI_SELL_CURRENCY| |OUTSTANDING_SELL_AMOUNT|</td>
+	</tr>
+</table>
+
+Termination Fee Amount of <b>|FEE_CURRENCY#WINDOW_FORWARD_FEE| |FEE_AMOUNT#WINDOW_FORWARD_FEE|. </b> <br><br>
+Paid on the <b>|FEE_DATE#WINDOW_FORWARD_FEE| by |FEE_PAYER#WINDOW_FORWARD_FEE| to |FEE_RECEIVER#WINDOW_FORWARD_FEE|. </b><br><br>
+
+";
+}
+</calypso-->
+
+
+<!--calypso>
+if (|IS_FLEXI_FULLROLL|== "true") {
+inline "<b><b>FlexiForward Full Rollover details</b></b><br><br>
+
+<table>
+	<tr>
+		<td WIDTH='30%'>Rollover Date:</td>
+		<td>|FLEXI_ROLL_TRADE_DATE|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Roll To Date:</td>
+		<td>|FLEXI_ROLL_DATE|</td>
+	</tr>
+<tr>
+		<td WIDTH='30%'>Rolled Bought Amount:</td>
+		<td>|FLEXI_BUY_CURRENCY| |FLEXI_ROLL_BUY_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Rolled Sold Amount:</td>
+		<td>|FLEXI_SELL_CURRENCY| |FLEXI_ROLL_SELL_AMOUNT|</td>
+	</tr>
+
+</table>
+
+";
+}
+</calypso-->
+
+
+<!--calypso>
+if (|IS_FLEXI_PARTIALROLL|== "true") {
+inline "<b><b>FlexiForward Partial Rollover details</b></b><br><br>
+
+<table>
+
+	<tr>
+		<td WIDTH='30%'>Rollover Date:</td>
+		<td>|FLEXI_ROLL_TRADE_DATE|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Roll To Date:</td>
+		<td>|FLEXI_ROLL_DATE|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Rolled Bought Amount:</td>
+		<td>|FLEXI_BUY_CURRENCY| |FLEXI_ROLL_BUY_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Rolled Sold Amount:</td>
+		<td>|FLEXI_SELL_CURRENCY| |FLEXI_ROLL_SELL_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Outstanding Bought Amount:</td>
+		<td>|FLEXI_BUY_CURRENCY| |OUTSTANDING_BUY_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td WIDTH='30%'>Outstanding Sold Amount:</td>
+		<td>|FLEXI_SELL_CURRENCY| |OUTSTANDING_SELL_AMOUNT|</td>
+	</tr>
+
+</table>
+";
+}
+</calypso-->
+<br>
+<br>
+<b><b>Account Details</b></b> <br><br>
+<table width='100%'>
+ <tr>
+  <td width="30%">Payments to |SENDER_CODE|:</td>
+  <td width='68%'>Settlement Instructions to be advised</td>
+ </tr>
+ <tr>
+  <td width="30%">Payments to |RECEIVER_CODE|:</td>
+  <td>Settlement Instructions to be advised</td>
+ </tr>
+</table>
+<br>
+
+
+<p>
+Please confirm that the foregoing correctly sets forth the terms of our agreement with respect to the |PRODUCT_TYPE| |REPORT#Product Subtype| Transaction
+by signing in the space provided below and sending a copy of the executed Confirmation to |TRADE_PROCESSING_ORGANIZATION|.
+Attention: Capital Markets Operations, Facsimile number |SENDER_FAX| or Email |SENDER_EMAIL|.
+</p>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->
+

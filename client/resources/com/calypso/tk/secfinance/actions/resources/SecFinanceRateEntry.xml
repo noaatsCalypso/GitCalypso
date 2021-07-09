@@ -1,0 +1,21 @@
+<!-- 
+Defines a default view (categories, selected fields for each). 
+The field and category labels are defined in the .properties resource file with the same name.  
+-->
+<config>
+	<view>
+	  <category>
+	    <categoryId>RERATE</categoryId>
+        <fieldId>RATE_EVENT_TYPE</fieldId>	    
+	    <fieldId>RATE_ON_EFFECTIVE_DATE</fieldId>
+	    <fieldId>RATE_NEW</fieldId>
+	    <fieldId>SPREAD_ON_EFFECTIVE_DATE</fieldId>
+	    <fieldId>SPREAD_NEW</fieldId>
+	    <fieldId>FEE_RATE_ON_EFFECTIVE_DATE</fieldId>
+	    <fieldId>FEE_RATE_NEW</fieldId>
+	    <fieldId>BP_CHANGE</fieldId>
+	    <fieldId>INCREASE_DECREASE_PCT</fieldId>
+	    <fieldId>INTEREST_CLEANUP</fieldId>
+	  </category>
+	</view>
+</config>

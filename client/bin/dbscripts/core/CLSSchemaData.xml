@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+    <table name="table_comment" xmlns="">
+        <row cat="CLS">
+            <column name="table_name">cls_schedule</column>
+            <column name="table_comment">A CLS pay-in schedule with long and short
+                positions (w/ due times) for a value date
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="table_name">cls_schedule_item</column>
+            <column name="table_comment">A timed pay-in or a pay-out from a CLS pay-in
+                schedule
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="table_name">cls_message</column>
+            <column name="table_comment">A CLS message</column>
+        </row>
+        <row cat="CLS">
+            <column name="table_name">cls_reco</column>
+            <column name="table_comment">reconciliation result for a cls pay-in schedule
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="table_name">cls_trade_info</column>
+            <column name="table_comment">Information regarding a trade, from the CLS
+                system. Corresponds to the GrossInput class
+            </column>
+        </row>
+    </table>
+    <!-- event config -->
+    <table name="ps_event_config" xmlns="">
+        <row cat="CLS">
+            <column name="event_config_name">Back-Office</column>
+            <column name="event_class">PSEventCLS</column>
+            <column name="engine_name">CLSMessageEngine</column>
+        </row>
+    </table>
+    <table name="domain_values" xmlns="">
+        <row cat="CLS">
+            <column name="name">contactType</column>
+            <column name="value">CLS</column>
+            <column name="description"/>
+        </row>
+        <row cat="CLS">
+            <column name="name">engineName</column>
+            <column name="value">CLSMessageEngine</column>
+            <column name="description"/>
+        </row>
+        <row cat="CLS">
+            <column name="name">userAccessPermAttributes</column>
+            <column name="value">Max.CLSTradeInfo</column>
+            <column name="description"/>
+        </row>
+        <row cat="CLS">
+            <column name="name">userAccessPermAttributes</column>
+            <column name="value">Max.CLSMessage</column>
+            <column name="description"/>
+        </row>
+        <row cat="CLS">
+            <column name="name">eventClass</column>
+            <column name="value">PSEventCLS</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLS">
+            <column name="name">dsInit</column>
+            <column name="value">CLSServerImpl</column>
+            <column name="description">CLS Server</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">CustomBOTradeFrameTab</column>
+            <column name="value">CLS</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLS">
+            <column name="name">REPORT.Types</column>
+            <column name="value">CLSPayInSchedule</column>
+            <column name="description">CLS Pay-In Schedule</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">REPORT.Types</column>
+            <column name="value">CLSTradeInfo</column>
+            <column name="description">CLS Trade Info</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">REPORT.Types</column>
+            <column name="value">CLSMessage</column>
+            <column name="description">CLS Message</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">REPORT.Types</column>
+            <column name="value">CLSAccountNotification</column>
+            <column name="description">CLS Account Notification</column>
+        </row>
+        <!-- currency groups -->
+        <row cat="CLS">
+            <column name="name">currencyGroup</column>
+            <column name="value">CLS</column>
+            <column name="description">CLS currencies</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">currencyGroup</column>
+            <column name="value">CLS_NDF</column>
+            <column name="description">CLS NDF currencies</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">currencyGroup</column>
+            <column name="value">CLS_FXOption</column>
+            <column name="description">CLS Option currencies</column>
+        </row>
+        <!-- leAttributes -->
+        <row cat="CLS">
+            <column name="name">leAttributeType</column>
+            <column name="value">CLSPartyId</column>
+            <column name="description">CLS Party Identification for the Control Branch
+                of a Settlement Members
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">leAttributeType</column>
+            <column name="value">CLSBranchId</column>
+            <column name="description">CLS Branch Identification for control or
+                submission branches
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">leAttributeType</column>
+            <column name="value">CLSControlBranch</column>
+            <column name="description">short name (Calypso) of LegalEntity acting as
+                ControlBranch
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">leAttributeType</column>
+            <column name="value">CLSMT298Format</column>
+            <column name="description">Format for MT298, unless 'tagged' a free-text
+                format will be generated
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">leAttributeType</column>
+            <column name="value">CLSMT298Trigger</column>
+            <column name="description">Triggers for MT298, a comma-separated list of
+                "trial" and "official". Undefined/empty means both.
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">leAttributeType</column>
+            <column name="value">CLSMT202TimeTag72</column>
+            <column name="description">CLSTIME should be in tag 72 instead if 13C
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">leAttributeType</column>
+            <column name="value">CLS Best Practice</column>
+            <column name="description"/>
+        </row>
+        <!-- trade/system keywords -->
+        <row cat="CLS">
+            <column name="name">tradeKeyword</column>
+            <column name="value">UpdateBOPosition</column>
+            <column name="description">If false, keep trade out of the BOPosition.
+                Treated as true if not present. Restricted to SimpleTransfer trades,
+                needs SimpleTransferDAPEventFilter
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">tradeKeyword</column>
+            <column name="value">13CTimeIndication</column>
+            <column name="description">Entry for Swift 13c field, e.g. CLSTIME, followed
+                by time and timezone offset, e.g. 0800+0200 for 8am DST in Germany
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CLS_IOSWAP</column>
+            <column name="description">CLS IO-Swap. FX Swap imported from the CLS web
+                site (both legs on same day, short leg in CLS, long leg outside)
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">systemKeyword</column>
+            <column name="value">CLS_IOSWAP</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLS">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CLS_PAY_TRADE</column>
+            <column name="description">Trade for a CLS Pay-In Schedule</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">systemKeyword</column>
+            <column name="value">CLS_PAY_TRADE</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLS">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CLS_PAY_IN_CALL</column>
+            <column name="description">Trade for a CLS Pay-In Call</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">systemKeyword</column>
+            <column name="value">CLS_PAY_IN_CALL</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLS">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CLS_SESSION</column>
+            <column name="description">Trade keyword for Settlement Session</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">tradeKeyword</column>
+            <column name="value">CLSType</column>
+            <column name="description">CLS Trade type, Client or House</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">keyword.CLSType</column>
+            <column name="value">Client</column>
+            <column name="description">Client CLS Trade type, for Third Party process</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">keyword.CLSType</column>
+            <column name="value">House</column>
+            <column name="description">House CLS Trade type, for Third Party process</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">tradeKeyword</column>
+            <column name="value">Original_Cpty</column>
+            <column name="description">Counterparty of the original Third Party Trade</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">tradeKeyword</column>
+            <column name="value">OriginalTAG20</column>
+            <column name="description">Tag 20 of the original Third Party Trade</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">tradeKeyword</column>
+            <column name="value">MT304CLSTAG53A</column>
+            <column name="description">Tag 53A of the original Third Party Trade</column>
+        </row>
+        <!-- Settlement Session -->
+        <row cat="CLS">
+            <column name="name">domainName</column>
+            <column name="value">clsSettlementSession</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLS">
+            <column name="name">clsSettlementSession</column>
+            <column name="value">MAIN</column>
+            <column name="description">Main Settlement Session</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">clsSettlementSession</column>
+            <column name="value">AMER</column>
+            <column name="description">America Settlement Session</column>
+        </row>
+        <!-- parameters -->
+        <row cat="CLS">
+            <column name="name">domainName</column>
+            <column name="value">clsParameters</column>
+            <column name="description">paramters for CLS interface</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">clsParameters</column>
+            <column name="value">RecoDelay</column>
+            <column name="description">0</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">clsParameters</column>
+            <column name="value">BatchClass</column>
+            <column name="description">Low</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">clsParameters</column>
+            <column name="value">SenderBic</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLS">
+            <column name="name">clsParameters</column>
+            <column name="value">ResponderDN</column>
+            <column name="description"></column>
+        </row>
+        <!-- matching -->
+        <row cat="CLS">
+            <column name="name">clsParameters</column>
+            <column name="value">matchAction</column>
+            <column name="description">CLS_MATCH</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">clsParameters</column>
+            <column name="value">unmatchAction</column>
+            <column name="description">CLS_UNMATCH</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">clsParameters</column>
+            <column name="value">invalidAction</column>
+            <column name="description">CLS_INVALID</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">clsParameters</column>
+            <column name="value">rejectAction</column>
+            <column name="description">CLS_REJECT</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">clsParameters</column>
+            <column name="value">investigateAction</column>
+            <column name="description">CLS_INVESTIGATE</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">clsParameters</column>
+            <column name="value">suspendAction</column>
+            <column name="description">CLS_SUSPEND</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">clsParameters</column>
+            <column name="value">settleAction</column>
+            <column name="description">SETTLE</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">clsParameters</column>
+            <column name="value">partialSettleAction</column>
+            <column name="description">PARTIAL_SETTLE</column>
+        </row>
+        <!-- trade workflow -->
+        <row cat="CLS">
+            <column name="name">workflowRuleTrade</column>
+            <column name="value">CLSCutoff</column>
+            <column name="description">checks if CLS cutoff time is not yet reached
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">workflowRuleTrade</column>
+            <column name="value">AdvanceForwardDate</column>
+            <column name="description">Advance forward date of a CLS FXSwap by 1
+                business day
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">workflowRuleTrade</column>
+            <column name="value">AdvanceSettleDate</column>
+            <column name="description">Advance forward date of a CSL trade by 1 business
+                day
+            </column>
+        </row>
+        <!-- message workflow -->
+        <row cat="CLS">
+            <column name="name">workflowRuleMessage</column>
+            <column name="value">IncomingMT398</column>
+            <column name="description">Handle incoming MT398 messages for CLS Third Party process</column>
+        </row>
+        <!-- XferAttributes -->
+        <row cat="CLS">
+            <column name="name">XferAttributes</column>
+            <column name="value">CLS_PART_STL_IDS</column>
+            <column name="description">IDs of split "sub"-trades that have been settled,
+                comma separated
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">XferAttributes</column>
+            <column name="value">CLS_SUSP_INFO</column>
+            <column name="description">Reasons for not including this transfer in
+                settlement (e.g. suspension, pending flag)
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">XferAttributes</column>
+            <column name="value">XferWorkflowType</column>
+            <column name="description">transfer workflow type</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">XferWorkflowType</column>
+            <column name="value">CLS</column>
+            <column name="description">transfer workflow for trades settling through CLS
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">XferAttributes</column>
+            <column name="value">13CTimeIndication</column>
+            <column name="description">Entry for Swift 13c field, e.g. CLSTIME, followed
+                by time and timezone offset, e.g. 0800+0200 for 8am DST in Germany
+            </column>
+        </row>
+        <!-- EXCEPTIONS -->
+        <row cat="CLS">
+            <column name="name">eventType</column>
+            <column name="value">EX_CLS_INFORMATION</column>
+            <column name="description">CLS Information.</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">exceptionType</column>
+            <column name="value">CLS_INFORMATION</column>
+            <column name="description">CLS Information.</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">eventType</column>
+            <column name="value">EX_CLS_MESSAGE_FAILURE</column>
+            <column name="description">CLS Message content validation failed due to business errors.</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">exceptionType</column>
+            <column name="value">CLS_MESSAGE_FAILURE</column>
+            <column name="description">CLS Message content validation failed due to business errors.</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">eventType</column>
+            <column name="value">EX_CLS_ACK_FAILURE</column>
+            <column name="description">Message sent to CLS was not successfully acked.</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">exceptionType</column>
+            <column name="value">CLS_ACK_FAILURE</column>
+            <column name="description">Message sent to CLS was not successfully acked.</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">eventType</column>
+            <column name="value">EX_CLS_SWIFT_ERROR</column>
+            <column name="description">Message failed after reception from SWIFT due to errors.</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">exceptionType</column>
+            <column name="value">CLS_SWIFT_ERROR</column>
+            <column name="description">Message failed after reception from SWIFT due to errors.</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">eventType</column>
+            <column name="value">EX_CLS_ALLEGED</column>
+            <column name="description">Alleged trade</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">exceptionType</column>
+            <column name="value">CLS_ALLEGED</column>
+            <column name="description">Alleged trade</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">eventType</column>
+            <column name="value">EX_CLS_RECONCILIATION</column>
+            <column name="description">Reconciliation issue for a currency</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">exceptionType</column>
+            <column name="value">CLS_RECONCILIATION</column>
+            <column name="description">Reconciliation issue for a currency</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">eventType</column>
+            <column name="value">EX_CLS_PAYMENT_FAILURE</column>
+            <column name="description">Problem while processing pay-in schedule or
+                pay-in call
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">exceptionType</column>
+            <column name="value">CLS_PAYMENT_FAILURE</column>
+            <column name="description">Problem while processing pay-in schedule or
+                pay-in call
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">eventType</column>
+            <column name="value">EX_CLS_PAY_IN_CALL</column>
+            <column name="description">Pay-in call has been received/processed</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">exceptionType</column>
+            <column name="value">CLS_PAY_IN_CALL</column>
+            <column name="description">Pay-in call has been received/processed</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">eventType</column>
+            <column name="value">EX_CLS_NOTIFICATION</column>
+            <column name="description">Problem while processing received Pay-In Notification
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">exceptionType</column>
+            <column name="value">CLS_NOTIFICATION</column>
+            <column name="description">Problem while processing received Pay-In Notification 
+            </column>
+        </row>
+        <!-- scheduled tasks -->
+        <row cat="CLS">
+            <column name="name">scheduledTask</column>
+            <column name="value">CLS_IMPORT_IOSWAPS</column>
+            <column name="description">Import CLS IO-Swaps from file</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">scheduledTask</column>
+            <column name="value">CLSCLIENT_BALANCE</column>
+            <column name="description">Create Customer Transfer for CLS Third Party process</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">scheduledTask</column>
+            <column name="value">PROCESS_CLS_TRADE</column>
+            <column name="description">Apply action on Unmatched CLS Third Party Trades</column>
+        </row>
+        <!-- message types -->
+        <row cat="CLS">
+            <column name="name">messageType</column>
+            <column name="value">CLSCONFIRM</column>
+            <column name="description">For MT304 messages to CLS</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">messageType</column>
+            <column name="value">CLS_NOSTRO_ADVICE</column>
+            <column name="description">For MT298-like messages to CLS nostro agents
+                (list of timed pay-ins or pay-outs)
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">SWIFT.Templates</column>
+            <column name="value">MT202XferAgent</column>
+            <column name="description">MT202 to a CLS Agent, for a SimpleTransfer trade
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">SWIFT.Templates</column>
+            <column name="value">MT298</column>
+            <column name="description">Proprietary Message (e.g. CLS Nostro Advice)
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">SWIFT.Templates</column>
+            <column name="value">MT398</column>
+            <column name="description">Proprietary Message (e.g. CLS Trade Third Party Advice)
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">SWIFT.Templates</column>
+            <column name="value">MT304_TPS</column>
+            <column name="description">MT304 on behalf of Third Party
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">SWIFT.Templates</column>
+            <column name="value">MT396</column>
+            <column name="description">Proprietary Message (e.g. CLS Trade Status Advice for Third Party)
+            </column>
+        </row>
+        <row cat="domain">
+            <column name="name">ExternalMessageField.MessageMapper</column>
+            <column name="value">MT398</column>
+            <column name="description"></column>
+        </row>		
+        <!-- message attributes -->
+        <row cat="CLS">
+            <column name="name">MsgAttributes</column>
+            <column name="value">CLS_ADVICE_CCY</column>
+            <column name="description">Currency for which the message to nostro must be
+                generated
+            </column>
+        </row>
+        <!-- message generation -->
+        <row cat="CLSmsg">
+            <column name="name">domainName</column>
+            <column name="value">TradeFieldsNotAmendment</column>
+            <column name="description">fields that should not cause message regeneration
+            </column>
+        </row>
+        <row cat="CLSmsg">
+            <column name="name">TradeFieldsNotAmendment</column>
+            <column name="value">_bookId</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLSmsg">
+            <column name="name">TradeFieldsNotAmendment</column>
+            <column name="value">_traderName</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLSmsg">
+            <column name="name">TradeFieldsNotAmendment</column>
+            <column name="value">_comment</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLSmsg">
+            <column name="name">TradeFieldsNotAmendment</column>
+            <column name="value">_internalReference</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLSmsg">
+            <column name="name">TradeFieldsNotAmendment</column>
+            <column name="value">_externalReference</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLSmsg">
+            <column name="name">TradeFieldsNotAmendment</column>
+            <column name="value">_salesPerson</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLSmsg">
+            <column name="name">TradeFieldsNotAmendment</column>
+            <column name="value">_mirrorTradeId</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLSmsg">
+            <column name="name">TradeFieldsNotAmendment</column>
+            <column name="value">_mirrorBookId</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLSmsg">
+            <column name="name">TradeFieldsNotAmendment</column>
+            <column name="value">_mirrorBook</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLS">
+            <column name="name">settlementMethod</column>
+            <column name="value">CLS</column>
+            <column name="description">Settlement through CLS Bank</column>
+        </row>
+        <row cat="CLS">
+            <column name="name">legalAgreementType</column>
+            <column name="value">CLS</column>
+            <column name="description"></column>
+        </row>
+        <!-- SDI selection -->
+        <row cat="CLS">
+            <column name="name">domainName</column>
+            <column name="value">settlemethodKWRestricted</column>
+            <column name="description">settlement methods that requires a SETTLE_METHOD
+                keywords (or a CLS keyword) on the trade to be selected
+                automatically
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">settlemethodKWRestricted</column>
+            <column name="value">CLS</column>
+            <column name="description">only settle trough CLS if there is a matching
+                trade keyword
+            </column>
+        </row>
+        <!-- permissions -->
+        <row cat="CLS">
+            <column name="name">function</column>
+            <column name="value">CLSMT298Generation</column>
+            <column name="description">Allow user to manually generate an MT298 for a
+                pay-in schedule
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">function</column>
+            <column name="value">CLSRunReco</column>
+            <column name="description">Allow user to manually run reconciliation for a
+                pay-in schedule
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">function</column>
+            <column name="value">CLSPayTradeGeneration</column>
+            <column name="description">Allow user to manually generate payment trades
+                for a pay-in schedule
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">function</column>
+            <column name="value">CLSSubSchedule</column>
+            <column name="description">Allow user to have sub-payIn and sub-payOut
+                generated and trades created.
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">function</column>
+            <column name="value">CLSEditSchedule</column>
+            <column name="description">Allow user to create a new revised schedule by
+                copying-editing an existing schedule
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">classAuditMode</column>
+            <column name="value">CLSTradeInfo</column>
+            <column name="description"></column>
+        </row>
+        <row cat="CLS">
+            <column name="name">sdiAttribute</column>
+            <column name="value">ClsUsage</column>
+            <column name="description">"Sweep" for the account that is not used to pay
+                but to sweep from (when paying to CLS) or to (for pay-outs)
+            </column>
+        </row>
+        <row cat="CLS">
+            <column name="name">flowType</column>
+            <column name="value">CLS_ADJUSTMENT</column>
+            <column name="description">Fee to "transfer" the CLS obligation of
+                submission branches to the control branch
+            </column>
+        </row>
+
+    </table>
+    <table name="db_relation" xmlns="">
+        <row cat="CLS">
+            <column name="parent_table">cls_schedule</column>
+            <column name="child_table">cls_schedule_item</column>
+            <column name="parent_cols">schedule_id</column>
+            <column name="child_cols">schedule_id</column>
+            <column name="relation_category">Backoffice</column>
+            <column name="special_comment">NONE</column>
+        </row>
+        <row cat="CLS">
+            <column name="parent_table">cls_schedule</column>
+            <column name="child_table">cls_reco</column>
+            <column name="parent_cols">schedule_id</column>
+            <column name="child_cols">schedule_id</column>
+            <column name="relation_category">Backoffice</column>
+            <column name="special_comment">NONE</column>
+        </row>
+    </table>
+
+</database>		

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+	<contents>
+		<element name="SplmtryData">
+			<condition>
+				<expression>!isTransfer() &amp;&amp; isBuy()</expression>
+			</condition>
+			<contents>
+				<element name="PlcAndNm">
+					<contents>
+						<text>
+							<value>/MvmntDtls/Rtr/CshColl[</value>
+						</text>
+						<report>
+							<context>
+								<to>MessageContext</to>
+							</context>
+							<column>Iteration Count</column>
+						</report>
+						<text>
+							<value>]</value>
+						</text>
+					</contents>
+				</element>
+				<element name="Envlp">
+					<contents>
+						<element name="Document">
+							<attributes>
+								<attribute name="xmlns">
+									<value>
+										<text>
+											<value>urn:lch:xsd:supl.023.001.01</value>
+										</text>
+									</value>
+								</attribute>
+							</attributes>
+							<contents>
+								<element name="LCHCollPrpslSD1">
+									<contents>
+										<element name="CshColl">
+											<contents>
+												<element name="RetExcsFlg">
+													<contents>
+														<text>
+															<value>false</value>
+														</text>
+													</contents>
+												</element>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+			</contents>
+		</element>
+	</contents>
+</template>
