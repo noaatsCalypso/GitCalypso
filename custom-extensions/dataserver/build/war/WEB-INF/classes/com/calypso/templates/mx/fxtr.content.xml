@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+    <contents>
+        <include>
+            <condition>
+                <expression>isNewMessage()</expression>
+            </condition>
+            <path>FXTradeInstruction.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>isAmendMessage()</expression>
+            </condition>
+            <path>FXTradeInstructionAmendment.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>isCancelMessage()</expression>
+            </condition>
+            <path>FXTradeInstructionCancellation.xml</path>
+        </include>
+    </contents>
+</template>

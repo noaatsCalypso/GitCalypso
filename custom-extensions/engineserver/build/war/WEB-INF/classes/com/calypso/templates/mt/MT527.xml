@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MT 527 Triparty Collateral Instruction -->
+<SwiftMsgDef>
+	<Name>MT527</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="GENL" value="GENL" modes="MMM"/>
+		<SwiftField name="Page Number" tag=":28E:" format="4!c//16x" value="PAGE_NUMBER" modes="MMM"/>
+		<SwiftField name="Sender's Reference" tag=":20C:" format=":4!c//16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Client's Collateral Instruction Reference" tag=":20C:" format=":4!c//16x" value="CLIENT_TRADE_ID" modes="OOO"/>
+		<SwiftField name="Triparty's Collateral Instruction Reference" tag=":20C:" format=":4!c//16x" value="TRIPARTY_TRADE_ID" modes="OOO"/>
+		<SwiftField name="Sender's Collateral Transaction Reference" tag=":20C:" format=":4!c//16x" value="SEND_TRADE_ID" modes="OOO"/>
+		<SwiftField name="Receiver's Collateral Transaction Reference" tag=":20C:" format=":4!c//16x" value="RECV_TRADE_ID" modes="OOO"/>
+		<SwiftField name="Function of the Message" tag=":23G:" format="4!c[/4!c]" value="MESSAGE_SUBACTION" modes="MMM"/>
+		<!-- <SwiftField name="Preparation Date/Time" tag="98A:" format=":4!c//8!n" value="PREP_DATE" modes="OOO"/>  -->
+		<SwiftField name="Execution Requested Date/Time" tag=":98A:" format=":4!c//8!n" value="EXECUTE_DATE" modes="MMM"/>
+		<SwiftField name="Collateral Instruction Type Indicator" tag=":22H:" format=":4!c//4!c" value="INSTRUCTION_TYPE" modes="MMM"/>
+		<SwiftField name="Exposure Type Indicator" tag=":22H:" format=":4!c//4!c" value="EXPOSURE_TYPE" modes="MMM"/>
+		<SwiftField name="Collateral Receive/Provide Indicator" tag=":22H:" format=":4!c//4!c" value="RECV_PROV_INDICATOR" modes="MMM"/>
+		<SwiftField name="Start of sub sequence A1" tag=":16R:" format="COLLPRTY" value="COLLPRTY" modes="MMM"/>
+		<SwiftField name="Party A" tag=":95a:" value="COLLATERAL_SENDER" modes="MMM">
+			<SwiftFieldOption letter="P" format=":4!c//4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="Q" format=":4!c//4*35x" />
+			<SwiftFieldOption letter="R" format=":4!c/8c/34x" />
+		</SwiftField>
+		<SwiftField name="Safekeeping Account" tag=":97A:" format=":4!c//35x" value="SENDER_AGENT_ACCOUNT" modes="MMM"/>
+		<SwiftField name="End of sub sequence A1" tag=":16S:" format="COLLPRTY" value="COLLPRTY" modes="MMM"/>
+		<SwiftField name="Start of sub sequence A1" tag=":16R:" format="COLLPRTY" value="COLLPRTY" modes="MMM"/>
+		<SwiftField name="Party B" tag=":95a:" value="COUNTERPARTY" modes="MMM">
+			<SwiftFieldOption letter="P" format=":4!c//4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="Q" format=":4!c//4*35x" />
+			<SwiftFieldOption letter="R" format=":4!c/8c/34x" />
+		</SwiftField>
+		<SwiftField name="RepoEdge tri-party account id" tag=":97A:" format=":4!c//35x" value="COLLATERAL_RECEIVER" modes="MMM"/>
+		<SwiftField name="End of sub sequence A1" tag=":16S:" format="COLLPRTY" value="COLLPRTY" modes="MMM"/>
+		<SwiftField name="Start of sub sequence A1" tag=":16R:" format="COLLPRTY" value="COLLPRTY" modes="MMM"/>
+		<SwiftField name="Triparty Agent" tag=":95a:" value="TRIPARTY_AGENT" modes="MMM">
+			<SwiftFieldOption letter="P" format=":4!c//4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="Q" format=":4!c//4*35x" />
+			<SwiftFieldOption letter="R" format=":4!c/8c/34x" />
+		</SwiftField>
+		<SwiftField name="End of sub sequence A1" tag=":16S:" format="COLLPRTY" value="COLLPRTY" modes="MMM"/>
+		<SwiftField name="Collateral Instruction Narrative" tag=":70E:" format=":4!c//10*35x" value="NARRATIVE" modes="OOO"/>
+		<SwiftSequence name="Repetitive Optional Subsequence A1 Linkages " modes="OOO">
+			<SwiftField name="Start of Block" tag=":16R:" format="LINK" value="LINK" modes="MMM"/>
+			<!-- <SwiftField name="Linked Transaction" tag=":13A:" format="4!c" value="???" modes="OOO"/> -->
+			<SwiftField name="Reference" tag=":20C:" format=":4!c//16x" value="MESSAGE_LINKED_ID" modes="MMM"/>
+			<SwiftField name=" " tag=":16S:" format="LINK" value="LINK" modes="MMM"/>
+		</SwiftSequence>
+		<SwiftField name="End of Block" tag=":16S:" format="GENL" value="GENL" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Optional Sequence B Deal Transaction Details  " modes="OOO">
+		<SwiftField name="Start of Block" tag=":16R:" format="DEALTRAN" value="DEALTRAN" modes="MMM"/>		
+		<SwiftField name="Closing Date/Time" tag=":98a:" value="CLOSING_DATE" modes="MMM">
+			<SwiftFieldOption letter="A" format=":4!c//8!n" />
+			<SwiftFieldOption letter="B" format=":4!c/[8c]/4!c" />
+		</SwiftField>
+		<SwiftField name="Transaction Amount" tag=":19A:" format=":4!c//[N]3!a15d" value="PRINCIPAL_AMOUNT" modes="MMM"/>
+		<SwiftField name="Termination Transaction Amount" tag=":19A:" format=":4!c//[N]3!a15d" value="TERMINATION_AMOUNT" modes="OOO"/>
+		<SwiftField name="Pricing Rate" tag=":92A:" format=":4!c//[N]15d" value="FIXED_RATE" modes="OOO"/>
+		<SwiftField name="indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="INDICATOR" modes="OOO"/>
+		<SwiftField name="End of Block" tag=":16S:" format="DEALTRAN" value="DEALTRAN" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Repetitive Optional Sequence C Securities Movement  " modes="OOO" iterator="Collateral">
+		<SwiftField name="Start of Block" tag=":16R:" format="SECMOVE" value="SECMOVE" modes="MMM"/>
+		<SwiftField name="In/Out Indicator" tag=":22H:" format=":4!c//4!c" value="COLLATERAL_IN_OUT" modes="MMM"/>
+ 		<SwiftField name="Identification of the Financial Instrument" tag=":35B:" format="ISIN1!e12!c[\n][4*35x]" value="SECURITY_DESCRIPTION" modes="+++" condition="hasISINCode()"/>
+		<SwiftField name="Identification of the Financial Instrument" tag=":35B:" format="4*35x" value="SECURITY_DESCRIPTION" modes="+++" condition="!hasISINCode()"/>
+		<SwiftField name="Quantity of Securities" tag=":36B:" format=":4!c//4!c/15d" value="COLLATERAL_QUANTITY" modes="MMM"/>
+		<SwiftField name="Collateral Flag" tag=":17B:" format=":4!c//1!a" value="COLLATERAL_FLAG" modes="MMM"/>
+		<!-- <SwiftField name="Client's Securities Movement Reference" tag=":20C:" format=":4!c//16x" value="???" modes="OOO"/> -->
+		<SwiftField name="End of Block" tag=":16S:" format="SECMOVE" value="SECMOVE" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Repetitive Optional Sequence D Cash Movement " modes="OOO">
+		<SwiftField name="Start of Block" tag=":16R:" format="CASHMOVE" value="CASHMOVE" modes="MMM"/>
+		<SwiftField name="In/Out Indicator" tag=":22H:" format=":4!c//4!c" value="CASH_IN_OUT" modes="MMM"/>
+		<SwiftField name="Cash Amount" tag=":19A:" format=":4!c//[N]3!a15d" value="PRINCIPAL_AMOUNT" modes="MMM"/>
+		<!-- <SwiftField name="Client's Cash Movement Reference" tag=":20C:" format=":4!c//16x" value="???" modes="OOO"/> -->
+		<SwiftField name="End of Block" tag=":16S:" format="CASHMOVE" value="CASHMOVE" modes="MMM"/>
+	</SwiftSequence>
+</SwiftMsgDef>

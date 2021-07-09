@@ -1,0 +1,10 @@
+<RollingFile fileName="${calypsoUserDir}${fileSeparator}${calypsoExtendedAppName}_${calypsoEnvName}_EXECUTION_${calypsoVersion}.log" filePattern="${calypsoUserDir}${fileSeparator}${calypsoExtendedAppName}_${calypsoEnvName}_EXECUTION_${calypsoVersion}.log.%i.zip" name="Monitoring.CalculationServer_APPENDER">
+  <PatternLayout pattern="%X{EVENTOCCUREDTIME}${sys:calypso.logdelim}%X{RESPONSETIME}${sys:calypso.logdelim}%X{SOURCE}${sys:calypso.logdelim}%X{NEWTRADECOUNT}${sys:calypso.logdelim}%X{MODTRADECOUNT}${sys:calypso.logdelim}%X{REMTRADECOUNT}${sys:calypso.logdelim}%X{JOBSCOUNT}${sys:calypso.logdelim}%X{ROWSCOUNT}${sys:calypso.logdelim}%X{TRADELOADINGTIME}${sys:calypso.logdelim}%X{BUILDMKTDATADEPENDENCIESTIME}${sys:calypso.logdelim}%X{GENERATEHEADERTIME}${sys:calypso.logdelim}%X{CREATEDATASTORETIME}${sys:calypso.logdelim}%X{ANALYSISRUNTIME}${sys:calypso.logdelim}%X{ANALYSISRESULTTRANSLATIONTIME}${sys:calypso.logdelim}%X{SAVERESULTSTIME}${sys:calypso.logdelim}%X{MARKCOMPLETIONTIME}${sys:calypso.logdelim}%X{SERVICEID}${sys:calypso.logdelim}%X{SERVICEDESC}${sys:calypso.logdelim}%X{CLIENTDESC}${sys:calypso.logdelim}%X{BEGINFREEMEMORY}${sys:calypso.logdelim}%X{ENDFREEMEMORY}${sys:calypso.logdelim}%X{TOTALMEMORY}${sys:calypso.logdelim}%m%n"></PatternLayout>
+  <Policies>
+    <OnStartupTriggeringPolicy/>
+    <SizeBasedTriggeringPolicy size="${sys:calypso.maxfilesize}"/>
+  
+          <!-- TODO: unit (allowed B (default), KB, MB, GB) -->
+        </Policies>
+  <DefaultRolloverStrategy max="${sys:calypso.maxbackupindex}" min="1"/>
+</RollingFile>

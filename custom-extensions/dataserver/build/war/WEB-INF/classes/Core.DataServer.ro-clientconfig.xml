@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd" default-lazy-init="true" >
+
+	<!-- <bean id="RODSConnection" class="com.calypso.tk.service.DSConnection" lazy-init="true" init-method="init" depends-on="tokenFactory"> -->
+	<bean id="RODSConnection" class="com.calypso.tk.service.RODSConnection" lazy-init="true" depends-on="tokenFactory">
+ 		<!-- <property name="serviceURL" value="rmi://${RODS_SERVERHOST}:${RODS_RMI_REGISTRY_PORT}/" /> -->
+ 		
+ 		<!-- defined in PropertyConfiguration.xml -->
+ 		<property name="jndiPattern" value="${JNDI_PATTERN}"/>
+ 		
+ 		<!-- RODS specific properties -->
+ 		<property name="readOnly" value="true"/>
+ 		
+ 		<!-- for the DS services in the container we dont need this anymore--> 
+		<property name="rmiProxyProps">
+ 			<bean parent="rmiClientProperties">
+ 				<property name="deployedServerName" value="Read Only Data Server" />
+ 			</bean>		
+ 		</property>
+ 		<property name="remoteInvocationFactory">
+ 			<bean class="com.calypso.infra.authentication.context.rmi.ContextPropagatingRemoteInvocationFactory">
+ 				<property name="tokenRetriever">
+ 					<bean class="com.calypso.infra.authentication.context.rmi.StaticTokenRetriever">
+ 						<property name="tokenFactory" ref="tokenFactory" />
+ 					</bean>
+ 				</property>
+ 			</bean>
+ 		</property>
+	</bean>
+	
+</beans>

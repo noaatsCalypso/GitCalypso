@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by Syed Irfan Hashmi (Calypso Technology Inc.) -->
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Syed Irfan Hashmi (Calypso Technology Inc.) -->
+<xsd:schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.calypso.com/xml/common" targetNamespace="http://www.calypso.com/xml/common" elementFormDefault="unqualified" attributeFormDefault="unqualified" jaxb:version="1.0">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<!--<jaxb:globalBindings collectionType="java.util.Vector"/>-->
+			<jaxb:schemaBindings>
+				<jaxb:package name="com.calypso.bridge.object.common.xml"/>
+				<jaxb:nameXmlTransform>
+					<jaxb:typeName suffix="XML"/>
+					<jaxb:elementName suffix="XML"/>
+				</jaxb:nameXmlTransform>
+			</jaxb:schemaBindings>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:complexType name="interface">
+		<xsd:annotation>
+			<xsd:documentation>Provides information for interfacing</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="action" default="NEW">
+				<xsd:annotation>
+					<xsd:documentation>This field is used to know if this incoming object is a new input, an update of an existing object or an instruction of deletion</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:whiteSpace value="preserve"/>
+						<xsd:enumeration value="NEW"/>
+						<xsd:enumeration value="UPDATE"/>
+						<xsd:enumeration value="DELETE"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="intRef" default="0" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>This field is the Calypso internal unique key to refer to this Object</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:int"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="extRef">
+				<xsd:annotation>
+					<xsd:documentation>This field must be used to store the reference of this object in the external system</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+						<xsd:maxLength value="255"/>
+						<xsd:whiteSpace value="preserve"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="roles">
+		<xsd:annotation>
+			<xsd:documentation>Creates a list of roles. It needs at least one component to be valid</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="role" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>This field defines the role of a Legal Entity, it can be for example Agent, CounterParty and so on</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:whiteSpace value="preserve"/>
+						<xsd:pattern value="[a-zA-Z0-9 _]{1,255}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="products">
+		<xsd:annotation>
+			<xsd:documentation>Creates a list of products. It needs at least one component to be valid</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="product" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>This field is a product defined in the Domain Value productType</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:whiteSpace value="preserve"/>
+						<xsd:pattern value="[a-zA-Z0-9 _]{1,64}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="holidays">
+		<xsd:annotation>
+			<xsd:documentation>Creates a list of holidays. It needs at least one component to be valid</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="holiday" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>This field is the Holiday Code defining an Holiday object</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[A-Z_]{1,32}"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="currencies">
+		<xsd:annotation>
+			<xsd:documentation>Creates a list of currencies. It needs at least one component to be valid</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="currency" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>This field is the Currency Code defining an Currency object</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="ns1:currency">
+						<xsd:whiteSpace value="preserve"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="superTinyAttributes">
+		<xsd:annotation>
+			<xsd:documentation>Creates a list of attributes made of a name (size=32) and a value (size=32) used for Books</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="attribute" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="attributeName">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:whiteSpace value="preserve"/>
+									<xsd:minLength value="1"/>
+									<xsd:maxLength value="64"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="attributeValue">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:whiteSpace value="preserve"/>
+									<xsd:minLength value="1"/>
+									<xsd:maxLength value="64"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="tinyAttributes">
+		<xsd:annotation>
+			<xsd:documentation>Creates a list of attributes made of a name (size=64) and a value (size=64) used for Accounts</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="attribute" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="attributeName">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:whiteSpace value="preserve"/>
+									<xsd:minLength value="1"/>
+									<xsd:maxLength value="64"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="attributeValue">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:whiteSpace value="preserve"/>
+									<xsd:minLength value="1"/>
+									<xsd:maxLength value="64"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="smallAttributes">
+		<xsd:annotation>
+			<xsd:documentation>Creates a list of attributes made of a name (size=32) and a value (size=255)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="attribute" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="attributeName">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:whiteSpace value="preserve"/>
+									<xsd:minLength value="1"/>
+									<xsd:maxLength value="32"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="attributeValue">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:whiteSpace value="preserve"/>
+									<xsd:minLength value="1"/>
+									<xsd:maxLength value="255"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="mediumAttributes">
+		<xsd:annotation>
+			<xsd:documentation>Creates a list of attributes made of a name (size=128) and a value (size=255)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="attribute" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="attributeName">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:whiteSpace value="preserve"/>
+									<xsd:minLength value="1"/>
+									<xsd:maxLength value="128"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="attributeValue">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:whiteSpace value="preserve"/>
+									<xsd:minLength value="1"/>
+									<xsd:maxLength value="255"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="largeAttributes">
+		<xsd:annotation>
+			<xsd:documentation>Creates a list of attributes made of a name (size=255) and a value (size=255)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="attribute" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="attributeName">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:whiteSpace value="preserve"/>
+									<xsd:minLength value="1"/>
+									<xsd:maxLength value="255"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="attributeValue">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:whiteSpace value="preserve"/>
+									<xsd:minLength value="1"/>
+									<xsd:maxLength value="255"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="reportAttributes">
+		<xsd:annotation>
+			<xsd:documentation>Creates a list of attributes made for Report Templates</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="attribute" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="attributeName" type="xsd:string"/>
+						<xsd:element name="attributeValue" type="xsd:string"/>
+						<xsd:element name="attributeClass" type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="legalEntityReference">
+		<xsd:annotation>
+			<xsd:documentation>Creates a reference to a LegalEntity either through its short name or through its external reference</xsd:documentation>
+		</xsd:annotation>
+		<xsd:all>
+			<xsd:element name="useExternalReference" type="xsd:boolean" default="false"/>
+			<xsd:element name="reference">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+						<xsd:maxLength value="255"/>
+						<xsd:whiteSpace value="preserve"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="accountReference">
+		<xsd:annotation>
+			<xsd:documentation>Creates a reference to an Account either through its short name or through its external reference</xsd:documentation>
+		</xsd:annotation>
+		<xsd:all>
+			<xsd:element name="useExternalReference" type="xsd:boolean" default="false"/>
+			<xsd:element name="reference">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+						<xsd:maxLength value="64"/>
+						<xsd:whiteSpace value="preserve"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:simpleType name="tenor">
+		<xsd:annotation>
+			<xsd:documentation>Creates a Tenor: [0-9]*[Y,M,W,D]</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:whiteSpace value="preserve"/>
+			<xsd:pattern value="[0-9]*[Y,M,W,D]"/>
+			<xsd:enumeration value=""/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="currency">
+		<xsd:annotation>
+			<xsd:documentation>Creates a Currency: [A-Z]{1,3}</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:whiteSpace value="preserve"/>
+			<xsd:pattern value="[A-Z]{1,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="dayLag">
+		<xsd:annotation>
+			<xsd:documentation>Creates an element for Day Lag</xsd:documentation>
+		</xsd:annotation>
+		<xsd:all>
+			<xsd:element name="numberOfDay" type="xsd:int" default="0"/>
+			<xsd:element name="businessDay" type="xsd:boolean" default="false"/>
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="rateIndex">
+		<xsd:annotation>
+			<xsd:documentation>Creates a RateIndex</xsd:documentation>
+		</xsd:annotation>
+		<xsd:all>
+			<xsd:element name="currency" type="ns1:currency"/>
+			<xsd:element name="name">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+						<xsd:maxLength value="32"/>
+						<xsd:whiteSpace value="preserve"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="tenor" type="ns1:tenor"/>
+			<xsd:element name="source">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="1"/>
+						<xsd:maxLength value="32"/>
+						<xsd:whiteSpace value="preserve"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="price">
+		<xsd:annotation>
+			<xsd:documentation>This is a Price type made of an Amount and a Currency</xsd:documentation>
+		</xsd:annotation>
+		<xsd:all>
+			<xsd:element name="amount">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:double"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="currency" type="ns1:currency"/>
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="decimals">
+		<xsd:annotation>
+			<xsd:documentation>This is a number of decimals and its rounding method</xsd:documentation>
+		</xsd:annotation>
+		<xsd:all>
+			<xsd:element name="numberOfDecimals" type="xsd:int"/>
+			<xsd:element name="roundingMethod">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:whiteSpace value="preserve"/>
+						<xsd:enumeration value="NONE"/>
+						<xsd:enumeration value="NEAREST"/>
+						<xsd:enumeration value="UP"/>
+						<xsd:enumeration value="DOWN"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:all>
+	</xsd:complexType>
+</xsd:schema>

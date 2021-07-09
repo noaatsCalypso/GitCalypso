@@ -1,0 +1,442 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+
+<!--calypso>
+if (|MESSAGE_ACTION| == "confirm") {
+  inline "I am pleased to confirm the details of the following |PRODUCT_TYPE| |UNDERLYING_TYPE| trade:";
+}
+if (|MESSAGE_ACTION| == "amend") {
+  inline "I am pleased to confirm the amended details of the following |PRODUCT_TYPE| |UNDERLYING_TYPE| trade:";
+}
+if (|MESSAGE_ACTION| == "cancel") {
+  inline "Please be advised that the following |PRODUCT_TYPE| |UNDERLYING_TYPE| trade has been canceled:";
+}
+</calypso-->
+
+
+<b><u><p>Trade details:</u> <br />
+&nbsp; </p></b>
+<TABLE CELLSPACING=1 WIDTH=623>
+
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Our Trade Id</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|TRADE_ID|</TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Instrument Description</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|PRODUCT_DESCRIPTION|</TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Buyer</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|TRADE_BUYER_NAME|</TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Seller</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|TRADE_SELLER_NAME|</TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Trade Date</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|TRADE_DATE|</TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Forward Start Fixing Valuation Date</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|FXFWSTART_RESET_DATETIME|</TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Forward Start Fixing Rate Reset Source</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|FXFWSTART_RESET_SOURCE|</TD>
+</TR>
+<!--calypso>
+if (NOTEMPTY |BPSOVER_FIXING_NEAR| ) {
+inline "
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Near Leg Pts</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|BPSOVER_FIXING_NEAR|</TD>
+</TR>
+";
+}
+if (NOTEMPTY |PERCENTOVER_FIXING_NEAR| ) {
+inline "
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Near Leg Pct</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|PERCENTOVER_FIXING_NEAR|</TD>
+</TR>
+";
+}
+if (NOTEMPTY |BPSOVER_FIXING_FAR| ) {
+inline "
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Far Leg Pts</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|BPSOVER_FIXING_FAR|</TD>
+</TR>
+";
+}
+if (NOTEMPTY |PERCENTOVER_FIXING_FAR| ) {
+inline "
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Far Leg Pct</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|PERCENTOVER_FIXING_FAR|</TD>
+</TR>
+";
+}
+</calypso--> 
+
+
+<!--calypso>
+if (|UNDERLYING_TYPE| == "FXForward") {
+inline "
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Settlement Date</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|SETTLE_DATE|</TD>
+</TR>
+";
+}
+</calypso-->
+
+<!--calypso>
+if ((|IS_FX_SPLIT_DATE| == "true") && (|UNDERLYING_TYPE| == "FXForward")){
+inline "
+<TR><TD><p>Split Settlement Date</p></TD>
+<TD><p>|FX_SPLIT_DATE|</p></TD>
+</TR>
+";
+}
+</calypso-->
+
+<!--calypso>
+if ((|UNDERLYING_TYPE| == "FXForward") && Trade.quantity > 0) {
+inline "
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Bought Amount</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|FX_BUY_CURRENCY| |FX_BUY_AMOUNT|</TD>
+</TR>
+";
+}
+</calypso-->
+
+<!--calypso>
+if ((|UNDERLYING_TYPE| == "FXForward") && Trade.quantity < 0) {
+inline "
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Sold Amount</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|FX_SELL_CURRENCY| |FX_SELL_AMOUNT|</TD>
+</TR>
+";
+}
+</calypso-->
+
+
+<!--calypso>
+if (|UNDERLYING_TYPE| == "FXNDF") {
+inline "
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'><p>Reference Currency</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'><p>|FXNDF_REF_CCY|</TD></TR>
+";
+}
+</calypso-->
+
+<!--calypso>
+if ((|UNDERLYING_TYPE| == "FXNDF") && (|IS_QUANTO| == "false"))
+{
+inline "
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement Currency</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_SETTLE_CCY|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement Notional Amount</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_SETTLE_CCY| |FXNDF_DELIVERABLE_AMOUNT|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement Date</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|SETTLE_DATE|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement</TD><TD WIDTH=59% VALIGN=MIDDLE><p>Non-Deliverable.</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Rate Reset Source</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_SOURCE|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Valuation Date</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_DATETIME| </TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Relevant City for Business Day for Valuation Date</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_TIMEZONE|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Relevant City for Business Day for Settlement Date</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_SETTLE_CCY_TIMEZONE|</TD></TR>
+";
+}
+</calypso-->
+
+
+<!--calypso>
+if ((|UNDERLYING_TYPE| == "FXNDF") && (|IS_QUANTO| == "true")) {
+inline "
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Fixing Currency</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_SETTLE_CCY|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Fixing Notional Amount</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_SETTLE_CCY| |FXNDF_DELIVERABLE_AMOUNT|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Fixing Rate Reset Source</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_SOURCE|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Fixing Valuation Date</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_DATETIME| </TD>
+</TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Relevant City for Business Day for Fixing Valuation Date</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_TIMEZONE|</TD>
+</TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Quanto Settlement Currency</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_QUANTO_CCY|</TD>
+</TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Quanto Rate Reset Source</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_QUANTO_RESET_SOURCE|</TD>
+</TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Quanto Valuation Date</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_QUANTO_RESET_DATETIME| </TD>
+</TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Relevant City for Business Day for Quanto Valuation Date</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_QUANTO_RESET_TIMEZONE|</TD>
+</TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement Date</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|SETTLE_DATE|</TD>
+</TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>Non-Deliverable.</TD>
+</TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Relevant City for Business Day for Settlement Date</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_QUANTO_SETTLE_CCY_TIMEZONE|</TD></TR>
+";
+}
+</calypso-->
+
+<!--calypso>
+if (|UNDERLYING_TYPE| == "FXNDF") {
+inline "
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'><p>Calculation Agent</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'><p>|SENDER_FULL_NAME| and |RECEIVER_FULL_NAME|</TD></TR>
+";
+}
+</calypso-->
+
+
+<!--calypso>
+if ((|UNDERLYING_TYPE| == "FXNDF") && (|IS_FX_SPLIT_DATE| == "true")) {
+inline "<TR><TD><p>Split Settlement Date</p></TD>
+<TD><p>|FX_SPLIT_DATE|</p></TD></TR>
+";
+}
+</calypso-->
+
+
+<!--calypso>
+if (|UNDERLYING_TYPE| == "FXNDF") {
+inline "
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Broker</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|BROKER_FULL_NAME|</TD>
+</TR>
+";
+}
+</calypso-->
+
+
+
+</table>
+
+
+<!--calypso>
+if (|UNDERLYING_TYPE| == "FXSwap") {
+inline "
+<p>&nbsp;</p><b><u><p>First Leg Details</p></u></b>
+<TABLE BORDER=0 CELLSPACING=1 WIDTH=622>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'><p>Settlement Date</TD>
+<TD WIDTH='2%' VALIGN='MIDDLE'><p>:</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'><p>|FX_SETTLE_DATE|</TD></TR>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'><p>Split Spot Settlement Date</TD>
+<TD WIDTH='2%' VALIGN='MIDDLE'><p>:</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'><p>|FX_SPLIT_DATE|</TD></TR>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'><p>Bought Amount</TD>
+<TD WIDTH='2%' VALIGN='MIDDLE'><p>:</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'><p>|FX_BUY_CURRENCY| |FX_BUY_AMOUNT|</TD></TR>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'><p>Sold Amount</TD>
+<TD WIDTH='2%' VALIGN='MIDDLE'><p>:</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'><p>|FX_SELL_CURRENCY| |FX_SELL_AMOUNT|</TD></TR>
+</TABLE>
+<p>&nbsp; </p>
+<b><u><p>Second Leg Details</p></u></b>
+<TABLE BORDER=0 CELLSPACING=1 WIDTH=622><TR><TD WIDTH='39%' VALIGN='MIDDLE'><p>Settlement Date</TD>
+<TD WIDTH='2%' VALIGN='MIDDLE'><p>:</TD><TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|FWD_SETTLE_DATE|</TD>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'><p>Bought Amount</TD>
+<TD WIDTH='2%' VALIGN='MIDDLE'><p>:</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|FX_SELL_CURRENCY| |FXFWD_BUY_AMOUNT|</TD></TR></TR>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'><p>Split Forward Settlement Date</TD>
+<TD WIDTH='2%' VALIGN='MIDDLE'><p>:</TD><TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|FX_SPLIT_FWDDATE|</TD></TR>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'><p>Sold Amount</TD>
+<TD WIDTH='2%' VALIGN='MIDDLE'><p>:</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'><p>|FX_BUY_CURRENCY| |FXFWD_SELL_AMOUNT|</TD></TR>
+</TR>
+</TABLE>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>|ADDITIONAL_FIXED_AMOUNT|</p>
+";
+}
+</calypso-->
+
+
+
+<!--calypso>
+if (|UNDERLYING_TYPE| == "FXNDFSwap") {
+inline "
+<b><u><p>Near Leg Details</p></u></b>
+<TABLE CELLSPACING=1 WIDTH=623>
+";
+}
+</calypso-->
+
+<!--calypso>
+if ((|UNDERLYING_TYPE| == "FXNDFSwap") && (|IS_QUANTO| == "false")) {
+inline "<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement Currency</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_SETTLE_CCY_NEAR|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement Notional Amount</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_SETTLE_CCY_NEAR| |FXNDF_DELIVERABLE_AMOUNT_NEAR|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement Date</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|SETTLE_DATE_NEAR|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>Non-Deliverable.</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Rate Reset Source</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_SOURCE_NEAR|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Valuation Date</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_DATETIME_NEAR| </TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Relevant City for Business Day for Valuation Date</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_TIMEZONE_NEAR|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Relevant City for Business Day for Settlement Date</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_SETTLE_CCY_TIMEZONE_NEAR|</TD></TR>
+";
+}
+</calypso-->
+
+
+
+<!--calypso>
+if ((|UNDERLYING_TYPE| == "FXNDFSwap") && (|IS_QUANTO| == "true")) {
+inline "<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Fixing Currency</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_SETTLE_CCY_NEAR|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Fixing Notional Amount</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_SETTLE_CCY_NEAR| |FXNDF_DELIVERABLE_AMOUNT_NEAR|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Fixing Rate Reset Source</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_SOURCE_NEAR|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Fixing Valuation Date</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_DATETIME_NEAR| </TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Relevant City for Business Day for Fixing Valuation Date</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_TIMEZONE_NEAR|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Quanto Settlement Currency</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_QUANTO_CCY_NEAR|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Quanto Rate Reset Source</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_QUANTO_RESET_SOURCE_NEAR|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Quanto Valuation Date</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_QUANTO_RESET_DATETIME_NEAR|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Relevant City for Business Day for Quanto Valuation Date</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_QUANTO_RESET_TIMEZONE_NEAR|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement Date</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|SETTLE_DATE_NEAR|</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>Non-Deliverable.</TD></TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Relevant City for Business Day for Settlement Date</TD>
+<TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_QUANTO_SETTLE_CCY_TIMEZONE_NEAR|</TD></TR>
+";
+}
+</calypso-->
+
+<!--calypso>
+if (|UNDERLYING_TYPE| == "FXNDFSwap") {
+inline "
+</TABLE>
+<b><u><p>Far Leg Details</p></u></b>
+<TABLE CELLSPACING=1 WIDTH=623>
+";
+}
+</calypso-->
+
+<!--calypso>
+if ((|UNDERLYING_TYPE| == "FXNDFSwap") && (|IS_QUANTO| == "false")) {
+inline "
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement Currency</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_SETTLE_CCY_FAR|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement Notional Amount</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_SETTLE_CCY_FAR| |FXNDF_DELIVERABLE_AMOUNT_FAR|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement Date</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|SETTLE_DATE_FAR|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement</TD><TD WIDTH=59% VALIGN=MIDDLE><p>Non-Deliverable.</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Rate Reset Source</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_SOURCE_FAR|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Valuation Date</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_DATETIME_FAR|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Relevant City for Business Day for Valuation Date</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_TIMEZONE_FAR|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Relevant City for Business Day for Settlement Date</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_SETTLE_CCY_TIMEZONE_FAR|</TD></TR>
+";
+}
+</calypso-->
+
+
+<!--calypso>
+if ((|UNDERLYING_TYPE| == "FXNDFSwap") && (|IS_QUANTO| == "true")) {
+inline "
+<TR><TD WIDTH=39% VALIGN=MIDDLE><p>Fixing Currency</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_SETTLE_CCY_FAR|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Fixing Notional Amount</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_SETTLE_CCY_FAR| |FXNDF_DELIVERABLE_AMOUNT_NEAR|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Fixing Rate Reset Source</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_SOURCE_FAR|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Fixing Valuation Date</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_DATETIME_FAR| </TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Relevant City for Business Day for Fixing Valuation Date</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_RESET_TIMEZONE_FAR|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Quanto Settlement Currency</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_QUANTO_CCY_FAR|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Quanto Rate Reset Source</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_QUANTO_RESET_SOURCE_FAR|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Quanto Valuation Date</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_QUANTO_RESET_DATETIME_FAR|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Relevant City for Business Day for Quanto Valuation Date</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_QUANTO_RESET_TIMEZONE_FAR|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement Date</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|SETTLE_DATE_FAR|</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Settlement</TD><TD WIDTH=59% VALIGN=MIDDLE><p>Non-Deliverable.</TD></TR><TR><TD WIDTH=39% VALIGN=MIDDLE><p>Relevant City for Business Day for Settlement Date</TD><TD WIDTH=59% VALIGN=MIDDLE><p>|FXNDF_QUANTO_SETTLE_CCY_TIMEZONE_FAR|</TD></TR>
+";
+}
+</calypso-->
+
+<!--calypso>
+if (|UNDERLYING_TYPE| == "FXNDFSwap") {
+inline "
+</TABLE>
+<b><u><p>Other Details</p></u></b>
+<TABLE CELLSPACING=1 WIDTH=623><TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Calculation Agent</TD><TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|SENDER_FULL_NAME| and |RECEIVER_FULL_NAME|</TD></TR>
+";
+}
+</calypso-->
+
+<!--calypso>
+if ((|UNDERLYING_TYPE| == "FXNDFSwap") && (|IS_FX_SPLIT_DATE| == "true")) {
+inline "<TR><TD><p>Split Settlement Date</p></TD>
+<TD><p>|FX_SPLIT_DATE|</p></TD></TR>
+";
+}
+</calypso-->
+
+<!--calypso>
+if (|UNDERLYING_TYPE| == "FXNDFSwap"){
+inline "<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Broker</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|BROKER_FULL_NAME|</TD>
+</TR>
+</TABLE>
+<p>&nbsp; </p>
+";
+}
+</calypso-->
+
+
+
+<!--calypso>
+if(|HAS_ADDITIONAL_FIXED_AMOUNT| != "No") {
+    inline "<p><b><u>Additional Fixed Amount</u></b></p>";
+    inline "<table CELLSPACING=0 BORDER=0 WIDTH=624>";
+    iterator("FixedFees")
+        inline "
+		<tr><td width=39% valign=MIDDLE><p>Fixed Rate Payer:</td><td width=59% valign=MIDDLE><p>|ADDITIONAL_FIXED_AMOUNT_PAYER|</td></tr>
+        <tr><td width=39%><p>Fixed Rate Amount:</td><td width=59%><p>|ADDITIONAL_FIXED_AMOUNT_AMOUNT|</td></tr>
+        <tr><td width=39%><p>Fixed Rate Payment Date:</td><td width=59%><p>|ADDITIONAL_FIXED_AMOUNT_DATE|</td></tr>
+		";
+    inline "</table>";
+}
+</calypso-->
+
+
+<b><u> Settlement Instructions</p></u></b>
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=624>
+<TR><TD WIDTH='38%' VALIGN='MIDDLE'><p>Payment to |SENDER_CODE| :</TD>
+<TD WIDTH='62%' VALIGN='MIDDLE'><p>|PO_INSTRUCTIONS|</TD></TR>
+<TR><TD WIDTH='38%' VALIGN='MIDDLE'><p>Payment to |RECEIVER_CODE| :</TD>
+<TD WIDTH='62%' VALIGN='MIDDLE'><p>|COUNTERPARTY_INSTRUCTIONS|</TD></TR>
+</TABLE>
+
+<p>&nbsp; </p>
+
+
+<p><!---End Account Details Table-->Please sign and return 
+this Confirmation as soon as possible to help safeguard against erroneous 
+settlement.</p>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

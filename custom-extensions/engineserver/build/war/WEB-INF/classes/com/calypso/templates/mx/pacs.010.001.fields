@@ -1,0 +1,9 @@
+AppHeader\ To\ BICFI=//AppHdr/To/FIId/FinInstnId/BICFI/text()
+AppHeader\ To\ OrgId\ AnyBIC=//AppHdr/To/OrgId/Id/OrgId/AnyBIC/text()
+AppHeader\ From\ BICFI=//AppHdr/Fr/FIId/FinInstnId/BICFI/text()
+AppHeader\ From\ OrgId\ AnyBIC=//AppHdr/Fr/OrgId/Id/OrgId/AnyBIC/text()
+Instructed\ Agt\ BIC=//Document/FIDrctDbt/CdtInstr/InstdAgt/FinInstnId/BICFI/text()
+Instructing\ Agt\ BIC=//Document/FIDrctDbt/CdtInstr/InstgAgt/FinInstnId/BICFI/text()
+Settlement\ Amount=//Document/FIDrctDbt/CdtInstr/DrctDbtTxInf/IntrBkSttlmAmt/text()
+Settlement\ Amount\ Ccy=//Document/FIDrctDbt/CdtInstr/DrctDbtTxInf/IntrBkSttlmAmt/@Ccy
+Settlement\ Date=//Document/FIDrctDbt/CdtInstr/DrctDbtTxInf/IntrBkSttlmDt/text()

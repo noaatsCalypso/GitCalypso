@@ -1,0 +1,11 @@
+apply plugin: 'calypso-java-project'
+
+dependencies {
+	compile project(':custom-shared-lib')
+	provided project(':dataserver')
+
+    // Required as provided dependency for building EJB service.  This should not be packaged in deployment
+    provided "javax:javaee-api:7.0"
+}
+
+ext.deployment="dataserver"

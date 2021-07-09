@@ -1,0 +1,18 @@
+mq.dtccgtr.hostname=localhost
+mq.dtccgtr.port=1414
+mq.dtccgtr.appiddatauser=12345678
+mq.dtccgtr.appiddatapass=ABCDEFGH
+mq.dtccgtr.queuemanager=U04T33100
+mq.dtccgtr.channel=SYSTEM.DEF.SVRCONN
+output.queue.name=SDR.FPML_IN.RMT01
+SDR.FPML_IN.RMT01.queue.setContext=true
+
+# Testing a TCP client connection
+jms.url=file:///var/mqm/JNDI-Directory/
+jms.modetypeclass=com.sun.jndi.fscontext.RefFSContextFactory
+jms.queue.connectionFactory=JMS_TCP
+jms.queue.connectionUserName=mqm
+jms.queue.connnectionPassword=mqm
+input.queue.name=RECV.GTR
+RECV.GTR.queue.ackType=auto
+RECV.GTR.queue.transacted=true

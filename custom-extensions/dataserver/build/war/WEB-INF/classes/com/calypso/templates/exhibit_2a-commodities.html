@@ -1,0 +1,199 @@
+<!---Start Exhibit II-A - Commodity Swap ISDA 2005 -->
+
+<p>
+The terms of the particular Transaction to which this Confirmation relates are as follows:
+</p>
+
+<table>
+<tr>
+	<td>Trade Date:</td>
+	<td>|TRADE_DATE|</td>
+</tr>
+<tr>
+	<td>Effective Date:</td>
+	<td>|COMMODITY_START_DATE|</td>
+</tr>
+<tr>
+	<td>Termination Date:</td>
+	<td>|PRODUCT_MATURITYDATE|</td>
+</tr>
+<tr>
+	<td>Commodity:</td>
+	<td>|COMMODITY_TYPE|</td>
+</tr>
+<tr>
+	<td>Notional Quantity per<br>Calculation Period:</td>
+	<td>|COMMODITY_QTY_PER_PERIOD|</td>
+</tr>
+<tr>
+	<td>Total Notional Quantity:</td>
+	<td>|SWAP_NOTIONAL_QUANTITY|</td>
+</tr>
+<tr>
+	<td>Calculation Period:</td>
+	<td>|COMMODITY_CALC_PERIOD|</td>
+</tr>
+<tr>
+    <td>Settlement Method:</td>
+    <td>|SETTLEMENT_METHOD|</td>
+</tr>
+
+<tr>
+	<td>Settlement Date(s):</td>
+	<td>|SETTLEMENT_DATES| </td>
+</tr>
+<tr>
+	<td>Business Day Convention:</td>
+	<td>|COMMODITY_PRICING_DATE_ROLL|</td>
+</tr>
+
+<tr>
+	<td>Payment Lag:</td>
+	<td>|COMMODITY_PYMT_LAG|</td>
+</tr>
+
+<tr>
+	<td colspan="2"><br/><b>Fixed Amount Details:</b></td>
+</tr>
+
+<tr>
+	<td>Fixed Rate Payer:</td>
+	<td>|FIX_PAYER_CODE|</td>
+</tr>
+<tr>
+	<td>Fixed Rate:</td>
+	<td>|FIX_FIXED_RATE| </td>
+</tr>
+
+<tr>
+	<td colspan="2"><br/><b>Floating Amount Details:</b></td>
+</tr>
+
+<tr>
+	<td>Floating Rate Payer:</td>
+	<td>|FLT_PAYER_CODE|</td>
+</tr>
+
+<!--calypso>
+if ( |HAS_REFERENCE_PRICE| == "true")
+    inline "
+<tr>
+	<td>Commodity Reference Price:</td>
+	<td>|COMMODITY_RESET_REFERENCE_PRICE|</td>
+</tr>
+    ";
+else
+    inline "
+<tr>
+	<td>Commodity:</td>
+	<td>|COMMODITY_TYPE|</td>
+</tr>
+<tr>
+	<td>Unit:</td>
+	<td>|COMMODITY_UNIT|</td>
+</tr>
+<tr>
+	<td>Currency:</td>
+	<td>|COMMODITY_CCY|</td>
+</tr>
+    ";
+</calypso-->
+</table>
+
+<p>Pay leg Amount Details:</p>
+<table>
+	<tr>	
+	    <th>Start Date</th>
+	    <th>End Date</th>
+	    <th>Settlement Date</th>
+	    <th>Notional Quantity in Units of Commodity</th>
+		<th>Price</th>
+	</tr>
+<!--calypso>
+iterator ( "CashFlowCommodityPayLeg" )
+    inline "
+	<tr>
+		<td>|CASHFLOW_START_DATE|</td>
+		<td>|CASHFLOW_END_DATE|</td>
+		<td>|CASHFLOW_DATE|</td>
+		<td>|CASHFLOW_DEAL_QUANTITY|</td>
+		<td>|CASHFLOW_FIXING_PRICE|</td>
+	</tr>
+	";
+</calypso-->
+</table>
+
+<p>Receive leg Amount Details:</p>
+<table>
+	<tr>	
+	    <th>Start Date</th>
+	    <th>End Date</th>
+	    <th>Settlement Date</th>
+	    <th>Notional Quantity in Units of Commodity</th>
+		<th>Price</th>
+	</tr>
+<!--calypso>
+iterator ( "CashFlowCommodityReceiveLeg" )
+    inline "
+	<tr>
+		<td>|CASHFLOW_START_DATE|</td>
+		<td>|CASHFLOW_END_DATE|</td>
+		<td>|CASHFLOW_DATE|</td>
+		<td>|CASHFLOW_DEAL_QUANTITY|</td>
+		<td>|CASHFLOW_FIXING_PRICE|</td>
+	</tr>
+	";
+</calypso--> 
+</table>
+
+
+<table>	
+<tr>
+	<td>Spread:</td>
+	<td>|COMMODITY_FLT_SPREAD|</td>
+</tr>
+
+<tr>
+	<td>Specified Price:</td>
+	<td>Average</td>
+</tr>
+
+<tr>
+	<td>Delivery Date:</td>
+	<td>Spot Market</td>
+</tr>
+<tr>
+	<td>Pricing Date(s):</td>
+	<td>|COMMODITY_PRICING_DATES|</td>
+</tr>
+<tr>
+	<td colspan="2"><br><b>Market Disruption:</b></td>
+</tr>
+
+<!--calypso>
+if ( |HAS_MARKET_DISRUPTION_EVENTS| == "true" ) 
+    inline "
+<tr>
+    <td>Market Disruption Events:</td>
+    <td>|COMMODITY_MODIFY_MARKET_DISRUPTION_EVENTS|</td>
+</tr>
+<tr>
+    <td>Additional Market Disruption Events:</td>
+    <td>|COMMODITY_ADDITIONAL_MARKET_DISRUPTION_EVENTS|</td>
+</tr>
+<tr>
+    <td>Disruption Fallback(s):</td>
+    <td>|COMMODITY_DISRUPTION_FALLBACKS|</td>
+</tr>
+    ";
+</calypso-->
+
+<tr>
+	<td>Rounding:</td>
+	<td>Accuracy  to three (3) decimal places to be used in all calculations</td>
+</tr>
+
+</table>
+<br>
+
+<!---End Exhibit II-A -->

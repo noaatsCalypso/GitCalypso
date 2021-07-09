@@ -1,0 +1,18 @@
+# The line below is commented out purposely
+#DU_MESSAGING_SERVER_URL=tcp://localhost:61917
+
+# The expectation is that the DU_MESSAGING_SERVER_URL property will be set in the calypso environment property file, 
+# and will be picked up by both the DU messaging server and DU messaging client applications.
+
+# In the scenario where you are running the DU messaging components as part of the HRC solution, you would set the 
+# DU_MESSAGING_SERVER_URL property in the calypso environment property file to the same value as the HRC messaging 
+# server property. This would make all the DU messaging client applications run against the HRC messaging server.
+
+# In the scenario where you need to run a separate set of DU messaging client applications against a different messaging 
+# server (eg. you are running some components for non-HRC flows and don't want them to use the same messaging server as 
+# HRC), you would do the following:
+#	1. Copy this file and give it a prefix (eg. Custom_DU_MESSAGING_SERVER.properties)
+#	2. Uncomment the DU_MESSAGING_SERVER_URL variable above and set it to the URL of the non-HRC messaging server.
+#	3. Then for those DU messaging client applications (or DU messaging server) which need to run against the separate 
+#	   messaging server, you would copy the default batch scripts for them and add "-messagingserver Custom" to the 
+#	   command line for those instances.

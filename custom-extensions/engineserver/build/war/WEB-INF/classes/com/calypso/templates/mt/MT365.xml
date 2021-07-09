@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 365: Cross Currency Interest Rate Swap Termination/Recouponing Confirmation  -->
+<SwiftMsgDef>
+  <Name>MT365</Name>
+  <CancellationName>MT3xC</CancellationName>
+  <ModeSelectionList>
+    <ModeSelection qualifier="NEW"/>
+    <ModeSelection qualifier="AMEND"/>
+    <ModeSelection qualifier="CANCEL"/>
+  </ModeSelectionList>
+  <SwiftSequence name="A:General Information" openTag=":15A:" modes="MMM">
+    <SwiftField name="Sender's Reference" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM"/>
+    <SwiftField name="Related Reference" tag=":21:" format="16x" value="RELATED_REF" modes="OOO"/>
+    <SwiftField name="Type of Operation" tag=":22A:" format="4!c" value="TYPE_OPERATION" modes="MMM"/>
+    <SwiftField name="Scope of Operation" tag=":94A:" format="4!c" value="SCOPE_OPERATION" modes="OOO"/>
+    <SwiftField name="Type of Event" tag=":22B:" format="4!c" value="TYPE_OF_EVENT" modes="MMM"/>
+    <SwiftField name="Common Reference" tag=":22C:" format="4!a2!c4!n4!a2!c" value="COMMON_REF" modes="MMM"/>
+    <SwiftField name="Identification of the Swap" tag=":23A:" format="10a/5a" value="SWAP_TYPE" modes="MMM"/>
+    <SwiftField name="Contract Number Party A" tag=":21N:" format="16x" value="TRADE_ID" modes="MMM"/>
+    <SwiftField name="Contract Number Party B" tag=":21B:" format="16x" value="TRADE_EXTERNALREFERENCE" modes="OOO"/>
+    <SwiftField name="Termination/Recouponing Trade Date" tag=":30T:" format="8!n" value="TERMINATION_TRADE_DATE" modes="MMM"/>
+    <SwiftField name="Termination/Recouponing Effective Date" tag=":30Q:" format="8!n" value="TERMINATION_DATE" modes="MMM"/>
+    <SwiftField name="Original Termination Date" tag=":30P:" format="8!n" value="MATURITY_DATE" modes="MMM"/>
+    <SwiftField name="Original Effective Date" tag=":30V:" format="8!n" value="START_DATE" modes="MMM"/>
+    <SwiftField name="Party B Currency, Notional Amount" tag=":32B:" format="3!a15d" value="CPTY_NOTIONAL_AMOUNT" modes="MMM"/>
+    <SwiftField name="Party A Currency, Notional Amount" tag=":33B:" format="3!a15d" value="PO_NOTIONAL_AMOUNT" modes="MMM"/>
+    <SwiftField name="Party A" tag=":82a:" value="PARTY_A" modes="MMM">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+        <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+    <SwiftField name="Party B" tag=":87a:" value="PARTY_B" modes="MMM">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+        <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+    <SwiftField name="Accrual of Interest Specification" tag=":22D:" format="4!c" value="TERMINATION_FFCPOPTION" modes="OOO"/> -->
+    <SwiftField name="Party B New Currency, Notional Amount" tag=":32G:" format="3!a15d" value="TRANSFERTRADE_CPTY_NOTIONAL_AMOUNT" modes="OOO"/> -->
+    <SwiftField name="Party A New Currency, Notional Amount" tag=":33E:" format="3!a15d" value="TRANSFERTRADE_PO_NOTIONAL_AMOUNT" modes="OOO"/> -->
+    <!-- <SwiftField name="Details of Interest Rate" tag=":37N:" format="6*35x" value="INTEREST_RATE???" modes="OOO"/> -->
+    <!-- <SwiftField name="Contact Information" tag=":29A:" value="CONTACT_INFO" format="4*35x" modes="OOO"/> -->
+    <SwiftField name="Sender to Receiver Information" tag=":72:" format="6*35x" value="SENDER_TO_RECEIVER" modes="OOO"/>
+  </SwiftSequence>
+  <SwiftSequence name="B: Fixed Interest Payable by Party B " openTag=":15B:" condition="hasFixedReceiveLeg" modes="---">
+    <SwiftField name="Current Fixed Rate" tag=":37M:" format="[N]12d" value="RECEIVELEG_FIXED_RATE" modes="MMM"/>
+    <!-- <SwiftField name="New Fixed Rate" tag=":37G:" format="[N]12d" value="???" modes="OOO"/> -->
+  </SwiftSequence>
+  <SwiftSequence name="E: Fixed Interest Payable by Party A " openTag=":15E:" condition="hasFixedPayLeg" modes="---">
+    <SwiftField name="Current Fixed Rate" tag=":37M:" format="[N]12d" value="PAYLEG_FIXED_RATE" modes="MMM"/>
+    <!-- <SwiftField name="New Fixed Rate" tag=":37G:" format="[N]12d" value="???" modes="OOO"/> -->
+  </SwiftSequence>
+  <SwiftSequence name="J: Re-exchange of Principal Payable by Party B  " condition="hasActualFinalExchange" openTag=":15J:" modes="---">
+    <SwiftField name="Payment Date" tag=":30F:" format="8!n" value="RECEIVELEG_LAST_PRINCIPAL_DATE" modes="MMM"/>
+    <SwiftField name="Currency, Payment Amount" tag=":32M:" format="3!a15d" value="RECEIVELEG_PRINCIPAL_AMT" modes="MMM"/>
+    <SwiftField name="Delivery Agent" tag=":53a:" value="RECEIVELEG_CPTY_DELIVERY_AGENT" modes="OOO">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+    <SwiftField name="Intermediary" tag=":56a:" value="RECEIVELEG_PO_INTERMEDIARY" modes="OOO">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+    <SwiftField name="Second Intermediary" tag=":86a:" value="RECEIVELEG_PO_INTERMEDIARY2" modes="OOO">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+    <SwiftField name="Receiving Agent" tag=":57a:" value="RECEIVELEG_PO_RECEIVING_AGENT" modes="MMM">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+  </SwiftSequence>
+  <SwiftSequence name="K:Re-exchange of Principal Payable by Party A " condition="hasActualFinalExchange" openTag=":15K:" modes="---">
+    <SwiftField name="Payment Date" tag=":30F:" format="8!n" value="PAYLEG_LAST_PRINCIPAL_DATE" modes="MMM"/>
+    <SwiftField name="Currency, Payment Amount" tag=":32M:" format="3!a15d" value="PAYLEG_PRINCIPAL_AMT" modes="MMM"/>
+    <SwiftField name="Delivery Agent" tag=":53a:" value="PAYLEG_PO_DELIVERY_AGENT" modes="OOO">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+    <SwiftField name="Intermediary" tag=":56a:" value="PAYLEG_CPTY_INTERMEDIARY" modes="OOO">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+    <SwiftField name="Second Intermediary" tag=":86a:" value="PAYLEG_CPTY_INTERMEDIARY2" modes="OOO">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+    <SwiftField name="Receiving Agent" tag=":57a:" value="PAYLEG_CPTY_RECEIVING_AGENT" modes="MMM">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+  </SwiftSequence>
+  <SwiftSequence name="L: Fee Payable by Party B " condition="hasCPTYTerminationFee" openTag=":15L:" modes="---">
+    <SwiftField name="Payment Date" tag=":30F:" format="8!n" value="CPTY_TERMINATION_PAY_DATE" modes="MMM"/>
+    <SwiftField name="Currency, Payment Amount" tag=":32M:" format="3!a15d" value="CPTY_TERMINATION_FEE" modes="MMM"/>
+    <SwiftField name="Delivery Agent" tag=":53a:" value="CPTY_TERM_FEE_CPTY_DELIVERY_AGENT" modes="OOO">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+    <SwiftField name="Second Intermediary" tag=":86a:" value="CPTY_TERM_FEE_PO_INTERMEDIARY2" modes="OOO">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+    <SwiftField name="Intermediary" tag=":56a:" value="CPTY_TERM_FEE_PO_INTERMEDIARY" modes="OOO">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+    <SwiftField name="Receiving Agent" tag=":57a:" value="CPTY_TERM_FEE_PO_RECEIVING_AGENT" modes="MMM">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+  </SwiftSequence>
+  <SwiftSequence name="M: Fee Payable by Party A " condition="hasPOTerminationFee" openTag=":15M:" modes="---">
+    <SwiftField name="Payment Date" tag=":30F:" format="8!n" value="PO_TERMINATION_PAY_DATE" modes="MMM"/>
+    <SwiftField name="Currency, Payment Amount" tag=":32M:" format="3!a15d" value="PO_TERMINATION_FEE" modes="MMM"/>
+    <SwiftField name="Delivery Agent" tag=":53a:" value="PO_TERM_FEE_PO_DELIVERY_AGENT" modes="OOO">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+    <SwiftField name="Second Intermediary" tag=":86a:" value="PO_TERM_FEE_CPTY_INTERMEDIARY2" modes="OOO">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+    <SwiftField name="Intermediary" tag=":56a:" value="PO_TERM_FEE_CPTY_INTERMEDIARY" modes="OOO">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+    <SwiftField name="Receiving Agent" tag=":57a:" value="PO_TERM_FEE_CPTY_RECEIVING_AGENT" modes="MMM">
+        <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+    </SwiftField>
+  </SwiftSequence>
+</SwiftMsgDef>

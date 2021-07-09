@@ -1,0 +1,24 @@
+apply plugin: 'calypso-java-project'
+
+evaluationDependsOn ":engineserver"
+
+dependencies {
+	provided project(":engineserver")
+}
+
+// TO ADD EXTERNAL RESOURCES
+// THIS CAN BE DONE FOR ANY SUBPROJECT
+//dependencies {
+//	externalResources files("/path/to/directory",
+//				"/path/to/file.xml",
+//				"relative/path/to/file.xml")
+//}
+
+// TO ADD A DEPENDENCY
+//repositories {
+//	mavenCentral()
+//}
+
+//dependencies {
+//	includeInDistribution "commons-io:commons-io:2.4"
+//}

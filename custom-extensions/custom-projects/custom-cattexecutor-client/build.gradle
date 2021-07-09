@@ -1,0 +1,10 @@
+apply plugin: 'calypso-java-project'
+
+dependencies {
+	compile project(':custom-shared-lib')
+	compile fileTree(dir: "${rootProject.calypsoHome}/client/lib", include: "*.jar")
+	compile fileTree(dir: "${rootProject.calypsoHome}/client/cattlib", include: "*.jar")
+	compile files(project.file("${rootProject.calypsoHome}/client/resources").path)
+}
+
+ext.deployment="clientcatt"

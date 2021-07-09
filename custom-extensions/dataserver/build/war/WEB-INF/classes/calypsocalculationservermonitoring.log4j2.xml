@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Defining the monitoring loggers for calculation server -->
+<Configuration xmlns:xi="http://www.w3.org/2001/XInclude" status="WARN">
+  <!-- Definition of properties: mapping mandatory with Log4J2 -->
+  <xi:include href="fragments/properties.log4j2.xml"/>
+  <Appenders>
+     <xi:include href="fragments/appender_Monitoring.CalculationServer_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.ClientRequest_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.MethodProfile_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.ServerRequest_APPENDER.xml"/>
+	 <xi:include href="fragments/appender_Monitoring.IncomingServerRequest_APPENDER.xml"/>
+     <xi:include href="fragments/appender_ElasticSearchRequest_APPENDER.xml"/>
+	 <xi:include href="fragments/appender_ElasticSearchIncomingRequest_APPENDER.xml"/>
+  </Appenders>
+    <Loggers>
+        <Logger name="com.calypso.Monitoring.ClientRequest" additivity="false">
+            <level value="debug"/>
+            <AppenderRef ref="Monitoring.ClientRequest_APPENDER"/>
+        </Logger>
+
+        <Logger name="com.calypso.Monitoring.ServerRequest" additivity="false">
+            <level value="debug"/>
+            <AppenderRef ref="Monitoring.ServerRequest_APPENDER"/>
+			<AppenderRef ref="ElasticSearchRequest_APPENDER"/>
+        </Logger>
+		<Logger name="com.calypso.Monitoring.IncomingServerRequest" additivity="false" level="DEBUG">
+			<AppenderRef ref="Monitoring.IncomingServerRequest_APPENDER"/>
+			<AppenderRef ref="ElasticSearchIncomingRequest_APPENDER"/>
+		</Logger>
+        <Logger name="com.calypso.Monitoring.MethodProfile" additivity="false">
+            <level value="debug"/>
+            <AppenderRef ref="Monitoring.MethodProfile_APPENDER"/>
+        </Logger>
+        <Logger name="com.calypso.Monitoring.CalculationServer" additivity="false">
+            <level value="debug"/>
+            <AppenderRef ref="Monitoring.CalculationServer_APPENDER"/>
+        </Logger>
+    </Loggers>
+</Configuration>

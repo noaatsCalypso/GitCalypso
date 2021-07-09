@@ -1,0 +1,11 @@
+AMBlockOrder;CREATED;SEND_TO_MARKET;LIMIT_VIOLATION;true;false;false;ALL;ALL;TriggerChildrenWorkflow;;false;false;;;false;false;false;false;0;;;On Failure;false;
+AMBlockOrder;PENDING;SEND;SENT;true;true;false;ALL;ALL;PlatformAllege;;false;false;;;false;false;false;false;0;;;On Failure;false;
+AMBlockOrder;PENDING_CANCEL;ACK;PENDING_CANCEL;true;false;false;ALL;ALL;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+AMBlockOrder;PENDING_CANCEL;UPDATE;PENDING_CANCEL;true;false;false;ALL;ALL;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+AMBlockOrder;PENDING_CANCEL;CANCEL;CANCELED;true;false;false;ALL;ALL;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+AMBlockOrder;PENDING_CANCEL;REJECT;SENT;true;false;false;ALL;ALL;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+AMBlockOrder;SENT;PLATFORM_CANCEL;PENDING_CANCEL;true;false;false;ALL;ALL;PlatformCancel;;false;false;;;false;false;false;false;0;;;On Failure;false;
+RuleAdditionalInfo 3
+ALL/AMBlockOrder/ALL/ALL/CREATED/SEND_TO_MARKET/LIMIT_VIOLATION;TriggerChildrenWorkflow;action=SEND_TO_MARKET;;
+ALL/AMBlockOrder/ALL/ALL/PENDING/SEND/SENT;PlatformAllege;;;
+ALL/AMBlockOrder/ALL/ALL/SENT/PLATFORM_CANCEL/PENDING_CANCEL;PlatformCancel;;;

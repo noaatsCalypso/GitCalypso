@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns="urn:swift:saa:xsd:saa.2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="urn:swift:saa:xsd:saa.2.0" version="2.0.5">
+	<xs:complexType name="SwAny" mixed="true">
+		<xs:sequence>
+			<xs:any namespace="##any" processContents="skip" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="X1">
+		<xs:restriction base="xs:string">
+			<xs:length value="11" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="X2">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="X3">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="X4">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FinancialInstitution">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="105" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BranchInformation">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="70" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CityName">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="35" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Location">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="105" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Countrycode">
+		<xs:restriction base="xs:string">
+			<xs:length value="2" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Nickname">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="31" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DN">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="100" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BIC12">
+		<xs:restriction base="xs:string">
+			<xs:length value="12" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RoutingPoint">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MACPACValue">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="8" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ChecksumValue">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="12" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UserPriority">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CopyService">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Service">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UserReference">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RoutingCode">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="16" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SenderReference">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="70" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CBTReference">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="40" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MessageIdentifier">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MessageSyntaxVersion">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="7" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ReleaseInfo">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="32" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ValidationIdentifier">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="8" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CorrespondentInputReference">
+		<xs:restriction base="xs:string">
+			<xs:length value="28" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TimeString">
+		<xs:restriction base="xs:string">
+			<xs:length value="14" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="InputTimeString">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{14}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="FINTrailer">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="38" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SWIFTNetTime">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="24" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SWIFTNetReference">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NRWarning">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SNLEndPoint">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SnFQueueName">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Operator">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="150" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MessagePartner">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Format">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="16" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="InstanceName">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UserName">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Unit">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RequestType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FileLogicalName">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="254" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FileDigestValue">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="50" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TransferRef">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="50" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FileInfoDescription">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="256" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AttributeValue">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="256" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VendorName">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="8" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ProductName">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="8" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ProductVersion">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="8" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DigestRef">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="128" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DigestValue">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="50" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CustomDigestValue">
+		<xs:restriction base="xs:string">
+			<xs:length value="44" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FINUserHeader">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="2500" />
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Enumerated types -->
+	<xs:simpleType name="RoutingFunction">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Route" />
+			<xs:enumeration value="DisposeToRoutingStep" />
+			<xs:enumeration value="DisposeToRoutingPoint" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RoutingStep">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Verify" />
+			<xs:enumeration value="Authorise" />
+			<xs:enumeration value="Modify" />
+			<xs:enumeration value="ReadyToSend" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ValidationLevel">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="None" />
+			<xs:enumeration value="Minimum" />
+			<xs:enumeration value="Intermediate" />
+			<xs:enumeration value="Maximum" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Priority">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Normal" />
+			<xs:enumeration value="Urgent" />
+			<xs:enumeration value="System" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SubFormat">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Input" />
+			<xs:enumeration value="Output" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ReportingApplication">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ApplicationInterface" />
+			<xs:enumeration value="SWIFTNetInterface" />
+			<xs:enumeration value="FINInterface" />
+			<xs:enumeration value="TrafficReconciliation" />
+			<xs:enumeration value="Other" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MessageCreator">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ApplicationInterface" />
+			<xs:enumeration value="SWIFTNetInterface" />
+			<xs:enumeration value="FINInterface" />
+			<xs:enumeration value="Workstation" />
+			<xs:enumeration value="Messenger" />
+			<xs:enumeration value="Other" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MessageContext">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Original" />
+			<xs:enumeration value="Copy" />
+			<xs:enumeration value="Report" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MessageNature">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Financial" />
+			<xs:enumeration value="Text" />
+			<xs:enumeration value="Network" />
+			<xs:enumeration value="Security" />
+			<xs:enumeration value="Service" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RMAResult">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Success" />
+			<xs:enumeration value="Bypassed" />
+			<xs:enumeration value="NoRecord" />
+			<xs:enumeration value="NotEnabled" />
+			<xs:enumeration value="InvalidPeriod" />
+			<xs:enumeration value="Unauthorised" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ChecksumResult">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Success" />
+			<xs:enumeration value="Failed" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MACPACResult">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Success" />
+			<xs:enumeration value="SuccessFuture" />
+			<xs:enumeration value="SuccessOld" />
+			<xs:enumeration value="Bypassed" />
+			<xs:enumeration value="NoKey" />
+			<xs:enumeration value="Failed" />
+			<xs:enumeration value="InvalidDigest" />
+			<xs:enumeration value="InvalidSignerDN" />
+			<xs:enumeration value="InvalidCertPolicyID" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SignatureResult">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Success" />
+			<xs:enumeration value="Bypassed" />
+			<xs:enumeration value="Failed" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NRType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SvcOpt" />
+			<xs:enumeration value="SvcMand" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Network">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Application" />
+			<xs:enumeration value="SWIFTNet" />
+			<xs:enumeration value="FIN" />
+			<xs:enumeration value="Other" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IntvCategory">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TransmissionReport" />
+			<xs:enumeration value="DeliveryReport" />
+			<xs:enumeration value="TransmissionResponse" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HistoryIntvCategory">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TransmissionReport" />
+			<xs:enumeration value="DeliveryReport" />
+			<xs:enumeration value="TransmissionResponse" />
+			<xs:enumeration value="Security" />
+			<xs:enumeration value="Routing" />
+			<xs:enumeration value="MesgAsTransmitted" />
+			<xs:enumeration value="MesgAsReceived" />
+			<xs:enumeration value="MesgModified" />
+			<xs:enumeration value="Other" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MessageFields">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NoOriginal" />
+			<xs:enumeration value="MinimumInfo" />
+			<xs:enumeration value="HeaderOnly" />
+			<xs:enumeration value="HeaderAndBody" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NetworkDeliveryStatus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NetworkAcked" />
+			<xs:enumeration value="NetworkNacked" />
+			<xs:enumeration value="NetworkRejectedLocally" />
+			<xs:enumeration value="NetworkAborted" />
+			<xs:enumeration value="NetworkTimedOut" />
+			<xs:enumeration value="NetworkWaitingAck" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ReceiverDeliveryStatus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="RcvDelivered" />
+			<xs:enumeration value="RcvAborted" />
+			<xs:enumeration value="RcvDelayedNak" />
+			<xs:enumeration value="RcvFCPReleased" />
+			<xs:enumeration value="RcvOverdue" />
+			<xs:enumeration value="RcvUnknown" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FileDigestAlgorithm">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SHA-1" />
+			<xs:enumeration value="SHA-256" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SessionDirection">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ToMessagePartner" />
+			<xs:enumeration value="FromMessagePartner" />
+			<xs:enumeration value="ToAndFromMessagePartner" />
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- General Types -->
+	<xs:complexType name="AddressFullName">
+		<xs:sequence>
+			<xs:element name="X1" type="X1" />
+			<xs:element name="X2" type="X2" minOccurs="0" />
+			<xs:element name="X3" type="X3" minOccurs="0" />
+			<xs:element name="X4" type="X4" minOccurs="0" />
+			<xs:element name="FinancialInstitution" type="FinancialInstitution" minOccurs="0" />
+			<xs:element name="BranchInformation" type="BranchInformation" minOccurs="0" />
+			<xs:element name="CityName" type="CityName" minOccurs="0" />
+			<xs:element name="Location" type="Location" minOccurs="0" />
+			<xs:element name="CountryCode" type="Countrycode" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddressInfo">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="BIC12" type="BIC12" />
+				<xs:element name="DN" type="DN" />
+				<xs:element name="Nickname" type="Nickname" />
+			</xs:choice>
+			<xs:element name="FullName" type="AddressFullName" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Intervention">
+		<xs:sequence>
+			<xs:element name="IntvCategory" type="IntvCategory" />
+			<xs:element name="CreationTime" type="TimeString" />
+			<xs:element name="OperatorOrigin" type="Operator" />
+			<xs:element name="Contents" type="SwAny" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HistoryIntervention">
+		<xs:sequence>
+			<xs:element name="IntvCategory" type="HistoryIntvCategory" />
+			<xs:element name="CreationTime" type="TimeString" />
+			<xs:element name="OperatorOrigin" type="Operator" />
+			<xs:element name="Text" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Interventions">
+		<xs:sequence>
+			<xs:element name="Intervention" type="Intervention" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HistoryInterventions">
+		<xs:sequence>
+			<xs:element name="Intervention" type="HistoryIntervention" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RoutingInstruction">
+		<xs:sequence>
+			<xs:element name="RoutingFunction" type="RoutingFunction" />
+			<xs:element name="RoutingPoint" type="RoutingPoint" minOccurs="0" />
+			<xs:element name="RoutingStep" type="RoutingStep" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PDEPDM">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="PDE" type="xs:string" />
+			<xs:element name="PDM" type="xs:string" />
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="Product">
+		<xs:sequence>
+			<xs:element name="VendorName" type="VendorName" />
+			<xs:element name="ProductName" type="ProductName" />
+			<xs:element name="ProductVersion" type="ProductVersion" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProductList">
+		<xs:sequence>
+			<xs:element name="Product" type="Product" minOccurs="0" maxOccurs="3" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Digest">
+		<xs:sequence>
+			<xs:element name="DigestRef" type="DigestRef" minOccurs="1" />
+			<xs:element name="DigestValue" type="DigestValue" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DigestList">
+		<xs:sequence>
+			<xs:element name="Digest" type="Digest" minOccurs="1" maxOccurs="8" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Interface Info Type -->
+	<xs:complexType name="InterfaceInfo">
+		<xs:sequence>
+			<xs:element name="UserReference" type="UserReference" minOccurs="0" />
+			<xs:element name="RoutingCode" type="RoutingCode" minOccurs="0" />
+			<xs:element name="ValidationLevel" type="ValidationLevel" minOccurs="0" />
+			<xs:element name="IsModificationAllowed" type="xs:boolean" minOccurs="0" />
+			<xs:element name="RoutingInstruction" type="RoutingInstruction" minOccurs="0" />
+			<xs:element name="MessageCreator" type="MessageCreator" minOccurs="0" />
+			<xs:element name="MessageContext" type="MessageContext" minOccurs="0" />
+			<xs:element name="MessageNature" type="MessageNature" minOccurs="0" />
+			<xs:element name="ProductInfo" type="ProductList" minOccurs="0" />
+			<xs:element name="CustomDigestValue" type="CustomDigestValue" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Network Info Type -->
+	<xs:complexType name="NetworkInfo">
+		<xs:sequence>
+			<xs:element name="Priority" type="Priority" minOccurs="0" />
+			<xs:element name="IsPossibleDuplicate" type="xs:boolean" minOccurs="0" />
+			<xs:element name="DuplicateHistory" type="PDEPDM" minOccurs="0" />
+			<xs:element name="IsNotificationRequested" type="xs:boolean" minOccurs="0" />
+			<xs:element name="Service" type="Service" minOccurs="0" />
+			<xs:element name="Network" type="Network" minOccurs="0" />
+			<xs:element name="SessionNr" type="xs:int" minOccurs="0" />
+			<xs:element name="SeqNr" type="xs:int" minOccurs="0" />
+			<xs:choice minOccurs="0">
+				<xs:element name="FINNetworkInfo" type="FINNetworkInfo" />
+				<xs:element name="SWIFTNetNetworkInfo" type="SWIFTNetNetworkInfo" />
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FINNetworkInfo">
+		<xs:sequence>
+			<xs:element name="UserPriority" type="UserPriority" minOccurs="0" />
+			<xs:element name="CopyService" type="CopyService" minOccurs="0" />
+			<xs:element name="MessageSyntaxVersion" type="MessageSyntaxVersion" minOccurs="0" />
+			<xs:element name="IsRetrieved" type="xs:boolean" minOccurs="0" />
+			<xs:element name="ReleaseInfo" type="ReleaseInfo" minOccurs="0" />
+			<xs:element name="ValidationIdentifier" type="ValidationIdentifier" minOccurs="0" />
+			<xs:element name="CorrespondentInputReference" type="CorrespondentInputReference" minOccurs="0" />
+			<xs:element name="CorrespondentInputTime" type="TimeString" minOccurs="0" />
+			<xs:element name="LocalOutputTime" type="TimeString" minOccurs="0" />
+			<xs:element name="SystemOriginated" type="FINTrailer" minOccurs="0" />
+			<xs:element name="DelayedMessage" type="FINTrailer" minOccurs="0" />
+			<xs:element name="FINUserHeader" type="FINUserHeader" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PayloadAttribute">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:NCName" />
+			<xs:element name="Value" type="AttributeValue" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PayloadAttributeList">
+		<xs:sequence>
+			<xs:element name="PayloadAttribute" type="PayloadAttribute" minOccurs="0" maxOccurs="3" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RecipientListType">
+		<xs:sequence>
+			<xs:element name="RecipientDN" type="xs:string" minOccurs="1" maxOccurs="1000"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ThirdPartyListType">
+		<xs:sequence>
+			<xs:element name="ThirdPartyDN" type="xs:string" minOccurs="1" maxOccurs="30"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DistributionInfo">
+		<xs:sequence>
+			<xs:element name="RecipientDNList" type="RecipientListType"/>
+			<xs:element name="OrigSnFRef" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SWIFTNetNetworkInfo">
+		<xs:sequence>
+			<xs:element name="RequestType" type="RequestType" minOccurs="0" />
+			<xs:element name="SWIFTRef" type="SWIFTNetReference" minOccurs="0" />
+			<xs:element name="SNLRef" type="SWIFTNetReference" minOccurs="0" />
+			<xs:element name="Reference" type="CBTReference" minOccurs="0" />
+			<xs:element name="SNLEndPoint" type="SNLEndPoint" minOccurs="0" />
+			<xs:element name="SnFQueueName" type="SnFQueueName" minOccurs="0" />
+			<xs:element name="SnFInputTime" type="SWIFTNetTime" minOccurs="0" />
+			<xs:element name="SnFDeliveryTime" type="SWIFTNetTime" minOccurs="0" />
+			<xs:element name="CreationTime" type="SWIFTNetTime" minOccurs="0" />
+			<xs:element name="ValidationDescriptor" type="SwAny" minOccurs="0" />
+			<xs:element name="ResponseResponderDN" type="DN" minOccurs="0" />
+			<xs:element name="ResponseSWIFTRef" type="SWIFTNetReference" minOccurs="0" />
+			<xs:element name="ResponseSNLRef" type="SWIFTNetReference" minOccurs="0" />
+			<xs:element name="ResponseReference" type="CBTReference" minOccurs="0" />
+			<xs:element name="IsPossibleDuplicateResponse" type="xs:boolean" minOccurs="0" />
+			<xs:element name="ResponseValidationDescriptor" type="SwAny" minOccurs="0" />
+			<xs:element name="PayloadAttributes" type="PayloadAttributeList" minOccurs="0" />
+			<xs:element name="ResponsePayloadAttributes" type="PayloadAttributeList" minOccurs="0" />
+			<xs:element name="IsCopyRequested" type="xs:boolean" minOccurs="0" />
+			<xs:element name="IsAuthNotificationRequested" type="xs:boolean" minOccurs="0" />
+			<xs:element name="CopyInfo" type="SwAny" minOccurs="0" />
+			<xs:element name="TransferRef" type="TransferRef" minOccurs="0" />
+			<xs:element name="StoredTransferRef" type="TransferRef" minOccurs="0" />
+			<xs:element name="OrigSnfRef" type="SWIFTNetReference" minOccurs="0" />
+			<xs:element name="TransferDescription" type="FileInfoDescription" minOccurs="0" />
+			<xs:element name="TransferInfo" type="FileInfoDescription" minOccurs="0" />
+			<xs:element name="FileDescription" type="FileInfoDescription" minOccurs="0" />
+			<xs:element name="FileInfo" type="FileInfoDescription" minOccurs="0" />
+			<xs:element name="HeaderInfo" type="SwAny" minOccurs="0" />
+			<xs:element name="NotificationResponderDN" type="DN" minOccurs="0" />
+			<xs:element name="NotificationRequestType" type="RequestType" minOccurs="0" />
+			<xs:element name="FileStartTime" type="TimeString" minOccurs="0" />
+			<xs:element name="FileEndTime" type="TimeString" minOccurs="0" />
+			<xs:element name="OverdueWarningTime" type="SWIFTNetTime" minOccurs="0" />
+			<xs:element name="OverdueWarningDelay" type="xs:int" minOccurs="0" />
+			<xs:element name="RecipientList" type="RecipientListType" minOccurs="0"/>
+			<xs:element name="ThirdPartyList" type="ThirdPartyListType" minOccurs="0"/>
+			<xs:element name="IsRecipientListPublic" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="DistributionInfo" type="DistributionInfo" minOccurs="0"/>
+			<xs:element name="RetrievalInfo" type="SwAny" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Security Info Types -->
+	<xs:complexType name="SecurityInfo">
+		<xs:sequence>
+			<xs:element name="IsSigningRequested" type="xs:boolean" minOccurs="0" />
+			<xs:element name="RMAResult" type="RMAResult" minOccurs="0" />
+			<xs:choice minOccurs="0">
+				<xs:element name="FINSecurityInfo" type="FINSecurityInfo" />
+				<xs:element name="SWIFTNetSecurityInfo" type="SWIFTNetSecurityInfo" />
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FINSecurityInfo">
+		<xs:sequence>
+			<xs:element name="ChecksumResult" type="ChecksumResult" minOccurs="0" />
+			<xs:element name="ChecksumValue" type="ChecksumValue" minOccurs="0" />
+			<xs:element name="PACResult" type="MACPACResult" minOccurs="0" />
+			<xs:element name="PACValue" type="MACPACValue" minOccurs="0" />
+			<xs:element name="MACResult" type="MACPACResult" minOccurs="0" />
+			<xs:element name="MACValue" type="MACPACValue" minOccurs="0" />
+			<xs:element name="MACSignatureValue" type="SwAny" minOccurs="0" />
+			<xs:element name="PAC2SignatureValue" type="SwAny" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SWIFTNetSecurityInfo">
+		<xs:sequence>
+			<xs:element name="IsNRRequested" type="xs:boolean" minOccurs="0" />
+			<xs:element name="SignerDN" type="DN" minOccurs="0" />
+			<xs:element name="NRType" type="NRType" minOccurs="0" />
+			<xs:element name="NRWarning" type="NRWarning" minOccurs="0" />
+			<xs:element name="SignatureResult" type="SignatureResult" minOccurs="0" />
+			<xs:element name="SignatureValue" type="SwAny" minOccurs="0" />
+			<xs:element name="ResponseNRType" type="NRType" minOccurs="0" />
+			<xs:element name="ResponseNRWarning" type="NRWarning" minOccurs="0" />
+			<xs:element name="ResponseSignatureResult" type="SignatureResult" minOccurs="0" />
+			<xs:element name="ResponseSignatureValue" type="SwAny" minOccurs="0" />
+			<xs:element name="FileDigestAlgorithm" type="FileDigestAlgorithm" minOccurs="0" />
+			<xs:element name="FileDigestValue" type="FileDigestValue" minOccurs="0" />
+			<xs:element name="DigestList" type="DigestList" minOccurs="0" />
+			<xs:element name="ThirdPartySignerDN" type="DN" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- SAA Info Type -->
+	<xs:complexType name="SAAInfo">
+		<xs:sequence>
+			<xs:element name="InstanceName" type="InstanceName" />
+			<xs:element name="UserName" type="UserName" />
+			<xs:element name="Unit" type="Unit" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Delivery Notification Type -->
+	<xs:complexType name="DeliveryNotification">
+		<xs:sequence>
+			<xs:element name="ReconciliationInfo" type="SenderReference" />
+			<xs:element name="ReceiverDeliveryStatus" type="ReceiverDeliveryStatus" />
+			<xs:element name="MessageIdentifier" type="MessageIdentifier" />
+			<xs:element name="Receiver" type="AddressInfo" minOccurs="0" />
+			<xs:element name="InterfaceInfo" type="InterfaceInfo" minOccurs="0" />
+			<xs:element name="NetworkInfo" type="NetworkInfo" minOccurs="0" />
+			<xs:element name="SecurityInfo" type="SecurityInfo" minOccurs="0" />
+			<xs:element name="SAAInfo" type="SAAInfo" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Message Type -->
+	<xs:complexType name="Message">
+		<xs:sequence>
+			<xs:element name="SenderReference" type="SenderReference" />
+			<xs:element name="MessageIdentifier" type="MessageIdentifier" />
+			<xs:element name="Format" type="Format" />
+			<xs:element name="SubFormat" type="SubFormat" minOccurs="0" />
+			<xs:element name="Sender" type="AddressInfo" />
+			<xs:element name="Receiver" type="AddressInfo" />
+			<xs:element name="InterfaceInfo" type="InterfaceInfo" minOccurs="0" />
+			<xs:element name="NetworkInfo" type="NetworkInfo" minOccurs="0" />
+			<xs:element name="SecurityInfo" type="SecurityInfo" minOccurs="0" />
+			<xs:element name="SAAInfo" type="SAAInfo" minOccurs="0" />
+			<xs:element name="FileLogicalName" type="FileLogicalName" minOccurs="0" />
+			<xs:element name="ExpiryDateTime" type="InputTimeString" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Report Types -->
+	<xs:complexType name="HistoryReport">
+		<xs:sequence>
+			<xs:element name="SenderReference" type="SenderReference" />
+			<xs:element name="OriginalInstanceAddressee" type="AddressFullName" />
+			<xs:element name="ReportingApplication" type="ReportingApplication" />
+			<xs:element name="SAAInfo" type="SAAInfo" minOccurs="0" />
+			<xs:element name="Interventions" type="HistoryInterventions" />
+			<xs:element name="IsRelatedInstanceOriginal" type="xs:boolean" />
+			<xs:element name="RelatedInstanceAddressee" type="AddressFullName" minOccurs="0" />
+			<xs:element name="MessageCreator" type="MessageCreator" />
+			<xs:element name="IsMessageModified" type="xs:boolean" />
+			<xs:element name="MessageFields" type="MessageFields" />
+			<xs:element name="Message" type="Message" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TransmissionReport">
+		<xs:sequence>
+			<xs:element name="SenderReference" type="SenderReference" />
+			<xs:element name="ReconciliationInfo" type="SenderReference" minOccurs="0" />
+			<xs:element name="NetworkDeliveryStatus" type="NetworkDeliveryStatus" />
+			<xs:element name="OriginalInstanceAddressee" type="AddressFullName" />
+			<xs:element name="ReportingApplication" type="ReportingApplication" />
+			<xs:element name="NetworkInfo" type="NetworkInfo" />
+			<xs:element name="SAAInfo" type="SAAInfo" minOccurs="0" />
+			<xs:element name="Interventions" type="Interventions" />
+			<xs:element name="IsRelatedInstanceOriginal" type="xs:boolean" />
+			<xs:element name="RelatedInstanceAddressee" type="AddressFullName" minOccurs="0" />
+			<xs:element name="MessageCreator" type="MessageCreator" />
+			<xs:element name="IsMessageModified" type="xs:boolean" />
+			<xs:element name="MessageFields" type="MessageFields" />
+			<xs:element name="Message" type="Message" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DeliveryReport">
+		<xs:sequence>
+			<xs:element name="SenderReference" type="SenderReference" />
+			<xs:element name="ReceiverDeliveryStatus" type="ReceiverDeliveryStatus" />
+			<xs:element name="OriginalInstanceAddressee" type="AddressFullName" />
+			<xs:element name="ReportingApplication" type="ReportingApplication" />
+			<xs:element name="NetworkInfo" type="NetworkInfo" />
+			<xs:element name="SAAInfo" type="SAAInfo" minOccurs="0" />
+			<xs:element name="Interventions" type="Interventions" />
+			<xs:element name="IsRelatedInstanceOriginal" type="xs:boolean" />
+			<xs:element name="RelatedInstanceAddressee" type="AddressFullName" minOccurs="0" />
+			<xs:element name="MessageCreator" type="MessageCreator" />
+			<xs:element name="IsMessageModified" type="xs:boolean" />
+			<xs:element name="MessageFields" type="MessageFields" />
+			<xs:element name="Message" type="Message" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Status Report Types -->
+	<xs:complexType name="MessageStatus">
+		<xs:sequence>
+			<xs:element name="SenderReference" type="SenderReference" />
+			<xs:element name="SeqNr" type="xs:int" minOccurs="0" />
+			<xs:element name="IsSuccess" type="xs:boolean" />
+			<xs:element name="ErrorCode" type="xs:string" minOccurs="0" />
+			<xs:element name="ErrorText" type="xs:string" minOccurs="0" />
+			<xs:element name="SAAInfo" type="SAAInfo" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SessionStatus">
+		<xs:sequence>
+			<xs:element name="MessagePartner" type="MessagePartner" />
+			<xs:element name="CreationTime" type="TimeString" />
+			<xs:element name="SessionNr" type="xs:int" />
+			<xs:element name="InputFile" type="xs:string" minOccurs="0" />
+			<xs:element name="IsSuccess" type="xs:boolean" />
+			<xs:element name="ErrorCode" type="xs:string" minOccurs="0" />
+			<xs:element name="ErrorText" type="xs:string" minOccurs="0" />
+			<xs:element name="SessionDirection" type="SessionDirection" minOccurs="0" />
+			<xs:element name="Accepted" type="xs:int" minOccurs="0" />
+			<xs:element name="Rejected" type="xs:int" minOccurs="0" />
+			<xs:element name="AcceptedFromMessagePartner" type="xs:int" minOccurs="0" />
+			<xs:element name="RejectedFromMessagePartner" type="xs:int" minOccurs="0" />
+			<xs:element name="AcceptedToMessagePartner" type="xs:int" minOccurs="0" />
+			<xs:element name="RejectedToMessagePartner" type="xs:int" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- DataPDU & Header -->
+	<xs:complexType name="Header">
+		<xs:choice>
+			<xs:element name="Message" type="Message" />
+			<xs:element name="TransmissionReport" type="TransmissionReport" />
+			<xs:element name="DeliveryNotification" type="DeliveryNotification" />
+			<xs:element name="DeliveryReport" type="DeliveryReport" />
+			<xs:element name="HistoryReport" type="HistoryReport" />
+			<xs:element name="MessageStatus" type="MessageStatus" />
+			<xs:element name="SessionStatus" type="SessionStatus" />
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="DataPDU">
+		<xs:sequence>
+			<xs:element name="Revision" type="xs:string" fixed="2.0.5" />
+			<xs:element name="Header" type="Header" />
+			<xs:element name="Body" type="SwAny" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Root element -->
+	<xs:element name="DataPDU" type="DataPDU"></xs:element>
+</xs:schema>
+

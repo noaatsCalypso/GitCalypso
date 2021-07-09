@@ -1,0 +1,268 @@
+<!-- Start Exhibit II-B - see CAL-70850 for 2005 ISDA Commodity Definitions reference document -->
+
+<p>
+The terms of the particular Transaction to which this Confirmation relates are as follows:
+</p>
+
+<table CELLSPACING=0 BORDER=0 WIDTH="*">
+
+<tr>
+	<td>Trade Date:</td>
+	<td>|TRADE_DATE|</td>
+</tr>
+<!-- START extra info: Effective and  Maturity date are not part of exhibit IIB -->
+<tr>
+	<td>Effective Date:</td>
+	<td>|COMMODITY_START_DATE|</td>
+</tr>
+<tr>
+	<td>Termination Date:</td>
+	<td>|COMMODITY_END_DATE|</td>
+</tr>
+<!-- END extra info: Effective and  Maturity date are not part of exhibit IIB -->
+<tr>
+	<td>Commodity:</td>
+	<td>|COMMODITY_NAME|</td>
+</tr>
+<tr>
+	<td>Notional Quantity:</td>
+	<td>|TRADE_QUANTITY|</td>
+</tr>
+<tr>
+	<td>Notional Quantity per Calculation Period:</td>
+	<td>|COMMODITY_QTY_PER_PERIOD|</td>
+</tr>
+<tr>
+	<td>Total Notional Quantity:</td>
+	<td>|TOTAL_QUANTITY|</td>
+</tr>
+<!-- START extra info: Calculation Period not part of exhibit IIB -->
+<tr>
+	<td>Calculation Period:</td>
+	<td>|COMMODITY_CALC_PERIOD|</td>
+</tr>
+<!-- END extra info: Calculation Period not part of exhibit IIB -->
+
+<tr>
+    <td>Option Style</td>
+    <td>|OPTION_STYLE|</td>
+</tr>
+<tr>
+    <td>Option Type</td>
+    <td>|REPORT#Option Type|</td>
+</tr>
+<tr>
+    <td>Seller</td>
+    <td>|TRADE_SELLER_NAME|</td>
+</tr>
+<tr>
+    <td>Buyer</td>
+    <td>|TRADE_BUYER_NAME|</td>
+</tr>
+
+<!--calypso>
+if ( |HAS_REFERENCE_PRICE| == "true")
+    inline "
+<tr>
+	<td>Commodity Reference Price:</td>
+	<td>|COMMODITY_RESET_REFERENCE_PRICE|</td>
+</tr>
+    ";
+else
+    inline "
+<tr>
+	<td>Unit:</td>
+	<td>|COMMODITY_UNIT|</td>
+</tr>
+<tr>
+	<td>Price Source/Reference Dealers:</td>
+	<td>|COMMODITY_PRICE_SOURCE|</td>
+</tr>
+<tr>
+	<td>Currency:</td>
+	<td>|COMMODITY_CCY|</td>
+</tr>
+    ";
+</calypso-->
+
+
+<tr>
+	<td>Specified Price:</td>
+	<td>Average</td>
+</tr>
+
+<tr>
+	<td>Delivery Date:</td>
+	<td>|COMMODITY_RESET_DELIVERY_DATE|</td>
+</tr>
+
+<tr>
+	<td>Pricing Date(s):</td>
+	<td>|COMMODITY_PRICING_DATES|, subject to adjustment in accordance with the |COMMODITY_PRICING_DATE_ROLL| Business Day convention.</td>
+</tr>
+
+<tr>
+	<td>Currency Conversion Provision:</td>
+	<td>|CURRENCY_CONVERSION_PROVISION|</td>
+</tr>
+
+<tr>
+	<td>Strike Price Per Unit:</td>
+	<td>|COMMODITY_STRIKE_PRICE_PER_UNIT|</td>
+</tr>
+
+<tr>
+	<td>Total Premium:</td>
+	<td>|PREMIUM_AMOUNT|
+	<br>(Premium Per Unit: |REPORT#Trade Price|) <!-- the premium per unit  is the trade price -->
+	</td>
+</tr>
+
+
+<tr>
+	<td>Premium Payment Date(s):</td>
+	<td>|PREMIUM_DATE|, subject to adjustment in accordance with the |COMMODITY_PRICING_DATE_ROLL| Business Day convention.</td>
+</tr>
+</table>
+<br>
+<table width='100%'>
+<tr>
+	<td width='30%'><b>Annex Table:</b></td>
+	<td width='68%'>&nbsp;</td>
+</tr>
+	<tr>
+	    <th>Start Date</th>
+	    <th>End Date</th>
+	    <th>Settlement Date</th>
+	    <th>Notional Quantity in Units of Commodity</th>
+	</tr>
+<!--calypso>
+iterator ( "CashFlowCommodity" )
+    inline "
+	<tr>
+		<td>|CASHFLOW_START_DATE|</td>
+		<td>|CASHFLOW_END_DATE|</td>
+		<td>|CASHFLOW_DATE|</td>
+		<td>|CASHFLOW_DEAL_QUANTITY|</td>
+	</tr>
+	";
+</calypso-->
+</table>
+<br>
+<table width='100%'>
+<!-- Excluding 'Procedure For Exercise' section for cash settled option -->
+<!--calypso>
+if ( |IS_PHYSICAL| == "true" ) {
+	inline "
+<tr>
+	<td width='30%'><b>Procedure For Exercise:</b></td>
+	<td width='68%'>&nbsp;</td>
+</tr>
+
+<tr>
+	<td>Exercise Period:</td>
+	<td>";
+
+	if ( |OPTION_STYLE| == "American" ) {
+		inline "
+		From and including |REPORT#Start Date|
+		to and including |REPORT#Option Expiry Date|
+		";
+	}
+
+	inline "
+	between 00:01 am and |EXPIRY_TIME| 	(local time in |EXPIRY_TIMEZONE|).
+	</td>
+</tr>";
+
+	if ( |OPTION_STYLE| != "American" ) {
+		inline "
+	<tr>
+		<td>Expiration Date:</td>
+		<td>|REPORT#Option Expiry Date|</td>
+	</tr>
+	<tr>
+		<td>Expiration Time:</td>
+		<td>|EXPIRY_TIME| |EXPIRY_TIMEZONE|</td>
+	</tr>
+		";
+	}
+
+	inline "
+<tr>
+	<td>Automatic Exercise:</td>
+	<td>Not Applicable</td>
+</tr>
+
+<tr>
+	<td>Written Confirmation:</td>
+	<td>";
+
+	if ( |IS_WRITTEN_CONFIRMATION| == "true" ) {
+		inline " Applicable</td>
+	</tr>
+	<tr>
+		<td>Seller Business Day:</td>
+		<td>|REPORT#Sender.Holidays|</td>
+	<tr>
+		<td>Seller's telephone, telex or facsimile<br>number for purpose of giving notice:</td>
+		<td>|REPORT#Sender.Address Code|";
+	} else {
+		inline "Inapplicable";
+	}
+
+	inline "
+	</td>
+</tr>";
+}
+</calypso-->
+
+
+<tr>
+	<td><b>Market Disruption:</b></td>
+	<td>&nbsp;</td>
+</tr>
+
+<!--calypso>
+if ( |HAS_MARKET_DISRUPTION_EVENTS| == "true" )
+    inline "
+<tr>
+	<td>Market Disruption Events:</td>
+	<td>|COMMODITY_MODIFY_MARKET_DISRUPTION_EVENTS|</td>
+</tr>
+<tr>
+	<td>Additional Market Disruption Events:</td>
+	<td>|COMMODITY_ADDITIONAL_MARKET_DISRUPTION_EVENTS|</td>
+</tr>
+<tr>
+	<td>Disruption Fallback(s):</td>
+	<td>|COMMODITY_DISRUPTION_FALLBACKS|</td>
+</tr>
+    ";
+</calypso-->
+
+<tr>
+	<td><b>Cash Settlement Terms:</b></td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td>Cash Settlement:</td>
+	<td><!--calypso>if ( |IS_PHYSICAL| == "true" ) inline "Not";</calypso--> Applicable</td>
+</tr>
+
+<tr>
+	<td>Settlement Date(s):</td>
+	<td>
+<!--calypso>
+iterator ( "CashFlowCommodity" )
+    inline "|CASHFLOW_DATE|,";
+</calypso-->
+
+	 subject to adjustment in accordance with the |COMMODITY_PRICING_DATE_ROLL| Business Day convention.</td>
+	</td>
+</tr>
+
+</table>
+
+
+<!---End Exhibit II-B -->

@@ -1,0 +1,14 @@
+PSEventMessage;BACKLOAD;BACKLOAD;PENDING_VALID;true;true;false;GATEWAYMSG;ALL;CheckLink,DataBackLoad;;false;false;;;false;false;false;false;
+PSEventMessage;BACKLOAD;CANCEL;CANCELED;true;false;false;GATEWAYMSG;ALL;CancelCleanUp;;false;false;;;false;false;false;false;
+PSEventMessage;BACKLOAD;REPROCESS;BACKLOAD;true;false;false;GATEWAYMSG;ALL;ReMap;;false;false;;;false;false;false;false;
+PSEventMessage;NONE;NEW;BACKLOAD;true;true;false;GATEWAYMSG;ALL;;;false;false;;;false;false;false;false;
+PSEventMessage;PENDING_TRADE;CANCEL;CANCELED;true;false;false;GATEWAYMSG;ALL;CancelCleanUp;;false;false;;;false;false;false;false;
+PSEventMessage;PENDING_TRADE;LOAD;COMPLETED;true;true;false;GATEWAYMSG;ALL;CheckLink,Loader;;false;false;;;false;false;false;false;
+PSEventMessage;PENDING_TRADE;REPROCESS;PENDING_TRADE;true;false;false;GATEWAYMSG;ALL;ReMap;;false;false;;;false;false;false;false;
+PSEventMessage;PENDING_VALID;CANCEL;CANCELED;true;false;false;GATEWAYMSG;ALL;CancelCleanUp;;false;false;;;false;false;false;false;
+PSEventMessage;PENDING_VALID;FORCE_AMEND;PENDING_VALID;true;false;false;GATEWAYMSG;ALL;ForceAmend;;false;false;;;false;false;false;false;
+PSEventMessage;PENDING_VALID;FORCE_NEW;PENDING_VALID;true;false;false;GATEWAYMSG;ALL;ForceNew;;false;false;;;false;false;false;false;
+PSEventMessage;PENDING_VALID;REPROCESS;PENDING_VALID;true;false;false;GATEWAYMSG;ALL;ReMap;;false;true;;;false;false;false;false;
+PSEventMessage;PENDING_VALID;VALIDATE;PENDING_TRADE;true;true;false;GATEWAYMSG;ALL;Validate;;true;false;;;false;false;false;false;
+KickOffCutOffConfig 1
+ALL/PSEventMessage/GATEWAYMSG/ALL/PENDING_VALID/VALIDATE/PENDING_TRADE;ALL;ANY;ALL;0;1;0;-1;;NONE;0;1;NONE;1;NONE;NO_CHANGE;

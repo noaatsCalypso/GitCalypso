@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="enrichments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="context" type="context" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="context">
+    <xs:sequence>
+      <xs:element name="primary_key" type="primary_key" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="field" type="field" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="source_name" type="xs:string" use="required"/>
+    <xs:attribute name="source_table_name" type="xs:string" use="required"/>
+    <xs:attribute name="table_name" type="xs:string" use="required"/>
+    <xs:attribute name="synchronous" type="xs:boolean" default="false"/>
+	<xs:attribute name="trigger_events" type="xs:string"/>
+	<xs:attribute name="active" type="xs:boolean" default="true"/>
+	<xs:attribute name="hidden" type="xs:boolean" default="false"/>
+  </xs:complexType>
+  <xs:complexType name="primary_key">
+    <xs:complexContent>
+      <xs:extension base="abstract_field"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="field">
+    <xs:complexContent>
+      <xs:extension base="abstract_field"/>
+    </xs:complexContent>
+    <xs:attribute name="nullable" type="xs:boolean" default="false"/>
+  </xs:complexType>
+  <xs:complexType name="abstract_field" abstract="true">
+    <xs:sequence>
+      <xs:element name="extra_argument" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="column" type="xs:string" use="required"/>
+    <xs:attribute name="custom" type="xs:string"/>
+    <xs:attribute name="getter" type="xs:string" use="required"/>
+    <xs:attribute name="type" type="field_type" use="required"/>
+    <xs:attribute name="format" type="format_type" default="native"/>
+    <xs:attribute name="scale" type="xs:integer" />
+	<xs:attribute name="domain" type="xs:string"/>
+  </xs:complexType>
+  <xs:simpleType name="field_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Integer"/>
+      <xs:enumeration value="Long"/>
+      <xs:enumeration value="Double"/>
+      <xs:enumeration value="Rate"/>
+      <xs:enumeration value="JDate"/>
+      <xs:enumeration value="JDatetime"/>
+      <xs:enumeration value="String"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="format_type">
+    <!-- Indicates whether the field is in native format or string format (like in attributes or keywords) and needs conversion -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="native"/>
+      <xs:enumeration value="string"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

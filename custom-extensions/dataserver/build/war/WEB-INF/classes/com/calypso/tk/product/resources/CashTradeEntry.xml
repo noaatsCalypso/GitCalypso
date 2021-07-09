@@ -1,0 +1,74 @@
+<!-- Defines a default view (categories, selected fields for each). The field 
+	and category labels are defined in the .properties resource file with the 
+	same name. -->
+<config>
+	<view>
+		<category>
+			<categoryId>PRODUCT</categoryId>
+			<fieldId>LOAN_DIRECTION</fieldId>
+			<fieldId>START_DATE</fieldId>
+			<fieldId>END_DATE</fieldId>
+			<fieldId>PRINCIPAL</fieldId>
+			<fieldId>CURRENCY</fieldId>
+			<fieldId>DAY_COUNT</fieldId>
+			<fieldId>DISCOUNT_METHOD</fieldId>
+			<fieldId>COMPOUND_FREQUENCY</fieldId>
+			<fieldId>COMPOUNDING_METHOD</fieldId>
+			<fieldId>CAPITALIZE_INT_B</fieldId>
+			<fieldId>ROUNDING_METHOD</fieldId>
+			<fieldId>DISCOUNT_B</fieldId>
+			<fieldId>AMORT_TYPE</fieldId>
+			<fieldId>OPEN_TERM</fieldId>
+			<fieldId>OPEN_TERM_BUS_DAY_B</fieldId>
+			<fieldId>NOTICE_DAYS</fieldId>
+			<fieldId>WITHHOLDING_TAX_RATE</fieldId>
+		</category>
+		<category>
+			<categoryId>RATE</categoryId>
+			<fieldId>FIXED_RATE_B</fieldId>
+			<fieldId>RATE_INDEX_NAME</fieldId>
+			<fieldId>TENOR</fieldId>
+			<fieldId>SOURCE</fieldId>
+			<fieldId>FIXED_RATE</fieldId>
+			<fieldId>SALES_MARGIN</fieldId>
+			<fieldId>SPREAD</fieldId>
+			<fieldId>FINAL_RATE</fieldId>
+			<fieldId>INDEX_FACTOR</fieldId>
+
+			<fieldId>FLOATER_B</fieldId>
+			<fieldId>OPTION_TYPE</fieldId>
+			<fieldId>CAP_STRIKE</fieldId>
+			<fieldId>FLOOR_STRIKE</fieldId>
+		</category>
+		<category>
+			<categoryId>PAYMENT</categoryId>
+			<fieldId>PAYMENT_FREQUENCY</fieldId>
+			<fieldId>PAYMENT_HOLIDAYS</fieldId>
+			<fieldId>ROLLING_DAY</fieldId>
+			<fieldId>DATE_ROLL</fieldId>
+			<fieldId>PERIOD_RULE</fieldId>
+			<fieldId>STUB_RULE</fieldId>
+			<fieldId>LAG</fieldId>
+			<fieldId>STUB_DESC</fieldId>
+			<fieldId>PRINCIPAL_EXCHANGE_B</fieldId>			
+		</category>
+		<category>
+			<categoryId>RATE_RESET</categoryId>
+			<fieldId>CUSTOM_RESET_OFFSET_B</fieldId>
+			<fieldId>RESET_OFFSET</fieldId>
+			<fieldId>RESET_OFFSET_BUS_DAY_B</fieldId>
+			<fieldId>RESET_HOLIDAYS</fieldId>
+			
+			<fieldId>AVERAGING_RESET_B</fieldId>
+			<fieldId>SAMPLE_FREQUENCY</fieldId>
+			<fieldId>AVERAGING_RESET_METHOD</fieldId>
+			<fieldId>SAMPLE_PERIOD_RULE</fieldId>
+			<fieldId>RESET_RANGE</fieldId>
+			<fieldId>RESET_TIMING</fieldId>
+			<fieldId>FIRST_RESET_B</fieldId>
+			<fieldId>FIRST_RESET_RATE</fieldId>
+			<fieldId>FIRST_STUB_INTERP_IDX_B</fieldId>
+			<fieldId>LAST_STUB_INTERP_IDX_B</fieldId>
+		</category>
+	</view>
+</config>

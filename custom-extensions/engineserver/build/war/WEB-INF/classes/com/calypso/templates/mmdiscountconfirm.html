@@ -1,0 +1,168 @@
+	<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+<P>I am pleased to<!--calypso>
+if (|MESSAGE_ACTION| == "amend") {
+  inline "confirm the amendment of the following |PRODUCT_FAMILY| trade:";
+} else {
+  inline "|MESSAGE_ACTION| the details of the following |PRODUCT_FAMILY| trade:";
+}
+</calypso-->
+</P>
+<P><U>Trade details:</U> <BR>&nbsp; 
+</P>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=2>
+	<TR>
+		<TD>
+			<P>Our Trade Number</P>
+		</TD>
+		<TD>
+			<P>|TRADE_ID|</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Operation Type</P>
+		</TD>
+		<TD>
+			<P>|PRODUCT_TYPE|</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Instrument Description</P>
+		</TD>
+		<TD>
+			<P>|PRODUCT_DESCRIPTION|</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Buyer</P>
+		</TD>
+		<TD>
+			<P>|TRADE_BUYER_NAME|</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Seller</P>
+		</TD>
+		<TD>
+			<P>|TRADE_SELLER_NAME|</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Trade Date</P>
+		</TD>
+		<TD>
+			<P>|TRADE_DATE|</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Settlement Date</P>
+		</TD>
+		<TD>
+			<P>|SETTLE_DATE|<!--calypso>
+if (|PRINCIPAL_EXCHANGE_REQUIRED| == "Yes") {
+inline "
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Principal Exchange Required</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Yes</p>
+  </td>
+ </tr>
+";
+}
+</calypso--></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Trade Amount</P>
+		</TD>
+		<TD>
+			<P>|PRODUCT_CURRENCY| |TRADE_NOMINAL|</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Negociated Type</P>
+		</TD>
+		<TD>
+			<P>|TRADE_NEGOCIATEDPRICETYPE|</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Negociated Price</P>
+		</TD>
+		<TD>
+			<P>|TRADE_NEGOCIATEDPRICE|</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Dirty Price</P>
+		</TD>
+		<TD>
+			<P>|TRADE_PRICE|</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Settlement Amount</P>
+		</TD>
+		<TD>
+			<P>|TRADE_SETTLEMENT_AMOUNT|</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Settlement Currency</P>
+		</TD>
+		<TD>
+			<P>|TRADE_SETTLECCY|</P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR>&nbsp;<!--calypso>
+if(|HAS_AMORTIZING| != "No") {
+inline "<table>
+	<tr>
+	<th><b><u>Calculation Period(s) Beginning</u></b></th>
+	<th><b><u>Notional Amount</u></b></th>
+	<th><b><u>Notional Reduction from Previous Calculation Period(s)</u></b></th>
+	</tr>
+";
+iterator("CashFlowInterest")
+	inline "	<tr>
+	<td>|CASHFLOW_CALCULATION_PERIOD_BEGINNING|</td><td>|CASHFLOW_NOTIONAL|</td><td>|CASHFLOW_NOTIONAL_REDUCTION|</td>
+	</tr>";
+inline "</table>";
+</calypso-->
+</P>
+<P>Settlement Instructions are as follows:</P>
+<P><!--calypso>
+iterator("TransferRules")
+	inline "<table  width='100%'>
+    <tr><th width='30%'>|SETTLEMENT_ACTION|</th><th width='68%'>&nbsp;</th></tr>
+	<tr><td width='30%'>To:</td><td>|SETTLEMENT_TO|</td></tr>
+    <tr><td>|SETTLEMENT_ROUTING|</td><td>|SETTLEMENT_METHOD|</td></tr>
+	<tr><td>Favor of:</td><td>|SETTLEMENT_FAVOR_OF|</td></tr>
+	<tr><td>Account Number:</td><td>|SETTLEMENT_ACCOUNT_NUMBER|</td></tr>
+</table>";
+</calypso-->Yours
+sincerely,</P>
+<P>|SENDER_FULL_NAME|</P>
+<P>|SENDER_CONTACT_NAME|</P>
+<P>|SENDER_TITLE| 
+</P>
+</BODY>
+</HTML>

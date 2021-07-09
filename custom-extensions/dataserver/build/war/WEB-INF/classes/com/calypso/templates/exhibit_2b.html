@@ -1,0 +1,99 @@
+<!-- ############################ -->
+<!-- #### Start Exhibit II-B #### -->
+<!-- ############################ -->
+
+
+<p>The terms of the particular Transaction to which this Confirmation relates are as follows:</p>
+
+<table>
+<tr>
+	<td width="30%">Notional Amount:</td>
+	<td>|CAP_NOTIONAL|</td>
+</tr>
+<tr>
+	<td>Trade Date:</td>
+	<td>|TRADE_DATE|</td>
+</tr>
+<tr>
+	<td>Effective Date:</td>
+	<td>|SETTLE_DATE|</td>
+</tr>
+<tr>
+	<td>Termination Date:</td>
+	<td>|PRODUCT_MATURITYDATE|, subject to adjustment in accordance with the Modified Following Business Day Convention.</td>
+</tr>
+</table>
+
+<p class="header2">|LA_SPECIAL_CLAUSE|</p>
+
+<!--calypso>
+if(|HAS_AMORTIZING| == "Yes") {
+	inline "
+<table>
+	<tr>
+		<th>Calculation Period(s) Beginning</th>
+		<th>Notional Amount</th>
+		<th>Notional Reduction from Previous Calculation Period(s)</th>
+	</tr>
+";
+	iterator("CapFloorCashFlowInterest")
+		inline "
+    <tr>
+		<td>|CASHFLOW_CALCULATION_PERIOD_BEGINNING|</td>
+	    <td>|CASHFLOW_NOTIONAL|</td>
+	    <td>|CASHFLOW_NOTIONAL_REDUCTION|</td>
+	</tr>";
+	inline "</table>";
+}
+</calypso-->
+
+<!-- Start Fixed Amounts -->
+
+<p class="header2">Fixed Amounts:</p>
+
+<table>
+<tr>
+	<td width="30%">Fixed Rate Payer:</td>
+	<td>|FIX_PAYER_CODE|</FONT></td>
+</tr>
+<tr>
+	<td>Fixed Rate Payer Payment Dates:</td>
+	<td>|PREMIUM_DATE|</td>
+</tr>
+<tr>
+	<td>Fixed Amount:</td>
+	<td>|PREMIUM_CURRENCY| |PREMIUM_AMOUNT|</td>
+</tr>
+</table>
+
+<br><br>
+
+<!--calypso>
+if(|HAS_ADDITIONAL_FIXED_AMOUNT| != "No") {
+    inline "<p class=header2>Additional Fixed Amount</p>";
+    inline "<table>";
+    iterator("FixedFees")
+        inline "    <tr><td width=30%>Fixed Rate Payer:</td><td>|ADDITIONAL_FIXED_AMOUNT_PAYER|</td></tr>
+        <tr><td>Fixed Rate Amount:</td><td>|ADDITIONAL_FIXED_AMOUNT_AMOUNT|</td></tr>
+        <tr><td>Fixed Rate Payment Date:</td><td>|ADDITIONAL_FIXED_AMOUNT_DATE|</td></tr>";
+    inline "</table>";
+}
+</calypso-->
+
+<!-- End Fixed Amounts -->
+
+<!--calypso>
+if ( |PRODUCT| == "SpreadCapFloor" ) {
+    include "exhibit_2b-spread.html";
+}
+else if ( Product.isCollar() == true || Product.isStraddle() == true) {
+    include "exhibit_2b-collar.html";
+}
+else {
+    include "exhibit_2b-default.html";
+}
+</calypso-->
+
+<!-- ########################## -->
+<!-- #### End Exhibit II-B #### -->
+<!-- ########################## -->

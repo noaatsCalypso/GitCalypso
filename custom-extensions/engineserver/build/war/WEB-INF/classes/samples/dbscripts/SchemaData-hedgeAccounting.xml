@@ -1,0 +1,1596 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<calypso:database xmlns:calypso="http://www.calypso.com/schemer">
+  <table name="an_viewer_config">
+    <row cat="hedgeAccounting">
+      <column name="analysis_name">HedgeEffectivenessProTesting</column>
+      <column name="viewer_class_name">apps.risk.HedgeEffectivenessProTestingViewer</column>
+      <column name="read_viewer_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="analysis_name">HedgeEffectivenessTesting</column>
+      <column name="viewer_class_name">apps.risk.HedgeEffectivenessTestingViewer</column>
+      <column name="read_viewer_b">0</column>
+    </row>
+  </table>
+  <table name="bo_workflow_rule">
+    <row cat="hedgeAccounting">
+      <column name="id">801</column>
+      <column name="rule_name">Reprocess</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="id">807</column>
+      <column name="rule_name">Deactivation</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="id">808</column>
+      <column name="rule_name">CheckEndDate</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="id">809</column>
+      <column name="rule_name">CheckEndDate</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="id">810</column>
+      <column name="rule_name">Reprocess</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="id">811</column>
+      <column name="rule_name">Reprocess</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="id">814</column>
+      <column name="rule_name">Reprocess</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="id">815</column>
+      <column name="rule_name">Reprocess</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="id">818</column>
+      <column name="rule_name">CheckEndDate</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="id">820</column>
+      <column name="rule_name">ReprocessEconomic</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="id">821</column>
+      <column name="rule_name">ReprocessEconomic</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="id">826</column>
+      <column name="rule_name">EndShortcut</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="id">908</column>
+      <column name="rule_name">Ignore</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="id">909</column>
+      <column name="rule_name">Reprocess</column>
+    </row>
+    
+    <row cat="hedgeAccounting">
+      <column name="id">911</column>
+      <column name="rule_name">CheckIgnoredPeriod</column>
+    </row>
+    
+    <row cat="hedgeAccounting">
+      <column name="id">914</column>
+      <column name="rule_name">CheckIgnoredPeriod</column>
+    </row>    
+  </table>
+  
+  <table name="calypso_seed">
+    <row cat="hedgeAccounting">
+      <column name="last_id">0</column>
+      <column name="seed_name">DesignationRecords</column>
+      <column name="seed_alloc_size">1</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="last_id">0</column>
+      <column name="seed_name">HedgeAccountingScheme</column>
+      <column name="seed_alloc_size">1</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="last_id">0</column>
+      <column name="seed_name">HedgeRelationshipConfig</column>
+      <column name="seed_alloc_size">500</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="last_id">0</column>
+      <column name="seed_name">HedgeRelationship</column>
+      <column name="seed_alloc_size">1</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="last_id">0</column>
+      <column name="seed_name">HedgeStrategy</column>
+      <column name="seed_alloc_size">1</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="last_id">0</column>
+      <column name="seed_name">RelationshipTradeItem</column>
+      <column name="seed_alloc_size">1</column>
+    </row>
+  </table>
+  <table name="domain_values">
+    <row cat="hedgeAccounting">
+      <column name="name">CustomAccountingFilterEvent</column>
+      <column name="value">HedgeAccounting</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">CustomStaticDataFilter</column>
+      <column name="value">HedgeAccounting</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">CustomTradeWindow</column>
+      <column name="value">HedgeAccounting</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionAction</column>
+      <column name="value">APPROVE</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionAction</column>
+      <column name="value">CANCEL</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionAction</column>
+      <column name="value">DEACTIVATE</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionAction</column>
+      <column name="value">DESIGNATE</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionAction</column>
+      <column name="value">DE_DESIGNATE</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionAction</column>
+      <column name="value">END_SHORTCUT</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionAction</column>
+      <column name="value">MIGRATE</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionAction</column>
+      <column name="value">NEW</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionAction</column>
+      <column name="value">REPROCESS</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionAction</column>
+      <column name="value">TERMINATE</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionAction</column>
+      <column name="value">UPDATE</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionStatus</column>
+      <column name="value">CANCELED</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionStatus</column>
+      <column name="value">EFFECTIVE</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionStatus</column>
+      <column name="value">HYPOTHETICAL</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionStatus</column>
+      <column name="value">INACTIVE</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionStatus</column>
+      <column name="value">INACTIVE_HO</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionStatus</column>
+      <column name="value">INEFFECTIVE</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionStatus</column>
+      <column name="value">NONE</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionStatus</column>
+      <column name="value">DRAFT</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionStatus</column>
+      <column name="value">PENDING</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionStatus</column>
+      <column name="value">TERMINATED</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionStatus</column>
+      <column name="value">UNAPPROVED</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionAction</column>
+      <column name="value">CANCEL_CYCLE</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionAction</column>
+      <column name="value">IGNORE</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">HedgeRelationshipDefinitionStatus</column>
+      <column name="value">IGNORED</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">MirrorKeywords</column>
+      <column name="value">Hedge</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">applicationName</column>
+      <column name="value">RelationshipManagerEngine</column>
+      <column name="description">RelationshipManagerEngine</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">classAuditMode</column>
+      <column name="value">HedgeDefinition</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">classAuditMode</column>
+      <column name="value">HedgeRelationshipConfiguration</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">classAuditMode</column>
+      <column name="value">HedgeRelationshipDefinition</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">classAuditMode</column>
+      <column name="value">RelationshipTradeItem</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">classAuthMode</column>
+      <column name="value">HedgeDefinition</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">classAuthMode</column>
+      <column name="value">HedgePricerMeasureMapping</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">classAuthMode</column>
+      <column name="value">HedgeRelationshipConfiguration</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">classAuthMode</column>
+      <column name="value">HedgeRelationshipDefinition</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">domainName</column>
+      <column name="value">hedgeAccountingSchemeAttributes</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">domainName</column>
+      <column name="value">hedgeAccountingSchemeMethod</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">domainName</column>
+      <column name="value">hedgeAccountingSchemeStandard</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">domainName</column>
+      <column name="value">hedgeDefinitionAttributes</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">domainName</column>
+      <column name="value">hedgeDefinitionClassification</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">domainName</column>
+      <column name="value">hedgeDefinitionSubclass</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">domainName</column>
+      <column name="value">hedgeDefinitionType</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">domainName</column>
+      <column name="value">hedgeRelationshipConfigurationEndDateMethod</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">domainName</column>
+      <column name="value">hedgeRelationshipConfigurationStartDateMethod</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">domainName</column>
+      <column name="value">hedgeRelationshipDefinitionAttributes</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">domainName</column>
+      <column name="value">hedgedRisk</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">domainName</column>
+      <column name="value">workflowRuleHedgeRelationshipDefinition</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">engineName</column>
+      <column name="value">RelationshipManagerEngine</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventClass</column>
+      <column name="value">PSEventHedgeAccountingValuation</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventClass</column>
+      <column name="value">PSEventHedgeDesignationRecord</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventClass</column>
+      <column name="value">PSEventHedgeEffectivenessTest</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventClass</column>
+      <column name="value">PSEventHedgeRelationshipDefinition</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventFilter</column>
+      <column name="value">HedgeRelationshipDefinitionEventFilter</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventType</column>
+      <column name="value">CANCELED_RELATIONSHIP</column>
+      <column name="description">Status of the Hedge Relationship</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventType</column>
+      <column name="value">EFFECTIVE_RELATIONSHIP</column>
+      <column name="description">Status of the Hedge Relationship</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventType</column>
+      <column name="value">EX_HEDGE_RELATIONSHIP_DEFINITION</column>
+      <column name="description">Exception Generated when a trade in hedge relationship definition is modified</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventType</column>
+      <column name="value">HEDGE_BALANCE_VALUATION</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventType</column>
+      <column name="value">HEDGE_DESIGNATION_VALUATION</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventType</column>
+      <column name="value">INACTIVE_RELATIONSHIP</column>
+      <column name="description">Status of the Hedge Relationship</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventType</column>
+      <column name="value">INEFFECTIVE_RELATIONSHIP</column>
+      <column name="description">Status of the Hedge Relationship</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventType</column>
+      <column name="value">MODIFY_HEDGE_RELATIONSHIP</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventType</column>
+      <column name="value">NEW_HEDGE_RELATIONSHIP</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventType</column>
+      <column name="value">PENDING_RELATIONSHIP</column>
+      <column name="description">Status of the Hedge Relationship</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventType</column>
+      <column name="value">REMOVE_HEDGE_RELATIONSHIP</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventType</column>
+      <column name="value">TERMINATED_RELATIONSHIP</column>
+      <column name="description">Status of the Hedge Relationship</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">eventType</column>
+      <column name="value">TRADE_VALUATION_RELATIONSHIP</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">function</column>
+      <column name="value">CreateHedgeDefinition</column>
+      <column name="description">Access permission to Add Hedge Definition</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">function</column>
+      <column name="value">CreateHedgePricerMeasureMapping</column>
+      <column name="description">Access permission to Add Hedge Pricer Measure Mapping</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">function</column>
+      <column name="value">CreateHedgeRelationshipDefinition</column>
+      <column name="description">Access permission to Add Hedge Relationship Definition</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">function</column>
+      <column name="value">ModifyHedgeDefinition</column>
+      <column name="description">Access permission to Modify Hedge Definition</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">function</column>
+      <column name="value">ModifyHedgePricerMeasureMapping</column>
+      <column name="description">Access permission to Modify Hedge Pricer Measure Mapping</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">function</column>
+      <column name="value">ModifyHedgeRelationshipDefinition</column>
+      <column name="description">Access permission to Modify Hedge Relationship Definition</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">function</column>
+      <column name="value">RemoveHedgeDefinition</column>
+      <column name="description">Access permission to Remove Hedge Definition</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">function</column>
+      <column name="value">RemoveHedgePricerMeasureMapping</column>
+      <column name="description">Access permission to Remove Hedge Pricer Measure Mapping</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">function</column>
+      <column name="value">RemoveHedgeRelationshipDefinition</column>
+      <column name="description">Access permission to Remove Hedge Relationship Definition</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeAccountingSchemeAttributes</column>
+      <column name="value">Base Currency</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeAccountingSchemeAttributes</column>
+      <column name="value">Baseline Amort. End Date</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeAccountingSchemeAttributes</column>
+      <column name="value">Basis Amort. End Date</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeAccountingSchemeAttributes</column>
+      <column name="value">Calculate Baseline Adjustment</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeAccountingSchemeAttributes</column>
+      <column name="value">Curve Shifting</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeAccountingSchemeAttributes</column>
+      <column name="value">Holidays</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeAccountingSchemeAttributes</column>
+      <column name="value">O/S Code</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeAccountingSchemeAttributes</column>
+      <column name="value">O/S Description</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeAccountingSchemeMethod</column>
+      <column name="value">Cash Flow Hedge</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeAccountingSchemeMethod</column>
+      <column name="value">Change in Variable Cash Flow</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeAccountingSchemeMethod</column>
+      <column name="value">Hypothetical Derivative</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeAccountingSchemeMethod</column>
+      <column name="value">Long Haul</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeAccountingSchemeMethod</column>
+      <column name="value">Shortcut</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeAccountingSchemeStandard</column>
+      <column name="value">FAS</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeAccountingSchemeStandard</column>
+      <column name="value">IAS</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeAccountingSchemeTestingType</column>
+      <column name="value">Prospective</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeDefinitionAttributes</column>
+      <column name="value">Accounting Hedge</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeDefinitionAttributes</column>
+      <column name="value">Check List Template</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeDefinitionAttributes</column>
+      <column name="value">De-designation Fee</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeDefinitionAttributes</column>
+      <column name="value">Default HAS</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeDefinitionAttributes</column>
+      <column name="value">Four-Eye Term Verification</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeDefinitionAttributes</column>
+      <column name="value">Liquidation Config</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeDefinitionAttributes</column>
+      <column name="value">Pricing Environment</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeDefinitionAttributes</column>
+      <column name="value">Effectiveness Testing Pricing Param Set</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeDefinitionAttributes</column>
+      <column name="value">Prospective Validation Name</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeDefinitionAttributes</column>
+      <column name="value">Retrospective Validation Name</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeDefinitionSubclass</column>
+      <column name="value">Cashflow Hedge</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeDefinitionSubclass</column>
+      <column name="value">Fair Value Hedge</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeDefinitionSubclass</column>
+      <column name="value">Net Investment Hedge</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeDefinitionSubclass</column>
+      <column name="value">Non-Qualifying Hedge</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeDefinitionType</column>
+      <column name="value">Primary Hedge</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeDefinitionType</column>
+      <column name="value">Secondary Hedge</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipConfigurationEndDateMethod</column>
+      <column name="value">MaxEnteredDate</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipConfigurationEndDateMethod</column>
+      <column name="value">MaxMaturityDate</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipConfigurationEndDateMethod</column>
+      <column name="value">MaxTradeDate</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipConfigurationEndDateMethod</column>
+      <column name="value">MinEnteredDate</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipConfigurationEndDateMethod</column>
+      <column name="value">MinMaturityDate</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipConfigurationEndDateMethod</column>
+      <column name="value">MinTradeDate</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipConfigurationStartDateMethod</column>
+      <column name="value">MaxEnteredDate</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipConfigurationStartDateMethod</column>
+      <column name="value">MaxMaturityDate</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipConfigurationStartDateMethod</column>
+      <column name="value">MaxTradeDate</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipConfigurationStartDateMethod</column>
+      <column name="value">MinEnteredDate</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipConfigurationStartDateMethod</column>
+      <column name="value">MinMaturityDate</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipConfigurationStartDateMethod</column>
+      <column name="value">MinTradeDate</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipDefinitionAttributes</column>
+      <column name="value">CVAMeasure</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipDefinitionAttributes</column>
+      <column name="value">DeactivationDate</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipDefinitionAttributes</column>
+      <column name="value">HedgeEffectivenessDocumentationReview</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipDefinitionAttributes</column>
+      <column name="value">LastEffectivenessTest</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipDefinitionAttributes</column>
+      <column name="value">MaterialThreshold</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipDefinitionAttributes</column>
+      <column name="value">MigrationDate</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipDefinitionAttributes</column>
+      <column name="value">MigrationDeDesignationDate</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipDefinitionAttributes</column>
+      <column name="value">MigrationHETPassCount</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipDefinitionAttributes</column>
+      <column name="value">MigrationStatus</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgeRelationshipDefinitionAttributes</column>
+      <column name="value">ShiftOnDiscountCurve</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgedRisk</column>
+      <column name="value">Credit Risk</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgedRisk</column>
+      <column name="value">Issuer Credit Spread Risk</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgedRisk</column>
+      <column name="value">Issuer Default Risk</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgedRisk</column>
+      <column name="value">Price Risk</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">hedgedRisk</column>
+      <column name="value">Swap Spread Risk</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">riskAnalysis</column>
+      <column name="value">HedgeEffectivenessProTesting</column>
+      <column name="description">Prospective Hedge Effectiveness Testing</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">riskAnalysis</column>
+      <column name="value">HedgeEffectivenessTesting</column>
+      <column name="description">Retrospective Hedge Effectiveness Testing</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">scheduledTask</column>
+      <column name="value">EOD_HEDGE_EFFECTIVENESS_ANALYSIS</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">scheduledTask</column>
+      <column name="value">EOD_HEDGE_LIQUIDATION</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">scheduledTask</column>
+      <column name="value">EOD_HEDGE_MARKING</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">scheduledTask</column>
+      <column name="value">EOD_HEDGE_VALUATION</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">workflowRuleHedgeRelationshipDefinition</column>
+      <column name="value">Approve</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">workflowRuleHedgeRelationshipDefinition</column>
+      <column name="value">CheckEndDate</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">workflowRuleHedgeRelationshipDefinition</column>
+      <column name="value">CheckFullTermination</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">workflowRuleHedgeRelationshipDefinition</column>
+      <column name="value">Deactivation</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">workflowRuleHedgeRelationshipDefinition</column>
+      <column name="value">EndShortcut</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">workflowRuleHedgeRelationshipDefinition</column>
+      <column name="value">ReprocessEconomic</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">workflowRuleHedgeRelationshipDefinition</column>
+      <column name="value">Reprocess</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">CheckHedgeDefinition</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">CheckHedgeRelationshipDefinitionWarning</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">workflowRuleTrade</column>
+      <column name="value">CheckHedgeRelationshipDefinition</column>
+      <column name="description"/>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="name">workflowType</column>
+      <column name="value">HedgeRelationshipDefinition</column>
+      <column name="description"/>
+    </row>
+  </table>
+  <table name="ps_event_config">
+    <row cat="hedgeAccounting">
+      <column name="event_config_name">Back-Office</column>
+      <column name="event_class">PSEventHedgeAccountingValuation</column>
+      <column name="engine_name">AccountingEngine</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="event_config_name">Back-Office</column>
+      <column name="event_class">PSEventHedgeDesignationRecord</column>
+      <column name="engine_name">AccountingEngine</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="event_config_name">Back-Office</column>
+      <column name="event_class">PSEventHedgeDesignationRecord</column>
+      <column name="engine_name">RelationshipManagerEngine</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="event_config_name">Back-Office</column>
+      <column name="event_class">PSEventHedgeEffectivenessTest</column>
+      <column name="engine_name">RelationshipManagerEngine</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="event_config_name">Back-Office</column>
+      <column name="event_class">PSEventHedgeRelationshipDefinition</column>
+      <column name="engine_name">AccountingEngine</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="event_config_name">Back-Office</column>
+      <column name="event_class">PSEventHedgeRelationshipDefinition</column>
+      <column name="engine_name">RelationshipManagerEngine</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="event_config_name">Back-Office</column>
+      <column name="event_class">PSEventTrade</column>
+      <column name="engine_name">RelationshipManagerEngine</column>
+    </row>
+  </table>
+  <table name="wfw_transition">
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">801</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">NONE</column>
+      <column name="possible_action">NEW</column>
+      <column name="resulting_status">PENDING</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">802</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">PENDING</column>
+      <column name="possible_action">DESIGNATE</column>
+      <column name="resulting_status">EFFECTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">803</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">EFFECTIVE</column>
+      <column name="possible_action">DE_DESIGNATE</column>
+      <column name="resulting_status">INEFFECTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">804</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">INEFFECTIVE</column>
+      <column name="possible_action">DESIGNATE</column>
+      <column name="resulting_status">EFFECTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">805</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">EFFECTIVE</column>
+      <column name="possible_action">CANCEL</column>
+      <column name="resulting_status">CANCELED</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">806</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">INEFFECTIVE</column>
+      <column name="possible_action">CANCEL</column>
+      <column name="resulting_status">CANCELED</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">807</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">INEFFECTIVE</column>
+      <column name="possible_action">DEACTIVATE</column>
+      <column name="resulting_status">INACTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">808</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">EFFECTIVE</column>
+      <column name="possible_action">TERMINATE</column>
+      <column name="resulting_status">TERMINATED</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">809</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">INACTIVE</column>
+      <column name="possible_action">TERMINATE</column>
+      <column name="resulting_status">TERMINATED</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">810</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">INACTIVE</column>
+      <column name="possible_action">REPROCESS</column>
+      <column name="resulting_status">INACTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">811</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">PENDING</column>
+      <column name="possible_action">REPROCESS</column>
+      <column name="resulting_status">PENDING</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">812</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">EFFECTIVE</column>
+      <column name="possible_action">UPDATE</column>
+      <column name="resulting_status">EFFECTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">813</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">INEFFECTIVE</column>
+      <column name="possible_action">UPDATE</column>
+      <column name="resulting_status">INEFFECTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">814</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">INEFFECTIVE</column>
+      <column name="possible_action">REPROCESS</column>
+      <column name="resulting_status">INEFFECTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">815</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">EFFECTIVE</column>
+      <column name="possible_action">REPROCESS</column>
+      <column name="resulting_status">EFFECTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+      <column name="prefered_b">1</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">816</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">PENDING</column>
+      <column name="possible_action">CANCEL</column>
+      <column name="resulting_status">CANCELED</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">817</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">PENDING</column>
+      <column name="possible_action">UPDATE</column>
+      <column name="resulting_status">PENDING</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">818</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">INEFFECTIVE</column>
+      <column name="possible_action">TERMINATE</column>
+      <column name="resulting_status">TERMINATED</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">819</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">INACTIVE</column>
+      <column name="possible_action">UPDATE</column>
+      <column name="resulting_status">INACTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">820</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">NONE</column>
+      <column name="possible_action">NEW</column>
+      <column name="resulting_status">EFFECTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">Non-Qualifying Hedge</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">821</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">EFFECTIVE</column>
+      <column name="possible_action">REPROCESS</column>
+      <column name="resulting_status">EFFECTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">Non-Qualifying Hedge</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">822</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">EFFECTIVE</column>
+      <column name="possible_action">TERMINATE</column>
+      <column name="resulting_status">TERMINATED</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">Non-Qualifying Hedge</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">823</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">EFFECTIVE</column>
+      <column name="possible_action">CANCEL</column>
+      <column name="resulting_status">CANCELED</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">Non-Qualifying Hedge</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">824</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">TERMINATED</column>
+      <column name="possible_action">CANCEL</column>
+      <column name="resulting_status">CANCELED</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">Non-Qualifying Hedge</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">825</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">PENDING</column>
+      <column name="possible_action">MIGRATE</column>
+      <column name="resulting_status">EFFECTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">826</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">EFFECTIVE</column>
+      <column name="possible_action">END_SHORTCUT</column>
+      <column name="resulting_status">EFFECTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <!--  beware ids 827 etc are defined in SchemaData-init.xml -->
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">901</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">NONE</column>
+      <column name="possible_action">PREVIEW</column>
+      <column name="resulting_status">DRAFT</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">902</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">INACTIVE</column>
+      <column name="possible_action">CANCEL</column>
+      <column name="resulting_status">CANCELED</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">903</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">TERMINATED</column>
+      <column name="possible_action">CANCEL</column>
+      <column name="resulting_status">CANCELED</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">904</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">EFFECTIVE</column>
+      <column name="possible_action">DEACTIVATE</column>
+      <column name="resulting_status">INACTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">905</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">INACTIVE</column>
+      <column name="possible_action">HANDOVER</column>
+      <column name="resulting_status">INACTIVE_HO</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">906</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">INACTIVE_HO</column>
+      <column name="possible_action">DEACTIVATE</column>
+      <column name="resulting_status">INACTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">907</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">TERMINATED</column>
+      <column name="possible_action">CANCEL_CYCLE</column>
+      <column name="resulting_status">INACTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">908</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">INACTIVE</column>
+      <column name="possible_action">IGNORE</column>
+      <column name="resulting_status">IGNORED</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">909</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">IGNORED</column>
+      <column name="possible_action">REPROCESS</column>
+      <column name="resulting_status">IGNORED</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">910</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">IGNORED</column>
+      <column name="possible_action">TERMINATE</column>
+      <column name="resulting_status">TERMINATED</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    <!-- Cancel Cycle workflow -->
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">911</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">TERMINATED</column>
+      <column name="possible_action">CANCEL_CYCLE</column>
+      <column name="resulting_status">IGNORED</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">912</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">TERMINATED</column>
+      <column name="possible_action">CANCEL_CYCLE</column>
+      <column name="resulting_status">INACTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+      <column name="priority">1</column>
+    </row>
+    
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">913</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">IGNORED</column>
+      <column name="possible_action">CANCEL_CYCLE</column>
+      <column name="resulting_status">INACTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+      <column name="priority">1</column>
+    </row>
+    
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">914</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">IGNORED</column>
+      <column name="possible_action">CANCEL_CYCLE</column>
+      <column name="resulting_status">IGNORED</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    
+    <row cat="hedgeAccounting">
+      <column name="workflow_id">915</column>
+      <column name="event_class">HedgeRelationshipDefinition</column>
+      <column name="status">INACTIVE</column>
+      <column name="possible_action">CANCEL_CYCLE</column>
+      <column name="resulting_status">INACTIVE</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">ALL</column>
+      <column name="log_completed_b">0</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="create_task_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="gen_int_event_b">0</column>
+    </row>
+    
+  </table>
+</calypso:database>

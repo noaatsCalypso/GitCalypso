@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration xmlns:xi="http://www.w3.org/2001/XInclude" status="WARN">
+  <!-- Definition of properties -->
+  <xi:include href="fragments/properties.log4j2.xml"/>
+  <!-- Definition of appenders -->
+  <Appenders>
+     <xi:include href="fragments/appender_alert_APPENDER.xml"/>
+     <xi:include href="fragments/appender_console.xml"/>
+     <xi:include href="fragments/appender_default.xml"/>
+     <xi:include href="fragments/appender_ElasticSearch_APPENDER.xml"/>
+     <xi:include href="fragments/appender_event.xml"/>
+     <xi:include href="fragments/appender_ThirdParty.xml"/>
+  </Appenders>
+  <Loggers>
+    <Root level="ERROR">
+	  <AppenderRef ref="default"/>
+	  <AppenderRef ref="console"/>
+	  <AppenderRef ref="ThirdParty"/>
+    </Root>
+    <Logger name="com.calypso" level="ERROR" additivity="false">
+	  <AppenderRef ref="default"/>
+	  <AppenderRef ref="event"/>
+	  <AppenderRef ref="ElasticSearch_APPENDER"/>
+    </Logger>
+    <Logger name="com.calypso.alert" level="INFO" additivity="false">
+	  <AppenderRef ref="alert_APPENDER"/>
+    </Logger>
+    <Logger name="com.calypso.SYSTEM" level="INFO" additivity="false">
+		<AppenderRef ref="default"/>
+		<AppenderRef ref="console"/>
+    </Logger>
+	<Logger name="com.calypso.microservice" level="ERROR"/>
+	<Logger name="com.calypso.bean" level="ERROR"/>
+	<Logger name="com.calypso.persistence" level="ERROR"/>
+	<Logger name="org.springframework.data.repository.config.RepositoryConfigurationDelegate" level="ERROR"/>
+  </Loggers>
+</Configuration>

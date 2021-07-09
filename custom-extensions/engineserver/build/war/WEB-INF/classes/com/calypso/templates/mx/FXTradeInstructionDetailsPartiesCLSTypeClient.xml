@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+	<contents>
+		<element name="TradgSdId">
+			<contents>
+				<element name="SubmitgPty">
+					<contents>
+						<element name="AnyBIC">
+							<contents>
+								<element name="AnyBIC">
+									<contents>
+										<report>
+											<column>Sender.Swift</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="TradPty">
+					<context>
+						<to>CounterpartyContact</to>
+					</context>
+					<contents>
+						<element name="AnyBIC">
+							<contents>
+								<element name="AnyBIC">
+									<contents>
+										<report>
+											<column>Swift</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+			</contents>
+		</element>
+		<element name="CtrPtySdId">
+			<contents>
+				<element name="SubmitgPty">
+					<contents>
+						<element name="AnyBIC">
+							<contents>
+								<element name="AnyBIC">
+									<contents>
+										<report>
+											<column>TRADE_KEYWORD.OriginalCpty</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="TradPty">
+					<contents>
+						<element name="AnyBIC">
+							<contents>
+								<element name="AnyBIC">
+									<contents>
+										<report>
+											<column>TRADE_KEYWORD.OriginalCpty</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+			</contents>
+		</element>
+	</contents>
+</template>

@@ -1,0 +1,15 @@
+<BONamedQueries>
+    <BONamedQuery name="LoadValueDateControlConfig" paramCount="0">
+        <description>Prepared Statement Query to load Value Date Control Configuration</description>
+        <idColumn>value_date_control_config.value_date_control_config_id</idColumn>
+        <from>value_date_control_config</from>
+        <where><![CDATA[1=1]]></where>
+        <OptionalCondition name="currency" paramCount="1">
+            <condition><![CDATA[value_date_control_config.currency=?]]></condition>
+        </OptionalCondition>
+        <OptionalCondition name="method" paramCount="1">
+            <condition><![CDATA[value_date_control_config.method=?]]></condition>
+        </OptionalCondition>
+        <orderBy>value_date_control_config.value_date_control_config_id</orderBy>
+    </BONamedQuery>
+</BONamedQueries>

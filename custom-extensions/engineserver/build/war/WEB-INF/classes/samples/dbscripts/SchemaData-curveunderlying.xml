@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<calypso:database xmlns:calypso="http://www.calypso.com/schemer">
+  <table name="cu_fra">
+    <row cat="curveunderlying">
+      <column name="cu_id">33</column>
+      <column name="rate_index">USD/LIBOR/1M/T3750</column>
+      <column name="start_tenor">30</column>
+      <column name="maturity_tenor">120</column>
+      <column name="specific_b">0</column>
+      <column name="specific_end_b">0</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">34</column>
+      <column name="rate_index">USD/LIBOR/1M/T3750</column>
+      <column name="start_tenor">30</column>
+      <column name="maturity_tenor">210</column>
+      <column name="specific_b">0</column>
+      <column name="specific_end_b">0</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">35</column>
+      <column name="rate_index">EUR/EURIBOR/1M/T3750</column>
+      <column name="start_tenor">30</column>
+      <column name="maturity_tenor">210</column>
+      <column name="specific_b">0</column>
+      <column name="specific_end_b">0</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">36</column>
+      <column name="rate_index">EUR/EURIBOR/1M/T3750</column>
+      <column name="start_tenor">30</column>
+      <column name="maturity_tenor">120</column>
+      <column name="specific_b">0</column>
+      <column name="specific_end_b">0</column>
+    </row>
+  </table>
+  <table name="cu_future">
+    <row cat="curveunderlying">
+      <column name="cu_id">11</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">1</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">12</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">2</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">13</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">3</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">14</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">4</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">15</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">5</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">16</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">6</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">17</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">7</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">18</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">8</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">19</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">9</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">20</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">10</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">21</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">11</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">22</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">12</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">23</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">13</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">24</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">14</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">25</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">15</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">26</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">16</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">27</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">17</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">28</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">18</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">29</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">19</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">30</column>
+      <column name="contract_id">5</column>
+      <column name="contract_rank">20</column>
+    </row>
+  </table>
+  <table name="cu_moneymarket">
+    <row cat="curveunderlying">
+      <column name="cu_id">1</column>
+      <column name="is_discount">0</column>
+      <column name="money_market_tenor">1</column>
+      <column name="money_market_type">LIBOR</column>
+      <column name="settle_days">0</column>
+      <column name="daycount_code">ACT/360</column>
+      <column name="dateroll_code">FOLLOWING</column>
+      <column name="holidays">LON,NYC</column>
+      <column name="rate_index_source">T3750</column>
+      <column name="specific_b">0</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">2</column>
+      <column name="is_discount">0</column>
+      <column name="money_market_tenor">1</column>
+      <column name="money_market_type">LIBOR</column>
+      <column name="settle_days">1</column>
+      <column name="daycount_code">ACT/360</column>
+      <column name="dateroll_code">FOLLOWING</column>
+      <column name="holidays">LON,NYC</column>
+      <column name="rate_index_source">T3750</column>
+      <column name="specific_b">0</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">3</column>
+      <column name="is_discount">0</column>
+      <column name="money_market_tenor">7</column>
+      <column name="money_market_type">LIBOR</column>
+      <column name="settle_days">2</column>
+      <column name="daycount_code">ACT/360</column>
+      <column name="dateroll_code">FOLLOWING</column>
+      <column name="holidays">LON,NYC</column>
+      <column name="rate_index_source">T3750</column>
+      <column name="specific_b">0</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">4</column>
+      <column name="is_discount">0</column>
+      <column name="money_market_tenor">14</column>
+      <column name="money_market_type">LIBOR</column>
+      <column name="settle_days">2</column>
+      <column name="daycount_code">ACT/360</column>
+      <column name="dateroll_code">FOLLOWING</column>
+      <column name="holidays">LON,NYC</column>
+      <column name="rate_index_source">T3750</column>
+      <column name="specific_b">0</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">5</column>
+      <column name="is_discount">0</column>
+      <column name="money_market_tenor">30</column>
+      <column name="money_market_type">LIBOR</column>
+      <column name="settle_days">2</column>
+      <column name="daycount_code">ACT/360</column>
+      <column name="dateroll_code">MOD_FOLLOW</column>
+      <column name="holidays">LON,NYC</column>
+      <column name="rate_index_source">T3750</column>
+      <column name="specific_b">0</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">6</column>
+      <column name="is_discount">0</column>
+      <column name="money_market_tenor">60</column>
+      <column name="money_market_type">LIBOR</column>
+      <column name="settle_days">2</column>
+      <column name="daycount_code">ACT/360</column>
+      <column name="dateroll_code">MOD_FOLLOW</column>
+      <column name="holidays">LON,NYC</column>
+      <column name="rate_index_source">T3750</column>
+      <column name="specific_b">0</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">7</column>
+      <column name="is_discount">0</column>
+      <column name="money_market_tenor">90</column>
+      <column name="money_market_type">LIBOR</column>
+      <column name="settle_days">2</column>
+      <column name="daycount_code">ACT/360</column>
+      <column name="dateroll_code">MOD_FOLLOW</column>
+      <column name="holidays">LON,NYC</column>
+      <column name="rate_index_source">T3750</column>
+      <column name="specific_b">0</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">8</column>
+      <column name="is_discount">0</column>
+      <column name="money_market_tenor">180</column>
+      <column name="money_market_type">LIBOR</column>
+      <column name="settle_days">2</column>
+      <column name="daycount_code">ACT/360</column>
+      <column name="dateroll_code">MOD_FOLLOW</column>
+      <column name="holidays">LON,NYC</column>
+      <column name="rate_index_source">T3750</column>
+      <column name="specific_b">0</column>
+    </row>
+  </table>
+  <table name="cu_swap">
+    <row cat="curveunderlying">
+      <column name="cu_id">37</column>
+      <column name="rate_index">USD/LIBOR/6M/T3750</column>
+      <column name="maturity_tenor">720</column>
+      <column name="fixed_cpn_holidays">NYC</column>
+      <column name="fixed_cpn_dateroll">MOD_FOLLOW</column>
+      <column name="fxd_daycount">30/360</column>
+      <column name="flt_cpn_holidays">NYC</column>
+      <column name="flt_cpn_dateroll">MOD_FOLLOW</column>
+      <column name="fixed_cpn_freq">SA</column>
+      <column name="float_cpn_freq">SA</column>
+      <column name="fxd_period_rule">ADJUSTED</column>
+      <column name="flt_period_rule">ADJUSTED</column>
+      <column name="spc_lag_b">0</column>
+      <column name="spc_lag_bus_cal_b">0</column>
+      <column name="principal_actual_b">0</column>
+      <column name="discount_method">0</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">38</column>
+      <column name="rate_index">USD/LIBOR/6M/T3750</column>
+      <column name="maturity_tenor">1080</column>
+      <column name="fixed_cpn_holidays">NYC</column>
+      <column name="fixed_cpn_dateroll">MOD_FOLLOW</column>
+      <column name="fxd_daycount">30/360</column>
+      <column name="flt_cpn_holidays">NYC</column>
+      <column name="flt_cpn_dateroll">MOD_FOLLOW</column>
+      <column name="fixed_cpn_freq">SA</column>
+      <column name="float_cpn_freq">SA</column>
+      <column name="fxd_period_rule">ADJUSTED</column>
+      <column name="flt_period_rule">ADJUSTED</column>
+      <column name="spc_lag_b">0</column>
+      <column name="spc_lag_bus_cal_b">0</column>
+      <column name="principal_actual_b">0</column>
+      <column name="discount_method">0</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">39</column>
+      <column name="rate_index">USD/LIBOR/6M/T3750</column>
+      <column name="maturity_tenor">1800</column>
+      <column name="fixed_cpn_holidays">NYC</column>
+      <column name="fixed_cpn_dateroll">MOD_FOLLOW</column>
+      <column name="fxd_daycount">30/360</column>
+      <column name="flt_cpn_holidays">NYC</column>
+      <column name="flt_cpn_dateroll">MOD_FOLLOW</column>
+      <column name="fixed_cpn_freq">SA</column>
+      <column name="float_cpn_freq">SA</column>
+      <column name="fxd_period_rule">ADJUSTED</column>
+      <column name="flt_period_rule">ADJUSTED</column>
+      <column name="spc_lag_b">0</column>
+      <column name="spc_lag_bus_cal_b">0</column>
+      <column name="principal_actual_b">0</column>
+      <column name="discount_method">0</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">40</column>
+      <column name="rate_index">USD/LIBOR/6M/T3750</column>
+      <column name="maturity_tenor">2520</column>
+      <column name="fixed_cpn_holidays">NYC</column>
+      <column name="fixed_cpn_dateroll">MOD_FOLLOW</column>
+      <column name="fxd_daycount">30/360</column>
+      <column name="flt_cpn_holidays">NYC</column>
+      <column name="flt_cpn_dateroll">MOD_FOLLOW</column>
+      <column name="fixed_cpn_freq">SA</column>
+      <column name="float_cpn_freq">SA</column>
+      <column name="fxd_period_rule">ADJUSTED</column>
+      <column name="flt_period_rule">ADJUSTED</column>
+      <column name="spc_lag_b">0</column>
+      <column name="spc_lag_bus_cal_b">0</column>
+      <column name="principal_actual_b">0</column>
+      <column name="discount_method">0</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">41</column>
+      <column name="rate_index">USD/LIBOR/6M/T3750</column>
+      <column name="maturity_tenor">3600</column>
+      <column name="fixed_cpn_holidays">NYC</column>
+      <column name="fixed_cpn_dateroll">MOD_FOLLOW</column>
+      <column name="fxd_daycount">30/360</column>
+      <column name="flt_cpn_holidays">NYC</column>
+      <column name="flt_cpn_dateroll">MOD_FOLLOW</column>
+      <column name="fixed_cpn_freq">SA</column>
+      <column name="float_cpn_freq">SA</column>
+      <column name="fxd_period_rule">ADJUSTED</column>
+      <column name="flt_period_rule">ADJUSTED</column>
+      <column name="spc_lag_b">0</column>
+      <column name="spc_lag_bus_cal_b">0</column>
+      <column name="principal_actual_b">0</column>
+      <column name="discount_method">0</column>
+    </row>
+  </table>
+  <table name="curve_underlying">
+    <row cat="curveunderlying">
+      <column name="cu_id">1</column>
+      <column name="cu_type">CurveUnderlyingMoneyMarket</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">MM.USD.LIBOR.ON.T3750</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">2</column>
+      <column name="cu_type">CurveUnderlyingMoneyMarket</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">MM.USD.LIBOR.TON.T3750</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">3</column>
+      <column name="cu_type">CurveUnderlyingMoneyMarket</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">MM.USD.LIBOR.1W.T3750</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">4</column>
+      <column name="cu_type">CurveUnderlyingMoneyMarket</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">MM.USD.LIBOR.2W.T3750</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">5</column>
+      <column name="cu_type">CurveUnderlyingMoneyMarket</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">MM.USD.LIBOR.1M.T3750</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">6</column>
+      <column name="cu_type">CurveUnderlyingMoneyMarket</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">MM.USD.LIBOR.2M.T3750</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">7</column>
+      <column name="cu_type">CurveUnderlyingMoneyMarket</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">MM.USD.LIBOR.3M.T3750</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">8</column>
+      <column name="cu_type">CurveUnderlyingMoneyMarket</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">MM.USD.LIBOR.6M.T3750</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">11</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.1</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">12</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.2</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">13</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.3</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">14</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.4</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">15</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.5</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">16</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.6</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">17</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.7</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">18</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.8</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">19</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.9</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">20</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.10</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">21</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.11</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">22</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.12</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">23</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.13</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">24</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.14</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">25</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.15</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">26</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.16</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">27</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.17</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">28</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.18</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">29</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.19</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">30</column>
+      <column name="cu_type">CurveUnderlyingFuture</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">CME.EURODOLLAR.20</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">33</column>
+      <column name="cu_type">CurveUnderlyingFRA</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">FRA.USD.LIBOR.1Mx4M</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">34</column>
+      <column name="cu_type">CurveUnderlyingFRA</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">FRA.USD.LIBOR.1Mx7M</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">35</column>
+      <column name="cu_type">CurveUnderlyingFRA</column>
+      <column name="cu_currency">EUR</column>
+      <column name="quote_name">FRA.EUR.EURIBOR.1Mx7M</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">36</column>
+      <column name="cu_type">CurveUnderlyingFRA</column>
+      <column name="cu_currency">EUR</column>
+      <column name="quote_name">FRA.EUR.EURIBOR.1Mx4M</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">37</column>
+      <column name="cu_type">CurveUnderlyingSwap</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">Swap.2Y.USD.LIBOR.3M/3M</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">38</column>
+      <column name="cu_type">CurveUnderlyingSwap</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">Swap.3Y.USD.LIBOR.3M/3M</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">39</column>
+      <column name="cu_type">CurveUnderlyingSwap</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">Swap.5Y.USD.LIBOR.3M/3M</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">40</column>
+      <column name="cu_type">CurveUnderlyingSwap</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">Swap.7Y.USD.LIBOR.3M/3M</column>
+    </row>
+    <row cat="curveunderlying">
+      <column name="cu_id">41</column>
+      <column name="cu_type">CurveUnderlyingSwap</column>
+      <column name="cu_currency">USD</column>
+      <column name="quote_name">Swap.10Y.USD.LIBOR.3M/3M</column>
+    </row>
+  </table>
+</calypso:database>

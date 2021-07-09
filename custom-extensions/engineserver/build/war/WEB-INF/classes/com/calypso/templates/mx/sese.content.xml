@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+    <contents max="1">
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "sese.030.001.T2S")</expression>
+            </condition>
+            <path>SecuritiesSettlementConditionsModificationRequestT2S.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "sese.023.001.T2S")</expression>
+            </condition>
+            <path>SecuritiesSettlementTransactionInstructionT2S.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "sese.030")</expression>
+            </condition>
+            <path>SecuritiesSettlementInstructionChangeDetails.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>isNewMessage()</expression>
+            </condition>
+            <path>SecuritiesSettlementInstruction.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>isAmendMessage()</expression>
+            </condition>
+            <path>SecuritiesSettlementInstructionAmendment.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>isCancelMessage()</expression>
+            </condition>
+            <path>SecuritiesSettlementInstructionCancellation.xml</path>
+        </include>
+    </contents>
+</template>

@@ -1,0 +1,13 @@
+<beans>
+
+<bean id="dsClient" class="org.springframework.jmx.support.MBeanServerConnectionFactoryBean">
+  <property name="serviceUrl" value="service:jmx:rmi://${DATASERVERHOST}:${JMX_RMI_REGISTRY_PORT}/jmxrmiDataServer"/>
+</bean>
+
+<bean id="Log" class="org.springframework.jmx.access.MBeanProxyFactoryBean">
+  <property name="objectName" value="com.calypso.infra:name=Log"/>
+  <property name="proxyInterface" value="com.calypso.infra.jmx.IJmxTestBean"/>
+  <property name="server" ref="dsClient"/>
+</bean>
+
+</beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<template>
+    <contents>
+        <element name="CdtDbtInd">
+            <contents>
+                <!-- Reverse direction of Security Xfer = Cash Direction -->
+                <text>
+                    <condition>
+                        <expression>getReportValue("Xfer Pay/Rec") == "PAY"</expression>
+                    </condition>
+                    <value>CRDT</value>
+                </text>
+                <text>
+                    <condition>
+                        <expression>getReportValue("Xfer Pay/Rec") == "RECEIVE"</expression>
+                    </condition>
+                    <value>DBIT</value>
+                </text>
+            </contents>
+        </element>
+    </contents>
+</template>

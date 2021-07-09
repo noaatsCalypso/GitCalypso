@@ -1,0 +1,19 @@
+WIN_COMPARE_CMD="{0}" -q "{1}" "{2}"
+UNX_COMPARE_CMD={0} -q {1} {2}
+
+WIN_DIFF_GUI_CMD="{0}" "{1}" "{2}"
+UNX_DIFF_GUI_CMD={0} {1} {2}
+
+# -u reports in unified diff format
+# -s prints a line even if there are no differences.
+WIN_DIFF_RPT_CMD="{0}" -u -s "{1}" "{2}"
+UNX_DIFF_RPT_CMD={0} -u -s {1} {2}
+
+WIN_COMPARE_CMD_EXE=C:\\Program Files\\TkDiff\\diff.exe
+UNX_COMPARE_CMD_EXE=/usr/bin/diff
+
+WIN_DIFF_GUI_CMD_EXE=C:\\Program Files\\TkDiff\\tkdiff.exe
+UNX_DIFF_GUI_CMD_EXE=/opt/tkdiff-4.1.4-unix/tkdiff
+
+WIN_DIFF_RPT_CMD_EXE=C:\\Program Files\\TkDiff\\diff.exe
+UNX_DIFF_RPT_CMD_EXE=/usr/bin/diff

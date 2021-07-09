@@ -1,0 +1,65 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "chaser_header.html";
+</calypso-->
+
+<!--calypso>
+if (|HAS_MISMATCHREASON| == "Yes") {
+   inline "<br><p>We have received your confirmation which does not fully match our transaction below. Please review on your side.</p>";
+   inline "<table>
+		<tr>
+			<td WIDTH='39%'>Here are the discrepancies we have highlighted:</td>
+			<td WIDTH='59%'>|FREE_TEXT#Discrepancies|</td>
+		</tr>
+	</table>";
+	}
+else {
+	inline "<br><p>Our record suggests that no Confirmation has been received on your behalf yet regarding the below transaction. Please send the Confirmation at your earliest convenience.</p>";
+	}
+</calypso-->
+
+
+<p>Thank you for your co-operation.</p>
+<br>
+
+<p><u>TRANSACTION DETAILS:</u></p>
+
+<table width="&00%">
+ <tr>
+  <td width="30%">Our Reference:</td>
+  <td width="68%">|TRADE_ID|</td>
+ </tr>
+  <tr>
+  <td width="30%">Juridiction:</td>
+  <td>|REPORTING_JURISDICTION|</td>
+ </tr>
+   <tr>
+  <td width="30%">UTI/USI Issuer Code:</td>
+  <td>|ISSUER_CODE|</td>
+ </tr>
+    <tr>
+  <td width="30%">UTI/USI Transaction Id:</td>
+  <td>|TRANSACTION_IDENTIFIER|</td>
+ </tr>
+ <tr>
+  <td width="30%">Trade Date:</td>
+  <td>|TRADE_DATE|</td>
+ </tr>
+<tr>
+  <td width="30%">Product:</td>
+  <td>|PRODUCT_DESCRIPTION|</td>
+ </tr>
+ <tr>
+  <td width="30%">Notional:</td>
+  <td>|TRADE_NOMINAL|</td>
+ </tr>
+  <tr>
+  <td width="30%">Currency:</td>
+  <td>|TRADE_SETTLECCY|</td>
+ </tr>
+ </table>
+
+<calypso>
+if (Trade.getLongId() > 0)
+    include "chaser_footer.html";
+</calypso-->

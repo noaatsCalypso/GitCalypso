@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    <contents>
+        <include>
+            <expression>getReportValue("BUSINESS_APPLICATION_HEADER_TEMPLATE")</expression>
+        </include>
+        <element name="Document">
+            <attributes>
+                <attribute name="xmlns">
+                    <condition>
+                        <expression>!contains(getReportValue("TEMPLATE_NAME") , "SIX")</expression>
+                    </condition>
+                    <value>
+                        <text>
+                            <value>urn:iso:std:iso:20022:tech:xsd:</value>
+                        </text>
+                        <report>
+                            <column>MessageIdentifier</column>
+                            <transformations>
+                                <transformation type="regexp">
+                                    <from>\.CBPR</from>
+                                    <to></to>
+                                </transformation>
+                                <transformation type="regexp">
+                                    <from>\.MEPS</from>
+                                    <to></to>
+                                </transformation>
+                                <transformation type="regexp">
+                                    <from>\.CHAPS</from>
+                                    <to></to>
+                                </transformation>
+                                <transformation type="regexp">
+                                    <from>\.T2S</from>
+                                    <to></to>
+                                </transformation>
+                                <transformation type="regexp">
+                                    <from>\.T2</from>
+                                    <to></to>
+                                </transformation>
+                                <transformation type="regexp">
+                                    <from>\.COV</from>
+                                    <to></to>
+                                </transformation>
+                            </transformations>
+                        </report>
+                    </value>
+                </attribute>
+                <attribute name="xmlns">
+                    <condition>
+                        <expression>contains(getReportValue("TEMPLATE_NAME") , "SIX")</expression>
+                    </condition>
+                    <value>
+                        <text>
+                            <value>http://www.six-interbank-clearing.com/de/</value>
+                        </text>
+                        <report>
+                            <column>MessageIdentifier</column>
+                            <transformations>
+                                <transformation type="regexp">
+                                    <from>\.SIX</from>
+                                    <to></to>
+                                </transformation>
+                            </transformations>
+                        </report>
+                    </value>
+                </attribute>
+                <attribute name="xmlns:xsi">
+                	<condition>
+                        <expression>!contains(getReportValue("MXGATEWAY") , "SAA")</expression>
+                    </condition>
+                    <value>
+                        <text>
+                            <value>http://www.w3.org/2001/XMLSchema-instance</value>
+                        </text>
+                    </value>
+                </attribute>
+                <attribute name="xsi:schemaLocation">
+                    <condition>
+                        <expression>!contains(getReportValue("TEMPLATE_NAME") , "SIX") &amp;&amp; !contains(getReportValue("MXGATEWAY") , "SAA")</expression>
+                    </condition>
+                    <value>
+                        <text>
+                            <value>urn:iso:std:iso:20022:tech:xsd:</value>
+                        </text>
+                        <report>
+                            <column>MessageIdentifier</column>
+                            <transformations>
+                                <transformation type="regexp">
+                                    <from>\.CBPR</from>
+                                    <to></to>
+                                </transformation>
+                                <transformation type="regexp">
+                                    <from>\.MEPS</from>
+                                    <to></to>
+                                </transformation>
+                                <transformation type="regexp">
+                                    <from>\.CHAPS</from>
+                                    <to></to>
+                                </transformation>
+                                <transformation type="regexp">
+                                    <from>\.T2S</from>
+                                    <to></to>
+                                </transformation>
+                                <transformation type="regexp">
+                                    <from>\.T2</from>
+                                    <to></to>
+                                </transformation>
+                                <transformation type="regexp">
+                                    <from>\.COV</from>
+                                    <to></to>
+                                </transformation>
+                                <transformation type="regexp">
+                                    <from>\.SIX</from>
+                                    <to></to>
+                                </transformation>
+                            </transformations>
+                        </report>
+                        <!--
+                        <text>
+                            <value> ../../Schemas/</value>
+                        </text>
+                        <report>
+                            <column>MessageIdentifier</column>
+                            <transformations>
+                                <transformation type="regexp">
+                                    <from>\.CBPR</from>
+                                    <to></to>
+                                </transformation>
+                                <transformation type="regexp">
+                                    <from>\.T2S</from>
+                                    <to></to>
+                                </transformation>
+                                <transformation type="regexp">
+                                    <from>\.T2</from>
+                                    <to></to>
+                                </transformation>
+                                <transformation type="regexp">
+                                    <from>\.COV</from>
+                                    <to></to>
+                                </transformation>
+                                <transformation type="regexp">
+                                    <from>\.SIX</from>
+                                    <to></to>
+                                </transformation>
+                            </transformations>
+                        </report>
+                        <text>
+                            <value>.xsd</value>
+                        </text>
+                        -->
+                    </value>
+                </attribute>
+            </attributes>
+            <contents>
+                <include>
+                    <path>Document.xml</path>
+                </include>
+            </contents>
+        </element>
+
+    </contents>
+</template>

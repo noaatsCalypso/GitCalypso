@@ -1,0 +1,54 @@
+<table width="100%">
+  <tr>
+
+		<!--calypso>
+			if (|SENDER_LOGO| != "") {
+				inline "<td width=\"50%\">|SENDER_LOGO|</td>";
+			} else {
+				inline "<td width=\"50%\"><img src=\"https://www.calypso.com/images/logo.gif\" alt=\"Logo\"/></td>";
+			}
+		</calypso-->
+
+    <td width="48%">
+         |SENDER_FULL_NAME|<br />
+         |SENDER_CONTACT_NAME|<br />
+         |SENDER_TITLE|<br />
+         |SENDER_ADDRESS|<br />
+         |SENDER_CITY|<br />
+<!--calypso>
+if (|SENDER_STATE| == true) inline "|SENDER_STATE|<br />";
+</calypso-->
+         |SENDER_ZIPCODE|<br />
+         |SENDER_COUNTRY|<br />
+<!--calypso>
+if (|SENDER_EMAIL| == true) inline "E-mail: |SENDER_EMAIL|<br />";
+if (|SENDER_PHONE| == true) inline "Phone: |SENDER_PHONE|<br />";
+if (|SENDER_FAX| == true)   inline "Fax: |SENDER_FAX|<br />";
+if (|SENDER_TELEX| == true) inline "Telex: |SENDER_TELEX|<br />";
+</calypso-->
+        Swift: |SENDER_SWIFT|
+    </td>
+  </tr>
+</table>
+
+<!--RECEIVER INFO -->
+
+<table width="100%">
+<tr><td width="15%">Date:</td><td width="84%">|DATE|</td></tr>
+<tr><td>To:</td><td>|RECEIVER_FULL_NAME|</td></tr>
+<tr><td>Address:</td>
+    <td>|RECEIVER_ADDRESS|<br/>
+        |RECEIVER_CITY|
+        |RECEIVER_STATE|
+        |RECEIVER_ZIPCODE|<br/>
+        |RECEIVER_COUNTRY|</td></tr>
+
+<!--calypso>
+if (|RECEIVER_FAX| == true)
+    inline "<tr><td>Fax:</td><td>|RECEIVER_FAX|</td></tr>";
+</calypso-->
+
+<!--calypso>
+	if (|RECEIVER_CONTACT_NAME| == true) inline "<tr><td>Attention:</td><td>|RECEIVER_CONTACT_NAME|</td></tr>";
+</calypso-->
+</table>

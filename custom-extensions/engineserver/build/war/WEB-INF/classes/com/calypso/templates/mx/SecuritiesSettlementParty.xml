@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<template>
+	<contents>
+		<element name="Id">
+			<contents>
+				<element name="AnyBIC">
+					<contents>
+						<report>
+							<column>Party SDI BIC</column>
+						</report>
+					</contents>
+				</element>
+			</contents>
+		</element>
+		<element name="LEI">
+			<condition>
+				<expression>!isEmpty(getReportValue("Party SDI LE Attribute.LEI"))</expression>
+			</condition>
+			<contents>
+				<report>
+					<column>Party SDI LE Attribute.LEI</column>
+				</report>
+			</contents>
+		</element>
+		<element name="SfkpgAcct">
+			<condition>
+				<expression>!isEmpty(getReportValue("Party SDI Account Id"))</expression>
+			</condition>
+			<contents>
+				<element name="Id">
+					<contents>
+						<report>
+							<column>Party SDI Account Id</column>
+						</report>
+					</contents>
+				</element>
+			</contents>
+		</element>
+	</contents>
+</template>

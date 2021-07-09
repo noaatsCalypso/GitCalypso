@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration xmlns:xi="http://www.w3.org/2001/XInclude" status="WARN">
+  <xi:include href="fragments/properties.log4j2.xml"/>
+  <Appenders>
+     <xi:include href="fragments/appender_default.xml"/>
+     <xi:include href="fragments/appender_event.xml"/>
+     <xi:include href="fragments/appender_Monitoring.CalculationServer_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.ClientRequest_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.MethodProfile_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.ServerRequest_APPENDER.xml"/>
+	 <xi:include href="fragments/appender_Monitoring.IncomingServerRequest_APPENDER.xml"/>
+     <xi:include href="fragments/appender_ThirdParty.xml"/>
+	 <xi:include href="fragments/appender_ElasticSearch_APPENDER.xml"/>
+  </Appenders>
+  <Loggers>
+	<Logger name="com.calypso" additivity="false" level="ERROR">
+	  <AppenderRef ref="default"/>
+	  <AppenderRef ref="event"/>
+	  <AppenderRef ref="ElasticSearch_APPENDER"/>
+	</Logger>
+	<!-- TODO level was ERROR,INFO,DEBUG but this is rejected by Log4j2 -->
+	<Logger name="org.hibernate.SQL" additivity="false" level="DEBUG">
+	  <AppenderRef ref="default"/>
+	  <AppenderRef ref="event"/>
+	</Logger>
+    <!-- fragments/calypsocalculationservermonitoring.log4j.xml -->
+    <Logger name="com.calypso.Monitoring.ClientRequest" additivity="false" level="DEBUG">
+	  <AppenderRef ref="Monitoring.ClientRequest_APPENDER"/>
+    </Logger>
+    <Logger name="com.calypso.Monitoring.ServerRequest" additivity="false" level="DEBUG">
+	  <AppenderRef ref="Monitoring.ServerRequest_APPENDER"/>
+    </Logger>
+	<Logger name="com.calypso.Monitoring.IncomingServerRequest" additivity="false" level="DEBUG">
+	  <AppenderRef ref="Monitoring.IncomingServerRequest_APPENDER"/>
+    </Logger
+    <Logger name="com.calypso.Monitoring.MethodProfile" additivity="false" level="DEBUG">
+	  <AppenderRef ref="Monitoring.MethodProfile_APPENDER"/>
+    </Logger>
+    <Logger name="com.calypso.Monitoring.CalculationServer" additivity="false" level="DEBUG">
+	  <AppenderRef ref="Monitoring.CalculationServer_APPENDER"/>
+    </Logger>
+	<xi:include href="fragments/root_logger.log4j2.xml"/>
+  </Loggers>
+</Configuration>

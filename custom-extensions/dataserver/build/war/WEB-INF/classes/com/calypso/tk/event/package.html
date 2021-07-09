@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+
+  @(#)package.html	1.0 07/30/98
+
+-->
+</head>
+<body bgcolor="white">
+The Event Service communications infrastructure provides publish-and-subscribe communications between applications.  The Calypso Event Service provides both guaranteed (saved or "persistent") and non-guaranteed subscriptions. 
+<p>
+<nobr> <b> <a name=contents> Contents: </a></b>  <a href="#event_contains"> Event Contents</a>  |  <a href="#subscriptions">Subscriptions</a>  |  <a href="#sample_client">Sample Program</a>  |  <a href="#persist_db">Registering Persistent Subscriptions</a></nobr>
+
+<h3> <a name=intro> Introduction </a> </h3>
+In the publish and subscribe communications model, the application that creates a message does not need to know who will receive the message.  Instead, it sends the Event Service an event message stating that an event has occurred, and the Event Service forwards the event message to every application that has registered interest in that type of event.  Applications register interest by subscribing to a given event type.  With a subscription in place, the application will receive notification each time that type of event occurs in any application on the network.
+<p>
+Client applications may establish guaranteed subscriptions that ensure the delivery of all relevant messages, or they may establish non-guaranteed subscriptions that deliver relevant messages only when the subscribing application is running.  Guaranteed subscriptions are also referred to as "persistent" subscriptions, named for the programming term for data that has been saved so that it will "persist" after the application has ceased running.
+<p>
+The unit of information passed between applications in the Calypso system is the event.  Events are packets that contain just enough information to tell the subscribing application what has occurred and to tell it what principals (trades, counterparties, etc.) were involved.  To enable fast communication, events are light and do not carry, for example, complete trade or counterparty data.  Instead, interested applications can retrieve this information from the Data Server using the identifying information that was passed in the event.  When the Data Server receives a request for detailed information, it can usually find the information in its data cache, thus eliminating the need to send a new query to the database.
+
+<p>
+<h3> <a name=event_contains> What does an event contain?</a> </h3>
+<p>
+First, an event has a type.  The type of an event is the class which produced it.  For example, the messages sent when a user performs an operation on a trade are all "trade" events.  Thus each message concerning a trade is an object of the <code>PSEventTrade</code> class, called a "trade event" for short. (All of the event classes derive from the <code>PSEvent</code> class and have names starting with the prefix "PSEvent.") Applications subscribe to events by class.
+<p>
+Second, an event has an identification number.  This id number is unique in the database.  Since each id number will be used only once, the Event Service may use the number at any time to retrieve the saved event. The Data Server sets the id number when it creates the event; the publisher does not know the id.
+<p>
+Third, an event has a timestamp indicating when it was created.
+<p>
+Finally, an event may contain types information specific to that event class.  This will typically include things such as a further classification of the event type or an id number that identifies the item to which the event pertains (for example, a trade id number or a message id number).
+
+<p>
+<h3> <a name=subscriptions> Subscriptions </a> </h3>
+<p>
+Applications that wish to receive events establish subscriptions by event class.  For example, if the Position Engine wishes to be informed each time a new trade is saved, it will subscribe to trade (<code>PSEventTrade</code>) events.  Note that the subscription may not be narrowed further; if you subscribe to trade events, you will receive all trade events, whether they are for new trades, updated trades, or deleted trades.  If the receiving application is only interested in a subset of trade events, it must filter them.
+<p>
+Subscriptions may be guaranteed (persistent) or not.  A guaranteed subscription ensures the delivery of all desired messages, while a non-guaranteed subscription delivers relevant messages only when the subscribing application is running.  If an event is of a type for which one or more guaranteed subscriptions have been established, the Data Server will save the event to the database before attempting delivery.  After all guaranteed subscribers have received the event, the Data Server will delete it from the database.  Regardless of the number of subscribers, the event is saved only once.
+
+<p>
+<h3> <a name=sample_client> Sample Client Program That Subscribes to Two Types of Events</a> </h3>
+<p>
+The sample program below subscribes to trade events and back office
+message events.  This sample program does not establish any guaranteed subscriptions, but the lines of code needed to establish such a subscription are included below, commented out with "//".  Note that persistent subscriptions must be registered in the database, as described <a href="#persist_db">below the example code</a>.
+<p>
+
+
+<pre>
+package calypso.sample;
+
+import java.lang.String;
+import java.util.Date;
+import java.util.Vector;
+
+import calypso.tk.event.PSConnection;
+import calypso.tk.event.PSSubscriber;
+import calypso.tk.event.PSException;
+import calypso.tk.event.PSEvent;
+import calypso.tk.event.PSEventTrade;
+import calypso.tk.event.PSEventMessage;
+import calypso.tk.event.PSEventTime;
+import calypso.tk.service.DSConnection;
+import calypso.tk.util.ConnectionUtil;
+
+/**
+ * Simple program to connect to the event Server
+ * and display TradeEvents.
+ */
+
+public class PSSample implements PSSubscriber {  
+    final static String ENGINE_NAME="SampleEngine";
+    protected PSConnection      _psConnection;
+
+    public PSSample() {}
+
+    public void start(String hostName, int port) {
+	try {
+	    // Example: Connecting to the Event Server
+	    _psConnection = new PSConnection(port,hostName,this);
+	    _psConnection.start();
+
+	    // Example: Establishing subscriptions
+	    Vector classes = new Vector();
+	    classes.addElement( new PSEventTrade());
+	    classes.addElement( new PSEventMessage());
+	    _psConnection.subscribe(classes);
+	    //_psConnection.persistentSubscribe(ENGINE_NAME,classes);
+
+	    // Example: Publishing an event
+	    PSEventTime eventTime = new PSEventTime();
+	    eventTime.setTime(System.currentTimeMillis());
+	    eventTime.setComment("PSSample Started");
+	    _psConnection.publish(eventTime);
+	}
+	catch (Exception e) {}    
+	System.out.println("PSSample started ...");
+    }  
+  
+    public void onDisconnect( )  {
+	System.out.println("Disconnected ...");
+    }
+  
+    public void newEvent(PSEvent event)  {
+	try {
+	    //handle Trade Event
+	    if(event instanceof calypso.tk.event.PSEventTrade) {
+		System.out.println("Trade Event : " + event.toString());
+		// For persistent subscriptions, acknowledge successful 
+		// consumption of the event with eventProcessed(), as below
+		//try {_psConnection.eventProcessed(ENGINE_NAME,event.getId());} 
+		//catch (Exception e) {}
+		return ;
+	    }
+	    if(event instanceof calypso.tk.event.PSEventMessage) {
+		System.out.println("Message Event : " + event.toString());
+		return ;
+	    }
+	}
+	catch (Exception e) {
+	    e.printStackTrace();      
+	}
+    }
+  
+    static public void main(String args[]) {
+	String stringPort = ConnectionUtil.getEventServerPort();
+	String hostName= ConnectionUtil.getEventServerHostname();
+	int port = Integer.valueOf(stringPort).intValue();
+	PSSample sample = new PSSample();
+	sample.start(hostName, port);
+    }
+
+}
+
+/*
+ * End of sample program
+ */
+
+
+</pre>
+
+
+<p>
+<h3> <a name=persist_db> Registering a Persistent Subscription in the Database</a> </h3>
+<p>
+
+To give an Engine (let's say MyEngine) a persistent subscription to an event type, you mush implement the commented out methods shown in the example above and you must create a mapping of the subscribing class' name to the event type name in the database.  This mapping is placed in the table <code>ps_event_config</code>.  
+<p>
+For example, let's say you have an engine called MyEngine and you want to establish a guaranteed subscription so that MyEngine will receive every PSEventMyEvent published, even if MyEngine cannot always be running to receive events.  To do this, you would insert into <code>ps_event_config</code> the <code>event_class</code> value "PSEventMyEvent" and the <code>engine_name</code> value "MyEngine".  With this database entry in place, the Event Service will store in the database each new PSEventMyEvent until MyEngine acknowledges receipt of that event.  The SQL for this would be
+
+<pre>
+INSERT INTO ps_event_config(event_class, engine_name)
+VALUES('PSEventMyEvent','MyEngine')  ;
+
+
+</pre>
+
+
+<!--
+XXXXXXXXXXXXXx OLD STUFF XXXXXXXXXXx
+
+INSERT INTO ps_event_config(event_class, engine_name) 
+VALUES('PSEventTrade','LiquidationEngine')  ;
+
+XXXXXXXXXXXXXXXXXXXXXXXXX
+>>>>>>>>>>>>
+-->
+
+<!--
+<h2>Package Specification</h2>
+
+##### FILL IN ANY SPECS NEEDED BY JAVA COMPATIBILITY KIT #####
+<ul>
+  <li><a href="">##### REFER TO ANY SPECIFICATION DOCS HERE #####</a>
+</ul>
+
+<h2>Related Documentation</h2>
+
+For overviews, tutorials, examples, guides, and tool documentation, please see:
+<ul>
+  <li><a href="">##### REFER TO NON-SPEC DOCS HERE #####</a>
+</ul>
+-->
+
+</body>
+</html>

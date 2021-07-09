@@ -1,0 +1,176 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+
+
+<p><span style='font-size:10.0pt'>I am pleased to confirm our
+|COMPOUNDOPTION_TYPE|<span style="mso-spacerun: yes">  </span>|PRODUCT_TYPE| trade,
+traded |TRADE_DATE| and expiring |COMPOUNDOPTION_EXPIRY_DATE|.<o:p></o:p></span></p>
+
+<p><span style='font-size:10.0pt'>This trade carries our trade id number
+|TRADE_ID|. The details of the trade are as follows:<o:p></o:p></span></p>
+
+<p><b><u><span style='font-size:10.0pt'>Trade details:</span></u></b><b><span
+style='font-size:10.0pt'> <br>
+&nbsp; <o:p></o:p></span></b></p>
+
+<table border=1 cellspacing=1 cellpadding=0 width=779 style='width:467.25pt;
+ mso-cellspacing:.7pt;mso-padding-alt:0in 0in 0in 0in'>
+ <tr>
+  <td width="38%" style='width:38.76%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Our Trade Number</span></p>
+  </td>
+  <td width="2%" style='width:2.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>:</span></p>
+  </td>
+  <td width="58%" style='width:58.66%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|TRADE_ID|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="38%" style='width:38.76%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Operation Type</span></p>
+  </td>
+  <td width="2%" style='width:2.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>:</span></p>
+  </td>
+  <td width="58%" style='width:58.66%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|PRODUCT_TYPE|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="38%" style='width:38.76%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Buyer</span></p>
+  </td>
+  <td width="2%" style='width:2.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>:</span></p>
+  </td>
+  <td width="58%" style='width:58.66%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|TRADE_BUYER_NAME|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="38%" style='width:38.76%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Seller</span></p>
+  </td>
+  <td width="2%" style='width:2.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>:</span></p>
+  </td>
+  <td width="58%" style='width:58.66%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|TRADE_SELLER_NAME|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="38%" style='width:38.76%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Trade Date</span></p>
+  </td>
+  <td width="2%" style='width:2.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>:</span></p>
+  </td>
+  <td width="58%" style='width:58.66%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|TRADE_DATE|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="38%" style='width:38.76%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Option Type/Style<o:p></o:p></span></p>
+  </td>
+  <td width="2%" style='width:2.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>:<o:p></o:p></span></p>
+  </td>
+  <td width="58%" style='width:58.66%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|COMPOUNDOPTION_TYPE|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="38%" style='width:38.76%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Exercise Date</span></p>
+  </td>
+  <td width="2%" style='width:2.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>:</span></p>
+  </td>
+  <td width="58%" style='width:58.66%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|COMPOUNDOPTION_EXPIRY_DATE|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="38%" style='width:38.76%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Delivery Date</span></p>
+  </td>
+  <td width="2%" style='width:2.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>:</span></p>
+  </td>
+  <td width="58%" style='width:58.66%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|COMPOUNDOPTION_DELIVERY_DATE|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="38%" style='width:38.76%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Strike<span style="mso-spacerun: yes"> 
+  </span>Price</span></p>
+  </td>
+  <td width="2%" style='width:2.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>:</span></p>
+  </td>
+  <td width="58%" style='width:58.66%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|COMPOUNDOPTION_STRIKE|</span></p>
+  </td>
+ </tr>
+</table>
+
+
+<p>     
+<span style='font-size:10.0pt'>
+The particular terms of the Underlying Option Transaction are as 
+follows:
+</span>
+</p>
+
+<!--calypso>
+include "fxoptionConfirmation.html";
+</calypso-->
+
+
+<p>&nbsp; </p>
+
+<p><span style='font-size:10.0pt'>|ADDITIONAL_FIXED_AMOUNT|<o:p></o:p></span></p>
+
+<p><!---End BizDays Table--><b><u><span style='font-size:10.0pt'>Payment
+Instructions<o:p></o:p></span></u></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=780 style='width:6.5in;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr>
+  <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Payment to |SENDER_CODE| :</span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|PO_INSTRUCTIONS|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Payment to |RECEIVER_CODE| :</span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|COUNTERPARTY_INSTRUCTIONS|</span></p>
+  </td>
+ </tr>
+</table>
+
+<p>&nbsp; <o:p></o:p></p>
+
+<p><!---End Account Details Table--><span style='font-size:10.0pt'>Please sign and
+return this Confirmation at your earliest convenience. Because of the
+importance of confirming transactions promptly and accurately, we regret that
+any Confirmations which are not signed and returned as soon as possible may
+result in a delay in payments. <o:p></o:p></span></p>
+
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

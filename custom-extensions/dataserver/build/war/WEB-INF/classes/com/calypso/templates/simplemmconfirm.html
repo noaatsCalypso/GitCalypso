@@ -1,0 +1,177 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+
+
+
+
+<p class=c-body><span lang=EN-US >I am pleased
+to |MESSAGE_ACTION| our |PRODUCT_FAMILY| trade, traded |TRADE_DATE| and
+settling |SETTLE_DATE|. This trade carries our trade id number |TRADE_ID|. The
+details of the trade are as follows:</span></p>
+
+<p class=c-indent><u><span lang=EN-US >Trade
+details:</span></u><span lang=EN-US ></span></p>
+
+<table border=1 cellpadding=0 style='mso-cellspacing:1.5pt;margin-left:25.0pt;
+ mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Our Trade Number</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>:</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_ID|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Operation Type</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>:</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|PRODUCT_TYPE|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Instrument Description</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>:</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|PRODUCT_DESCRIPTION|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Lender</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>:</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_SELLER_NAME|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Borrower</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>:</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_BUYER_NAME|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Trade Date</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>:</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_DATE|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Settlement Date</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>:</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|SETTLE_DATE|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Maturity Date</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>:</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|PRODUCT_MATURITYDATE|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Nominal</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>:</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_NOMINAL|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Settlement Currency</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>:</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_SETTLECCY|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Rate</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>:</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|SIMPLE_MM_RATE|</p>
+  </td>
+ </tr>
+</table>
+
+
+<p class=c-body><u><span lang=EN-US >Settlement
+Instructions&nbsp; are the following:</span></u><span lang=EN-US
+> </span></p>
+
+
+<p class=header2>Settlement Instructions are as follows:</p>
+<!--calypso>
+iterator("TransferRules")
+	inline "<table  width='100%'>
+    <tr><th width='30%'>|SETTLEMENT_ACTION|</th><th width='68%'>&nbsp;</th></tr>
+	<tr><td width='30%'>To:</td><td>|SETTLEMENT_TO|</td></tr>
+    <tr><td>|SETTLEMENT_ROUTING|</td><td>|SETTLEMENT_METHOD|</td></tr>
+	<tr><td>Favor of:</td><td>|SETTLEMENT_FAVOR_OF|</td></tr>
+	<tr><td>Account Number:</td><td>|SETTLEMENT_ACCOUNT_NUMBER|</td></tr>
+</table>";
+</calypso-->
+<br/>
+
+<p><span lang=EN-US >Thank you very much. Please
+refer to our trade id number&nbsp; |TRADE_ID| in your correspondence concerning
+this trade</span></p>
+
+<p><span lang=EN-US >Regards,</span></p>
+
+<p><span lang=EN-US >|SENDER_CONTACT_NAME| <br>
+|SENDER_TITLE|</span></p>
+
+<p>Fixed Income Division</p>
+
+<p>|SENDER_FULL_NAME|</p>
+
+</body>
+
+</html>

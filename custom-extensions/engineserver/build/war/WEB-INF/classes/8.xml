@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<calypso:calypsoDocument xmlns:liquidityrule="http://www.calypso.com/liquidityrule" xmlns:liquiditycriteria="http://www.calypso.com/liquiditycriteria" xmlns:liquidityposition="http://www.calypso.com/liquidityposition" xmlns:ns3="http://www.calypso.com/edealing/common" xmlns:matching="http://www.calypso.com/matching" xmlns:scheduler="http://www.calypso.com/scheduler" xmlns:liquidityreporting="http://www.calypso.com/liquidityreporting" xmlns:kpiservice="http://www.calypso.com/kpiservice" xmlns:assumption="http://www.calypso.com/assumption" xmlns:swift="http://www.calypso.com/swift" xmlns:bondexoticnote="http://www.calypso.com/bondexoticnote" xmlns:customereng="http://www.calypso.com/customereng" xmlns:datauploader="http://www.calypso.com/datauploader" xmlns:ftp="http://www.calypso.com/ftp" xmlns:pricingscript="http://www.calypso.com/pricingscript" xmlns:am="http://www.calypso.com/am" xmlns:scriptableOTC="http://www.calypso.com/scriptableOTC" xmlns:pricingsheet="http://www.calypso.com/pricingsheet" xmlns:pricingeng="http://www.calypso.com/pricingeng" xmlns:taskstation="http://www.calypso.com/taskstation" xmlns:ns23="http://www.calypso.com/HedgeAccounting" xmlns:liquiditycore="http://www.calypso.com/liquiditycore" xmlns:calypso="http://www.calypso.com/xml" xmlns:rateengine="http://www.calypso.com/rateengine" xmlns:liquidityclassification="http://www.calypso.com/liquidityclassification" xmlns:collateral="http://www.calypso.com/collateral" xmlns:calculationserver="http://www.calypso.com/calculationserver">
+    <calypso:calypsoObject xsi:type="calypso:FeedAddress" version="14-0" action="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <calypso:feedName>
+            <calypso:domainValue>
+                <calypso:type>com.calypso.tk.refdata.DomainValueAdapter</calypso:type>
+                <calypso:separator>#</calypso:separator>
+                <calypso:identifier code="feed#RandomFeedDemo" codifier="convention"/>
+                <calypso:calypsoBusinessKey>
+                    <calypso:propertyName>domainName</calypso:propertyName>
+                    <calypso:propertyValue>feed</calypso:propertyValue>
+                </calypso:calypsoBusinessKey>
+                <calypso:calypsoBusinessKey>
+                    <calypso:propertyName>value</calypso:propertyName>
+                    <calypso:propertyValue>RandomFeedDemo</calypso:propertyValue>
+                </calypso:calypsoBusinessKey>
+            </calypso:domainValue>
+        </calypso:feedName>
+        <calypso:quoteName>FX.USD.JPY.TN</calypso:quoteName>
+        <calypso:quoteType>
+            <calypso:domainValue>
+                <calypso:type>com.calypso.tk.refdata.DomainValueAdapter</calypso:type>
+                <calypso:separator>#</calypso:separator>
+                <calypso:identifier code="quoteType#Price" codifier="convention"/>
+                <calypso:calypsoBusinessKey>
+                    <calypso:propertyName>domainName</calypso:propertyName>
+                    <calypso:propertyValue>quoteType</calypso:propertyValue>
+                </calypso:calypsoBusinessKey>
+                <calypso:calypsoBusinessKey>
+                    <calypso:propertyName>value</calypso:propertyName>
+                    <calypso:propertyValue>Price</calypso:propertyValue>
+                </calypso:calypsoBusinessKey>
+            </calypso:domainValue>
+        </calypso:quoteType>
+        <calypso:feedAddress>FX.USD.JPY.TN</calypso:feedAddress>
+        <calypso:multiplierCoefficient>1.0</calypso:multiplierCoefficient>
+        <calypso:additionCoefficient>0.0</calypso:additionCoefficient>
+        <calypso:feedBidName>BID</calypso:feedBidName>
+        <calypso:feedAskName>ASK</calypso:feedAskName>
+        <calypso:feedOpenName>OPEN</calypso:feedOpenName>
+        <calypso:feedCloseName>CLOSE</calypso:feedCloseName>
+        <calypso:feedHighName>HIGH</calypso:feedHighName>
+        <calypso:feedLowName>LOW</calypso:feedLowName>
+        <calypso:feedLastName>LAST</calypso:feedLastName>
+        <calypso:feedDate>DATE</calypso:feedDate>
+    </calypso:calypsoObject>
+</calypso:calypsoDocument>

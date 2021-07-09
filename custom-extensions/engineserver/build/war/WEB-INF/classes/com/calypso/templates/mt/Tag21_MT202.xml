@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<FieldTemplate>
+    <Switch condition="|REPORT#Product Type|">
+	<Target condition="(.)*">|RELATED_REF|</Target>
+	</Switch>
+</FieldTemplate>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+  	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+	
+	<import resource="classpath:JMX.RMI.config.xml" />
+	
+	<bean id="rmiServiceExporter" class="com.calypso.infra.rmi.RmiServiceExporter" abstract="true" depends-on="rmiRegistry">
+		<property name="namingQualifier" ref="namingQualifier" />
+		<property name="registryPort">
+			<util:property-path path="rmiRegistryConfig.registryPort"/>
+		</property>
+		<property name="registryHost">
+			<util:property-path path="rmiRegistryConfig.registryHost"/>
+		</property>
+		<property name="clientSocketFactory" ref="sslClientSocketFactory"/>
+        <property name="serverSocketFactory" ref="sslServerSocketFactory"/>
+		<property name="registryClientSocketFactory" ref="sslClientSocketFactory" />
+        <property name="registryServerSocketFactory" ref="sslServerSocketFactory" />
+        <property name="remoteInvocationExecutor" ref="remoteInvocationExecutor" />
+	</bean>
+	
+	<bean id="remoteInvocationExecutor" class="com.calypso.infra.authentication.CalypsoRemoteInvocationExecutor">
+	</bean>
+	<bean class="com.calypso.infra.rmi.ServiceLocalProxyGenerationPostProcessor" >
+		<property name="parentProxyName" value="localProxy" />
+	</bean>
+	
+	<bean class="com.calypso.infra.rmi.ServiceRemoteProxyGenerationPostProcessor" >
+		<property name="parentProxyName" value="remoteProxy" />
+		<property name="securityInterceptorParent" value="securityInterceptor" />
+		<property name="servicePortRangeStart" >
+			<util:property-path path="servicePortBean.servicePortRangeStart" />
+		</property>
+	</bean>
+	
+	<bean name="rmiRegistry" class="org.springframework.remoting.rmi.RmiRegistryFactoryBean">
+		<property name="alwaysCreate" >
+			<util:property-path path="globalConfig.systemConfig[alwaysCreateRegistry]"/>
+		</property>
+		<property name="port">
+			<util:property-path path="rmiRegistryConfig.registryPort"/>
+		</property>
+		<property name="clientSocketFactory" ref="sslClientSocketFactory"/>
+        <property name="serverSocketFactory" ref="sslServerSocketFactory"/>
+	</bean>
+	
+	<bean name="serverSocketFactory" class="com.calypso.infra.rmi.net.ServerSocketFactory">
+		<property name="host">
+			<util:property-path path="rmiRegistryConfig.registryHost"/>
+		</property>
+		<property name="bindToSpecificInterface" value="${BIND_TO_SPECIFIC_INTERFACE}" /> 
+	</bean>
+	
+	<bean id="sslServerSocketFactory" class="com.calypso.infra.rmi.net.RMIServerSocketFactoryBean">
+		<property name="useSSL" value="${USE_SSL}" />
+		<property name="rmiSslSocketFactory">
+			<bean class="com.calypso.infra.rmi.net.SslRMIServerSocketFactory" >
+				<property name="serverSocketFactory" ref="serverSocketFactory" />
+			</bean>
+		</property>	
+		<property name="rmiSocketFactory">
+			<bean class="com.calypso.infra.rmi.net.RMIServerSocketFactory" >
+				<property name="serverSocketFactory" ref="serverSocketFactory" />
+			</bean>
+		</property>			
+	</bean>
+	
+	<bean id="methodArgsCloner" class="com.calypso.tk.service.handler.MethodArgumentsClonerImp" />
+  		
+	<bean id="transactionManager" class="com.calypso.tk.service.handler.aop.TransactionInvocationHandler">
+	   <property name="argumentsCloner" ref="methodArgsCloner" />
+	</bean>
+
+	<bean id="profilingInterceptor" class="com.calypso.tk.service.handler.aop.ServerInvocationHandler" 
+					init-method="init" scope="prototype">
+		<property name="rmiLifeCycleListener" ref="rmiLifeCycleListener" />
+		<property name="validator" ref="methodArgsValidator"/>
+	</bean>
+	
+	<bean id="requiredTransactionManager" class="com.calypso.tk.service.handler.aop.RequiredTransactionInvocationHandler" />
+	
+		
+	
+	</beans>

@@ -1,0 +1,10 @@
+<RollingFile fileName="${sys:calypso.userdir}${file.separator}${calypsoExtendedAppName}_${sys:calypso.envname}_PKSAUDIT_${sys:calypso.version}.log" filePattern="${sys:calypso.userdir}${file.separator}${calypsoExtendedAppName}_${sys:calypso.envname}_PKSAUDIT_${sys:calypso.version}.log.%i.zip" name="Monitoring.PKSAudit_APPENDER">
+  <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSSZ} %-5p [%c] (%t) [%X{clientHost}-%X{clientDesc}] [%X{Aggregation}] %m%n"></PatternLayout>
+  <Policies>
+    <OnStartupTriggeringPolicy/>
+    <SizeBasedTriggeringPolicy size="${sys:calypso.maxfilesize}"/>
+
+          <!-- TODO: unit (allowed B (default), KB, MB, GB) -->
+        </Policies>
+  <DefaultRolloverStrategy max="${sys:calypso.maxbackupindex}" min="1"/>
+</RollingFile>

@@ -1,0 +1,15 @@
+# jms.modetypeclass=com.sun.jndi.fscontext.RefFSContextFactory
+jms.modetypeclass=org.apache.activemq.jndi.ActiveMQInitialContextFactory
+java.naming.factory.initial=org.apache.activemq.jndi.ActiveMQInitialContextFactory
+java.naming.provider.url=tcp://localhost:7700
+# jms.url=tcp://localhost:7700
+# jms.url=tcp://colotrax01.calypso.com:61616
+jms.url=tcp://10.100.20.135:61616
+jms.queue.connectionFactory=ConnectionFactory
+input.queue.name=FROM_TRAX_TO_CALYPSO
+output.queue.name=FROM_CALYPSO_TO_TRAX
+FROM_TRAX_TO_CALYPSO.queue.ackType=auto
+FROM_TRAX_TO_CALYPSO.queue.transacted=true
+FROM_TRAX_TO_CALYPSO.queue.persist=true
+FROM_CALYPSO_TO_TRAX.queue.persist=true
+trax.subscriber.id=CALYPSO001

@@ -1,0 +1,95 @@
+<!-- Demonstrates some of the available EquityLinkedSwap Message Keywords -->
+<p>
+<br>REPORT#Adjust Funding Notional : |REPORT#Adjust Funding Notional|
+<br>REPORT#Align Pay Dates : |REPORT#Align Pay Dates|
+<br>REPORT#Div Pmt Schedule : |REPORT#Div Pmt Schedule|
+<br>REPORT#Dividend Rate : |REPORT#Dividend Rate|
+<br>REPORT#End Date : |REPORT#End Date|
+<br>REPORT#Funding Day Count : |REPORT#Funding Day Count|
+<br>REPORT#Funding Fixed Rate : |REPORT#Funding Fixed Rate|
+<br>REPORT#Funding Notional : |REPORT#Funding Notional|
+<br>REPORT#Funding Pmt Holiday : |REPORT#Funding Pmt Holiday|
+<br>REPORT#Funding Rate Index : |REPORT#Funding Rate Index|
+<br>REPORT#Funding Rate Type : |REPORT#Funding Rate Type|
+<br>REPORT#Funding Spread : |REPORT#Funding Spread|
+<br>REPORT#Initial Price : |REPORT#Initial Price|
+<br>REPORT#Initial Quantity : |REPORT#Initial Quantity|
+<br>REPORT#Last Fixing Date : |REPORT#Last Fixing Date|
+<br>REPORT#Notional : |REPORT#Notional|
+<br>REPORT#Perf Direction : |REPORT#Perf Direction|
+<br>REPORT#Perf Pmt DateRoll : |REPORT#Perf Pmt DateRoll|
+<br>REPORT#Perf Pmt Frequency : |REPORT#Perf Pmt Frequency|
+<br>REPORT#Perf Pmt Holidays : |REPORT#Perf Pmt Holidays|
+<br>REPORT#Perf Pmt Lag : |REPORT#Perf Pmt Lag|
+<br>REPORT#Perf Pmt Role Day : |REPORT#Perf Pmt Role Day|
+<br>REPORT#Perf Pmt Schedule : |REPORT#Perf Pmt Schedule|
+<br>REPORT#Previous Fixing Date : |REPORT#Previous Fixing Date|
+<br>REPORT#Start Date : |REPORT#Start Date|
+<br>REPORT#Swap Type : |REPORT#Swap Type|
+<br>REPORT#Underlying.Product Code.CUSIP : |REPORT#Underlying.Product Code.CUSIP|
+<br>REPORT#Underlying.Security : |REPORT#Underlying.Security|
+<br>REPORT#Underlying.Security Currency : |REPORT#Underlying.Security Currency|
+<br>REPORT#Underlying.Security Name : |REPORT#Underlying.Security Name|
+
+<br>REPORT#Amortization Quantity: |REPORT#Amortization Quantity|
+<br>REPORT#Amort. Remaining Quantity : |REPORT#Amort. Remaining Quantity|
+
+
+</p>
+
+
+
+<h2>Termination specific keywords</h2>
+<p>
+<br>REPORT#TRADE_KEYWORD.TerminationQuoteFixing : |REPORT#TRADE_KEYWORD.TerminationQuoteFixing|
+<br>REPORT#TRADE_KEYWORD.TerminationFXRateFixing : |REPORT#TRADE_KEYWORD.TerminationFXRateFixing|
+<br>
+</p>
+<h3>Underlying asset<!--calypso>
+if ( |BASKET_COMP_NUMBER| > "1" ) {
+    inline "s (number: |BASKET_COMP_NUMBER|)";
+}
+</calypso-->
+</h3>
+
+<!--calypso>
+inline "
+<table border=1>
+    <tr>
+        <th>#</th>
+        <th>Asset</th>
+        <th>Asset Ccy</th>
+        <th>Initial Quantity</th>
+        <th>Terminated Quantity</th>
+        <th>Remaining Quantity</th>
+        <th>Termination Price</th>
+        <th>Termination FX Rate</th>
+        <th>Sector</th>
+        <th>Security Code</th>
+        <th>Corporate Name</th>
+        <th>Market Place</th>
+    </tr>
+";
+
+iterator("BasketComponent")
+    inline "
+    <tr>
+        <td>|ITERATOR_CURRENT_COUNT|</td>
+        <td>|BASKET_COMP_ASSET|</td>   
+        <td>|BASKET_COMP_CCY|</td>
+        <td>|BASKET_COMP_INITIAL_QUANTITY|</td>
+        <td>|BASKET_COMP_TERMINATED_QUANTITY|</td>
+        <td>|BASKET_COMP_REMAINING_QUANTITY|</td>
+        <td>|BASKET_COMP_TERMINATION_PRICE|</td>
+        <td>|BASKET_COMP_TERMINATION_FX_RATE|</td>
+        <td>|BASKET_COMP_ISSUER_ATTR#Sector|</td>
+        <td>|BASKET_COMP_SECURITY_CODE#ISIN|</td>       
+        <td>|BASKET_COMP_SECURITY#Corporate|</td>
+        <td>|BASKET_COMP_SECURITY#Underlying.Market Place|</td>
+    </tr>
+    ";
+
+inline "</table>";
+
+</calypso-->
+

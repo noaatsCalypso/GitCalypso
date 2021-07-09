@@ -1,0 +1,11 @@
+BusinessMessageIdentifier=//AppHdr/BizMsgIdr/text()
+LinkedInstructionId=//Document/BkToCstmrDbtCdtNtfctn/Ntfctn/Ntry/NtryDtls/TxDtls/Refs/InstrId/text()
+LinkedEndToEndId=//Document/BkToCstmrDbtCdtNtfctn/Ntfctn/Ntry/NtryDtls/TxDtls/Refs/EndToEndId/text()
+LinkedUETR=//Document/BkToCstmrDbtCdtNtfctn/Ntfctn/Ntry/NtryDtls/TxDtls/Refs/UETR/text()
+LinkedSettlementAmount=//Document/BkToCstmrDbtCdtNtfctn/Ntfctn/Ntry/Amt/text()
+LinkedSettlementAmountCcy=//Document/BkToCstmrDbtCdtNtfctn/Ntfctn/Ntry/Amt/@Ccy
+AccountId=//Document/BkToCstmrDbtCdtNtfctn/Ntfctn/Acct/Id/IBAN/text()|//Document/BkToCstmrDbtCdtNtfctn/Ntfctn/Acct/Id/Othr/Id/text()
+DrCrIndicator=//Document/BkToCstmrDbtCdtNtfctn/Ntfctn/Ntry/CdtDbtInd/text()
+InstructingAgentBIC=//Document/BkToCstmrDbtCdtNtfctn/Ntfctn/Ntry/NtryDtls/TxDtls/RltdAgts/InstgAgt/FinInstnId/BICFI/text()
+InstructedAgentBIC=//Document/BkToCstmrDbtCdtNtfctn/Ntfctn/Ntry/NtryDtls/TxDtls/RltdAgts/InstdAgt/FinInstnId/BICFI/text()
+NtryStatus=//Document/BkToCstmrDbtCdtNtfctn/Ntfctn/Ntry/Sts/Cd/text()

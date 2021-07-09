@@ -1,0 +1,253 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+<!--calypso>
+if ((|PRODUCT_TYPE| == "FX") || (|PRODUCT_TYPE| == "FXForward") || (|PRODUCT_TYPE| == "FXSwap") )
+   set TRANSACTION_TYPE = "FX";
+else
+   set TRANSACTION_TYPE = |PRODUCT_TYPE|;
+</calypso-->
+
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" )
+                inline  "AMEND AND CANCEL";
+                else if (|MESSAGE_SUBACTION|== "CANCEL")
+                inline "CANCEL";
+</calypso-->
+</p>
+<br><br>
+<p class="header1">|TRANSACTION_TYPE| Confirmation</p>
+
+<br>
+<p>Our Transaction Reference: |TRADE_ID|</p>
+<br>
+
+<p class="indented">
+The purpose of this letter agreement (this &quot;Confirmation&quot;) is to confirm the terms and conditions of the Transaction
+entered into between us on the Trade Date specified below (the &quot;Transaction&quot;).
+</p>
+<!--calypso>
+	if (|MESSAGE_SUBACTION|== "AMEND")
+	 inline "<br><p>This Confirmation cancels and supersedes the previous confirmation under the same reference.</p>";
+	else if (|MESSAGE_SUBACTION|== "CANCEL")
+	 inline "<p>This Confirmation cancels the previous confirmation under the same reference.</p>";
+</calypso-->
+<!--calypso>
+if ( |MASTER_AGREEMENT| == "ISDA" && |LA_STATUS| != "SIGNED" )
+	inline "<br><p>This Confirmation constitutes a &quot;Confirmation&quot; as referred to in the Agreement specified below</p>";
+</calypso-->
+<p>
+The definitions and provisions contained in the 1998 FX and Currency Option Definitions (as published by the
+International Swaps and Derivatives Association, Inc., the Emerging Markets Traders Association and the Foreign Exchange
+Commitee) are incorporated into this Confirmation. In the event of any inconsistency between those definitions and
+provisions and this Confirmation, this Confirmation will govern.
+</p>
+<p class="indented">
+<!--calypso>
+if ( |MASTER_AGREEMENT| == "ISDA" && |LA_STATUS| != "SIGNED" ) {
+    inline "This Confirmation evidences a complete and binding agreement between you
+and us as to the terms of the Transaction to which this Confirmation relates.  In addition, you and
+we agree to use all reasonable efforts promptly to negotiate, execute and deliver an agreement in the
+form of the ISDA Master Agreement (the &quot;Master Form&quot;), with such modifications as you and we
+will in good faith agree.  Upon the execution by you and us of such an agreement, this Confirmation 
+will supplement, form part of, and be subject to that agreement.  All provisions contained
+in or incorporated by reference in that agreement upon its execution will govern this Confirmation except as
+expressly modified below.  Until we execute and deliver that agreement, this Confirmation, together with all
+other documents referring to the ISDA Form (each a &quot;Confirmation&quot;) confirming transactions (each a
+&quot;Transaction&quot;) entered into between us (notwithstanding anything to the contrary in a Confirmation),
+shall supplement, form a part of, and be subject to an agreement in the form of the ISDA Form as if we had
+executed an agreement in such form (but without any Schedule except for the election of
+|LA_LEGAL_JURISDICTION| as the governing law and |TRADE_CURRENCY| as the Termination Currency) on the Trade
+Date of the first such Transaction between us.  In the event of any inconsistency between the provisions of
+that agreement and this Confirmation, this Confirmation will prevail for purposes of this Swap Transaction.
+    ";
+}
+if ( |MASTER_AGREEMENT| != "ISDA" || |LA_STATUS| == "SIGNED" ) {
+    inline "This Confirmation supplements, forms a part of, and is subject to, the |LA_ISDA_AGREEMENT| 
+dated as of |LA_AGREEMENT_DATE|, as amended and supplemented from time to time (the &quot;Agreement&quot;), 
+between <b>|TRADE_BUYER_NAME| (the &quot;Party A&quot;) </b> and <b>|TRADE_SELLER_NAME| (the &quot;Party B&quot;)</b>.
+All provisions contained in the Agreement govern this Confirmation except as expressly modified below.  
+    ";
+}
+</calypso-->
+</p>
+<b><u><p>The terms of the particular Transaction to which this Confirmation relates are as follows:</u> <br/></p></b>
+<div style="page-break-inside:avoid">
+<b><u><p>General Terms:</u></p></b>
+<br>
+<table CELLSPACING=1 WIDTH="100%">
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE">Trade Date</td>	
+		<td WIDTH="59%" VALIGN="MIDDLE">|TRADE_DATE|</td>
+	</tr>	
+<!--calypso>
+if (|PRODUCT_TYPE| == "FXSwap") {
+	inline "
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td><u>Near Leg Details:</u></td>
+		</tr>
+		";
+	}
+</calypso-->
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE">Amount and currency payable by Party A</td>
+		<td WIDTH="59%" VALIGN="MIDDLE">|FX_BUY_CURRENCY| |FX_BUY_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE">Amount and currency payable by Party B</td>
+		<td WIDTH="59%" VALIGN="MIDDLE">|FX_SELL_CURRENCY| |FX_SELL_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE">Settlement Date</td>
+		<td WIDTH="59%" VALIGN="MIDDLE">|SETTLE_DATE|</td>
+	</tr>
+<!--calypso>
+if (|IS_FX_SPLIT_DATE| == "true") {
+inline "
+	<tr>
+		<td>Split Settlement Date</td>
+		<td>|FX_SPLIT_DATE|</td>
+	</tr>
+";
+}
+</calypso-->
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE">FX Rate</td>
+		<td WIDTH="59%" VALIGN="MIDDLE">|FX_NEGOCIATEDPRICE|</td>
+	</tr>
+</table>
+<!--calypso>
+if (|PRODUCT_TYPE| == "FXSwap") {
+	inline "<table>
+		<tr>
+			<td width='30%'>&nbsp;</td>
+			<td width='59%'>&nbsp;</td>
+		</tr>
+		<tr>
+			<td><u>Far Leg Details:</u></td>
+			<td width='59%'>&nbsp;</td>
+		</tr>
+		<tr>
+			<td WIDTH='39%' VALIGN='MIDDLE'>Amount and currency payable by Party A</td>
+			<td WIDTH='59%' VALIGN='MIDDLE'>|FX_SELL_CURRENCY| |FXFWD_BUY_AMOUNT|</td>
+		</tr>
+		<tr>
+			<td WIDTH='39%' VALIGN='MIDDLE'>Amount and currency payable by Party B</td>
+			<td WIDTH='59%' VALIGN='MIDDLE'>|FX_BUY_CURRENCY| |FXFWD_SELL_AMOUNT|</td>
+		</tr>
+		<tr>
+			<td WIDTH='39%' VALIGN='MIDDLE'>Settlement Date</td>
+			<td WIDTH='59%' VALIGN='MIDDLE'>|FWD_SETTLE_DATE|</td>
+		</tr>
+		<tr>
+			<td WIDTH='39%' VALIGN='MIDDLE'>FX Rate</td>
+			<td WIDTH='59%' VALIGN='MIDDLE'>|FXFWD_NEGOCIATEDPRICE|</td>
+		</tr>	
+	</table>";
+	}
+</calypso-->
+<br>
+<!--calypso>
+if(|HAS_ADDITIONAL_FIXED_AMOUNT| != "No") {
+    inline "<font size=2><p><b><u>Additional Fixed Amount</u></b></p></font>";
+    inline "<table CELLSPACING=0 BORDER=0 WIDTH=624>";
+    iterator("FixedFees")
+        inline "
+			<tr>
+				<td width='39%' valign=MIDDLE>Fixed Rate Payer:</td>
+				<td width='59%' valign=MIDDLE><p>|ADDITIONAL_FIXED_AMOUNT_PAYER|</td>
+			</tr>
+			<tr>
+				<td width='39%'>Fixed Rate Amount:</td>
+				<td width='59%'>|ADDITIONAL_FIXED_AMOUNT_AMOUNT|</td>
+			</tr>
+			<tr>
+				<td width='39%'>Fixed Rate Payment Date:</td>
+				<td width='59%'>|ADDITIONAL_FIXED_AMOUNT_DATE|</td>
+			</tr>
+		";
+	inline "</table>
+	";
+<br>
+}
+</calypso-->
+
+</div>
+<div style="page-break-inside:avoid">
+<b><u><p>Other terms and conditions:</u></p></b>
+<table CELLSPACING=1 WIDTH="100%">
+	<tr>
+		<td WIDTH="35%" VALIGN="MIDDLE">Calculation Agent</td>
+		<td WIDTH="63%" VALIGN="MIDDLE">|SENDER_CODE|, unless otherwise stated in the Agreement</td>
+	</tr>		
+	<tr>
+		<td WIDTH="35%" VALIGN="MIDDLE">Broker</td>
+		<td WIDTH="63%" VALIGN="MIDDLE">|KEYWORD_Broker|</td>
+	</tr>
+</table>
+<br>
+</div>
+<div style="page-break-inside:avoid">
+<b><u><p>Account Details:</u> <br/></p></b>
+<!--calypso>
+	iterator("TransferRules")
+		inline "
+					<table width='100%'>
+						<tr>
+							<td width='39%'>|SETTLEMENT_TO_PAYREC|</td>
+							<td width='59%'>&nbsp;</td>
+						</tr>
+						<tr>
+							<td width='39%'>Currency</td>
+							<td width='59%'>|SETTLEMENT_TO_CURRENCY|</td>
+						</tr>
+						<tr>
+							<td width='39%'>To</td>
+							<td width='59%'>|SETTLEMENT_TO_AGENT|</td>
+						</tr>
+						<tr>
+							<td width='39%'>Code</td>
+							<td>|SETTLEMENT_METHOD|</td>
+						</tr>						
+						<tr>
+							<td width='39%'>Favor of</td>
+							<td width='59%'>|SETTLEMENT_FAVOR_OF|</td>
+						</tr>
+						<tr>
+							<td width='39%'>Account Number</td>
+							<td width='59%'>|SETTLEMENT_ACCOUNT_NUMBER|</td>
+						</tr>
+					</table>
+				
+	";
+</calypso-->
+
+</div>
+<p>Offices:<br>
+(a)&nbsp;&nbsp;&nbsp; The Office of Party A for the Transaction is |SENDER_ADDRESS| |SENDER_CITY| |SENDER_STATE| |SENDER_ZIPCODE| |SENDER_COUNTRY|; and<br>
+(b)&nbsp;&nbsp;&nbsp; The Office of Party B for the Transaction is |RECEIVER_ADDRESS| |RECEIVER_CITY| |RECEIVER_STATE| |RECEIVER_ZIPCODE| |RECEIVER_COUNTRY|.
+</p>
+		
+			
+<br>
+<p>This Confirmation supersedes and replaces any other confirmation (including a SWIFT MT300 or phone confirmation),
+if any, sent in connection with this Transaction on or prior to the date hereof.
+<br>
+Please confirm that the foregoing correctly sets forth the terms of our agreement
+by executing the copy of this Confirmation enclosed for that purpose and returning
+it to us or by sending us a letter substantially similar to this letter, which letter
+sets forth the material terms of the Swap Transaction to which this Confirmation
+relates and indicates your agreement to those terms.
+</p>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

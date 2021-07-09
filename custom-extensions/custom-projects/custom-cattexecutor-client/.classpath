@@ -1,0 +1,2758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER" exported="true"/>
+	<classpathentry kind="src" path="/custom-shared-lib" exported="true"/>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/activemq-broker-5.15.9.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/activemq-camel-5.15.9.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/activemq-client-5.15.9.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/activemq-jdbc-store-5.15.9.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/activemq-jms-pool-5.15.9.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/activemq-kahadb-store-5.15.9.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/activemq-openwire-legacy-5.15.9.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/activemq-pool-5.15.9.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/activemq-protobuf-1.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/activemq-spring-5.15.9.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/adapter-rxjava2-2.7.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/annotations-13.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/ant-1.10.5.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/ant-launcher-1.10.5.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/antlr-2.7.7.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/antlr-3.1.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/antlr-runtime-3.1.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/antlr4-runtime-4.5.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/aopalliance-1.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/avalon-framework-api-4.3.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/avalon-framework-impl-4.3.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/axiom-api-1.2.22.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/axis2-adb-1.7.9.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/axis2-kernel-1.7.9.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/batik-anim-1.12.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/batik-awt-util-1.12.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/batik-bridge-1.12.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/batik-constants-1.12.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/batik-css-1.12.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/batik-dom-1.12.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/batik-i18n-1.12.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/batik-svggen-1.12.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/batik-transcoder-1.12.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/batik-util-1.12.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/byte-buddy-1.10.14.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-acc-pl-reconciliation-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-accessperm-ext-1.0.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-analysis-metadata-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-analysisprovider-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-analytics-api-2.20.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-appkit-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-autodiff-400.11.13-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-bean-core-7.0.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-bloomberg-11.3.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-bloomberg-sapi-9.0.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-bo-messaging-core-1.21.13-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-bo-messaging-mx-cash-1.21.13-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-bo-messaging-mx-colr-1.21.13-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-bo-messaging-mx-core-1.21.13-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-bo-messaging-mx-fxtr-1.21.13-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-bo-messaging-mx-jd-1.21.13-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-bo-messaging-mx-sese-1.21.13-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-bo-service-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-bondexoticnote-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-bows-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-cal-upload-4.0.4-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-calculation-server-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-calib-400.11.13-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-calibintegration-400.11.13-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-calibration-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-calypsoml-acc-pl-reconciliation-impl-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-calypsoml-bloomberg-impl-11.3.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-calypsoml-liquidity-classification-impl-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-calypsoml-liquidity-core-impl-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-calypsoml-liquidity-position-impl-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-calypsoml-liquidity-reporting-impl-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-calypsoml-middleoffice_am-impl-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-calypsoml-taskstation-impl-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-cdml-cme-4.12.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-cdml-comder-4.12.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-cdml-eurex-4.12.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-cdml-fxclear-4.12.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-cdml-hkex-4.12.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-cdml-ice-4.12.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-cdml-lch-4.12.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-cdsisdamodel-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-cdml-api-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-cdml-impl-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-core-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-external-data-core-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-margin-core-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-margin-jspan-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-margin-mars-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-margin-meff-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-margin-mexder-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-margin-nasdaq-commodity-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-margin-nasdaq-equity-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-margin-prisma-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-margin-span-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-margin-span-lch-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-margin-strategyprcnt-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-margin-tase-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-margin-tims-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-margin-utilities-impl-8.3.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-onboarding-core-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-onboarding-ui-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-process-core-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-process-etd-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-process-otc-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-report-cme-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-report-core-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-report-lch-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-clearing-util-8.13.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-cls-api-3.4.6-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-cls-core-3.4.6-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-cls-simulator-3.4.6-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-collateral-5.6.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-collateral-bo-on-prem-5.6.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-collateral-calypsoml-collateral-impl-5.6.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-collateral-dashboard-client-5.6.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-collateral-dashboard-framework-5.6.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-collateral-dashboard-framework-client-5.6.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-collateral-dashboard-framework-spi-5.6.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-collateral-dashboard-server-5.6.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-collateral-headroomcheck-5.6.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-collateral-migration-5.6.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-collateral-ui-5.6.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-compliance-accessories-4.10.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-compliance-util-4.10.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-compute-infra-base-9.0.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-computegrid-calypso-impl-9.0.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-computegrid-core-9.0.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-core-11.1.5.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-crdpricing-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-cws-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-dashboard-framework-client-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-dashboard-framework-spi-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-datagrid-core-9.0.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-datagrid-hazelcast-cache-impl-9.0.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-datagrid-hazelcast-impl-9.0.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-datauploader-9.7.3-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-deal-station-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-dtcc-common-3.12.5-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-dtcc-dao-3.12.5-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-dtcc-derivserv-core-3.12.5-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-dtcc-derivserv-protocol-3.12.5-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-dtcc-gtr-commodity-3.12.5-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-dtcc-gtr-core-3.12.5-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-dtcc-gtr-protocol-3.12.5-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-elasticsearch-appender-4.6.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-elasticsearch-core-4.6.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-ers-compatibility-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-ers-compatibility-core-interface-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-ers-credit-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-ers-junit-base-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-ers-limit-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-ers-limit-server-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-ers-limits-adapter-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-ers-limits-report-module-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-ers-mod-limits-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-ers-services-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-etrading-1.0.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-exchange-feed-cme-6.12.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-exchange-feed-lch-6.12.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-executesql-5.2.5-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-externalPricers-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-fcf-capl-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-fo-workstation-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-foundation-api-2.1.125.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-foundation-impl-2.1.125.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-fx-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-fxoptionpricing-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-graphics-2.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-hdtools-1.3.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-healthcheck-3.2.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-hedge-accounting-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-hedge-accounting-service-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-hibernate-core-4.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-hibernate-impl-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-historical-calibration-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-icelink-3.2.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-id-api-1.2.15-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-infosec-4.1.10.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-infosec-xstream-4.1.10.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-inmemoryrisk-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-irdpricing-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-jaxb-impl-runtime-2.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-jboss-client-context-9.2.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-jboss-login-module-9.2.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-jboss-management-service-9.2.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-kpi-service-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-kpiservice-impl-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-launcher-1.3.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-limits-5.5.9-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-liquidity-classification-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-liquidity-core-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-liquidity-position-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-liquidity-reporting-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-local-operations-dashboard-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-logging-8.3.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-lowlatencymessaging-9.0.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-calculator-common-8.7.1-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-calculator-etd-common-13.14.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-calculator-ia-8.7.1-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-calculator-icemaps-13.14.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-calculator-lchspan-13.14.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-calculator-member-8.7.1-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-calculator-otc-api-8.7.1-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-calculator-otc-impl-8.7.1-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-calculator-prisma-13.14.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-calculator-risk-analysis-api-8.7.1-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-calculator-risk-analysis-impl-8.7.1-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-calculator-simm-8.7.1-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-calculator-span-13.14.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-calculator-typeia-13.14.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-calculator-typesimple-8.7.1-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-calculator-vm-8.7.1-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-common-api-13.14.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-common-beans-13.14.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-exception-13.14.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-manager-archiving-5.1.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-onprem-api-8.7.1-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-otc-api-13.14.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-simm-archiving-7.1.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-simm-lib-api-13.14.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-simm-lib-beans-13.14.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-margin-simm-lib-impl-13.14.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-market-risk-analyses-api-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-market-risk-analyses-impl-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-market-risk-application-client-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-market-risk-common-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-market-risk-covariance-api-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-market-risk-engine-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-market-risk-scengen-api-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-market-risk-scengen-client-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-market-risk-scengen-impl-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-markit-16.2.6.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-markitwire-8.9.2-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-matching-adapter-2.9.41-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-matching-calypsoml-2.9.41-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-matching-core-2.9.41-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-matching-paperconfirmation-2.9.41-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-matching-threewaybroker-2.9.41-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-matchingx-2.9.41-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-middleoffice_am-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-mifid2-reporting-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-mktdata-reports-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-mktdata-viewer-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-mktdataserver-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-navigator-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-persistence-service-4.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-pnl-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-position-keeping-blotter-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-position-keeping-core-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-position-keeping-lookup-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-position-keeping-processing-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-position-keeping-routing-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-presentation-server-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-pricinggrid-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-pricingscript-api-1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-pricingscript-fo-1.2.33-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-pricingscript-parser-400.11.13-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-pricingsheet-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-random-2.1.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-rate-engine-5.1.4-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-rate-engine-calypsoml-impl-5.1.4-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-rate-engine-demo-5.1.4-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-reuters-rdss-2.10.1-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-reuters-rfa-5.5.0-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-risk-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-risk-infra-config-9.0.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-riskcontrol-common-8.1.2-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-sales-solution-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-scalable-risk-infra-9.0.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-scheduling-engine-api-5.10.2-16.1.0.38.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-scheduling-engine-calypsoml-5.10.2-16.1.0.38.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-scheduling-engine-client-5.10.2-16.1.0.38.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-scheduling-engine-data-5.10.2-16.1.0.38.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-scheduling-engine-engine-5.10.2-16.1.0.38.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-scheduling-engine-impl-5.10.2-16.1.0.38.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-schemer-6.1.5.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-scriptableOTC-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-search-service-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-security-finance-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-security-finance-triparty-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-security-finance-workstation-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-security-pricing-server-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-sqlinputvalidator-2.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-swift-mt-calypsoml-impl-1.4.31-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-swift-mt-core-1.4.31-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-swift-xml-2.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-swingx-2.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-taskenrichment-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-taskstation-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-timeHorizonSimulation-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-trade-blotter-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-trax-common-3.5.12-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-trax-core-3.5.12-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-treasury-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypso-trioptima-1.8.6-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypsoml-calculationserver-impl-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypsoml-configuration-management-4.14.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypsoml-core-4.14.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypsoml-datauploader-impl-9.7.3-16.1.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypsoml-impl-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/calypsoml-pricingsheet-impl-16.1.0.75.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-activemq-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-api-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-attachments-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-base-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-bean-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-bindy-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-browse-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-cloud-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-controlbus-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-core-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-core-engine-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-core-languages-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-core-xml-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-csv-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-dataformat-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-dataset-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-direct-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-directvm-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-file-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-jdbc-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-jms-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-jpa-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-language-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-leveldb-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-log-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-main-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-management-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-management-api-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-quartz-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-ref-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-rest-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-saga-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-scheduler-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-seda-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-spring-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-spring-javaconfig-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-stream-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-stub-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-support-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-timer-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-util-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-util-json-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-validator-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-velocity-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-vm-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-xml-jaxb-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-xml-jaxp-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-xpath-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-xslt-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-xslt-saxon-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/camel-zip-deflater-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/cglib-nodep-2.1_3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/classmate-1.5.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/colt-1.2.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/com.springsource.org.hamcrest-1.1.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/com.springsource.org.hamcrest.core-1.1.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-beanutils-1.9.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-cli-1.3.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-codec-1.14.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-collections-3.2.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-collections4-4.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-dbcp-1.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-digester-2.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-discovery-0.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-fileupload-1.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-io-2.8.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-lang-2.6.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-lang3-3.10.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-logging-1.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-management-1.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-math-2.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-net-3.5.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-pool-1.6.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/commons-pool2-2.8.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/concurrentweakhashmap-1.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/converter-jackson-2.7.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/converter-scalars-2.7.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/core-3.2.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/core-renderer-R8.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/curator-client-2.12.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/curator-framework-2.12.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/curator-recipes-2.12.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/dom4j-2.1.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/dozer-core-6.5.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/drools-compiler-7.43.1.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/drools-core-7.43.1.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/drools-core-dynamic-7.43.1.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/drools-core-reflective-7.43.1.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/edtftpj-pro-6.0.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/failureaccess-1.0.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/fast-classpath-scanner-2.4.7.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/fontbox-2.0.16.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/fop-2.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/geronimo-j2ee-management_1.1_spec-1.0.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/groovy-2.5.13.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/groovy-ant-2.5.13.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/groovy-sql-2.5.13.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/groovy-templates-2.5.13.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/groovy-xml-2.5.13.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/gson-2.8.6.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/guava-29.0-jre.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/hawtbuf-1.11.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/hazelcast-3.11.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/hazelcast-client-3.11.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/hazelcast-spring-3.11.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/HdrHistogram-2.1.12.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/hibernate-commons-annotations-5.1.0.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/hibernate-core-5.4.21.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/hppc-0.8.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/httpasyncclient-4.1.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/httpclient-4.5.12.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/httpcore-4.4.13.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/httpcore-nio-4.4.12.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/httpmime-4.5.12.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jackson-annotations-2.11.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jackson-core-2.11.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jackson-databind-2.11.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jackson-dataformat-cbor-2.11.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jackson-dataformat-smile-2.11.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jackson-dataformat-yaml-2.11.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jackson-datatype-jsr310-2.11.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jakarta.xml.bind-api-2.3.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jama-1.0.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/javacup-0.10k.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/javase-3.2.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/javassist-3.24.0-GA.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/javax.json-1.0.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/javax.persistence-api-2.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/javers-core-3.7.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jaxb-impl-2.3.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jaxb1-impl-2.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jaxen-1.2.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jboss-as-controller-7.2.0.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jboss-as-server-7.2.0.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jboss-msc-1.0.4.GA.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jcommon-1.0.16.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jdom-2.0.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jettison-1.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jfreechart-1.0.13.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jide-action-3.7.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jide-common-3.7.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jide-components-3.7.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jide-dialogs-3.7.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jide-dock-3.7.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jide-editor-3.7.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jide-grids-3.7.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jide-pivot-3.7.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jide-properties-3.7.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jide-shortcut-3.7.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jline-0.9.94.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jmxremote-1.0.1_04.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jmxremote_optional-1.0_01-ea.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jmxri-1.2.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/joda-time-2.10.5.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jopt-simple-5.0.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/js-1.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/json_simple-r1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jsr305-3.0.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jtidy-r938.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/jzlib-1.1.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/kie-api-7.43.1.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/kie-internal-7.43.1.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/kie-soup-commons-7.43.1.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/kie-soup-maven-support-7.43.1.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/kie-soup-project-datamodel-api-7.43.1.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/kie-soup-project-datamodel-commons-7.43.1.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/kie-soup-xstream-7.43.1.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/kotlin-stdlib-1.3.72.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/kotlin-stdlib-common-1.3.72.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/leveldb-0.10.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/leveldb-api-0.10.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/leveldbjni-all-1.8.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/log4j-api-2.13.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/log4j-core-2.13.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/log4j-slf4j-impl-2.13.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/lucene-analyzers-common-8.7.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/lucene-backward-codecs-8.7.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/lucene-core-8.7.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/lucene-grouping-8.7.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/lucene-highlighter-8.7.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/lucene-join-8.7.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/lucene-memory-8.7.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/lucene-misc-8.7.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/lucene-queries-8.7.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/lucene-queryparser-8.7.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/lucene-sandbox-8.7.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/lucene-spatial-extras-8.7.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/lucene-spatial3d-8.7.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/lucene-suggest-8.7.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/mail-1.4.5.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/mvel2-2.4.4.Final.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/objenesis-1.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/ocutil-2.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/ojdbc8.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/okhttp-4.9.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/okio-2.8.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/outldd-2.0.11.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/parallelcolt-0.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/pdfbox-2.0.15.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/picocontainer-2.15.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/poi-3.17.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/poi-ooxml-3.17.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/poi-ooxml-schemas-3.17.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/protobuf-java-3.13.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/quartz-2.3.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/quickfixj-all-1.6.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/reactive-streams-1.0.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/retrofit-2.7.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/rxjava-2.2.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/serializer-2.7.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/simple-jndi-0.11.4.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/slf4j-api-1.7.30.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/snakeyaml-1.26.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/spring-aop-5.2.9.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/spring-beans-5.2.9.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/spring-context-5.2.9.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/spring-context-support-5.2.9.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/spring-core-5.2.9.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/spring-expression-5.2.9.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/spring-jdbc-5.2.9.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/spring-jms-5.2.9.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/spring-orm-5.2.9.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/spring-oxm-5.2.9.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/spring-security-core-5.3.4.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/spring-security-kerberos-client-1.0.1.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/spring-tx-5.2.9.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/spring-web-5.2.9.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/spring-webmvc-5.2.9.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/stringtemplate-3.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/super-csv-2.4.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/swixml-1.5.144.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/t-digest-3.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/velocity-1.7.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/visad-1.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/wsdl4j-1.5.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/xalan-2.7.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/xbean-spring-3.11.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/xercesImpl-2.12.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/xml-apis-1.4.01.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/xmlbeans-2.4.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/xmlbeans-xpath-2.4.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/xmlgraphics-commons-2.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/xmlparser-0.5-beta.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/xmlpull-1.1.3.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/xmlunit-1.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/xom-1.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/xpp3-1.1.4c.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/xpp3_min-1.1.4c.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/xstream-1.4.11.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/y-2.12.0.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/lib/zookeeper-3.4.10.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes> 
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/calypso/workspace/calypso-16.1.0.75/client/resources" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+</classpath>

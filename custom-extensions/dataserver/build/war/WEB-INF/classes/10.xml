@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<calypso:calypsoDocument xmlns:liquidityrule="http://www.calypso.com/liquidityrule" xmlns:liquiditycriteria="http://www.calypso.com/liquiditycriteria" xmlns:liquidityposition="http://www.calypso.com/liquidityposition" xmlns:ns3="http://www.calypso.com/edealing/common" xmlns:matching="http://www.calypso.com/matching" xmlns:scheduler="http://www.calypso.com/scheduler" xmlns:liquidityreporting="http://www.calypso.com/liquidityreporting" xmlns:kpiservice="http://www.calypso.com/kpiservice" xmlns:assumption="http://www.calypso.com/assumption" xmlns:swift="http://www.calypso.com/swift" xmlns:bondexoticnote="http://www.calypso.com/bondexoticnote" xmlns:customereng="http://www.calypso.com/customereng" xmlns:datauploader="http://www.calypso.com/datauploader" xmlns:ftp="http://www.calypso.com/ftp" xmlns:pricingscript="http://www.calypso.com/pricingscript" xmlns:am="http://www.calypso.com/am" xmlns:scriptableOTC="http://www.calypso.com/scriptableOTC" xmlns:pricingsheet="http://www.calypso.com/pricingsheet" xmlns:pricingeng="http://www.calypso.com/pricingeng" xmlns:taskstation="http://www.calypso.com/taskstation" xmlns:ns23="http://www.calypso.com/HedgeAccounting" xmlns:liquiditycore="http://www.calypso.com/liquiditycore" xmlns:calypso="http://www.calypso.com/xml" xmlns:rateengine="http://www.calypso.com/rateengine" xmlns:liquidityclassification="http://www.calypso.com/liquidityclassification" xmlns:collateral="http://www.calypso.com/collateral" xmlns:calculationserver="http://www.calypso.com/calculationserver">
+    <calypso:calypsoObject xsi:type="calypso:FeedParamsAdapter" version="14-0" action="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <calypso:name>
+            <calypso:domainValue>
+                <calypso:type>com.calypso.tk.refdata.DomainValueAdapter</calypso:type>
+                <calypso:separator>#</calypso:separator>
+                <calypso:identifier code="feed#RandomFeedDemo" codifier="convention"/>
+                <calypso:calypsoBusinessKey>
+                    <calypso:propertyName>domainName</calypso:propertyName>
+                    <calypso:propertyValue>feed</calypso:propertyValue>
+                </calypso:calypsoBusinessKey>
+                <calypso:calypsoBusinessKey>
+                    <calypso:propertyName>value</calypso:propertyName>
+                    <calypso:propertyValue>RandomFeedDemo</calypso:propertyValue>
+                </calypso:calypsoBusinessKey>
+            </calypso:domainValue>
+        </calypso:name>
+        <calypso:type>
+            <calypso:domainValue>
+                <calypso:type>com.calypso.tk.refdata.DomainValueAdapter</calypso:type>
+                <calypso:separator>#</calypso:separator>
+                <calypso:identifier code="feedType#Random" codifier="convention"/>
+                <calypso:calypsoBusinessKey>
+                    <calypso:propertyName>domainName</calypso:propertyName>
+                    <calypso:propertyValue>feedType</calypso:propertyValue>
+                </calypso:calypsoBusinessKey>
+                <calypso:calypsoBusinessKey>
+                    <calypso:propertyName>value</calypso:propertyName>
+                    <calypso:propertyValue>Random</calypso:propertyValue>
+                </calypso:calypsoBusinessKey>
+            </calypso:domainValue>
+        </calypso:type>
+        <calypso:params>
+            <calypso:name>ConfigFile</calypso:name>
+            <calypso:value xsi:type="ns29:string" xmlns:ns29="http://www.w3.org/2001/XMLSchema">QuoteGenTest.txt</calypso:value>
+        </calypso:params>
+        <calypso:params>
+            <calypso:name>FEED_TYPE</calypso:name>
+            <calypso:value xsi:type="ns29:string" xmlns:ns29="http://www.w3.org/2001/XMLSchema">Random</calypso:value>
+        </calypso:params>
+        <calypso:isDefault>false</calypso:isDefault>
+    </calypso:calypsoObject>
+</calypso:calypsoDocument>

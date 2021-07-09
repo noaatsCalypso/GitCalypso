@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 203 Multiple Financial Institution Transfer for its Own Account -->
+<SwiftMsgDef>
+	<Name>MT203</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Sum of Amounts" tag=":19:" format="17d" value="MSGGRP_SUM_OF_AMOUNTS" modes="MMM"/>
+		<SwiftField name="Value Date" tag=":30:" format="6!n" value="VALUE_DATE" modes="MMM"/>
+		<SwiftField name="Ordering Institution" tag=":52a:" value="PO_BENEFICIARY" modes="---" condition = "ordererNotPO()">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Sender's Correspondent" tag=":53a:" value="PO_DELIVERY_AGENT" modes="---" condition = "isCoverMessageRequired() AND !isCoverMessage()">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Sender's Correspondent" tag=":53B:" value="AGENT_ACCOUNT" modes="---" condition = "!isCoverMessageRequired() AND hasMultiAccountsWithAgent">
+		    <SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />		    
+		</SwiftField>
+		<SwiftField name="Receiver's Correspondent" tag=":54a:" value="CPTY_INTERMEDIARY" modes="---" condition = "isCoverMessageRequired() AND !isCoverMessage()">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+	</SwiftSequence>
+	<SwiftSequence name="Payment Sequence" modes="MMM" iterator="MessageGroup">
+		<SwiftField name="Transaction Reference Number" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Related Reference" tag=":21:" format="16x" value="RELATED_REF" modes="+++" condition = "!isCoverMessageRequired()"/>
+		<SwiftField name="Related Reference" tag=":21:" format="16x" value="TRADE_ID" modes="+++" condition = "isCoverMessageRequired()"/>
+		<SwiftField name="Currency Code, Amount" tag=":32B:" format="3!a15d" value="CCY_AMOUNT" modes="MMM"/>
+		<SwiftField name="Intermediary" tag=":56a:" value="CPTY_INTERMEDIARY" modes="---" condition = "!isCoverMessageRequired()">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Intermediary" tag=":56a:" value="CPTY_INTERMEDIARY2" modes="---" condition = "isCoverMessage() AND isCoverMessageToAgent()">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Intermediary" tag=":57a:" value="CPTY_INTERMEDIARY" modes="---" condition = "isCoverMessage() AND isCoverMessageToAgent()" hasField = ":56A:" hasValue="LEDifferentFromReceiver">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Intermediary" tag=":57a:" value="CPTY_INTERMEDIARY2" modes="---" condition = "isCoverMessage() AND isCoverMessageToInt1()" hasField=":56A:" hasValue = "LEDifferentFromReceiver">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Account With Institution" tag=":57a:" value="CPTY_RECEIVING_AGENT" modes="---" condition ="!isCoverMessage()" hasField = ":56A:" hasValue ="LEDifferentFromReceiver">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Beneficiary Institution" tag=":58a:" value="CPTY_BENEFICIARY" modes="+++" condition ="!isCoverMessage()">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Beneficiary Institution" tag=":58a:" value="CPTY_RECEIVING_AGENT" modes="+++" condition = "isCoverMessage() AND isCoverMessageToAgent()">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Beneficiary Institution" tag=":58a:" value="CPTY_INTERMEDIARY" modes="+++" condition = "isCoverMessage() AND isCoverMessageToInt1()">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Sender to Receiver Information" tag=":72:" value="ADDITIONAL_INFO" format="6*35x" modes="OOO"/>		
+	</SwiftSequence>
+</SwiftMsgDef>

@@ -1,0 +1,162 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header_ndf_fixing.html";
+</calypso-->
+
+<!--calypso>
+if (|MESSAGE_SUBACTION| == "NONE") {
+  inline "The purpose of this letter is to advise that the FX Averaging Forward trade (our trade reference |TRADE_ID|) has today been rate fixed.";
+}
+if (|MESSAGE_SUBACTION| == "AMEND") {
+  inline "The purpose of this letter is to advise that rate fixing of the FX Averaging Forward trade (our trade reference |TRADE_ID|) has today been amended.";
+}
+if (|MESSAGE_SUBACTION| == "CANCEL") {
+  inline "The purpose of this letter is to advise that rate fixing of the FX Averaging Forward trade (our trade reference |TRADE_ID|) has today been canceled.";
+}
+</calypso-->
+
+
+
+<b><u><p>FX Averaging Forward Rate Fixing Details:</u> <br />
+&nbsp; </p></b>
+<TABLE CELLSPACING=1 WIDTH=623>
+
+
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Reference Currency and Amount</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|FXAVG_BUY_CURRENCY||FX_BUY_AMOUNT|</TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Fixing Currency & Amount</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|FXAVG_SETTLE_CCY| |FX_SELL_AMOUNT|</TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>FX Forward Rate</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|FX_NEGOCIATEDPRICE|</TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Average Fixing Rate</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|FXAVG_AVG_RATE|</TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Fixing Valuation Date</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|FXAVG_FIXING_END_DATE|</TD>
+</TR>
+
+
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Settlement Date</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|SETTLE_DATE|</TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Rate Reset Source</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|FXAVG_RESET_SOURCE|</TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Settlement Currency & Amount</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|FXNDF_SETTLE_CCY| |FXNDF_SETTLE_AMOUNT|</TD>
+</TR>
+</TABLE>
+
+
+<b><u><p> Fixing  Schedule Details:</u> <br />
+&nbsp; </p></b>
+<TABLE CELLSPACING=1 WIDTH=623>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Schedule Start Date</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|FXAVG_FIXING_START_DATE|</TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE"><p>Schedule End Date</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE"><p>|FXAVG_FIXING_END_DATE|</TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE"><p>Fixing Frequency</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE"><p>|FXAVG_FIXING_FREQ|</TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE"><p>Fixing Holidays</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE"><p>|FXAVG_FIXING_HOLIDAYS|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE"><p>Day to Roll On</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE"><p>|FXAVG_DAYTOROLLON|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE"><p>Roll On Day</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE"><p>|FXAVG_ROLLONDAY|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE"><p>Roll On End Date</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE"><p>|FXAVG_ROLLONENDDATE|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE"><p>Fixing Rate Settlement Method</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE"><p>|FXAVG_FIXING_SETTLE_METHOD|</TD>
+</TR>
+
+<TR><TD WIDTH="39%" VALIGN="MIDDLE"><p>Fixing Schedule</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE"><p>|FXAVG_SCHEDULE|</TD>
+</TR>
+</TABLE>
+
+
+
+<p><!---End BizDays Table--><b><u> Settlement Instructions</p></u></b>
+<!--calypso>
+	iterator("TransferRules")
+		inline "
+					<table width='623%'>
+						<tr>
+							<td width='39%'>|SETTLEMENT_TO_PAYREC|</td>
+							<td width='59%'>&nbsp;</td>
+						</tr>
+						<tr>
+							<td width='39%'>Currency</td>
+							<td width='59%'>|SETTLEMENT_TO_CURRENCY|</td>
+						</tr>
+						<tr>
+							<td width='39%'>To</td>
+							<td width='59%'>|SETTLEMENT_TO_AGENT|</td>
+						</tr>
+						<tr>
+							<td width='39%'>Code</td>
+							<td>|SETTLEMENT_METHOD|</td>
+						</tr>						
+						<tr>
+							<td width='39%'>Favor of</td>
+							<td width='59%'>|SETTLEMENT_FAVOR_OF|</td>
+						</tr>
+						<tr>
+							<td width='39%'>Account Number</td>
+							<td width='59%'>|SETTLEMENT_ACCOUNT_NUMBER|</td>
+						</tr>
+					</table>
+				
+	";
+</calypso-->
+
+<p>&nbsp; </p>
+<p><!---End Account Details Table-->Please sign and return 
+this Confirmation as soon as possible to help safeguard against erroneous 
+settlement.</p>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

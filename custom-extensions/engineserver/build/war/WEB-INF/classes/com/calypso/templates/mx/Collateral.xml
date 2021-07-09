@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+	<contents>
+		<element name="MrgnCallReqId">
+			<contents>
+				<text>
+					<value>NONREF</value>
+				</text>
+			</contents>
+		</element>
+		<element>
+			<!-- This anonymous element with a max content of 1 is used to create an if/else logic. -->
+			<contents max="1">
+				<include>
+					<condition>
+						<expression>isSecurity()</expression>
+					</condition>
+					<path>SecurityCollateral.xml</path>
+				</include>
+				<include>
+					<condition>
+						<expression>isCash()</expression>
+					</condition>
+					<path>CashCollateral.xml</path>
+				</include>
+			</contents>
+		</element>
+	</contents>
+</template>

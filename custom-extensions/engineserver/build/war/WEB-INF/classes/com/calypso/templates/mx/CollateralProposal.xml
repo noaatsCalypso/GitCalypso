@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+	<contents>
+		<element name="CollPrpsl">
+			<contents>
+				<element name="TxId">
+					<contents>
+						<report>
+							<column>MESSAGE_ID</column>
+						</report>
+					</contents>
+				</element>
+				<element name="Oblgtn">
+					<contents>
+						<element name="PtyA">
+							<contents max="1">								
+								<element>
+									<!-- This anonymous element is used to apply the condition below BEFORE the change of context of the include. -->
+									<contents>
+										<include>
+											<context>
+												<to>SenderContact</to>
+											</context>
+											<path>PartyIdentification.xml</path>
+										</include>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="PtyB">
+							<contents max="1">	
+								<element>
+									<!-- This anonymous element is used to apply the condition below BEFORE the change of context of the include. -->
+									<condition>
+										<expression>isSecurity() &amp;&amp; isTransfer() &amp;&amp; isBuy()</expression>
+									</condition>
+									<contents>
+										<include>
+											<context>
+												<to>MarginCallConfig</to>
+											</context>
+											<path>LCHAccountProprietaryIdentification.xml</path>
+										</include>
+									</contents>
+								</element>
+								<element>
+									<!-- This anonymous element is used to apply the condition below BEFORE the change of context of the include. -->
+									<condition>
+										<expression>isSecurity() &amp;&amp; isTransfer() &amp;&amp; isSell()</expression>
+									</condition>
+									<contents>
+										<include>
+											<context>
+												<to>InterAccountRelatedMarginCallConfig</to>
+											</context>
+											<path>LCHAccountProprietaryIdentification.xml</path>
+										</include>
+									</contents>
+								</element>															
+								<element>
+									<!-- This anonymous element is used to apply the condition below BEFORE the change of context of the include. -->
+									<contents>
+										<include>
+											<context>
+												<to>ReceiverContact</to>
+											</context>
+											<path>PartyIdentification.xml</path>
+										</include>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="CollAcctId">
+							<contents max="1">
+								<element>
+									<!-- This anonymous element is used to apply the condition below BEFORE the change of context of the include. -->
+									<condition>
+										<expression>isTransfer() &amp;&amp; isBuy()</expression>
+									</condition>
+									<contents>
+										<include>
+											<context>
+												<to>InterAccountRelatedMarginCallConfig</to>
+											</context>
+											<path>LCHProprietaryIdentification.xml</path>
+										</include>
+									</contents>							
+								</element>
+								<element>	
+									<contents>
+										<include>
+											<context>
+												<to>MarginCallConfig</to>
+											</context>
+											<path>LCHProprietaryIdentification.xml</path>
+										</include>
+									</contents>						
+								</element>
+							</contents>		
+						</element>
+						<element name="ValtnDt">
+							<contents>
+								<element name="Dt">
+									<contents>
+										<report>
+											<column>Current Date</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="TpAndDtls">
+					<contents>
+						<element name="CollPrpslTp">
+							<contents>
+								<text>
+									<value>INIT</value>
+								</text>
+							</contents>
+						</element>
+						<element name="CollPrpsl">
+							<contents>
+								<element name="SgrtdIndpdntAmt">
+									<contents>
+										<element name="AgrdAmt">
+											<attributes>
+												<attribute name="Ccy">
+													<value>
+														<report>
+															<column>Trade Currency</column>
+														</report>
+													</value>
+												</attribute>
+											</attributes>
+											<contents>
+												<text>
+													<value>0</value>
+												</text>
+											</contents>
+										</element>
+										<element name="MvmntDrctn">
+											<contents max="1">
+												<element name="Rtr">
+													<condition>
+														<expression>!isTransfer() &amp;&amp; !isSubstitution() &amp;&amp; isBuy()</expression>
+													</condition>
+													<contents>
+														<include>
+															<path>Collateral.xml</path>
+														</include>
+													</contents>
+												</element>
+												<element name="CollMvmntDrctn">
+													<contents>
+														<element name="Dlvr">
+															<contents max="1">
+																<include>
+																	<condition>
+																		<expression>isSubstitution()</expression>
+																	</condition>
+																	<path>Collaterals.xml</path>
+																</include>
+																<include>
+																	<path>Collateral.xml</path>
+																</include>
+															</contents>
+														</element>
+														<element name="Rtr">
+															<condition>
+																<expression>isSubstitution()</expression>
+															</condition>
+															<contents>
+																<include>
+																	<path>Collaterals.xml</path>
+																</include>
+															</contents>
+														</element>
+													</contents>
+												</element>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>				
+			</contents>
+		</element>
+	</contents>
+</template>

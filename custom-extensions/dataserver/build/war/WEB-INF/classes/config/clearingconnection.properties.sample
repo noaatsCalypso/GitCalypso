@@ -1,0 +1,25 @@
+# Key format is
+#
+# <CCP short name>.<Firm ID (PO LE attribute)>.<configurationKey>
+#
+# URI format must include protocol, host and port (where applicable)
+# 
+# For public key SFTP authentication, keyPassphrase is optional. Key
+# path can be an absolute filesystem path, or a resource path within
+# the classpath. Filesystem paths take precedence
+#
+
+CME.4Q0.URI=sftp://sftpng.cmegroup.com:22
+CME.4Q0.user=4Q0_SFTP_user
+CME.4Q0.password=******
+
+LCH.CC1.URI=sftp://195.246.228.9:6022
+LCH.CC1.user=CC1_SFTP_user
+LCH.CC1.key=/path/to/CC1/key
+
+LCH.CC2.URI=sftp://195.246.228.9:6022
+LCH.CC2.user=CC2_SFTP_user
+LCH.CC2.key=/path/to/CC2/key
+LCH.CC2.keyPassphrase=CC2_key_passphrase
+
+EUREX.ABCFR.URI=file:///home/clearing/Calypso/EUREX

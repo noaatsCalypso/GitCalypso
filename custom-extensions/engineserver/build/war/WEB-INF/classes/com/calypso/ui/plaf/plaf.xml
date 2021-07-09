@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+  	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	<!-- If the application needs to override the default properties set it
+		has to override the bean definition with id applicationSpecificProperties -->
+	<bean id="applicationSpecificProperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+	</bean>
+
+	<!-- PLAF configuration -->
+	<bean id="plafConfiguration" class="com.calypso.ui.plaf.DefaultPLAFConfiguration" >
+	     <property name="lookAndFeel" value="Native"/>
+<!--       <property name="lookAndFeel" value="com.jgoodies.looks.windows.WindowsLookAndFeel"/> -->
+	</bean>
+
+	<bean id="yellow" class="java.awt.Color">
+		<constructor-arg type="int" value="255" />
+		<constructor-arg type="int" value="255" />
+		<constructor-arg type="int" value="0" />
+	</bean>
+
+	<!-- Windows PLAF extensions -->
+	<bean id="plaf.Windows" class="com.calypso.ui.plaf.basic.BasicPLAFExtensions">
+		<!-- By default Jide installs OFFICE theme (which we dont want) for windows
+			if XP style is on. Set simple windows theme. -->
+		<property name="jideExtensions" value="1" /><!-- 1 = VSNET_STYLE -->
+		<property name="systemProperties">
+			<map>
+				<!-- Turn on shading theme in jide components -->
+				<entry key="shadingtheme">
+					<value>true</value>
+				</entry>
+			</map>
+		</property>
+		<property name="uiDefaults">
+			<map>
+				<!-- Square combo box bug: see CAL-91977 -->
+				<entry key="ComboBox.squareButton">
+					<value type="java.lang.Boolean">false</value>
+				</entry>
+				<entry key="OptionPaneUI">
+					<value>com.calypso.ui.plaf.windows.ModifiedWindowsOptionPaneUI</value>
+				</entry>
+				<entry key="ComboBoxUI">
+					<value>com.calypso.ui.plaf.windows.ModifiedWindowsComboBoxUI</value>
+				</entry>
+				<entry key="ExComboBoxUI">
+					<value>com.calypso.ui.plaf.windows.ModifiedVsnetExComboBoxUI</value>
+				</entry>
+				<entry key="FocusableLabelUI">
+					<value>com.calypso.ui.plaf.windows.WindowsFocusableLabelUI</value>
+				</entry>
+				<entry key="RootPaneUI">
+					<value>com.calypso.ui.plaf.windows.ModifiedWindowsRootPaneUI</value>
+				</entry>
+				<entry key="TableHeaderUI">
+					<value>com.calypso.ui.plaf.windows.ModifiedWindowsTableHeaderUI</value>
+				</entry>
+				<entry key="DockableFrameUI">
+					<value>com.calypso.ui.plaf.windows.ModifiedVsnetDockableFrameUI</value>
+				</entry>
+				<!-- CAL-152214 - Allow for Selection to be changed in a table or Component while a Popup is opened 
+				Already like that in Metal theme. This prevent to have to click twice to change the selection -->
+				<entry key="PopupMenu.consumeEventOnClose">
+					<value type="java.lang.Boolean">false</value>
+				</entry>
+				<!-- Extended properties not done by default -->
+				<entry key="JideTabbedPane.defaultTabShape">
+					<value type="java.lang.Integer">1</value><!-- 1 = JideTabbedPane.SHAPE_WINDOWS -->
+				</entry>
+				<entry key="JideTabbedPane.defaultTabColorTheme">
+					<value type="java.lang.Integer">4</value><!-- 4 = JideTabbedPane.COLOR_THEME_WINXP -->
+				</entry>
+				<!-- CAL-151388 The Default focusCellHighlightBorder is not visible enough -->
+				<entry key="Table.focusCellHighlightBorder">
+					<bean id="solidBorder" class="javax.swing.BorderFactory" factory-method="createLineBorder">
+						<constructor-arg ref="yellow"/>
+					</bean>
+				</entry>
+				<entry key="Chart.selectionBackground" value-ref="yellow"/>
+			</map>
+		</property>
+	</bean>
+
+	<!-- com.apple.laf.AquaLookAndFeel extensions -->
+	<bean id="plaf.Aqua" class="com.calypso.ui.plaf.basic.BasicPLAFExtensions">
+		<property name="uiDefaults">
+			<map>
+				<entry key="DockableFrameUI"
+					value="com.calypso.ui.plaf.aqua.AquaCalypsoDockableFrameUI"></entry>
+				<!-- CAL-152214 - Allow for Selection to be changed in a table or Component while a Popup is opened
+				Already like that in Metal theme. This prevent to have to click twice to change the selection -->
+				<entry key="PopupMenu.consumeEventOnClose">
+					<value type="java.lang.Boolean">false</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<!-- Metal PLAF extensions -->
+	<bean id="plaf.Metal" class="com.calypso.ui.plaf.metal.MetalPLAFExtensions">
+		<property name="jideExtensions" ref="jideExtensions.default" />
+		<property name="theme" ref="plaf.Metal.theme.default" />
+		<property name="systemProperties">
+			<map>
+				<!-- Turn on shading theme in jide components -->
+				<entry key="shadingtheme">
+					<value>true</value>
+				</entry>
+			</map>
+		</property>
+		<property name="uiDefaults">
+			<map>
+				<entry key="DockableFrameUI">
+					<value>com.calypso.ui.plaf.metal.ModifiedMetalDockableFrameUI</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<!-- Themes -->
+	<bean id="plaf.Metal.theme.default" class="javax.swing.plaf.metal.DefaultMetalTheme" />
+	<bean id="plaf.Metal.theme.highContrast" class="javax.swing.plaf.metal.MetalHighContrastTheme" />
+	<bean id="plaf.Metal.theme.ocean" class="javax.swing.plaf.metal.OceanTheme" />
+
+	<!-- Basic (default) PLAF extensions. Used if no other PLAF is specified. -->
+	<bean id="plaf.Basic" class="com.calypso.ui.plaf.basic.BasicPLAFExtensions">
+		<property name="jideExtensions" ref="jideExtensions.default" />
+	</bean>
+
+	<!-- JIDE extensions -->
+	<!-- Style constants are defined in com.jidesoft.plaf.LookAndFeelFactory -->
+	<bean id="jideExtensions.default" class="com.jidesoft.plaf.LookAndFeelFactory"
+		factory-method="getDefaultStyle" />
+
+	<import resource="classpath:PropertyConfiguration.xml"></import>
+</beans>

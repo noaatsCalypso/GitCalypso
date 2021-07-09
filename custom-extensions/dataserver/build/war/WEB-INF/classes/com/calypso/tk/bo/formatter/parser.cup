@@ -1,0 +1,510 @@
+/*
+ *
+ * Copyright (c) 2000 by Calypso Technology, Inc.
+ * 595 Market Street, Suite 1980, San Francisco, CA  94105, U.S.A.
+ * All rights reserved.
+ *
+ * This software is the confidential and proprietary information
+ * of Calypso Technology, Inc. ("Confidential Information").  You
+ * shall not disclose such Confidential Information and shall use
+ * it only in accordance with the terms of the license agreement
+ * you entered into with Calypso Technology.
+ *
+ */
+// NOPMD: this is generated
+
+package com.calypso.tk.bo.formatter;
+
+import java.util.*;
+import java_cup.runtime.*;
+import com.calypso.tk.core.Log;
+import com.calypso.tk.core.Util;
+
+/*
+
+The parser generator used is CUP, version 0.10k.  Documentation is available e.g. at 
+http://www2.cs.tum.edu/projects/cup/manual.html,  or in the javacup.jar file.
+
+The scanner generator we currently use is JFlex version 1.3.5.
+
+Later versions of javacup have an ant task (version CUP version 0.10k TUM Edition 20050510) 
+that could be used to automate the build process. But there are more changes, e.g. to the Errormanager.
+It has not yet been determined whether this would require changes to our code.
+
+
+EOF handling
+============
+Traditionally, we threw an EOFException that was caught and ignored in FormatterParser.parse(InputStream). 
+This prevented the last reduction for an input file from being executed (due to an EOFException in the call
+to the scanner to "lookahead" the next token).
+This did not cause problems in the past. But changes for CAL-71706 "require" a change: make the scanner 
+return "null" to signal EOF. This is supported as of 
+v.10k (see http://www2.cs.tum.edu/repos/cup/develop/changelog.txt).
+That way, the parser can end its work properly.
+
+*/
+
+init with {:
+     action_obj.initParserContext();
+:}
+
+parser code {: 
+
+    /*
+     * This is the place to override methods from lr_parser
+     */
+  public void unrecovered_syntax_error(Symbol cur_token)
+    throws java.lang.Exception
+    {
+      ((Lexer)getScanner()).getFormatterParser().error(cur_token.value != null ? cur_token.value.toString()
+                                                    : "<Unknown token>", cur_token.left);
+    }
+
+  public void syntax_error(Symbol cur_token)
+    {
+      ((Lexer)getScanner()).getFormatterParser().error(cur_token.value != null ? cur_token.value.toString()
+                                                    : "<Unknown token>", cur_token.left);
+    }
+
+:}
+
+action code {: 
+    private ParserContext  _context = new ParserContext(); // this.parser is still NULL when this is executed. So we need to pushd the parser into the context elsewhere (user init)
+                
+    public com.calypso.tk.bo.formatter.Parser getParser() { return this.parser;};
+	public void initParserContext() { _context.setParser(this.parser);}; // called by user init to get the parser into the ParserContext
+
+    private static Boolean compare(Object value, int comparator, Object literal)
+    {
+        try {
+            if (value instanceof Boolean || literal instanceof Boolean) {
+                if ((value instanceof Boolean == false) || (literal instanceof Boolean == false))
+                    return Boolean.FALSE;
+                else
+                    return Boolean.valueOf((((Boolean)value).equals(literal)));            
+            }
+        
+            Comparable c1 = null, c2 = null;
+            /*
+             * Convert Int to double so that a comparison can be made
+             * with literal (which will always be expressed as a double.
+             */
+            if (value instanceof Integer)
+                value = Double.valueOf( ((Integer)value).doubleValue() );
+                
+            if (value instanceof Long)
+                            value = Double.valueOf( ((Long)value).doubleValue() );
+            try {
+                c1 = (Comparable)value;
+            }
+            catch (ClassCastException cce) {
+                c1 = value.toString();
+            }
+            
+            c2 = (Comparable)literal;
+            int comparison = c1.compareTo(c2);
+        
+            switch (comparator) {
+                case sym.LT:
+                    return Boolean.valueOf(comparison < 0);
+                case sym.GT:
+                    return Boolean.valueOf(comparison > 0);
+                case sym.LTE:
+                    return Boolean.valueOf(comparison <= 0);
+                case sym.GTE:
+                    return Boolean.valueOf(comparison >= 0);
+                case sym.EQEQ:
+                    return Boolean.valueOf(comparison == 0);
+                case sym.NEQ:
+                    return Boolean.valueOf(comparison != 0);
+		case sym.MAT:
+                    return ((String) c1).matches((String) c2);
+                case sym.NMAT:
+                    return !((String) c1).matches((String) c2);
+                case sym.LIKE:
+                    String s1 = (String)c1;
+                    String s2 = (String)c2;
+                    boolean checkStart = true;
+                    boolean checkEnd = true;
+                    if (s2.startsWith("%")) {
+                        s2 = s2.substring(1);
+                        checkStart = false;
+                    }
+                    if (s2.endsWith("%")) {
+                        s2 = s2.substring(0, s2.length()-1);
+                        checkEnd = false;
+                    }
+                    if (!checkStart && !checkEnd) {
+                        if (s1.indexOf(s2) == -1)
+                            return Boolean.FALSE;
+                        else
+                            return Boolean.TRUE;
+                    }
+                    if (checkStart) {
+                        if (s1.startsWith(s2) == false)
+                            return Boolean.FALSE;
+                    }
+                    if (checkEnd) {
+                        if (s1.endsWith(s2) == false)
+                            return Boolean.FALSE;
+                    }
+                    
+                    return Boolean.TRUE;
+            }
+        }
+        catch (Exception e) { /** ignore **/ }
+        return Boolean.FALSE;
+    }
+
+    private static Boolean isIn(Object value, Vector values)
+    {
+        try {
+            return Boolean.valueOf(compare(value, values));
+        }
+        catch (Exception e) {
+            Log.error("FormatterParser", e);
+        }
+        return Boolean.FALSE;
+    }
+
+    private static Boolean isNotIn(Object value, Vector values)
+    {
+	return !isIn(value, values);
+    }
+
+    private static Boolean isEmpty(Object value)
+    {
+        try {
+            return Boolean.valueOf(Util.isEmpty(value.toString()));
+        }
+        catch (Exception e) {
+            Log.error("FormatterParser", e);
+        }
+        return Boolean.FALSE;
+    }
+
+    private static Boolean isNotEmpty(Object value)
+    {
+        return !isEmpty(value);
+    }
+
+    private static boolean compare(Object value, Vector values)
+    {
+        if ((value instanceof String) == false)
+            throw new RuntimeException("Cannot use IN or NOTIN on non-String objects");
+        
+        String s1 = (String)value;
+        if (values == null) {
+            return false;
+        }
+        
+        for (int i=0; i < values.size(); i++) {
+            String s2 = (String)values.elementAt(i);
+            if (s1.equals(s2)) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+:};
+
+/* 
+ * --- Terminals (tokens returned by the lexer) ---
+ */
+terminal	     START, START_REGEN, END;
+terminal             AND, OR, NOT, TRUE, FALSE;
+terminal             LPAREN, RPAREN, LBLOCK, RBLOCK;
+terminal	     LT, GT, LTE, GTE, EQ, EQEQ, NEQ, MAT, NMAT, LIKE, IN, NOTIN, EMPTY, NOTEMPTY;
+terminal	     SEMIC, PERIOD, COMMA, KEYWORD_DELIM;
+terminal	     IF, ITERATOR, INCLUDE, INLINE, SET, ELSE;
+terminal             TRADE, TRANSFER, MESSAGE, PRODUCT;
+terminal             SENDER, RECEIVER;
+terminal             IDENTIFIER, NUMBER, STRING, DATE;
+
+/*
+ * --- Non terminals ---
+ */
+non terminal Object       Template, Calypso, Stmts, Stmt, Simple_Stmt;
+non terminal Object       Block, Include_Stmt, Inline_Stmt, Set_Stmt;
+non terminal Object       If_Stmt, If_Else_Stmt, Iterator_Stmt;
+non terminal Vector	  Arguments, ArgList;
+non terminal Boolean	  Condition, Conditions;
+non terminal Object       Expression;
+non terminal Object	  Field_Value, Method_Call, Function_Call, Literal;
+non terminal Object	  Keyword_Value, Comparator, Argument;
+
+/*
+ * --- Precedences ---
+ */
+precedence left  AND, OR;
+precedence left  EQEQ, NEQ, MAT, NMAT;
+precedence left  LT, GT, LTE, GTE;
+precedence left  LPAREN;
+
+
+
+/* 
+ * --- Grammar ---
+ */
+
+Template	::=	Calypso Template
+		|	
+		;
+		
+Calypso		::=	START 
+                        Stmts:s 
+                        {:
+                            ((Lexer)getParser().getScanner()).getFormatterParser().dropCalypsoBlock(); // don't regenerate !
+                        :}
+                        END
+                |       START_REGEN
+                        Stmts:s 
+                        {:
+                            ((Lexer)getParser().getScanner()).getFormatterParser().writeCalypsoBlock(); // regenerate !
+                        :}
+                        END
+		;
+		
+Stmts		::=	Stmt
+		|	Stmt Stmts
+                ;
+
+Stmt		::=	If_Stmt
+		|	If_Else_Stmt
+		|	Iterator_Stmt
+		|	Simple_Stmt
+		|       error SEMIC
+                ;
+
+Simple_Stmt	::=	Include_Stmt
+		|	Inline_Stmt
+		|	Set_Stmt
+		|	Block
+                ;
+                
+Block		::=	LBLOCK 
+                        {:
+                            _context.pushStack();
+                        :}
+                        Stmts
+                        RBLOCK
+                        {:
+                            _context.popStack();
+                        :}
+		;
+
+Include_Stmt	::=	INCLUDE STRING:s SEMIC
+			{:
+			    _context.execute(ParserContext.INCLUDE, (String)s);
+			:}
+		;
+
+Inline_Stmt	::=	INLINE STRING:s SEMIC
+			{:
+			    _context.execute(ParserContext.INLINE, (String)s);
+			:}
+		;
+
+Set_Stmt	::=	SET IDENTIFIER:identifier EQ Expression:value SEMIC
+			{:
+			    Vector arguments = new Vector();
+			    arguments.addElement(identifier);
+			    arguments.addElement(value);
+			    _context.execute(ParserContext.SET, arguments);
+			:}
+		;
+
+Iterator_Stmt	::=	ITERATOR LPAREN STRING:s RPAREN		
+                        {:
+			    _context.execute(ParserContext.ITERATE, (String)s);
+                        :}
+                        Stmt
+                        {:
+			    _context.execute(ParserContext.ITERATE, (String)null);
+                        :}
+		;
+	
+If_Stmt		::=	IF Conditions Stmt		
+                        {:
+                            _context.reset();
+                        :}
+		;
+		
+If_Else_Stmt	::=	IF Conditions Simple_Stmt
+			ELSE 				
+			{:
+			    _context.setValid(!_context.isConditionMet());
+			:}
+			Stmt
+                        {:
+                            _context.reset();
+                        :}
+                ;
+
+Conditions	::=	LPAREN Condition:c RPAREN	
+			{:
+			    RESULT = c; 
+			    _context.setValid(c.booleanValue());
+			    _context.setConditional(true);
+			    _context.setConditionMet(_context.isConditionMet() || 
+			                             _context.isValid());
+			:}
+		;
+
+Condition	::=	Condition:a AND Condition:b
+                        {:
+                            RESULT = _context.isAllValid() ? Boolean.valueOf(a.booleanValue() && b.booleanValue()) : Boolean.FALSE;
+                        :}
+                |	Condition:a OR Condition:b
+                        {:
+                            RESULT = _context.isAllValid() ? Boolean.valueOf(a.booleanValue() || b.booleanValue()) : Boolean.FALSE;
+                        :}
+                |	LPAREN Condition:c RPAREN
+                	{:
+                	    RESULT = _context.isAllValid() ? c : Boolean.FALSE;
+                	:}
+                |	NOT Condition:c
+                	{:
+                	    RESULT = _context.isAllValid() ? Boolean.valueOf( !c.booleanValue() ) : Boolean.FALSE;
+                	:}
+		|	Expression:value1 Comparator:comp Expression:value2
+                        {:
+                            RESULT = _context.isAllValid() ? compare(value1, ((Symbol)comp).sym, value2) : Boolean.FALSE;
+                        :}
+		|	Expression:value1 IN Arguments:args
+                        {:
+                            RESULT = _context.isAllValid() ? isIn(value1, args) : Boolean.FALSE;
+                        :}
+		|	Expression:value1 NOTIN Arguments:args
+                        {:
+                            RESULT = _context.isAllValid() ? isNotIn(value1, args) : Boolean.FALSE;
+                        :}
+		|	EMPTY Expression:value1
+                        {:
+                            RESULT = _context.isAllValid() ? isEmpty(value1) : Boolean.FALSE;
+                        :}
+		|	NOTEMPTY Expression:value1
+                        {:
+                            RESULT = _context.isAllValid() ? isNotEmpty(value1) : Boolean.FALSE;
+                        :}
+                ;
+
+Expression	::=	Field_Value:e1		{: RESULT = e1; :}
+		|	Method_Call:e2		{: RESULT = e2; :}
+		|	Function_Call:e3	{: RESULT = e3; :}
+		|	Keyword_Value:e4	{: RESULT = e4; :}
+		|	Literal:e5		{: RESULT = e5; :}
+		;
+		
+Field_Value	::=	TRADE PERIOD IDENTIFIER:field
+                        {:
+                            RESULT = ((Lexer)getParser().getScanner()).getFormatterParser().getTradeField((String)field);
+                        :}
+                |	TRANSFER PERIOD IDENTIFIER:field
+                        {:
+                            RESULT = ((Lexer)getParser().getScanner()).getFormatterParser().getTransferField((String)field);
+                        :}
+                |	MESSAGE PERIOD IDENTIFIER:field
+                        {:
+                            RESULT = ((Lexer)getParser().getScanner()).getFormatterParser().getMessageField((String)field);
+                        :}
+                |	SENDER PERIOD IDENTIFIER:field
+                        {:
+                            RESULT = ((Lexer)getParser().getScanner()).getFormatterParser().getSenderField((String)field);
+                        :}
+                |	RECEIVER PERIOD IDENTIFIER:field
+                        {:
+                            RESULT = ((Lexer)getParser().getScanner()).getFormatterParser().getReceiverField((String)field);
+                        :}
+                |	PRODUCT PERIOD IDENTIFIER:field
+                        {:
+                            RESULT = ((Lexer)getParser().getScanner()).getFormatterParser().getProductField((String)field);
+                        :}
+                
+                ;
+
+Method_Call	::=	TRADE PERIOD IDENTIFIER:method Arguments:args
+                        {:
+                            RESULT = ((Lexer)getParser().getScanner()).getFormatterParser().getTradeMethod((String)method, args);
+                        :}
+                |	TRANSFER PERIOD IDENTIFIER:method Arguments:args
+                        {:
+                            RESULT = ((Lexer)getParser().getScanner()).getFormatterParser().getTransferMethod((String)method, args);
+                        :}
+                |	MESSAGE PERIOD IDENTIFIER:method Arguments:args
+                        {:
+                            RESULT = ((Lexer)getParser().getScanner()).getFormatterParser().getMessageMethod((String)method, args);
+                        :}
+                |	SENDER PERIOD IDENTIFIER:method Arguments:args
+                        {:
+                            RESULT = ((Lexer)getParser().getScanner()).getFormatterParser().getSenderMethod((String)method, args);
+                        :}
+                |	RECEIVER PERIOD IDENTIFIER:method Arguments:args
+                        {:
+                            RESULT = ((Lexer)getParser().getScanner()).getFormatterParser().getReceiverMethod((String)method, args);
+                        :}
+                |	PRODUCT PERIOD IDENTIFIER:method Arguments:args
+                        {:
+                            RESULT = ((Lexer)getParser().getScanner()).getFormatterParser().getProductMethod((String)method, args);
+                        :}
+                ;
+
+Function_Call	::=	IDENTIFIER:function Arguments:args
+                        {:
+                            RESULT = ((Lexer)getParser().getScanner()).getFormatterParser().getFunctionCall((String)function, args);
+                        :}
+		;
+
+Keyword_Value	::=	KEYWORD_DELIM IDENTIFIER:keyword KEYWORD_DELIM
+			{:
+			    RESULT = ((Lexer)getParser().getScanner()).getFormatterParser().getKeywordValue((String)keyword);
+			:}	
+		;
+Arguments	::=	LPAREN ArgList:list RPAREN
+			{:
+			    RESULT = list;
+			:}
+		|	LPAREN RPAREN
+			{:
+			    RESULT = new Vector();
+			:}
+		;
+		
+ArgList		::=	ArgList:args COMMA Argument:arg
+			{:
+			    if (args == null) args = new Vector();
+			    if (arg != null) args.addElement(arg);
+			    RESULT = args;
+			:}
+		|	Argument:arg
+			{:
+			    Vector args = new Vector();
+			    if (arg != null) args.addElement(arg);
+			    RESULT = args;
+			:}
+                ;
+
+Argument	::=	Literal:l	{: RESULT = l; :}
+		;
+		
+Literal		::=	STRING:s	{: RESULT = s; :}
+		|	NUMBER:n	{: RESULT = n; :}
+		|	DATE:d		{: RESULT = d; :}
+		|	TRUE:b		{: RESULT = Boolean.TRUE; :}
+		|	FALSE:b		{: RESULT = Boolean.FALSE; :}
+                ;
+
+Comparator	::=	LT		{: RESULT = new Symbol(sym.LT); :}
+		|	GT		{: RESULT = new Symbol(sym.GT); :}
+		|	LTE		{: RESULT = new Symbol(sym.LTE); :}
+		|	GTE		{: RESULT = new Symbol(sym.GTE); :}
+		|	EQEQ		{: RESULT = new Symbol(sym.EQEQ); :}
+		|	NEQ		{: RESULT = new Symbol(sym.NEQ); :}
+		|	LIKE		{: RESULT = new Symbol(sym.LIKE); :}
+		|	MAT		{: RESULT = new Symbol(sym.MAT); :}
+		|	NMAT		{: RESULT = new Symbol(sym.NMAT); :}
+		|	EMPTY		{: RESULT = new Symbol(sym.EMPTY); :}
+		|	NOTEMPTY	{: RESULT = new Symbol(sym.NOTEMPTY); :}
+		;
+

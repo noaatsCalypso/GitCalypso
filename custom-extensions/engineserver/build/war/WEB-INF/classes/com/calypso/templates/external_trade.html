@@ -1,0 +1,78 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header_ET.html";
+</calypso-->
+
+<p class="header2">Trade Information</p>
+<table>
+ <tr>
+  <td width="30%">Processing Organization</td>
+  <td>|TRADE_PROCESSING_ORGANIZATION|</td>
+ </tr>
+  <tr>
+  <td>Trade Date</td>
+  <td>|TRADE_DATE|</td>
+ </tr>
+ <tr>
+  <td>CounterParty</td>
+  <td>|TRADE_COUNTERPARTY|</td>
+ </tr>
+ </table>
+
+<br /><br />
+
+<p class="header2">Product Details</p>
+
+                                                   
+<br>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+  include "ExternalTrade_inc.html";
+</calypso-->
+
+<br />
+
+<p class="header2">Trade Flows</p>
+<table CELLSPACING=0 border="1">
+<tr>
+    <th class="smallfont">Type</th>
+	<th class="smallfont">Payment Date</th>
+	<th class="smallfont">Amount</th>
+    <th class="smallfont">Currency</th>
+	<th class="smallfont">Start Date</th>
+    <th class="smallfont">End Date</th>
+    <th class="smallfont">Reset Date</th>
+	<th class="smallfont">Notional</th>
+	<th class="smallfont">Rate</th>
+    <th class="smallfont">Spread</th>
+	<th class="smallfont">Days</th>
+    <th class="smallfont">Day Count</th>
+</tr>
+<!--calypso>
+iterator ( "CashFlow" )
+    inline "
+<tr>
+    <td>|CASHFLOW_TYPE|</td>
+	<td>|CASHFLOW_DATE|</td>
+	<td>|CASHFLOW_AMOUNT|</td>
+    <td>|CASHFLOW_CURRENCY|</td>
+    <td>|CASHFLOW_START_DATE|</td>
+    <td>|CASHFLOW_END_DATE|</td>
+    <td>|CASHFLOW_RESET_DATE|</td>
+	<td>|CASHFLOW_NOTIONAL|</td>
+	<td>|CASHFLOW_RATE|</td>
+    <td>|CASHFLOW_SPREAD|</td>
+	<td>|CASHFLOW_DAYS|</td>
+    <td>|CASHFLOW_DAY_COUNT|</td>
+</tr>
+    ";
+</calypso-->
+</table>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

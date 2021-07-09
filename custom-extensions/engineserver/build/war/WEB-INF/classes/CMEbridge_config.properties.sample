@@ -1,0 +1,40 @@
+#
+#  JMS properties file
+#
+#jms.modetypeclass=com.sun.jndi.fscontext.RefFSContextFactory
+#jms.url=file:/c:/calypso/software/JNDI-Directory
+#jms.queue.connectionFactory=CME_MATCHING.CF
+#indicate that messages will be sent to a JMS WebSphere MQ client
+jms.sender.queue.targetClient=MQJMS_CLIENT_NONJMS_MQ
+jms.receiver.queue.targetClient=MQJMS_CLIENT_NONJMS_MQ
+#jms.channels=TO.CALYPSO, CME.TO.CALYPSO2
+# monitor for the queue channel listed above, in terms of second
+#monitor.frequency = 60
+
+#  JMSQueueIEAdaptor properties
+#
+#    Note: if queue.ackType is not set to auto then 
+#          failed messages are not acknowledged to JMS and
+#          will be reconsumed when the engine restarts
+#	
+#	Queue-specific properties are prefixed by the queue name
+#
+input.queue.name=JQUEUE.CME.CALYPSO
+JQUEUE.CME.CALYPSO.queue.ackType=auto
+JQUEUE.CME.CALYPSO.queue.persist=false
+JQUEUE.CME.CALYPSO.queue.transacted=false
+
+
+output.queue.name=JQUEUE.CALYPSO.CME
+JQUEUE.CALYPSO.CME.queue.ackType=auto
+JQUEUE.CALYPSO.CME.queue.persist=false
+JQUEUE.CALYPSO.CME.queue.transacted=false
+
+
+jms.queue.hostname=localhost
+jms.queue.port=1414
+jms.queue.connectionUserName=jacky_shih
+jms.queue.connectionPassword=dcRdu9F+
+jms.queue.transportType=MQJMS_TP_CLIENT_MQ_TCPIP
+jms.queue.queueManager=QM.CME.CALYPSO
+jms.queue.channel=SYSTEM.ADMIN.SVRCONN

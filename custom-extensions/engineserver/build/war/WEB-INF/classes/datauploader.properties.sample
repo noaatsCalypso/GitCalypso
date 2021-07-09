@@ -1,0 +1,80 @@
+# This is the encoding scheme to be used for the INPUT (i.e. CSV) files
+# This feature is provided to take care of CSV files created using different 
+# encoding schemes e.g. SHIFT_JIS for Japanese
+INPUT_ENCODING_SCHEME=UTF-8
+
+# This is the encoding scheme for the output of the CSV uploader.
+# The CSV uploader creates an XML file that is read by the XML uploader
+# The output scheme instructs the CSV uploader to create the output XML from 
+# the CSV uploader
+# (input for the XML uploader) in this encoding scheme
+OUTPUT_ENCODING_SCHEME=UTF-8
+
+# File Watcher Properties
+#This is the folder where we place the files.
+fileDir=C\:\\uploader\\
+interval=10000
+
+#is the time to wait after receiving the file and before actually processing the file
+fileAge=15000
+
+# This tells the file watcher to call the XML Uploader
+fileWatcherType=data
+
+#This tells the file watcher to monitor CSV & XML Files only
+fileFilter=csv,xml,txt
+csvDelimeter=,
+txtDelimeter=\t
+
+
+# If 'logMessages' property is true, then transformation files will be generated.
+# By default 'messageFileDir' is an optional field. If messageFileDir is not provided then transformation file will be generated in CALYPSO_HOME\DataUploader folder
+logMessages=true
+#messageFileDir=<UserDefinedLocation>
+
+# This tells file watcher whether to ignore or save the generate warning message onto the task station
+IgnoreWarnings=false
+
+#
+#Valid values for persistMessage
+#
+#							|----------------------------------------------------------------------|
+#							|						   PERSIST MESSAGES							   |
+#							|-----------------|-------------------------------|--------------------|
+#							|		None	  |		Failure					  |		All			   |
+#							|-----------------|-------------------------------|--------------------|
+#							| No BOMessage	  |  BOMessage will be created	  | BOMessage will be  |
+#							| will be created |   only in case of failure	  | always created     |
+#							|-----------------|-------------------------------|--------------------|
+#
+persistMessages=All
+
+# If the following property is true, the file-archiving will be enabled
+archiveFile=false
+
+# This is the folder where file-archiver will place the files.
+# By default this is an optional field, and if archiveFile is set as true, then default archiveDir will be set as <fileDir>/Archive
+archiveDir=<UserDefinedLocation>
+
+# This property specifies the date format which will be used as a name of a sub folder.
+# This is an optional field, default format 'yyyy-MM-dd'. 
+archiveDirFormat=yyyy-MM-dd
+
+# This property specify the frequency/interval, in which archiving will be initiated.
+# The property hold the values in minutes [by default its 5 minutes] 
+archiveFrequency=5
+
+#Publisher value based on which the interface publishers will be called for publishing the acknowledgement
+Publishers=File
+
+# fileAckDir: Only applicable for generating acknowledge/publishing file. 
+# To Specify the folderName where file needs to be created e.g C:\\tmp OR /usr/home/
+# Directory where file publisher should create ack files 
+fileAckDir=C:\\calypso\\REL-151000\\TEST\\result\\
+
+# This prefixes all files with an optional text
+ackFileNamePrefix=MMJ
+
+#Comma seperated list of Ack\Nack Status file Keywords to output
+#Example : keywordsInAckFile=CCPTradeID
+keywordsInAckFile=CCPTradeID,TradeSource

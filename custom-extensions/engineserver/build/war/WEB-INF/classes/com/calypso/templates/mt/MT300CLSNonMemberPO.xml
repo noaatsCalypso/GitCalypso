@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 300: Foreign Exchange Confirmation (special case for CLS Non-Member Processing Organizations) -->
+<SwiftMsgDef>
+	<Name>MT300</Name>
+	<CancellationName>MT3xC</CancellationName>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" openTag=":15A:" modes="MMM">
+		<SwiftField name="Sender's Reference" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Related Reference" tag=":21:" format="16x" value="MESSAGE_LINKEDID" modes="OMM"/>
+		<SwiftField name="Type of Operation" tag=":22A:" format="4!c" value="TYPE_OPERATION" modes="MMM"/>
+		<SwiftField name="Scope of Operation" tag=":94A:" format="4!c" value="SCOPE_OPERATION" modes="OOO"/>
+		<SwiftField name="Common Reference" tag=":22C:" format="4!a2!c4!n4!a2!c" value="COMMON_REF" modes="MMM"/>
+		<SwiftField name="Block Trade Indicator" tag=":17T:" format="1!a" value="Y" condition="isBlockTrade()" modes="---"/>
+		<SwiftField name="Party A" tag=":82a:" value="PARTY_A" modes="MMM">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		    <SwiftFieldOption letter="J" format="5*40x" />
+		</SwiftField>
+		<SwiftField name="Party B" tag=":87a:" value="PARTY_B" modes="+++" condition = "!isMatchingSystem()" >
+	    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+	    <SwiftFieldOption letter="J" format="5*40x" />
+	</SwiftField>
+	 <SwiftField name="Type, Date, Version of the Agreement" tag=":77H:" value="AGREEMENT_INFO" format="6a[/8!n][//4!n]" modes="OOO" />
+     <SwiftField name="Additional Conditions" tag=":77D:" value="ADDITIONAL_CONDITIONS" format="6*35x" modes="OOO" />
+	 <SwiftField name="Party B" tag=":87J:" value="MATCHING_SYSTEM"  format="5*40x" modes="---" condition = "isMatchingSystem()"/>	
+	 <SwiftField name="Fund or Instructing Party" tag=":83J:" value="MATCHING_SYSTEM_PARTY"   format="5*40x" modes="---" condition = "!isFund() AND isMatchingSystem()"/>
+	
+	<SwiftField name="Fund or Beneficiary Customer" tag=":83a:" value="FUND_CUSTOMER" format="[[/1!a][/34x]\n]4*35x" condition="isFund()" modes="---">
+            <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x"/>
+            <SwiftFieldOption letter="J" format="5*40x" />
+        </SwiftField>		
+	</SwiftSequence>
+	<SwiftSequence name="B:Transaction Details" openTag=":15B:" modes="MMM">
+		<SwiftField name="Trade Date" tag=":30T:" format="8!n" value="TRADE_DATE" modes="MMM"/>
+		<SwiftField name="Value Date" tag=":30V:" format="8!n" value="SETTLE_DATE" modes="MMM"/>
+		<SwiftField name="Exchange Rate" tag=":36:" format="12d" value="FX_NEGOCIATEDPRICE" modes="MMM"/>
+		<SwiftField name="Payment Clearing Centre" tag=":39M:" format="2!a" value="PAYMENT_CLEARING_CENTRE_COUNTRY_CODE" modes="OOO"/>
+		<SwiftField name="Currency, Amount" tag=":32B:" format="3!a15d" value="RECEIVER_AMOUNT" modes="MMM"/>
+		<!--SwiftField name="Delivery Agent" tag=":53a:" value="RECEIVER_DELIVERY_AGENT" modes="OOO">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		    <SwiftFieldOption letter="J" format="5*40x" />
+		</SwiftField-->
+		<SwiftField name="Intermediary" tag=":56a:" value="RECEIVER_INTERMEDIARY" modes="OOO">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		    <SwiftFieldOption letter="J" format="5*40x" />
+		</SwiftField>
+		<SwiftField name="Receiving Agent" tag=":57a:" value="RECEIVER_RECEIVING_AGENT" modes="MMM">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		    <SwiftFieldOption letter="J" format="5*40x" />
+		</SwiftField>
+		<SwiftField name="Currency, Amount" tag=":33B:" format="3!a15d" value="SENDER_AMOUNT" modes="MMM"/>
+		<!--SwiftField name="Delivery Agent" tag=":53a:" value="SENDER_DELIVERY_AGENT" modes="OOO">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		    <SwiftFieldOption letter="J" format="5*40x" />
+		</SwiftField-->
+		<SwiftField name="Intermediary" tag=":56a:" value="SENDER_INTERMEDIARY"  modes="OOO">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		    <SwiftFieldOption letter="J" format="5*40x" />
+		</SwiftField>
+		<SwiftField name="Receiving Agent" tag=":57a:" value="SENDER_RECEIVING_AGENT"  modes="MMM">
+		    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+		    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		    <SwiftFieldOption letter="J" format="5*40x" />
+		</SwiftField>
+        <SwiftField name="Terms and Conditions" tag=":77D:" value="TERMS_AND_CONDITIONS_NDF" condition="isFXNDF" modes="+++">
+            <SwiftFieldOption letter="D" format="6*35x" />
+        </SwiftField>
+	</SwiftSequence>
+	<SwiftSequence name="C:Additional Info" openTag=":15C:" modes="---">
+		<SwiftField name="Dealing Method" tag=":24D:" format="4!c[/35x]" value="DEALING_METHOD" modes="OOO" />
+        <SwiftField name="Broker Identification" tag=":88a:" value="BROKER" condition="hasBroker()" modes="---">
+	    <SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+	    <SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+	    <SwiftFieldOption letter="J" format="5*40x" />
+	</SwiftField>
+		<SwiftField name="Sender to Receiver Information" tag=":72:" format="6*35x" value="SENDER_TO_RECEIVER" modes="OOO"/>
+    </SwiftSequence>
+</SwiftMsgDef>

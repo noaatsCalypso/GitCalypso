@@ -1,0 +1,94 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" || |MESSAGE_SUBACTION|== "CANCEL")
+	inline "<p class='header2'>Amend and Cancel"</p>;
+if (|MESSAGE_SUBACTION|== "AMEND")
+	 inline "<p class='header2'>This Confirmation cancels and supersedes the previous confirmation under the same reference.</p>";
+	else if (|MESSAGE_SUBACTION|== "CANCEL")
+	 inline "<p class='header2'>This Confirmation cancels the previous confirmation under the same reference.</p>";
+</calypso-->
+
+<!--calypso>
+if (|PRODUCT_TYPE| == "TreasuryLock")
+   set TRANSACTION_TYPE = "Treasury Lock";
+</calypso-->
+
+<p class='header1'>EXERCISE of |TRANSACTION_TYPE| Notice</p>
+<br>
+<p>Our Transaction Reference: |TRADE_ID|</p>
+<br>
+<p class="indented">
+The purpose of this
+	<!--calypso>
+		if ( Message.getAddressMethod() == "FAX" )
+		inline "facsimile";
+	else
+		inline "letter";
+	</calypso-->
+is to notice to you that we have exercised our rights under the referenced |TRANSACTION_TYPE| Transaction having the following terms:
+</p>
+<br>
+<p><b>Details of the initial Transaction are as follows:</b></p>
+<br>
+<table width='100%'>
+    <tr>
+        <td width='30%'>Trade Date</td>
+        <td width='68%'>|TRADE_DATE|</td>
+    </tr>
+    <tr>
+		<td>Buyer</td>
+        <td>|TRADE_BUYER_NAME|</td>
+    </tr>
+    <tr>
+        <td>Seller</td>
+        <td>|TRADE_SELLER_NAME|</td>
+    </tr>
+	<tr>
+	    <td>Lockout Date:</td>
+	    <td>|LOCKOUT_DATE|</td>
+	</tr>
+	<tr>
+		<td>Reference Yield:</td>
+		<td>|LOCK_YIELD|</td>
+	</tr>
+	<td>Price At Lockout:</td>
+		<td>|KEYWORD_PriceAtLockout|</td>
+	</tr>
+</table>
+<br>
+<p><b>The terms of this exercise are as follows:</b></p>
+<br>
+<p>Accordingly, the Settlement Currency Amount is an amount equal to <b>|EXERCISE_FEE_CURRENCY| |EXERCISE_FEE_AMOUNT|</b>
+	to be paid by <b>|FEE_PAYER#EXERCISE_FEE| to |FEE_RECEIVER#EXERCISE_FEE| </b> on <b>|EXERCISE_FEE_DATE| </b></p>
+
+
+<br>
+
+<p class=header2>Settlement Instructions are as follows:</p>
+<!--calypso>
+iterator("TransferRules")
+	inline "<table  width='100%'>
+    <tr><th width='30%'>|SETTLEMENT_ACTION|</th><th width='68%'>&nbsp;</th></tr>
+	<tr><td width='30%'>To:</td><td>|SETTLEMENT_TO|</td></tr>
+    <tr><td>|SETTLEMENT_ROUTING|</td><td>|SETTLEMENT_METHOD|</td></tr>
+	<tr><td>Favor of:</td><td>|SETTLEMENT_FAVOR_OF|</td></tr>
+	<tr><td>Account Number:</td><td>|SETTLEMENT_ACCOUNT_NUMBER|</td></tr>
+</table>";
+</calypso-->
+
+<br>
+<br>
+Please confirm that the foregoing correctly sets forth the terms of our agreement by executing
+ a copy of this Confirmation and returning it to us, or by sending to us a facsimile or telex
+ substantially similar to this facsimile which sets forth the material terms of the Transaction
+ to which this Confirmation relates and indicates agreement to those terms.
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->
+

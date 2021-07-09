@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+    <contents>
+        <element name="FICdtTrf">
+                <contents>
+                    <element name="GrpHdr">
+                        <contents>
+                            <element name="MsgId">
+                                <contents>
+                                    <report>
+                                        <column>MESSAGE_ID</column>
+                                    </report>
+                                </contents>
+                            </element>
+                            <element name="CreDtTm">
+                                <contents>
+                                    <report format="yyyy-MM-dd hh:mm:ss">
+                                        <column>ORIGINAL_DATE</column>
+                                    </report>
+                                </contents>
+                            </element>
+                            <element name="NbOfTxs">
+                                <contents>
+                                    <text>
+                                        <value>1</value>
+                                    </text>
+                                </contents>
+                            </element>
+                            <element name="SttlmInf">
+                                <contents>
+                                    <element name="SttlmMtd">
+                                        <contents>
+                                            <text>
+                                                <value>INDA</value>
+                                            </text>
+                                        </contents>
+                                    </element>
+                                </contents>
+                            </element>
+                        </contents>
+                    </element>
+                    <element name="CdtTrfTxInf">
+                        <contents>
+                            <element name="PmtId">
+                                <contents>
+                                    <element name="EndToEndId">
+                                        <contents>
+                                            <report>
+                                                <column>RELATED_ID</column>
+                                            </report>
+                                        </contents>
+                                    </element>
+                                    <element name="TxId">
+                                        <contents>
+                                            <report>
+                                                <column>MESSAGE_ID</column>
+                                            </report>
+                                        </contents>
+                                    </element>
+                                </contents>
+                            </element>
+                            <element name="IntrBkSttlmAmt">
+                                <attributes>
+                                    <attribute name="Ccy">
+                                        <value>
+                                            <report>
+                                                <column>SettleCurrency</column>
+                                            </report>
+                                        </value>
+                                    </attribute>
+                                </attributes>
+                                <contents>
+                                    <report>
+                                        <column>Settle Amount</column>
+                                    </report>
+                                </contents>
+                            </element>
+                            <element name="IntrBkSttlmDt">
+                                <contents>
+                                    <report format="yyyy-MM-dd">
+                                        <column>Settle Date</column>
+                                    </report>
+                                </contents>
+                            </element>
+                            <element name="InstdAmt">
+                                <attributes>
+                                    <attribute name="Ccy">
+                                        <value>
+                                            <report>
+                                                <column>SettleCurrency</column>
+                                            </report>
+                                        </value>
+                                    </attribute>
+                                </attributes>
+                                <contents>
+                                    <report>
+                                        <column>Settle Amount</column>
+                                    </report>
+                                </contents>
+                            </element>
+                            <element name="ChrgBr">
+                                <contents>
+                                    <report>
+                                        <column>DETAILS_OF_CHARGE</column>
+                                    </report>
+                                </contents>
+                            </element>
+                            <!--
+                            <element name="ChrgsInf" hideifempty="true">
+                                <contents>
+                                    <element name="Amt">
+                                        <attributes>
+                                            <attribute name="Ccy">
+                                                <value>
+                                                    <report>
+                                                        <column>CUSTOMER_TRANSFER_FEE_CCY</column>
+                                                    </report>
+                                                </value>
+                                            </attribute>
+                                        </attributes>
+                                        <contents>
+                                            <report>
+                                                <column>CUSTOMER_TRANSFER_FEE_AMOUNT</column>
+                                            </report>
+                                        </contents>
+                                    </element>
+                                    <element name="Agt" hideifempty="true">
+                                        <contents>
+                                            <element name="FinInstnId">    <!  FinancialInstitutionIdentification8 ->
+                                                <contents>
+                                                    <element name="BICFI" hideifempty="true">
+                                                        <contents>
+                                                            <report>
+                                                                <column>CPTY_RECEIVING_AGENT_BIC_CODE</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                    <element name="Nm" hideifempty="true">
+                                                        <contents>
+                                                            <report>
+                                                                <column>CPTY_RECEIVING_AGENT_SHORT_NAME</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                    <element name="PstlAdr" hideifempty="true">  <!- PostalAddress6 ->
+                                                        <contents>
+                                                            <element name="Ctry">
+                                                                <contents>
+                                                                   <report>
+                                                                       <column>CPTY_RECEIVING_AGENT_CITY</column>
+                                                                   </report>
+                                                                </contents>
+                                                            </element>
+                                                            <element name="PstCd">
+                                                                <contents>
+
+                                                                </contents>
+                                                            </element>
+                                                            <element name="StrtNm">
+                                                                <contents>
+                                                                    <report>
+                                                                        <column>CPTY_RECEIVING_AGENT_STREET</column>
+                                                                    </report>
+                                                                </contents>
+                                                            </element>
+                                                            <element name="AdrLine">
+                                                                <contents>
+
+                                                                </contents>
+                                                            </element>
+                                                        </contents>
+                                                    </element>
+                                                </contents>
+
+                                            </element>
+                                        </contents>
+                                    </element>
+
+                                </contents>
+
+                            </element>
+                            -->
+                            <element name="IntrmyAgt1" hideifempty="true">      <!-- BranchAndFinancialInstitutionIdentification5 -->
+                                <contents>
+                                    <element name="FinInstnId">  <!--  FinancialInstitutionIdentification8 -->
+                                        <contents>
+                                            <element name="BICFI" hideifempty="true">
+                                                <contents>
+                                                    <report>
+                                                        <column>CPTY_RECEIVING_INT1_BIC_CODE</column>
+                                                    </report>
+                                                </contents>
+                                            </element>
+                                            <element name="Nm" hideifempty="true">
+                                                <contents>
+                                                    <report>
+                                                        <column>CPTY_RECEIVING_INT1_SHORT_NAME</column>
+                                                    </report>
+                                                </contents>
+                                            </element>
+                                            <element name="PstlAdr" hideifempty="true">  <!-- PostalAddress6 -->
+                                                <contents>
+                                                    <element name="Ctry">
+                                                        <contents>
+                                                            <report>
+                                                                <column>CPTY_RECEIVING_INT1_CITY</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                    <element name="PstCd">
+                                                        <contents>
+
+                                                        </contents>
+                                                    </element>
+                                                    <element name="StrtNm">
+                                                        <contents>
+                                                            <report>
+                                                                <column>CPTY_RECEIVING_INT1_STREET</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                    <element name="AdrLine">
+                                                        <contents>
+
+                                                        </contents>
+                                                    </element>
+                                                </contents>
+                                            </element>
+                                        </contents>
+                                    </element>
+                                </contents>
+                            </element>
+                            <element name="IntrmyAgt1Acct" hideifempty="true">   <!--  CashAccount24 -->
+                                    <contents>
+                                        <element name="Id">  <!-- AccountIdentification4Choice -->
+                                            <contents max="1">
+                                                <element name="Othr"> <!-- GenericAccountIdentification1 -->
+                                                    <contents>
+                                                         <element name="Id">
+                                                             <contents>
+                                                                 <report>
+                                                                     <column>CPTY_RECEIVING_INT1_ACC</column>
+                                                                 </report>
+                                                             </contents>
+                                                        </element>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                        <element name="Tp">
+                                            <contents>
+
+                                            </contents>
+                                        </element>
+                                        <element name="Ccy">
+                                            <contents>
+
+                                            </contents>
+                                        </element>
+                                        <element name="Nm">
+                                            <contents>
+
+                                            </contents>
+                                        </element>
+                                    </contents>
+                            </element>
+                            <element name="IntrmyAgt2" hideifempty="true">    <!-- BranchAndFinancialInstitutionIdentification5 -->
+                                <contents>
+                                    <element name="FinInstnId">   <!--  FinancialInstitutionIdentification8 -->
+                                        <contents>
+                                            <element name="BICFI" hideifempty="true">
+                                                <contents>
+                                                    <report>
+                                                        <column>CPTY_RECEIVING_INT2_BIC_CODE</column>
+                                                    </report>
+                                                </contents>
+                                            </element>
+                                            <element name="Nm" hideifempty="true">
+                                                <contents>
+                                                    <report>
+                                                        <column>CPTY_RECEIVING_INT2_SHORT_NAME</column>
+                                                    </report>
+                                                </contents>
+                                            </element>
+                                            <element name="PstlAdr" hideifempty="true">  <!-- PostalAddress6 -->
+                                                <contents>
+                                                    <element name="Ctry">
+                                                        <contents>
+                                                            <report>
+                                                                <column>CPTY_RECEIVING_INT2_CITY</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                    <element name="PstCd">
+                                                        <contents>
+
+                                                        </contents>
+                                                    </element>
+                                                    <element name="StrtNm">
+                                                        <contents>
+                                                            <report>
+                                                                <column>CPTY_RECEIVING_INT2_STREET</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                    <element name="AdrLine">
+                                                        <contents>
+
+                                                        </contents>
+                                                    </element>
+                                                </contents>
+                                            </element>
+                                        </contents>
+                                    </element>
+                                </contents>
+                            </element>
+                            <element name="IntrmyAgt2Acct" hideifempty="true">
+                                <contents>
+                                    <element name="Id">  <!-- AccountIdentification4Choice -->
+                                        <contents max="1">
+                                            <element name="Othr"> <!-- GenericAccountIdentification1 -->
+                                                <contents>
+                                                    <element name="Id">
+                                                        <contents>
+                                                            <report>
+                                                                <column>CPTY_RECEIVING_INT2_ACC</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                </contents>
+                                            </element>
+                                        </contents>
+                                    </element>
+                                    <element name="Tp">
+                                        <contents>
+
+                                        </contents>
+                                    </element>
+                                    <element name="Ccy">
+                                        <contents>
+
+                                        </contents>
+                                    </element>
+                                    <element name="Nm">
+                                        <contents>
+
+                                        </contents>
+                                    </element>
+                                </contents>
+                            </element>
+                            <element name="Dbtr" hideifempty="true">  <!-- PartyIdentification43 -->
+                                <contents>
+                                    <element name="Nm">
+                                        <contents>
+                                            <report>
+                                                <!-- Benef.Name value of the PO SDI
+                                                    if Benef.Name = null then set PO's Short Name. -->
+                                                <column>PO_BENEFICIARY_NAME</column>
+                                            </report>
+                                        </contents>
+                                    </element>
+                                    <element name="PstlAdr">
+                                        <contents>
+                                            <report>
+                                                <!-- Address of the Contact used in the PO SDI -->
+                                                <column>PO_BENEFICIARY_CONTACT_ADDRESS</column>
+                                            </report>
+                                        </contents>
+                                    </element>
+                                    <element name="Id">    <!--  Party11Choice -->
+                                        <contents>
+                                            <!-- This will be present if there is Swift code in the contact used in the PO SDI. -->
+                                            <element name="OrgId">
+                                                <contents max="1">        <!-- OrganisationIdentification8 -->
+                                                    <element name="AnyBIC"> <!-- AnyBICIdentifier -->
+                                                        <contents>
+                                                            <report>
+                                                                <!--Swift Code/Bic of the Contact used in the PO SDI -->
+                                                                <column>PO_BENEFICIARY_BIC_CODE</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                    <element name="Othr">    <!-- GenericOrganisationIdentification1 -->
+                                                        <contents>
+
+                                                        </contents>
+                                                    </element>
+                                                </contents>
+                                            </element>
+                                        </contents>
+                                    </element>
+                                </contents>
+                            </element>
+                            <element name="DbtrAcct">  <!-- CashAccount24 -->
+                                <contents>
+                                    <element name="Id">  <!-- AccountIdentification4Choice -->
+                                        <contents max="1">
+                                            <element name="Othr"> <!-- GenericAccountIdentification1 -->
+                                                <contents>
+                                                    <element name="Id">
+                                                        <contents>
+                                                            <report>
+                                                                <column>PO_AGENT_ACCT</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                </contents>
+                                            </element>
+                                        </contents>
+                                    </element>
+                                    <element name="Tp">
+                                        <contents>
+
+                                        </contents>
+                                    </element>
+                                    <element name="Ccy">
+                                        <contents>
+
+                                        </contents>
+                                    </element>
+                                    <element name="Nm">
+                                        <contents>
+
+                                        </contents>
+                                    </element>
+                                </contents>
+                            </element>
+                            <element name="DbtrAgt">   <!-- BranchAndFinancialInstitutionIdentification5 -->
+                                <contents>
+                                    <element name="FinInstnId">   <!--  FinancialInstitutionIdentification8 -->
+                                        <contents>
+                                            <element name="BICFI" hideifempty="true">
+                                                <contents>
+                                                    <report>
+                                                        <column>Payer.Agent.Swift</column>
+                                                        <transformations>
+                                                            <transformation type="function">
+                                                                <to>completeSwiftBranch</to>
+                                                            </transformation>
+                                                        </transformations>
+                                                    </report>
+                                                </contents>
+                                            </element>
+                                            <element name="Nm" hideifempty="true">
+                                                <contents>
+                                                    <report>
+                                                        <column>Payer.Agent.Short Name</column>
+                                                    </report>
+                                                </contents>
+                                            </element>
+                                            <element name="PstlAdr" hideifempty="true">  <!-- PostalAddress6 -->
+                                                <contents>
+                                                    <element name="Ctry">
+                                                        <contents>
+                                                            <report>
+                                                                <column>PO_AGENT_CITY</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                    <element name="PstCd">
+                                                        <contents>
+
+                                                        </contents>
+                                                    </element>
+                                                    <element name="StrtNm">
+                                                        <contents>
+                                                            <report>
+                                                                <column>PO_AGENT_STREET</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                    <element name="AdrLine">
+                                                        <contents>
+
+                                                        </contents>
+                                                    </element>
+                                                </contents>
+                                            </element>
+                                        </contents>
+                                    </element>
+                                </contents>
+                            </element>
+                            <element name="DbtrAgtAcct" hideifempty="true"> <!-- CashAccount24 -->
+                                <contents>
+                                    <element name="Id">  <!-- AccountIdentification4Choice -->
+                                        <contents max="1">
+                                            <element name="Othr"> <!-- GenericAccountIdentification1 -->
+                                                <contents>
+                                                    <element name="Id">
+                                                        <contents>
+                                                            <report>
+                                                                <column>PO_INT1_ACCT</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                </contents>
+                                            </element>
+                                        </contents>
+                                    </element>
+                                    <element name="Tp">
+                                        <contents>
+
+                                        </contents>
+                                    </element>
+                                    <element name="Ccy">
+                                        <contents>
+
+                                        </contents>
+                                    </element>
+                                    <element name="Nm">
+                                        <contents>
+
+                                        </contents>
+                                    </element>
+                                </contents>
+                            </element>
+                            <element name="CdtrAgt"> <!-- BranchAndFinancialInstitutionIdentification5 -->
+                                <contents>
+                                    <element name="FinInstnId">    <!--  FinancialInstitutionIdentification8 -->
+                                        <contents>
+                                            <element name="BICFI" hideifempty="true">
+                                                <contents>
+                                                    <report>
+                                                        <column>CPTY_RECEIVING_AGENT_BIC_CODE</column>
+                                                    </report>
+                                                </contents>
+                                            </element>
+                                            <element name="Nm" hideifempty="true">
+                                                <contents>
+                                                    <report>
+                                                        <column>CPTY_RECEIVING_AGENT_SHORT_NAME</column>
+                                                    </report>
+                                                </contents>
+                                            </element>
+                                            <element name="PstlAdr" hideifempty="true">  <!-- PostalAddress6 -->
+                                                <contents>
+                                                    <element name="Ctry">
+                                                        <contents>
+                                                            <report>
+                                                                <column>CPTY_RECEIVING_AGENT_CITY</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                    <element name="PstCd">
+                                                        <contents>
+
+                                                        </contents>
+                                                    </element>
+                                                    <element name="StrtNm">
+                                                        <contents>
+                                                            <report>
+                                                                <column>CPTY_RECEIVING_AGENT_STREET</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                    <element name="AdrLine">
+                                                        <contents>
+
+                                                        </contents>
+                                                    </element>
+                                                </contents>
+                                            </element>
+                                        </contents>
+
+                                    </element>
+                                </contents>
+                            </element>
+                            <element name="CdtrAgtAcct" hideifempty="true">    <!-- CashAccount24 -->
+                                <contents>
+                                    <element name="Id">  <!-- AccountIdentification4Choice -->
+                                        <contents max="1">
+                                            <element name="Othr"> <!-- GenericAccountIdentification1 -->
+                                                <contents>
+                                                    <element name="Id">
+                                                        <contents>
+                                                            <report>
+                                                                <column>CPTY_RECEIVING_INT1_ACC</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                </contents>
+                                            </element>
+                                        </contents>
+                                    </element>
+                                    <element name="Tp">
+                                        <contents>
+
+                                        </contents>
+                                    </element>
+                                    <element name="Ccy">
+                                        <contents>
+
+                                        </contents>
+                                    </element>
+                                    <element name="Nm">
+                                        <contents>
+
+                                        </contents>
+                                    </element>
+                                </contents>
+                            </element>
+                            <element name="Cdtr">   <!-- PartyIdentification43 -->
+                                <contents>
+                                    <element name="Nm">
+                                        <contents>
+                                            <report>
+                                                <!-- Benef.Name value of the PO SDI
+                                                    if Benef.Name = null then set PO's Short Name. -->
+                                                <column>CPTY_BENEFICIARY_NAME</column>
+                                            </report>
+                                        </contents>
+                                    </element>
+                                    <element name="PstlAdr">
+                                        <contents>
+                                            <report>
+                                                <!-- Address of the Contact used in the PO SDI -->
+                                                <column>CPTY_BENEFICIARY_CONTACT_ADDRESS</column>
+                                            </report>
+                                        </contents>
+                                    </element>
+                                    <element name="Id">    <!--  Party11Choice -->
+                                        <contents>
+
+                                            <element name="OrgId">
+                                                <contents max="1">        <!-- OrganisationIdentification8 -->
+                                                    <element name="AnyBIC"> <!-- AnyBICIdentifier -->
+                                                        <contents>
+                                                            <report>
+                                                                <column>CPTY_BENEFICIARY_BIC_CODE</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                    <element name="Othr">    <!-- GenericOrganisationIdentification1 -->
+                                                        <contents>
+
+                                                        </contents>
+                                                    </element>
+                                                </contents>
+                                            </element>
+                                        </contents>
+                                    </element>
+                                </contents>
+                            </element>
+                            <element name="CdtrAcct">   <!-- CashAccount24 -->
+                                <contents>
+                                    <element name="Id">  <!-- AccountIdentification4Choice -->
+                                        <contents max="1">
+                                            <element name="Othr"> <!-- GenericAccountIdentification1 -->
+                                                <contents>
+                                                    <element name="Id">
+                                                        <contents>
+                                                            <report>
+                                                                <column>CPTY_AGENT_ACCT</column>
+                                                            </report>
+                                                        </contents>
+                                                    </element>
+                                                </contents>
+                                            </element>
+                                        </contents>
+                                    </element>
+                                    <element name="Tp">
+                                        <contents>
+
+                                        </contents>
+                                    </element>
+                                    <element name="Ccy">
+                                        <contents>
+
+                                        </contents>
+                                    </element>
+                                    <element name="Nm">
+                                        <contents>
+
+                                        </contents>
+                                    </element>
+                                </contents>
+                            </element>
+                            <element name="InstrForCdtrAgt">      <!-- InstructionForCreditorAgent1 -->
+                                <contents>
+                                    <element name="Cd"> <!--    Instruction3Code -->
+                                        <!-- it can be one of the following value:
+                                        CHQB
+                                        HOLD
+                                        PHOB
+                                        TELB
+                                        -->
+                                        <contents>
+                                            <report>
+                                                <column>INSTRUCTION_CODE</column>
+                                            </report>
+                                        </contents>
+                                    </element>
+                                    <element name="InstrInf"> <!--    Max140Text -->
+                                        <contents>
+                                            <report>
+                                                <column>ADDITIONAL_INFO</column>
+                                            </report>
+                                        </contents>
+                                    </element>
+                                </contents>
+                            </element>
+                            <element name="InstrForNxtAgt"> <!--   InstructionForNextAgent1 -->
+                                <contents>
+                                    <element name="Cd"> <!--  Instruction4Code -->
+                                        <!-- Can be PHOA or TELA -->
+                                    </element>
+                                    <element name="InstrInf">
+                                        <contents>
+                                            <report>
+                                                <column>ADDITIONAL_INFO</column>
+                                            </report>
+                                        </contents>
+                                    </element>
+                                </contents>
+                            </element>
+                            <element name="RmtInf">   <!-- RemittanceInformation7 -->
+                                <contents>
+                                    <element name="Ustrd">
+                                        <contents>
+                                            <report>
+                                                <column>REMITTANCE_INFO</column>
+                                            </report>
+                                        </contents>
+                                    </element>
+                                    <element name="Strd">  <!-- StructuredRemittanceInformation9 -->
+                                        
+                                    </element>
+                                </contents>
+                            </element>
+                            <element name="SplmtryData" hideifempty="true">  <!--   SupplementaryData1 -->
+                                <contents>
+                                    <element name="PlcAndNm">
+
+                                    </element>
+                                    <element name="Envlp"> <!--      SupplementaryDataEnvelope1 -->
+
+                                    </element>
+                                </contents>
+                            </element>
+                        </contents>
+                    </element>
+                </contents>
+</element>
+    </contents>
+</template>

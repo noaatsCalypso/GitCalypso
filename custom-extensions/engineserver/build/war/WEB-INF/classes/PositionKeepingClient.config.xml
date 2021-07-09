@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Application Configuration for Position-Keeping code used in clients like MainEntry and CalypsoScheduler -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Low latency messaging -->
+	<import resource="classpath*:com/calypso/tk/positionkeeping/positionkeeping-lowlatency-jms-client.xml" />
+	<import resource="classpath*:com/calypso/llm/lowlatency-messaginghelper.xml" />
+
+	<!-- Position Keeping Blotter configuration context -->
+	<bean id="Module.PositionKeepingBlotter"
+		class="com.calypso.infra.configuration.spring.ModuleConfigurationContext"
+		lazy-init="true">
+		<property name="configFiles">
+			<list>
+				<value>classpath:PropertyConfiguration.xml</value>
+				<value>classpath*:com/calypso/positionkeeping/positionkeeping-blotter-mainentry.xml
+				</value>
+			</list>
+		</property>
+	</bean>
+	<!-- Position Keeping Blotter position update consumer engine context -->
+	<bean id="Module.PositionKeepingBlotter.PositionUpdateConsumerEngine"
+		class="com.calypso.infra.configuration.spring.ModuleConfigurationContext" scope="prototype"
+		lazy-init="true">
+		<property name="configFiles">
+			<list>
+				<value>classpath:PropertyConfiguration.xml</value>
+				<value>classpath*:com/calypso/positionkeeping/positionkeeping-blotter-positionupdateconsumerengine.xml
+				</value>
+			</list>
+		</property>
+	</bean>
+	<!-- Position Keeping Previewer configuration context -->
+	<bean id="Module.PositionKeepingPreviewer"
+		class="com.calypso.infra.configuration.spring.ModuleConfigurationContext"
+		lazy-init="true">
+		<property name="configFiles">
+			<list>
+				<value>classpath:PropertyConfiguration.xml</value>
+				<value>classpath*:com/calypso/positionkeeping/positionkeeping-preview-mainentry.xml
+				</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Position Keeping rules and exposure owner configuration context -->
+	<bean id="Module.PositionKeepingOwnerAssignmentConfiguration"
+		class="com.calypso.infra.configuration.spring.ModuleConfigurationContext"
+		lazy-init="true">
+		<property name="configFiles">
+			<list>
+				<value>classpath:PropertyConfiguration.xml</value>
+				<value>classpath*:com/calypso/positionkeeping/positionkeeping-ownerassignment-configuration-mainentry.xml
+				</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Position Keeping Server Message Publisher configurations -->
+	<import
+		resource="classpath*:com/calypso/tk/positionkeeping/PositionKeepingServerSourceQueueMessagePublishers.Client.config.xml" />
+
+	<!-- Position Keeping Server Admin Processing, includes failure message handling -->
+	<import
+		resource="classpath*:com/calypso/tk/positionkeeping/PositionKeepingServerAdminProcessing.Client.config.xml" />
+	
+
+</beans>

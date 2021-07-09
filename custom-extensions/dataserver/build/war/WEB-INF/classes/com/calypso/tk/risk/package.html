@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+
+  @(#)package.html	1.0 07/30/98
+
+-->
+
+
+</head>
+<body bgcolor="white">
+Risk analysis and reporting classes. Just as all single-instrument 
+valuation is done using the Pricer.price() method 
+in the Calypso system, all multiple-instrument valuation is 
+done using the Analysis.run() method. An application that 
+calculates a valuation or risk analysis will always call the 
+run() method, regardless of the type of analysis it wishes to 
+perform. Each subclass of Analysis represents a type of analysis.
+  <p>There are six main classes involved in setting up, running, and 
+displaying a single analysis. These classes are
+<br>
+<ol><li> a subclass of Analysis, to compute the analysis
+<li> a parameters entry window class that implements the 
+ interface AnalysisParamViewer. This lets the user create 
+ parameters object which is...
+<li> a subclass of AnalysisParameters. This object conveys the 
+ user's preferences concerning how the analysis should be run.
+<li> a subclass of AnalysisOutput, to contain the results of the 
+ analysis
+<li> the AnalysisViewerConfig class, to specify which viewer 
+ class will display the results. You will use AnalysisUtil to 
+ make use of the AnalysisViewerConfig.
+<li> an analysis results window class that implements the 
+ interface AnalysisViewer. This displays the results.
+</ol>
+
+<p>To add your own analysis, create a subclass of Analysis (for 
+example 'XAnalysis') that implements the run() method, and 
+create an AnalysisOutput class (for example 'XOutput') that 
+will format the results of your analysis class.
+  <p>To display your results, Calypso provides a standard viewer, 
+DefaultAnalysisViewer, which can display any report that is a 
+spreadsheet-style table of values. If you wish to create a 
+different type of display, then you can create a class 
+('XAnalysisViewer', for example) that implements the 
+AnalysisViewer interface. Whatever viewer you choose, you must 
+register it in the Analysis Viewer Config window in the main 
+Calypso application.
+  <p>If your analysis requires parameters that are not in 
+Calypso's AnalysisParamStd object, create a subclass of 
+AnalysisParameters (XAnalysisParameters, for example). If you 
+wish to allow the user to edit these parameters, create a GUI 
+window class that implements the AnalysisParamViewer 
+interface ('XAnalysisParamViewer', for example).
+
+<!--
+<h2>Package Specification</h2>
+
+##### FILL IN ANY SPECS NEEDED BY JAVA COMPATIBILITY KIT #####
+<ul>
+  <li><a href="">##### REFER TO ANY SPECIFICATION DOCS HERE #####</a>
+</ul>
+
+<h2>Related Documentation</h2>
+
+For overviews, tutorials, examples, guides, and tool documentation, please see:
+<ul>
+  <li><a href="">##### REFER TO NON-SPEC DOCS HERE #####</a>
+</ul>
+-->
+
+
+</body>
+</html>
+

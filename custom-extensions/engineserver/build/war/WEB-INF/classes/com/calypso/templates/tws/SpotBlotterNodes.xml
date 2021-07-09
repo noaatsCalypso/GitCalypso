@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<calypso:calypsoDocument xmlns:calypso="http://www.calypso.com/xml">
+    <calypso:calypsoObject xsi:type="calypso:Tree" action="SAVE" version="11-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <calypso:name>Risk Aggregations</calypso:name>
+        <calypso:applicationName>TWS</calypso:applicationName>
+        <calypso:rootNode xsi:type="calypso:Folder">
+            <calypso:name>Spot Blotter</calypso:name>
+            <calypso:child xsi:type="calypso:RiskAggregation">
+                <calypso:name>Spot Blotter</calypso:name>
+                <calypso:reportTemplate>
+                    <calypso:reportType>RiskAggregation</calypso:reportType>
+                    <calypso:name>TWS_TREE_NODE_ID_38576</calypso:name>
+                    <calypso:hidden>true</calypso:hidden>
+                    <calypso:private>false</calypso:private>
+                    <calypso:user>calypso_user</calypso:user>
+                    <calypso:reportAttributes>
+                        <calypso:attribute>
+                            <calypso:attributeName>AggregatedFlag</calypso:attributeName>
+                            <calypso:attributeValue>true</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns0</calypso:attributeName>
+                            <calypso:attributeValue>Book</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns1</calypso:attributeName>
+                            <calypso:attributeValue>Currency pair</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns10</calypso:attributeName>
+                            <calypso:attributeValue>YTD PL in USD</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns11</calypso:attributeName>
+                            <calypso:attributeValue>Matured Cash</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns2</calypso:attributeName>
+                            <calypso:attributeValue>Bucket Date</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns3</calypso:attributeName>
+                            <calypso:attributeValue>Current primary position amount</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns4</calypso:attributeName>
+                            <calypso:attributeValue>Current secondary position amount</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns5</calypso:attributeName>
+                            <calypso:attributeValue>Current spot rate</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns6</calypso:attributeName>
+                            <calypso:attributeValue>Current fwd points</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns7</calypso:attributeName>
+                            <calypso:attributeValue>Current outright rate</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns8</calypso:attributeName>
+                            <calypso:attributeValue>Daily PL in USD</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns9</calypso:attributeName>
+                            <calypso:attributeValue>MTD PL in USD</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Columns_COUNT</calypso:attributeName>
+                            <calypso:attributeValue>12</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>FilterEnabled</calypso:attributeName>
+                            <calypso:attributeValue>true</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>FromDefaultGenericTemplate</calypso:attributeName>
+                            <calypso:attributeValue>false</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneSubtotals0</calypso:attributeName>
+                            <calypso:attributeValue>Book</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneSubtotals1</calypso:attributeName>
+                            <calypso:attributeValue>Currency pair</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneSubtotals2</calypso:attributeName>
+                            <calypso:attributeValue>Bucket Date</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneSubtotals_COUNT</calypso:attributeName>
+                            <calypso:attributeValue>3</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneTotals0</calypso:attributeName>
+                            <calypso:attributeValue>Book</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneTotals1</calypso:attributeName>
+                            <calypso:attributeValue>Currency pair</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneTotals2</calypso:attributeName>
+                            <calypso:attributeValue>Bucket Date</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>NoneTotals_COUNT</calypso:attributeName>
+                            <calypso:attributeValue>3</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>ShowPivotDataInColumns</calypso:attributeName>
+                            <calypso:attributeValue>true</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>ShowPivotReport</calypso:attributeName>
+                            <calypso:attributeValue>false</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>ShowPivotReportColumnGrandTotal</calypso:attributeName>
+                            <calypso:attributeValue>false</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>ShowPivotReportColumnTotal</calypso:attributeName>
+                            <calypso:attributeValue>false</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>ShowPivotReportRowGrandTotal</calypso:attributeName>
+                            <calypso:attributeValue>false</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>ShowPivotReportRowTotal</calypso:attributeName>
+                            <calypso:attributeValue>false</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>ShowTradeActionButtons</calypso:attributeName>
+                            <calypso:attributeValue>true</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SortColumns0</calypso:attributeName>
+                            <calypso:attributeValue>Bucket Date</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SortColumns1</calypso:attributeName>
+                            <calypso:attributeValue>Book</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SortColumns2</calypso:attributeName>
+                            <calypso:attributeValue>Currency pair</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SortColumns3</calypso:attributeName>
+                            <calypso:attributeValue>Currency</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SortColumns_COUNT</calypso:attributeName>
+                            <calypso:attributeValue>4</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SortOrders0</calypso:attributeName>
+                            <calypso:attributeValue>0.true</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SortOrders1</calypso:attributeName>
+                            <calypso:attributeValue>1.true</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SortOrders2</calypso:attributeName>
+                            <calypso:attributeValue>2.true</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SortOrders3</calypso:attributeName>
+                            <calypso:attributeValue>3.true</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SortOrders_COUNT</calypso:attributeName>
+                            <calypso:attributeValue>4</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SorterCount</calypso:attributeName>
+                            <calypso:attributeValue>1</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SorterEnabled</calypso:attributeName>
+                            <calypso:attributeValue>true</calypso:attributeValue>
+                            <calypso:attributeClass>Boolean</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SorterValue0</calypso:attributeName>
+                            <calypso:attributeValue>Default^true^Bucket Date^true</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Subheadings0</calypso:attributeName>
+                            <calypso:attributeValue>Book</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Subheadings1</calypso:attributeName>
+                            <calypso:attributeValue>Currency pair</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Subheadings2</calypso:attributeName>
+                            <calypso:attributeValue>Bucket Date</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Subheadings_COUNT</calypso:attributeName>
+                            <calypso:attributeValue>3</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Subtotals0</calypso:attributeName>
+                            <calypso:attributeValue>Current spot rate</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Subtotals1</calypso:attributeName>
+                            <calypso:attributeValue>Matured Cash</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Subtotals2</calypso:attributeName>
+                            <calypso:attributeValue>Current fwd points</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Subtotals3</calypso:attributeName>
+                            <calypso:attributeValue>Current outright rate</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Subtotals4</calypso:attributeName>
+                            <calypso:attributeValue>YTD PL in USD</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Subtotals5</calypso:attributeName>
+                            <calypso:attributeValue>Current secondary position amount</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Subtotals6</calypso:attributeName>
+                            <calypso:attributeValue>Daily PL in USD</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Subtotals7</calypso:attributeName>
+                            <calypso:attributeValue>MTD PL in USD</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Subtotals8</calypso:attributeName>
+                            <calypso:attributeValue>Current primary position amount</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Current fwd points</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Current outright rate</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Current primary position amount</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Current secondary position amount</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Current spot rate</calypso:attributeName>
+                            <calypso:attributeValue>Constant</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Daily PL in USD</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_MTD PL in USD</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Matured Cash</calypso:attributeName>
+                            <calypso:attributeValue>Constant</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_YTD PL in USD</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Yesterday closing spot rate</calypso:attributeName>
+                            <calypso:attributeValue>Constant</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Yesterday currency amount</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>SubtotalsFunctions_Yesterday fwd points</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Subtotals_COUNT</calypso:attributeName>
+                            <calypso:attributeValue>9</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Totals0</calypso:attributeName>
+                            <calypso:attributeValue>Current spot rate</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Totals1</calypso:attributeName>
+                            <calypso:attributeValue>Matured Cash</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Totals2</calypso:attributeName>
+                            <calypso:attributeValue>Current fwd points</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Totals3</calypso:attributeName>
+                            <calypso:attributeValue>Current outright rate</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Totals4</calypso:attributeName>
+                            <calypso:attributeValue>YTD PL in USD</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Totals5</calypso:attributeName>
+                            <calypso:attributeValue>Current secondary position amount</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Totals6</calypso:attributeName>
+                            <calypso:attributeValue>Daily PL in USD</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Totals7</calypso:attributeName>
+                            <calypso:attributeValue>MTD PL in USD</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Totals8</calypso:attributeName>
+                            <calypso:attributeValue>Current primary position amount</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Current fwd points</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Current outright rate</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Current primary position amount</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Current secondary position amount</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Current spot rate</calypso:attributeName>
+                            <calypso:attributeValue>Constant</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Daily PL in USD</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_MTD PL in USD</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Matured Cash</calypso:attributeName>
+                            <calypso:attributeValue>Constant</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_YTD PL in USD</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Yesterday closing spot rate</calypso:attributeName>
+                            <calypso:attributeValue>Constant</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Yesterday currency amount</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>TotalsFunctions_Yesterday fwd points</calypso:attributeName>
+                            <calypso:attributeValue>Sum</calypso:attributeValue>
+                            <calypso:attributeClass>String</calypso:attributeClass>
+                        </calypso:attribute>
+                        <calypso:attribute>
+                            <calypso:attributeName>Totals_COUNT</calypso:attributeName>
+                            <calypso:attributeValue>9</calypso:attributeValue>
+                            <calypso:attributeClass>Integer</calypso:attributeClass>
+                        </calypso:attribute>
+                    </calypso:reportAttributes>
+                </calypso:reportTemplate>
+                <calypso:reportType>RiskAggregation</calypso:reportType>
+                <calypso:uniqueConfigurationString>0|^|FXSpotBlotter|^|SNOOPY|^|FX Options real time|^|SpotBlotter 2|^|G-man|^|G-man|^|null|^|false|^|[MktDataServer] MDS</calypso:uniqueConfigurationString>
+                <calypso:useLatestRun>true</calypso:useLatestRun>
+            </calypso:child>
+        </calypso:rootNode>
+    </calypso:calypsoObject>
+</calypso:calypsoDocument>

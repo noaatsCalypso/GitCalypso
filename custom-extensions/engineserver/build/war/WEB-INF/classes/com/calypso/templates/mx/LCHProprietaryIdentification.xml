@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+	<contents>		
+		<element name="Id">
+			<contents>
+				<report>
+					<column>ADDITIONAL_FIELD.CCP_REFERENCE_SWIFT</column>
+				</report>
+			</contents>
+		</element>
+		<element name="Tp">
+			<contents>
+				<element name="Prtry">
+					<contents>
+						<element name="Id">
+							<contents>
+								<report>
+									<expression>getReportValue("ADDITIONAL_FIELD.CCP_REFERENCE") =~ "^(A|B|C|H|HOUSE)$" ? "SBAC" : "CLNT"</expression>
+								</report>
+							</contents>
+						</element>
+						<element name="Issr">
+							<contents>
+								<report>
+									<column>ADDITIONAL_FIELD.CCP</column>
+									<transformations>
+										<transformation>
+											<from>LCH</from>
+											<to>LCHL</to>
+										</transformation>
+									</transformations>
+								</report>
+							</contents>
+						</element>
+					</contents>	
+				</element>				
+			</contents>
+		</element>
+	</contents>
+</template>

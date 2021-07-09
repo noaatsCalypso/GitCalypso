@@ -1,0 +1,121 @@
+<!-- Start Floating Rates for non-collars -->
+
+
+<p class="header2">Floating Amounts:</p>
+
+<table>
+<tr>
+	<td width="30%">Floating Rate Payer:</td>
+	<td>|FLT_PAYER_CODE|</td>
+</tr>
+<tr>
+	<td>|CAP_TYPE| Rate:</td>
+	<td>|CAP_RATE| %</td>
+</tr>
+<!--calypso>
+if ( Product.getIsDigitalB() == true )
+    inline "
+    <tr>
+        <td>Digital Factor:</td>
+        <td>|DIGITAL_FACTOR| %</td>
+    </tr>
+    ";
+if ( Product.getCouponOffset() == 0 )
+    inline "
+    <tr>
+        <td>Floating Rate Payer Payment Dates:</td>
+        <td>|FLT_CPN_FREQ| on the |FLT_ROLL_DAY|, starting |FLT_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |FLT_CPN_DATE_ROLL| Business Day convention.</td>
+    </tr>
+    ";
+if ( Product.getCouponOffset() != 0 )
+    inline "
+    <tr>
+        <td>Floating Rate Period End Dates:</td>
+        <td>|FLT_CPN_FREQ| on the |FLT_ROLL_DAY|, starting |FLT_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |FLT_CPN_DATE_ROLL| Business Day convention.</td>
+    </tr>
+    <tr>
+        <td>Payment Lag:</td>
+        <td>|FLT_CPN_OFFSET|</td>
+    </tr>
+    ";
+</calypso-->
+<!--calypso>    
+if ( Product.getIncludeFirstB() == false )
+    inline "
+    <tr>
+        <td>Exclude First:</td>
+        <td>Yes</td>
+    </tr>
+    ";
+else
+    inline "
+    <tr>
+        <td>Floating Rate for Initial Calculation Period:</td>
+        <td>|FLT_RATE_INITIAL_PERIOD|</td>
+    </tr>
+    ";
+</calypso-->
+<tr>
+	<td>Floating Rate Option:</td>
+	<td>|FLT_RATE_INDEX|</td>
+</tr>
+<!--calypso>
+if ( Product.getIndexFactor() != 1 )
+    inline "
+    <tr>
+        <td>Rate Index Factor:</td>
+        <td>|FLT_RATE_FACTOR|</td>
+    </tr>
+    ";
+</calypso-->
+<tr>
+	<td>Designated Maturity:</td>
+	<td>|FLT_INDEX_TENOR|</td>
+</tr>
+<tr>
+	<td>Spread:</td>
+	<td>|FLT_SPREAD|</td>
+</tr>
+<tr>
+	<td>Floating Rate Day Count Fraction:</td>
+	<td>|FLT_DAY_COUNT|</td>
+</tr>
+<tr>
+	<td>Reset Dates:</td>
+	<td>|FLT_RATE_DETERMINED|</td>
+</tr>
+<!--calypso>
+if ( Product.getAveragingResetB() == true )
+    inline "
+    <tr>
+        <td>Rate Cut-off Dates:</td>
+        <td>|FLT_RESET_CUTOFF_DATES|</td>
+    </tr>
+    <tr>
+        <td>Method of Averaging:</td>
+        <td>|AVERAGING_METHOD|</td>
+    </tr>
+    <tr>
+        <td>Averaging Frequency:</td>
+        <td>|AVERAGING_FREQUENCY|</td>
+    </tr>
+    ";
+</calypso-->
+<tr>
+	<td>Compounding:</td>
+	<td>|FLT_COMPOUND_FREQ|</td>
+</tr>
+<tr>
+	<td>Business Days:</td>
+	<td>|FLT_CPN_HOL|</td>
+</tr>
+<tr>
+	<td>Calculation Agent:</td>
+	<td>|SENDER_CODE|</td>
+</tr>
+</table>
+
+
+<!-- End Floating Rates for non-collars -->
+
+

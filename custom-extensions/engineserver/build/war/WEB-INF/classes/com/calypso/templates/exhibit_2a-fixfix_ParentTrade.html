@@ -1,0 +1,122 @@
+<!-- Start Swap FIX/FIX -->
+
+<table width='100%'>
+<tr>
+	<td width="30%">Business Days:</td>
+	<td width='68%'>|PAYLEG_CPN_HOL#PARENT_TRADE|</td>
+</tr>
+<tr>
+	<td>Calculation Agent:</td>
+	<td>|SENDER_CODE|, unless otherwise stated in the Agreement</td>
+</tr>
+</table>
+
+<p class='header2'>Fixed Amounts I:</p>
+
+<table width='100%'>
+<tr>
+	<td width="30%">Fixed Amount I Rate Payer:</td>
+	<td width='68%'>|PAYLEG_PAYER_CODEPARENT_TRADE|</td>
+</tr>
+<tr>
+	<td width="30%">Fixed Amount I Rate Payer Currency Amount:</td>
+	<td>|PAYLEG_NOTIONAL_CCY#PARENT_TRADE| |PAYLEG_NOTIONAL_VALUE#NOVATED_TRADE|</td>
+</tr>
+<!--calypso>
+if ( |PAYLEG_CPN_OFFSET#PARENT_TRADE| like "0%" )
+    inline "
+    <tr>
+        <td>Fixed Rate Payer Payment Dates:</td>
+        <td>|PAYLEG_CPN_FREQPARENT_TRADE| on the |PAYLEG_ROLL_DAY_NB#PARENT_TRADE|, starting |PAYLEG_FIRST_PAYMENT_DATE#PARENT_TRADE| subject to adjustment in accordance with the |PAYLEG_CPN_DATE_ROLL#PARENT_TRADE| Business Day convention.</td>
+    </tr>";
+else
+    inline "
+    <tr>
+        <td>Fixed Rate Period End Dates:</td>
+        <td>|PAYLEG_CPN_FREQ#PARENT_TRADE| on the |PAYLEG_ROLL_DAY_NB#PARENT_TRADE|, starting |PAYLEG_FIRST_PAYMENT_DATE#PARENT_TRADE| subject to adjustment in accordance with the |PAYLEG_CPN_DATE_ROLL#PARENT_TRADE| Business Day convention.</td>
+    </tr>
+    <tr>
+        <td>Payment Lag:</td>
+        <td>|PAYLEG_CPN_OFFSET_VALUE#PARENT_TRADE| |PAYLEG_CPN_OFFSET_DAYS#PARENT_TRADE| Days</td>
+    </tr>";
+</calypso-->
+<tr>
+	<td>Fixed Amount I Rate:</td>
+	<td>|PAYLEG_FIXED_RATE#PARENT_TRADE| %</td>
+</tr>
+<tr>
+	<td>Fixed Amount I Rate Day Count Fraction:</td>
+	<td>|PAYLEG_DAY_COUNT#PARENT_TRADE|</td>
+</tr>
+</table>
+<br><br>
+
+<p class='header2'>Fixed Amounts II:</p>
+
+<!---Fixed Swap Leg Table-->
+<table width='100%'>
+<tr>
+	<td width="30%">Fixed Amount II Rate Payer:</td>
+	<td width='68%'>|RECEIVELEG_PAYER_CODE#PARENT_TRADE|</td>
+</tr>
+<tr>
+	<td width="30%">Fixed Amount II Rate Payer Currency Amount:</td>
+	<td>|RECEIVELEG_NOTIONAL_CCY#PARENT_TRADE| |RECEIVELEG_NOTIONAL_VALUE#PARENT_TRADE|</td>
+</tr>
+<!--calypso>
+if ( |RECEIVELEG_CPN_OFFSET#PARENT_TRADE| like "0%" )
+    inline "
+    <tr>
+        <td>Fixed Rate Payer Payment Dates:</td>
+        <td>|RECEIVELEG_CPN_FREQ#PARENT_TRADE| on the |RECEIVELEG_ROLL_DAY_NB#PARENT_TRADE|, starting |RECEIVELEG_FIRST_PAYMENT_DATE#PARENT_TRADE| subject to adjustment in accordance with the |RECEIVELEG_CPN_DATE_ROLL#PARENT_TRADE| Business Day convention.</td>
+    </tr>";
+else
+    inline "
+    <tr>
+        <td>Fixed Rate Period End Dates:</td>
+        <td>|RECEIVELEG_CPN_FREQ#PARENT_TRADE| on the |RECEIVELEG_ROLL_DAY_NB#PARENT_TRADE|, starting |RECEIVELEG_FIRST_PAYMENT_DATE#PARENT_TRADE| subject to adjustment in accordance with the |RECEIVELEG_CPN_DATE_ROLL#PARENT_TRADE| Business Day convention.</td>
+    </tr>
+    <tr>
+        <td>Payment Lag:</td>
+        <td>|RECEIVELEG_CPN_OFFSET_VALUE#PARENT_TRADE|  |RECEIVELEG_CPN_OFFSET_DAYS#PARENT_TRADE| Days</td>
+    </tr>";
+</calypso-->
+<tr>
+	<td>Fixed Amount II Rate:</td>
+	<td>|RECEIVELEG_FIXED_RATE#PARENT_TRADE| %</td>
+</tr>
+<tr>
+	<td>Fixed Amount II Rate Day Count Fraction:</td>
+	<td>|RECEIVELEG_DAY_COUNT#PARENT_TRADE|</td>
+</tr>
+</table>
+<!---End Floating Swap Leg Table-->
+<!--calypso>
+if(|HAS_PRINCIPAL_EXCHANGEPARENT_TRADE| != "No") {
+inline "<p class='header2'>Principal Exchange Schedule</p>
+<table>
+<tr>
+	<th>Date</th>
+	<th>Currency</th>
+	<th>Amount</th>
+	<th>Payer</th>
+</tr>";
+iterator("SwapPrincipalCashFlows")
+	inline "<tr><td>|PRINCIPAL_EXCHANGE_DATE#PARENT_TRADE|</td>
+	<td>|PRINCIPAL_EXCHANGE_CURRENCY|</td>
+	<td>|PRINCIPAL_EXCHANGE_AMOUNT#PARENT_TRADE|</td>
+	<td>|PRINCIPAL_EXCHANGE_PAYER|</td></tr>";
+inline "</table>
+<p>
+Interim Exchange:<br/>
+Interim Exchange Date:|RECEIVELEG_CPN_FREQ#PARENT_TRADE| on the |RECEIVELEG_ROLL_DAY#PARENT_TRADE|, starting |RECEIVELEG_FIRST_PAYMENT_DATE#PARENT_TRADE| subject to adjustment in accordance with the |RECEIVELEG_CPN_DATE_ROLL| Business Day convention.
+</p>
+";
+}
+</calypso-->
+
+<br><br>
+
+<!-- End Swap FIX/FIX -->
+
+

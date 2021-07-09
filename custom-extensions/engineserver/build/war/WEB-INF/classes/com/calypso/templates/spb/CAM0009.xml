@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    <contents>
+        <element name="CAM0009" hideifempty="true">
+            <contents>
+                <element name="CodMsg">
+                    <contents>
+                        <text>
+                            <value>CAM0009</value>
+                        </text>
+                    </contents>
+                </element>
+                <element name="NumCtrlIF">
+                    <contents>
+                        <report>
+                            <column>MESSAGE_ID</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJBaseIF">
+                    <contents>
+                        <report>
+                            <column>FXCNPJBaseIF</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJIFCompdor">
+                    <contents>
+                        <report>
+                            <column>FXCNPJIFCompdor</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJIFVendd">
+                    <contents>
+                        <report>
+                            <column>FXCNPJIFVendd</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodIdentdNegc">
+                    <contents>
+                        <report>
+                            <column>FXCNPJIFVendd</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodMoedaISO">
+                    <contents>
+                        <report>
+                            <column>CODMOEDAISO</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="VlrME">
+                    <contents max="1">
+                        <report>
+                            <condition>
+                                <expression>"BRL" == getReportValue("Sec Cur")</expression>
+                            </condition>
+                            <expression>abs(toDouble(getReportValue("Prim Amt")))</expression>
+                        </report>
+                        <report>
+                            <condition>
+                                <expression>"BRL" == getReportValue("Prim Cur")</expression>
+                            </condition>
+                            <expression>abs(toDouble(getReportValue("Sec Amt")))</expression>
+                        </report>
+                    </contents>
+                </element>
+                <element name="TaxCam">
+                    <contents>
+                        <report format="###.###############">
+                            <column>TAXCAM</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="VlrMN">
+                    <contents max="1">
+                        <report>
+                            <condition>
+                                <expression>"BRL" == getReportValue("Sec Cur")</expression>
+                            </condition>
+                            <expression>abs(toDouble(getReportValue("Sec Amt")))</expression>
+                        </report>
+                        <report>
+                            <condition>
+                                <expression>"BRL" == getReportValue("Prim Cur")</expression>
+                            </condition>
+                            <expression>abs(toDouble(getReportValue("Prim Amt")))</expression>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtEntrMN">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>BRLSETTLEDATE</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtEntrME">
+                    <contents max="1">
+                        <report format="yyyy-MM-dd">
+                            <column>FGCCYSETTLEDATE</column>
+                        </report>
+                        <report format="yyyy-MM-dd">
+                            <column>Settle Date</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtLiquid">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>DTLIMLIQUID</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="IndrGiro">
+                    <contents max="1">
+                        <report>
+                            <condition>
+                                <expression>getReportValue("TRADE_KEYWORD.IndrGiro") != ""</expression>
+                            </condition>
+                            <column>TRADE_KEYWORD.IndrGiro</column>
+                        </report>
+                        <text>
+                            <value>N</value>
+                        </text>
+                    </contents>
+                </element>
+                <element name="IndrLinha">
+                    <contents max="1">
+                        <report>
+                            <condition>
+                                <expression>getReportValue("TRADE_KEYWORD.IndrLinha") != ""</expression>
+                            </condition>
+                            <column>TRADE_KEYWORD.IndrLinha</column>
+                        </report>
+                        <text>
+                            <value>N</value>
+                        </text>
+                    </contents>
+                </element>
+                <element name="CodFatoNatu">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.CodFatoNatu") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodFatoNatu</column>
+                        </report>
+
+                    </contents>
+                </element>
+                <element name="CodCliNatu">
+                    <condition>
+                        <expression>getReportValue("Cntp_Attr.CodCliNatu") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>Cntp_Attr.CodCliNatu</column>
+                        </report>
+
+                    </contents>
+                </element>
+                <element name="IndrAvalNatu">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.IndrAvalNatu") != null </expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.IndrAvalNatu</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodPagdr_RecbdrExtrNatu">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.CodPagdr_RecbdrExtrNatu") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodPagdr_RecbdrExtrNatu</column>
+                        </report>
+
+                    </contents>
+                </element>
+                <element name="CodGrpNatu">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.CodGrpNatu") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodGrpNatu</column>
+                        </report>
+
+                    </contents>
+                </element>
+                <element name="CodFormaEntrMoeda">
+                    <contents>
+                        <report>
+                            <column>CODFORMAENTRMOEDA_NONBRLATTRIBUTE</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtMovto">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>TODAY</column>
+                        </report>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+    <contents>
+        <element name="CAM0021" hideifempty="true">
+            <contents>
+                <element name="CodMsg">
+                    <contents>
+                        <text>
+                            <value>CAM0021</value>
+                        </text>
+                    </contents>
+                </element>
+                <element name="NumCtrlIF">
+                    <contents>
+                        <report>
+                            <column>MESSAGE_ID</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJBaseIF">
+                    <contents>
+                        <report>
+                            <column>FXCNPJBaseIF</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJIF">
+                    <contents>
+                        <report>
+                            <column>FXCNPJIF</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJCortr">
+                    <condition>
+                        <expression>getReportValue("CNPJCORTR") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>CNPJCORTR</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtEvtCAM">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>Trade Date</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="RDE">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.RDE") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.RDE</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodMoedaISO">
+                    <contents>
+                        <report>
+                            <column>CODMOEDAISO</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="VlrME">
+                    <contents max="1">
+                        <report>
+                            <condition>
+                                <expression>"BRL" == getReportValue("Sec Cur")</expression>
+                            </condition>
+                            <expression>abs(toDouble(getReportValue("Prim Amt")))</expression>
+                        </report>
+                        <report>
+                            <condition>
+                                <expression>"BRL" == getReportValue("Prim Cur")</expression>
+                            </condition>
+                            <expression>abs(toDouble(getReportValue("Sec Amt")))</expression>
+                        </report>
+                    </contents>
+                </element>
+                <element name="TaxCam">
+                    <contents>
+                        <report format="###.###############">
+                            <column>TAXCAM</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="VlrMN">
+                    <contents>
+                        <report>
+                            <column>CAM21VLRMN</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="VlrEftTot">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.VlrEftTot") != null || getReportValue("XferAttributes.VlrEftTot") != null</expression>
+                    </condition>
+                    <contents max="1">
+                        <report>
+                            <condition>
+                                <expression>getReportValue("TRADE_KEYWORD.VlrEftTot") != null</expression>
+                            </condition>
+                            <column>TRADE_KEYWORD.VlrEftTot</column>
+                        </report>
+                        <report>
+                            <condition>
+                                <expression>getReportValue("XferAttributes.VlrEftTot") != null</expression>
+                            </condition>
+                            <column>XferAttributes.VlrEftTot</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="TpOpCAM">
+                    <contents>
+                        <report>
+                            <column>TPOPCAM</column>
+                        </report>
+                    </contents>
+                </element>
+
+                <element name="Grupo_CAM0021_CliComCadRFB">
+                    <condition>
+                        <expression>getReportValue("HASCNPJORCPF") == "YES"</expression>
+                    </condition>
+                    <contents>
+                        <element name="TpPessoaCli">
+                            <contents>
+                                <report>
+                                    <column>TPPESSOACLI</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="CNPJ_CPFCli">
+                            <contents>
+                                <report>
+                                    <column>CNPJCPFCLI</column>
+                                </report>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="Grupo_CAM0021_CliSemCadRFB">
+                    <condition>
+                        <expression>getReportValue("HASCNPJORCPF") == "NO"</expression>
+                    </condition>
+                    <contents>
+                            <element name="IdentdPessoaCli">
+                                <contents>
+                                    <report>
+                                        <column>IDENTDPESSOACLI</column>
+                                    </report>
+                                </contents>
+                            </element>
+                            <element name="NomCli">
+                                <contents>
+                                    <report>
+                                        <column>NOMCLI</column>
+                                    </report>
+                                </contents>
+                            </element>
+                    </contents>
+                </element>
+                <element name="PerACC">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.PerACC") != null || getReportValue("XferAttributes.PerACC") != null</expression>
+                    </condition>
+                    <contents max="1">
+                        <report>
+                            <condition>
+                                <expression>getReportValue("TRADE_KEYWORD.PerACC") != null</expression>
+                            </condition>
+                            <column>TRADE_KEYWORD.PerACC</column>
+                        </report>
+                        <report>
+                            <condition>
+                                <expression>getReportValue("XferAttributes.PerACC") != null</expression>
+                            </condition>
+                            <column>XferAttributes.PerACC</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodFatoNatu">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.CodFatoNatu") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodFatoNatu</column>
+                        </report>
+
+                    </contents>
+                </element>
+                <element name="CodCliNatu">
+                    <condition>
+                        <expression>getReportValue("Cntp_Attr.CodCliNatu") != null || getReportValue("TRADE_KEYWORD.CodCliNatu") != null</expression>
+                    </condition>
+                    <contents max="1">
+                        <report>
+                            <column>TRADE_KEYWORD.CodCliNatu</column>
+                        </report>
+                        <report>
+                            <column>Cntp_Attr.CodCliNatu</column>
+                        </report>
+
+                    </contents>
+                </element>
+                <element name="IndrAvalNatu">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.IndrAvalNatu") != null </expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.IndrAvalNatu</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodPagdr_RecbdrExtrNatu">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.CodPagdr_RecbdrExtrNatu") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodPagdr_RecbdrExtrNatu</column>
+                        </report>
+
+                    </contents>
+                </element>
+                <element name="CodGrpNatu">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.CodGrpNatu") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodGrpNatu</column>
+                        </report>
+
+                    </contents>
+                </element>
+                <element name="CodFormaEntrMoeda">
+                    <contents max="1">
+                        <report>
+                            <condition>
+                                <expression>getReportValue("CODFORMAENTRMOEDA_NONBRLATTRIBUTE") != null</expression>
+                            </condition>
+                            <column>CODFORMAENTRMOEDA_NONBRLATTRIBUTE</column>
+                        </report>
+                        <text>
+                            <value>1</value>
+                        </text>
+                    </contents>
+                </element>
+                <element name="DtLimLiquid">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>DTLIMLIQUID</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="IndrLiquidAutmtc">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.IndrLiquidAutmtc") != null || getReportValue("XferAttributes.IndrLiquidAutmtc") != null</expression>
+                    </condition>
+                    <contents max="1">
+                        <report>
+                            <condition>
+                                <expression>getReportValue("TRADE_KEYWORD.IndrLiquidAutmtc") != null</expression>
+                            </condition>
+                            <column>TRADE_KEYWORD.IndrLiquidAutmtc</column>
+                        </report>
+                        <report>
+                            <condition>
+                                <expression>getReportValue("XferAttributes.IndrLiquidAutmtc") != null</expression>
+                            </condition>
+                            <column>XferAttributes.IndrLiquidAutmtc</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="Grupo_CAM0021_Pagdr_RecbdrExtr">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.IndrLiquidAutmtc") == "S"</expression>
+                    </condition>
+                    <contents>
+                        <element name="CodPaisPagdr_RecbdrExtr">
+                            <contents>
+                                <report>
+                                    <column>CODPAISCPTY</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="NomPagdr_RecbdrExtr">
+                            <contents>
+                                <report>
+                                    <column>CounterParty.Full Name</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="TpRelcVinc">
+                            <condition>
+                                <expression>getReportValue("TRADE_KEYWORD.TpRelcVinc") != null</expression>
+                            </condition>
+                            <contents>
+                                <report>
+                                    <column>TRADE_KEYWORD.TpRelcVinc</column>
+                                </report>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="TxtOtrEspecc">
+                    <contents>
+                        <report>
+                            <column>TXTOTRESPECC</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="PercACC">
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.PercACC</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodClausEspfcoIF">
+                    <context>
+                        <to>SplitTradeKeywordCodClausEspfcoIF</to>
+                    </context>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodClausEspfcoIF</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodFormaEntrMN">
+                    <contents max="1">
+                        <report>
+                            <condition>
+                                <expression>getReportValue("CODFORMAENTRMOEDA_BRLATTRIBUTE") != null</expression>
+                            </condition>
+                            <column>CODFORMAENTRMOEDA_BRLATTRIBUTE</column>
+                        </report>
+                        <text>
+                            <value>1</value>
+                        </text>
+                    </contents>
+                </element>
+                <element name="DtEntrMN">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>BRLSETTLEDATE</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="ISPBIFPgto">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") == "C"</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>ISPBIFPgto</column>
+                            <transformations>
+                                <transformation type="substring">
+                                    <from>0</from>
+                                    <to>8</to>
+                                </transformation>
+                            </transformations>
+                        </report>
+                    </contents>
+                </element>
+                <element name="AgIFPaisPgto">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") == "C"</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>AGIFPAISPGTO</column>   <!--  SDI attribute named AGIFPaisPgto - Foreign ccy SDI -->
+                        </report>
+                    </contents>
+                </element>
+                <element name="CtIFPaisPgto">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") == "C"</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>ACCNTNUMBERAGENT</column>
+                        </report>
+                    </contents>
+                </element>
+
+                <element name="CodSwiftIFBenfcrio">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") != "C"</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>SWIFTCPTYAGENTCODE</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="NomIFBenfcrio">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") != "C"</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>NOMIFBENFCRIO</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CtBenfcrio">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") != "C"</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>BENFCRIOACNUMBER</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodSwiftINT">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") != "C"</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>CODESWIFTINTERM</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="NomINT">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") != "C"</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>LONGNAMEINT</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CtIFBenfcrioINT">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") != "C"</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>ACCNTNUMBERINTERM</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtMovto">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>TODAY</column>
+                        </report>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

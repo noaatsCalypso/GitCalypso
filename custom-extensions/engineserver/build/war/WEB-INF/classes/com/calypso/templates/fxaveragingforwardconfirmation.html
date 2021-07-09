@@ -1,0 +1,194 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" )
+                inline  "AMEND AND CANCEL";
+                else if (|MESSAGE_SUBACTION|== "CANCEL")
+                inline "CANCEL";
+</calypso-->
+</p>
+<br><br>
+<p class="header1">FX Averaging Forward Confirmation</p>
+
+<br>
+<p><b>Our Transaction Reference: |TRADE_ID|</b></p>
+<br>
+
+<p class="indented">
+The purpose of this letter agreement (this &quot;Confirmation&quot;) is to confirm the terms and conditions of the Transaction
+entered into between us on the Trade Date specified below (the &quot;Transaction&quot;).
+</p>
+<!--calypso>
+	if (|MESSAGE_SUBACTION|== "AMEND")
+	 inline "<br><p>This Confirmation cancels and supersedes the previous confirmation under the same reference.</p>";
+	else if (|MESSAGE_SUBACTION|== "CANCEL")
+	 inline "<p>This Confirmation cancels the previous confirmation under the same reference.</p>";
+</calypso-->
+
+<br>
+<b><u><p>The terms of the particular Transaction to which this Confirmation relates are as follows:</p></u></b>
+<br>
+<b><u><p>General Terms:</p></u></b>
+<br>
+<table CELLSPACING=0 BORDER=0 WIDTH='100%'>
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE">Trade Date</td>	
+		<td WIDTH="59%" VALIGN="MIDDLE">|TRADE_DATE|</td>
+	</tr>	
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE"><p>Reference Currency</td>
+		<td WIDTH="59%" VALIGN="MIDDLE"><p>|FXAVG_BUY_CURRENCY|</td>
+	</tr>
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE"><p>Reference Currency Notional Amount</td>
+		<td WIDTH="59%" VALIGN="MIDDLE"><p>|FXAVG_BUY_CURRENCY||FX_BUY_AMOUNT|</td>
+	</tr>
+
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE"><p>Reference Currency Buyer</td>
+		<td WIDTH="59%" VALIGN="MIDDLE"><p>|TRADE_BUYER_NAME|</td>
+	</tr>
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE"><p>Reference Currency Seller</td>
+		<td WIDTH="59%" VALIGN="MIDDLE"><p>|TRADE_SELLER_NAME|</td>
+	</tr>
+
+	<tr>
+		<td WIDTH=39% VALIGN=MIDDLE><p>Settlement Currency</td>
+		<td WIDTH=59% VALIGN=MIDDLE><p>|FXAVG_SETTLE_CCY|</td>
+	</tr>
+	<tr>
+	    <td WIDTH=39% VALIGN=MIDDLE><p>Settlement Date</td>
+		<td WIDTH=59% VALIGN=MIDDLE><p>|SETTLE_DATE|</td>
+	</tr>
+
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE"><p>Spot Rate</td>
+		<td WIDTH="59%" VALIGN="MIDDLE"><p>|FXAVG_SPOTPRICE|</td>
+	</tr>
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE"><p>Spot Margin</td>
+		<td WIDTH="59%" VALIGN="MIDDLE"><p>|FXAVG_SPOTMARGIN|</td>
+	</tr>
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE"><p>Points</td>
+		<td WIDTH="59%" VALIGN="MIDDLE"><p>|FXAVG_POINTS|</td>
+	</tr>
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE"><p>Points Margin</td>
+		<td WIDTH="59%" VALIGN="MIDDLE"><p>|FXAVG_POINTS_MARGIN|</td>
+	</tr>
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE"><p>Final Negociated Price</td>
+		<td WIDTH="59%" VALIGN="MIDDLE"><p>|FX_NEGOCIATEDPRICE|</td>
+	</tr>
+
+	<tr>
+		<td WIDTH=39% VALIGN=MIDDLE><p>Rate Reset Source</td>
+		<td WIDTH=59% VALIGN=MIDDLE><p>|FXAVG_RESET_SOURCE|</td>
+	</tr>
+
+</table>
+
+
+<b><u><p>Fixing Schedule Terms:</u></p></b>
+<br>
+<table CELLSPACING=1 WIDTH="100%">
+	<tr>
+		<td WIDTH=39% VALIGN=MIDDLE><p>Schedule Start Date</td>
+		<td WIDTH=59% VALIGN=MIDDLE><p>|FXAVG_FIXING_START_DATE|</td>
+	</tr>
+	<tr>
+		<td WIDTH=39% VALIGN=MIDDLE><p>Schedule Start Date</td>
+		<td WIDTH=59% VALIGN=MIDDLE><p>|FXAVG_FIXING_END_DATE|</td>
+	</tr>
+	<tr>
+		<td WIDTH=39% VALIGN=MIDDLE><p>Fixing Frequency</td>
+		<td WIDTH=59% VALIGN=MIDDLE><p>|FXAVG_FIXING_FREQ|</td>
+	</tr>
+	<tr>
+		<td WIDTH=39% VALIGN=MIDDLE><p>Fixing Holidays</td>
+		<td WIDTH=59% VALIGN=MIDDLE><p>|FXAVG_FIXING_HOLIDAYS|</td>
+	</tr>
+	<tr>
+		<td WIDTH=39% VALIGN=MIDDLE><p>Settlement Method</td>
+		<td WIDTH=59% VALIGN=MIDDLE><p>|FXAVG_FIXING_SETTLE_METHOD|</td>
+	</tr>
+</table>
+
+
+
+
+<b><u><p>Other terms and conditions:</u></p></b>
+<br>
+<table CELLSPACING=1 WIDTH="100%">
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE">Calculation Agent</td>
+		<td WIDTH="59%" VALIGN="MIDDLE">|SENDER_CODE|, unless otherwise stated in the Agreement</td>
+	</tr>		
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE">Broker</td>
+		<td WIDTH="59%" VALIGN="MIDDLE">|KEYWORD_Broker|</td>
+	</tr>
+</table>
+<br>
+
+<b><u><p>Account Details:</u> <br/></p></b>
+<br>
+<!--calypso>
+	iterator("TransferRules")
+		inline "
+					<table width='100%'>
+						<tr>
+							<td width='39%'>|SETTLEMENT_TO_PAYREC|</td>
+							<td width='59%'>&nbsp;</td>
+						</tr>
+						<tr>
+							<td width='39%'>Currency</td>
+							<td width='59%'>|SETTLEMENT_TO_CURRENCY|</td>
+						</tr>
+						<tr>
+							<td width='39%'>To</td>
+							<td width='59%'>|SETTLEMENT_TO_AGENT|</td>
+						</tr>
+						<tr>
+							<td width='39%'>Code</td>
+							<td>|SETTLEMENT_METHOD|</td>
+						</tr>						
+						<tr>
+							<td width='39%'>Favor of</td>
+							<td width='59%'>|SETTLEMENT_FAVOR_OF|</td>
+						</tr>
+						<tr>
+							<td width='39%'>Account Number</td>
+							<td width='59%'>|SETTLEMENT_ACCOUNT_NUMBER|</td>
+						</tr>
+					</table>
+				
+	";
+</calypso-->
+
+<p>Offices:<br>
+(a)&nbsp;&nbsp;&nbsp; The Office of Party A for the Transaction is |SENDER_ADDRESS| |SENDER_CITY| |SENDER_STATE| |SENDER_ZIPCODE| |SENDER_COUNTRY|; and<br>
+(b)&nbsp;&nbsp;&nbsp; The Office of Party B for the Transaction is |RECEIVER_ADDRESS| |RECEIVER_CITY| |RECEIVER_STATE| |RECEIVER_ZIPCODE| |RECEIVER_COUNTRY|.
+</p>		
+<br>
+<p>This Confirmation supersedes and replaces any other confirmation (including a SWIFT Message or phone confirmation),
+if any, sent in connection with this Transaction on or prior to the date hereof.
+<br>
+Please confirm that the foregoing correctly sets forth the terms of our agreement
+by executing the copy of this Confirmation enclosed for that purpose and returning
+it to us or by sending us a letter substantially similar to this letter, which letter
+sets forth the material terms of the Swap Transaction to which this Confirmation
+relates and indicates your agreement to those terms.
+</p>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

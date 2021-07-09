@@ -1,0 +1,194 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+
+
+
+<p class=c-body>
+I am pleased to 
+<!--calypso>
+if (|MESSAGE_ACTION| == "amend") {
+  inline "confirm the amendment of the following |PRODUCT_FAMILY| trade:";
+} else {
+  inline "|MESSAGE_ACTION| the details of the following |PRODUCT_FAMILY| trade:";
+}
+</calypso-->
+</p>
+
+<p class=c-indent><u>Trade details:</u> <br>
+&nbsp; </p>
+
+<table border=0 cellpadding=0 style='mso-cellspacing:1.5pt;margin-left:25.0pt;
+ mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Our Trade Number<span style='color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_ID|<span style='color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Operation Type<span style='color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|PRODUCT_TYPE|<span style='color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Instrument Description<span style='color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|PRODUCT_DESCRIPTION|<span style='color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Buyer<span style='color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_BUYER_NAME|<span style='color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Seller<span style='color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_SELLER_NAME|<span style='color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Trade Date<span style='color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_DATE|<span style='color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Settlement Date<span style='color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|SETTLE_DATE|<span style='color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+<!--calypso>
+if (|PRINCIPAL_EXCHANGE_REQUIRED| == "Yes") {
+inline "
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Principal Exchange Required</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Yes</p>
+  </td>
+ </tr>
+";
+}
+</calypso-->
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Trade Amount<span style='color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|PRODUCT_CURRENCY| |TRADE_NOMINAL|<span style='color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Negociated Type</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_NEGOCIATEDPRICETYPE|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Negociated Price</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_NEGOCIATEDPRICE|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Clean Price<span style='color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_PRICE|<span style='color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Accrual</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_ACCRUAL|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Settlement Amount<span style='color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_SETTLEMENT_AMOUNT|<span style='color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Settlement Currency<span style='color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_SETTLECCY|<span style='color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<br>&nbsp;
+
+<!--calypso>
+if(|HAS_AMORTIZING| != "No") {
+inline "<table>
+	<tr>
+	<th><b><u>Calculation Period(s) Beginning</u></b></th>
+	<th><b><u>Notional Amount</u></b></th>
+	<th><b><u>Notional Reduction from Previous Calculation Period(s)</u></b></th>
+	</tr>
+";
+iterator("CashFlowInterest")
+	inline "	<tr>
+	<td>|CASHFLOW_CALCULATION_PERIOD_BEGINNING|</td><td>|CASHFLOW_NOTIONAL|</td><td>|CASHFLOW_NOTIONAL_REDUCTION|</td>
+	</tr>";
+inline "</table>";
+</calypso-->
+
+
+<p class=header2>Settlement Instructions are as follows:</p>
+<!--calypso>
+iterator("TransferRules")
+	inline "<table  width='100%'>
+    <tr><th width='30%'>|SETTLEMENT_ACTION|</th><th width='68%'>&nbsp;</th></tr>
+	<tr><td width='30%'>To:</td><td>|SETTLEMENT_TO|</td></tr>
+    <tr><td>|SETTLEMENT_ROUTING|</td><td>|SETTLEMENT_METHOD|</td></tr>
+	<tr><td>Favor of:</td><td>|SETTLEMENT_FAVOR_OF|</td></tr>
+	<tr><td>Account Number:</td><td>|SETTLEMENT_ACCOUNT_NUMBER|</td></tr>
+</table>";
+</calypso-->
+
+
+<p>Yours sincerely,</p>
+<p>|SENDER_FULL_NAME|</p>
+<p>|SENDER_CONTACT_NAME|</p>
+<p>|SENDER_TITLE| </p>
+
+</div>
+
+</body>
+
+</html>

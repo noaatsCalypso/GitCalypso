@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    <contents>
+        <include>
+            <expression>getReportValue("MX Business Area")+".content.xml"</expression>
+        </include>
+    </contents>
+</template>

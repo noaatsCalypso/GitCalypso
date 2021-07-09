@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+    <contents>
+        <element name="CAM0024" hideifempty="true">
+            <contents>
+                <element name="CodMsg">
+                    <contents>
+                        <text>
+                            <value>CAM0024</value>
+                        </text>
+                    </contents>
+                </element>
+                <element name="NumCtrlIF">
+                    <contents>
+                        <report>
+                            <column>MESSAGE_ID</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJBaseIF">
+                    <contents>
+                        <report>
+                            <column>FXCNPJBaseIF</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="RegOpCaml">
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.RegOpCaml</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="RDE">
+                    <condition>
+                        <expression>getReportValue("CHANGED_RDE") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.RDE</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="VlrEftTot">
+                    <condition>
+                        <expression>getReportValue("CHANGED_VLREFTTOT") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.VlrEftTot</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="PercACC">
+                    <condition>
+                        <expression>getReportValue("CHANGED_PERACC") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.PercACC</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodFatoNatu">
+                    <condition>
+                        <expression>getReportValue("CHANGED_CODFATONATU") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodFatoNatu</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodCliNatu">
+                    <condition>
+                        <expression>getReportValue("CHANGED_CODCLINATU") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>Cntp_Attr.CodCliNatu</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="IndrAvalNatu">
+                    <condition>
+                        <expression>getReportValue("CHANGED_INDRAVALNATU") != null </expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.IndrAvalNatu</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodPagdr_RecbdrExtrNatu">
+                    <condition>
+                        <expression>getReportValue("CHANGED_CODPAGDR_RECBDREXTRNATU") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodPagdr_RecbdrExtrNatu</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodGrpNatu">
+                    <condition>
+                        <expression>getReportValue("CHANGED_CODGRPNATU") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodGrpNatu</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodFormaEntrMoeda">
+                    <condition>
+                        <expression>getReportValue("CHANGED_CODFORMAENTRMOEDA_NONBRLATTRIBUTE") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>CODFORMAENTRMOEDA_NONBRLATTRIBUTE</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtLimLiquid">
+                    <condition>
+                        <expression>getReportValue("CHANGED_DTLIMLIQUID") != null</expression>
+                    </condition>
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>DTLIMLIQUID</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="TxtOtrEspecc">
+                    <condition>
+                        <expression>getReportValue("CHANGED_TXTOTRESPECC") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TXTOTRESPECC</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodClausEspfcoIF">
+                    <context>
+                        <to>SplitTradeKeywordCodClausEspfcoIF</to>
+                    </context>
+                    <condition>
+                        <expression>getReportValue("CHANGED_CODCLAUSESPFCOIF") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodClausEspfcoIF</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodPaisPagdr_RecbdrExtr">
+                    <condition>
+                        <expression>getReportValue("CHANGED_CODPAISCPTY") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>CODPAISCPTY</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="NomPagdr_RecbdrExtr">
+                    <condition>
+                        <expression>getReportValue("CHANGED_NOMPAGDR_RECBDREXTR") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>CounterParty.Full Name</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="TpRelcVinc">
+                    <condition>
+                        <expression>getReportValue("CHANGED_TPRELCVINC") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.TpRelcVinc</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodFormaEntrMN">
+                    <condition>
+                        <expression>getReportValue("CHANGED_CODFORMAENTRMOEDA_BRLATTRIBUTE") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>CODFORMAENTRMOEDA_BRLATTRIBUTE</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtEntrMN">
+                    <condition>
+                        <expression>getReportValue("CHANGED_DTENTRMN") != null</expression>
+                    </condition>
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>BRLSETTLEDATE</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="ISPBIFPgto">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") == "C" &amp;&amp; getReportValue("CHANGED_ISPBIFPGTO") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>ISPBIFPgto</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="AgIFPaisPgto">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") == "C" &amp;&amp; getReportValue("CHANGED_AGIFPAISPGTO") != null</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>AGIFPAISPGTO</column>   <!--  SDI attribute named AGIFPaisPgto - Foreign ccy SDI -->
+                        </report>
+                    </contents>
+                </element>
+                <element name="CtIFPaisPgTo">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") == "C"  &amp;&amp; getReportValue("CHANGED_CTIFPAISPGTO") != null</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>ACCNTNUMBERAGENT</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodSwiftIFBenfcrio">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") != "C"  &amp;&amp; getReportValue("CHANGED_CODSWIFTIFBENFCRIO") != null</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>SWIFTCPTYAGENTCODE</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="NomIFBenfcrio">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") != "C"  &amp;&amp; getReportValue("CHANGED_NOMIFBENFCRIO") != null</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>NOMIFBENFCRIO</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CtBenfcrio">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") != "C"  &amp;&amp; getReportValue("CHANGED_CTBENFCRIO") != null</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>BENFCRIOACNUMBER</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodSwiftINT">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") != "C" &amp;&amp; getReportValue("CHANGED_CODSWIFTINT") != null</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>CODESWIFTINTERM</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="NomINT">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") != "C"  &amp;&amp; getReportValue("CHANGED_NOMINT") != null</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>LONGNAMEINT</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CtIFBenfcrioINT">
+                    <condition>
+                        <expression>getReportValue("TPOPCAM") != "C" &amp;&amp; getReportValue("CHANGED_CTIFBENFCRIOINT") != null</expression> <!-- TPOPCAM is equals to 'C' when we buy the Foreig ccy -->
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>ACCNTNUMBERINTERM</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtMovto">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>TODAY</column>
+                        </report>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

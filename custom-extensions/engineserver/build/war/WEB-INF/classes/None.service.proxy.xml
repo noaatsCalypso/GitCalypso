@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+  	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+		  		
+	<bean id="remoteProxy" class="com.calypso.infra.proxy.ProxyCreator" abstract="true" init-method="init">
+		<property name="interceptors">
+		<list>
+			<ref bean="profilingInterceptor" />
+		</list>
+		</property>
+	</bean>
+	
+	<bean id="localProxy" class="com.calypso.infra.proxy.ProxyCreator" abstract="true">
+		<property name="interceptors">
+		<list>
+		</list>
+		</property>
+	</bean>
+
+
+
+
+	
+</beans>

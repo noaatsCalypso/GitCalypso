@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 292: Request for Cancellation -->
+<SwiftMsgDef>
+    <Name>MT292</Name>
+    <ModeSelectionList>
+        <ModeSelection qualifier="NEW" />
+        <ModeSelection qualifier="AMEND" />
+        <ModeSelection qualifier="CANCEL" />
+    </ModeSelectionList>
+    <SwiftSequence name="A:General Information" modes="MMM">
+        <SwiftField name="Sender's Reference" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM" />
+        <SwiftField name="Related Reference" tag=":21:" format="16x" value="MESSAGE_LINKEDID" modes="OMM" />
+	 <SwiftField name="MT and Date of the Original Message" tag=":11S:" format="3!n\n6!n[\n4!n6!n]" value="ORIGINAL_MT_AND_DATE" modes="MMM" />
+	 <SwiftField name="Copy of at least the Mandatory Fields of the Original Message" tag="" value="COPY_OF_ORIGINAL" modes="OOO" />
+ </SwiftSequence>
+</SwiftMsgDef>

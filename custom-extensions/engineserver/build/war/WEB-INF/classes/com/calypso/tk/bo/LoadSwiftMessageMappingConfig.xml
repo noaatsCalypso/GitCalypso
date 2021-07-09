@@ -1,0 +1,29 @@
+<BONamedQueries>
+    <BONamedQuery name="LoadSwiftMessageMappingConfig" paramCount="0" putInCache="true">
+        <description>Prepared Statement Query to load SwiftMessageMappingConfig</description>
+        <idColumn>swift_message_mapping_config.id</idColumn>
+        <from>swift_message_mapping_config</from>
+        <where><![CDATA[1=1]]></where>
+        <OptionalCondition name="id" paramCount="1">
+            <condition><![CDATA[(swift_message_mapping_config.id = ?)]]></condition>
+        </OptionalCondition>
+        <OptionalCondition name="template" paramCount="1">
+            <condition><![CDATA[(swift_message_mapping_config.template = ?)]]></condition>
+        </OptionalCondition>
+        <OptionalCondition name="agent_id" paramCount="1">
+            <condition><![CDATA[(swift_message_mapping_config.agent_id = ?)]]></condition>
+        </OptionalCondition>
+        <OptionalCondition name="po_id" paramCount="1">
+            <condition><![CDATA[(swift_message_mapping_config.po_id = ?)]]></condition>
+        </OptionalCondition>
+        <OptionalCondition name="book_id" paramCount="1">
+            <condition><![CDATA[(swift_message_mapping_config.book_id = ?)]]></condition>
+        </OptionalCondition>
+        <OptionalCondition name="cpty_id" paramCount="1">
+            <condition><![CDATA[(swift_message_mapping_config.cpty_id = ?)]]></condition>
+        </OptionalCondition>
+        <OptionalCondition name="product" paramCount="1">
+            <condition><![CDATA[(swift_message_mapping_config.product = ?)]]></condition>
+        </OptionalCondition>        
+    </BONamedQuery>
+</BONamedQueries>

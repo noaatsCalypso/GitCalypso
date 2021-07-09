@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:broker="http://activemq.apache.org/schema/core"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+       http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd
+       http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
+       
+	<bean id="source" parent="lljms" >
+		<!-- TODO: Figure out how to set the incoming consumer count from the service properties file -->
+		<!-- TODO: Actually, expectation is that you will leave the defaults as-is, so you won't set
+		in the env file. Therefore, for incoming feeds where it can handle more consumers, you can just
+		set the env value in the start script itself. Or, we can add new param for start node java code. -->
+		<!-- In most cases this should be set to 1 so that messages are taken off the queue in sequence. -->
+		<!-- Individual <service>Service.properties files should override where appropriate. -->
+		<property name="concurrentConsumers" value="${INCOMING_CONSUMERCOUNT:1}" />
+		<property name="maxConcurrentConsumers" value="${INCOMING_CONSUMERCOUNT:1}" />
+	</bean>
+	
+	<!-- Sample for setting up Active MQ connection to External Queue -->
+	<!-- Minimum customization required: brokerURL -->
+	<!-- 
+	<bean id="amqSource" parent="amqjms" >
+		<property name="concurrentConsumers" value="${INCOMING_CONSUMERCOUNT:1}" />
+		<property name="maxConcurrentConsumers" value="${INCOMINGL_CONSUMERCOUNT:1}" />
+	</bean>
+	
+	<bean id="amqjms" class="org.apache.camel.component.jms.JmsComponent" parent="amqBaseJMS">
+	</bean>
+	
+	<bean abstract="true" id="amqBaseJMS">
+		<property name="transferExchange" value="false" />
+		<property name="connectionFactory" ref="amqJmsConnectionFactory" />
+		<property name="transactionManager" ref="amqJmstxManager" />
+		<property name="transacted" value="true" />
+		<property name="autoStartup" value="true" />
+		<property name="concurrentConsumers" value="3" />
+		<property name="maxConcurrentConsumers" value="3" />
+		<property name="receiveTimeout" value="3" />
+		<property name="cacheLevelName" value="CACHE_CONSUMER" />
+	</bean>
+	
+	<bean id="amqJmsConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory">
+		<property name="maximumActiveSessionPerConnection" value="20" />
+		<property name="maxConnections" value="10" />
+		<property name="connectionFactory" ref="amqConnectionFactoryBase" />
+	</bean>
+	
+	<bean id="amqConnectionFactoryBase" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="tcp://localhost:61917"/>
+		<property name="useCompression" value="false" />
+		<property name="useAsyncSend" value="false" />
+		<property name="copyMessageOnSend" value="false" />
+		<property name="optimizeAcknowledge" value="true" />
+		<property name="dispatchAsync" value="true" />
+		<property name="sendAcksAsync" value="true" />
+		<property name="prefetchPolicy">
+			<bean class="org.apache.activemq.ActiveMQPrefetchPolicy">
+				<property name="topicPrefetch" value="32766" />
+				<property name="queuePrefetch" value="100" />
+			</bean>
+		</property>
+		<property name="redeliveryPolicy">
+			<bean class="org.apache.activemq.RedeliveryPolicy">
+				<property name="maximumRedeliveries" value="1" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="amqJmstxManager"
+		class="org.springframework.jms.connection.JmsTransactionManager">
+		<property name="connectionFactory" ref="amqJmsConnectionFactory" />
+	</bean>
+	-->
+	
+	<!-- Sample for setting up IBM MQ connection to External Queue -->
+	<!-- Minimum customization required: hostName, port, queueManager, channel -->
+	<!-- 
+	<bean id="ibmSource" parent="wmq">
+		<property name="concurrentConsumers" value="${INCOMING_CONSUMERCOUNT:1}"/>
+		<property name="maxConcurrentConsumers" value="${INCOMING_CONSUMERCOUNT:1}"/>
+	</bean> 
+	
+	<bean id="wmq" class="org.apache.camel.component.jms.JmsComponent">
+		<property name="connectionFactory" ref="cachedConnectionFactory"/>
+	</bean>
+	
+	<bean id="cachedConnectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+		<property name="targetConnectionFactory" ref="jmsConnectionFactory"/>
+		<property name="sessionCacheSize" value="10"/>
+	</bean>
+	
+	<bean id="jmsConnectionFactory" class="com.ibm.mq.jms.MQQueueConnectionFactory">
+		<property name="transportType" value="1"/>
+		<property name="hostName" value="localhost"/>
+		<property name="port" value="1414"/>		
+		<property name="queueManager" value="CALYPSO"/>e
+		<property name="channel" value="CALYPSO_CHANNEL"/>
+	</bean>
+	-->
+	<!-- AMQ STANDALONE BROKER. This is NOT the LLM broker, but an external, separate one -->
+	<!-- 
+	<bean id="amqSource" parent="amqjms">
+		<property name="concurrentConsumers" value="${INCOMING_CONSUMERCOUNT:1}"/>
+		<property name="maxConcurrentConsumers" value="${INCOMINGL_CONSUMERCOUNT:1}"/>
+	</bean>
+	<bean class="org.apache.camel.component.jms.JmsComponent" id="amqjms" parent="amqBaseJMS"/>
+	<bean abstract="true" id="amqBaseJMS">
+		<property name="transferExchange" value="false"/>
+		<property name="connectionFactory" ref="amqJmsConnectionFactory"/>
+		<property name="transactionManager" ref="amqJmstxManager"/>
+		<property name="transacted" value="true"/>
+		<property name="autoStartup" value="true"/>
+		<property name="concurrentConsumers" value="3"/>
+		<property name="maxConcurrentConsumers" value="3"/>
+		<property name="receiveTimeout" value="3"/>
+		<property name="cacheLevelName" value="CACHE_CONSUMER"/>
+	</bean>
+	<bean class="org.apache.activemq.pool.PooledConnectionFactory" id="amqJmsConnectionFactory">
+		<property name="maximumActiveSessionPerConnection" value="20"/>
+		<property name="maxConnections" value="10"/>
+		<property name="connectionFactory" ref="amqConnectionFactoryBase"/>
+	</bean>
+	<bean class="org.apache.activemq.ActiveMQConnectionFactory" id="amqConnectionFactoryBase">
+		property name="brokerURL" value="failover:(tcp://sfclearing2.calypso.com:41616)"/>
+		<property name="useCompression" value="false"/>
+		<property name="useAsyncSend" value="false"/>
+		<property name="copyMessageOnSend" value="false"/>
+		<property name="optimizeAcknowledge" value="true"/>
+		<property name="dispatchAsync" value="true"/>
+		<property name="sendAcksAsync" value="true"/>
+		<property name="prefetchPolicy">
+			<bean class="org.apache.activemq.ActiveMQPrefetchPolicy">
+				<property name="topicPrefetch" value="32766"/>
+				<property name="queuePrefetch" value="100"/>
+			</bean>
+		</property>
+		<property name="redeliveryPolicy">
+			<bean class="org.apache.activemq.RedeliveryPolicy">
+				<property name="maximumRedeliveries" value="1"/>
+			</bean>
+		</property>
+	</bean>
+	<bean class="org.springframework.jms.connection.JmsTransactionManager" id="amqJmstxManager">
+		<property name="connectionFactory" ref="amqJmsConnectionFactory"/>
+	</bean>-->
+
+	<!-- EUREX SETTINGS
+
+	<bean id="eurexSource" parent="eurexamqp">
+		<property name="concurrentConsumers" value="${INCOMING_CONSUMERCOUNT:1}"/>
+		<property name="maxConcurrentConsumers" value="${INCOMING_CONSUMERCOUNT:1}"/>
+	</bean>
+	
+	<bean id="eurexamqp" class="org.apache.camel.component.amqp.AMQPComponent">
+		<property name="connectionFactory" ref="amqpConnectionFactory"/>
+	</bean>
+	<bean id="amqpConnectionFactory" class="org.springframework.jndi.JndiObjectFactoryBean">
+      <property name="jndiName" value="qpidConnectionfactory" />
+      <property name="jndiTemplate" ref="jndiTemplate" />
+   </bean>
+   <bean id="jndiDestinationResolver" class="org.springframework.jms.support.destination.JndiDestinationResolver">
+      <property name="jndiTemplate" ref="jndiTemplate" />
+   </bean>
+	<bean id="jndiTemplate" class="org.springframework.jndi.JndiTemplate">
+      <property name="environment">
+         <bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+            <property name="location" value="classpath:eurex.properties" />
+         </bean>
+      </property>
+   </bean>
+ -->
+ <!--
+	<bean id="eurexetdSource" parent="eurexetdamqp">
+		<property name="concurrentConsumers" value="${EUREXETD_INCOMING_CONSUMERCOUNT:1}"/>
+		<property name="maxConcurrentConsumers" value="${EUREXETD_INCOMING_CONSUMERCOUNT:1}"/>
+	</bean>
+	<bean id="eurexetdamqp" class="org.apache.camel.component.amqp.AMQPComponent">
+		<property name="connectionFactory" ref="etdamqpConnectionFactory"/>
+	</bean>
+	<bean id="etdamqpConnectionFactory" class="org.springframework.jndi.JndiObjectFactoryBean">
+      <property name="jndiName" value="etdqpidConnectionfactory" />
+      <property name="jndiTemplate" ref="etdjndiTemplate" />
+   </bean>
+   <bean id="etdjndiDestinationResolver" class="org.springframework.jms.support.destination.JndiDestinationResolver">
+      <property name="jndiTemplate" ref="etdjndiTemplate" />
+   </bean>
+	<bean id="etdjndiTemplate" class="org.springframework.jndi.JndiTemplate">
+      <property name="environment">
+         <bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+            <property name="location" value="classpath:eurexetd.properties" />
+         </bean>
+      </property>
+   </bean>
+   -->
+</beans>

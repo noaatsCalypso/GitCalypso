@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+	<contents>		
+		<element name="RcvgSttlmPties">
+			<contents>
+				<element name="Dpstry">
+					<contents>
+						<element name="AnyBIC">
+							<contents max="1">
+								<report>
+									<column>Receiver.Intermediary2.Swift</column>
+								</report>
+								<report>
+									<column>Receiver.Intermediary.Swift</column>
+								</report>
+								<report>
+									<column>Receiver.Agent.Swift</column>
+								</report>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="Pty1">
+					<contents>
+						<element name="PtyId">
+							<contents max="1">
+                                <element name="PrtryId" hideifempty="true">
+                                    <contents>
+                                        <element name="Id" hideifempty="true">
+                                            <contents max="1">
+                                                <report>
+                                                    <condition>
+                                                        <expression>!isEmpty(getReportValue("Receiver.Intermediary2.Name")) </expression>
+                                                    </condition>
+                                                    <column>Receiver.Intermediary.Identifier</column>
+                                                    <transformations>
+                                                        <transformation type="regexp">
+                                                            <from>^.*/</from>
+                                                            <to></to>
+                                                        </transformation>
+                                                    </transformations>
+                                                </report>
+                                                <report>
+                                                    <condition>
+                                                        <expression>isEmpty(getReportValue("Receiver.Intermediary2.Identifier")) &amp;&amp; !isEmpty(getReportValue("Receiver.Intermediary.Name")) </expression>
+                                                    </condition>
+                                                    <column>Receiver.Agent.Identifier</column>
+                                                    <transformations>
+                                                        <transformation type="regexp">
+                                                            <from>^.*/</from>
+                                                            <to></to>
+                                                        </transformation>
+                                                    </transformations>
+                                                </report>
+                                                <report>
+                                                    <column>RECEIVER_SDI_BENEFICIARY_IDENTIFIER</column>
+                                                    <transformations>
+                                                        <transformation type="regexp">
+                                                            <from>^.*/</from>
+                                                            <to></to>
+                                                        </transformation>
+                                                    </transformations>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Issr">
+                                            <contents max="1">
+                                                <report>
+                                                    <condition>
+                                                        <expression>!isEmpty(getReportValue("Receiver.Intermediary2.Name")) </expression>
+                                                    </condition>
+                                                    <column>Receiver.Intermediary.Identifier</column>
+                                                    <transformations>
+                                                        <transformation type="regexp">
+                                                            <from>/.*$</from>
+                                                            <to></to>
+                                                        </transformation>
+                                                    </transformations>
+                                                </report>
+                                                <report>
+                                                    <condition>
+                                                        <expression>isEmpty(getReportValue("Receiver.Intermediary2.Identifier")) &amp;&amp; !isEmpty(getReportValue("Receiver.Intermediary.Name")) </expression>
+                                                    </condition>
+                                                    <column>Receiver.Agent.Identifier</column>
+                                                    <transformations>
+                                                        <transformation type="regexp">
+                                                            <from>/.*$</from>
+                                                            <to></to>
+                                                        </transformation>
+                                                    </transformations>
+                                                </report>
+                                                <report>
+                                                    <column>RECEIVER_SDI_BENEFICIARY_IDENTIFIER</column>
+                                                    <transformations>
+                                                        <transformation type="regexp">
+                                                            <from>/.*$</from>
+                                                            <to></to>
+                                                        </transformation>
+                                                    </transformations>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                                <element name="AnyBIC">
+                                    <contents max="1">
+                                        <report>
+                                            <condition>
+                                                <expression>!isEmpty(getReportValue("Receiver.Intermediary2.Name")) &amp;&amp; isEmpty(getReportValue("Receiver.Intermediary.Identifier")) </expression>
+                                            </condition>
+                                            <column>Receiver.Intermediary.Swift</column>
+                                        </report>
+                                        <report>
+                                            <condition>
+                                                <expression>isEmpty(getReportValue("Receiver.Intermediary2.Name")) &amp;&amp; !isEmpty(getReportValue("Receiver.Intermediary.Name")) &amp;&amp; isEmpty(getReportValue("Receiver.Agent.Identifier"))</expression>
+                                            </condition>
+                                            <column>Receiver.Agent.Swift</column>
+                                        </report>
+                                        <report>
+                                            <condition>
+                                                <expression>isEmpty(getReportValue("RECEIVER_SDI_BENEFICIARY_IDENTIFIER"))</expression>
+                                            </condition>
+                                            <column>RECEIVER_SDI_BENEFICIARY_SWIFT</column>
+                                        </report>
+                                    </contents>
+                                </element>
+							</contents>
+						</element>
+                        <element name="AcctId"  hideifempty="true">
+                            <contents max="1">
+                                <report>
+                                    <condition>
+                                        <expression>getReportValue("Receiver.SDIAttributes.Colr007AgentAccount") == "Allowed" &amp;&amp; !isEmpty(getReportValue("Receiver.Intermediary2.Name"))</expression>
+                                    </condition>
+                                    <column>Receiver.Intermediary2.Account</column>
+                                </report>
+                                <report>
+                                    <condition>
+                                        <expression>getReportValue("Receiver.SDIAttributes.Colr007AgentAccount") == "Allowed" &amp;&amp; !isEmpty(getReportValue("Receiver.Intermediary.Name"))</expression>
+                                    </condition>
+                                    <column>Receiver.Intermediary.Account</column>
+                                </report>
+                                <report>
+                                    <condition>
+                                        <expression>getReportValue("Receiver.SDIAttributes.Colr007AgentAccount") == "Allowed"</expression>
+                                    </condition>
+                                    <column>Receiver.Agent.Account</column>
+                                </report>
+                            </contents>
+                        </element>
+					</contents>
+				</element>
+				<element name="Pty2">
+                    <condition>
+                        <expression>!isEmpty(getReportValue("Receiver.Intermediary.Name"))</expression>
+                    </condition>
+					<contents>
+						<element name="Id">
+							<contents max="1">
+                                <element name="PrtryId" hideifempty="true">
+                                    <contents>
+                                        <element name="Id" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>RECEIVER_SDI_BENEFICIARY_IDENTIFIER</column>
+                                                    <transformations>
+                                                        <transformation type="regexp">
+                                                            <from>^.*/</from>
+                                                            <to></to>
+                                                        </transformation>
+                                                    </transformations>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Issr" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>RECEIVER_SDI_BENEFICIARY_IDENTIFIER</column>
+                                                    <transformations>
+                                                        <transformation type="regexp">
+                                                            <from>/.*$</from>
+                                                            <to></to>
+                                                        </transformation>
+                                                    </transformations>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                                <element name="BIC">
+                                    <contents>
+                                        <report>
+                                            <column>Sender.Swift</column>
+                                        </report>
+                                    </contents>
+                                </element>
+							</contents>
+						</element>
+						<element name="AltrnId" hideifempty="true">
+                            <condition>
+                                <expression>isItalianBond()</expression>
+                            </condition>
+							<contents>
+								<element name="IdTp" hideifempty="true">
+									<contents>
+										<element name="Cd"  hideifempty="true">
+											<contents>
+												<text>
+													<value>TXID</value>
+												</text>
+											</contents>
+										</element>
+									</contents>
+								</element>
+								<element name="Ctry" hideifempty="true">
+									<contents>
+										<text>
+											<value>IT</value>
+										</text>
+									</contents>
+								</element>
+                                <element name="AltrnId"  hideifempty="true">
+                                    <contents max="1">
+                                        <report>
+                                            <column>MCC_ADDITIONAL_ATTR_IT_TAX_ID</column>
+                                        </report>
+                                        <report>
+                                            <column>PO_Attr.IT_TAX_ID</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                            </contents>
+						</element>
+                        <element name="SfkpgAcct" hideifempty="true">
+                            <contents>
+                                <report>
+                                    <condition>
+                                        <expression>getReportValue("Receiver.SDIAttributes.Colr007BeneficiaryAccount") == "Allowed"</expression>
+                                    </condition>
+                                    <column>Receiver.Agent.Account</column>
+                                </report>
+                            </contents>
+                        </element>
+					</contents>
+				</element>
+			</contents>
+		</element>
+	</contents>
+</template>

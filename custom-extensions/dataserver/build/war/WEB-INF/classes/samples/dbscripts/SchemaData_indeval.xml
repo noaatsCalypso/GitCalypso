@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+<table name="domain_values" xmlns="">
+		<row cat="domain">
+            <column name="name">messageType </column>
+            <column name="value">REGISTRATION</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">messageType </column>
+            <column name="value">INC_REGISTRATION</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">messageType </column>
+            <column name="value">SEC_STATEMENT_REQUEST</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">messageType </column>
+            <column name="value">STATEMENT_REQUEST</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">SWIFT.Templates</column>
+            <column name="value">MT501INDEVAL</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">ExternalMessageField.MessageMapper</column>
+            <column name="value">MT548INDEVAL</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">messageType</column>
+            <column name="value">SEC_STATEMENT_REQUEST</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">messageType</column>
+            <column name="value">STATEMENT_REQUEST</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">workflowRuleMessage</column>
+            <column name="value">AckRepoEndLeg</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">addressMethod</column>
+            <column name="value">INDEVALParticipant</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">addressMethod</column>
+            <column name="value">ReferenceNumber</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">incomingStatus</column>
+            <column name="value">IPRC//PACK</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">incomingStatus</column>
+            <column name="value">IPRC//REJT</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">incomingStatus</column>
+            <column name="value">RERC//PACK</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">incomingStatus</column>
+            <column name="value">RERC//REJT</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">messageType</column>
+            <column name="value">REGISTRATION</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+            <column name="name">messageType</column>
+            <column name="value">INC_REGISTRATION</column>
+            <column name="description"></column>
+        </row>
+		<row cat="domain">
+			<column name="name">incomingType</column>
+			<column name="value">MT501</column>
+			<column name="description">INC_REGISTRATION</column>
+	  	</row>
+		<row cat="domain">
+			<column name="name">incomingType</column>
+			<column name="value">MT510</column>
+			<column name="description">INC_REGISTRATION</column>
+	  	</row>	
+		<row cat="domain">
+            <column name="name">MsgAttributes</column>
+            <column name="value">AgentRef</column>
+            <column name="description">AgentRef for MT510</column>
+		</row>
+		
+		<row cat="domain">
+            <column name="name">MsgAttributes</column>
+            <column name="value">PORef</column>
+            <column name="description">PORef for MT510</column>
+		</row>
+		
+		<row cat="domain">
+            <column name="name">MsgAttributes</column>
+            <column name="value">Matching_Function</column>
+            <column name="description">Matching_Function for MT510</column>
+		</row>
+		
+		<row cat="domain">
+            <column name="name">MsgAttributes</column>
+            <column name="value">Security Code</column>
+            <column name="description">Security Code for MT510</column>
+		</row>
+		
+		<row cat="domain">
+            <column name="name">MsgAttributes</column>
+            <column name="value">PO Account</column>
+            <column name="description">PO Account for MT510</column>
+		</row>
+
+		<row cat="domain">
+            <column name="name">MsgAttributes</column>
+            <column name="value">Message_Function</column>
+            <column name="description">Message_Function for MT510</column>
+		</row>
+		
+		<row cat="domain">
+            <column name="name">MsgAttributes</column>
+            <column name="value">RejectReason</column>
+            <column name="description">RejectReason for MT510</column>
+		</row>
+		
+		<row cat="domain">
+            <column name="name">MsgAttributes</column>
+            <column name="value">PREP_Date</column>
+            <column name="description">PREP_Date for MT510</column>
+		</row>
+		<row cat="domain">
+            <column name="name">MsgAttributes</column>
+            <column name="value">Matching_Status</column>
+            <column name="description">Matching_Status for MT510</column>
+		</row>
+		<row cat="domain">
+				<column name="name">MsgAttributes</column>
+				<column name="value">Matching_Reason</column>
+				<column name="description">Matching_Reason for MT510</column>
+		</row>		
+		<row cat="startup">
+            <column name="name">gateway</column>
+            <column name="value">INDEVAL</column>
+            <column name="description">gateway for indeval</column>
+        </row>
+		<row cat="startup">
+            <column name="name">addressMethod</column>
+            <column name="value">INDEVALCertificate</column>
+            <column name="description">address method for indeval certificate</column>
+        </row>
+		<row cat="startup">
+            <column name="name">leAttributeType</column>
+            <column name="value">INDEVALSender</column>
+            <column name="description">INDEVALSender for indeval</column>
+        </row>
+		<row cat="startup">
+            <column name="name">leAttributeType</column>
+            <column name="value">INDEVALReceiver</column>
+            <column name="description">INDEVALReceiver for indeval</column>
+        </row>
+		<row cat="startup">
+            <column name="name">SWIFT.Templates</column>
+            <column name="value">MT103INDEVAL</column>
+            <column name="description">MT103 for INDEVAL</column>
+        </row>
+		<row cat="startup">
+            <column name="name">SWIFT.Templates</column>
+            <column name="value">MT202INDEVAL</column>
+            <column name="description">MT202 for INDEVAL</column>
+        </row>
+		<row cat="startup">
+            <column name="name">SWIFT.Templates</column>
+            <column name="value">MT210INDEVAL</column>
+            <column name="description">MT210 for INDEVAL</column>
+        </row>
+		<row cat="startup">
+            <column name="name">SWIFT.Templates</column>
+            <column name="value">MT500INDEVAL</column>
+            <column name="description">MT500 for INDEVAL</column>
+        </row>
+		<row cat="startup">
+            <column name="name">SWIFT.Templates</column>
+            <column name="value">MT540INDEVAL</column>
+            <column name="description">MT540 for INDEVAL</column>
+        </row>
+		<row cat="startup">
+            <column name="name">SWIFT.Templates</column>
+            <column name="value">MT541INDEVAL</column>
+            <column name="description">MT541 for INDEVAL</column>
+        </row>
+		<row cat="startup">
+            <column name="name">SWIFT.Templates</column>
+            <column name="value">MT542INDEVAL</column>
+            <column name="description">MT542 for INDEVAL</column>
+        </row>
+		<row cat="startup">
+            <column name="name">SWIFT.Templates</column>
+            <column name="value">MT543INDEVAL</column>
+            <column name="description">MT543 for INDEVAL</column>
+        </row>
+		<row cat="startup">
+            <column name="name">SWIFT.Templates</column>
+            <column name="value">PaymentINDEVAL.selector</column>
+            <column name="description">PaymentINDEVALTemplateSelector</column>
+        </row>
+		<row cat="startup">
+            <column name="name">SWIFT.Templates</column>
+            <column name="value">SecuritiesINDEVAL.selector</column>
+            <column name="description">SecuritiesINDEVALTemplateSelector</column>
+        </row>
+		<row cat="startup">
+            <column name="name">securityCode</column>
+            <column name="value">_tipoValor</column>
+            <column name="description"></column>
+        </row>
+		<row cat="startup">
+            <column name="name">securityCode</column>
+            <column name="value">_clavePizarra</column>
+            <column name="description"></column>
+        </row>
+		<row cat="startup">
+            <column name="name">securityCode</column>
+            <column name="value">_serie</column>
+            <column name="description"></column>
+        </row>
+		<row cat="workflow">
+		  <column name="name">workflowRuleMessage</column>
+		  <column name="value">HandleAckNakIndeval</column>
+		  <column name="description"/>
+		</row>
+		<row cat="workflow">
+		  <column name="name">workflowRuleMessage</column>
+		  <column name="value">MatchIncomingRegistration</column>
+		  <column name="description"/>
+		</row>
+		<row cat="INDEVALNackReason">
+	<column name="name">INDEVALNackReason</column>
+	<column name="value">I01</column>
+	<column name="description">Firma digital invalida.</column>
+		</row>
+		<row cat="startup">
+					<column name="name">domainName</column>
+					<column name="value">INDEVALNackReason</column>
+					<column name="description">ack nak codes for indeval</column>
+				</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I02</column>
+			<column name="description">No existe el tipo valor o el ISIN.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I03</column>
+			<column name="description">Tipo de operación o instrucción invalido.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I04</column>
+			<column name="description">Error al leer el mensaje.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I05</column>
+			<column name="description">Primer mensaje fuera de secuencia.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I06</column>
+			<column name="description">Mensaje fuera de secuencia.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I07</column>
+			<column name="description">Mensaje con secuencia invalida.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I08</column>
+			<column name="description">Mensaje repetido.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I09</column>
+			<column name="description">Mensaje invalido.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I10</column>
+			<column name="description">Error al guardar el mensaje.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I11</column>
+			<column name="description">Guardado no exitoso.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I12</column>
+			<column name="description">La secuencia del mensaje debe ser numérica.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I13</column>
+			<column name="description">La referencia de la operación es inválida.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I14</column>
+			<column name="description">Error al validar la cuenta.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I15</column>
+			<column name="description">Error de modulo de seguridad.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I16</column>
+			<column name="description">Num. Reintentos excedido.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I17</column>
+			<column name="description">Credencial deshabilitada.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I18</column>
+			<column name="description">Error al validare el mensaje.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I19</column>
+			<column name="description">Prohibido operar cuentas de garantías.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I20</column>
+			<column name="description">Prohibido operar cuentas de la contraparte central de valores.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I21</column>
+			<column name="description">Mensaje invalido. Debe estar en modo sincronizado.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I22</column>
+			<column name="description">El máximo de folios permitidos en el RIF es de 100.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I23</column>
+			<column name="description">El máximo de folios permitidos en el SUF es de 100.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I24</column>
+			<column name="description">No se permite hacer depósitos a estas cuentas de división internacional.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I25</column>
+			<column name="description">El mensaje fue recibido fuera de horario.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I26</column>
+			<column name="description">No existe la cuenta nombrada:</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I27</column>
+			<column name="description">No fue posible generar el ISIN para el mensaje de salida.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I28</column>
+			<column name="description">No fue posible obtener la etiqueta del mensaje XML.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I29</column>
+			<column name="description">No existe la institución con id y folio:</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I30</column>
+			<column name="description">La cuenta CLABE de efectivo no es válida en su longitud.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I31</column>
+			<column name="description">La cuenta CLABE de efectivo no es válida o no corresponde.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I33</column>
+			<column name="description">No se permite operar este tipo valor.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I34</column>
+			<column name="description">Tipo mensaje no valido en modo no sincronizado:</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I35</column>
+			<column name="description">Se requiere un rango de fechas.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I36</column>
+			<column name="description">Los rangos de folios son incorrectos.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I37</column>
+			<column name="description">Banxico no puede solicitar el depósito de garantías.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I38</column>
+			<column name="description">Banxico no puede confirmar retiro de garantías.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I39</column>
+			<column name="description">El participante no puede solicitar el retiro de garantías.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I40</column>
+			<column name="description">El participante no puede confirmar el depósito de garantías.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I41</column>
+			<column name="description">La cuenta no es operable por el participante.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I44</column>
+			<column name="description">Divisa no valida en Indeval.</column>
+		</row>
+		<row cat="INDEVALNackReason">
+			<column name="name">INDEVALNackReason</column>
+			<column name="value">I45</column>
+			<column name="description">Bóveda no valida en Indeval.</column>
+		</row>
+
+	</table>
+	 	
+</database>
+

@@ -1,0 +1,358 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+
+<!--calypso>
+if (|PRODUCT_TYPE| == "IslamicSwap")
+   set TRANSACTION_TYPE = "Profit Rate Swap";
+else
+   set TRANSACTION_TYPE = |PRODUCT_TYPE|;
+</calypso-->
+
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" || |MESSAGE_SUBACTION|== "CANCEL")
+	inline  "Amend and Cancel";
+</calypso-->
+</p>
+
+<p class="header1"> |PAYLEG_TYPE| Leg |TRANSACTION_TYPE| Confirmation</p>
+<p class="header1"> |PRODUCT_NAME| involving |PRODUCT_STRUCTURE| Structure </p>
+
+
+<br>
+<p>Our Transaction Reference: |TRADE_ID|</p>
+<br>
+
+<p class="indented">
+The purpose of this 
+<!--calypso>
+if ( Message.getAddressMethod() == "FAX" )
+    inline "facsimile";
+else
+    inline "letter";
+</calypso-->
+(this " DFT terms confirmation") is to confirm the terms and conditions of the DFT Terms Agreement
+entered into between us on the Trade Date specified below.
+
+</p>
+<!--calypso>
+	if (|MESSAGE_SUBACTION|== "AMEND")
+	 inline "<p>This Confirmation cancels and supersedes the previous confirmation under the same reference.</p>";
+	else if (|MESSAGE_SUBACTION|== "CANCEL")
+	 inline "<p>This Confirmation cancels the previous confirmation under the same reference.</p>";
+</calypso-->
+
+
+<p class="indented">
+<!--calypso>
+
+if ( |MASTER_AGREEMENT| != "ISDA/IIFM" || |LA_STATUS| == "SIGNED" ) {
+    inline "This Confirmation constitutes a &quot;DFT Terms confirmation&quot; as referred to in, and 
+supplements, forms part of, and is subject to, the |LA_ISDA_AGREEMENT| (ISDA/IIFM Tahawwut Master Agreement)
+dated as of |LA_AGREEMENT_DATE|, as amended and supplemented from time to time (the &quot;Agreement&quot;), 
+between you and us. All provisions contained in the Agreement govern this DFT Terms confirmation except as expressly 
+modified below.  
+    ";
+}
+</calypso-->
+</p>
+
+<p class="indented">
+The definitions and provisions contained in Part 2 (Definitions and General Provisions)of this DFT Terms
+confirmation apply to the DFT Terms confirmation, this DFT Terms Agreement and each Transaction entered
+into pursuant to this DFT terms Agreement. Where this DFT terms confirmation
+contemplates entry into more than one Designated Future transaction, then, notwithstanding such entry
+into a Transaction, this DFT Terms confirmation and this DFT Terms Agreement shall remain in full
+force and effect as, respectively, a DFT Terms confirmation and a DFT Terms Agreement in respect of
+all remaining Designated Future transactions to which they relate.
+
+</p>
+
+
+<b><br><u><p>General Terms:</u> <br/></p></b>
+
+<TABLE CELLSPACING=1 WIDTH=623>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Capital Amount</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|SWAP_NOTIONAL|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Trade Date</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|TRADE_DATE|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Effective Date</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|SETTLE_DATE|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Termination Date</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|SETTLE_DATE|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Exercise Dates</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|PAYCASHFLOW_EXERCISE_DATE|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Buyer</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|TRADE_PROCESSING_ORGANIZATION|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">
+<p>Seller</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">
+<p>|TRADE_COUNTERPARTY|</TD>
+</TR>
+
+
+<!--calypso>
+if (|PAYLEG_TYPE| == "Fixed") {
+inline "
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FPR Assets</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_UNDERLYING_NAME|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FPR Asset Quantity</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_UNDERLYING_QUANTITY|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FPR Asset Price</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_UNDERLYING_PRICE|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FPR Asset Value</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_UNDERLYING_VALUE|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Purchase Dates</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYCASHFLOW_PURCHASE_DATE|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Period End Dates</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYCASHFLOW_END_DATE|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Payment Dates</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYCASHFLOW_DATE|</TD>
+</TR>
+
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FPR Fixed Profit Rate</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_FIXED_RATE|</TD>
+</TR>
+
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FPR Day Count Fraction</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_DAY_COUNT|</TD>
+</TR>
+
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Reference Rate Amount for FPR:</TD>
+
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Reference Rate</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|RECEIVELEG_RATE_INDEX|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Reference Rate Spread</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|RECEIVELEG_SPREAD|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Reference Rate Day Count Fraction</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|RECEIVELEG_DAY_COUNT|</TD>
+</TR>
+
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Business Days</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_CPN_OFFSET|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Business Day Convention</TD> 
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_CPN_DATE_ROLL|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Calculation Agent</TD> 
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|SENDER_CODE|</TD>
+</TR>
+";
+}
+</calypso-->
+
+
+<!--calypso>
+if (|PAYLEG_TYPE| == "Float") {
+inline "
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FLPR Assets</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_UNDERLYING_NAME|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FLPR Asset Quantity</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_UNDERLYING_QUANTITY|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FLPR Asset Price</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_UNDERLYING_PRICE|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FLPR Asset Value</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_UNDERLYING_VALUE|</TD>
+</TR>
+
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FLPR Benchmark</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_RATE_INDEX|</TD>
+</TR>
+
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Spread</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_SPREAD|</TD>
+</TR>
+
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Reset Dates</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYCASHFLOW_RESET_DATE|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Period End Dates</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYCASHFLOW_END_DATE|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Purchase Dates</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYCASHFLOW_PURCHASE_DATE|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Payment Dates</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYCASHFLOW_DATE|</TD>
+</TR>
+
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>FLPR Day Count Fraction</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_DAY_COUNT|</TD>
+</TR>
+
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Reference Rate Amount for FLPR:</TD>
+
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Reference Rate</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|RECEIVELEG_RATE_INDEX|</TD>
+</TR>
+
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Reference Rate Day Count Fraction</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|RECEIVELEG_DAY_COUNT|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Business Days</TD>
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_CPN_OFFSET|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Business Day Convention</TD> 
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|PAYLEG_CPN_DATE_ROLL|</TD>
+</TR>
+<TR><TD WIDTH=39% VALIGN=MIDDLE>
+<p>Calculation Agent</TD> 
+<TD WIDTH=59% VALIGN=MIDDLE>
+<p>|SENDER_CODE|</TD>
+</TR>
+
+";
+}
+
+</calypso-->
+
+
+
+<TABLE CELLSPACING=1 WIDTH=623>
+<p>
+<p>
+
+<b><u> Agency or Brokerage: </p></u></b>
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=624>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Buyer's Agent</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|SENDER_CODE|</TD>
+</TR>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Seller's Agent</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|RECEIVER_CODE|</TD>
+</TR>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Buyer's Broker 1</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|PAYLEG_BROKER_1|</TD>
+</TR>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Buyer's Broker 2</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|PAYLEG_BROKER_2|</TD>
+</TR>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Seller's Broker 1</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|RECEIVELEG_BROKER_1|</TD>
+</TR>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Seller's Broker 2</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|RECEIVELEG_BROKER_2|</TD>
+</TR>
+
+<TABLE CELLSPACING=1 WIDTH=623>
+<p>
+<b><u> Account Details:</p></u></b>
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=624>
+<TR><TD WIDTH='38%' VALIGN='MIDDLE'><p>Payment to |SENDER_CODE| :</TD>
+<TD WIDTH='62%' VALIGN='MIDDLE'><p>|PO_INSTRUCTIONS|</TD></TR>
+<TR><TD WIDTH='38%' VALIGN='MIDDLE'><p>Payment to |RECEIVER_CODE| :</TD>
+<TD WIDTH='62%' VALIGN='MIDDLE'><p>|COUNTERPARTY_INSTRUCTIONS|</TD></TR>
+</TABLE>
+
+<p>&nbsp; </p>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

@@ -1,0 +1,2359 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+<table name="domain_values" xmlns="">
+		<row cat="swift_statement_request">
+		<column name="name">domainName</column>
+		<column name="value">MT549StatementTypes</column>
+		<column name="description">Security codes</column>
+		</row>
+		<row cat="swift_statement_request">
+			<column name="name">MT549StatementTypes</column>
+			<column name="value">506</column>
+			<column name="description">MT506 Collateral and Exposure Statement</column>
+		</row>
+		<row cat="swift_statement_request">
+			<column name="name">MT549StatementTypes</column>
+			<column name="value">535</column>
+			<column name="description">MT535 Statement of Holdings</column>
+		</row>
+		<row cat="swift_statement_request">
+			<column name="name">MT549StatementTypes</column>
+			<column name="value">536</column>
+			<column name="description">MT536 Statement of Transactions</column>
+		</row>
+		<row cat="swift_statement_request">
+			<column name="name">MT549StatementTypes</column>
+			<column name="value">537</column>
+			<column name="description">MT537 Statement of Pending Transactions</column>
+		</row>
+		<row cat="swift_statement_request">
+			<column name="name">MT549StatementTypes</column>
+			<column name="value">538</column>
+			<column name="description">MT538 Statement of Intra-Position Advices</column>
+		</row>
+		<row cat="swift_statement_request">
+			<column name="name">MT549StatementTypes</column>
+			<column name="value">569</column>
+			<column name="description">MT569 Triparty Collateral and Exposure Statement</column>
+		</row>
+		<row cat="swift_statement_request">
+			<column name="name">MT549StatementTypes</column>
+			<column name="value">575</column>
+			<column name="description">MT575 Report of Combined Activity</column>
+		</row>
+		<row cat="swift_statement_request">
+			<column name="name">MT549StatementTypes</column>
+			<column name="value">576</column>
+			<column name="description">MT576 Statement of Open Orders</column>
+		</row>
+		<row cat="swift_statement_request">
+			<column name="name">MT549StatementTypes</column>
+			<column name="value">577</column>
+			<column name="description">MT577 Statement of Numbers</column>
+		</row>
+		<row cat="swift_statement_request">
+			<column name="name">MT549StatementTypes</column>
+			<column name="value">586</column>
+			<column name="description">MT586 Statement of Settlement Allegements</column>
+		</row>
+		<row cat="swift_statement_request">
+			<column name="name">domainName</column>
+			<column name="value">MT920StatementTypes</column>
+			<column name="description">Security codes</column>
+		</row>
+		<row cat="swift_statement_request">
+			<column name="name">MT920StatementTypes</column>
+			<column name="value">940</column>
+			<column name="description">MT940 Customer Statement</column>
+		</row>
+		<row cat="swift_statement_request">
+			<column name="name">MT920StatementTypes</column>
+			<column name="value">941</column>
+			<column name="description">MT941 Balance Report</column>
+		</row>
+		<row cat="swift_statement_request">
+			<column name="name">MT920StatementTypes</column>
+			<column name="value">942</column>
+			<column name="description">MT942 Interim Transaction Report</column>
+		</row>
+		<row cat="swift_statement_request">
+			<column name="name">MT920StatementTypes</column>
+			<column name="value">950</column>
+			<column name="description">MT950 Statement Message</column>
+		</row>
+		<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">AFFM//AFFI</column>
+	<column name="description">Affirmed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">AFFM//NAFI</column>
+	<column name="description">Unaffirmed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">ALOC//AOLF</column>
+	<column name="description">Fully Allocated</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">ALOC//AOLP</column>
+	<column name="description">Partially Allocated</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">CALL//CACK</column>
+	<column name="description">Acknowledged/Accepted</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">CALL//DEND</column>
+	<column name="description">Denied</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">CPRC//CAND</column>
+	<column name="description">Cancellation Completed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">CPRC//CANP</column>
+	<column name="description">Pending Cancellation</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">CPRC//DEND</column>
+	<column name="description">Denied</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">CPRC//EXCH</column>
+	<column name="description">Received at Stock Exchange</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">CPRC//INTE</column>
+	<column name="description">Received at Intermediary</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">CPRC//PACK</column>
+	<column name="description">Accepted</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">CPRC//PARF</column>
+	<column name="description">Partially Filled</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">CPRC//REJT</column>
+	<column name="description">Rejected</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">CPRC//REPR</column>
+	<column name="description">In Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">EPRC//COMP</column>
+	<column name="description">Complete</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">EPRC//PEND</column>
+	<column name="description">Pending</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">EPRC//RECD</column>
+	<column name="description">Reconciled</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">ESTA//APPD</column>
+	<column name="description">Approved</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">ESTA//CLDE</column>
+	<column name="description">Closed/Deactivated</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">ESTA//LAPS</column>
+	<column name="description">Lapsed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">ESTA//PWAL</column>
+	<column name="description">Period of Action</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">ESTA//SUAP</column>
+	<column name="description">Subject to Approval</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">ESTA//UNAC</column>
+	<column name="description">Unconditional as to Acceptance</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">ESTA//WHOU</column>
+	<column name="description">Wholly Unconditional</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">INMH//MACH</column>
+	<column name="description">Matched</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">INMH//NMAT</column>
+	<column name="description">Unmatched</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//CAN1</column>
+	<column name="description">Cancellation1</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//CAN2</column>
+	<column name="description">Cancellation2</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//CAN3</column>
+	<column name="description">Cancellation3</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//CAND</column>
+	<column name="description">Cancelled</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//CANO</column>
+	<column name="description">Cancelled by Another Party</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//CANP</column>
+	<column name="description">Pending Cancellation</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//CGEN</column>
+	<column name="description">Generated</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//COSE</column>
+	<column name="description">Fully executed/Confirmation sent</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//CPRC</column>
+	<column name="description">Cancellation Request</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//DFLA</column>
+	<column name="description">Default Action</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//DONE</column>
+	<column name="description">Done</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//DONF</column>
+	<column name="description">Partially Filled Order</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//EXCH</column>
+	<column name="description">Received at Stock Exchange</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//EXSE</column>
+	<column name="description">Fully executed/Execution sent</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//FORC</column>
+	<column name="description">Forced Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//FUTU</column>
+	<column name="description">Future</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//INTE</column>
+	<column name="description">Received at Intermediary</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//MPRC</column>
+	<column name="description">Modification Request</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//NOTC</column>
+	<column name="description">Already Matched and Affirmed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//OPOD</column>
+	<column name="description">Open Order</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//OVER</column>
+	<column name="description">Overallocated</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//PACK</column>
+	<column name="description">Acknowledged/Accepted</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//PAFI</column>
+	<column name="description">Partial Fill</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//PART</column>
+	<column name="description">Partial Cancel</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//PPRC</column>
+	<column name="description">Pending Processing</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//REJT</column>
+	<column name="description">Rejected</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//REPR</column>
+	<column name="description">In Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//SESE</column>
+	<column name="description">Settlement Instruction Sent</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//STIN</column>
+	<column name="description">Standing Instruction</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//SUSP</column>
+	<column name="description">Trading Suspended by Stock Exchange</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//TREA</column>
+	<column name="description">Treated</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">IPRC//UNDE</column>
+	<column name="description">Underallocated</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">MTCH//MACH</column>
+	<column name="description">Matched</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">MTCH//NMAT</column>
+	<column name="description">Unmatched</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">RERC//PACK</column>
+	<column name="description">Acknowledged/Accepted</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">RERC//REJT</column>
+	<column name="description">Rejected</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">REST//ACCP</column>
+	<column name="description">Partly Accepted</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">REST//ACCT</column>
+	<column name="description">Accepted</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">REST//REJT</column>
+	<column name="description">Rejected</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">REST//SUBR</column>
+	<column name="description">Partly Accepted</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">RPRC//DEND</column>
+	<column name="description">Denied</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">RPRC//EXCH</column>
+	<column name="description">Received at Stock Exchange</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">RPRC//INTE</column>
+	<column name="description">Received at Intermediary</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">RPRC//PACK</column>
+	<column name="description">Accepted</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">RPRC//PART</column>
+	<column name="description">Partial Replacement Accepted</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">RPRC//PEND</column>
+	<column name="description">Pending</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">RPRC//REJT</column>
+	<column name="description">Rejected</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">RPRC//REPL</column>
+	<column name="description">Replacement Completed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">RPRC//REPR</column>
+	<column name="description">In Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">SETT//PAIN</column>
+	<column name="description">Partial Settlement</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">SETT//PEND</column>
+	<column name="description">Pending Settlement</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">SETT//PENF</column>
+	<column name="description">Pending/Failing Settlement</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">SETT//SETT</column>
+	<column name="description">Settled</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">SETT//USET</column>
+	<column name="description">Unsettled</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">TPRC//DEND</column>
+	<column name="description">Denied</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">TPRC//MODC</column>
+	<column name="description">Modification Completed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">TPRC//MOPN</column>
+	<column name="description">Modification Pending</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">TPRC//PACK</column>
+	<column name="description">Acknowledged/Accepted</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Reasons</column>
+	<column name="value">TPRC//REJT</column>
+	<column name="description">Rejected</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CACK//ADEA</column>
+	<column name="description">Account Servicer Deadline Missed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CACK//CALD</column>
+	<column name="description">In Process</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CACK//CALP</column>
+	<column name="description">Processed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CAND//CANI</column>
+	<column name="description">Cancelled By Yourselves</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CAND//CANO</column>
+	<column name="description">Cancelled by Another Party</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CAND//CANS</column>
+	<column name="description">Cancelled By System</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CAND//CANT</column>
+	<column name="description">Cancelled due to Transformation</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CAND//CANZ</column>
+	<column name="description">Cancelled due to Split/Partial Settlement</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CAND//CORP</column>
+	<column name="description">Cancelled Due to Corporate Action</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CAND//CREG</column>
+	<column name="description">Cancelled by Issuer/Registrar</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CAND//CSUB</column>
+	<column name="description">Cancelled By Agent</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CAND//CTHP</column>
+	<column name="description">Cancelled By Third Party</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CAND//EXPI</column>
+	<column name="description">Expired</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CAND//NARR</column>
+	<column name="description">Narrative Reason</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CAND//SCEX</column>
+	<column name="description">Securities No Longer Eligible</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CANP//ADEA</column>
+	<column name="description">Account Servicer Deadline Missed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CANP//CDAC</column>
+	<column name="description">Conditional Delivery Cancellation Pending</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CANP//CONF</column>
+	<column name="description">Awaiting Confirmation</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CANP//DQUA</column>
+	<column name="description">Disagreement on Quantity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CANP//INBC</column>
+	<column name="description">Incomplete Number Count</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CANP//NARR</column>
+	<column name="description">Narrative Reason</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CGEN//CLAI</column>
+	<column name="description">Market Claim</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CGEN//COLL</column>
+	<column name="description">Collateral Management</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CGEN//NARR</column>
+	<column name="description">Narrative Reason</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CGEN//RODE</column>
+	<column name="description">Return of Refused Dump</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CGEN//SPLI</column>
+	<column name="description">Split/Shaping</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CGEN//THRD</column>
+	<column name="description">Third Party</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">CGEN//TRAN</column>
+	<column name="description">Transformation</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">DEND//ADEA</column>
+	<column name="description">Account Servicer Deadline Missed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">DEND//DCAL</column>
+	<column name="description">Call Denied Since Already Applied</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">DEND//DCAN</column>
+	<column name="description">Denied Since Already Cancelled</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">DEND//DFOR</column>
+	<column name="description">Denied Since not Allowed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">DEND//DPRG</column>
+	<column name="description">Denied Since in Progress</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">DEND//DREP</column>
+	<column name="description">Denied Since Repo Ended</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">DEND//DSET</column>
+	<column name="description">Denied Since Already Settled</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">DEND//IPNC</column>
+	<column name="description">Instruction Processed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">DEND//LATE</column>
+	<column name="description">Market Deadline Missed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">DEND//NARR</column>
+	<column name="description">Narrative Reason</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">MOPN//CONF</column>
+	<column name="description">Awaiting Confirmation</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">MOPN//NARR</column>
+	<column name="description">Narrative Reason</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NAFI//NAFF</column>
+	<column name="description">Not Affirmed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//ACRU</column>
+	<column name="description">Accrued Interest Amount</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//ADEA</column>
+	<column name="description">Account Servicer Deadline Missed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//CADE</column>
+	<column name="description">Disagreement Transaction Call Delay</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//CHAR</column>
+	<column name="description">Disagreement Charges Amount</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//CLAT</column>
+	<column name="description">Counterparty too Late for Matching</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//CMIS</column>
+	<column name="description">Matching Instruction Not Found</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//CPCA</column>
+	<column name="description">Counterparty Cancelled Instruction</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//DDAT</column>
+	<column name="description">Disagreement Settlement Date</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//DDEA</column>
+	<column name="description">Deal Price Not Match</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//DEAL</column>
+	<column name="description">Disagreement Deal Amount</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//DELN</column>
+	<column name="description">Disagreement Direction of Trade</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//DEPT</column>
+	<column name="description">Disagreement Place of Settlement</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//DMON</column>
+	<column name="description">Disagreement Settlement Amount</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//DQUA</column>
+	<column name="description">Disagreement Quantity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//DSEC</column>
+	<column name="description">Disagreement Security</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//DTRA</column>
+	<column name="description">Not Recognised</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//DTRD</column>
+	<column name="description">Disagreement Trade Date</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//EXEC</column>
+	<column name="description">Disagreement Executing Broker's Commission</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//FORF</column>
+	<column name="description">Disagreement Forfeit Amount</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//FRAP</column>
+	<column name="description">Disagreement Payment Code</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//ICAG</column>
+	<column name="description">Incorrect Agent</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//ICUS</column>
+	<column name="description">Disagreement Receiving or Delivering Custodian</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//IEXE</column>
+	<column name="description">Incorrect Buyer or Seller</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//IIND</column>
+	<column name="description">Disagreement Common Reference</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//INPS</column>
+	<column name="description">Disagreement Place of Safekeeping</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//INVE</column>
+	<column name="description">Disagreement Investor Party</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//LATE</column>
+	<column name="description">Market Deadline Missed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//LEOG</column>
+	<column name="description">Disagreement Letter of Guarantee Indicator</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//MCAN</column>
+	<column name="description">Matching Record Cancelled</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//MIME</column>
+	<column name="description">Missing Market Side Details</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//NARR</column>
+	<column name="description">Narrative</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//NCRR</column>
+	<column name="description">Disagreement Currency Settlement Amount</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//NMAS</column>
+	<column name="description">No Matching Started</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//PHYS</column>
+	<column name="description">Disagreement Physical Settlement</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//PLCE</column>
+	<column name="description">Disagreement Place of Trade</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//PLIS</column>
+	<column name="description">Disagreement Place of Listing</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//PODU</column>
+	<column name="description">Possible Duplicate Instruction</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//REGD</column>
+	<column name="description">Disagreement Registration Details</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//REPA</column>
+	<column name="description">Disagreement Termination Transaction Amount</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//REPO</column>
+	<column name="description">Disagreement Repurchase Rate</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//REPP</column>
+	<column name="description">Disagreement Premium Amount</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//RERT</column>
+	<column name="description">Disagreement Repurchase Rate Type</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//RTGS</column>
+	<column name="description">Disagreement RTGS System</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//SAFE</column>
+	<column name="description">Disagreement Safekeeping Account</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//SETR</column>
+	<column name="description">Disagreement Settlement Transaction</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//SETS</column>
+	<column name="description">Disagreement Settlement System/Method</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//TERM</column>
+	<column name="description">Disagreement Closing Date/Time</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//TXST</column>
+	<column name="description">Disagreement Tax Status</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//UNBR</column>
+	<column name="description">Unmatched Market Side Details</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">NMAT//VASU</column>
+	<column name="description">Disagreement Variable Rate Support</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PACK//ADEA</column>
+	<column name="description">Account Servicer Deadline Missed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PACK//LATE</column>
+	<column name="description">Market Deadline Missed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PACK//NARR</column>
+	<column name="description">Narrative Reason</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PACK//NSTP</column>
+	<column name="description">Not STP</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PACK//RQWV</column>
+	<column name="description">Accepted Without Voting Rights</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PACK//SMPG</column>
+	<column name="description">Market Practice Rule Discrepancy</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//ADEA</column>
+	<column name="description">Account Servicer Deadline Missed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//AUTH</column>
+	<column name="description">Sent to Tax Authorities</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//AWMO</column>
+	<column name="description">Awaiting Money</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//AWSH</column>
+	<column name="description">Awaiting Securities from Counterparty</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//BATC</column>
+	<column name="description">Processing Batch Difference</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//BENO</column>
+	<column name="description">Beneficial Ownership Disagreement</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//BLOC</column>
+	<column name="description">Account Blocked</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//BOTH</column>
+	<column name="description">Both Instructions on Hold</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//CAIS</column>
+	<column name="description">Awaiting Securities</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//CDLR</column>
+	<column name="description">Conditional Delivery Awaiting Release</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//CERT</column>
+	<column name="description">Wrong Certificate Numbers</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//CHAS</column>
+	<column name="description">Enquiry Sent</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//CLAC</column>
+	<column name="description">Counterparty Insufficient Securities</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//CLHT</column>
+	<column name="description">Clearing House Trade</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//CMON</column>
+	<column name="description">Counterparty Insufficient Money</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//COLL</column>
+	<column name="description">Securities Pledged as Collateral</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//CONF</column>
+	<column name="description">Confirmation Of Payment</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//CPEC</column>
+	<column name="description">Counterparty In Receivership</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//CSDH</column>
+	<column name="description">CSD Hold</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//CVAL</column>
+	<column name="description">CSD Validation</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//CYCL</column>
+	<column name="description">Awaiting Next Settlement Cycle</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//DENO</column>
+	<column name="description">Unavailable Deliverable Denominated Quantity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//DEPO</column>
+	<column name="description">Refused Deposit for Issue of Depositary Receipts</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//DISA</column>
+	<column name="description">Natural Disaster</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//DKNY</column>
+	<column name="description">Counterparty Returned Shares</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//DOCC</column>
+	<column name="description">Awaiting Documents/Registration Instruction/Endorsements from Counterparty</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//DOCY</column>
+	<column name="description">Awaiting Documents/Registration Instruction/Endorsements from You</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//DQUA</column>
+	<column name="description">Disagreement on Quantity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//FLIM</column>
+	<column name="description">Maximum Foreign Limit Reached</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//FROZ</column>
+	<column name="description">Securities Frozen At CSD</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//FUTU</column>
+	<column name="description">Awaiting Settlement Date</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//GLOB</column>
+	<column name="description">Global Form Securities</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//IAAD</column>
+	<column name="description">Status Reason Investigation</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//INBC</column>
+	<column name="description">Incomplete Number Count</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//INCA</column>
+	<column name="description">Income Adjustment Required</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//IPNC</column>
+	<column name="description">Cancel Not Possible</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//LAAW</column>
+	<column name="description">Awaiting Other Transaction</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//LACK</column>
+	<column name="description">Lack of Securities</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//LALO</column>
+	<column name="description">Securities are Loaned Out</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//LATE</column>
+	<column name="description">Market Deadline Missed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//LINK</column>
+	<column name="description">Pending Linked Instruction</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//LIQU</column>
+	<column name="description">Insufficient Central Bank Liquidity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//MCER</column>
+	<column name="description">Missing Certification</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//MINO</column>
+	<column name="description">Minimum Settlement Quantity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//MONY</column>
+	<column name="description">Insufficient Money</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//MUNO</column>
+	<column name="description">Multiple Settlement Quantity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//NARR</column>
+	<column name="description">Narrative</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//NCON</column>
+	<column name="description">Confirmation Not Received</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//NEWI</column>
+	<column name="description">New Issues</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//NMAS</column>
+	<column name="description">No Matching Required</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//NOFX</column>
+	<column name="description">No Foreign Exchange Instruction</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//NPAY</column>
+	<column name="description">No Payment</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//NSEC</column>
+	<column name="description">Not Delivered</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//PART</column>
+	<column name="description">Trade Settles in Partials</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//PENR</column>
+	<column name="description">Pending Receipt</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//PHCK</column>
+	<column name="description">Physical Securities in Verification Process</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//PHSE</column>
+	<column name="description">Physical Delivery Delay</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//PRCY</column>
+	<column name="description">Counterparty Instruction on Hold</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//PREA</column>
+	<column name="description">Your Instruction on Hold</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//PRSY</column>
+	<column name="description">On Hold by System</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//REFS</column>
+	<column name="description">Not In Good Order</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//REFU</column>
+	<column name="description">Instruction Refused/Not Recognised</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//REGT</column>
+	<column name="description">Certificates Rejected</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//SBLO</column>
+	<column name="description">Securities Blocked</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//SDUT</column>
+	<column name="description">Lack of Stamp Duty Information</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//SETS</column>
+	<column name="description">Settlement System/Method Modified</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//TAMM</column>
+	<column name="description">Trade Amended in Market</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//VLDA</column>
+	<column name="description">Valid for Tax Authorities</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PEND//YCOL</column>
+	<column name="description">Collateral Shortage</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//ADEA</column>
+	<column name="description">Account Servicer Deadline Missed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//AWMO</column>
+	<column name="description">Awaiting Money</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//AWSH</column>
+	<column name="description">Awaiting Securities from Counterparty</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//BATC</column>
+	<column name="description">Processing Batch Difference</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//BENO</column>
+	<column name="description">Beneficial Ownership Disagreement</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//BLOC</column>
+	<column name="description">Account Blocked</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//BOTH</column>
+	<column name="description">Both Instructions on Hold</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//BYIY</column>
+	<column name="description">Buy-in Procedure</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//CAIS</column>
+	<column name="description">Awaiting Securities</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//CANR</column>
+	<column name="description">Cancellation/Confirmation Request</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//CDLR</column>
+	<column name="description">Conditional Delivery Awaiting Release</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//CERT</column>
+	<column name="description">Wrong Certificate Numbers</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//CHAS</column>
+	<column name="description">Enquiry Sent</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//CLAC</column>
+	<column name="description">Counterparty Insufficient Securities</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//CLAT</column>
+	<column name="description">Counterparty too Late for Settlement</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//CLHT</column>
+	<column name="description">Clearing House Trade</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//CMON</column>
+	<column name="description">Counterparty Insufficient Money</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//COLL</column>
+	<column name="description">Securities Pledged as Collateral</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//CPEC</column>
+	<column name="description">Counterparty In Receivership</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//CSDH</column>
+	<column name="description">CSD Hold</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//CVAL</column>
+	<column name="description">CSD Validation</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//CYCL</column>
+	<column name="description">Awaiting Next Settlement Cycle</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//DENO</column>
+	<column name="description">Unavailable Deliverable Denominated Quantity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//DEPO</column>
+	<column name="description">Refused Deposit for Issue of Depositary Receipts</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//DISA</column>
+	<column name="description">Natural Disaster</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//DKNY</column>
+	<column name="description">Counterparty Returned Shares</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//DOCC</column>
+	<column name="description">Awaiting Documents/Registration Instruction/Endorsements from Counterparty</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//DOCY</column>
+	<column name="description">Awaiting Documents/Registration Instruction/Endorsements from You</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//FLIM</column>
+	<column name="description">Maximum Foreign Limit Reached</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//FROZ</column>
+	<column name="description">Securities Frozen At CSD</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//GLOB</column>
+	<column name="description">Global Form Securities</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//IAAD</column>
+	<column name="description">Status Reason Investigation</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//INBC</column>
+	<column name="description">Incomplete Number Count</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//INCA</column>
+	<column name="description">Income Adjustment Required</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//LAAW</column>
+	<column name="description">Awaiting Other Transaction</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//LACK</column>
+	<column name="description">Lack of Securities</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//LALO</column>
+	<column name="description">Securities are Loaned Out</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//LATE</column>
+	<column name="description">Market Deadline Missed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//LINK</column>
+	<column name="description">Pending Linked Instruction</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//LIQU</column>
+	<column name="description">Insufficient Central Bank Liquidity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//MINO</column>
+	<column name="description">Minimum Settlement Quantity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//MLAT</column>
+	<column name="description">Money/Securities too Late for Settlement</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//MONY</column>
+	<column name="description">Insufficient Money</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//MUNO</column>
+	<column name="description">Multiple Settlement Quantity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//NARR</column>
+	<column name="description">Narrative</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//NCON</column>
+	<column name="description">Confirmation Not Received</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//NEWI</column>
+	<column name="description">New Issues</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//NOFX</column>
+	<column name="description">No Foreign Exchange Instruction</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//OBJT</column>
+	<column name="description">Under Objection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//PART</column>
+	<column name="description">Trade Settles in Partials</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//PHCK</column>
+	<column name="description">Physical Securities in Verification Process</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//PHSE</column>
+	<column name="description">Physical Delivery Delay</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//PRCY</column>
+	<column name="description">Counterparty Instruction on Hold</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//PREA</column>
+	<column name="description">Your Instruction on Hold</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//PRSY</column>
+	<column name="description">On Hold by System</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//REFS</column>
+	<column name="description">Not In Good Order</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//REGT</column>
+	<column name="description">Certificates Rejected</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//SBLO</column>
+	<column name="description">Securities Blocked</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//SDUT</column>
+	<column name="description">Lack of Stamp Duty Information</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//SETS</column>
+	<column name="description">Settlement System/Method Modified</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//STCD</column>
+	<column name="description">Confirmation Discrepancy</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PENF//YCOL</column>
+	<column name="description">Collateral Shortage</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//ADEA</column>
+	<column name="description">Account Servicer Deadline Missed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//BLOC</column>
+	<column name="description">Account Blocked</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//CAIS</column>
+	<column name="description">Awaiting Securities</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//CERT</column>
+	<column name="description">Wrong Certificate Numbers</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//COLL</column>
+	<column name="description">Securities Pledged as Collateral</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//DENO</column>
+	<column name="description">Unavailable Deliverable Denominated Quantity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//DOCY</column>
+	<column name="description">Awaiting Documents/Registration Instruction/Endorsements from You</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//FLIM</column>
+	<column name="description">Maximum Foreign Limit Reached</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//GLOB</column>
+	<column name="description">Global Form Securities</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//LACK</column>
+	<column name="description">Lack of Securities</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//LALO</column>
+	<column name="description">Securities are Loaned Out</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//LIQU</column>
+	<column name="description">Insufficient Central Bank Liquidity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//MINO</column>
+	<column name="description">Minimum Settlement Quantity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//MONY</column>
+	<column name="description">Insufficient Money</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//MUNO</column>
+	<column name="description">Multiple Settlement Quantity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//NARR</column>
+	<column name="description">Narrative Reason</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//NEXT</column>
+	<column name="description">Next Process</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//NOFX</column>
+	<column name="description">No Foreign Exchange Instruction</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">PPRC//YCOL</column>
+	<column name="description">Collateral Shortage</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//ADEA</column>
+	<column name="description">Account Servicer Deadline Missed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//BATC</column>
+	<column name="description">Processing Batch Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//BPAR</column>
+	<column name="description">Business Partner Number Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//BREF</column>
+	<column name="description">Bank Reference Number Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//BUSE</column>
+	<column name="description">Type of Order Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//CADE</column>
+	<column name="description">Transaction Call Delay Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//CAEV</column>
+	<column name="description">Corporate Action Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//CANC</column>
+	<column name="description">Cancelled</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//CASH</column>
+	<column name="description">Cash Account Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//CASY</column>
+	<column name="description">Impossible Cash Settlement System</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//COMC</column>
+	<column name="description">Commercialisation Contract Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//CONL</column>
+	<column name="description">Concentration Limit Exceeded</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//CPTY</column>
+	<column name="description">Unknown Deal/Exposure</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//DADR</column>
+	<column name="description">Address Details Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//DCAN</column>
+	<column name="description">Rejected Since Already Cancelled</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//DDAT</column>
+	<column name="description">Settlement Date Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//DDEA</column>
+	<column name="description">Deal Price Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//DEPT</column>
+	<column name="description">Place of Settlement Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//DISC</column>
+	<column name="description">Disagree with Call Amount</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//DISE</column>
+	<column name="description">Disagree with Exposure Amount</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//DMON</column>
+	<column name="description">Settlement Amount Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//DORD</column>
+	<column name="description">Registration Request Data and Order Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//DPRG</column>
+	<column name="description">Rejected Since In Progress</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//DQUA</column>
+	<column name="description">Quantity Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//DSEC</column>
+	<column name="description">Security Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//DTRD</column>
+	<column name="description">Trade Date Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//EVNM</column>
+	<column name="description">Unrecognised Corporate Action Event Number</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//FEEE</column>
+	<column name="description">Fee/Commission Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//ICAG</column>
+	<column name="description">Agent Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//ICOL</column>
+	<column name="description">Insufficient Collateral</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//ICUS</column>
+	<column name="description">Receiving or Delivering Custodian Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//IEXE</column>
+	<column name="description">Buyer or Seller Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//IIND</column>
+	<column name="description">Common Reference Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//INIR</column>
+	<column name="description">Instruction Irrevocable</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//INNA</column>
+	<column name="description">Narrative Information Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//INPS</column>
+	<column name="description">Place of Safekeeping Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//INTV</column>
+	<column name="description">Inactive</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//INVA</column>
+	<column name="description">Invalid for Tax Authorities</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//INVB</column>
+	<column name="description">Balance Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//INVE</column>
+	<column name="description">Investor Party Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//INVL</column>
+	<column name="description">Link Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//INVN</column>
+	<column name="description">Number Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//LACK</column>
+	<column name="description">Lack of Securities</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//LATE</column>
+	<column name="description">Market Deadline Missed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//MINO</column>
+	<column name="description">Minimum Settlement Quantity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//MLEG</column>
+	<column name="description">Missing Legal Power</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//MUNO</column>
+	<column name="description">Multiple Settlement Quantity</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//NARR</column>
+	<column name="description">Narrative Reason</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//NCRR</column>
+	<column name="description">Settlement Amount Currency Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//NMTY</column>
+	<column name="description">Mismatch Option Number and Option Type</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//NRGM</column>
+	<column name="description">No Match</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//NRGN</column>
+	<column name="description">Not Found</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//OPNM</column>
+	<column name="description">Unrecognised Option Number</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//OPTY</column>
+	<column name="description">Invalid Option Type</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//OWNT</column>
+	<column name="description">Type of Ownership Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//PHYS</column>
+	<column name="description">Physical Settlement Impossible</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//PLCE</column>
+	<column name="description">Place of Trade Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//PLIS</column>
+	<column name="description">Place of Listing Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//REFE</column>
+	<column name="description">Reference Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//REFT</column>
+	<column name="description">Refused by the Tax Authorities</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//REPA</column>
+	<column name="description">Termination Transaction Amount Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//REPO</column>
+	<column name="description">Repurchase Rate Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//REPP</column>
+	<column name="description">Premium Amount Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//REQM</column>
+	<column name="description">Missing Registration Request</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//REQW</column>
+	<column name="description">Wrong Registration Request</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//RREA</column>
+	<column name="description">Disagreement in registration reason</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//RTGS</column>
+	<column name="description">Impossible to use the RTGS system instructed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//SAFE</column>
+	<column name="description">Safekeeping Account Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//SDUT</column>
+	<column name="description">Lack of Stamp Duty Information</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//SETR</column>
+	<column name="description">Settlement Transaction Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//SETS</column>
+	<column name="description">Settlement System/Method Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//SHAR</column>
+	<column name="description">Shareholder Number Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//SIGN</column>
+	<column name="description">Invalid Signature</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//STAM</column>
+	<column name="description">Not Stamped or Signed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//STAT</column>
+	<column name="description">Missing Statutes</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//TERM</column>
+	<column name="description">Closing Date/Time Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//TXST</column>
+	<column name="description">Tax Status Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//ULNK</column>
+	<column name="description">Unknown</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REJT//VALR</column>
+	<column name="description">Rule Rejection</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//ADEA</column>
+	<column name="description">Account Servicer Deadline Missed</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//BATC</column>
+	<column name="description">Processing Batch Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//BUSE</column>
+	<column name="description">Type of Order Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//CADE</column>
+	<column name="description">Transaction Call Delay Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//CAEV</column>
+	<column name="description">Corporate Action Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//CASH</column>
+	<column name="description">Cash Account Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//CASY</column>
+	<column name="description">Cash Settlement System Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//COMC</column>
+	<column name="description">Commercialisation Contract Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//DDAT</column>
+	<column name="description">Settlement Date Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//DDEA</column>
+	<column name="description">Deal Price Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//DEPT</column>
+	<column name="description">Place of Settlement Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//DMON</column>
+	<column name="description">Settlement Amount Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//DQUA</column>
+	<column name="description">Quantity Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//DSEC</column>
+	<column name="description">Security Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//DTRD</column>
+	<column name="description">Trade Date Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//FEEE</column>
+	<column name="description">Fee/Commission Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//ICAG</column>
+	<column name="description">Agent Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//ICUS</column>
+	<column name="description">Receiving or Delivering Custodian Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//IEXE</column>
+	<column name="description">Buyer or Seller Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//IIND</column>
+	<column name="description">Common Reference Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//INNA</column>
+	<column name="description">Narrative Information Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//INPS</column>
+	<column name="description">Place of Safekeeping Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//MINO</column>
+	<column name="description">Minimum Settlement Quantity Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//MUNO</column>
+	<column name="description">Multiple Settlement Quantity Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//NARR</column>
+	<column name="description">Narrative Reason</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//NCRR</column>
+	<column name="description">Settlement Amount Currency Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//NRGM</column>
+	<column name="description">No Match</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//NRGN</column>
+	<column name="description">Not Found</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//PHYS</column>
+	<column name="description">Physical Settlement Impossible</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//PLCE</column>
+	<column name="description">Place of Trade Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//REFE</column>
+	<column name="description">Reference Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//REPA</column>
+	<column name="description">Termination Transaction Amount Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//REPO</column>
+	<column name="description">Repurchase Rate Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//REPP</column>
+	<column name="description">Premium Amount Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//RTGS</column>
+	<column name="description">RTGS System Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//SAFE</column>
+	<column name="description">Safekeeping Account Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//SDUT</column>
+	<column name="description">Lack of Stamp Duty Information</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//SETR</column>
+	<column name="description">Settlement Transaction Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//SETS</column>
+	<column name="description">Settlement System/Method Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//TERM</column>
+	<column name="description">Closing Date/Time Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//TXST</column>
+	<column name="description">Tax Status Repair</column>
+</row>
+<row cat="swift_statement_request">
+	<column name="name">MT549Statuses</column>
+	<column name="value">REPR//ULNK</column>
+	<column name="description">Unknown</column>
+</row>
+
+	</table>
+	
+	 	
+</database>
+

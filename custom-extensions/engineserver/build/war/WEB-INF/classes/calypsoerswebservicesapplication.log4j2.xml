@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Default configuration for non-engine applications -->
+<Configuration xmlns:xi="http://www.w3.org/2001/XInclude" status="WARN">
+    <xi:include href="fragments/properties.log4j2.xml"/>
+    <Appenders>
+      <xi:include href="fragments/appender_console.xml"/>
+      <xi:include href="fragments/appender_default.xml"/>
+      <xi:include href="fragments/appender_event.xml"/>
+    </Appenders>
+    <Loggers>
+        <Logger name="org" level="OFF">
+        </Logger>
+        <Logger name="org.apache" level="INFO">
+            <AppenderRef ref="default" />
+        </Logger>
+        <Logger name="com.calypso" additivity="false" level="ERROR">
+            <AppenderRef ref="default" />
+            <AppenderRef ref="event" />
+            <AppenderRef ref="console" />
+        </Logger>
+        <!-- Commented in log4j ???
+        <Root level="DEBUG">
+            <AppenderRef ref="default"/>
+            <AppenderRef ref="event"/>
+            <AppenderRef ref="console"/>
+        </Root>
+        -->
+    </Loggers>
+</Configuration>

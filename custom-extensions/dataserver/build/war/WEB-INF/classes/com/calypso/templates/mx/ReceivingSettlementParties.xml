@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<template>
+    <contents>
+        <element name="RcvgSttlmPties">
+            <contents>
+                <element name="Dpstry">
+                    <condition>
+                        <expression>hasReceivingDepository()</expression>
+                    </condition>
+                    <contents>
+                        <include>
+                            <context>
+                                <to>ReceivingDepository</to>
+                            </context>
+                            <path>SecuritiesSettlementParty.xml</path>
+                        </include>
+                    </contents>
+                </element>
+                <element name="Pty1">
+                    <condition>
+                        <expression>hasReceivingParty1()</expression>
+                    </condition>
+                    <contents>
+                        <include>
+                            <context>
+                                <to>ReceivingParty1</to>
+                            </context>
+                            <path>SecuritiesSettlementParty.xml</path>
+                        </include>
+                    </contents>
+                </element>
+                <element name="Pty2">
+                    <condition>
+                        <expression>hasReceivingParty2()</expression>
+                    </condition>
+                    <contents>
+                        <include>
+                            <context>
+                                <to>ReceivingParty2</to>
+                            </context>
+                            <path>SecuritiesSettlementParty.xml</path>
+                        </include>
+                    </contents>
+                </element>
+                <element name="Pty3">
+                    <condition>
+                        <expression>hasReceivingParty3()</expression>
+                    </condition>
+                    <contents>
+                        <include>
+                            <context>
+                                <to>ReceivingParty3</to>
+                            </context>
+                            <path>SecuritiesSettlementParty.xml</path>
+                        </include>
+                    </contents>
+                </element>
+                <element name="Pty4">
+                    <condition>
+                        <expression>hasReceivingParty4()</expression>
+                    </condition>
+                    <contents>
+                        <include>
+                            <context>
+                                <to>ReceivingParty4</to>
+                            </context>
+                            <path>SecuritiesSettlementParty.xml</path>
+                        </include>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

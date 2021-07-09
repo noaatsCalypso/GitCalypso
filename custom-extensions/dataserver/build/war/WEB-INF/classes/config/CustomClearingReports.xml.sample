@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:p="http://www.springframework.org/schema/p"
+   xmlns:util="http://www.springframework.org/schema/util"
+   default-init-method="init"
+   xsi:schemaLocation="
+      http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+      http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+   <!-- This file allows to override the configuration of the OTB reports, or
+        to add new report definitions -->
+        
+   <!-- A report configuration should have, at least, these properties:
+   
+       <bean id="cmeReport" class="com.calypso.tk.clearing.external.report.CMEReport">
+         <property name="name" value="cmeReport" />
+         <property name="type" value="EOD_REPORT" />
+         <property name="path" value="/remote/path/to/report" />
+         <property name="XSLResourcePath" value="/local/classpath/path/to/xslt" />
+         <property name="defaultFormat" value="CSV" />
+      </bean>
+      
+      <bean id="lchReport" class="com.calypso.tk.clearing.external.report.LCHReport">
+         <property name="name" value="lchReport" />
+         <property name="type" value="EOD_REPORT" />
+         <property name="path" value="/remote/path/to/report" />
+         <property name="XSLResourcePath" value="/local/classpath/path/to/xslt" />
+         <property name="defaultFormat" value="TSV" />
+      </bean>
+      
+      where
+         - type : report type (EOD_REPORT/MARKET_DATA, see ReportType)
+         - path : remote path to the report (path in the server side)
+         - XSLResourcePath : local classpath path to XSLT stylesheet
+         - defaultFormat : report format (CSV/TSV/XML, see ReportFormat)
+         
+      optional properties include:
+      
+         - matcher : regexp to match the report name when blind loading reports from the filesystem
+                     (e.g: with CLEARING_LOAD)
+         - plugins : list of ProcessorPlugin that will be applied, in order, while importing
+                     the report
+         - CCP     : optional when using CMEReport/LCHReport, CCP short code (e.g.: CME or LCH)
+                     
+      If bean id equals report name, Spring versions can be used:
+      
+      <bean id="cmeReport" class="com.calypso.tk.clearing.external.report.spring.SpringCMEReport">
+         <property name="type" value="EOD_REPORT" />
+         <property name="path" value="/remote/path/to/report" />
+         <property name="XSLResourcePath" value="/local/classpath/path/to/xslt" />
+         <property name="defaultFormat" value="CSV" />
+      </bean>
+      
+      Bean ID/name will be used then as report name.
+      
+      Report groups can be defined like this:
+      
+      <bean name="groupName" class="com.calypso.tk.clearing.external.report.ReportInfoGroup">
+         <property name="name" value="groupName" />
+         <property name="reports">
+               <set>
+                  <ref bean="reportId1" />
+                  <ref bean="reportId2" />
+                  ...
+                  <ref bean="reportIdN" />
+               </set>
+         </property>
+      </bean>
+      
+      A Spring version also exists, in case group name matches bean ID/name:
+      
+      <bean name="groupName" class="com.calypso.tk.clearing.external.report.spring.SpringReportInfoGroup">
+         <property name="reports">
+               <set>
+                  <ref bean="reportId1" />
+                  <ref bean="reportId2" />
+                  ...
+                  <ref bean="reportIdN" />
+               </set>
+         </property>
+      </bean>
+      
+      The SpringReportInfoGroup can also aggregate report by name, not by direct
+      bean reference, using the reportNames property:
+      
+      <bean name="groupName" class="com.calypso.tk.clearing.external.report.spring.SpringReportInfoGroup">
+         <property name="reportNames">
+               <set>
+                  <value>reportId1</value>
+                  <value>reportId2</value>
+                  ...
+                  <value>reportIdN</value>
+               </set>
+         </property>
+      </bean>
+      
+      Report names do not need to necessarily refer to an existing report: inexistent
+      ones will be ignored.
+      
+   -->
+   
+
+</beans>

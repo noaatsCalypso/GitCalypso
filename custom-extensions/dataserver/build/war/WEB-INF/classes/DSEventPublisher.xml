@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+<bean id="eventPool" class="com.calypso.tk.util.Pool">
+</bean>
+
+<bean id="eventPublisherInitializer" class="com.calypso.tk.event.publisher.PublisherPoolFactory" 
+		init-method="init" destroy-method="stop">
+	<property name="pool" ref="eventPool" />
+	<property name="poolSize" value="10" />
+	<property name="waitTimeBetweenBuildingPSConnection" value="${waitTimeBetweenBuildingPSConnection}" />
+</bean>
+
+<bean id="eventPublisherFactory" class="com.calypso.tk.event.publisher.EventPublisherFactory">
+	<property name="pool" ref="eventPool" />
+</bean>
+
+</beans>

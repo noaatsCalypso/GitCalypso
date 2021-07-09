@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:lang="http://www.springframework.org/schema/lang"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="tokenRenewalBean" class="com.calypso.infra.authentication.client.ClientTokenRenewer" abstract="true">
+		<property name="minTokenVerifyAttempts" value="${MIN_TOKEN_VERIFY_ATTEMPTS}" />
+		<property name="sessionTimeoutInMinutes" value="${SESSIONTIMEOUT_INMINUTES}" />
+		
+	</bean>
+	
+	<bean id="tokenRenewTrigger" class="com.calypso.infra.scheduling.CalypsoSimpleTriggerBean">
+	    <property name="startDelay" >
+	    	<bean parent="exprEvaluator" >
+			  <property name="arguments">
+			    <list>
+			      <value>((${SESSIONTIMEOUT_INMINUTES})*60000)/(${MIN_TOKEN_VERIFY_ATTEMPTS})</value>
+			    </list>
+			  </property>
+			</bean>
+		</property>
+	    <property name="repeatInterval">
+			<bean parent="exprEvaluator" >
+			  <property name="arguments">
+			    <list>
+			      <value>((${SESSIONTIMEOUT_INMINUTES})*60000)/(${MIN_TOKEN_VERIFY_ATTEMPTS})</value>
+			    </list>
+			  </property>
+			</bean>
+	    </property>
+	    <property name="jobDetail">
+	    	<bean  parent="methodInvokingJob">
+			  <property name="targetObject">
+			  	<bean parent="tokenRenewalBean">
+					<property name="authService" ref="authService" />
+					<property name="shutdownHandler" ref="applicationShutdownHandler" />
+				</bean>
+			  </property>
+			  <property name="targetMethod" value="run" />
+			</bean>	
+		</property>	    
+	</bean>
+	
+
+</beans>

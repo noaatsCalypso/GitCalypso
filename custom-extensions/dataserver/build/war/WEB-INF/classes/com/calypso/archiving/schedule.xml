@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Periods>
+	<Period type="Week" days="{Monday,Tuesday,Wednesday,Thursday,Friday}">
+		<Interval from="0H" to="6H" operation="SearchAndArhive" netSize="1000"></Interval>
+		<Interval from="10H" to="15H" operation="Archive"></Interval>
+		<Interval from="20H" to="24H" operation="Archive"></Interval>
+	</Period>
+	<Period type="Week" days="{Saturday}">
+		<Intervals>
+		<Interval from="0H" to="24H" operation="SearchAndArhive" netSize="100000"></Interval>
+		</Intervals>
+	</Period>
+	<Period type="Week" days="{Sunday}">
+		<Intervals>
+			<Interval from="0H" to="16H" operation="SearchAndArhive" netSize="1000000"></Interval>
+			<Interval from="16H" to="23H" operation="Search" netSize="1000"></Interval>
+		</Intervals>
+	</Period>
+	<Period type="Days" days="{12/25/2017, 1/1/2018}">
+		<Intervals>
+			<Interval from="0H" to="24H" operation="SearchAndArhive" netSize="1000000"></Interval>
+		</Intervals>
+	</Period>
+</Periods>

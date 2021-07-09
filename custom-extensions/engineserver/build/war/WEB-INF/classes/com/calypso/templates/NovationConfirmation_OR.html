@@ -1,0 +1,269 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+<!--calypso>
+if 	(|KEYWORD_Novation_ChildType| == "RemainingTrade" ) {
+	if (|KEYWORD_TerminationFullFirstCalculationPeriod#PARENT_TRADE| == "Y")
+		set FFCP_PARENT_TRADE = "Applicable";
+	else
+		set FFCP_PARENT_TRADE = "Inapplicable";
+   }
+if (|KEYWORD_Novation_ChildType| != "RemainingTrade" ){
+	if (|KEYWORD_TerminationFullFirstCalculationPeriod| == "Y")
+		set FFCP = "Applicable";
+	else
+		set FFCP = "Inapplicable";
+   }
+</calypso-->
+
+<!--TRANSFEROR INFO -->
+<br>To:&nbsp;&nbsp;|RECEIVER_FULL_NAME| &nbsp;(the "Transferor")<br/>
+
+<!--TRANSFEREE INFO -->
+<!--calypso>
+if 	(|KEYWORD_Novation_ChildType| == "RemainingTrade" )
+	inline "To:&nbsp;&nbsp;|TRANSFEREE_FULL_NAME#PARENT_TRADE| &nbsp;(Party B)&nbsp; (the 'Transferee')";<br/>
+if (|KEYWORD_Novation_ChildType| != "RemainingTrade" )
+	inline "To:&nbsp;&nbsp;|TRANSFEREE_FULL_NAME| &nbsp;(Party B)&nbsp; (the 'Transferee')";<br/>
+</calypso-->
+<br>
+<br>From:&nbsp;&nbsp;|SENDER_FULL_NAME|&nbsp;(Party A) &nbsp;(the "Remaining Party")<br/>
+<table width='100%'>
+  <tr>
+    <td>
+         |SENDER_FULL_NAME|<br />
+         |SENDER_CONTACT_NAME|<br />
+         |SENDER_ADDRESS|<br />
+         |SENDER_CITY|<br />
+    </td>
+  </tr>
+</table>
+<br>
+<br>
+<table width='100%'>
+<tr><td width="15%">Date:</td><td>|DATE|</td></tr>
+</table>
+<br>
+<!--calypso>
+if (|KEYWORD_Novation_ChildType| == "RemainingTrade" )
+	inline "<p>Re: Novation Transaction :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|TRADE_ID| / |TRADE_ID#PARENT_TRADE| </p>";
+if (|KEYWORD_Novation_ChildType| != "RemainingTrade" )
+	inline "<p>Re: Novation Transaction :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|TRADE_ID|</p>";
+</calypso-->
+
+<br>
+<p class="header1">NOVATION TRANSACTION</p>
+<br>
+
+<p>Dear |SALUTATION|,</p>
+
+<p class="indented">
+The purpose of this
+<!--calypso>
+if ( Message.getAddressMethod() == "FAX" )
+    inline "facsimile";
+else
+    inline "letter";
+</calypso-->
+(this "Confirmation") is to confirm the terms and conditions of the Novation Transaction
+entered into between the parties and effective from the Novation Date specified below.
+</p>
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1- The definitions and provisions contained in the 2004 ISDA Novation Definitions (the "Defintiions")
+and the terms and provisions of 2006 ISDA Definitions,as published by the International Swaps and Derivatives Association, Inc.,
+and amended from time to time are incorporated into this Novation Confirmation.
+In the event of any inconsistency between (i) the Definitions,(ii) the 2006 ISDA Definitions and/or (iii) the Novation Agreement and this Novation Confirmation,
+this Novation Confirmation will govern.</p>
+<br>
+
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2- The terms of the Novation Transaction to which this Novation Confirmation relates are as follows:
+<!--calypso>
+	if 	(|KEYWORD_Novation_ChildType| == "RemainingTrade" ) {
+		inline "
+		<table CELLSPACING=0 BORDER=0 WIDTH=650>
+	<tr>
+		<td width='30%'>Novation Date:</td>
+		<td>|LONG_TERMINATION_DATE#PARENT_TRADE|</td>
+	</tr>
+	<tr>
+		<td width='30%'>Novated Amount:</td>
+		<td>|TRADE_CURRENCY| |TERMINATED_AMOUNT#PARENT_TRADE|</td>
+	</tr>
+	<tr>
+		<td width='30%'>Transferor:</td>
+		<td>|TRANSFEROR_FULL_NAME#PARENT_TRADE|</td>
+	</tr>
+	<tr>
+		<td width='30%'>Transferee:</td>
+		<td>|TRANSFEREE_FULL_NAME#PARENT_TRADE|</td>
+	</tr>
+	<tr>
+		<td width='30%'>Remaining Party:</td>
+		<td>|REMAINING_PARTY_FULL_NAME#PARENT_TRADE|</td>
+	</tr>
+	<tr>
+		<td width='30%'>New Agreement between Party B and Party A:</td>
+		<td>ISDA Master Agreement dated as of |LA_AGREEMENT_DATE#NOVATED_TRADE|, subject to |LA_LEGAL_JURISDICTION#NOVATED_TRADE|</td>
+	</tr>
+	</p>
+	</table>";
+}
+if 	(|KEYWORD_Novation_ChildType| != "RemainingTrade" ) {
+	inline "
+	<table CELLSPACING=0 BORDER=0 WIDTH=650>
+	<tr>
+		<td width='30%'>Novation Date:</td>
+		<td>|LONG_TERMINATION_DATE|</td>
+	</tr>
+	<tr>
+		<td width='30%'>Novated Amount:</td>
+		<td>|TRADE_CURRENCY| |TERMINATED_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td width='30%'>Transferor:</td>
+		<td>|TRANSFEROR_FULL_NAME|</td>
+	</tr>
+	<tr>
+		<td width='30%'>Transferee:</td>
+		<td>|TRANSFEREE_FULL_NAME|</td>
+	</tr>
+	<tr>
+		<td width='30%'>Remaining Party:</td>
+		<td>|REMAINING_PARTY_FULL_NAME|</td>
+</tr>
+<tr>
+	<td width='30%'>New Agreement between Party B and Party A:</td>
+	<td>ISDA Master Agreement dated as of |LA_AGREEMENT_DATE#NOVATED_TRADE|, subject to |LA_LEGAL_JURISDICTION#NOVATED_TRADE|</td>
+</tr>
+</p>
+</table>";
+}
+</calypso-->
+<br>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3- The terms of the Old Transaction to which this Novation Confirmation relates,
+for identification purposes, are attached hereto as Exhibit A:
+<!--calypso>
+if 	(|KEYWORD_Novation_ChildType| == "RemainingTrade" ) {
+		inline "
+		<table CELLSPACING=0 BORDER=0 WIDTH=650>
+		<tr>
+			<td width='30%'>Trade Date of Old Transaction:</td>
+			<td>|TRADE_DATE#PARENT_TRADE|</td>
+		</tr>
+		<tr>
+			<td width='30%'>Effective Date of Old Transaction:</td>
+			<td>|SETTLE_DATE#PARENT_TRADE|</td>
+		</tr>
+		<tr>
+			<td width='30%'>Termination Date of Old Transaction:</td>
+			<td>|PRODUCT_MATURITYDATE#PARENT_TRADE|</td>
+		</tr>
+		</table>";
+		}
+if (|KEYWORD_Novation_ChildType| != "RemainingTrade" ){
+	inline "
+	<table CELLSPACING=0 BORDER=0 WIDTH=650>
+		<tr>
+			<td width='30%'>Trade Date of Old Transaction:</td>
+			<td>|TRADE_DATE|</td>
+		</tr>
+		<tr>
+			<td width='30%'>Effective Date of Old Transaction:</td>
+			<td>|SETTLE_DATE|</td>
+		</tr>
+		<tr>
+			<td width='30%'>Termination Date of Old Transaction:</td>
+			<td>|PRODUCT_MATURITYDATE|</td>
+		</tr>
+		</table>";
+		}
+</calypso-->
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4- The terms of the New Transaction to which this Novation Confirmation relates,
+for identification purpose, are attached hereto as Exhibit B.:
+<table CELLSPACING=0 BORDER=0 WIDTH=650>
+<tr>
+<td width='30%'>Full&nbsp;First&nbsp;Calculation&nbsp;Period:</td>
+<td>
+<!--calypso>
+if 	(|KEYWORD_Novation_ChildType| == "RemainingTrade" ) {
+	if (|KEYWORD_TerminationFullFirstCalculationPeriod#PARENT_TRADE| == "N") {
+		inline "Inapplicable";
+	} else {
+		inline "Applicable, commencing on |RECEIVELEG_FIRST_START_DATE| with respect to any amounts to be paid by the Transferee,
+				and |PAYLEG_FIRST_START_DATE|, with respect to any amounts to be paid by the Remaining Party";
+	}
+} else {
+	if (|KEYWORD_TerminationFullFirstCalculationPeriod| == "N") {
+		inline "Inapplicable";
+	} else {
+		inline "Applicable, commencing on |RECEIVELEG_FIRST_START_DATE#NOVATED_TRADE| with respect to any amounts to be paid by the Transferee,
+				and |PAYLEG_FIRST_START_DATE#NOVATED_TRADE|, with respect to any amounts to be paid by the Remaining Party";
+	}
+	}
+</calypso-->
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5- Notice Details:
+<table CELLSPACING=0 BORDER=0 WIDTH=650>
+<tr>
+	<td>Facsimile Numbers for Notices:</td>
+</tr>
+<tr>
+	<td width='30%'>Transferor:</td>
+	<td>|RECEIVER_FAX|</td>
+</tr>
+<tr>
+	<td width='30%'>Remaining Party:</td>
+	<td>|SENDER_FAX|</td>
+</tr>
+</table>
+</p>
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6- The parties confirm their acceptance to be bound by this Novation Confirmation
+as of the Novation Date by executing a copy of this Novation Confirmation and returning it to us.
+The Transferor, by its execution of a copy of this Novation Confirmation, agrees to the terms of the Novation Confirmation
+as it relates to each Old Transaction. The Transferee, by its execution of a copy of this Novation Confirmation,
+agrees to the terms of the Novation Confirmation as it relates to each New Transaction.
+</p>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer_body.html";
+</calypso-->
+
+<p class="header1">Exhibit A: Old Transaction</p>
+<br>
+
+
+<!--calypso>
+if 	(|KEYWORD_Novation_ChildType| == "RemainingTrade" )
+	include "NovationParentTrade.html";
+if (|KEYWORD_Novation_ChildType| != "RemainingTrade" )
+	include "derivativesNovation.html";
+</calypso-->
+
+
+<br>
+<br>
+<p class="header1">Exhibit B: New Transaction</p>
+<br>
+<!--calypso>
+    include "NovationNovatedTrade.html";
+</calypso-->
+
+
+</body>
+</html>

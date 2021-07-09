@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+    <contents>
+        <element name="LqdtyCdtTrf">
+            <contents>
+                <element name="MsgHdr">
+                    <contents>
+                        <element name="MsgId">
+                            <contents>
+                                <report>
+                                    <column>MESSAGE_ID</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="CreDtTm">
+                            <contents>
+                            	<report>
+                            		<column>CREATION_SYSTEM_DATE_ISOVERSION</column>
+                            	</report>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="LqdtyCdtTrf">
+                    <contents>
+                        <element name="LqdtyTrfId">
+                            <contents>
+                                <element name="InstrId">
+                                    <contents>
+                                        <text>
+                                            <value>+</value>
+                                        </text>
+                                        <report>
+                                            <column>MESSAGE_ID</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <element name="EndToEndId">
+                                    <contents>
+                                        <text>
+                                            <value>NOTPROVIDED</value>
+                                        </text>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="Cdtr">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents>
+                                        <element name="ClrSysMmbId">
+                                            <contents>
+                                                <element name="MmbId">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_AGENT_CLEARING_MEMBER_ID</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="TrfdAmt">
+                            <contents>
+                                <element name="AmtWthCcy">
+                                    <attributes>
+                                        <attribute name="Ccy">
+                                            <value>
+                                                <report>
+                                                    <column>SettleCurrency</column>
+                                                </report>
+                                            </value>
+                                        </attribute>
+                                    </attributes>
+                                    <contents>
+                                        <report>
+                                            <column>Settle Amount</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="Dbtr">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents>
+                                        <element name="ClrSysMmbId">
+                                            <contents>
+                                                <element name="MmbId">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_AGENT_CLEARING_MEMBER_ID</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="SttlmDt">
+                            <contents>
+                                 <report format="yyyy-MM-dd">
+                                    <column>Settle Date</column>
+                                </report>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

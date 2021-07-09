@@ -1,0 +1,16 @@
+<!-- 
+Defines a default view (categories, selected fields for each). 
+The field and category labels are defined in the .properties resource file with the same name.  
+-->
+<config>
+	<view>
+	  <category>
+	    <categoryId>GENERAL</categoryId>
+	    <fieldId>SecFinanceTradeEntry.Sec. Product</fieldId>
+	    <fieldId>SecFinanceTradeEntry.Original Quantity</fieldId>
+	    <fieldId>AGREEMENT_DATE</fieldId>
+	    <fieldId>EFFECTIVE_DATE</fieldId>
+	    <fieldId>TRADE_ACTION</fieldId>
+	  </category>
+	</view>
+</config>

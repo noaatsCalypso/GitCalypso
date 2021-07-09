@@ -1,0 +1,21 @@
+
+<!-- 
+Defines a default view (categories, selected fields for each). 
+The field and category labels are defined in the .properties resource file with the same name.  
+-->
+<config>
+	<view>
+	  <category>
+	    <categoryId>REPRICE</categoryId>
+	    <fieldId>OUTSTANDING_QUANTITY</fieldId>
+	    <fieldId>ACCRUAL</fieldId>
+	    <fieldId>CLEAN_PRICE_ON_EFFECTIVE_DATE</fieldId>
+	    <fieldId>CLEAN_PRICE_NEW</fieldId>
+	    <fieldId>PRICE_ON_EFFECTIVE_DATE</fieldId>
+	    <fieldId>PRICE_NEW</fieldId>
+	    <fieldId>CBLActionEntry.CASH_VALUE_CURRENT</fieldId>
+	    <fieldId>CBLActionEntry.CASH_VALUE_NEW</fieldId>
+	    <fieldId>CBLActionEntry.CASH_VALUE_DIFFERENCE</fieldId>
+	  </category>
+	</view>
+</config>

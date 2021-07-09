@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+    <contents>
+
+        <element name="FIDrctDbt">
+            <contents>
+                <element name="GrpHdr">
+                    <contents>
+                        <element name="MsgId">
+                            <contents>
+                                <report>
+                                    <column>MESSAGE_ID</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="CreDtTm">
+                            <contents>
+                                <report format="yyyy-MM-dd hh:mm:ss">
+                                    <column>ORIGINAL_DATE</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="NbOfTxs">
+                            <contents>
+                                <text>
+                                    <value>1</value>
+                                </text>
+                            </contents>
+                        </element>
+                        <element name="InstgAgt">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents>
+                                        <element name="BICFI" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>PO_CONTACT_BIC_CODE</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Nm" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>PO_SHORT_NAME</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="PstlAdr" hideifempty="true">
+                                            <contents>
+                                                <element name="StrtNm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_CONTACT_STREET_NAME</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <!-- 
+                                                <element name="BldgNb">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_CONTACT_BUILDING_NUMBER</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                -->
+                                                <element name="PstCd">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_CONTACT_POST_CODE</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="TwnNm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_CONTACT_TOWN_NAME</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="Ctry">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_CONTACT_COUNTRY</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="InstdAgt">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents>
+                                        <element name="BICFI" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_RECEIVING_AGENT_BIC_CODE</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="CdtInstr">
+                    <contents>
+                        <element name="CdtId">
+                            <contents>
+                                <report>
+                                    <column>MESSAGE_ID</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="BtchBookg">
+                            <contents>
+                                <report>
+                                    <column>false</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="CdtrAgt">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents>
+                                        <element name="BICFI" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_RECEIVING_AGENT_BIC_CODE</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Nm" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_RECEIVING_AGENT_SHORT_NAME</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="PstlAdr" hideifempty="true">
+                                            <contents>
+                                                <element name="StrtNm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_RECEIVING_AGENT_STREET_NAME</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <!-- 
+                                                <element name="BldgNb">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_RECEIVING_AGENT_BUILDING_NUMBER</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                -->
+                                                <element name="PstCd">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_RECEIVING_AGENT_POST_CODE</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="TwnNm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_RECEIVING_AGENT_TOWN_NAME</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="Ctry">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_RECEIVING_AGENT_COUNTRY</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="Cdtr">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents>
+                                        <element name="BICFI" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_BENEFICIARY_BIC_CODE</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Nm" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_BENEFICIARY_NAME</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="PstlAdr" hideifempty="true">
+                                            <contents>
+                                                <element name="StrtNm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_BENEFICIARY_CONTACT_STREET_NAME</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <!-- 
+                                                <element name="BldgNb">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_BENEFICIARY_CONTACT_BUILDING_NUMBER</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                -->
+                                                <element name="PstCd">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_BENEFICIARY_CONTACT_POST_CODE</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="TwnNm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_BENEFICIARY_CONTACT_TOWN_NAME</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="Ctry">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_BENEFICIARY_CONTACT_COUNTRY</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="CdtrAcct">
+                            <contents>
+                                <element name="Id">
+                                    <contents>
+                                        <element name="Othr">
+                                            <contents>
+                                                <element name="Id">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_AGENT_ACCT</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="DrctDbtTxInf">
+                    <contents>
+                        <element name="PmtId">
+                            <contents>
+                                <element name="InstrId">
+                                    <contents>
+                                        <report>
+                                            <column>RELATED_ID</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <element name="EndToEndId">
+                                    <contents>
+                                        <report>
+                                            <column>NOTPROVIDED</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <element name="TxId">
+                                    <contents>
+                                        <report>
+                                            <column>MESSAGE_ID</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="IntrBkSttlmAmt">
+                            <attributes>
+                                <attribute name="Ccy">
+                                    <value>
+                                        <report>
+                                            <column>SettleCurrency</column>
+                                        </report>
+                                    </value>
+                                </attribute>
+                            </attributes>
+                            <contents>
+                                <report>
+                                    <column>Settle Amount</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="IntrBkSttlmDt">
+                            <contents>
+                                <report format="yyyy-MM-dd">
+                                    <column>Settle Date</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="Dbtr">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents>
+                                        <element name="BICFI" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>PO_BENEFICIARY_BIC_CODE</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Nm" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>PO_BENEFICIARY_NAME</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="PstlAdr" hideifempty="true">
+                                            <contents>
+                                                <element name="StrtNm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_BENEFICIARY_CONTACT_STREET_NAME</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <!-- 
+                                                <element name="BldgNb">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_BENEFICIARY_CONTACT_BUILDING_NUMBER
+                                                            </column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                -->
+                                                <element name="PstCd">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_BENEFICIARY_CONTACT_POST_CODE</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="TwnNm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_BENEFICIARY_CONTACT_TOWN_NAME</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="Ctry">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_BENEFICIARY_CONTACT_COUNTRY</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="DbtrAgt">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents>
+                                        <element name="BICFI" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>PO_AGENT_BIC_CODE</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Nm" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>Payer.Agent.Short Name</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="PstlAdr" hideifempty="true">
+                                            <contents>
+                                                <element name="StrtNm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_AGENT_CONTACT_STREET_NAME</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <!-- 
+                                                <element name="BldgNb">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_AGENT_CONTACT_BUILDING_NUMBER</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                -->
+                                                <element name="PstCd">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_AGENT_CONTACT_POST_CODE</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="TwnNm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_AGENT_CONTACT_TOWN_NAME</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="Ctry">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_AGENT_CONTACT_COUNTRY</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+
+</template>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+      <meta name="language" content="ar-SA" />
+   </head>
+
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+<!--calypso>
+if ((|REPORT#Product Type| == "IslamicMM")&& (|REPORT#Product Name| == "Wakala"))
+   set TRANSACTION_TYPE = "عرض الوكيل";
+</calypso-->
+
+
+
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" || |MESSAGE_SUBACTION|== "CANCEL")
+	inline  "Amend and Cancel";
+</calypso-->
+</p>
+
+<p class="header1"> |TRANSACTION_TYPE|: |REPORT#Product Type| Wakala</p>
+
+<br>
+<br>
+
+<table width="700" cellpadding="0" style="mso-padding-alt:0cm 0cm 0cm 0cm; font-size:12px">
+            <tr>
+               <td width="350" align="left">Dear Customer,</td>
+               <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>عميلنا العزيز</b>
+               </td>
+            </tr>
+
+			<tr>
+               <td width="350" align="left">We refer to the Wakala Placement Agreement </td>
+               <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>بهذا الاشعار نشير إلى اتفاق الوكالة المبرمة</b>
+               </td>
+            </tr>
+			<tr>
+               <td width="350" align="left">in which you indicate your wish to place</td>
+               <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>في الذي يشير رغبتكم الى توظيف</b>
+               </td>
+            </tr>
+						<tr>
+               <td width="350" align="left">an amount with us for investment by us</td>
+               <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>مبلغ معنا للاستثمار من قبلنا</b>
+               </td>
+            </tr>
+			
+						<tr>
+               <td width="350" align="left">in transactions permitted under Shariah on your behalf:</td>
+               <td width="350" dir="rtl" lang="ar-SA" align="right" style="font-family:traditional arabic;">
+                    <b>في المعاملات المسموح بها بموجب الشريعة نيابة عنكم</b>
+               </td>
+            </tr>
+</table>
+<br>
+
+
+<br>
+
+
+<table width="700" cellpadding="0" style="mso-padding-alt:0cm 0cm 0cm 0cm; font-size:12px">
+ <tr>
+               <td width="233">Our Transaction Reference:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|TRADE_ID|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA">رقم المعاملة</span>
+               </td>
+</tr>
+ <tr>
+               <td width="233">Trade Date:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|TRADE_DATE|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA">تاريخ المعاملة</span>
+               </td>
+</tr>
+
+<tr>
+               <td width="233">Investment Amount:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|TRADE_CURRENCY| |TRADE_NOMINAL|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">مبلغ الاستثمار</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Investment Date:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|STRUCTUREDFLOWS_START_DATE|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">تاريخ الاستثمار</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Maturity Date:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|STRUCTUREDFLOWS_END_DATE|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">تاريخ الاستحقاق</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Anticipated Profit:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|CAP_PERCENTAGE|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">ربح متوقع‎</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Wakil Fee:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|REPORT#Fee.WAKIL_FEE.Currency||REPORT#Fee.WAKIL_FEE.Amount|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">رسوم الوكيل</span>
+               </td>
+</tr>
+<tr>
+               <td width="233">Wakil Fee Date:</td>
+               <td width="233" align="center" style="background-color:white">
+                  <b>|FEE_DATE#WAKIL_FEE|</b>
+               </td>
+               <td width="233" dir="rtl" align="right" style="font-size:16px;font-family:traditional arabic;">
+                  <span lang="AR-SA" align="right">تاريخ رسوم الوكيل</span>
+               </td>
+</tr>
+
+
+</table>
+<br>
+<br>
+
+
+<TABLE CELLSPACING=1 WIDTH=623>
+<p>
+<b><u> Account Details:</p></u></b>
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=624>
+<TR><TD WIDTH='38%' VALIGN='MIDDLE'><p>Payment to |SENDER_CODE| :</TD>
+<TD WIDTH='62%' VALIGN='MIDDLE'><p>|PO_INSTRUCTIONS|</TD>
+<TD width="233" dir="rtl" align="right">
+                  <span lang="AR-SA" style="font-family:traditional arabic;">
+                     <b>من</b>
+                  </span>
+               </TD>
+</TR>
+<TR><TD WIDTH='38%' VALIGN='MIDDLE'><p>Payment to |RECEIVER_CODE| :</TD>
+<TD WIDTH='62%' VALIGN='MIDDLE'><p>|COUNTERPARTY_INSTRUCTIONS|</TD>
+<TD width="233" dir="rtl" align="right">
+                  <span lang="AR-SA" style="font-family:traditional arabic;">
+                     <b>الى</b>
+                  </span>
+               </TD>
+</TR>
+</TABLE>
+<br>
+<br>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->
+
+</html>

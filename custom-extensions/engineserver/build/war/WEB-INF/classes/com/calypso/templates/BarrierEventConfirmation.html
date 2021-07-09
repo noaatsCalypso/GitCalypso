@@ -1,0 +1,107 @@
+<!--calypso>
+	if (Trade.getLongId() > 0)
+		include "message_header.html";
+	</calypso-->
+
+<!--calypso>
+if (|FXOPTION_BARRIERTYPE| == "UI" || |FXOPTION_BARRIERTYPE| == "DI")
+   set FXOPTION_EVENTTYPE = "Knock-In";
+else if (|FXOPTION_BARRIERTYPE| == "UO" || |FXOPTION_BARRIERTYPE| == "DO") 
+   set FXOPTION_EVENTTYPE = "Knock-Out";
+else if (|FXOPTION_BARRIERTYPE| == "DKI")
+   set FXOPTION_EVENTTYPE = "Double Knock-In";
+else if (|FXOPTION_BARRIERTYPE| == "DKO")
+   set FXOPTION_EVENTTYPE = "Double Knock-Out";
+else if (|FXOPTION_BARRIERTYPE| == "KIKO (UI)")   
+	set FXOPTION_EVENTTYPE = "Double Barrier Up In Down Out";
+else if (|FXOPTION_BARRIERTYPE| == "KIKO (DI)")   
+	set FXOPTION_EVENTTYPE = "Double Barrier Up Out Down In";
+else set FXOPTION_EVENTTYPE = "Not Applicable";
+</calypso-->	
+	
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" )
+	inline  "AMEND AND CANCEL";
+	else if (|MESSAGE_SUBACTION|== "CANCEL")
+	inline "CANCEL";
+</calypso-->
+</p>
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND")
+	 inline "<p class='header2'>This Confirmation cancels and supersedes the previous confirmation under the same reference.</p>";
+	else if (|MESSAGE_SUBACTION|== "CANCEL")
+	 inline "<p class='header2'>This Confirmation cancels the previous confirmation under the same reference.</p>";
+</calypso-->
+
+<p class='header1'>Notice of Barrier Event</p>
+<br>
+<p>Our Transaction Reference: |TRADE_ID|</p>
+<br>
+<p class="indented">
+The purpose of this 
+	<!--calypso>
+		if ( Message.getAddressMethod() == "FAX" )
+		inline "facsimile";
+	else
+		inline "letter";
+	</calypso-->
+is to inform you that a Barrier Event occured on |LONG_TERMINATION_DATE| with respect to the referenced Option Transaction having the following terms: 
+</p>
+<br>
+<p><b>Details of the initial Transaction are as follows:</b></p>
+<br>
+<table>
+    <tr>
+        <td>Trade Date</td>
+        <td>|TRADE_DATE|</td>
+    </tr>
+    <tr>
+		<td>Buyer</td>
+        <td>|TRADE_BUYER_NAME|</td>
+    </tr>
+    <tr>
+        <td>Seller</td>
+        <td>|TRADE_SELLER_NAME|</td>
+    </tr>
+    <tr>
+        <td>Currency Option Style</td>
+        <td>|REPORT#Exercise Type| |REPORT#Option Type| Option</td>
+    </tr>
+    <tr>
+        <td>Currency Option Type</td>
+        <td>|FXOPTION_SELL_CURRENCY| Put / |FXOPTION_BUY_CURRENCY| Call</td>
+    </tr>
+	<tr>
+		<td>Settlement</td>
+		<td>|REPORT#Settle Type|</td>
+	</tr>
+	<tr>
+		<td>Barrier Type</td>
+		<td>|FXOPTION_EVENTTYPE|</td>
+	</tr>
+</table>
+<br>
+<p>|SENDER_FULL_NAME|, acting in its capacity as Calculation Agent, observed that the relevant currency exchange rate reached
+or crossed the Barrier Level of |REPORT#Barrier.Barrier| as agreed and specified in the confirmation of the Reference Transaction
+(the 'Confirmation'). This Barrier Event occured during the Event Period.</p>
+<br>
+<!--calypso>
+	if ( |REPORT#Action| == "KNOCK_IN")
+		inline "
+		Accordingly, the Effective Date of the FX Option Transaction is <b>|FXOPTION_DELIVERY_DATE|</b>. 
+		The reference of this Transaction is |KEYWORD_TransferTo|
+		";		
+</calypso-->
+<br>
+<br>
+Please confirm that the foregoing correctly sets forth the terms of our agreement by executing
+ a copy of this Confirmation and returning it to us, or by sending to us a facsimile or telex 
+ substantially similar to this facsimile which sets forth the material terms of the Transaction 
+ to which this Confirmation relates and indicates agreement to those terms.
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->
+</html>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+    <contents max="1">
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.009.001.COV.CBPR")</expression>
+            </condition>
+            <path>GeneralFinancialInstitutionTransferCovCBPR.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.009.001.COV.SIX")</expression>
+            </condition>
+            <path>GeneralFinancialInstitutionTransferCovSIX.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.009.001.COV.T2")</expression>
+            </condition>
+            <path>GeneralFinancialInstitutionTransferCovT2.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.009.001.COV.MEPS")</expression>
+            </condition>
+            <path>GeneralFinancialInstitutionTransferCovMEPS.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.009.001.COV.CHAPS")</expression>
+            </condition>
+            <path>GeneralFinancialInstitutionTransferCovCHAPS.xml</path>
+        </include>        
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.009.001.COV")</expression>
+            </condition>
+            <path>GeneralFinancialInstitutionTransferCov.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.009.001.CBPR")</expression>
+            </condition>
+            <path>GeneralFinancialInstitutionTransferCBPR.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.009.001.SIX")</expression>
+            </condition>
+            <path>GeneralFinancialInstitutionTransferSIX.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.009.001.T2")</expression>
+            </condition>
+            <path>GeneralFinancialInstitutionTransferT2.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.009.001.MEPS")</expression>
+            </condition>
+            <path>GeneralFinancialInstitutionTransferMEPS.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.009.001.CHAPS")</expression>
+            </condition>
+            <path>GeneralFinancialInstitutionTransferCHAPS.xml</path>
+        </include>        
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.009")</expression>
+            </condition>
+            <path>GeneralFinancialInstitutionTransfer.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.008.001.T2")</expression>
+            </condition>
+            <path>SingleCustomerCreditTransferT2.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.008.001.SIX")</expression>
+            </condition>
+            <path>SingleCustomerCreditTransferSIX.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.008.001.CBPR")</expression>
+            </condition>
+            <path>SingleCustomerCreditTransferCBPR.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.008.001.CHAPS")</expression>
+            </condition>
+            <path>SingleCustomerCreditTransferCHAPS.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.008.001.MEPS")</expression>
+            </condition>
+            <path>SingleCustomerCreditTransferMEPS.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.008")</expression>
+            </condition>
+            <path>SingleCustomerCreditTransfer.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.010.001.T2")</expression>
+            </condition>
+            <path>FinancialInstitutionDirectDebitT2.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.010")</expression>
+            </condition>
+            <path>FinancialInstitutionDirectDebit.xml</path>
+        </include>
+        <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.004.001.SIX")</expression>
+            </condition>
+            <path>PaymentReturnSIX.xml</path>
+        </include>
+	 <include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.004.001.CHAPS")</expression>
+            </condition>
+            <path>PaymentReturnCHAPS.xml</path>
+        </include>
+		<include>
+            <condition>
+                <expression>startsWith(getReportValue("TEMPLATE_NAME") , "pacs.002.001.CBPR")</expression>
+            </condition>
+            <path>PaymentStatusReportCBPR.xml</path>
+        </include>        
+    </contents>
+</template>

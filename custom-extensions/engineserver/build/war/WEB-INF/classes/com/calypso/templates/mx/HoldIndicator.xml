@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<template>
+    <contents>
+        <element name="HldInd">
+            <contents>
+                <element name="Ind">
+                    <contents max="1">
+                        <text>
+                            <condition>
+                                <expression>getReportValue("XferAttributes.HoldRelease") == "NPRE"</expression>
+                            </condition>
+                            <value>true</value>
+                        </text>
+                        <text>
+                            <value>false</value>
+                        </text>
+                    </contents>
+                </element>
+                <element name="Rsn">
+                    <condition>
+                        <expression>getReportValue("XferAttributes.HoldRelease") == "NPRE"</expression>
+                    </condition>
+                    <contents>
+                        <element name="Cd">
+                            <contents>
+                                <report>
+                                    <column>XferAttributes.HoldReason</column>
+                                </report>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

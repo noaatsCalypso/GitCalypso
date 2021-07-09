@@ -1,0 +1,126 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" || |MESSAGE_SUBACTION|== "CANCEL")
+	inline  "Amend and Cancel";
+</calypso-->
+</p>
+
+<p class="header1">Lock Agreement Settlement</p>
+
+<br>
+<p>Our Transaction Reference: |TRADE_ID|</p>
+<br>
+
+We hereby to inform that the |LOCKOUT_DATE| is the fixing date for the following Lock Agreement trade:
+<table width='100%'>
+<tr>
+    <td width="30%">Trade Date:</td>
+    <td width='68%'>|TRADE_DATE|</td>
+</tr>
+<tr>
+    <td>Buyer:</td>
+    <td>|TRADE_BUYER_NAME|</td>
+</tr>
+<tr>
+    <td>Seller:</td>
+    <td>|TRADE_SELLER_NAME|</td>
+</tr>
+<tr>
+    <td>Notional:</td>
+    <td>|TRADE_SETTLECCY| |TRADE_NOMINAL|</td>
+</tr>
+<tr>
+    <td>Underlying</td>
+    <td>|PRODUCT_ISIN|</td>
+</tr>
+<tr>
+    <td>PV01/Duration</td>
+    <td>|DURATION|</td>
+</tr>
+<tr>
+    <td>Average Yield / Price</td>
+    <td>|FINAL_LOCK_VALUE|</td>
+</tr>
+<tr>
+    <td>Forward Yield</td>
+    <td>|LOCK_YIELD|</td>
+</tr>
+<tr>
+    <td>Forward Price</td>
+    <td>|LOCK_PRICE|</td>
+</tr>
+<tr>
+    <td>Settlement Date</td>
+    <td>|SETTLE_DATE|</td>
+</tr>
+<tr>
+    <td>Maturity Date</td>
+    <td>|LOCKOUT_DATE|</td>
+</tr>
+<br>
+<!--calypso>
+iterator ( "AverageYieldInfo" )
+   inline "
+<p>Fixing details:</p>
+   <tr>
+   <td>|AVERAGE_YIELD_INFO_DETAILS_FIXING_YIELD|</td>
+   <td>|AVERAGE_YIELD_INFO_DETAILS_FIXING_PRICE|</td>
+   <td>|AVERAGE_YIELD_INFO_DETAILS_FIXING_DATE|</td>
+	</tr>
+   ";
+</calypso-->
+</table>
+
+<p>
+Payoff Amount: PV01 x Notional x (Average Yield -Forward Yield)</br>
+<br>
+Party A Payoff: if Payoff amount is positive, Leumi will pay the absolute amount of the Payoff</br>
+Amount.
+<br>
+Party B Payoff: if Payoff amount is negative, Customer will pay the absolute amount of the Payoff
+Amount.</br>
+</p>
+<!--calypso>
+if ( |SETTLE_TYPE| != "Physical Settle"){
+	inline "
+	|FEE_PAYER#EXERCISE_FEE| will pay to |FEE_RECEIVER#EXERCISE_FEE| of
+	<b>|EXERCISE_FEE_CURRENCY| |EXERCISE_FEE_AMOUNT|</b> on the <b>|EXERCISE_FEE_DATE|</b>";
+	}
+if ( |SETTLE_TYPE| == "Physical Settle"){
+	inline "
+	the delivery of |UNDERLYING| will be made on |SETTLE_DATE|
+	";
+	}
+</calypso-->
+
+<p class='header2'>Account Details:</p>
+<table width='100%'>
+ <tr>
+  <td width="30%"><b>Payments to |SENDER_CODE|:</b></td>
+  <td width='68%'>|PO_INSTRUCTIONS|</td>
+ </tr>
+ <tr>
+  <td><b>Payments to |RECEIVER_CODE|:</b></td>
+  <td>|COUNTERPARTY_INSTRUCTIONS|</td>
+ </tr>
+</table>
+<br>
+
+<p>
+Please confirm that the foregoing correctly sets forth the terms of our agreement
+by executing the copy of this Confirmation enclosed for that purpose and returning
+it to us or by sending us a letter substantially similar to this letter, which letter
+sets forth the material terms of the Swap Transaction to which this Confirmation
+relates and indicates your agreement to those terms.
+</p>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->
+

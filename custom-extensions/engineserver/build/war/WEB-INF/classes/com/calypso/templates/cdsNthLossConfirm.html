@@ -1,0 +1,248 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+<p class="indented">The purpose of this (this &quot;confirmation&quot;) is to confirm the terms and conditions of the Credit Default Swap
+Transaction entered into between us on the Trade Date specified below.
+|SENDER_FULL_NAME| and |RECEIVER_FULL_NAME| on the trade date specified below.</p>
+
+<p class="indented">The definitions and provisions contained in the 1999 ISDA Credit Derivatives Definitions, as supplemented by
+<!--calypso>
+if ( |CONV_OBLG_SUPPLEMENT| == "true" )
+    inline "
+the Supplement Relating to Convertible, Exchangeable or Accreting Obligations dated November 9, 2001,
+ ";
+if ( |SUCCESSOR_EVENT_SUPPLEMENT| == "true" )
+    inline "
+the Supplement Relating to Successor and Credit Events dated November 28, 2001,
+ ";
+if ( |RESTRUCTURING_SUPPLEMENT| == "true" )
+    inline "
+the Restructuring Supplement dated May 11, 2001 (&quot;Credit Derivatives Definitions&quot;),
+ ";
+</calypso-->
+as published by the International Swaps and Derivatives Association, Inc., are incorporated into this Confirmation . In the event of any inconsistency between those definitions and provisions and this Confirmation, this Confirmation will govern.</p>
+
+
+<p class="header2">1. General Terms:</p>
+<table width="100%">
+ <tr>
+  <td width="30%">Trade Date:</td>
+  <td width="68%"|TRADE_DATE|</td>
+ </tr>
+ <tr>
+  <td>Effective Date:</td>
+  <td>|START_DATE|</td>
+ </tr>
+<tr>
+  <td>Maturity Date:</td>
+  <td>The Transaction shall terminate on |PRODUCT_MATURITYDATE|(being the designated termination date of the Counterparty Swap) provided that if the Counterparty Swap is subject to earlier or later termination then this Transaction shall terminate on such earlier or later date.</td>
+ </tr>
+<tr>
+  <td>Where :</td>
+  <td>"Counterparty Swap" means the credit default swap dated |TRADE_DATE| between TD Global Finance and a Counterparty a the same may be amended or supplemented from time to time.</td>
+ </tr>
+<tr>
+  <td>Business Days:</td>
+  <td>Days on which commercial banks and foreign exchange markets are generally open to settle payments in |FLT_CPN_HOL|.</td>
+ </tr>
+<tr>
+  <td>Business Day Convention:</td>
+  <td>Unless otherwise provided in this Confirmation, Following, meaning that if any day or date referred to in this Confirmation would otherwise fall on a day that is not a Business Day, an adjustment will be made such that that day or date will be the first following Business Day.</td>
+ </tr>
+<tr>
+  <td>Initial Reference Portfolio Notional Amount:</td>
+  <td>|CD_NOTIONAL| being the aggregate of the Reference Entity Notional Amounts in respect of all Reference Entities in the Initial Reference Portfolio Schedule on the Effective Date.</td>
+ </tr>
+<tr>
+  <td>Reference Entity Notional Amount:</td>
+  <td>In respect of a Reference Entity, the amount listed opposite that Reference Entity in the Initial Reference Portfolio Schedule.</td>
+ </tr>
+<tr>
+  <td>Swap Notional Amount:</td>
+  <td>The Swap Notional Amount of the Counterparty Swap (as defined in the Counterparty Swap). As at the Effective Date, the Swap Notional Amount is USD |SWAP_NOTIONAL|.</td>
+ </tr>
+<tr>
+  <td>Initial Reference Portfolio Schedule:</td>
+  <td>Means the Reference Portfolio Schedule annexed hereto.</td>
+ </tr>
+<tr>
+  <td>Reference Entity:</td>
+  <td>Means each Reference Entity (as defined in the Counterparty Swap) set out in the Reference Portfolio Schedule of the Counterparty Swap and its Successors, as varied according to the provisions of "Adjustments" set out below. Buyer Credit Event Report and other Notices: Any service by the Calculation Agent in the Counterparty Swap of a Credit Event Report, a Notice of Publicly Available Information, or any correspondence, communication, or other information in connection with a Credit Event shall be deemed service of such items (to the extent required and not already in such party�s possession) under this swap.</td>
+ </tr>
+<tr>
+  <td>Conditions to Payment:</td>
+  <td>The Conditions to Payment under this swap shall be deemed satisfied upon satisfaction of the Conditions to Payment under the Counterparty Swap. The conditions to payment under this Swap (the �Conditions to Payment�) shall be satisfied by delivery by the Calculation Agent to Buyer immediately following its or their delivery pursuant to the Counterparty Swap, of a copy of each of any:<br/><br/>
+
+    1. Credit Event Notices;<br/><br/>
+
+    2. Notices of Publicly Available Information (whenever delivered pursuant to the Counterparty Swap); and<br/><br/>
+
+    3. Reports or other verifications or confirmations of any Independent Accountant.
+  </td>
+ </tr>
+<tr>
+  <td>Credit Events:</td>
+  <td>Means any of the following (to the extent applicable to a Reference Entity or Obligation):<br>|CREDIT_EVENTS|<br>(as defined in and more particularly described in the Counterparty Swap).</td>
+ </tr>
+<tr>
+  <td>Participation Percentage:</td>
+  <td>|PARTICIPATION|</td>
+ </tr>
+<tr>
+  <td>Participation Details:</td>
+</tr>
+<tr>
+  <td>Range Start:</td>
+  <td>|LOSS_RANGE_START|</td>
+ </tr>
+<tr>
+  <td>Range End:</td>
+  <td>|LOSS_RANGE_END|</td>
+ </tr>
+<tr>
+  <td>Range Start (%):</td>
+  <td>|LOSS_RANGE_IN_START|</td>
+ </tr>
+<tr>
+  <td>Range End (%):</td>
+  <td>|LOSS_RANGE_IN_END|</td>
+ </tr>
+</table>
+
+
+<p class="header2">2. Fixed Payment Amounts:</p>
+
+
+<table width="100%">
+  <tr>
+ <td width="30%">The Buyer:</td>
+  <td width="68%">|PROTECTION_BUYER_CODE|</td>
+ </tr>
+ <tr>
+  <td>Fixed Rate Payer Initial Payment:</td>
+  <td>On the Fixed Rate Payer Initial Payment Date, Buyer will pay to Seller |FIX_INIT_PYT_CCY| |FIX_INIT_PYT|.</td>
+ </tr>
+ <tr>
+  <td>Fixed Rate Payer Initial Payment Date:</td>
+  <td>|FIX_INIT_PYT_DATE|</td>
+ </tr>
+ <tr>
+  <td>Fixed Rate Payer Calculation Amount:</td>
+  <td>The Swap Notional Amount.</td>
+ </tr>
+ <tr>
+  <td>Fixed Rate:</td>
+  <td>|FIX_FIXED_RATE| % per annum.</td>
+ </tr>
+ <tr>
+  <td>Fixed Rate Payer Payment Dates:</td>
+  <td>|FIX_CPN_FREQ| on the |FIX_ROLL_DAY|, starting on |FIX_FIRST_PAYMENT_DATE|. For greater certainty each Fixed Rate Payer Payment Date will be the same as each Fixed Rate Payment Date under the Counterparty Swap.</td>
+ </tr>
+<tr>
+  <td>Day Count Fraction:</td>
+  <td>|FIX_CPN_DATE_ROLL| % per annum.</td>
+ </tr>
+</table>
+
+
+<p class="header2">3. Floating Payment Amounts:</p>
+
+<table width="100%">
+ <tr>
+  <td width="30%">The Seller:</td>
+  <td width="68%">|PROTECTION_SELLER_CODE|</td>
+ </tr>
+ <tr>
+<td>Floating Rate Payer Payments:</span></p>
+  </td>
+  <td>Seller shall pay to the Buyer amounts equivalent to all net amounts due to be received by Seller under the Counterparty Swap in respect of the Loss Amount for a Reference Entity for which all Conditions to Payment have been satisfied and a Final Price determined on the Floating Rate Payer Payment Date.</td>
+ </tr>
+ <tr>
+  <td>Floating Rate Payer Payment Date:</td>
+  <td>One Business Day following due date for receipt by Seller of any such payments to it under the Counterparty Swap.</td>
+ </tr>
+ <tr>
+  <td>Repayments:</td>
+  <td>Buyer agrees that if Seller is required to repay any amounts under the Counterparty Swap after it has paid amounts to Buyer under this swap, then the Buyer shall pay to Seller amounts sufficient to enable Seller to meet its obligations under the Counterparty Swap.</td>
+ </tr>
+ <tr>
+  <td>Calculation Agent:</td>
+  <td>|CD_CALC_AGENT|</td>
+ </tr>
+</table>
+
+
+<p class="header2">4. Adjustments:</p>
+
+<table width="100%">
+ <tr>
+  <td width="30%">Adjustment:</td>
+  <td width="68%">The Buyer may at any time apply to the Seller with a request to:<br>
+    (a) Remove the name of a Reference Entity from the Reference Portfolio;<br>
+    (b) Add the name of a new Reference Entity to the Reference Portfolio Schedule;<br>
+    (c) Decrease or increase the Reference Entity Notional Amount of an existing Reference Entity in the Reference Portfolio Schedule;<br>
+    Each of which shall constitute an "Adjustment".</td>
+ </tr>
+ <tr>
+  <td>Adjustment Payment:</td>
+  <td>In the event any Adjustment is proposed the Buyer and the Seller shall negotiate in good faith to determine the amount of the payment to be made to the Seller in consideration of the Seller agreeing to such Adjustment.<br>
+    Any such Adjustment shall be recorded by letter of amendment to this Confirmation or in such other manner as may be agreed between Seller and Buyer.</td>
+ </tr>
+ </table>
+
+
+<p class="header2">5. Notice and Account Details:</p>
+
+<table width="100%">
+ <tr>
+  <td width="30%">Payment to |SENDER_CODE|:</td>
+  <td width="68%">|PO_INSTRUCTIONS|</td>
+ </tr>
+ <tr>
+  <td>Payment to |RECEIVER_CODE|:</td>
+  <td>|COUNTERPARTY_INSTRUCTIONS|</td>
+ </tr>
+ </table>
+
+
+<p class="header2">6. MS Documentation and Operations Officers:</p>
+
+<p>(a)    The Office of Party A for the Swap Transaction is |SENDER_ADDRESS| |SENDER_CITY| |SENDER_STATE| |SENDER_ZIPCODE| |SENDER_COUNTRY|; and</p>
+<p>(b)    The Office of Party B for the Swap Transaction is |RECEIVER_ADDRESS| |RECEIVER_CITY| |RECEIVER_STATE| |RECEIVER_ZIPCODE| |RECEIVER_COUNTRY|. </p>
+
+<p class="header2">Reference Portfolio Schedule:</p>
+
+<p class="indented">In the event that any name of a Reference Entity or Reference Obligation and/or description of either is found to be erroneous and such error occurred despite the good faith of the Calculation Agent in preparing the Reference Portfolio, then the Calculation Agent can treat such error as manifest error and correct it without prior approval of the Issuer or any other party. Provided only that the Calculation Agent immediately informs all relevant parties if such erroneous information has been supplied to them already.</p>
+
+<table width="100%">
+ <tr>
+  <th width="20%">Issuer</th>
+  <th width="30%">Seniority</th>
+  <th width="48%">Size</th>
+ </tr>
+  <!--calypso>
+iterator("Basket")
+	inline "<tr><td>|ISSUER|</td><td>|SENIORITY|</td><td>|NOTIONAL|</td></tr>";
+</calypso-->
+</table>
+
+<p class="header2">7. Confirmation:</p>
+
+<p>Please confirm that the foregoing correctly sets forth the terms of our agreement by executing the copy of this Confirmation enclosed for that purpose and returning it to us or by sending us a letter substantially similar to this letter, which letter sets forth the material terms of the Swap Transaction to which this Confirmation relates and indicates your agreement to those terms.</p>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->
+
+
+
+
+
+
+
+
+

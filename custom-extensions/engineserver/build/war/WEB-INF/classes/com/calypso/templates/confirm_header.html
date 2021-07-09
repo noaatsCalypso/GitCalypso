@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<!-- ###################### -->
+<!-- #### START HEADER #### -->
+<!-- ###################### -->
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Confirmation Notice</title>
+  </head>
+
+<body>
+
+<table>
+  <tr>
+
+<!--calypso>
+			if (|SENDER_LOGO| != "") {
+                inline "<td width=\"50%\">|SENDER_LOGO|</td>";
+			} else {
+inline "    <td width=\"50%\"><img src=\"https://www.calypso.com/images/logo.gif\" alt=\"Logo\"/></td>";
+			}
+		</calypso-->
+
+    <td>
+         |SENDER_FULL_NAME|<br/>
+         |SENDER_CONTACT_NAME|<br/>
+         |SENDER_TITLE|<br/>
+         |SENDER_ADDRESS|<br/>
+         |SENDER_CITY|<br/>
+<!--calypso>
+if (|SENDER_STATE| == true) inline "|SENDER_STATE|<br/>";
+</calypso-->
+         |SENDER_ZIPCODE|<br/>
+         |SENDER_COUNTRY|<br/>
+<!--calypso>
+if (|SENDER_EMAIL| == true) inline "E-mail: |SENDER_EMAIL|<br/>";
+if (|SENDER_PHONE| == true) inline "Phone: |SENDER_PHONE|<br/>";
+if (|SENDER_FAX| == true)   inline "Fax: |SENDER_FAX|<br/>";
+if (|SENDER_TELEX| == true) inline "Telex: |SENDER_TELEX|<br/>";
+</calypso-->
+        Swift: |SENDER_SWIFT|
+    </td>
+  </tr>
+</table>
+
+<!--RECEIVER INFO -->
+
+<table width="100%">
+<tr><td width="15%">Date:</td><td width="83%">|DATE|</td></tr>
+<tr><td>To:</td><td>|RECEIVER_FULL_NAME|</td></tr>
+<tr><td>Address:</td>
+    <td>|RECEIVER_ADDRESS|<br/>
+        |RECEIVER_CITY|
+        |RECEIVER_STATE|
+        |RECEIVER_ZIPCODE|<br/>
+        |RECEIVER_COUNTRY|</td></tr>
+
+<!--calypso>
+if (|RECEIVER_FAX| == true)
+    inline "<tr><td>Fax:</td><td>|RECEIVER_FAX|</td></tr>";
+</calypso-->
+
+<!--calypso>
+	if (|RECEIVER_CONTACT_NAME| == true) inline "<tr><td>Attention:</td><td>|RECEIVER_CONTACT_NAME|</td></tr>";
+</calypso-->
+
+<tr><td>Our Reference:</td><td>|TRADE_ID|</td></tr>
+</table>
+
+<p class="header1">|PRODUCT_TYPE|
+<!--calypso>
+if(|MESSAGE_TYPE| == "RATE_RESET")
+    inline " Rate Reset Notice";
+else if(|MESSAGE_TYPE| == "CONFIRM")
+    inline " Confirmation";
+else if(|MESSAGE_TYPE| == "PAYMENT_ADVICE")
+    inline " Payment Advice";
+else if(|MESSAGE_TYPE| == "TICKET")
+    inline " Ticket";
+else if(|MESSAGE_TYPE| == "EXERCISE_NOTICE")
+    inline " Exercise Notice";
+else if(|MESSAGE_TYPE| == "PAYMENT_MSG")
+    inline " Payment Message";
+else if(|MESSAGE_TYPE| == "RECEIPTMSG")
+    inline " Receipt Message";
+else if(|MESSAGE_TYPE| == "RECEIPT_ADVICE")
+    inline " Receipt Advice";
+else if(|MESSAGE_TYPE| == "SEC_DELIVERYMSG")
+    inline " Securities Delivery";
+else if(|MESSAGE_TYPE| == "SEC_RECEIPTMSG")
+    inline " Securities Receipt";
+</calypso-->
+</p>
+
+
+<p>Dear |SALUTATION|,</p>
+
+<!-- #################### -->
+<!-- #### END HEADER #### -->
+<!-- #################### -->

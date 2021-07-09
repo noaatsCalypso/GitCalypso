@@ -1,0 +1,163 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+<!--calypso>
+   set TRANSACTION_TYPE = |PRODUCT_TYPE|;
+</calypso-->
+
+
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" )
+	inline  "AMEND AND CANCEL";
+	else if (|MESSAGE_SUBACTION|== "CANCEL")
+	inline "CANCEL";
+</calypso-->
+</p>
+
+
+<p class="header1">|TRANSACTION_TYPE| Confirmation</p>
+
+<br>
+<p>Our Transaction Reference: |TRADE_ID|</p>
+<br>
+
+<p class="indented">
+The purpose of this 
+<!--calypso>
+if ( Message.getAddressMethod() == "FAX" )
+    inline "facsimile";
+else
+    inline "letter";
+</calypso-->
+ communication is to set forth the terms and conditions of the  |TRANSACTION_TYPE| Transaction entered into on the Trade Date referred 
+ to below (the "|TRANSACTION_TYPE| transaction") between |TRADE_PROCESSING_ORGANIZATION| ("Party A" or "we") and |TRADE_COUNTERPARTY_FULL_NAME| ("Party B" or "you").  
+ This communication constitutes a "Confirmation" as referred to in the |TRANSACTION_TYPE| Agreement specified below.
+
+</p>
+<!--calypso>
+	if (|MESSAGE_SUBACTION|== "AMEND")
+	 inline "<p>This Confirmation cancels and supersedes the previous confirmation under the same reference.</p>";
+	else if (|MESSAGE_SUBACTION|== "CANCEL")
+	 inline "<p>This Confirmation cancels the previous confirmation under the same reference.</p>";
+</calypso-->
+
+<p class="indented">
+<!--calypso>
+if ( |MASTER_AGREEMENT| == "ISDA" && |LA_STATUS| == "SIGNED" )
+{
+		inline "<p>This Confirmation incorporates the definitions and provisions contained in the 2006 ISDA Definitions as published by the International 
+	Swaps and Derivatives Association, Inc. (the &quot;Definitions&quot;).  In the event of any inconsistency between the Definitions and this Confirmation, 
+	this Confirmation will govern.</p>
+
+    	<p>This Confirmation is subject to and incorporates the terms of the ISDA Master Agreement and Schedule between |TRADE_PROCESSING_ORGANIZATION|
+     and Party B (the &quot;ISDA Master Agreement&quot;).  All provisions contained in, or incorporated by reference to, the ISDA Master Agreement shall govern this 
+     Confirmation except as expressly modified below.  In the event of any inconsistency between the provisions of that ISDA Master Agreement and this Confirmation, 
+     this Confirmation shall prevail for the purpose of this |TRANSACTION_TYPE| Agreement.</p>";
+}
+if ( |MASTER_AGREEMENT| != "ISDA" || |LA_STATUS| != "SIGNED" ) {
+    inline "<p> The terms of the particular |TRANSACTION_TYPE| Transaction to which this communication relates are as follows:";
+}
+</calypso-->
+</p>
+
+
+
+<!--calypso>
+	inline"<table>
+	<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>Notional Amount:</td>
+		<td>|PRODUCT_CURRENCY|&nbsp;|TRADE_NOMINAL|</td>
+	</tr>
+	<tr>
+		<td>Trade Date:</td>
+		<td>|TRADE_DATE|</td>
+	</tr>
+	<tr>
+		<td>Determination Date:</td>
+		<td>|LOCKOUT_DATE|,&nbsp;subject to adjustment in accordance with the Modified Following Business Day Convention</td>
+	</tr>
+	<tr>
+		<td>Settlement Date:</td>
+		<td>|SETTLE_DATE|,&nbsp;subject to adjustment in accordance with the Modified Following Business Day Convention</td>
+	</tr>
+	<tr>
+		<td>Settlement Amount:</td>
+		<td>An amount equal to the  product of (i) the Reference Yield minus the Final Yield, multiplied by (ii) the Dollar Value of a Basis Point, multiplied by (iii) one hundred (100) </td>
+	</tr>
+	<tr>
+		<td>Reference Security:</td>
+		<td>|UNDERLYING|</td>
+	</tr>
+	<tr>
+		<td>Reference Yield:</td>
+		<td>|LOCK_YIELD|&nbsp;%</td>
+	</tr>
+	<tr>
+		<td>Final Yield:</td>
+		<td>The yield of the Reference Security as determined by the Calculation Agent on the Determination Date</td>
+	</tr>
+	<tr>
+		<td>Dollar Value of a Basis Point:</td>
+		<td>The price change, expressed in Dollars, which would occur on a face amount of the Reference Security 
+		equal to the Notional Amount, assuming the yield to maturity of the Reference Security (expressed as a rate per annum)
+		 were to change by one basis point (a basis point being expressed as .01%) from the Settlement Rate, 
+		 as determined by the Calculation Agent  in good faith in accordance with its standard practices</td>
+	</tr>
+	<tr>
+		<td>Settlement Amount Payer:</td>
+		<td>If the Settlement Amount is positive, then  |TRADE_SELLER_NAME| shall pay the Settlement Amount to |TRADE_BUYER_NAME|.<br/>
+			If the Settlement Amount is negative, then  |TRADE_BUYER_NAME| shall pay the absolute value of the Settlement Amount to Party |TRADE_SELLER_NAME|.
+		</td>
+	</tr>
+	<tr>
+		<td>Business Days:</td>
+		<td>|SETTLEMENT_HOLIDAYS|</td>
+	</tr>
+	<tr>
+		<td>Calculation Agent:</td>
+		<td>|SENDER_CODE|</td>
+	</tr>
+	</table>";
+</calypso-->
+	
+
+</p>Account Details:
+
+<table border=0 cellspacing=0 cellpadding=0 width=780 style='width:6.5in;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr>
+  <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p>Payment to |SENDER_CODE| :</p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p>|PO_INSTRUCTIONS|</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p>Payment to |RECEIVER_CODE| :</p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p>|COUNTERPARTY_INSTRUCTIONS|</p>
+  </td>
+ </tr>
+</table>
+
+<p>
+Please confirm that the foregoing correctly sets forth the terms of our agreement with respect to the |TRANSACTION_TYPE| Transaction 
+by signing in the space provided below and sending a copy of the executed Confirmation to |TRADE_PROCESSING_ORGANIZATION|, Attention: Capital Markets Operations, Facsimile number |SENDER_FAX| or Email |SENDER_EMAIL|. 
+</p>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->
+
+

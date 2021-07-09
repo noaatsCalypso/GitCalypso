@@ -1,0 +1,29 @@
+<Properties>
+    <Property name="calypso.appmonitoringname">${sys:calypso.appmonitoringname}</Property>
+    <Property name="calypsoAppName">${cal:calypso.appname}</Property>
+    <Property name="calypso.appname">${cal:calypso.appname}</Property>
+    <Property name="calypsoExtendedAppName">${cal:calypso.appname.prefix}${cal:calypso.appname}${cal:calypso.appname.suffix}</Property>
+    <Property name="calypso.extendedappname">${cal:calypso.appname.prefix}${cal:calypso.appname}${cal:calypso.appname.suffix}</Property>
+    <Property name="calypsoUserDir">${sys:calypso.userdir}</Property>
+    <Property name="calypso.userdir">${sys:calypso.userdir}</Property>
+    <Property name="fileSeparator">${sys:file.separator}</Property>
+    <Property name="file.separator">${sys:file.separator}</Property>
+    <Property name="calypsoEnvName">${sys:calypso.envname}</Property>
+    <Property name="calypso.envname">${sys:calypso.envname}</Property>
+    <Property name="calypsoVersion">${sys:calypso.version}</Property>
+    <Property name="calypso.version">${sys:calypso.version}</Property>
+    <Property name="calypsoVersionDate">${sys:calypso.versiondate}</Property>
+    <Property name="calypso.versiondate">${sys:calypso.versiondate}</Property>
+    <!-- Removing calypso.logfilename because strange cyclic recursion -->
+    <!-- <Property name="calypso.logfilename">${sys:calypso.logfilename}</Property> -->
+    <Property name="calypsoPatchVersionDate">${sys:calypso.patchversiondate}</Property>
+    <Property name="calypso.patchversiondate">${sys:calypso.patchversiondate}</Property>
+    <Property name="calypsoBuildNumber">${sys:calypso.buildnumber}</Property>
+    <Property name="calypso.buildnumber">${sys:calypso.buildnumber}</Property>
+    <Property name="calypsoBuildDate">${sys:calypso.builddate}</Property>
+    <Property name="calypso.builddate">${sys:calypso.builddate}</Property>
+    <!-- <Property name="calypso.logdelim">${sys:calypso.logdelim}</Property> -->
+    <Property name="calypso.maxbackupindex">${sys:calypso.maxbackupindex}</Property>
+    <Property name="calypso.maxfilesize">${sys:calypso.maxfilesize}</Property>
+    <!-- <Property name="calypso.log_header_end_tag">${sys:calypso.log_header_end_tag}</Property> -->
+</Properties>

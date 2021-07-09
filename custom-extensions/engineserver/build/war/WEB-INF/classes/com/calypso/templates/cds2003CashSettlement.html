@@ -1,0 +1,112 @@
+
+<table border=0 cellspacing=0 cellpadding=0 width=560 style='width:560.0pt;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+<tr>  
+  <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Terms Relating to Cash Settlement:</span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US ></span></p>
+  </td>
+</tr>
+<tr>  
+    <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Valuation Date:</span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >
+  <!--calypso>
+  	if (|MULT_VAL_DAYSB|=="false")
+  	inline "
+  	Single Valuation Date: |VAL_DATE_LAG| Business Days
+  	";
+  	else inline "
+  	Multiple Valuation Dates: |VAL_DATE_LAG| Business Days; and each |MULT_VAL_DATE_LAG | Business Days thereafter 
+	<br>Number of Valuation Dates: |MULT_VAL_DATES|
+  	";
+  </calypso-->
+  </span></p>
+  </td>
+</tr> 
+<tr> 
+  <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Valuation Time: </span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|VAL_DATETIME|</span></p>
+  </td>
+</tr>
+<tr>
+ <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Quotation Method: </span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|QUOTATION_METHOD|</span></p>
+ </td>
+</tr>
+<tr>
+ <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Quotation Amount: </span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|QUOTATION_CCY| &nbsp; |QUOTATION_AMT|</span></p>
+  </td>
+</tr>
+<tr>
+ <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Minimum Quotation Amount: </span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|MIN_QUOTATION_CCY| &nbsp; |MIN_QUOTATION_AMT|</span></p>
+  </td>
+</tr>
+<tr>
+ <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Dealer(s): </span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|REFERENCE_DEALERS|</span></p>
+  </td>
+</tr>
+<tr>
+ <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Settlement Currency: </span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|SETTLEMENT_CCY|</span></p>
+  </td>
+</tr> 
+<tr>
+ <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Cash Settlement Date: </span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|DEFAULT_SETTLE_DATE_DESC|</span></p>
+  </td>
+</tr>
+<tr>
+ <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Cash Settlement Amount: </span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|DEFAULT_SETTLE_AMT|</span></p>
+  </td>
+</tr> 
+<tr>
+ <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Quotations: </span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|INCLUDE_EXCLUDE_ACCR_INTEREST|</span></p>
+ </td>
+</tr>
+<tr>
+ <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >Valuation Method:</span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=EN-US >|VAL_METHOD|</span></p>
+ </td>
+</tr>
+</table>
+

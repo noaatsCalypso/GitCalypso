@@ -1,0 +1,108 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+<p>I am pleased to confirm our |PRODUCT_TYPE| trade, traded |TRADE_DATE|.</p>
+
+<p>This trade carries our trade id number |TRADE_ID|. The details of the trade are as follows:</p>
+
+<p><b><u>Trade details:</u></p>
+<TABLE BORDER=0 CELLSPACING=1 WIDTH=422>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">Our Trade Number</TD>
+<TD WIDTH="2%" VALIGN="MIDDLE">:</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">|TRADE_ID|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">Operation Type</TD>
+<TD WIDTH="2%" VALIGN="MIDDLE">:</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">|PRODUCT_TYPE|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">Instrument Description</TD>
+<TD WIDTH="2%" VALIGN="MIDDLE">:</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">|PRODUCT_DESCRIPTION|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">Buyer</TD>
+<TD WIDTH="2%" VALIGN="MIDDLE">:</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">|TRADE_BUYER_NAME|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">Seller</TD>
+<TD WIDTH="2%" VALIGN="MIDDLE">:</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">|TRADE_SELLER_NAME|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">Trade Date</TD>
+<TD WIDTH="2%" VALIGN="MIDDLE">:</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">|TRADE_DATE|</TD>
+</TR>
+</TABLE>
+
+<p><b><u>First Leg Details</u></b></p>
+<TABLE BORDER=0 CELLSPACING=1 WIDTH=422>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">Settlement Date</TD>
+<TD WIDTH="2%" VALIGN="MIDDLE">:</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">|FX_SETTLE_DATE|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">Split Spot Settlement Date</TD>
+<TD WIDTH="2%" VALIGN="MIDDLE">:</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">|FX_SPLIT_DATE|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">Bought Amount</TD>
+<TD WIDTH="2%" VALIGN="MIDDLE">:</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">|FX_BUY_CURRENCY| |FX_BUY_AMOUNT|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">Sold Amount</TD>
+<TD WIDTH="2%" VALIGN="MIDDLE">:</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">|FX_SELL_CURRENCY| |FX_SELL_AMOUNT|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">FX Rate</TD>
+<TD WIDTH="2%" VALIGN="MIDDLE">:</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">|FX_NEGOCIATEDPRICE| (|FX_NEGOCIATEDPRICETYPE|)</TD>
+</TR>
+</TABLE>
+
+<p><b><u>Second Leg Details</p></u></b>
+<TABLE BORDER=0 CELLSPACING=1 WIDTH=422>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">Settlement Date</TD>
+<TD WIDTH="2%" VALIGN="MIDDLE">:</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">|FWD_SETTLE_DATE|</TD>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">Bought Amount</TD>
+<TD WIDTH="2%" VALIGN="MIDDLE">:</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">|FX_SELL_CURRENCY| |FXFWD_BUY_AMOUNT|</TD>
+</TR>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">Split Forward Settlement Date</TD>
+<TD WIDTH="2%" VALIGN="MIDDLE">:</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">|FX_SPLIT_FWDDATE|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">Sold Amount</TD>
+<TD WIDTH="2%" VALIGN="MIDDLE">:</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">|FX_BUY_CURRENCY| |FXFWD_SELL_AMOUNT|</TD>
+</TR>
+<TR><TD WIDTH="39%" VALIGN="MIDDLE">FX Rate</TD>
+<TD WIDTH="2%" VALIGN="MIDDLE">:</TD>
+<TD WIDTH="59%" VALIGN="MIDDLE">|FXFWD_NEGOCIATEDPRICE| (|FX_NEGOCIATEDPRICETYPE|)</TD>
+</TR>
+</TABLE>
+
+<!---End BizDays Table-->
+
+<p>|ADDITIONAL_FIXED_AMOUNT|</p>
+
+<p><b><u>Payment Instructions</u></b></p>
+
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=424>
+<TR><TD WIDTH="38%" VALIGN="MIDDLE">Payment to |SENDER_CODE| :</TD>
+<TD WIDTH="62%" VALIGN="MIDDLE">|PO_INSTRUCTIONS|</TD>
+</TR>
+<TR><TD WIDTH="38%" VALIGN="MIDDLE">Payment to |RECEIVER_CODE| :</TD>
+<TD WIDTH="62%" VALIGN="MIDDLE">|COUNTERPARTY_INSTRUCTIONS|</TD>
+</TR>
+</TABLE>
+
+<!---End Account Details Table-->
+
+<p>Please sign and return this Confirmation at your earliest convenience. Because of the importance of confirming transactions promptly and accurately, we regret that any Confirmations which are not signed and returned as soon as possible may result in a delay in payments.</p>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

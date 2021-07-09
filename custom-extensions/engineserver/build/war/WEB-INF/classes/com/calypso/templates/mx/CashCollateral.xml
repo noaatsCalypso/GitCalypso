@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+	<contents>
+		<element name="CshColl">
+			<contents>
+				<element name="RtrXcss">
+					<condition>
+						<expression>isBuy()</expression>
+					</condition>
+					<contents>
+						<text>
+							<value>false</value>
+						</text>
+					</contents>
+				</element>
+				<element name="CshAcctId">
+					<condition>
+						<expression>isTransfer()</expression>
+					</condition>
+					<contents max="1">
+						<element>
+							<!-- This anonymous element is used to apply the condition below BEFORE 
+								the change of context of the include. -->
+							<condition>
+								<expression>isSell()</expression>
+							</condition>
+							<contents>
+								<include>
+									<context>
+										<to>InterAccountRelatedMarginCallConfig</to>
+									</context>
+									<path>LCHCashAccountProprietaryIdentification.xml</path>
+								</include>
+							</contents>
+						</element>
+						<element>
+							<contents>
+								<include>
+									<context>
+										<to>MarginCallConfig</to>
+									</context>
+									<path>LCHCashAccountProprietaryIdentification.xml</path>
+								</include>
+							</contents>
+						</element>
+					</contents>	
+				</element>
+				<element name="ValDt">
+					<contents>
+						<report>
+							<column>Trade Settle Date</column>
+						</report>
+					</contents>
+				</element>
+				<element name="CollVal">
+					<attributes>
+						<attribute name="Ccy">
+							<value>
+								<report>
+									<column>Settle Cur.</column>
+								</report>
+							</value>
+						</attribute>
+					</attributes>
+					<contents>
+						<report>
+							<column>SettlementAmount</column>
+						</report>
+					</contents>
+				</element>
+			</contents>
+		</element>
+	</contents>
+</template>

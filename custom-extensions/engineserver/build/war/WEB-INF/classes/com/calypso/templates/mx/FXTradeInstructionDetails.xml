@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+	<contents>
+		<element name="TradInf">
+			<contents>
+				<element name="TradDt">
+					<contents>
+						<report>
+							<expression>toJDate(getReportValue("Trade Date"))</expression>
+						</report>
+					</contents>
+				</element>
+				<element name="OrgtrRef">
+					<contents>
+						<report>
+							<column>MESSAGE_ID</column>
+						</report>
+					</contents>
+				</element>
+				<element name="MtchgSysRef">
+					<condition>
+						<expression>!isNewMessage()</expression>
+					</condition>
+					<contents>
+						<element name="RltdRef">
+							<contents>
+								<report>
+									<column>Msg Linked Id</column>
+								</report>
+							</contents>
+						</element>
+					</contents>
+				</element>
+			</contents>
+		</element>
+		<element>
+			<contents max="1">
+				<include>
+					<condition>
+						<expression>getReportValue("TRADE_KEYWORD.CLSType") != "Client"</expression>
+					</condition>
+					<path>FXTradeInstructionDetailsParties.xml</path>
+				</include>
+				<include>
+					<path>FXTradeInstructionDetailsPartiesCLSTypeClient.xml</path>
+				</include>				
+			</contents>
+		</element>
+		<element name="AgrdRate">
+			<condition>
+				<expression>isCancelMessage()</expression>
+			</condition>
+			<contents>
+				<element name="XchgRate">
+					<contents>
+						<report>
+							<column>Final Price</column>
+						</report>
+					</contents>
+				</element>
+			</contents>
+		</element>
+		<element name="TradAmts">
+			<contents>
+				<element name="TradgSdBuyAmt">
+					<attributes>
+						<attribute name="Ccy">
+							<value>
+								<report>
+									<condition>
+										<expression>isBuy()</expression>
+									</condition>
+									<column>Prim Cur</column>
+								</report>
+								<report>
+									<condition>
+										<expression>isSell()</expression>
+									</condition>
+									<column>Sec Cur</column>
+								</report>
+							</value>
+						</attribute>
+					</attributes>
+					<contents>
+						<report>
+							<condition>
+								<expression>isBuy()</expression>
+							</condition>
+							<column>Prim Amt</column>
+						</report>
+						<report>
+							<condition>
+								<expression>isSell()</expression>
+							</condition>
+							<column>Sec Amt</column>
+						</report>
+					</contents>
+				</element>
+				<element name="TradgSdSellAmt">
+					<attributes>
+						<attribute name="Ccy">
+							<value>
+								<report>
+									<condition>
+										<expression>isBuy()</expression>
+									</condition>
+									<column>Sec Cur</column>
+								</report>
+								<report>
+									<condition>
+										<expression>isSell()</expression>
+									</condition>
+									<column>Prim Cur</column>
+								</report>
+							</value>
+						</attribute>
+					</attributes>
+					<contents>
+						<report>
+							<condition>
+								<expression>isBuy()</expression>
+							</condition>
+							<column>Sec Amt</column>
+						</report>
+						<report>
+							<condition>
+								<expression>isSell()</expression>
+							</condition>
+							<column>Prim Amt</column>
+						</report>
+					</contents>
+				</element>
+				<element name="SttlmDt">
+					<contents>
+						<report>
+							<column>Trade Settle Date</column>
+						</report>
+					</contents>
+				</element>
+			</contents>
+		</element>
+		<element name="AgrdRate">
+			<condition>
+				<expression>!isCancelMessage()</expression>
+			</condition>
+			<contents>
+				<element name="XchgRate">
+					<contents>
+						<report>
+							<column>Final Price</column>
+						</report>
+					</contents>
+				</element>
+			</contents>
+		</element>
+	</contents>
+</template>

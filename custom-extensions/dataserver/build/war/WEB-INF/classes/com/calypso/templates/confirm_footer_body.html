@@ -1,0 +1,49 @@
+<p>Yours sincerely,</p>
+<p>|SENDER_FULL_NAME|</p>
+
+<table width="100%">
+<tr>
+    <td width="60%">By:</td>
+<!--calypso>
+if (|SENDER_SIGNATURE| != "") {
+   inline "<td width='38%'>|SENDER_SIGNATURE|</td>";
+} else {
+   inline "<td width='38%'>_____________________________________</td>";
+}
+</calypso-->
+</tr>
+<tr>
+    <td width="60">Name:</td>
+    <td>|SENDER_CONTACT_NAME|</td>
+</tr>
+<tr>
+    <td width="60">Title:</td>
+    <td>|SENDER_TITLE|</td>
+</tr>
+</table>
+
+<br /><br />
+
+<p>Authorized Signatory</p>
+<p>Accepted and confirmed as of the trade date written above: |RECEIVER_FULL_NAME|</p>
+
+<table border="0">
+<tr>
+    <td width="60">By:</td>
+<!--calypso>
+if (|RECEIVER_SIGNATURE| != "") {
+   inline "<td>|RECEIVER_SIGNATURE|</td>";
+} else {
+   inline "<td>_____________________________________</td>";
+}
+</calypso-->
+</tr>
+<tr>
+    <td width="60">Name:</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td width="60">Title:</td>
+    <td>&nbsp;</td>
+</tr>
+</table>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    <contents>
+        <text>
+            <value>o=</value>
+        </text>
+        <report>
+            <column>ESMIG_SWIFT</column>
+            <transformations>
+                <transformation type="substring">
+                    <to>8</to>
+                </transformation>
+                <transformation type="function">
+                    <to>lower</to>
+                </transformation>
+            </transformations>
+        </report>
+        <text>
+            <value>,o=swift</value>
+        </text>
+    </contents>
+
+</template>

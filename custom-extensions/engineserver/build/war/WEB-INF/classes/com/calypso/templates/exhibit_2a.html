@@ -1,0 +1,149 @@
+<!-- ############################ -->
+<!-- #### Start Exhibit II-A #### -->
+<!-- ############################ -->
+
+<!--calypso>
+if (|REPORT#Is MtM XCCy| == "true") {
+	inline "<p>The Swap Transaction to which this Confirmation relates is a Mark-to market Currency Swap, the terms of which are as follows:</p>";
+	} else {
+	inline "<p>The terms of the particular Transaction to which this Confirmation relates are as follows:</p>";
+	}
+</calypso-->
+
+<br>
+<table CELLSPACING=0 BORDER=0 WIDTH="100%">
+<!--calypso>
+if (|PRODUCT_TYPE| != "SwapCrossCurrency")
+	inline "
+	<tr>
+		<td width='30%'>Notional Amount:</td>
+		<td>|TRADE_CURRENCY| |SWAP_NOTIONAL_VALUE|</td>
+	</tr>";
+</calypso-->
+<tr>
+	<td width='30%'>Trade Date:</td>
+	<td>|TRADE_DATE|</td>
+</tr>
+<tr>
+	<td width='30%'>Effective Date:</td>
+	<td>
+<!--calypso>
+	if ( |PRODUCT_FAMILY| == "Swap" )
+		inline "|SETTLE_DATE|";
+	else if ( |PRODUCT_FAMILY| like "%Swaption%" )
+		inline "|UNDERLYING_SETTLE_DATE|";
+</calypso-->
+	</td>
+</tr>
+<tr>
+	<td width='30%'>Termination Date:</td>
+	<td>
+<!--calypso>
+if ( |PRODUCT_FAMILY| == "Swap" )
+    inline "|PRODUCT_MATURITYDATE|, subject to adjustment in accordance with the Modified Following Business Day Convention.";
+else if ( |PRODUCT_FAMILY| like "%Swaption%" )
+    inline "|UNDERLYING_MATURITYDATE|, subject to adjustment in accordance with the Modified Following Business Day Convention.";
+</calypso-->
+	</td>
+</tr>
+</table>
+<br>
+<!--calypso>
+if(|HAS_ADDITIONAL_FIXED_AMOUNT| != "No") {
+    inline "<p class=header2>Additional Fixed Amount</p>";
+    inline "<table width='100%'>";
+    iterator("FixedFees") {
+        inline "
+        <tr><td width='30%'>Fixed Rate Payer:</td><td width='68%'>|ADDITIONAL_FIXED_AMOUNT_PAYER|</td></tr>
+        <tr><td>Fixed Rate Amount:</td><td>|ADDITIONAL_FIXED_AMOUNT_AMOUNT|  |ADDITIONAL_FIXED_AMOUNT_CCY|</td></tr>
+        <tr><td>Fixed Rate Payment Date:</td><td>|ADDITIONAL_FIXED_AMOUNT_DATE|</td></tr>";
+    }
+    inline "</table>";
+}
+</calypso-->
+
+<br>
+<!--calypso>
+if (|REPORT#Is MtM XCCy| == "true") {
+	inline "
+		<table CELLSPACING=0 BORDER=0 WIDTH='100%'>
+		<tr>
+			<td width='30%'>Constant Currency Payer:</td>
+			<td width='68%'>|CONSTANT_CURRENCY_PAYER|</td>
+		</tr>
+		<tr>
+			<td width='30%'>Variable Currency Payer:</td>
+			<td>|VARIABLE_CURRENCY_PAYER|</td>
+		</tr>
+		<tr>
+			<td width='30%'>Currency Exchange Rate:</td>
+			<td>|FX_RATE_RESET|</td>
+		</tr>
+		</table>
+	";
+	}
+</calypso-->
+
+<p>|LA_SPECIAL_CLAUSE|</p>
+
+<!--calypso>
+if(|HAS_AMORTIZING| == "Yes") {
+	inline "<p class=header2>Pay Leg Notional Amortization Schedule</p>
+	<table>
+	<tr>
+		<th>Calculation Period(s) Beginning</th>
+		<th>Notional Amount</th>
+		<th>Notional Reduction from Previous Calculation Period(s)</th>
+	</tr>
+	";
+	iterator("PayLegFlowInterest")
+		inline "
+		<tr>
+			<td>|CASHFLOW_CALCULATION_PERIOD_BEGINNING|</td>
+			<td>|CASHFLOW_NOTIONAL|</td>
+			<td>|CASHFLOW_NOTIONAL_REDUCTION|</td>
+		</tr>
+		";
+	inline "</table>";
+	}
+</calypso-->
+
+<!--calypso>
+if(|HAS_AMORTIZING| == "Yes") {
+	inline "<p class=header2>Receive Leg Notional Amortization Schedule</p>
+	<table>
+	<tr>
+		<th>Calculation Period(s) Beginning</th>
+		<th>Notional Amount</th>
+		<th>Notional Reduction from Previous Calculation Period(s)</th>
+	</tr>
+	";
+	iterator("ReceiveLegFlowInterest")
+		inline "
+		<tr>
+			<td>|CASHFLOW_CALCULATION_PERIOD_BEGINNING|</td>
+			<td>|CASHFLOW_NOTIONAL|</td>
+			<td>|CASHFLOW_NOTIONAL_REDUCTION|</td>
+		</tr>
+		";
+	inline "</table>
+	";
+	}<br><br>
+</calypso-->
+<!--calypso>
+if ( |HAS_FIXED_LEG| == "true" && |HAS_FLOAT_LEG| == "false")
+    include "exhibit_2a-fixfix.html";
+else if ( |HAS_FIXED_LEG| == "true" && |HAS_FLOAT_LEG| == "true")
+    include "exhibit_2a-fixfloat.html";
+else
+    include "exhibit_2a-floatfloat.html";
+</calypso-->
+
+<!-- ########################## -->
+<!-- #### End Exhibit II-A #### -->
+<!-- ########################## -->
+
+
+
+
+

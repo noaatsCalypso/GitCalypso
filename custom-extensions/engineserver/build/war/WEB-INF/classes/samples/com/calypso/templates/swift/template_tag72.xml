@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FieldTemplate>
+    <Switch condition="|TRANSFER_SETTLEMENTCCY|;|PRODUCT_TYPE|">
+        <Target condition="EUR;FX(.)*">TEST1</Target>
+        <Target condition="USD;Cash">/TEST/VALUE //TEST/SWIFT/FORMAT/LONG/|LE_TRN_CODE|</Target>
+        <Target condition="(.)*;(Cash|CallNotice);">TEST3</Target>
+        <Target condition="EUR;Swap">TEST4</Target>
+        <Target condition="(.)*;(.)*">ANY</Target>
+    </Switch>
+</FieldTemplate>

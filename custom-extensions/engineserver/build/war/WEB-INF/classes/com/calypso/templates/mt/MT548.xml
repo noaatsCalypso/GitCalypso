@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MT 548  -->
+<SwiftMsgDef>
+	<Name>MT548</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="GENL" value="GENL" modes="MMM"/>
+		<SwiftField name="Sender's Reference" tag=":20C:" format=":4!c//16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Function of the Message" tag=":23G:" format="4!c[/4!c]" value="MESSAGE_SUBACTION" modes="MMM"/>
+		<SwiftField name="Preparation Date/Time" tag=":98C:" format=":4!c//8!n6!n" value="MESSAGE_CREATIONDATE" modes="OOO"/>
+	</SwiftSequence>
+	<SwiftSequence name="Repetitive Optional Subsequence A1 Linkages " modes="---" >
+		<SwiftField name="Start of Block" tag=":16R:" format="LINK" value="LINK" modes="MMM"/>
+		<SwiftField name="Message Type" tag=":13A:" format=":4!c//3!c" value="LINK_TYPE" modes="OOO"/>
+		<SwiftField name="Message Reference" tag=":20C:" format=":4!c//16x" value="LINK_REFERENCE" modes="---"/>
+		<SwiftField name="End of Block" tag=":16S:" format="LINK" value="LINK" modes="MMM"/>
+		<SwiftField name="Start of Block" tag=":16R:" format="LINK" value="LINK" modes="MMM"/>
+		<SwiftField name="Reference" tag=":20C:" format=":4!c//16x" value="STATE_REF" modes="---"/>
+		<SwiftField name="End of Block" tag=":16S:" format="LINK" value="LINK" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Repetitive Optional Subsequence A1 Linkages " modes="---" condition="hasUTIReference()">
+		<SwiftField name="Start of Block" tag=":16R:" format="LINK" value="LINK" modes="MMM"/>
+		<SwiftField name="Reference" tag=":20U:" format=":4!c//52x" value="UTI_REFERENCE" modes="---"/>
+		<SwiftField name="End of Block" tag=":16S:" format="LINK" value="LINK" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Repetitive Optional Subsequence A2 Status " modes="---" >
+		<SwiftField name="Start of Block" tag=":16R:" format="STAT" value="STAT" modes="MMM"/>
+		<SwiftField name="Status" tag=":25D:" format=":4!c/[8c]/4!c" value="STATUS" modes="MMM"/>
+		<SwiftField name="Start of Block" tag=":16R:" format="REAS" value="REAS" condition="hasReason" modes="---"/>
+		<SwiftField name="Reason" tag=":24B:" format=":4!c/[8c]/4!c" value="REASON" modes="OOO"/>
+		<SwiftField name="Narrative" tag=":70D:" format=":4!c//16x" value="DESC" modes="OOO"/>
+		<SwiftField name="End of Block" tag=":16S:" format="REAS" value="REAS" condition="hasReason" modes="---"/>
+		<SwiftField name="End of Block" tag=":16S:" format="STAT" value="STAT" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="End of Block" tag=":16S:" format="GENL" value="GENL" modes="MMM"/>
+	</SwiftSequence>
+</SwiftMsgDef>

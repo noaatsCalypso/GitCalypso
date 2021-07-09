@@ -1,0 +1,182 @@
+<!-- Start Swap FIX/FIX -->
+
+<!--calypso>
+if (|PAYLEG_PAYMENT_ACCRUAL| == "ADJUSTED")
+   set PAYLEG_ADJUSTMENT = "adjustment";
+else set PAYLEG_ADJUSTMENT = "No adjustment";
+if (|RECEIVELEG_PAYMENT_ACCRUAL| == "ADJUSTED")
+   set RECEIVELEG_ADJUSTMENT = "adjustment";
+else set RECEIVELEG_ADJUSTMENT = "No adjustment";
+</calypso-->
+
+<table width='100%'>
+<tr>
+	<td width="30%">Business Days:</td>
+	<td width='68%'>|PAYLEG_CPN_HOL|</td>
+</tr>
+<tr>
+	<td>Calculation Agent:</td>
+	<td>|SENDER_CODE|, unless otherwise stated in the Agreement</td>
+</tr>
+</table>
+
+<div style="page-break-inside:avoid">
+<p class='header2'>Fixed Amounts I:</p>
+
+<table width="100%">
+<tr>
+	<td width="30%">Fixed Amount I Rate Payer:</td>
+	<td width='68%'>|PAYLEG_PAYER_CODE|</td>
+</tr>
+<tr>
+	<td width="30%">Fixed Amount I Rate Payer Currency Amount:</td>
+	<td>|PAYLEG_NOTIONAL_CCY| |PAYLEG_NOTIONAL_VALUE|</td>
+</tr>
+<!--calypso>
+if ( |PAYLEG_CPN_OFFSET| like "0%" )
+    inline "
+    <tr>
+        <td>Fixed Rate Payer Payment Dates:</td>
+        <td>|PAYLEG_CPN_FREQ| on the |PAYLEG_ROLL_DAY_NB|, starting |PAYLEG_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |PAYLEG_CPN_DATE_ROLL| Business Day convention.</td>
+    </tr>";
+else
+    inline "
+    <tr>
+        <td>Fixed Rate Payer Payment Dates:</td>
+        <td>|PAYLEG_CPN_FREQ| on the |PAYLEG_ROLL_DAY_NB|, starting |PAYLEG_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |PAYLEG_CPN_DATE_ROLL| Business Day convention.</td>
+    </tr>
+	<tr>
+        <td>Fixed Rate Period End Dates:</td>
+        <td>|PAYLEG_CPN_FREQ| on the |PAYLEG_ROLL_DAY_NB|, starting |PAYLEG_FIRST_PERIODEND_DATE| subject to |PAYLEG_ADJUSTMENT| in accordance with the Business Day convention.</td>
+    </tr>
+    <tr>
+        <td>Payment Lag:</td>
+        <td>|PAYLEG_CPN_OFFSET_VALUE| |PAYLEG_CPN_OFFSET_DAYS|</td>
+    </tr>";
+</calypso-->
+
+<tr>
+	<td width="30%">Fixed Amount I Rate:</td>
+	<td>|PAYLEG_FIXED_RATE| %</td>
+</tr>
+</table>
+<!--calypso>
+if ( |HAS_SCHEDULE#PAYLEG#RATE| != "No" ){
+	inline "<p>Rate Schedule</p>";
+    inline "<table width='100%'>";
+    iterator("Schedule#PAYLEG#RATE") {
+        inline "
+        <tr>
+			<td width='30%'>Date:</td><td width='68%'>|SCHEDULE_DATE|</td>
+			<td>Value:</td><td>|SCHEDULE_VALUE|</td>
+		</tr>";
+    }
+    inline "</table>";
+}
+</calypso-->
+<br><br>
+<table width='100%'>
+<tr>
+	<td width="30%">Fixed Amount I Rate Day Count Fraction:</td>
+	<td width='68%'>|PAYLEG_DAY_COUNT|</td>
+</tr>
+</table>
+<br>
+</div>
+
+<div style="page-break-inside:avoid">
+<p class='header2'>Fixed Amounts II:</p>
+
+<!---Fixed Swap Leg Table-->
+<table width="100%">
+<tr>
+	<td width="30%">Fixed Amount II Rate Payer:</td>
+	<td width='68%'>|RECEIVELEG_PAYER_CODE|</td>
+</tr>
+<tr>
+	<td width="30%">Fixed Amount II Rate Payer Currency Amount:</td>
+	<td>|RECEIVELEG_NOTIONAL_CCY| |RECEIVELEG_NOTIONAL_VALUE|</td>
+</tr>
+<!--calypso>
+if ( |RECEIVELEG_CPN_OFFSET| like "0%" )
+    inline "
+    <tr>
+        <td>Fixed Rate Payer Payment Dates:</td>
+        <td>|RECEIVELEG_CPN_FREQ| on the |RECEIVELEG_ROLL_DAY_NB|, starting |RECEIVELEG_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |RECEIVELEG_CPN_DATE_ROLL| Business Day convention.</td>
+    </tr>";
+else
+    inline "
+    <tr>
+        <td>Fixed Rate Payer Payment Dates:</td>
+        <td>|RECEIVELEG_CPN_FREQ| on the |RECEIVELEG_ROLL_DAY_NB|, starting |RECEIVELEG_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |RECEIVELEG_CPN_DATE_ROLL| Business Day convention.</td>
+    </tr>
+	<tr>
+        <td>Fixed Rate Period End Dates:</td>
+        <td>|RECEIVELEG_CPN_FREQ| on the |RECEIVELEG_ROLL_DAY_NB|, starting |RECEIVELEG_FIRST_PERIODEND_DATE| subject to |RECEIVELEG_ADJUSTMENT| in accordance with the Business Day convention.</td>
+    </tr>
+    <tr>
+        <td>Payment Lag:</td>
+        <td>|RECEIVELEG_CPN_OFFSET_VALUE|  |RECEIVELEG_CPN_OFFSET_DAYS|</td>
+    </tr>";
+</calypso-->
+<tr>
+	<td width="30%">Fixed Amount II Rate:</td>
+	<td>|RECEIVELEG_FIXED_RATE| %</td>
+</tr>
+</table>
+<!--calypso>
+if ( |HAS_SCHEDULE#RECEIVELEG#RATE| != "No" ){
+	inline "<p>Rate Schedule</p>";
+    inline "<table>";
+    iterator("Schedule#RECEIVELEG#RATE") {
+        inline "
+        <tr>
+			<td>Date:</td><td>|SCHEDULE_DATE|</td>
+			<td>Value:</td><td>|SCHEDULE_VALUE|</td>
+		</tr>";
+    }
+    inline "</table>";
+}
+</calypso-->
+<br><br>
+<table width="100%">
+<tr>
+	<td width="30%">Fixed Amount II Rate Day Count Fraction:</td>
+	<td width='68%'>|RECEIVELEG_DAY_COUNT|</td>
+</tr>
+</table>
+</div>
+
+<!---End Floating Swap Leg Table-->
+
+<!--calypso>
+if(|HAS_PRINCIPAL_EXCHANGE| != "No") {
+inline "<p class='header2'>Principal Exchange Schedule</p>
+<table width='100%'>
+<tr>
+	<th width='20%'>Date</th>
+	<th width='18%'>Currency</th>
+	<th width='20%'>Amount</th>
+	<th width='40%'>Payer</th>
+</tr>";
+iterator("SwapPrincipalCashFlows")
+	inline "<tr><td>|PRINCIPAL_EXCHANGE_DATE|</td>
+	<td>|PRINCIPAL_EXCHANGE_CURRENCY|</td>
+	<td>|PRINCIPAL_EXCHANGE_AMOUNT|</td>
+	<td>|PRINCIPAL_EXCHANGE_PAYER|</td></tr>";
+inline "</table>
+<p>
+Interim Exchange:<br/>
+Interim Exchange Date:&nbsp;&nbsp;&nbsp;|RECEIVELEG_CPN_FREQ| on the |RECEIVELEG_ROLL_DAY_NB|, starting |RECEIVELEG_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |RECEIVELEG_CPN_DATE_ROLL| Business Day convention.
+</p>
+";
+}
+</calypso-->
+
+<br><br>
+
+
+
+<!-- End Swap FIX/FIX -->
+
+

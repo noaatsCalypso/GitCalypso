@@ -1,0 +1,24 @@
+<included>
+	<logger name="com.calypso.Monitoring.ClientRequest" additivity="false">
+	      <level value="debug"/>
+	      <appender-ref ref="Monitoring.ClientRequest_APPENDER"/>
+	 </logger>
+	 
+	 <logger name="com.calypso.Monitoring.ServerRequest" additivity="false">
+	       <level value="debug"/>
+	       <appender-ref ref="Monitoring.ServerRequest_APPENDER"/>
+	 </logger>
+	 <logger name="com.calypso.Monitoring.IncomingServerRequest" additivity="false">
+	      <level value="debug"/>
+	      <appender-ref ref="Monitoring.IncomingServerRequest_APPENDER"/>
+	 </logger>
+	 <logger name="com.calypso.Monitoring.MethodProfile" additivity="false">
+	       <level value="debug"/>
+	       <appender-ref ref="Monitoring.MethodProfile_APPENDER"/>
+	 </logger>
+	 <logger name="com.calypso.Monitoring.CalculationServer" additivity="false">
+	       <level value="debug"/>
+	       <appender-ref ref="Monitoring.CalculationServer_APPENDER"/>
+	 </logger>
+
+</included>

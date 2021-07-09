@@ -1,0 +1,265 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<!-- ###################################### -->
+<!-- #### START CALYPSO HEADER #### -->
+<!-- ###################################### -->
+  <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Confirmation Notice</title>
+  </head>
+
+<BODY>
+
+<!-- SENDER INFO -->
+
+<TABLE 
+style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; FONT-SIZE: 10pt; PADDING-BOTTOM: 0.75pt">
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=330>
+      <p><IMG src="http://www.calypso.com/images/logo_js.gif"></p></TD>
+    <TD>
+      <p>|SENDER_FULL_NAME| <br />
+	|SENDER_CONTACT_NAME| <br />
+	|SENDER_TITLE| <br />
+	|SENDER_ADDRESS| <br />
+	|SENDER_CITY| <br />
+<!--calypso>
+if ( |SENDER_STATE| like "%" )
+    inline "|SENDER_STATE| <br />";
+</calypso-->
+	|SENDER_ZIPCODE| <br />
+	|SENDER_COUNTRY| <br />
+	E-mail: |SENDER_EMAIL| <br />
+	Phone: |SENDER_PHONE| <br />
+<!--calypso>
+if ( |SENDER_FAX| like "%" )
+    inline "Fax: |SENDER_FAX| <br />";
+if ( |SENDER_TELEX| like "%" )
+    inline "Telex: |SENDER_TELEX| <br />";
+</calypso-->
+	Swift: |SENDER_SWIFT|
+	</p>
+    </TD>
+  </TR>
+  </TBODY>
+</TABLE>
+
+<!--RECEIVER INFO -->
+
+<TABLE>
+  <TBODY style="PADDING-RIGHT: 0.75pt; PADDING-LEFT: 0.75pt; FONT-SIZE: 10pt" vAlign=top>
+  <TR>
+    <TD width="17%">Date</TD>
+    <TD width="10%">:</TD>
+    <TD width="73%">|DATE|</TD>
+  </TR>
+  <TR>
+    <TD width="17%">To</TD>
+    <TD width="10%">:</TD>
+    <TD width="73%">|RECEIVER_FULL_NAME|</TD>
+  </TR>
+  <TR>
+    <TD vAlign=top width="17%">Address</TD>
+    <TD width="10%">:</TD>
+    <TD width="73%">	|RECEIVER_ADDRESS|<br />
+			|RECEIVER_CITY|<br />
+<!--calypso>
+if ( |RECEIVER_STATE| like "%" )
+    inline "|RECEIVER_STATE| <br />";
+</calypso-->
+			|RECEIVER_ZIPCODE|<br />
+			|RECEIVER_COUNTRY|</TD>
+  </TR>
+<!--calypso>
+if ( |RECEIVER_FAX| like "%" )
+    inline "
+  <TR>
+    <TD width='17%'>Fax</TD>
+    <TD width='10%'>:</TD>
+    <TD width='73%'>|RECEIVER_FAX|</TD>
+  </TR>
+";
+</calypso-->
+  <TR>
+    <TD width="17%">Attention</TD>
+    <TD width="10%">:</TD>
+    <TD width="73%">|RECEIVER_CONTACT_NAME|</TD></TR>
+  <TR>
+    <TD width="17%">Our Reference</TD>
+    <TD width="10%">:</TD>
+    <TD width="73%">|TRADE_ID|</TD></TR>
+</TBODY>
+</TABLE>
+
+
+<!-- #################################### -->
+<!-- #### END CALYPSO HEADER #### -->
+<!-- #################################### -->
+
+
+<b><u>
+
+	<!-- HEADER -->
+	<p align=center>Credit Event Notice
+<!--calypso>
+if ( XXX )
+    inline "
+        <br />
+        and Notice of Publicly Available Information
+           ";
+</calypso-->
+        </p>
+
+</u></b>
+
+
+<p>
+<span style='font-size:10.0pt'>
+Credit Derivative Transaction Details:
+</span>
+</p>
+
+<p>
+<p>
+<table CELLSPACING=0 BORDER=0 WIDTH=650>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Trade Date:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|TRADE_DATE|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Effective Date:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|SETTLE_DATE||</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Reference Entity:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|CD_REFERENCE_ENTITY|</FONT>
+	</td>
+</tr>
+<tr>
+	<td WIDTH="30%" VALIGN="TOP">
+	<font SIZE="2">Basket of Credit Derivative Transactions:</FONT>
+	</td>
+	<td WIDTH="70%" VALIGN="TOP">
+	<font SIZE="2">|BASKET_CREDIT_DERIVATIVES|</FONT>
+	</td>
+</tr>
+</table>
+
+<p>
+<span style='font-size:10.0pt'>
+Reference is made to the Credit Derivative Transaction described above 
+(the 'Transaction') between |PROTECTION_SELLER_CODE|, as Seller and |PROTECTION_BUYER_CODE|, as Buyer. 
+Capitalized terms used and not otherwise defined in this letter shall have 
+the meanings given them in the confirmation of the Transaction.
+</span>
+</p>
+
+<p>
+<span style='font-size:10.0pt'>
+This letter is our Credit Event Notice to you that a |CREDIT_EVENT_TYPE| 
+Credit Event occurred with respect to |COUNTERPARTY| on or about 
+|CREDIT_EVENT_DATE|, when |CREDIT_EVENT_DESCRIPTION|.
+</span>
+</p>
+
+<!--calypso>
+if ( XXX )
+    inline "
+<p>
+<span style='font-size:10.0pt'>
+This letter also comprises our Notice of Publicly Available Information 
+with respect to this Credit Event. Accordingly, we provide the Publicly 
+Available Information attached hereto.
+</span>
+</p>
+           ";
+</calypso-->
+
+
+<p>
+<span style='font-size:10.0pt'>
+Nothing in this letter shall be construed of a waiver of any rights we may have with respect to the Transaction.
+</span>
+</p>
+
+
+<!-- ###################################### -->
+<!-- #### START CALYPSO FOOTER #### -->
+<!-- ###################################### -->
+
+
+
+<p>
+<span style='font-size:10.0pt'>
+Yours sincerely,
+</span>
+</p>
+<p>
+<span style='font-size:10.0pt'>
+|SENDER_FULL_NAME|<br />
+<br />
+<table border=0>
+<tr>
+    <td width="60"><font SIZE="2">By:</font></td>
+    <td><font SIZE="2">_____________________________________</font></td>
+</tr>
+<tr>
+    <td width="60"><font SIZE="2">Name:</font></td>
+    <td><font SIZE="2">|SENDER_CONTACT_NAME|</font></td>
+</tr>
+<tr>
+    <td width="60"><font SIZE="2">Title:</font></td>
+    <td><font SIZE="2">|SENDER_TITLE|</font></td>
+</tr>
+</table>
+</span>
+</p>
+<br />
+<p>
+<span style='font-size:10.0pt'>
+Authorized Signatory
+</span>
+</p>
+<p>
+<span style='font-size:10.0pt'>
+Accepted and confirmed as of the trade date written above:
+<br />
+<br />
+|RECEIVER_FULL_NAME|<br />
+<br />
+<table border=0>
+<tr>
+    <td width="60"><font SIZE="2">By:</font></td>
+    <td><font SIZE="2">_____________________________________</font></td>
+</tr>
+<tr>
+    <td width="60"><font SIZE="2">Name:</font></td>
+    <td><font SIZE="2">&nbsp;</font></td>
+</tr>
+<tr>
+    <td width="60"><font SIZE="2">Title:</font></td>
+    <td><font SIZE="2">&nbsp;</font></td>
+</tr>
+</table>
+</span>
+</p>
+
+</body>
+
+<!-- #################################### -->
+<!-- #### END CALYPSO FOOTER #### -->
+<!-- #################################### -->
+
+</html>

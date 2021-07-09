@@ -1,0 +1,7 @@
+PSEventMessage;NONE;NEW;PENDING;true;false;false;CLEARING_ETD_TRADE_EVENT;ALL;;;false;true;;;false;false;false;false;0;;;
+PSEventMessage;PENDING;AMEND;PENDING;true;false;false;CLEARING_ETD_TRADE_EVENT;ALL;;;false;true;;;false;false;false;false;0;;;
+PSEventMessage;PENDING;AUTHORIZE;TO_BE_SENT;true;true;false;CLEARING_ETD_TRADE_EVENT;ALL;CheckContact;;false;true;The message has been checked for contact information and now ready to be sent.;;false;false;false;false;0;;;
+PSEventMessage;PENDING;CANCEL;CANCELED;true;false;false;CLEARING_ETD_TRADE_EVENT;ALL;;;false;false;;;false;false;false;false;0;;;
+PSEventMessage;TO_BE_SENT;SEND;SENT;true;false;false;CLEARING_ETD_TRADE_EVENT;ALL;;;false;true;The message has been sent.;;false;false;false;false;0;;;
+PSEventMessage;TO_BE_SENT;CANCEL;CANCELED;true;false;false;CLEARING_ETD_TRADE_EVENT;ALL;;;false;false;The system has moved the message to canceled.;;false;false;false;false;0;;;
+PSEventMessage;TO_BE_SENT;AMEND;PENDING;true;false;false;CLEARING_ETD_TRADE_EVENT;ALL;;;false;false;The message has been modified.|;;false;false;false;false;0;;;

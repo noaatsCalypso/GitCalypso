@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+    <contents>
+        <element name="CAM0032" hideifempty="true">
+            <contents>
+                <element name="CodMsg">
+                    <contents>
+                        <text>
+                            <value>CAM0032</value>
+                        </text>
+                    </contents>
+                </element>
+                <element name="NumCtrlIF">
+                    <contents>
+                        <report>
+                            <column>MESSAGE_ID</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJBaseIF">
+                    <contents>
+                        <report>
+                            <column>FXCNPJBaseIF</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJBaseCortr">
+                    <condition>
+                        <expression>getReportValue("CNPJCORTR") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>CNPJCORTR</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="NumSeqEdicOr">
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.NumSeqEdic</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtEvtCAM">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>Trade Date</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="VlrME">
+                    <contents max="1">
+                        <report>
+                            <condition>
+                                <expression>"BRL" == getReportValue("Sec Cur")</expression>
+                            </condition>
+                            <expression>abs(toDouble(getReportValue("Prim Amt")))</expression>
+                        </report>
+                        <report>
+                            <condition>
+                                <expression>"BRL" == getReportValue("Prim Cur")</expression>
+                            </condition>
+                            <expression>abs(toDouble(getReportValue("Sec Amt")))</expression>
+                        </report>
+                    </contents>
+                </element>
+                <element name="TaxCam">
+                    <contents>
+                        <report format="###.###############">
+                            <column>TAXCAM</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="VlrMN">
+                    <contents max="1">
+                        <report>
+                            <condition>
+                                <expression>"BRL" == getReportValue("Sec Cur")</expression>
+                            </condition>
+                            <expression>abs(toDouble(getReportValue("Sec Amt")))</expression>
+                        </report>
+                        <report>
+                            <condition>
+                                <expression>"BRL" == getReportValue("Prim Cur")</expression>
+                            </condition>
+                            <expression>abs(toDouble(getReportValue("Prim Amt")))</expression>
+                        </report>
+                    </contents>
+                </element>
+                <element name="NumDespc">
+                    <context>
+                        <to>SplitTradeKeywordNumDespc</to>
+                    </context>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.NumDespc</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="TxtOtrEspecc">
+                    <contents>
+                        <report>
+                            <column>TXTOTRESPECC</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodClausEspfcoIF">
+                    <context>
+                        <to>SplitTradeKeywordCodClausEspfcoIF</to>
+                    </context>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodClausEspfcoIF</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtMovto">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>TODAY</column>
+                        </report>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

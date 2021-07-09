@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<template>
+    <contents>
+        <element name="SttlmQty">
+            <contents>
+                <element name="Qty">
+                    <contents max="1">
+                        <element name="Unit">
+                            <condition>
+                                <expression>useSecurityQuantity()</expression>
+                            </condition>
+                            <contents>
+                                <report>
+                                    <column>Net Rec/Deliv</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="FaceAmt">
+                            <contents>
+                                <report>
+                                    <column>Nominal (Par)</column>
+                                </report>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

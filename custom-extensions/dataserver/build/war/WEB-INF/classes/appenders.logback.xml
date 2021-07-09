@@ -1,0 +1,411 @@
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+			<layout class="com.calypso.tk.core.logging.CalypsoLogbackLayout">
+				<pattern>%d{"yyyy-MM-dd HH:mm:ss,SSSZ"} %-5p [%c] \(%t\) [%X{clientHost}-%X{clientDesc}] %m%n</pattern>
+				<param name="appName" value="${calypso.appname}" />
+				<param name="fileName" value="${calypso.logfilename}" />
+				<param name="patchVersionDate" value="${calypso.patchversiondate}" />
+				<param name="version" value="${calypso.version}" />
+				<param name="versionDate" value="${calypso.versiondate}" />
+				<param name="buildNumber" value="${calypso.buildnumber}" />
+				<param name="buildDate" value="${calypso.builddate}" />
+			</layout>
+		</encoder>
+	</appender>
+
+	<appender name="default"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${calypso.userdir}/${calypso.appname}_${calypso.envname}_${calypso.version}.log
+		</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${calypso.userdir}/${calypso.appname}_${calypso.envname}_${calypso.version}.log.%i.zip
+			</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+
+		<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+			<layout class="com.calypso.tk.core.logging.CalypsoLogbackLayout">
+				<pattern>%d{"yyyy-MM-dd HH:mm:ss,SSSZ"} %-5p [%c] \(%t\) [%X{clientHost}-%X{clientDesc}] %m%n</pattern>
+				<param name="appName" value="${calypso.appname}" />
+				<param name="fileName" value="${calypso.logfilename}" />
+				<param name="patchVersionDate" value="${calypso.patchversiondate}" />
+				<param name="version" value="${calypso.version}" />
+				<param name="versionDate" value="${calypso.versiondate}" />
+				<param name="buildNumber" value="${calypso.buildnumber}" />
+				<param name="buildDate" value="${calypso.builddate}" />
+			</layout>
+		</encoder>
+	</appender>
+
+ 	<appender name="ElasticSearch_APPENDER"
+		class="com.calypso.operations.dashboard.monitoring.appender.ElasticSearchLogLogbackAppender">
+		<param name="appName" value="${calypso.appname}" />
+		<param name="envName" value="${calypso.envname}" />
+		<param name="threshold" value="OFF" />
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      			<level>ERROR</level>
+      			<onMatch>ACCEPT</onMatch>
+      			<onMismatch>DENY</onMismatch>
+    	</filter>
+		<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+			<layout class="com.calypso.tk.core.logging.CalypsoLogbackLayout">
+				<pattern>%d{yyyy-MM-dd HH:mm:ss,SSSZ} %-5p [%c] \(%t\)
+					[%X{clientHost}-%X{clientDesc}] %m%n</pattern>
+				<param name="appName" value="${calypso.appname}" />
+				<param name="fileName" value="${calypso.logfilename}" />
+				<param name="patchVersionDate" value="${calypso.patchversiondate}" />
+				<param name="version" value="${calypso.version}" />
+				<param name="versionDate" value="${calypso.versiondate}" />
+				<param name="buildNumber" value="${calypso.buildnumber}" />
+				<param name="buildDate" value="${calypso.builddate}" />
+			</layout>
+		</encoder>
+	</appender>
+
+	<appender name="ElasticSearchRequest_APPENDER"
+		class="com.calypso.operations.dashboard.monitoring.appender.ElasticSearchRequestLogbackAppender" />
+		
+	<appender name="ElasticSearchRequest_APPENDER"
+		class="com.calypso.operations.dashboard.monitoring.appender.ElasticSearchIncomingRequestLogbackAppender" />	
+
+	<appender name="ElasticSearchAlert_APPENDER"
+		class="com.calypso.operations.dashboard.monitoring.appender.ElasticSearchAlertLogbackAppender" />
+
+	<appender name="ElasticSearchEngineMetrics_APPENDER"
+		class="com.calypso.operations.dashboard.monitoring.appender.ElasticSearchEngineMetricsLogbackAppender" />
+		
+	<appender name="ElasticSearchCalculationServer_APPENDER" class="com.calypso.operations.dashboard.monitoring.appender.ElasticSearchCalculationServerLogbackAppender" />
+		
+	<appender name="Monitoring.CalculationServer_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${calypso.userdir}${file.separator}${calypso.appname}_CalculationServer_${calypso.envname}_EXECUTION_${calypso.version}.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_EXECUTION_${calypso.version}.log.%i.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%X{EVENTOCCUREDTIME}|%X{RESPONSETIME}|%X{SOURCE}|%X{NEWTRADECOUNT}|%X{MODTRADECOUNT}|%X{REMTRADECOUNT}|%X{JOBSCOUNT}|%X{ROWSCOUNT}|%X{TRADELOADINGTIME}|%X{BUILDMKTDATADEPENDENCIESTIME}|%X{GENERATEHEADERTIME}|%X{CREATEDATASTORETIME}|%X{ANALYSISRUNTIME}|%X{ANALYSISRESULTTRANSLATIONTIME}|%X{SAVERESULTSTIME}|%X{MARKCOMPLETIONTIME}|%X{SERVICEID}|%X{SERVICEDESC}|%X{CLIENTDESC}|%X{BEGINFREEMEMORY}|%X{ENDFREEMEMORY}|%X{TOTALMEMORY}|%m%n</pattern>
+		</layout>
+	</appender>
+
+	<appender name="Monitoring.PresentationServer_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${calypso.userdir}${file.separator}${calypso.appname}_PresentationServer_${calypso.envname}_EXECUTION_${calypso.version}.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_EXECUTION_${calypso.version}.log.%i.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%X{EVENTOCCUREDTIME}|%X{RESPONSETIME}|%X{EVENTID}|%X{EVENTDESC}|%X{SOURCE}|%X{CLIENTDESC}|%X{CREATESCHEMA}|%X{BUILDSESSIONFACTORYTIME}|%X{TRANSLATETOSQLTIME}|%X{SQLEXECUTETIME}|%X{RESULTPROCESSTIME}|%X{ROWSCOUNT}|%m%n</pattern>
+		</layout>
+	</appender>
+
+	<appender name="Monitoring.PresentationClient_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_EXECUTION_${calypso.version}.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_EXECUTION_${calypso.version}.log.%i.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%X{EVENTOCCUREDTIME}|%X{RESPONSETIME}|%X{DOWNLOADTIME}|%c{1}|%X{EVENTID}|%X{EVENTDESC}|%m|%X{clientDesc}%n</pattern>
+		</layout>
+	</appender>
+
+	<appender name="Monitoring.EngineAudit_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_ENGINEAUDIT_${calypso.version}.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_ENGINEAUDIT_${calypso.version}.log.%i.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss,SSSZ} %-5p [%c] \(%t\) [%X{clientHost}-%X{clientDesc}] %X{ENGINE_AUDIT} %m%n</pattern>
+		</layout>
+	</appender>
+ 	
+	<appender name="Monitoring.ServerRequest_APPENDER"
+		class="com.calypso.tk.core.logging.CalypsoRollingFileAppender">
+		<file>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_REQUEST_${calypso.version}.log
+		</file>
+		<header>REQUEST_START_TIME|RESPONSE_TIME|SQL_TIME|NUM_OF_QUERIES_EXECUTED|NUM_OF_ROWS_READ|RESULTSET_OPEN_TIME|BEGIN_FREE_MEMORY|END_FREE_MEMORY|TOTAL_MEMORY|WORKFLOW_TIME|EVENTS|USED_JDBC_CONNECTIONS|AVAILABLE_JDBC_CONNECTIONS|CLIENT_HOST|CLIENT_DESCRIPTION|REQUEST_ID|SERVER_NAME|METHOD_NAME</header>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<!-- <param name="activeFileName" value="${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_REQUEST_${calypso.version}.log" 
+				/> -->
+			<fileNamePattern>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_REQUEST_${calypso.version}.log.%i.zip
+			</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%X{REQUESTSTARTTIME}|%X{RESPONSETIME}|%X{REQUESTSQLTIME}|%X{REQUESTQUERYCOUNT}|%X{REQUESTSQLNOOFROWSREAD}|%X{REQUESTSQLRESULTSETOPENTIME}|%X{REQUESTBEGINFREEMEMORY}|%X{REQUESTENDFREEMEMORY}|%X{REQUESTTOTALMEMORY}|%X{REQUESTWFTIME}|%X{REQUESTEVENTS}|%X{REQUESTUSEDJDBCCONNECTIONS}|%X{REQUESTAVAILABLEJDBCCONNECTIONS}|%X{clientHost}|%X{clientDesc}|%X{REQUESTID}|%X{SERVERNAME}|%m%n
+			</pattern>
+		</layout>
+	</appender>
+	<appender name="Monitoring.IncomingServerRequest_APPENDER"
+		class="com.calypso.tk.core.logging.CalypsoRollingFileAppender">
+		<file>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_INCOMING_SERVER_REQUEST_${calypso.version}.log
+		</file>
+		<header>REQUEST_START_TIME|BEGIN_FREE_MEMORY|CLIENT_HOST|CLIENT_DESCRIPTION|REQUEST_ID|SERVER_NAME|METHOD_NAME</header>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<!-- <param name="activeFileName" value="${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_REQUEST_${calypso.version}.log" 
+				/> -->
+			<fileNamePattern>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_INCOMING_SERVER_REQUEST_Invoked_${calypso.version}.log.%i.zip
+			</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%X{REQUESTSTARTTIME}|%X{REQUESTBEGINFREEMEMORY}|%X{clientHost}|%X{clientDesc}|%X{REQUESTID}|%X{SERVERNAME}|%m%n
+			</pattern>
+		</layout>
+	</appender>
+
+	<appender name="Monitoring.Sql_APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_SQL_${calypso.version}.log
+		</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_SQL_${calypso.version}.log.%i.zip
+			</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%X{SQLSTARTTIME}|%X{SQLEXECUTETIME}|%c|%X{SQLNOOFROWSREAD}|%X{SQLRESULTSETOPENTIME}|%X{SQLRESULTSETCREATETIME}|%X{SQLRESULTSETLASTFETCHTIME}|%X{clientHost}|%X{clientDesc}|%X{REQUESTID}|%m%n
+			</pattern>
+		</layout>
+	</appender>
+
+
+	<appender name="Monitoring.Events_APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_SERVEREVENTS_${calypso.version}.log
+		</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_SERVEREVENTS_${calypso.version}.log.%i.zip
+			</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%X{CURRENTTIMEINMILLIS}|%X{EVENTOCCUREDTIME}|%X{EVENTID}|%X{EVENTCLASSNAME}|%X{EVENTTYPE}|%X{EVENTDESC}%n
+			</pattern>
+		</layout>
+	</appender>
+
+	<appender name="Monitoring.ClientRequest_APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_CLIENTREQUEST_${calypso.version}.log
+		</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_CLIENTREQUEST_${calypso.version}.log.%i.zip
+			</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%X{REQUESTSTARTTIME}|%X{RESPONSETIME}|%X{REQUESTBEGINFREEMEMORY}|%X{REQUESTENDFREEMEMORY}|%X{REQUESTTOTALMEMORY}|%X{clientHost}|%X{clientDesc}|%m%n
+			</pattern>
+		</layout>
+	</appender>
+
+	<appender name="Monitoring.WorkFlow_APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_WORKFLOW_${calypso.version}.log
+		</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_WORKFLOW_${calypso.version}.log.%i.zip
+			</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%m|%c%n</pattern>
+			<!-- <param name="CalypsoPattern" value="STARTTIME{calypso.logdelim}DURATION{calypso.logdelim}WORKFLOWNAME{calypso.logdelim}WORKFLOWRULECLASSNAME{calypso.logdelim}WORKFLOWCLASSNAME{calypso.logdelim}ID{calypso.logdelim}CATEGORY%n" 
+				/> -->
+		</layout>
+	</appender>
+
+	<appender name="Monitoring.Engine_APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_ENGINE_${calypso.version}.log
+		</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_ENGINE_${calypso.version}.log.%i.zip
+			</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%m|%c%n</pattern>
+			<!-- <param name="CalypsoPattern" value="STARTTIME{calypso.logdelim}DURATION{calypso.logdelim}{calypso.logdelim}EVENTID{calypso.logdelim}EVENTDESCRIPTION{calypso.logdelim}CATEGORY%n" 
+				/> -->
+		</layout>
+	</appender>
+
+	<appender name="Monitoring.TaskStation_APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_TASKSTATION_${calypso.version}.log
+		</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_TASKSTATION_${calypso.version}.log.%i.zip
+			</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%m|%c%n</pattern>
+		</layout>
+	</appender>
+
+	<appender name="Monitoring.Matching_APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_MATCHING_${calypso.version}.log
+		</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_MATCHING_${calypso.version}.log.%i.zip
+			</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%m|%t%n</pattern>
+		</layout>
+	</appender>
+
+	<appender name="Monitoring.MethodProfile_APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_METHODPROFILE_${calypso.version}.log
+		</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_METHODPROFILE_${calypso.version}.log.%i.zip
+			</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%c|%X{METHODMINTIME}|%X{METHODMAXTIME}|%X{METHODAVGTIME}|%X{METHODTOTALCALLS}|%X{clientHost}|%X{clientDesc}|%X{REQUESTID}|%m%n
+			</pattern>
+		</layout>
+	</appender>
+	
+	<appender name="Monitoring.PKSAudit_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_PKSAUDIT_${calypso.version}.log
+		</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_PKSAUDIT_${calypso.version}.log.%i.zip
+			</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss,SSSZ} %-5p [%c] \(%t\) [%X{clientHost}-%X{clientDesc}] %m%n</pattern>
+		</layout>
+	</appender>
+
+ 	<appender name="event" class="com.calypso.tk.core.logging.EventAppender">
+		<param name="appName" value="${calypso.appname}" />
+		<param name="threshold" value="ERROR" />
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss,SSSZ} %-5p [%c] \(%t\)
+				[%X{clientHost}-%X{clientDesc}] %m%n</pattern>
+		</layout>
+	</appender>
+
+	<appender name="ThirdParty" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_ThirdParty_${calypso.version}.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${calypso.userdir}${file.separator}${calypso.appname}_${calypso.envname}_ThirdParty_${calypso.version}.log.%i.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss,SSSZ} %-5p [%c] \(%t\) [%X{clientHost}-%X{clientDesc}] %m%n</pattern>
+		</layout>
+
+	</appender>
+	
+	<appender name="alert_APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${calypso.userdir}/${calypso.appname}_${calypso.envname}_ALERT_${calypso.version}.log
+		</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${calypso.userdir}/${calypso.appname}_${calypso.envname}_ALERT_${calypso.version}.log.%i.zip
+			</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>${calypso.maxbackupindex}</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>${calypso.maxfilesize}</maxFileSize>
+		</triggeringPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%d{"yyyy-MM-dd HH:mm:ss,SSSZ"}|%X{currentMilliseconds}|%p|%c{1}|%X{alertName}|%X{alertId}|%X{applicationName}|%X{metric}|%m%n
+			</pattern>
+		</layout>
+	</appender>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE SYSTEM  [
+<!ENTITY appenders SYSTEM "appenders.logback.xml">
+]>
+<configuration>
+	&appenders;
+	<include resource="calypsopresentationservermonitoring.logback.xml"/>
+  
+  <logger name="com.calypso" additivity="false">
+	   	<level value="error"/>
+  	  	<appender-ref ref="default"/>
+    	<appender-ref ref="event"/>
+  </logger>
+ 
+  <logger name="com.calypso.cloud" additivity="false">
+	<level value="error"/>
+  	<appender-ref ref="default"/>
+    	<appender-ref ref="event"/>
+  </logger>
+  
+  <logger name="org.hibernate.SQL" additivity="false">
+	   	<level value="error,info,debug"/>
+  	  	<appender-ref ref="default"/>
+    	<appender-ref ref="event"/>
+  </logger>
+ 
+	<logger name="com.calypso.microservice" level="error">
+	</logger>
+
+	<logger name="com.calypso.bean" level="error">
+	</logger>
+	
+	<logger name="com.calypso.liquibase" level="error">
+	</logger>
+	
+	<logger name="com.calypso.microservices" level="error">
+	</logger>
+	
+	<logger name="com.calypso.rest" level="error">
+	</logger>
+	
+	<logger name="com.calypso.persistence" level="error">
+	</logger>
+	
+  <root>
+  	<level value="error" />
+  	<appender-ref ref="ThirdParty" />
+  </root>
+</configuration>

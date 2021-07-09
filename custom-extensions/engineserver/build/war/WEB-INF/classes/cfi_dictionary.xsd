@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:element name="cfi_dictionary">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="category">
+                    <xs:complexType>
+                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
+                            <xs:element name="group">
+                                <xs:complexType>
+                                    <xs:sequence maxOccurs="4" minOccurs="0">
+                                        <xs:element name="attributes">
+                                            <xs:complexType>
+                                                <xs:sequence maxOccurs="unbounded" minOccurs="0">
+                                                  <xs:element name="attribute">
+                                                  <xs:complexType>
+                                                  <xs:attribute name="code" use="required">
+                                                  <xs:simpleType>
+                                                  <xs:restriction base="xs:string">
+                                                  <xs:length value="1"/>
+                                                  </xs:restriction>
+                                                  </xs:simpleType>
+                                                  </xs:attribute>
+                                                  <xs:attribute name="name" type="xs:string"
+                                                  use="required"/>
+                                                  <xs:attribute name="description" type="xs:string"
+                                                  />
+                                                  </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="name"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="name" type="xs:string" use="required"/>
+                                    <xs:attribute name="code" use="required">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:length value="1"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="description" type="xs:string"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute form="unqualified" name="code" use="required">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:token">
+                                    <xs:enumeration value="E"/>
+                                    <xs:enumeration value="C"/>
+                                    <xs:enumeration value="D"/>
+                                    <xs:enumeration value="R"/>
+                                    <xs:enumeration value="O"/>
+                                    <xs:enumeration value="F"/>
+                                    <xs:enumeration value="S"/>
+                                    <xs:enumeration value="H"/>
+                                    <xs:enumeration value="I"/>
+                                    <xs:enumeration value="J"/>
+                                    <xs:enumeration value="K"/>
+                                    <xs:enumeration value="L"/>
+                                    <xs:enumeration value="T"/>
+                                    <xs:enumeration value="M"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="name" type="xs:string" use="required"/>
+                        <xs:attribute name="description" type="xs:string"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

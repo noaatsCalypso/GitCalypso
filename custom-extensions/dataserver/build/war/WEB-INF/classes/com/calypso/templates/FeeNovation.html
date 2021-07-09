@@ -1,0 +1,148 @@
+	<!--calypso>
+	if (Trade.getLongId() > 0)
+		include "message_header.html";
+	</calypso-->
+
+<!--calypso>
+if ((|PRODUCT_TYPE| == "Swap") || (|PRODUCT_TYPE| == "CappedSwap"))
+   set TRANSACTION_TYPE = "Interest Rate Swap";
+else  if (|PRODUCT_TYPE| == "SwapCrossCurrency" || |PRODUCT_TYPE| == "XCcySwap")
+   set TRANSACTION_TYPE = "Cross-Currency Rate Swap";
+else if (|PRODUCT_TYPE| == "FRA")
+   set TRANSACTION_TYPE = "Forward Rate Agreement";
+else if (|PRODUCT_TYPE| == "SwapNonDeliverable")
+   set TRANSACTION_TYPE = "Non-Deliverable Interest Rate Swap";
+else
+   set TRANSACTION_TYPE = |PRODUCT_TYPE|;
+</calypso-->
+
+<body>
+	<p class="header1">Novation of OTC derivative Transaction</p>
+	<br>
+	<br>
+	<p>Our Transaction Reference: |TRADE_ID| / |TRANSFER_ID|</p>
+	<br>
+
+	<p class="indented">
+	We refer to the Old Transaction identified below. We confirm our agreement that with effect from and
+	including the Novation Date set out in the New Transaction below, you have novated the Old Transaction to
+	us on the following terms and conditions:
+<br><br>
+
+<p class='header2'>Old Transaction:</p>
+<table width='100%'>
+<tr>
+	<td width='30%'>Your Counterparty:</td>
+	<td width='68%'>|TRADE_COUNTERPARTY|</td>
+</tr>
+<tr>
+	<td>Notional Amount:</td>
+	<td>|TRADE_CURRENCY| |PRODUCT_PRINCIPAL|</td>
+</tr>
+<tr>
+	<td>[Scheduled] Termination Date:</td>
+	<td>|PRODUCT_MATURITYDATE|</td>
+</tr>
+<tr>
+	<td>Type of Transaction:</td>
+	<td>|TRANSACTION_TYPE|</td>
+</tr>
+</table>
+<br><br>
+
+<p class='header2'>New Transaction:</p>
+<table width='100%'>
+<tr>
+	<td width='30%'>Remaining Party:</td>
+	<td width='68%'>|TRADE_COUNTERPARTY|</td>
+</tr>
+<tr>
+	<td>Novated Amount:</td>
+	<td>|TRADE_CURRENCY| |PRODUCT_PRINCIPAL|</td>
+</tr>
+<tr>
+	<td>Novation Date:</td>
+	<td>|SETTLE_DATE|</td>
+</tr>
+<tr>
+	<td>Full First Calculation Period:</td>
+	<td>As defined in Novation Agreement</td>
+</tr>
+</table>
+<br><br>
+<p class='header2'>Fees:</p>
+<br>
+<tr>
+	<td>Fee payable:</td>
+	<td>|FEE_CURRENCY#NOVATION_FEE| |FEE_AMOUNT#NOVATION_FEE|</td>
+</tr>
+<tr>
+	<td>Payable by:</td>
+	<td>|FEE_PAYER#NOVATION_FEE|</td>
+</tr>
+<tr>
+	<td>Payable to:</td>
+	<td>|FEE_RECEIVER#NOVATION_FEE|</td>
+</tr>
+<tr>
+	<td>Due date:</td>
+	<td>|FEE_DATE#NOVATION_FEE|</td>
+</tr>
+</table>
+<br><br>
+<br>
+<p>
+In consideration for novating the Old Transaction, a Fee as identified above will be payable on or before
+the due date specified above in freely transferrable funds and in the manner customary for payments in the required currency.<br/>
+This letter agreement may be executed in counterparts. Capitalized terms not otherwise defined in this
+letter agreement shall have the meaning given to them in the ISDA 2004 Novation Definitions. This letter
+agreement shall be governed by and construed in accordance with the |LA_LEGAL_JURISDICTION|.
+</p>
+
+<p class=header2>Settlement Instructions are as follows:</p>
+
+<table border="1">
+	<tr>
+		<th class="smallfont">Settlement Instruction</th>
+		<th class="smallfont">Pay/Rec</th>
+		<th class="smallfont">Currency</th>
+		<th class="smallfont">To</th>
+		<th class="smallfont">Code</th>
+		<th class="smallfont">Favor of:</th>
+		<th class="smallfont">Account Number:</th>
+		<th class="smallfont">To Intermediary</th>
+		<th class="smallfont">Code</th>
+		<th class="smallfont">To Intermediary 2</th>
+		<th class="smallfont">Code</th>
+		<th class="smallfont">if Direct Account</th>
+
+	</tr>
+<!--calypso>
+	iterator("AdviceTransferRules")
+		inline "
+			<tr>
+			<td>|SETTLEMENT_TO_SDI_TYPE|</td>
+			<td>|SETTLEMENT_TO_PAYREC|</td>
+			<td>|SETTLEMENT_TO_CURRENCY|</td>
+			<td>|SETTLEMENT_TO_AGENT|</td>
+			<td>|SETTLEMENT_METHOD|</td>
+			<td>|SETTLEMENT_FAVOR_OF|</td>
+			<td>|SETTLEMENT_ACCOUNT_NUMBER|</td>
+			<td>|SETTLEMENT_TO_INTERMEDIARY|</td>
+			<td>|SETTLEMENT_TO_METHOD_INTERMEDIARY|</td>
+			<td>|SETTLEMENT_TO_INTERMEDIARY2|</td>
+			<td>|SETTLEMENT_TO_METHOD_INTERMEDIARY2|</td>
+			<td>|SETTLEMENT_TO_DDA_ACCOUNT|</td>
+			</tr>
+		";
+</calypso-->
+</table>
+
+<br>
+<br>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->
+</html>

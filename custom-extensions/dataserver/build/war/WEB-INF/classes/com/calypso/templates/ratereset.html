@@ -1,0 +1,110 @@
+<!--calypso>
+if (|IS_TOP_LEVEL| == "true" && Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+
+<p>I am pleased to |MESSAGE_ACTION| the rate reset for the |PRODUCT_TYPE| trade, reference |TRADE_ID| (|PRODUCT_DESCRIPTION|), traded |TRADE_DATE|. The details of the rate reset are the following:</p>
+
+<p class="header2">Rate Reset Details:</p>
+
+<!--calypso>
+if(|HAS_RATE_RESET_DETAILS| == "Yes") {
+inline "<table>
+    <tr><th>Ccy</th>
+        <th>Name</th>
+        <th>Tenor</th>
+        <th>Source</th>
+        <th>Date</th>
+        <th>Rate</th></tr>";
+	iterator("RateReset")
+	    inline "<tr><td>|RATE_RESET_DETAILS_CURRENCY|</td>
+	    <td>|RATE_RESET_DETAILS_NAME|</td>
+	    <td>|RATE_RESET_DETAILS_TENOR|</td>
+	    <td>|RATE_RESET_DETAILS_SOURCE|</td>
+	    <td>|RATE_RESET_DETAILS_DATE|</td>
+	    <td>|RATE_RESET_DETAILS_RATE|</td></tr>";
+inline "</table>";
+} else {
+    inline "|HAS_RATE_RESET_DETAILS|";
+}
+</calypso-->
+
+<p class="header2">Flows Details </p>
+
+<p>Therefore the following flows will occur:</p>
+
+<!--calypso>
+if(|IS_RATE_RESET_FLOWS_COMPOUNDING| == "Yes") {
+	    inline "
+        <table><tr><th>Start Date</th>
+	    <th>End Date</th>
+	    <th>Reset Date</th>
+	    <th>Rate</th>
+	    <th>Ccy</th>
+	    <th>Spread</th>
+	    <th>Interest Amount</th>
+	    <th>Compounded Amount</th>
+	 </tr>";
+    iterator("CompoundingRateReset")
+         inline "
+<tr>
+    <td class='smallfont'>|CASHFLOW_START_DATE|</td>
+    <td class='smallfont'>|CASHFLOW_END_DATE|</td>
+    <td	class='smallfont'>|CASHFLOW_RESET_DATE|</td>   
+    <td	class='smallfont'>|CASHFLOW_RATE|</td>
+    <td class='smallfont'>|CASHFLOW_CURRENCY|</td>
+    <td class='smallfont'>|CASHFLOW_SPREAD|</td>
+    <td class='smallfont'>|CASHFLOW_PURE_AMOUNT|</td>
+    <td class='smallfont'>|CASHFLOW_COMPOUND_AMOUNT|</td>
+</tr>
+    ";
+} else {
+	inline "
+        <table><tr><th>Type</th>
+	    <th>Start Date</th>
+	    <th>End Date</th>
+	    <th>Days</th>
+	    <th>DayCount</th>
+	    <th>Rate</th>
+	    <th>Spread</th>
+	    <th>Rate Index</th>
+	    <th>Payment Date</th>
+	    <th>Notional</th>
+	    <th>Ccy</th>
+	    <th>Amount</th>
+	</tr>";
+	   iterator ("ResetFlows")
+	     inline "
+<tr>
+    <td class='smallfont'>|CASHFLOW_TYPE|</td>
+    <td class='smallfont'>|CASHFLOW_START_DATE|</td>
+    <td class='smallfont'>|CASHFLOW_END_DATE|</td>
+    <td class='smallfont'>|CASHFLOW_DAYS|</td>
+    <td class='smallfont'>|CASHFLOW_DAY_COUNT|</td>
+    <td class='smallfont'>|CASHFLOW_RATE|</td>
+    <td class='smallfont'>|CASHFLOW_SPREAD|</td>
+    <td class='smallfont'>|CASHFLOW_RATE_INDEX|</td>
+    <td class='smallfont'>|CASHFLOW_PAYMENT_DATE|</td>
+    <td class='smallfont'>|CASHFLOW_NOTIONAL|</td>
+    <td class='smallfont'>|CASHFLOW_CURRENCY|</td>
+    <td class='smallfont'>|CASHFLOW_AMOUNT|</td>
+</tr>
+    ";
+
+}
+inline "</table>";
+</calypso-->
+
+<P class="header2">Payment Details</P>
+
+<P>|RATE_RESET_PAYMENT_DETAILS|</P>
+
+<P class="header2">Settlement Instructions are as follows:</P>
+<P>|RATE_RESET_SETTLEMENT_INSTRUCTIONS|
+Thank you very much. Please refer to our trade number |TRADE_ID| in your correspondence concerning this trade.</P>
+
+<!--calypso>
+if (|IS_TOP_LEVEL| == "true" && Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

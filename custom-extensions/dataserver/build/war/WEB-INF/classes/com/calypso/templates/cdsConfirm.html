@@ -1,0 +1,329 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+
+  
+  
+
+<p><span lang=EN-US >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The purpose of this (this &quot;confirmation&quot;) is to confirm the terms and conditions of the Credit Default Swap
+Transaction entered into between us on the Trade Date specified below. 
+|SENDER_FULL_NAME| and |RECEIVER_FULL_NAME| on the trade date specified below. </span></p>
+
+<p><span lang=EN-US >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The definitions and provisions contained in the 1999 ISDA Credit Derivatives Definitions, as supplemented by 
+<!--calypso>
+if ( |CONV_OBLG_SUPPLEMENT| == "true" )
+    inline "
+the Supplement Relating to Convertible, Exchangeable or Accreting Obligations dated November 9, 2001, 
+ ";
+if ( |SUCCESSOR_EVENT_SUPPLEMENT| == "true" )
+    inline "
+the Supplement Relating to Successor and Credit Events dated November 28, 2001,
+ ";  
+if ( |RESTRUCTURING_SUPPLEMENT| == "true" )
+    inline "
+the Restructuring Supplement dated May 11, 2001 (&quot;Credit Derivatives Definitions&quot;), 
+ ";
+</calypso-->
+as published by the International Swaps and Derivatives Association, Inc., are incorporated into this Confirmation . In the event of any inconsistency between those definitions and provisions and this Confirmation, this Confirmation will govern.  </span></p>
+ 
+
+
+<p><span lang=EN-US style='font-size:10.0pt;'><!---Credit Default Swap General Table--></span></p>
+
+<p><b><u><span style='font-size:10.0pt'>1. General Terms:</span></u></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=560 style='width:420.0pt;
+ mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr>
+  <td width="19%" style='width:19.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Trade Date:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|TRADE_DATE|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="19%" style='width:19.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Effective Date:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|SETTLE_DATE|</span></p>  
+  </td>
+ </tr>
+ <tr>
+  <td width="19%" style='width:19.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Scheduled Termination Date:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|PRODUCT_MATURITYDATE|, subject to
+  adjustment in accordance with the Modified Following Business Day Convention.</span></p>
+  </td>
+ </tr>  
+ <tr>
+ <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>The Seller:</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=FR style='font-size:10.0pt;'>|PROTECTION_SELLER_CODE|</span><span
+  lang=FR style=''></span></p>
+  </td>
+ </tr>
+ <tr>       
+<td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+   <p><span style='font-size:10.0pt'>The Buyer:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=FR style='font-size:10.0pt;'>|PROTECTION_BUYER_CODE|</span><span
+  lang=FR style=''></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="23%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Calculation Agent:</span></p>
+  </td>
+  <td width="77%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|CD_CALC_AGENT|</span></p>
+  </td>
+ </tr>
+<tr>
+  <td width="23%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Calculation Agent City:</span></p>
+  </td>
+  <td width="77%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|CD_CALC_AGENT_CITY|</span></p>
+  </td>
+ </tr>
+<td width="23%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Business Day:</span></p>
+  </td>
+  <td width="77%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FIX_CPN_HOL|</span></p>
+  </td>
+ </tr>
+ <td width="23%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Business Day Convention:</span></p>
+  </td>
+  <td width="77%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FIX_CPN_DATE_ROLL|</span></p>
+  </td>
+ </tr>
+  <td width="19%" style='width:19.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Reference Entity:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|CD_REFERENCE_ENTITY|</span></p>
+  </td>
+ </tr>
+<tr>
+  <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Reference Obligation:</span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|REFERENCE_OBLIGATION|</span></p>
+  </td>
+ </tr> 
+</tr>
+  <td width="19%" style='width:19.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Reference Price:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|CD_REFERENCE_ENTITY_RATING|</span></p>
+  </td>
+ </tr>
+</table>
+
+
+<p><b><u><span style='font-size:10.0pt'>2. Fixed Payment Amounts:</span></u></b></p>
+
+  
+
+<table border=0 cellspacing=0 cellpadding=0 width=779 style='width:467.25pt;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+  <tr> 
+ <td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Fixed Rate Payer Calculation Amount:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|CD_NOTIONAL| %</span></p>
+  </td>
+ </tr>
+ <tr> 
+  <td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Fixed Rate Payer Payment Dates:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FIX_CPN_FREQ| on the |FIX_ROLL_DAY|, starting
+  |FIX_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the
+  |FIX_CPN_DATE_ROLL| Business Day convention.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Fixed Rate:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FIX_FIXED_RATE| %</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Fixed Rate Day Count Fraction:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FIX_DAY_COUNT|</span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-size:10.0pt'>|ADDITIONAL_FIXED_AMOUNT|</span></p>
+
+
+<p><!---End Fixed Swap Leg Table--><b><u><span style='font-size:10.0pt'>3. Floating Payment
+Amounts:</span></u></b></p>
+
+
+<table border=0 cellspacing=0 cellpadding=0 width=779 style='width:467.25pt;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr>
+<td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Floating Rate Payer Calculation Amount:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|CD_NOTIONAL|</span></p>
+  </td>
+ </tr>
+ <tr> 
+<td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Conditions of Payment:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|CONDITIONS_OF_PAYMENT|</span></p>
+  </td>
+ </tr>
+ <tr> 
+  <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Notifying Party:</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|NOTIFYING_PARTY|</span></p>
+  </td>
+ </tr> 
+ <tr> 
+  <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Notice of Intended Physical Settlement:</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'></span></p>
+  </td>
+ </tr> 
+ <tr> 
+  <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Notice of Publicly Available Information:</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|NOTICE_OF_PAI|</span></p>
+  </td>
+ </tr> 
+<tr> 
+  <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Public Sources:</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|PUBLIC_SOURCES|</span></p>
+  </td>
+ </tr> 
+<tr> 
+  <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Specified Number:</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|SPECIFIED_NUMBER|</span></p>
+  </td>
+ </tr> 
+</table>  
+
+
+<p><b><u><span style='font-size:10.0pt'>Credit Events:</span></u></b></p>
+
+<p><b><u><span style='font-size:10.0pt'>4. Settlement Terms:</span></u></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=780 style='width:6.5in;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr>
+<td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>The following Credit Events shall apply to this Transaction:
+</span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|CREDIT_EVENTS|</span></p>
+  </td>
+ </tr> 
+ <tr>  
+  <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Obligation Category:</span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|OBLIGATION_TYPE|</span></p>
+  </td>
+ </tr>
+<tr>  
+  <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Obligation Characteristics:</span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|OBLIGATION_CHARACTERISTICS|</span></p>
+  </td>
+</tr> 
+<tr>  
+  <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Settlement Method:</span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|SETTLEMENT_METHOD|</span></p>
+  </td>
+</tr> 
+</table>  
+
+<!--calypso>
+if ( |CD_SETTLEMENT_TYPE| == "PHYSICAL" ||
+     |CD_SETTLEMENT_TYPE| == "CUSTOMER_OPTION")
+    include "cdsPhysicalSettlement.html";
+</calypso-->
+
+<!--calypso>
+if ( |CD_SETTLEMENT_TYPE| == "CASH" ||
+     |CD_SETTLEMENT_TYPE| == "CUSTOMER_OPTION")
+    include "cdsCashSettlement.html";
+</calypso-->
+
+
+<p><span lang=EN-US >&nbsp;</span><span
+lang=EN-US style='font-size:10.0pt;'><!---End Credit Default Swap General Table--></span></p>
+
+<p><b><u><span style='font-size:10.0pt'>5. Dispute Resolution:</span></u></b></p>
+Dispute Resolution: |DISPUTE_RESOLUTION|</span></p>
+ 
+<p><b><u><span style='font-size:10.0pt'>6. Notice and Account Details:</span></u></b></p>
+Payment to |SENDER_CODE|:|PO_INSTRUCTIONS|</span></p>
+Payment to |RECEIVER_CODE|:|COUNTERPARTY_INSTRUCTIONS|
+ 
+<p><b><u><span style='font-size:10.0pt'>7. MS Documentation and Operations Officers:</span></u></b></p>
+(a)    The Office of Party A for the Swap Transaction is |SENDER_ADDRESS| |SENDER_CITY| |SENDER_STATE| |SENDER_ZIPCODE| |SENDER_COUNTRY|; and</span></p>
+(b)    The Office of Party B for the Swap Transaction is |RECEIVER_ADDRESS| |RECEIVER_CITY| |RECEIVER_STATE| |RECEIVER_ZIPCODE| |RECEIVER_COUNTRY|. 
+
+<p><b><u><span style='font-size:10.0pt'>8. Confirmation:</span></u></b></p>
+
+Please confirm that the foregoing correctly sets forth the terms of our agreement by executing the copy of this Confirmation enclosed for that purpose and returning it to us or by sending us a letter substantially similar to this letter, which letter sets forth the material terms of the Swap Transaction to which this Confirmation relates and indicates your agreement to those terms.</span></p>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->
+
+
+  
+

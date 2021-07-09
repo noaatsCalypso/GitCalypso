@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfi_dictionary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="cfi_dictionary.xsd">
+    <category code="E" name="Equity" description="Equities">
+        <group code="S" name="CommonShare" description="Common/ordinary shares"></group>
+        <group code="P" name="PreferredShare" description="Preferred/preference shares"></group>
+        <group code="C" name="CommonConvertibleShare" description="Common/ordinary convertible shares"></group>
+        <group code="F" name="PreferredConvertibleShare" description="Preferred/preference convertible shares"></group>
+        <group code="L" name="Limited" description="Limited partnership units"></group>
+        <group code="D" name="Depositary" description="Depositary receipts on equities"></group>
+        <group code="Y" name="Structured" description="Structured instruments (participation)"></group>
+        <group code="M" name="Other" description="Others (miscellaneous)"></group>
+    </category>
+    <category code="C" name="Collective" description="Collective investement vehicles"></category>
+    <category code="D" name="Debt" description="Debt instruments" ></category>
+    <category code="R" name="Right" description="Entitlement rights" ></category>
+    <category code="O" name="ListedOption" description="Listed options"></category>
+    <category code="F" name="Future" description="Futures"></category>
+    <category code="S" name="Swap" description="Swaps">
+        <group code="R" name="Rate" description="Rates">
+            <attributes name="UnderlyingAsset">
+                <attribute code="A" name="Basis" description="Basis swap (Float-Float)"/>
+                <attribute code="C" name="FixFloat" description="Fixed-Floating"/>
+                <attribute code="D" name="FixFix" description="Fixed-Fixed"/>
+                <attribute code="G" name="Inflation" description="Inflation rate index"/>
+                <attribute code="H" name="OIS" description="Overnight index swap (OIS)"/>
+                <attribute code="Z" name="ZC"  description="Zero coupon"/>
+                <attribute code="M" name="Other" description="Others (miscellaneous)"/>
+            </attributes>
+            <attributes name="Notional">
+                <attribute code="C" name="Constant" description="Constant"/>
+                <attribute code="I" name="Accreting" description="Accreting"/>
+                <attribute code="D" name="Amortizing" description="Amortizing"/>
+                <attribute code="Y" name="Custom" description="Custom"/>
+            </attributes>
+            <attributes name="CurrencyModel">
+                <attribute code="S" name="SingleCurrency" description="Single Currency"/>
+                <attribute code="C" name="CrossCurrency" description="Cross-currency (multi-currency"/>
+            </attributes>
+            <attributes name="Delivery">
+                <attribute code="C" name="Cash" description="Cash"/>
+                <attribute code="P" name="Physical" description="Physical"/>
+            </attributes>
+        </group>
+        <group code="T" name="Commodity" description="Commodities">
+            <attributes name="UnderlyingAsset">
+                <attribute code="J" name="Energy" description="Energy"/>
+                <attribute code="K" name="Metal" description="Metal"/>
+                <attribute code="A" name="Agriculture" description="Agriculture"/>
+                <attribute code="N" name="Environmental" description="Environmental"/>
+                <attribute code="G" name="Freight" description="Freight"/>
+                <attribute code="P" name="Polypropylene" description="Polypropylene products"/>
+                <attribute code="S" name="Fertilizer" description="Fertilizer"/>
+                <attribute code="T" name="Paper" description="Paper"/>
+                <attribute code="I" name="Index" description="Index"/>
+                <attribute code="Q" name="MultiCommodity" description="Multi-commodity"/>
+                <attribute code="M" name="Other" description="Others (miscellaneous)"/>
+            </attributes>
+            <attributes name="ReturnOrPayoutTrigger">
+                <attribute code="C" name="ContractForDifference" description="Contract for difference"/>
+                <attribute code="T" name="TotalReturn" description="Total return"/>
+            </attributes>
+            <attributes/>
+            <attributes name="Delivery">
+                <attribute code="C" name="Cash" description="Cash"/>
+                <attribute code="P" name="Physical" description="Physical"/>
+                <attribute code="E" name="ElectAtSettlement" description="Elect at settlement"/>
+            </attributes>
+        </group>
+        <group code="E" name="Equity" description="Equity">
+            <attributes name="UnderlyingAsset">
+                <attribute code="S" name="SingleStock" description="Single stock (single name security)"/>
+                <attribute code="I" name="Index" description="Index"/>
+                <attribute code="B" name="Basket" description="Basket"/>
+                <attribute code="M" name="Other" description="Others (miscellaneous)"/>
+            </attributes>
+            <attributes name="ReturnOrPayoutTrigger">
+                <attribute code="P" name="Price" description="Price"/>
+                <attribute code="D" name="Dividend" description="Dividend"/>
+                <attribute code="V" name="Variance" description="Variance"/>
+                <attribute code="L" name="Volatility" description="Volatility"/>
+                <attribute code="T" name="TotalReturn" description="Total return"/>
+                <attribute code="C" name="ContractForDifference" description="Contract for difference"/>
+                <attribute code="M" name="Other" description="Others (miscellaneous)"/>
+            </attributes>
+            <attributes/>
+            <attributes name="Delivery">
+                <attribute code="C" name="Cash" description="Cash"/>
+                <attribute code="P" name="Physical" description="Physical"/>
+                <attribute code="E" name="ElectAtSettlement" description="Elect at settlement"/>
+            </attributes>
+        </group>
+        <group code="C" name="Credit">
+            <attributes name="UnderlyingAsset">
+                <attribute code="U" name="SingleName" description="Single name"/>
+                <attribute code="V" name="IndexTranche" description="Index tranche"/>
+                <attribute code="I" name="Index" description="Index"/>
+                <attribute code="B" name="Basket" description="Basket"/>
+                <attribute code="M" name="Other" description="Others (miscellaneous)"/>
+            </attributes>
+            <attributes name="ReturnOrPayoutTrigger">
+                <attribute code="C" name="CreditDefault" description="Credit default"/>
+                <attribute code="T" name="TotalReturn" description="Total return"/>
+                <attribute code="M" name="Other" description="Others (miscellaneous)"/>
+            </attributes>
+            <attributes name="UnderlyingIssuerType">
+                <attribute code="C" name="Corporate" description="Corporate"/>
+                <attribute code="S" name="Sovereign" description="Sovereign"/>
+                <attribute code="L" name="Local" description="Local"/>
+            </attributes>
+            <attributes name="Delivery">
+                <attribute code="C" name="Cash" description="Cash"/>
+                <attribute code="P" name="Physical" description="Physical"/>
+                <attribute code="A" name="Auction" description="Auction"/>
+            </attributes>
+        </group>
+        <group code="F" name="ForeignExchange" description="Foreign Exchange">
+            <attributes name="UnderlyingAsset">
+                <attribute code="A" name="SpotForwardSwap" description="Spot-Forward swap"/>
+                <attribute code="C" name="ForwardForwardSwap" description="Forward-Forward swap"/>
+                <attribute code="M" name="Other" description="Others (miscellaneous)"/>
+            </attributes>
+            <attributes/>
+            <attributes/>
+            <attributes name="Delivery">
+                <attribute code="C" name="Cash" description="Cash"/>
+                <attribute code="P" name="Physical" description="Physical"/>
+                <attribute code="N" name="NonDeliverable" description="Non-deliverable"/>   
+            </attributes>
+        </group>
+        <group code="M" name="Other" description="Others (miscellaneous)">
+            <attributes name="UnderlyingAsset">
+               <attribute code="P" name="CommercialProperty" description="Commercial property"/>
+                <attribute code="M" name="Other" description="Others (miscellaneous)"/>
+            </attributes>
+            <attributes/>
+            <attributes/>
+            <attributes name="Delivery">
+                <attribute code="C" name="Cash" description="Cash"/>
+                <attribute code="P" name="Physical" description="Physical"/>
+            </attributes>
+        </group>
+    </category>
+    <category code="H" name="NonListedOption" description="Non-listed and complex listed options">
+        <group code="E" name="Equity" description="Equities"></group>
+        <group code="F" name="ForeignExchange" description="Foreign Exchange"></group>
+        <group code="C" name="Credit" description="Credit"></group>
+        <group code="R" name="Rate" description="Rates"></group>
+        <group code="T" name="Commodity" description="Commodities"></group>
+        <group code="M" name="Other" description="Others (miscellaneous)"></group>
+    </category>
+    <category code="I" name="Spot" description="Spot">
+        <group code="F" name="ForeignExchange" description="Foreign Exchange"></group>
+        <group code="T" name="Commodity" description="Commodities"></group>        
+    </category>
+    <category code="J" name="Forward" description="Forwards">
+        <group code="E" name="Equity" description="Equities"></group>
+        <group code="F" name="ForeignExchange" description="Foreign Exchange"></group>
+        <group code="C" name="Credit" description="Credit"></group>
+        <group code="R" name="Rate" description="Rates"></group>
+        <group code="T" name="Commodity" description="Commodities"></group>
+    </category>
+    <category code="K" name="Strategy" description="Strategies"></category>
+    <category code="L" name="Financing" description="Financing"></category>
+    <category code="T" name="Referential" description="Referential instruments"></category>
+    <category code="M" name="Other" description="Others (miscellaneous)"></category>
+</cfi_dictionary>

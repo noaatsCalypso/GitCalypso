@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MT 535 Client Confirmation of Purchase or Sale  -->
+<SwiftMsgDef>
+	<Name>MT535MarginCall</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MM">
+		<SwiftField name="Start of Block" tag=":16R:" format="GENL" value="GENL" modes="MM"/>
+		<SwiftField name="Page Number/Continuation Indicator" tag=":28E:" format="5n/4!c" value="|SEQUENCE_NUMBER|/|SEQUENCE_INFO|" modes="MM"/>
+		<SwiftField name="Statement Number" tag=":13A:" format=":4!c//3!c" value=":STAT//|STATEMENT_NUMBER|" modes="MM"/>
+		<SwiftField name="Sender's Reference" tag=":20C:" format=":4!c//16x" value=":SEME//|MESSAGE_ID|" modes="MM"/>
+		<SwiftField name="Function of the Message" tag=":23G:" format="4!c[/4!c]" value="NEWM" modes="MM"/>
+		<!-- <SwiftField name="Preparation Date/Time" tag=":98C:" format=":4!c//8!n6!n" value=":PREP//|MESSAGE_CREATIONDATE|" modes="MM"/> -->
+		<SwiftField name="Statement Date" tag=":98A:" format=":4!c//8!n" value=":STAT//|STATEMENT_DATE|" modes="MM"/>
+		<SwiftField name="Statement Frequency" tag=":22F:" format=":4!c/[8c]/4!c" value=":SFRE//|STATEMENT_FREQUENCY|" modes="OO"/>
+		<SwiftField name="Statement Type" tag=":22F:" format=":4!c/[8c]/4!c" value=":STTY//|STATEMENT_TYPE|" modes="OO"/>
+		<SwiftField name="Complete/Updates Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value=":CODE//|COMPLETE_INDICATOR|" modes="OO"/>
+		<SwiftField name="Statement Basis" tag=":22F:" format=":4!c/[8c]/4!c" value=":STBA//|STATEMENT_BASIS|" modes="OO"/>
+		<SwiftField name="Account Identification" tag=":97A:" format=":4!c//35x" value=":SAFE//|ACCOUNT_ID|" modes="MM"/>
+		<SwiftField name="Activity Flag" tag=":17B:" format=":4!c//1!a" value=":ACTI//|ACTIVITY_FLAG|" modes="MM"/>
+		<!-- <SwiftField name="Consolidated Statement" tag=":17B:" format=":4!c//1!a" value=":CONS//N" modes="MM"/> -->
+		<SwiftField name="End of Block" tag=":16S:" format="GENL" value="GENL" modes="MM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Repetitive Optional Sequence B Sub-safekeeping Account" modes="OO">
+		<SwiftSequence name="Repetitive Optional Subsequence B1 Financial Instrument" modes="MM" iterator="MT535">
+			<SwiftField name="Custom Swift Fields"/>
+    		</SwiftSequence>
+	</SwiftSequence>
+</SwiftMsgDef>

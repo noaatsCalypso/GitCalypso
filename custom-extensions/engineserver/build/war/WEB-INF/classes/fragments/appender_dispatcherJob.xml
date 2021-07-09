@@ -1,0 +1,10 @@
+<RollingFile fileName="${sys:calypso.userdir}${file.separator}${calypsoExtendedAppName}_JOB_${sys:calypso.envname}_${sys:calypso.version}.log" filePattern="${sys:calypso.userdir}${file.separator}${calypsoExtendedAppName}_JOB_${sys:calypso.envname}_${sys:calypso.version}.log.%i.zip" name="dispatcherJob">
+  <CalypsoLayout appName="${cal:calypso.appname}" fileName="${sys:calypso.userdir}${file.separator}${calypsoExtendedAppName}_JOB_${sys:calypso.envname}_${sys:calypso.version}.log" pattern="%d{ISO8601} %-5p [%c] (%t) [%X{clientHost}-%X{clientDesc}] [%X{Aggregation}] %m%cThrowable%n"/>
+  <Policies>
+    <OnStartupTriggeringPolicy/>
+    <SizeBasedTriggeringPolicy size="${sys:calypso.maxfilesize}"/>
+  
+          <!-- TODO: unit (allowed B (default), KB, MB, GB) -->
+        </Policies>
+  <DefaultRolloverStrategy max="${sys:calypso.maxbackupindex}" min="1"/>
+</RollingFile>

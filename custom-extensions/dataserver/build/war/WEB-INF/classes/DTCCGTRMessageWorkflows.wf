@@ -1,0 +1,37 @@
+PSEventMessage;NONE;NEW;PENDING;true;false;false;DTCCGTR_INCOMING;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;PENDING;AUTOINDEX;INDEXED;true;true;false;DTCCGTR_INCOMING;ALL;DTCCGTRIncomingReply;;false;true;;;false;false;false;false;0;
+PSEventMessage;PENDING;ERRORINDEX;ERROR;true;false;false;DTCCGTR_INCOMING;ALL;DTCCGTRIncomingReply;;false;true;;;false;false;false;false;0;
+PSEventMessage;PENDING;INDEX;INDEXED;true;false;false;DTCCGTR_INCOMING;ALL;DTCCGTRIncomingReply;;false;true;;;false;false;false;false;0;
+PSEventMessage;PENDING;MANUALINDEX;INDEXED;true;false;false;DTCCGTR_INCOMING;ALL;DTCCGTRIncomingReply;;false;true;;;false;false;false;false;0;
+PSEventMessage;PENDING;WARNINGINDEX;WARNING;true;false;false;DTCCGTR_INCOMING;ALL;DTCCGTRIncomingReply;;false;true;;;false;false;false;false;0;
+PSEventMessage;ACKED;ACK;ACKED;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;ACKED;NACK;NACKED;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;NACKED;ACK;ACKED;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;NACKED;NACK;NACKED;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;ACKED;WACK;WACKED;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;NACKED;WACK;WACKED;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;SENT;WACK;WACKED;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;WACKED;ACK;ACKED;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;WACKED;NACK;NACKED;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;WACKED;WACK;WACKED;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;NONE;NEW;PENDING;true;true;false;DTCCGTR_OUTGOING;ALL;DTCCGTROnNewOutgoing;;false;true;;;false;false;false;false;0;
+PSEventMessage;PENDING;ACCEPT;VERIFIED;true;true;false;DTCCGTR_OUTGOING;ALL;;;false;false;;notIsDTCCGTR_Confirm;false;false;false;false;0;
+PSEventMessage;PENDING;AMEND;PENDING;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;PENDING;AUTHORIZE;VERIFIED;true;true;false;DTCCGTR_OUTGOING;ALL;;;false;false;;isDTCCGTR_AllConfirmed;false;false;false;false;0;
+PSEventMessage;PENDING;UPDATE;PENDING;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;SENT;ACK;ACKED;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;SENT;NACK;NACKED;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;VERIFIED;SEND;SENT;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;PENDING;CANCEL;CANCELED;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;VERIFIED;CANCEL;CANCELED;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;NACKED;CANCEL;CANCELED;true;false;false;DTCCGTR_OUTGOING;ALL;;;false;true;;;false;false;false;false;0;
+StaticDataFilterConfig
+1;isDTCCGTR_Confirm;;ANY;
+Message Template;LIKE;%Confirm%;
+1;isDTCCGTR_AllConfirmed;;ANY;
+IN Static Data Filter;ALL_IN;isDTCCGTR_Confirm,isTradeConfirmed;
+1;notIsDTCCGTR_Confirm;;ANY;
+IN Static Data Filter;NOT_IN;isDTCCGTR_Confirm;
+1;isTradeConfirmed;;ANY;
+KEYWORD.CONFIRMED;IN;Y,y;
+StaticDataFilterConfig

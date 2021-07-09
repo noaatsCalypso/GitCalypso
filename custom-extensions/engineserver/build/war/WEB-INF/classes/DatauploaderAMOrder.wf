@@ -1,0 +1,10 @@
+AMOrder;SIMULATED;SEND_TO_MARKET;LIMIT_VIOLATION;true;false;false;ALL;ALL;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+AMOrder;PENDING;SEND;SENT;true;true;false;ALL;ALL;PlatformAllege;;false;false;;;false;false;false;false;0;;;Always;false;
+AMOrder;PENDING_CANCEL;ACK;PENDING_CANCEL;true;false;false;ALL;ALL;;;false;false;;;false;false;false;false;0;;;Always;false;
+AMOrder;PENDING_CANCEL;UPDATE;PENDING_CANCEL;true;false;false;ALL;ALL;;;false;false;;;false;false;false;false;0;;;Always;false;
+AMOrder;PENDING_CANCEL;CANCEL;CANCELED;true;false;false;ALL;ALL;;;false;false;;;false;false;false;false;0;;;Always;false;
+AMOrder;PENDING_CANCEL;REJECT;SENT;true;false;false;ALL;ALL;;;false;false;;;false;false;false;false;0;;;Always;false;
+AMOrder;SENT;PLATFORM_CANCEL;PENDING_CANCEL;true;false;false;ALL;ALL;PlatformCancel;;false;false;;;false;false;false;false;0;;;Always;false;
+RuleAdditionalInfo 2
+ALL/AMOrder/ALL/ALL/PENDING/SEND/SENT;PlatformAllege;;;
+ALL/AMOrder/ALL/ALL/SENT/PLATFORM_CANCEL/PENDING_CANCEL;PlatformCancel;;;

@@ -1,0 +1,262 @@
+<!---Start Exhibit II-A - Commodity Swap ISDA 2005 float/float -->
+
+<p>
+The terms of the particular Transaction to which this Confirmation relates are as follows:
+</p>
+
+<table width='100%'>
+<tr>
+	<td width='30%'>Trade Date:</td>
+	<td width='68%'>|TRADE_DATE|</td>
+</tr>
+<tr>
+	<td>Effective Date:</td>
+	<td>|COMMODITY_START_DATE|</td>
+</tr>
+<tr>
+	<td>Termination Date:</td>
+	<td>|PRODUCT_MATURITYDATE|</td>
+</tr>
+<tr>
+	<td>Commodity:</td>
+	<td>|COMMODITY_TYPE|</td>
+</tr>
+	<!--calypso>
+	if ( |IS_PAYLEG_RECEIVELEG_QTY_PER_PERIOD_DIFF| == "true")
+    inline "
+		<tr>
+			<td>Notional Quantity per<br>Calculation Period(Pay):</td>
+			<td>|PAYLEG_COMMODITY_QTY_PER_PERIOD|</td>
+		</tr>
+		<tr>
+			<td>Notional Quantity per<br>Calculation Period(Receive):</td>
+			<td>|RECEIVELEG_COMMODITY_QTY_PER_PERIOD|</td>
+		</tr>
+		";
+		else inline"
+		<tr>
+			<td>Notional Quantity per<br>Calculation Period:</td>
+			<td>|PAYLEG_COMMODITY_QTY_PER_PERIOD|</td>
+		</tr>
+		";
+	</calypso-->
+	<!--calypso>
+	if ( |IS_PAYLEG_RECEIVELEG_TOTAL_QTY_DIFF| == "true")
+    inline "
+	<tr>
+			<td>Total Notional Quantity(Pay):</td>
+			<td>|PAYLEG_SWAP_NOTIONAL_QUANTITY|</td>
+		</tr>
+		<tr>
+			<td>Total Notional Quantity(Receive):</td>
+			<td>|RECEIVELEG_SWAP_NOTIONAL_QUANTITY|</td>
+		</tr>
+	";
+	else inline"
+	<tr>
+		<td>Total Notional Quantity:</td>
+		<td>|PAYLEG_SWAP_NOTIONAL_QUANTITY|</td>
+	</tr>
+	";
+</calypso-->
+<!--calypso>
+	if ( |IS_PAYLEG_RECEIVELEG_CALC_PERIOD_DIFF| == "true")
+    inline "
+
+		<tr>
+			<td>Calculation Period(Pay):</td>
+			<td>|PAYLEG_COMMODITY_CALC_PERIOD|</td>
+		</tr>
+		<tr>
+			<td>Calculation Period(Receive):</td>
+			<td>|RECEIVELEG_COMMODITY_CALC_PERIOD|</td>
+		</tr>
+		";
+		else inline"
+		<tr>
+			<td>Calculation Period:</td>
+			<td>|PAYLEG_COMMODITY_CALC_PERIOD|</td>
+		</tr>
+		";
+	</calypso-->
+
+<tr>
+	<td>Settlement Method:</td>
+	<td>|SETTLEMENT_METHOD|</td>
+</tr>
+<!--calypso>
+
+if(|IS_SETTLEMENT_DATES_DIFF| == "true")
+inline"
+		<tr>
+			<td>Settlement Date(s)(Pay):</td>
+			<td>|PAYLEG_SETTLEMENT_DATES| </td>
+		</tr>
+		<tr>
+			<td>Settlement Date(s)(Receive):</td>
+			<td>|RECEIVELEG_SETTLEMENT_DATES| </td>
+		</tr>
+";
+else
+inline"
+		<tr>
+			<td>Settlement Date(s):</td>
+			<td>|SETTLEMENT_DATES| </td>
+		</tr>
+";
+</calypso-->
+
+</table>
+
+<p>Pay leg Amount Details:</p>
+<table width='100%'>
+	<tr>
+	    <th>Start Date</th>
+	    <th>End Date</th>
+	    <th>Settlement Date</th>
+	    <th>Notional Quantity in Units of Commodity</th>
+	</tr>
+<!--calypso>
+iterator ( "CashFlowCommodityPayLeg" )
+    inline "
+	<tr>
+		<td>|CASHFLOW_START_DATE|</td>
+		<td>|CASHFLOW_END_DATE|</td>
+		<td>|CASHFLOW_DATE|</td>
+		<td>|CASHFLOW_DEAL_QUANTITY|</td>
+	</tr>
+	";
+</calypso-->
+</table>
+
+<p>Receive leg Amount Details:</p>
+<table width='100%'>
+	<tr>
+	    <th>Start Date</th>
+	    <th>End Date</th>
+	    <th>Settlement Date</th>
+	    <th>Notional Quantity in Units of Commodity</th>
+	</tr>
+<!--calypso>
+iterator ( "CashFlowCommodityReceiveLeg" )
+    inline "
+	<tr>
+		<td>|CASHFLOW_START_DATE|</td>
+		<td>|CASHFLOW_END_DATE|</td>
+		<td>|CASHFLOW_DATE|</td>
+		<td>|CASHFLOW_DEAL_QUANTITY|</td>
+	</tr>
+	";
+</calypso-->
+</table>
+
+<tr>
+	<td>Business Day Convention:</td>
+	<td>|COMMODITY_PRICING_DATE_ROLL|</td>
+</tr>
+
+<tr>
+	<td>Payment Lag:</td>
+	<td>|COMMODITY_PYMT_LAG|</td>
+</tr>
+
+<tr>
+	<td colspan="2"><br/><b>Floating Amount Details:</b></td>
+</tr>
+<tr>
+	<td>Floating Price Payer:</td>
+	<td>|PAYLEG_PAYER_CODE|</td>
+</tr>
+<tr>
+	<td>Floating Price Receiver</td>
+	<td>|RECEIVELEG_PAYER_CODE|</td>
+</tr>
+
+<tr>
+	<td>Commodity Reference Price (Pay):</td>
+	<td>|PAYLEG_COMMODITY_RESET_REFERENCE_PRICE|</td>
+</tr>
+<tr>
+	<td>Commodity Reference Price (Receive):</td>
+	<td>|RECEIVELEG_COMMODITY_RESET_REFERENCE_PRICE|</td>
+</tr>
+
+<tr>
+	<td>Spread(Pay):</td>
+	<td>|PAYLEG_COMMODITY_FLT_SPREAD|</td>
+ </tr>
+ <tr>
+	<td>Spread(Receive):</td>
+	<td>|RECEIVELEG_COMMODITY_FLT_SPREAD|</td>
+ </tr>
+ <tr>
+	<td>Specified Price(Pay):</td>
+	<td>|PAYLEG_COMMODITY_RESET_SPECIFIED_PRICE|</td>
+ </tr>
+  <tr>
+	<td>Specified Price(Receive):</td>
+	<td>|RECEIVELEG_COMMODITY_RESET_SPECIFIED_PRICE|</td>
+ </tr>
+ <tr>
+	<td>Delivery Date(Pay):</td>
+	<td>|PAYLEG_COMMODITY_RESET_DELIVERY_DATE|</td>
+ </tr>
+  <tr>
+	<td>Delivery Date(Receive):</td>
+	<td>|RECEIVELEG_COMMODITY_RESET_DELIVERY_DATE|</td>
+ </tr>
+
+
+<!--calypso>
+if(|IS_PAYLEG_RECEIVELEG_PRICING_DATES_DIFF| == "true")
+inline"
+		<tr>
+			<td>Pricing Dates(Pay):</td>
+			<td>|PAYLEG_COMMODITY_PRICING_DATES|</td>
+		</tr>
+		<tr>
+				<td>Pricing Dates(Receive):</td>
+				<td>|RECEIVELEG_COMMODITY_PRICING_DATES|</td>
+		</tr>
+	";
+	else
+	inline"
+	<tr>
+			<td>Pricing Dates:</td>
+			<td>|PAYLEG_COMMODITY_PRICING_DATES|</td>
+	</tr>
+	";
+	</calypso-->
+
+<tr>
+	<td colspan="2"><br><b>Market Disruption:</b></td>
+</tr>
+
+<!--calypso>
+if ( |HAS_MARKET_DISRUPTION_EVENTS| == "true" )
+    inline "
+<tr>
+    <td>Market Disruption Events:</td>
+    <td>|COMMODITY_MODIFY_MARKET_DISRUPTION_EVENTS|</td>
+</tr>
+<tr>
+    <td>Additional Market Disruption Events:</td>
+    <td>|COMMODITY_ADDITIONAL_MARKET_DISRUPTION_EVENTS|</td>
+</tr>
+<tr>
+    <td>Disruption Fallback(s):</td>
+    <td>|COMMODITY_DISRUPTION_FALLBACKS|</td>
+</tr>
+    ";
+</calypso-->
+
+<tr>
+	<td>Rounding:</td>
+	<td>Accuracy  to three (3) decimal places to be used in all calculations</td>
+</tr>
+
+
+</table>
+</br>
+
+<!---End Exhibit II-A float/float -->

@@ -1,0 +1,1192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	<bean id="loader"
+		class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeTypes$Loader">
+		<property name="attributes">
+			<set>
+				<!-- Common Trade Attributes START -->
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="1" />
+					<property name="attributeName" value="Trade.TradeId" />
+					<property name="attributeClassName" value="java.lang.Long" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="2" />
+					<property name="attributeName" value="Trade.BookName" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="3" />
+					<property name="attributeName" value="Trade.CounterPartyCode" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="4" />
+					<property name="attributeName" value="Trade.SettleDate" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="5" />
+					<property name="attributeName" value="Trade.TradeDatetime" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDatetime" />
+				</bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="6" />
+                    <property name="attributeName" value="Trade.TradeTradingDate" />
+                    <property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+                </bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="7" />
+					<property name="attributeName" value="Trade.TraderName" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8" />
+                    <property name="attributeName" value="Trade.SalesBookName" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="9" />
+                    <property name="attributeName" value="Trade.TradeVersion" />
+                    <property name="attributeClassName" value="java.lang.Integer" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="10" />
+                    <property name="attributeName" value="Trade.Role" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="11" />
+                    <property name="attributeName" value="Trade.Broker" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="12" />
+                    <property name="attributeName" value="Trade.SalesPerson" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="13" />
+                    <property name="attributeName" value="Trade.EnteredUser" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="14" />
+                    <property name="attributeName" value="Trade.InternalReference" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="15" />
+                    <property name="attributeName" value="Trade.Comment" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="16" />
+                    <property name="attributeName" value="Trade.BundleType" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="17" />
+                    <property name="attributeName" value="Trade.BundleName" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+				<bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="18" />
+                    <property name="attributeName" value="Trade.ProductType" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>                
+				<bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="19" />
+                    <property name="attributeName" value="Trade.Fees" />
+                    <property name="attributeClassName" value="java.util.Vector" />
+                </bean>
+                <bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="20" />
+					<property name="attributeName" value="Trade.PositionKeepingBookType" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="21" />
+					<property name="attributeName" value="Trade.RiskToExternalCounterparty" />
+					<property name="attributeClassName" value="java.lang.Boolean" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="22" />
+					<property name="attributeName" value="Trade.RiskBackOutFromOriginalBook" />
+					<property name="attributeClassName" value="java.lang.Boolean" />
+				</bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="23" />
+                    <property name="attributeName" value="Trade.SalesBookBaseCurrency" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="24" />
+					<property name="attributeName" value="Trade.PositionKeepingBookTypeOverride" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="25" />
+					<property name="attributeName" value="Trade.UpdateTime" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDatetime" />
+				</bean>
+                <bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="26" />
+					<property name="attributeName" value="Trade.BookId" />
+					<property name="attributeClassName" value="java.lang.Integer" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="27" />
+					<property name="attributeName" value="Trade.UseBookFromRiskType" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				 <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="28" />
+                    <property name="attributeName" value="Trade.ModifiedUser" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="29" />
+                    <property name="attributeName" value="Trade.Agent" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="30" />
+                    <property name="attributeName" value="Trade.FeesToCancel" />
+                    <property name="attributeClassName" value="java.util.Vector" />
+                </bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="31" />
+					<property name="attributeName" value="Trade.PositionSplitBackout" />
+					<property name="attributeClassName" value="java.lang.Boolean" />
+				</bean>
+				<!-- Common Trade Attributes END -->
+				
+				<!-- Common FX Trade Attributes START -->
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="100" />
+					<property name="attributeName" value="FX.PrimaryCurrency" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="101" />
+					<property name="attributeName" value="FX.QuotingCurrency" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="102" />
+					<property name="attributeName" value="FX.NegotiatedCurrency" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="103" />
+					<property name="attributeName" value="FX.PrimaryAmount" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="104" />
+					<property name="attributeName" value="FX.QuotingAmount" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="105" />
+					<property name="attributeName" value="FX.SpotRate" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="106" />
+					<property name="attributeName" value="FX.MarginPoints" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="107" />
+					<property name="attributeName" value="FX.ForwardPoints" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="108" />
+					<property name="attributeName" value="FX.LegSettleDate" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="109" />
+					<property name="attributeName" value="FX.NegotiatedRate" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="110" />
+					<property name="attributeName" value="FX.PrimaryInterestRate" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="111" />
+					<property name="attributeName" value="FX.QuotingInterestRate" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="112" />
+					<property name="attributeName" value="FX.NDFFixingLeg" />
+					<property name="attributeClassName" value="com.calypso.tk.positionkeeping.transaction.TransactionAttributeStore" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="113" />
+					<property name="attributeName" value="FX.LegAlternateSettleDate" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="114" />
+					<property name="attributeName" value="FX.NDFFixingLegQuanto" />
+					<property name="attributeClassName" value="com.calypso.tk.positionkeeping.transaction.TransactionAttributeStore" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="115" />
+					<property name="attributeName" value="FX.Markup" />
+					<property name="attributeClassName" value="com.calypso.tk.product.fx.markup.FXMarkup" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="116" />
+					<property name="attributeName" value="FX.IsCashSettled" />
+					<property name="attributeClassName" value="java.lang.Boolean" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="117" />
+					<property name="attributeName" value="FX.IsExtendedSpot" />
+					<property name="attributeClassName" value="java.lang.Boolean" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="118" />
+					<property name="attributeName" value="FX.IsFromSpotMismatch" />
+					<property name="attributeClassName" value="java.lang.Boolean" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="119" />
+					<property name="attributeName" value="FX.EnrichRepCcyRatesFromMarket" />
+					<property name="attributeClassName" value="java.lang.Boolean" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="120" />
+					<property name="attributeName" value="FX.CreateReportingPositions" />
+					<property name="attributeClassName" value="java.lang.Boolean" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="121" />
+					<property name="attributeName" value="FX.CrossSpotDate" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="122" />
+					<property name="attributeName" value="FX.PrimaryAmountDiscounted" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="123" />
+					<property name="attributeName" value="FX.QuotingAmountDiscounted" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="124" />
+					<property name="attributeName" value="FX.LifecycleActionSalesMarginInfo" />
+					<property name="attributeClassName" value="com.calypso.tk.positionkeeping.processing.transaction.LifecycleActionSalesMarginInfo" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="125" />
+					<property name="attributeName" value="FX.WindowForwardActionFeeInfo" />
+					<property name="attributeClassName" value="com.calypso.tk.product.fx.flexiforward.windowforward.data.WindowForwardActionFeeInfo" />
+				</bean>
+				
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="128" />
+					<property name="attributeName" value="FX.IsPrimaryQuotingAmountSameSign" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="129" />
+					<property name="attributeName" value="FX.IsPrimaryQuotingPositive" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="126" />
+					<property name="attributeName" value="FX.LegCompressionDate" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="127" />
+					<property name="attributeName" value="FX.IsCompressionTrade" />
+					<property name="attributeClassName" value="java.lang.Boolean" />
+				</bean>
+				<!-- Common FX Trade Attributes END -->
+				
+				<!-- Non Deliverable Leg Attributes START -->
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="200" />
+					<property name="attributeName" value="NDF.FxReset" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="201" />
+					<property name="attributeName" value="NDF.PrimaryCurrency" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="202" />
+					<property name="attributeName" value="NDF.QuotingCurrency" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>				
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="203" />
+					<property name="attributeName" value="NDF.ResetDateTime" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDatetime" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="204" />
+					<property name="attributeName" value="NDF.ResetDate" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+				</bean>				
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="205" />
+					<property name="attributeName" value="NDF.SettleCurrency" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="206" />
+					<property name="attributeName" value="NDF.ResetPrice" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>				
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="207" />
+					<property name="attributeName" value="NDF.ResetType" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="208" />
+					<property name="attributeName" value="NDF.SplitCurrency" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="209" />
+					<property name="attributeName" value="NDF.ResetType.Split1" />
+					<property name="attributeClassName" value="com.calypso.tk.positionkeeping.transaction.TransactionAttributeStore" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="210" />
+					<property name="attributeName" value="NDF.ResetType.Split2" />
+					<property name="attributeClassName" value="com.calypso.tk.positionkeeping.transaction.TransactionAttributeStore" />
+				</bean>				
+				<!-- Non Deliverable Leg Attributes END -->
+
+				<!-- FXOptionForward Specific Attributes START -->
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="301" />
+					<property name="attributeName" value="FXOptFwd.StartDate" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="302" />
+					<property name="attributeName" value="FXOptFwd.PricingDate" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="303" />
+					<property name="attributeName" value="FXOptFwd.OutstandingPrimaryAmount" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="304" />
+					<property name="attributeName" value="FXOptFwd.OutstandingQuotingAmount" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="305" />
+					<property name="attributeName" value="FXOptFwd.OptionSettlementType" />
+					<property name="attributeClassName" value="java.lang.Integer" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="306" />
+					<property name="attributeName" value="FXOptFwd.OriginalPrimaryAmount" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="307" />
+					<property name="attributeName" value="FXOptFwd.OriginalQuotingAmount" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<!-- FXOptionForward Specific Attributes END -->
+				
+				<!-- START FXTTM Specific Attributes START -->
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="401" />
+					<property name="attributeName" value="FXTTM.Rate" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="402" />
+					<property name="attributeName" value="FXTTM.ExpiryDateTime" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDatetime" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="403" />
+					<property name="attributeName" value="FXTTM.FixingDate" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="404" />
+					<property name="attributeName" value="FXTTM.FXReset" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="405" />
+					<property name="attributeName" value="FXTTM.IsSpotReserve" />
+					<property name="attributeClassName" value="java.lang.Boolean" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="406" />
+					<property name="attributeName" value="FXTTM.Type" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="407" />
+					<property name="attributeName" value="FXTTM.Status" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				<!-- END FXTTM Specific Attributes END -->
+				
+				<!-- START FXSpotReserve Specific Attributes START -->
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="501" />
+					<property name="attributeName" value="FXSpotReserve.SpotResValDtEntry" />
+					<property name="attributeClassName" value="java.util.Collection" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="502" />
+					<property name="attributeName" value="FXSpotReserve.ExpiryDateTime" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDatetime" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="503" />
+					<property name="attributeName" value="FXSpotReserve.SpotRate" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<!-- END FXSpotReserve Specific Attributes END -->
+				
+				<!-- START FXTakeUp Specific Attributes START -->
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="701" />
+					<property name="attributeName" value="FXTakeUp.ParentId" />
+					<property name="attributeClassName" value="java.lang.Long" />
+				</bean>
+				<!-- END FXTakeUp Specific Attributes END -->
+
+				<!-- START PreciousMetals Specific Attributes START -->
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="801" />
+					<property name="attributeName" value="FX.PreciousMetalFormId" />
+					<property name="attributeClassName" value="java.lang.Integer" />
+				</bean>
+				<!-- END PreciousMetals Specific Attributes END -->
+
+				<!--  FX Trade Routing Support Attributes START -->
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="5000" />
+					<property name="attributeName" value="Trade.TradeSource" />
+					<property name="attributeClassName" value="java.lang.String" />
+				<!-- 	<property name="attributeKeywordName" value="TradeSource" />  TradeSource is already used as a system keyword-->
+					<property name="attributeKeywordName" value="TradePlatform" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="5001" />
+					<property name="attributeName" value="Trade.TradeRegion" />
+					<property name="attributeClassName" value="java.lang.String" />
+					<property name="attributeKeywordName" value="TradeRegion" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="5002" />
+					<property name="attributeName" value="Trade.GlobalRiskAmount" />
+                    <property name="attributeClassName" value="java.lang.Double" />
+                    <property name="attributeKeywordName" value="GlobalRiskAmount" />
+				</bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5003" />
+                    <property name="attributeName" value="Trade.CustomerClassification" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                    <property name="attributeKeywordName" value="CustomerClassification" />
+                </bean>
+                <!--  FX Trade Routing Support Attributes END -->
+                
+                <!--  FX Trade Initial Routing Support Attributes START -->
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5100" />
+                    <property name="attributeName" value="Trade.PositionOffsetTraderName" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                    <property name="attributeKeywordName" value="PositionOffsetTraderName" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5101" />
+                    <property name="attributeName" value="Trade.PositionOffsetBookName" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                    <property name="attributeKeywordName" value="PositionOffsetBookName" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5102" />
+                    <property name="attributeName" value="Trade.ProcessingOrgCounterPartyCode" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5103" />
+                    <property name="attributeName" value="Trade.PositionOffsetTradeId" />
+                    <property name="attributeClassName" value="java.lang.Long" />
+                    <property name="attributeKeywordName" value="PositionOffsetTradeId" />
+                </bean>
+				<!--  FX Trade Initial Routing Support Attributes END -->
+				
+				<!--  FX Trade Operations Support in PositionKeeping Attributes START -->
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5500" />
+                    <property name="attributeName" value="Core.CalypsoTrade" />
+                    <property name="attributeClassName" value="com.calypso.tk.core.Trade" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5501" />
+                    <property name="attributeName" value="FX.RiskType" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5502" />
+                    <property name="attributeName" value="Trade.TradeActionType" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5503" />
+                    <property name="attributeName" value="FX.PositionTransactionFor" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5504" />
+                    <property name="attributeName" value="FX.TransactionFlippedForInversePair" />
+                    <property name="attributeClassName" value="java.lang.Boolean" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5505" />
+                    <property name="attributeName" value="FX.TransactionFlippedForInversePairOriginalAttributes" />
+                    <property name="attributeClassName" value="com.calypso.tk.positionkeeping.transaction.TransactionAttributeStore" />
+                </bean>                
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5506" />
+                    <property name="attributeName" value="FX.OriginatingTradePrimaryCurrency"/>
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5507" />
+                    <property name="attributeName" value="FX.OriginatingTradeQuotingCurrency"/>
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5508" />
+                    <property name="attributeName" value="FX.OffsetPosition" />
+                    <property name="attributeClassName" value="java.lang.Boolean" />
+                    <property name="attributeKeywordName" value="OffsetPosition" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5509" />
+                    <property name="attributeName" value="FX.IsPositionGenerating" />
+                    <property name="attributeClassName" value="java.lang.Boolean" />
+                    <property name="attributeKeywordName" value="IsPositionGenerating" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5510" />
+                    <property name="attributeName" value="FX.IsTradeActionNew" />
+                    <property name="attributeClassName" value="java.lang.Boolean" />
+                    <property name="attributeKeywordName" value="IsTradeActionNew" />
+                </bean>
+                 <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5511" />
+                    <property name="attributeName" value="FX.DisableTradeRouting" />
+                    <property name="attributeClassName" value="java.lang.Boolean" />
+                    <property name="attributeKeywordName" value="DisableTradeRouting" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5512" />
+                    <property name="attributeName" value="FX.RouteAtMarketRates" />
+                    <property name="attributeClassName" value="java.lang.Boolean" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5513" />
+                    <property name="attributeName" value="FX.NoPropagationAction" />
+                    <property name="attributeClassName" value="java.lang.Boolean" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5514" />
+                    <property name="attributeName" value="FX.PKRoutingParams" />
+                    <property name="attributeClassName" value="com.calypso.tk.positionkeeping.routing.PositionKeepingRoutingParams" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="5515" />
+                    <property name="attributeName" value="FX.OriginatingTradeProductType"/>
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                
+                <!--  FX Trade Operations Support in PositionKeeping Attributes END -->
+                
+                <!--  MM Trade Operations Support in PositionKeeping Attributes START (6000 to 6500) -->
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="6000" />
+                    <property name="attributeName" value="MM.FundingCurrency" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="6001" />
+                    <property name="attributeName" value="MM.SpotDiscounted" />
+                    <property name="attributeClassName" value="java.lang.Boolean" />
+                    <property name="attributeKeywordName" value="SpotDiscounted" />
+                </bean>
+                 <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="6002" />
+                    <property name="attributeName" value="MM.PrimaryInterestRate" />
+                    <property name="attributeClassName" value="java.lang.Double" />
+                </bean>
+                 <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="6003" />
+                    <property name="attributeName" value="MM.QuotingInterestRate" />
+                    <property name="attributeClassName" value="java.lang.Double" />
+                </bean>
+                <!--  MM Trade Operations Support in PositionKeeping Attributes END 6000-6500 -->
+                
+                <!--  MM Structured Flows in PositionKeeping Attributes START 6500-7000 -->
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="6501" />
+                    <property name="attributeName" value="STRUCTFLOW.StartDate" />
+                    <property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+                </bean>
+                 <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="6502" />
+                    <property name="attributeName" value="STRUCTFLOW.EndDate" />
+                    <property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+                </bean>
+                 <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="6503" />
+                    <property name="attributeName" value="STRUCTFLOW.Nominal" />
+                    <property name="attributeClassName" value="java.lang.Double" />
+                </bean>
+                 <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="6504" />
+                    <property name="attributeName" value="STRUCTFLOW.Currency" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                 <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="6505" />
+                    <property name="attributeName" value="STRUCTFLOW.DiscountMethod" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                 <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="6506" />
+                    <property name="attributeName" value="STRUCTFLOW.CompoundingMethod" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                 <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="6507" />
+                    <property name="attributeName" value="STRUCTFLOW.CompoundingFrequency" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="6508" />
+                    <property name="attributeName" value="STRUCTFLOW.InterestRate" />
+                    <property name="attributeClassName" value="java.lang.Double" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="6509" />
+                    <property name="attributeName" value="STRUCTFLOW.DayCount" />
+                    <property name="attributeClassName" value="java.lang.Integer" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="6510" />
+                    <property name="attributeName" value="STRUCTFLOW.CashFlows" />
+                    <property name="attributeClassName" value="java.util.List" />
+                </bean>
+                
+                <!--  MM Structured Flows in PositionKeeping Attributes END 6500-7000 -->
+ 
+                <!--  Cash Flows in PositionKeeping Attributes START 7000-7100 -->
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="7001" />
+                    <property name="attributeName" value="CashFlow.Amount" />
+                    <property name="attributeClassName" value="java.lang.Double" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="7002" />
+                    <property name="attributeName" value="CashFlow.Currency" />
+                    <property name="attributeClassName" value="java.lang.String" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="7003" />
+                    <property name="attributeName" value="CashFlow.Date" />
+                    <property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+                </bean>
+                
+                <!--  Cash Flows in PositionKeeping Attributes END 7000-7100 -->
+                
+                <!--  FX Flexiforward product level attributes START 8000-8500 -->
+				<bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8001" />
+                    <property name="attributeName" value="FxFlexiForward.Type" />
+                    <property name="attributeClassName" value="com.calypso.tk.product.fx.flexiforward.FXFlexiForwardType" />
+                </bean>                
+				<bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8002" />
+                    <property name="attributeName" value="FxFlexiForward.Usage" />
+                    <property name="attributeClassName" value="com.calypso.tk.product.fx.flexiforward.FXFlexiForwardUsage" />
+                </bean>                
+				<bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8003" />
+                    <property name="attributeName" value="FxFlexiForward.CaseLog" />
+                    <property name="attributeClassName" value="com.calypso.tk.product.fx.caselog.CaseLog" />
+                </bean>                
+				<bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8004" />
+                    <property name="attributeName" value="FxFlexiForward.FXEntityLifecycleRelationship" />
+                    <property name="attributeClassName" value="com.calypso.tk.product.fx.lifecycle.relationships.EntityLifecycleRelationship" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8005" />
+                    <property name="attributeName" value="FxFlexiForward.Actions" />
+                    <property name="attributeClassName" value="java.util.List" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8006" />
+                    <property name="attributeName" value="FxFlexiForward.Markup" />
+                    <property name="attributeClassName" value="com.calypso.tk.product.fx.markup.FXMarkup" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8007" />
+                    <property name="attributeName" value="FxFlexiForward.IsFlexiForwardAction" />
+                    <property name="attributeClassName" value="java.lang.Boolean" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8008" />
+                    <property name="attributeName" value="FxFlexiForward.ActionType" />
+                    <property name="attributeClassName" value="com.calypso.tk.product.fx.flexiforward.FXFlexiForwardActionType" />
+                </bean>     
+                <!--  FX Flexiforward product level attributes END 8000-8500 -->
+                
+                <!--  FX FlexiForward Take Up Schedule Attributes START 8501 - 9000 -->
+				<bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8501" />
+                    <property name="attributeName" value="FxFlexiForwardTakeUpSchedule.TakeUpWindows" />
+                    <property name="attributeClassName" value="java.util.List" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8502" />
+                    <property name="attributeName" value="FxFlexiForwardTakeUpSchedule.TakeUpScheduleActions" />
+                    <property name="attributeClassName" value="java.util.List" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8503" />
+                    <property name="attributeName" value="FxFlexiForwardTakeUpSchedule.StartDate" />
+                    <property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8504" />
+                    <property name="attributeName" value="FxFlexiForwardTakeUpSchedule.EndDate" />
+                    <property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8505" />
+                    <property name="attributeName" value="FxFlexiForwardTakeUpSchedule.TakeUpType" />
+                    <property name="attributeClassName" value="com.calypso.tk.product.fx.flexiforward.takeupschedule.FXFlexiForwardTakeUpType" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8506" />
+                    <property name="attributeName" value="FxFlexiForwardTakeUpSchedule.TakeUpFrequency" />
+                    <property name="attributeClassName" value="com.calypso.tk.product.fx.flexiforward.takeupschedule.FXFlexiForwardTakeUpWindowFrequencyType" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8507" />
+                    <property name="attributeName" value="FxFlexiForwardTakeUpSchedule.TakeUpScheduleShortDaysStrategy" />
+                    <property name="attributeClassName" value="com.calypso.tk.product.fx.flexiforward.takeupschedule.FXFlexiForwardTakeUpWindowShortDaysStrategy" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="8508" />
+                    <property name="attributeName" value="FxFlexiForwardTakeUpSchedule.NoOfTakeUpWindows" />
+                    <property name="attributeClassName" value="java.lang.Integer" />
+                </bean>
+                <bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="8509" />
+					<property name="attributeName" value="FxFlexiForwardTakeUpSchedule.OutstandingPrimaryAmount" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="8510" />
+					<property name="attributeName" value="FxFlexiForwardTakeUpSchedule.OutstandingQuotingAmount" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+                <bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="8511" />
+					<property name="attributeName" value="FxFlexiForwardTakeUpSchedule.OriginalNegotiatedRate" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="8512" />
+					<property name="attributeName" value="FxFlexiForwardTakeUpSchedule.MarkupForFXFlexiForwardTakeUp" />
+					<property name="attributeClassName" value="com.calypso.tk.product.fx.markup.FXMarkup" />
+				</bean>
+                <bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="8513" />
+					<property name="attributeName" value="FxFlexiForwardTakeUpSchedule.OriginalSpotRate" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+                <bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="8514" />
+					<property name="attributeName" value="FxFlexiForwardTakeUpSchedule.OriginalForwardPoints" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+                <!--  FX FlexiForward Take Up Schedule Attributes END 8501 - 9000-->
+                
+                <!--  FX FlexiForward Merchant FX Attributes 9001 - 9500 -->
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="9001" />
+                    <property name="attributeName" value="FxFlexiForwardMerchantFX.IsMerchantFXAction" />
+                    <property name="attributeClassName" value="java.lang.Boolean" />
+                </bean>
+                 <bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="9002" />
+					<property name="attributeName" value="FxFlexiForwardMerchantFX.OutstandingPrimaryAmount" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="9003" />
+					<property name="attributeName" value="FxFlexiForwardMerchantFX.OutstandingQuotingAmount" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				 <bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="9004" />
+					<property name="attributeName" value="FxFlexiForwardMerchantFX.OriginalSpotRate" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+                <bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="9005" />
+					<property name="attributeName" value="FxFlexiForwardMerchantFX.OriginalForwardPoints" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+                  <bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="9006" />
+					<property name="attributeName" value="FxFlexiForwardMerchantFX.OriginalNegotiatedRate" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="9007" />
+                    <property name="attributeName" value="FxFlexiForwardMerchantFX.MerchantFXType" />
+                    <property name="attributeClassName" value="com.calypso.tk.product.fx.flexiforward.merchantfx.FXFlexiForwardMerchantFXType" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="9008" />
+                    <property name="attributeName" value="FxFlexiForwardMerchantFX.MerchantFXStatus" />
+                    <property name="attributeClassName" value="com.calypso.tk.product.fx.flexiforward.merchantfx.FXFlexiForwardMerchantFXStatus" />
+                </bean>
+                 <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="9009" />
+                    <property name="attributeName" value="FxFlexiForwardMerchantFX.MerchantFXFinancingData" />
+                    <property name="attributeClassName" value="com.calypso.tk.product.fx.flexiforward.merchantfx.data.FXFlexiForwardMerchantFXFinancingData" />
+                </bean>
+                <!--  FX FlexiForward Merchant FX Attributes 9001 - 9500 -->
+                
+                <!--  FX FlexiForward Window ForwardAttributes 9501 - 10000 -->
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="9501" />
+					<property name="attributeName" value="FxFlexiForwardWindowForward.StartDate" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="9502" />
+					<property name="attributeName" value="FxFlexiForwardWindowForward.EndDate" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="9503" />
+					<property name="attributeName" value="FxFlexiForwardWindowForward.OutstandingPrimaryAmount" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="9504" />
+					<property name="attributeName" value="FxFlexiForwardWindowForward.OutstandingQuotingAmount" />
+					<property name="attributeClassName" value="java.lang.Double" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="9505" />
+					<property name="attributeName" value="FxFlexiForwardWindowForward.SettlementType" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				<bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="9506" />
+                    <property name="attributeName" value="FxFlexiForwardWindowForward.WindowForwardType" />
+                    <property name="attributeClassName" value="com.calypso.tk.product.fx.flexiforward.windowforward.FXFlexiForwardWindowForwardType" />
+                </bean>
+				
+				<!--  FX FlexiForward Window ForwardAttributes 9501 - 10000 -->
+				
+				<!--  FX AveragingForward attributes 10001 - 10500 -->
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="10001" />
+					<property name="attributeName" value="FXAveragingForward.FixingStart" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="10002" />
+					<property name="attributeName" value="FXAveragingForward.FixingEnd" />
+					<property name="attributeClassName" value="com.calypso.tk.core.JDate" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="10003" />
+					<property name="attributeName" value="FXAveragingForward.FixingFrequency" />
+					<property name="attributeClassName" value="java.lang.String" />
+				</bean>
+				<bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="10004" />
+                    <property name="attributeName" value="FXAveragingForward.DayToRollOn" />
+                    <property name="attributeClassName" value="java.lang.Integer" />
+                </bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="10005" />
+					<property name="attributeName" value="FXAveragingForward.RollOnDay" />
+					<property name="attributeClassName" value="java.lang.Boolean" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="10006" />
+					<property name="attributeName" value="FXAveragingForward.RollOnEndDate" />
+					<property name="attributeClassName" value="java.lang.Boolean" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="10007" />
+					<property name="attributeName" value="FXAveragingForward.Unadjusted" />
+					<property name="attributeClassName" value="java.lang.Boolean" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="10008" />
+					<property name="attributeName" value="FXAveragingForward.Custom" />
+					<property name="attributeClassName" value="java.lang.Boolean" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="10009" />
+					<property name="attributeName" value="FxAveragingForward.IsFXAverageForwardAction" />
+					<property name="attributeClassName" value="java.lang.Boolean" />
+				</bean>
+				<bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="10010" />
+                    <property name="attributeName" value="FxAveragingForward.ActionType" />
+                    <property name="attributeClassName" value="com.calypso.tk.product.fx.averagingforward.FXAveragingForwardActionType" />
+                </bean>
+                <bean
+                    class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+                    <property name="attributeIndex" value="10011" />
+                    <property name="attributeName" value="FxAveragingForward.Actions" />
+                    <property name="attributeClassName" value="java.util.List" />
+                </bean> 
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="10012" />
+					<property name="attributeName" value="FX.AveragingForwardActionFeeInfo" />
+					<property name="attributeClassName" value="com.calypso.tk.product.fx.averagingforward.FXAveragingForwardActionFeeInfo" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="10013" />
+					<property name="attributeName" value="FXAveragingForward.IsSettlementByFixings" />
+					<property name="attributeClassName" value="java.lang.Boolean" />
+				</bean>
+				<bean
+					class="com.calypso.tk.positionkeeping.transaction.TransactionAttributeType">
+					<property name="attributeIndex" value="10014" />
+					<property name="attributeName" value="FxAveragingForward.ResetSchedule" />
+					<property name="attributeClassName" value="java.util.List" />
+				</bean>
+				
+				<!--  FX AveragingForward attributes 10001 - 10500 -->
+                
+                
+ 			</set>
+		</property>
+	</bean>
+</beans>
+

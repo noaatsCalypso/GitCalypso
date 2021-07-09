@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web>
+	<context-root>/dataserver</context-root>	
+	<security-domain>calypso-db-security-domain</security-domain>
+	<resource-ref>
+		<res-ref-name>jdbc/calypso</res-ref-name>
+		<jndi-name>java:/calypso/datasources/CalypsoDS</jndi-name>
+	</resource-ref>
+	<resource-ref>
+        <res-ref-name>jms/connectionFactory</res-ref-name>
+        <res-type>javax.jms.ConnectionFactory</res-type>
+        <jndi-name>java:/calypso/jms/ConnectionFactory</jndi-name>
+    </resource-ref> 
+    <resource-ref>
+        <res-ref-name>jms/pooledConnectionFactory</res-ref-name>
+        <res-type>javax.jms.ConnectionFactory</res-type>
+        <jndi-name>java:/calypso/jms/PooledConnectionFactory</jndi-name>
+    </resource-ref> 
+    <resource-ref>
+        <res-ref-name>jms/todPooledConnectionFactory</res-ref-name>
+        <res-type>javax.jms.ConnectionFactory</res-type>
+        <jndi-name>java:/calypso/operationdashboard/jms/PooledConnectionFactory</jndi-name>
+    </resource-ref> 
+    <resource-ref>
+        <res-ref-name>topic/calypso</res-ref-name>
+        <res-type>javax.jms.Topic</res-type>
+        <jndi-name>java:/topic/calypso</jndi-name>
+    </resource-ref> 
+    <resource-ref>
+        <res-ref-name>topic/calypsoAdmin</res-ref-name>
+        <res-type>javax.jms.Topic</res-type>
+        <jndi-name>java:/topic/calypsoAdmin</jndi-name>
+    </resource-ref> 
+    <resource-ref>
+        <res-ref-name>queue/calypsoMonitoring</res-ref-name>
+        <res-type>javax.jms.Queue</res-type>
+        <jndi-name>java:/queue/calypsoMonitoring</jndi-name>
+    </resource-ref> 
+</jboss-web>

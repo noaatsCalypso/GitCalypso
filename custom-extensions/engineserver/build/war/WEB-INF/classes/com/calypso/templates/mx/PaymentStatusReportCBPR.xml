@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+	<contents>
+		<element name="FIToFIPmtStsRpt">
+			<contents>
+				<element name="GrpHdr">
+					<contents>
+						<element name="MsgId">
+							<contents>
+								<report>
+									<column>MESSAGE_ID</column>
+								</report>
+							</contents>
+						</element>
+						<element name="CreDtTm">
+							<contents>
+								<report>
+									<column>CREATION_SYSTEM_DATE_ISOVERSION</column>
+								</report>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="TxInfAndSts">
+					<contents>
+						<element name="OrgnlGrpInf">
+							<contents>
+								<element name="OrgnlMsgId">
+									<contents>
+										<report>
+											<column>RELATED_MSG_ID</column>
+										</report>
+									</contents>
+								</element>
+								<element name="OrgnlMsgNmId">
+									<contents>
+										<report>
+											<column>RELATED_MSG_TEMPLATE</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="OrgnlInstrId">
+							<contents>
+								<report>
+									<column>RELATED_MSG_INSTRID</column>
+								</report>
+							</contents>
+						</element>
+						<element name="OrgnlEndToEndId">
+							<contents>
+								<report>
+									<column>RELATED_MSG_ENDTOENDID</column>
+								</report>
+							</contents>
+						</element>
+						<element name="OrgnlUETR">
+							<contents>
+								<report>
+									<column>RELATED_MSG_UETR</column>
+								</report>
+							</contents>
+						</element>
+						<element name="TxSts">
+							<contents>
+								<text>
+									<value>RJCT</value>
+								</text>
+							</contents>
+						</element>
+						<element name="StsRsnInf">
+							<contents>
+								<element name="Rsn">
+									<contents>
+										<element name="Cd" hideifempty="true">
+											<contents>
+												<report>
+													<column>RETURN_STATUS_REASON</column>
+												</report>
+											</contents>
+										</element>
+									</contents>
+								</element>
+								<element name="AddtlInf" hideifempty="true">
+									<condition>
+										<expression>getReportValue("RETURN_STATUS_REASON") == "NARR"
+										</expression>
+									</condition>
+									<contents>
+										<report>
+											<column>RETURN_ADDITIONAL_INFORMATION</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="InstgAgt">
+							<contents>
+								<element name="FinInstnId">
+									<contents>
+										<element name="BICFI" hideifempty="true">
+											<contents>
+												<report>
+													<column>Sender.Swift</column>
+													<transformations>
+														<transformation type="function">
+															<to>completeSwiftBranch</to>
+														</transformation>
+													</transformations>
+												</report>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="InstdAgt">
+							<contents>
+								<element name="FinInstnId">
+									<contents>
+										<element name="BICFI" hideifempty="true">
+											<contents>
+												<report>
+													<column>Receiver.Swift</column>
+													<transformations>
+														<transformation type="function">
+															<to>completeSwiftBranch</to>
+														</transformation>
+													</transformations>
+												</report>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+			</contents>
+		</element>
+	</contents>
+
+</template>

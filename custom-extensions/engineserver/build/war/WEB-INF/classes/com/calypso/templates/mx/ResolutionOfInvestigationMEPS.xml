@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+	<contents>
+		<element name="RsltnOfInvstgtn">
+			<contents>
+				<element name="Assgnmt">
+					<contents>
+						<element name="Id">
+							<contents>
+								<report>
+									<column>MESSAGE_ID</column>
+								</report>
+							</contents>
+						</element>
+						<element name="Assgnr">
+							<contents>
+								<element name="Agt">
+									<contents>
+										<element name="FinInstnId">
+											<contents>
+												<element name="BICFI">
+													<contents>
+														<report>
+															<column>XferAttributes.InstructingAgentBIC</column>
+														</report>
+													</contents>
+												</element>											
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>						
+						<element name="Assgne">
+							<contents>
+								<element name="Agt">
+									<contents>
+										<element name="FinInstnId">
+											<contents>
+												<element name="BICFI">
+													<contents>
+														<report>
+															<column>XferAttributes.InstructedAgentBIC</column>
+														</report>
+													</contents>
+												</element>											
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="CreDtTm">
+							<contents>
+								<report>
+									<column>CREATION_SYSTEM_DATE_ISOVERSION</column>
+								</report>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="Sts">
+					<contents>
+						<element name="Conf">
+							<contents>
+								<report>
+									<column>XferAttributes.ConfirmationStatus</column>
+								</report>							
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="CxlDtls">
+					<contents>
+						<element name="TxInfAndSts">
+							<contents>
+								<element name="OrgnlGrpInf">
+									<contents>
+										<element name="OrgnlMsgId">
+											<contents>
+												<report>
+													<column>XferAttributes.MessageIdentifier</column>
+												</report>
+											</contents>
+										</element>
+										<element name="OrgnlMsgNmId">
+											<contents>
+												<report>
+													<column>XferAttributes.MessageType</column>
+													<transformations>
+														<transformation type="regexp">
+															<from>.T2</from>
+															<to></to>
+														</transformation>
+													</transformations>
+												</report>
+											</contents>
+										</element>
+									</contents>
+								</element>
+								<element name="OrgnlInstrId">
+									<contents>
+										<report>
+											<column>XferAttributes.InstructionId</column>
+										</report>
+									</contents>
+								</element>
+								<element name="OrgnlEndToEndId">
+									<contents>
+										<report>
+											<column>XferAttributes.EndToEndId</column>
+										</report>
+									</contents>
+								</element>
+								<element name="OrgnlTxId">
+									<contents>
+										<report>
+											<column>XferAttributes.TxId</column>
+										</report>
+									</contents>
+								</element>
+								<element name="OrgnlUETR">
+									<contents>
+										<report>
+											<column>XferAttributes.UETR</column>
+										</report>
+									</contents>
+								</element>
+								<element name="CxlStsRsnInf">
+									<contents>
+										<element name="Orgtr">
+											<contents>
+												<element name="Nm" hideifempty="true">
+													<condition>
+                                                		<expression>isEmpty(getReportValue("CPTY_RECEIVING_AGENT_BIC_CODE"))</expression>
+                                            		</condition>
+													<contents>
+                                                		<report>
+                                                    		<column>CPTY_RECEIVING_AGENT_SHORT_NAME</column>
+                                                		</report>													
+													</contents>
+												</element>
+												<element name="Id">
+													<contents>
+														<element name="OrgId">
+															<contents>
+																<element name="AnyBIC">
+																	<contents>
+																		<report>
+																			<column>CPTY_RECEIVING_AGENT_BIC_CODE</column>
+																		</report>
+																	</contents>
+																</element>
+															</contents>
+														</element>
+													</contents>
+												</element>
+											</contents>
+										</element>
+										<element name="Rsn">
+											<contents>
+												<element name="Cd" hideifempty="true">
+													<contents>
+														<report>
+															<column>XferAttributes.CancelReason</column>
+														</report>
+													</contents>
+												</element>
+												<element name="Prtry" hideifempty="true">
+													<condition>
+														<expression>isEmpty(getReportValue("XferAttributes.CancelReason"))</expression>
+													</condition>
+													<contents>
+														<report>
+															<column>XferAttributes.CancelReasonProp</column>
+														</report>
+													</contents>
+												</element>
+											</contents>
+										</element>
+										<element name="AddtlInf" hideifempty="true">
+											<contents>
+												<report>
+													<column>XferAttributes.CancelAdditionalInformation</column>
+												</report>
+											</contents>
+										</element>									
+									</contents>
+								</element>	
+							</contents>
+						</element>
+					</contents>
+				</element>
+			</contents>
+		</element>
+	</contents>
+</template>

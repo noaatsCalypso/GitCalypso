@@ -1,0 +1,22 @@
+#
+# Report paths overrides
+#
+# Paths defined in this properties file will override those loaded from the
+# OOTB configuration and CustomClearingReports.xml. Only paths can be
+# overriden here, no other report attribute will be modified. Refer to
+# Clearing documentation for more information.
+#
+# The following syntaxes are accepted
+#
+#  <reportBeanName>=<new report path>
+#  <CCP>.<reportName>=<new report path>
+#
+# where
+#
+#  reportBeanName : report bean name, with bean as in Spring bean. See
+#                   CustomClearingReports.xml for more info
+#
+
+# LCH.ItdPPSMovementDetails = /${firmId}/Banking/.*REP00033 - ITD PPS Movement Detail_ 1.TXT
+# LCH.ItdPPSMovementDetailsA = /${firmId}/Banking/.*REP00033a - ITD PPS Movement Detail_ 1.TXT
+# LCH.OvernightCoverDistributionReport = /${firmId}/Banking/.*REP00019 - Overnight Cover Distribution_ 1.TXT

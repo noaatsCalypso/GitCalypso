@@ -1,0 +1,5 @@
+RctDatetime=//AppHdr/CreDt/text()|//Document/Rct/MsgHdr/CreDtTm/text()
+LinkedOriginalMsgId=//Document/Rct/RctDtls/OrgnlMsgId/MsgId/text()
+StatusCode=//Document/Rct/RctDtls/ReqHdlg/StsCd/text()
+StatusCodeDesc=//Document/Rct/RctDtls/ReqHdlg/Desc/text()
+RequestType=//Document/Rct/MsgHdr/ReqTp/Prtry/Id/text()

@@ -1,0 +1,312 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+<p><span lang=EN-US >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The purpose of this communication (this &quot;confirmation&quot;) is to confirm the terms and conditions of the Credit Default Swap
+Transaction entered into between us on the Trade Date specified below. 
+|SENDER_FULL_NAME| and |RECEIVER_FULL_NAME| on the trade date specified below. </span></p>
+
+<p><span lang=EN-US >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The definitions and provisions contained in the 5099 ISDA Credit Derivatives Definitions, as supplemented by 
+<!--calypso>
+if ( |CONV_OBLG_SUPPLEMENT| == "true" )
+    inline "
+the Supplement Relating to Convertible, Exchangeable or Accreting Obligations dated November 9, 2001, 
+ ";
+if ( |SUCCESSOR_EVENT_SUPPLEMENT| == "true" )
+    inline "
+the Supplement Relating to Successor and Credit Events dated November 28, 2001,
+ ";  
+if ( |RESTRUCTURING_SUPPLEMENT| == "true" )
+    inline "
+the Restructuring Supplement dated May 11, 2001 (&quot;Credit Derivatives Definitions&quot;), 
+ ";
+</calypso-->
+as published by the International Swaps and Derivatives Association, Inc., are incorporated into this Confirmation . In the event of any inconsistency between those definitions and provisions and this Confirmation, this Confirmation will govern.  </span></p>
+ 
+<p><span lang=EN-US style='font-size:10.0pt;><!---Credit Default Swap General Table--></span></p>
+<p><b><u><span style='font-size:10.0pt'>1. General Terms:</span></u></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=560 style='width:420.0pt;
+ mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr>
+  <td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Trade Date:</span></p>
+  </td>
+  <td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|TRADE_DATE|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Effective Date:</span></p>
+  </td>
+  <td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|SETTLE_DATE|</span></p>  
+  </td>
+ </tr>
+ <tr>
+  <td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Termination Date:</span></p>
+  </td>
+  <td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>The earliest of (i) |PRODUCT_MATURITYDATE|, (ii) the date on which the Reference Bond is redeemed or otherwise matures, (iii) any Early Optional Termination Date.</span></p>
+  </td>
+ </tr>  
+ <tr>
+ <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Coupon Payer (Party A):</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=FR style='font-size:10.0pt;'>|PROTECTION_SELLER_CODE|</span><span
+  lang=FR ></span></p>
+  </td>
+ </tr>
+ <tr>       
+<td width="50%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+   <p><span style='font-size:10.0pt'>Coupon Receiver (Party B):</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=FR style='font-size:10.0pt;'>|PROTECTION_BUYER_CODE|</span><span
+  lang=FR ></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Reference Asset:</span></p>
+  </td>
+  <td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|REFERENCE_ASSET|</span></p>
+  </td>
+ </tr>
+<tr>
+  <td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Initial Price:</span></p>
+  </td>
+  <td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|INITIAL_PRICE|</span></p>
+  </td>
+ </tr>
+</table>
+
+<p><b><u><span style='font-size:10.0pt'>2. Fixed Payment Amounts:</span></u></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=509 style='width:467.25pt;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+  <tr> 
+ <td width="50%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Fixed Amount Payer:</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FIXED_RATE_PAYER|</span></p>
+  </td>
+ </tr>
+<td width="50%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Nominal Amount of Reference Asset:</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FIXED_RATE_PAYER_AMOUNT|</span></p>
+  </td>
+ </tr>
+ <tr> 
+  <td width="50%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Fixed Amount Payment Dates:</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FIX_CPN_FREQ| on the |FIX_ROLL_DAY|, starting
+  |FIX_FIRST_PAYMENT_DATE| and the Termination Date.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="50%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Business Day Convention:</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|DAY_CONVENTION|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="50%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Fixed Amounts:</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>On each Fixed Amount Payment Date, Party A shall pay to Party B an amount equal to any coupon received on the Reference Asset including a full first coupon on the |FIRST_CPN_DATE|. For the avoidance of doubt, if Party A does not receive any coupons under the Reference Asset then Party B will not receive a Fixed Amount Payment.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="50%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Additional Payment on Early Termination:</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Party A shall pay to Party B an amount equal to the Maturity Payment if the Maturity Payment is a positive number.</span></p>
+  </td>
+ </tr>
+<tr>
+  <td width="50%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'></span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Party B shall pay to Party A an amount equal to the absolute value of the Maturity Payment if the Maturity Payment is a negative number.</span></p>
+  </td>
+ </tr>
+<tr>
+  <td width="50%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Maturity Payment:</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>The Notional Amount multiplied by the excess, if any, of the Final Price over the Initial Price (in which case the Maturity Payment will be expressed as a positive number), or by the excess, if any, of the Initial Price over the Final Price (in which case the Maturity Payment will be expressed as a negative number), as the case may be.</span></p>
+  </td>
+ </tr>
+<tr>
+  <td width="50%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'></span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>The Final Price is the price for the Reference Asset as calculated by the Calculation Agent in a commercially reasonable manner. In the event that Party B disputes this price, the Calculation Agent will solicit bid prices from five recognized dealers for the Reference Asset in an amount equal to the Nominal Amount. The mean bid price received without regard to the highest and lowest bid prices will be the Final Price.</span></p>
+  </td>
+ </tr>
+<tr>
+  <td width="50%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'></span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>For the avoidance of doubt the Initial Price includes any accrued and unpaid interest as of the Effective Date.</span></p>
+  </td>
+ </tr>
+<tr>
+  <td width="50%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'></span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>For the avoidance of doubt the Final Price includes any accrued and unpaid interest as of the Termination Date.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p><!---End Fixed Swap Leg Table--><b><u><span style='font-size:10.0pt'>Floating Amounts:</span></u></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=509 style='width:467.25pt;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+<tr>
+  <td width="50%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Floating Amount Payer:</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FLOATING_RATE_PAYER|</span></p>
+  </td>
+ </tr> 
+<tr>
+<td width="50%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Floating Amount:</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FLOATING_RATE_PAYER_AMOUNT|</span></p>
+  </td>
+ </tr>
+ <tr> 
+<td width="50%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Floating Rate Option:</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FLOATING_RATE_INDEX|</span></p>
+  </td>
+ </tr>
+ <tr> 
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Spread:</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FLOATING_RATE_SPREAD|</span></p>
+  </td>
+ </tr> 
+ <tr> 
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Designated Maturity:</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|RATE_INDEX_TENOR| 
+  <!--calypso>
+if( |FIRST_PERIOD_INTERPOLATED| == "true" )  
+    inline ", except for the initial Calculation period in which Linear Interpolation is applicable.";
+</calypso-->
+</span></p>
+  </td>
+ </tr> 
+<tr> 
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Floating Rate Day Count Fraction:</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|IR_DAY_COUNT|</span></p>
+  </td>
+ </tr>
+<tr> 
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Floating Rate Payer Payment Dates:</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|IR_CPN_FREQ| on the |IR_ROLL_DAY| of the month commencing on |IR_FIRST_PAYMENT_DATE| up to and including the Termination Date, subject to adjustment in accordance with the |IR_BUS_CONV| Business Day Convention</span></p>
+  </td>
+ </tr>
+<tr> 
+  <td width="50%" valign=top style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Floating Rate Payer Business Days:</span></p>
+  </td>
+  <td width="50%" valign=bottom style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|IR_CPN_HOL|</span></p>
+  </td>
+ </tr>
+</table>  
+	
+<p><b><u><span style='font-size:10.0pt'>Early Optional Termination</span></u></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=500 style='width:6.5in;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr>
+<td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'></span></p>
+  </td>
+  <td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>In addition to any optional early termination provisions contained in the ISDA Agreement, either party may on any Business Day on or after the Effective Date, elect to terminate all or part of the Transaction covered by this Confirmation by deliverying irrevocable notice to the other party in writing or telephonically (promptly confirmed in writing) not less than 3 Business Days prior to the relevant Early Optional Termination Date specified in such notice.</span></p>
+  </td>
+ </tr> 
+</table>  
+
+<!--calypso>
+if ( |CD_SETTLEMENT_TYPE| == "PHYSICAL" ||
+     |CD_SETTLEMENT_TYPE| == "CUSTOMER_OPTION")
+    include "cdsPhysicalSettlement.html";
+</calypso-->
+
+<!--calypso>
+if ( |CD_SETTLEMENT_TYPE| == "CASH" ||
+     |CD_SETTLEMENT_TYPE| == "CUSTOMER_OPTION")
+    include "cdsCashSettlement.html";
+</calypso-->
+
+
+<p><span lang=EN-US >&nbsp;</span><span
+lang=EN-US style='font-size:10.0pt;><!---End Credit Default Swap General Table--></span></p>
+
+<p><b><u><span style='font-size:10.0pt'>Notice and Account Details:</span></u></b></p>
+Payment to |SENDER_CODE|:|PO_INSTRUCTIONS|</span></p>
+Payment to |RECEIVER_CODE|:|COUNTERPARTY_INSTRUCTIONS|
+ 
+<p><b><u><span style='font-size:10.0pt'>7. MS Documentation and Operations Officers:</span></u></b></p>
+(a)    The Office of Party A for the Swap Transaction is |SENDER_ADDRESS| |SENDER_CITY| |SENDER_STATE| |SENDER_ZIPCODE| |SENDER_COUNTRY|; and</span></p>
+(b)    The Office of Party B for the Swap Transaction is |RECEIVER_ADDRESS| |RECEIVER_CITY| |RECEIVER_STATE| |RECEIVER_ZIPCODE| |RECEIVER_COUNTRY|. 
+
+<p><b><u><span style='font-size:10.0pt'>8. Confirmation:</span></u></b></p>
+
+Please confirm that the foregoing correctly sets forth the terms of our agreement by executing the copy of this Confirmation enclosed for that purpose and returning it to us or by sending us a letter substantially similar to this letter, which letter sets forth the material terms of the Swap Transaction to which this Confirmation relates and indicates your agreement to those terms.</span></p>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->
+
+
+  
+

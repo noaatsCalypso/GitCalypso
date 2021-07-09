@@ -1,0 +1,10 @@
+<RollingFile fileName="${calypsoUserDir}${fileSeparator}${calypsoExtendedAppName}_${calypsoEnvName}_METHODPROFILE_${calypsoVersion}.log" filePattern="${calypsoUserDir}${fileSeparator}${calypsoExtendedAppName}_${calypsoEnvName}_METHODPROFILE_${calypsoVersion}.log.%i.zip" name="Monitoring.MethodProfile_APPENDER">
+  <PatternLayout pattern="%c${sys:calypso.logdelim}%X{METHODMINTIME}${sys:calypso.logdelim}%X{METHODMAXTIME}${sys:calypso.logdelim}%X{METHODAVGTIME}${sys:calypso.logdelim}%X{METHODTOTALCALLS}${sys:calypso.logdelim}%X{clientHost}${sys:calypso.logdelim}%X{clientDesc}${sys:calypso.logdelim}%X{REQUESTID}${sys:calypso.logdelim}%m%n"></PatternLayout>
+  <Policies>
+    <OnStartupTriggeringPolicy/>
+    <SizeBasedTriggeringPolicy size="${sys:calypso.maxfilesize}"/>
+  
+          <!-- TODO: unit (allowed B (default), KB, MB, GB) -->
+        </Policies>
+  <DefaultRolloverStrategy max="${sys:calypso.maxbackupindex}" min="1"/>
+</RollingFile>

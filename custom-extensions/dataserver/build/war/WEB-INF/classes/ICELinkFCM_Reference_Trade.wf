@@ -1,0 +1,19 @@
+PSEventTrade;CLEARED;ENRICH;VERIFIED;true;true;false;ALL;G.ClearedCredit;;;false;false;;PlatformCCPStatusCleared;false;false;false;false;0;;;On Failure;false;
+PSEventTrade;CONSENT_GRANTED;AMEND;CONSENT_GRANTED;true;false;false;ALL;G.ClearedCredit;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventTrade;CONSENT_GRANTED;CANCEL;CANCELED;true;false;false;ALL;G.ClearedCredit;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventTrade;CONSENT_GRANTED;CLEAR;CLEARED;true;true;false;ALL;G.ClearedCredit;;;false;false;;PlatformCCPStatusCleared;false;false;false;false;0;;;On Failure;false;
+PSEventTrade;CONSENT_REFUSED;AMEND;CONSENT_REFUSED;true;false;false;ALL;G.ClearedCredit;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventTrade;CONSENT_REFUSED;CANCEL;CANCELED;true;false;false;ALL;G.ClearedCredit;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventTrade;NONE;NEW;PENDING;true;false;false;ALL;G.ClearedCredit;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventTrade;PENDING;AMEND;PENDING;true;false;false;ALL;G.ClearedCredit;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventTrade;PENDING;CANCEL;CANCELED;true;false;false;ALL;G.ClearedCredit;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventTrade;PENDING;LIMIT_FAILED;CONSENT_REFUSED;true;false;false;ALL;G.ClearedCredit;PlatformReject;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventTrade;PENDING;LIMIT_PASSED;CONSENT_GRANTED;true;false;false;ALL;G.ClearedCredit;PlatformAffirm;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventTrade;VERIFIED;TERMINATE;TERMINATED;true;false;false;ALL;G.ClearedCredit;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+RuleAdditionalInfo 2
+ALL/PSEventTrade/ALL/G.ClearedCredit/PENDING/LIMIT_FAILED/CONSENT_REFUSED;PlatformReject;;;
+ALL/PSEventTrade/ALL/G.ClearedCredit/PENDING/LIMIT_PASSED/CONSENT_GRANTED;PlatformAffirm;;;
+StaticDataFilterConfig
+1;PlatformCCPStatusCleared;;WF_Trade;
+KEYWORD.CCPStatus;LIKE;Cleared;
+StaticDataFilterConfig

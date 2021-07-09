@@ -1,0 +1,15 @@
+#dbconnection
+env=release_ora
+user=calypso_user
+password=calypso
+appname=TestDSCon
+#equityinserter
+equityFiles=ASX200.csv,HKEX.csv,SP500IndexComponent.csv,nasdaq100.csv, CAC40.csv, DJSTOXX50.csv,DOW.csv,FTSE100.csv
+equityIndexFiles=equityindices.csv
+buildDivCurve=false
+buildVolSurface=false
+#quoteinsertertd
+startdate=01/13/2010
+enddate=12/01/2010
+allquotes=false
+getQuotesFromServer=true

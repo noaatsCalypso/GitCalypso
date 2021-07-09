@@ -1,0 +1,13 @@
+PSEventMessage;COMPLETED;ERROR;COMPLETED;true;false;false;DATAPERSISTORMSG;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;NONE;NEW;PENDING;true;true;false;DATAPERSISTORMSG;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;PENDING;REPROCESS;REPROCESSING;true;false;false;DATAPERSISTORMSG;ALL;CheckLink,GenerateDataPersistorEvent;;false;true;;;false;false;false;false;0;
+PSEventMessage;REPROCESSING;COMPLETE;COMPLETED;true;false;false;DATAPERSISTORMSG;ALL;;;false;false;;ExceptionResolved;false;false;false;false;0;
+PSEventMessage;REPROCESSING;ERROR;PENDING;true;false;false;DATAPERSISTORMSG;ALL;;;false;true;;ExceptionNotResolved;false;false;false;false;0;
+PSEventMessage;REPROCESSING;FAILED_TO_SUBMIT;SUBMIT_FAILED;true;false;false;DATAPERSISTORMSG;ALL;;;false;true;;ExceptionNotResolved;false;false;false;false;0;
+PSEventMessage;SUBMIT_FAILED;REPROCESS;REPROCESSING;true;false;false;DATAPERSISTORMSG;ALL;CheckLink,GenerateDataPersistorEvent;;false;false;;;false;false;false;false;0;
+StaticDataFilterConfig
+1;ExceptionNotResolved;;ANY;
+IN Static Data Filter;NOT_IN;ExceptionResolved;
+1;ExceptionResolved;;ANY;
+MSG_ATTRIBUTE.ExceptionResolved;LIKE;true;
+StaticDataFilterConfig

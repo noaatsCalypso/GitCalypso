@@ -1,0 +1,1011 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The purpose of this communication (this &quot;<B>Confirmation</B>&quot;) is to set forth the terms and conditions of the Credit Derivative Transaction entered into on the Trade Date specified below (the &quot;<B>Transaction</B>&quot;) between |SENDER_FULL_NAME| (&quot;<B>Market Dealer</B>&quot;) and |RECEIVER_FULL_NAME| (&quot;<B>Counterparty</B>&quot;).  This Confirmation constitutes a &quot;<B>Confirmation</B>&quot; as referred to in the ISDA Master Agreement specified below.</span></p>
+
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The definitions and provisions contained in the 2003 ISDA Credit Derivatives Definitions as supplemented by the May 2003 Supplement to the 2003 ISDA Credit Derivatives Definitions, each as published by the International Swaps and Derivatives Association, Inc. (together, the &quot;<B>Credit Derivatives Definitions</B>&quot;), are incorporated into this Confirmation.  In the event of any inconsistency between the Credit Derivatives Definitions and this Confirmation, this Confirmation will govern.</span></p>
+
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+This Confirmation supplements, forms a part of and is subject to the ISDA Master Agreement dated as of |TRADE_DATE|, as amended and supplemented from time to time (the &quot;<B>Agreement</B>&quot;) between Market Dealer and Counterparty.  All provisions contained in, or incorporated by reference in, the Agreement shall govern this Confirmation except as expressly modified below.</span></p>
+
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+This Confirmation relates to a basket of Reference Entities (as described below).  Each settlement in respect of a Reference Entity following a Credit Event will terminate only the corresponding portion of this Transaction, as outlined below.  Without prejudice to Section 3.9 of the Credit Derivatives Definitions, upon the occurrence of an Event Determination Date with respect to a Reference Entity, additional Credit Events with respect to that Reference Entity will not have any effect on this Transaction (a) unless that Reference Entity subsequently becomes a Successor to another Reference Entity in respect of which an Event Determination Date has not occurred and (b) except as otherwise provided in the &quot;Successors&quot; provision below.  This Transaction contemplates that there may be more than one Credit Event and accordingly more than one Event Determination Date and more than one settlement and that the Credit Derivatives Definitions (and in particular the definition of Termination Date) should, for the purposes of this Transaction, be interpreted accordingly.</span></p>
+
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The terms of the Transaction to which this Confirmation relates are as follows:</span></p>
+
+<p><b><u><span style='font-size:10.0pt'>1. GENERAL TERMS</span></u></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=560 style='width:420.0pt;
+ mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr>
+  <td width="30%" style='width:30.0%;padding:.75pt .75pt .75pt .75pt '>
+  <p> <span style='font-size:10.0pt'>Trade Date:</span></p>
+  </td>
+  <td width="85%" style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |TRADE_DATE| </span></p>
+  </td>
+ </tr>
+<tr>
+  <td width="30%" style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Effective Date:</span></p>
+  </td>
+  <td width="85%" style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>The Roll Date in respect of the Index as set out in Schedule 1 hereto.</span></p>  
+  </td>
+ </tr>
+<tr>
+  <td width="30%" style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Scheduled Termination Date:</span></p>
+  </td>
+  <td width="85%" style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |TERMINATION_DATE |</span></p>
+  </td>
+ </tr> 
+ <tr>
+ <td width="30%" valign=top style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Termination Date: </span></p>
+  </td>
+  <td width="85%" valign=bottom style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=FR style='font-size:10.0pt;'>The Scheduled Termination Date; provided that: </span></p>
+   <p><span lang=FR style='font-size:10.0pt;'>(a)	if the Outstanding Swap Notional Amount is reduced to zero prior to the Scheduled Termination Date, the Termination Date shall be the Cash Settlement Date or Cut-Off Date, as appropriate, relating to the Incurred Loss Amount or Incurred Recovery Amount that causes the Outstanding Swap Notional Amount to be reduced to zero; and </span></p>
+ <p><span lang=FR style='font-size:10.0pt;'>(b)	if the last Cash Settlement Date or Cut-Off Date, as appropriate, occurs after the Scheduled Termination Date, the Termination Date shall be such later date. </span></p>
+  </td>
+ </tr>
+ <tr>       
+<td width="30%" valign=top style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+   <p><span style='font-size:10.0pt'> Floating Rate Payer:</span></p>
+  </td>
+  <td width="85%" valign=bottom style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=FR style='font-size:10.0pt;'> |FLOATING_RATE_PAYER| (the &quot;Seller&quot;)</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="30%" style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>  Fixed Rate Payer:</span></p>
+  </td>
+  <td width="85%" style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |FIXED_RATE_PAYER| (the &quot;Buyer&quot;) </span></p>
+  </td>
+ </tr>
+<tr>
+  <td width="30%" style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Original Swap Notional Amount: </span></p>
+  </td>
+  <td width="85%" style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |TRADE_CURRENCY| , |CD_NOTIONAL| </span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Attachment Point: </span></p>
+  </td>
+  <td width="85%" style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |ATTACHMENT_POINT| % </span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Exhaustion Point: </span></p>
+  </td>
+  <td width="85%" style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |EXHAUSTION_POINT|% </span></p>
+  </td>
+ </tr>
+ <tr>
+<td width="30%" style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Reference Entity Credit Position: </span></p>
+  </td>
+  <td width="85%" style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |REF_ENTITY_CREDIT_POSITION|%, provided that the Reference Entity Credit Position in respect of an Excluded Reference Entity shall be deemed to be zero.</span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Tranche Size: </span></p>
+  </td>
+  <td width="85%" style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |TRANCHE_SIZE|% </span></p>
+  </td>
+ </tr> 
+<tr>
+<td width="30%" style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Implicit Portfolio Size:  </span></p>
+  </td>
+  <td width="85%" style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |IMPLICIT_PORTFOLIO_SIZE| </span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Reference Entity Notional Amount:</span></p>
+  </td>
+  <td width="85%" style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> With respect to each Reference Entity, Implicit Portfolio Size multiplied by Reference Entity Credit Position, subject to adjustment as provided in Section 2.2 of the Credit Derivatives Definitions, as modified by the &quot;Successors&quot; provision below. </span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Loss Threshold Amount:</span></p>
+  </td>
+  <td width="85%" style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |LOSS_THRESHOLD_AMT| </span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Recovery Threshold Amount: </span></p>
+  </td>
+  <td width="85%" style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |RECOVERY_THRESHOLD_AMT| </span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Calculation Agent: </span></p>
+  </td>
+  <td width="85%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |INDEX_ISSUER| </span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Calculation Agent City: </span></p>
+  </td>
+  <td width="85%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> London </span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Business Day:</span></p>
+  </td>
+  <td width="85%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> London and TARGET Settlement Day </span></p>
+ </tr>
+<tr>
+<td width="30%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Business Day Convention: </span></p>
+  </td>
+  <td width="85%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Following (which, subject to Sections 1.4 and 1.6 of the Credit Derivatives Definitions, shall apply to any date referred to in this Confirmation that falls on a day that is not a Business Day)  </span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Index:  </span></p>
+  </td>
+  <td width="85%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |INDEX_NAME| </span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Index Sponsor:  </span></p>
+  </td>
+  <td width="85%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |INDEX_ISSUER| </span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Reference Entities:  </span></p>
+  </td>
+  <td width="85%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Subject to Paragraph 6(d) below, each entity contained in the Index and listed on Schedule 1 hereto, as amended from time to time. </span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Excluded Reference Entities:  </span></p>
+  </td>
+  <td width="85%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>[ ] </span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Reference Obligation(s):  </span></p>
+  </td>
+  <td width="85%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> With respect to each Reference Entity, the obligation, if any, specified in the Index for the relevant Reference Entity and listed on Schedule 1 hereto, subject to Paragraph 6(d) below, Sections 2.2(d) and 2.30 of the Credit Derivatives Definitions. </span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Successors: </span></p>
+  </td>
+  <td width="85%" style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Section 2.2(a) of the Credit Derivatives Definitions is amended by deleting the words &quot;for the entire Credit Derivative Transaction&quot; from Section 2.2(a)(i) and (ii) of the Credit Derivatives Definitions and replacing them with the words &quot;in respect of such Reference Entity&quot;; and by deleting the words &quot;for a New Credit Derivative Transaction determined in accordance with the provisions of Section 2.2(e)&quot; from Section 2.2(a)(iii) and (iv) of the Credit Derivatives Definitions.</span></p>
+<p><span style='font-size:10.0pt'> Section 2.2(d)(i) of the Credit Derivatives Definitions is amended by replacing &quot;a Credit Derivative Transaction&quot; with &quot;a Reference Entity&quot;; and the last line of Section 2.2(d) of the Credit Derivatives Definitions is amended by replacing &quot;each relevant Credit Derivative Transaction&quot; with &quot;each relevant Reference Entity&quot;.
+  </span></p>
+ <p><span style='font-size:10.0pt'> Section 2.2(e) of the Credit Derivatives Definitions is deleted and replaced in its entirety by the following:
+  </span></p>
+ <p><span style='font-size:10.0pt'> &quot;Where, pursuant to Section 2.2(a), one or more Successors have been identified in respect of a Reference Entity that has been subject to the relevant Succession Event (the &quot;Affected Entity&quot;), (i) the Affected Entity will no longer be a Reference Entity for purposes of the Credit Derivative Transaction (unless it is a Successor as described in Section 2.2(e)(ii) below), (ii) each Successor will be deemed a Reference Entity for purposes of the Credit Derivative Transaction, (iii) the Reference Entity Notional Amount for each such Successor will equal the Reference Entity Notional Amount of the Affected Entity immediately prior to the application of Section 2.2 divided by the number of Successors and (iv) the Calculation Agent may make any modifications to the terms of the Credit Derivative Transaction required to preserve the economic effects of the Credit Derivative Transaction prior to the Succession Event (considered in the aggregate).&quot;
+  </span></p>
+ <p><span style='font-size:10.0pt'> Subject to the final paragraph of these &quot;Successors&quot; provisions, if a Successor is already a Reference Entity at the time Section 2.2 of the Credit Derivatives Definitions is applied (and is not itself the Affected Entity), the Reference Entity Notional Amount with respect to such Reference Entity shall be equal to the sum of (a) the Reference Entity Notional Amount in respect of the Reference Entity immediately prior to the application of Section 2.2 of the Credit Derivatives Definitions and (b) the Reference Entity Notional Amount in respect of such Reference Entity as a result of the application of Section 2.2(e)(iii) of the Credit Derivatives Definitions (as amended hereby).
+  </span></p>
+ <p><span style='font-size:10.0pt'> If a Successor is already a Reference Entity at the time Section 2.2 of the Credit Derivatives Definitions is applied and, as a result of the relevant Succession Event, such Reference Entity would have more than one Reference Obligation, (a) the immediately preceding paragraph shall not apply, (b) there shall be deemed to be a separate Reference Entity hereunder associated with each such Reference Obligation, (c) the Reference Entity Notional Amount of the Reference Entity that was already a Reference Entity immediately prior to the application of Section 2.2 of the Credit Derivatives Definitions shall equal the Reference Entity Notional Amount in respect of such Reference Entity immediately prior to such application, (d) the Reference Entity Notional Amount of the Successor determined by application of Section 2.2 of the Credit Derivatives Definitions shall equal the amount determined by application of Section 2.2(e)(iii) of the Credit Derivatives Definitions (as amended hereby) and (e) the Conditions to Settlement may be satisfied, and settlement with respect thereto may occur, separately for each such Reference Entity.
+  </span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> All Guarantees:  </span></p>
+  </td>
+  <td width="85%" style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Applicable </span></p>
+  </td>
+ </tr>
+<tr>
+<td width="30%" style='width:30.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Reference Price:  </span></p>
+  </td>
+  <td width="85%" style='width:85.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> 100%  </span></p>
+  </td>
+ </tr>  
+</table>
+
+<p><b><u><span style='font-size:10.0pt'>2. INITIAL PAYMENT</span></u></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=560 style='width:420.0pt;
+ mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr>
+  <td width="30%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Initial Payment:</span></p>
+  </td>
+  <td width="85%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>If an Initial Payment Payer and an Initial Payment Amount are specified below, on the date that is three Business Days following the Trade Date, the Initial Payment Payer shall pay to the other party an amount equal to the Initial Payment Amount.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="30%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Initial Payment Payer:</span></p>
+  </td>
+  <td width="85%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |INITIAL_PAYMENT_PAYER| </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="30%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Initial Payment Amount:</span></p>
+  </td>
+  <td width="85%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |INITIAL_PAYMENT_AMOUNT| </span></p>
+  </td>
+ </tr>
+</table>
+
+<p><b><u><span style='font-size:10.0pt'>3. Fixed Payments:</span></u></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=560 style='width:420.0pt;
+ mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr>
+  <td width="30%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Fixed Rate Payer Calculation Amount:</span></p>
+  </td>
+  <td width="85%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> For any Fixed Rate Payer Calculation Period, an amount determined by the Calculation Agent equal to (a) the sum of the Outstanding Swap Notional Amount as at 5 p.m. in the Calculation Agent City on each day in such Fixed Rate Payer Calculation Period, divided by (b) the actual number of days in such Fixed Rate Payer Calculation Period.</span></p>
+ <p><span style='font-size:10.0pt'> If an Event Determination Date and a related Calculation Date occur in the same Fixed Rate Payer Calculation Period, then for purposes of determining the Fixed Rate Payer Calculation Amount, the Outstanding Swap Notional Amount shall be deemed to have been reduced by the Incurred Loss Amount (if any) and/or the Incurred Recovery Amount (if any) with respect to such Calculation Date on the day following the relevant Event Determination Date (notwithstanding that such Incurred Loss Amount and/or Incurred Recovery Amount are in fact determined on the Calculation Date).</span></p>
+ <p><span style='font-size:10.0pt'> If an Event Determination Date and a related Calculation Date occur in different Fixed Rate Payer Calculation Periods, then for purposes of determining the Fixed Rate Payer Calculation Amount, the Outstanding Swap Notional Amount shall be deemed to have been reduced by the Incurred Loss Amount (if any) and/or the Incurred Recovery Amount (if any) with respect to such Calculation Date on the first day of the Fixed Rate Payer Calculation Period in which such Calculation Date occurs (notwithstanding that such Incurred Loss Amount and/or Incurred Recovery Amount are in fact determined on the Calculation Date). </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="30%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Outstanding Swap Notional Amount:</span></p>
+  </td>
+  <td width="85%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>At any time on any day, the greater of:  </span></p>
+  <p><span style='font-size:10.0pt'>(a)	zero; and   </span></p>
+  <p><span style='font-size:10.0pt'>(b)	the Original Swap Notional Amount minus the sum of all Incurred Loss Amounts and all Incurred Recovery Amounts (if any) determined under this Confirmation at or prior to such time.  </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="30%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Fixed Rate Payer Payment Dates:</span></p>
+  </td>
+  <td width="85%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Each March 20, June 20, September 20 and December 20 commencing on |TRADE_DATE| and ending on and including the earlier to occur of the Scheduled Termination Date and the Termination Date. </span></p>
+  <p><span style='font-size:10.0pt'> Section 2.10 of the Credit Derivatives Definitions is amended by deleting the last four lines thereof, beginning with ", provided".</span></p>
+  </td>
+ </tr>
+<tr>
+  <td width="30%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Fixed Rate Payer Calculation Period:</span></p>
+  </td>
+  <td width="85%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Section 2.9 of the Credit Derivatives Definitions is amended by replacing the words "the Effective Date" with "the calendar day immediately following the Trade Date" and by replacing the words "the earlier to occur of the Scheduled Termination Date and the Event Determination Date" with "the earlier to occur of the Scheduled Termination Date and the Calculation Date on which the Outstanding Swap Notional Amount is reduced to zero".  </span></p>
+  <p><span style='font-size:10.0pt'>Section 5.4 of the Credit Derivatives Definitions is amended by replacing the words "the earlier to occur of the Scheduled Termination Date and the Event Determination Date" with "the earlier to occur of the Scheduled Termination Date and the Calculation Date on which the Outstanding Swap Notional Amount is reduced to zero". </span></p>
+  </td>
+ </tr>
+
+<tr>
+  <td width="30%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Fixed Rate:</span></p>
+  </td>
+  <td width="85%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |FIXED_RATE|% per annum  </span></p>
+  </td>
+ </tr>
+
+<tr>
+  <td width="30%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Fixed Rate Day Count Fraction: </span></p>
+  </td>
+  <td width="85%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Actual/360 </span></p>
+  </td>
+ </tr>
+
+<tr>
+  <td width="30%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Rebate of Fixed Amounts:</span></p>
+  </td>
+  <td width="85%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>In the event that the Calculation Date for any Incurred Loss Amount (if any) and/or Incurred Recovery Amount (if any) occurs after the Fixed Rate Payer Calculation Period in which the related Event Determination Date occurs, then on the Cash Settlement Date relating thereto, Seller shall pay to Buyer an amount equal to (a) such Incurred Loss Amount (if any) plus such Incurred Recovery Amount (if any) multiplied by (b) the Fixed Rate multiplied by (c) the number of days from, and including, the day following the Event Determination Date to, but excluding, the Fixed Rate Payer Payment Date occurring on or immediately prior to such Calculation Date (or, if such Fixed Rate Payer Payment Date is the Scheduled Termination Date, to, and including, such Fixed Rate Payer Payment Date) divided by (d) 360.  </span></p>
+  </td>
+ </tr>
+</table>
+
+
+<p><b><u><span style='font-size:10.0pt'>4. Floating Payments:</span></u></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=560 style='width:420.0pt;
+ mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Conditions to Settlement:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Credit Event Notice </span></p>
+  <p><span style='font-size:10.0pt'>Notifying Party: Buyer or Seller </span></p>
+  <p><span style='font-size:10.0pt'>Notice of Physical Settlement </span></p>
+  <p><span style='font-size:10.0pt'>Notice of Publicly Available Information: 
+Applicable</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Credit Events: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>The following Credit Event(s) shall apply to this Transaction:  </span></p>
+<p><span style='font-size:10.0pt'> Bankruptcy</span></p>
+<p><span style='font-size:10.0pt'> Failure to Pay</span></p>
+<p><span style='font-size:10.0pt'> Grace Period Extension: Not Applicable </span></p>
+<p><span style='font-size:10.0pt'> Payment Requirement: USD 1,000,000 (or its equivalent in the relevant Obligation Currency as of the occurrence of the relevant Failure to Pay) </span></p>
+<p><span style='font-size:10.0pt'>Restructuring </span></p>
+<p><span style='font-size:10.0pt'>Modified Restructuring Maturity Limitation and Conditionally Transferable Obligation Applicable </span></p>
+<p><span style='font-size:10.0pt'>Default Requirement: USD 10,000,000 or its equivalent in the relevant Obligation Currency as of the occurrence of the relevant Credit Event </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> <I>Obligation(s): </I></span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>  </span></p>
+  </td>
+ </tr>
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'><I> Obligation Category</I></span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'><I> Obligation Characteristics </I></span></p>
+  </td>
+ </tr>
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:8.0pt'>&nbsp;&nbsp;Borrowed Money </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:8.0pt'>None </span></p>
+  </td>
+ </tr>
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Excluded Obligations: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>None </span></p>
+  </td>
+ </tr>
+
+</table>
+
+
+<p><b><u><span style='font-size:10.0pt'>5.  Settlement Terms:</span></u></b></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=560 style='width:420.0pt;
+ mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Settlement Method:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Physical Settlement and Cash Settlement, each as modified hereby. </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Settlement Currency: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>EUR </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Currency Amount:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Section 8.9 of the Credit Derivatives Definitions is deleted and replaced in its entirety by the following:  </span></p>
+<p><span style='font-size:10.0pt'> &quot;&quot;Currency Amount&quot; means, whenever an amount is specified to be determined by reference to a Currency Amount, (a) where such amount is denominated in the Settlement Currency, such amount, and (b) where such amount is denominated in a currency other than the Settlement Currency, such amount converted to the Settlement Currency using the Currency Rate.&quot;  </span></p>
+  </td>
+
+ </tr>
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Terms Relating to Physical Settlement:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Notwithstanding the provisions of the Credit Derivatives Definitions, in any Notice of Physical Settlement Buyer will specify the outstanding principal balance of each Selected Obligation, the aggregate Currency Amount of which shall be between (a) EUR 100,000 (or, if less, the Reference Entity Notional Amount) and (b) the Reference Entity Notional Amount; provided that, for the avoidance of doubt, Buyer may not specify an outstanding principal balance of a Selected Obligation of less than the minimum denomination of that Selected Obligation.   </span></p>
+ <p><span style='font-size:10.0pt'>The first paragraph of Section 8.1 of the Credit Derivatives Definitions is replaced by the following: &quot;Buyer will, subject to Sections 3.1 and 9.2(c)(ii) and regardless of whether the Aggregate Loss Amount has exceeded the Loss Threshold Amount, on or prior to the Physical Settlement Date, Deliver to Seller the Selected Obligations and Seller will, on each related Cash Settlement Date, pay to Buyer the relevant Weighted Average Final Price multiplied by the aggregate Currency Amount of the outstanding principal balance of the Selected Obligations Delivered on the related Delivery Date (the &quot;Market Value Amount&quot;).  If Buyer Delivers a Selected Obligation in an aggregate amount greater than the relevant outstanding principal balance of such Selected Obligation as specified in the Notice of Physical Settlement, Seller shall not be required to pay the Market Value Amount (or relevant part thereof in respect of such Selected Obligation) to the extent of such excess.  For purposes of the foregoing, Delivery by Buyer will be made in accordance with market practice applicable to the Selected Obligation on the Delivery Date.&quot;  All references in the related provisions of the Credit Derivatives Definitions to Delivery by Buyer of Deliverable Obligations with an outstanding principal balance equal to the Physical Settlement Amount shall be construed to refer to Delivery of Selected Obligations with an outstanding principal balance equal to the outstanding principal balance of the Selected Obligations as specified in the Notice of Physical Settlement and all references in the related provisions of the Credit Derivatives Definitions to payment by Seller of the Physical Settlement Amount shall be construed to refer to payment by Seller of the relevant Market Value Amount on each related Cash Settlement Date; provided that, in the event that a Buy-in Price is determined, on the third Business Day following notice from Seller to Buyer of the Buy-in Price, Buyer will be deemed to have Delivered Selected Obligations in an amount equal to the aggregate of the outstanding principal balance of each Selected Obligation for which a Buy-in Price was determined and Seller will have no obligation to pay the related Market Value Amount on the related Cash Settlement Date. </span></p>
+ <p><span style='font-size:10.0pt'>Section 9.3 of the Credit Derivatives Definitions is amended by (a) replacing each reference therein to &quot;Physical Settlement Amount&quot; with the words &quot;Market Value Amount&quot;, (b) inserting the words &quot;on the related Cash Settlement Date&quot; after the words &quot;Seller shall make a payment&quot; each time they appear in such Section and (c) deleting the last two sentences of such Section and replacing them with:  </span></p>
+ <p><span style='font-size:10.0pt'>&quot;If, following the occurrence of any such impossibility or illegality, the amount of Selected Obligations as specified in the Notice of Physical Settlement are not Delivered to Seller on or prior to the Latest Permissible Physical Settlement Date, Buyer's obligation to Deliver Selected Obligations to Seller shall cease in respect of the Selected Obligations that cannot be Delivered (the &quot;Undeliverable Obligations&quot;) and Seller shall have no obligation to pay any Market Value Amount in respect of such Undeliverable Obligations, and Cash Settlement pursuant to the provisions of the Confirmation shall apply provided that Buyer shall be deemed to have Delivered all Undeliverable Obligations to Seller on the first Business Day following the Latest Permissible Physical Settlement Date and Quotations shall be determined in accordance with the definition in Section 9.8(k) rather than Section 7.7 for the purposes of the application of such Cash Settlement provisions.&quot; </span></p>
+ <p><span style='font-size:10.0pt'>Section 9.9 of the Credit Derivatives Definitions is amended by deleting the last six lines of the fourth paragraph thereof, beginning with &quot;and Seller will pay&quot;. </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Physical Settlement Period:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>30 Business Days. </span></p>
+  </td>
+ </tr>
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Deliverable Obligations:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Exclude Accrued Interest</span></p>
+  </td>
+ </tr>
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'><I>Deliverable Obligations: </I></span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> </span></p>
+  </td>
+ </tr>
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> <I>Deliverable Obligation Category </I></span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'><I>Deliverable Obligation Characteristics</I> </span></p>
+  </td>
+ </tr>
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:8.0pt'> &nbsp;&nbsp;Bond or Loan </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:8.0pt'>Not Subordinated </span></p>
+ <p> <span style='font-size:8.0pt'>Specified Currency </span></p>
+ <p> <span style='font-size:8.0pt'> Standard Specified Currencies</span></p>
+ <p> <span style='font-size:8.0pt'>Not Contingent </span></p>
+ <p> <span style='font-size:8.0pt'>Assignable Loan </span></p>
+ <p> <span style='font-size:8.0pt'> Consent Required Loan</span></p>
+ <p> <span style='font-size:8.0pt'>Transferable </span></p>
+ <p> <span style='font-size:8.0pt'>Maximum Maturity: 30 years </span></p>
+ <p> <span style='font-size:8.0pt'>Not Bearer </span></p>
+  </td>
+ </tr>
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Excluded Deliverable Obligations: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> None</span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Partial Cash Settlement of Consent Required Loans: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Not Applicable </span></p>
+  </td>
+ </tr>
+
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Partial Cash Settlement of Assignable Loans: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Not Applicable </span></p>
+  </td>
+ </tr>
+
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Partial Cash Settlement of Participations: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Not Applicable </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Escrow:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Applicable </span></p>
+  </td>
+ </tr>
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> &nbsp; </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'><I> Terms relating to Cash Settlement:</I></span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Valuation Date:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Single Valuation Date: In respect of each Delivery Date, the third Business Day after such Delivery Date. </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Valuation Time:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>11:00 a.m. in the principal trading market for the relevant Selected Obligation. </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Quotation Method: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Bid </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Quotation Amount: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> With respect to any Selected Obligation, the outstanding principal balance of the Selected Obligation Delivered on the related Delivery Date.</span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Dealers: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Each dealer (other than Buyer or any Affiliate of Buyer) in obligations of the type of Obligation(s) for which Quotations or Buy-in Offers are to be obtained, selected by the Calculation Agent (or, in the case of Sections 7.7(b), 9.8(k)(ii) or 9.9 of the Credit Derivatives Definitions, the relevant party or Seller, as applicable) in good faith and in a commercially reasonable manner (without the requirement of consultation with the parties or the other party, as the case may be), provided that Seller will also be a Dealer and the Calculation Agent (or the relevant party, as applicable) will solicit Quotations from Seller; provided that (a) any Quotation provided by Seller shall be deemed to be a firm quotation, (b) for the avoidance of doubt, Seller may take into account a variety of factors in providing the Quotation, including, without limitation, the existence of this Transaction, the Delivered Proportion and the Specified Delivery Amount and (c) Seller will not be a Dealer for purposes of determining the Final Price of any Undeliverable Obligation and for Section 9.9 of the Credit Derivatives Definitions. </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Cash Settlement Date: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Each date that is three Business Days after a Calculation Date. </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Cash Settlement Amount: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>With respect to a Cash Settlement Date, the Incurred Loss Amount for the related Calculation Date. </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Quotations: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> Exclude Accrued Interest.  </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Valuation Method: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Highest. </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Calculation Date:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>(a) With respect to a Reference Entity and a Delivery Date, the Business Day on which the Final Price can first be determined in respect of all Selected Obligations Delivered on that Delivery Date, (b) with respect to a Reference Entity and a Buy-in Period in respect of which a Buy-in Price has been determined, the date on which Seller notifies Buyer of the Buy-in Price and (c) with respect to a Reference Entity in respect of which a Cut-Off Date occurs, the Cut-Off Date.  Where two or more of (a), (b) and/or (c) apply (or (a) or (b) apply more than once) to a single Reference Entity on a single day, such day shall be treated as two or more Calculation Dates, as the case may be, for such Reference Entity. </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Calculations: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> If any day is (a) a Calculation Date with respect to more than one Reference Entity, or (b) two or more, as the case may be, Calculation Dates with respect to a single Reference Entity, the Loss Amount, Recovery Amount, Aggregate Loss Amount, Aggregate Recovery Amount, Outstanding Swap Notional Amount, Incurred Loss Amount and Incurred Recovery Amount with respect to each Reference Entity shall be calculated in the order of delivery of the relevant Credit Event Notices or, if any of the relevant Credit Event Notices are delivered at the same time, in a sequential order determined by the Calculation Agent.</span></p>
+ <p> <span style='font-size:10.0pt'>For the avoidance of doubt, with respect to the same Reference Entity, there may be more than one Calculation Date, Loss Amount, Recovery Amount, Incurred Loss Amount, Incurred Recovery Amount, Cash Settlement Amount and Cash Settlement Date. </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Selected Obligation: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>With respect to a Reference Entity, each Deliverable Obligation actually specified, or deemed specified pursuant to Section 9.10 of the Credit Derivatives Definitions, as applicable, in the related Notice of Physical Settlement. </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Delivered Proportion:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> With respect to a Reference Entity and a Calculation Date, the aggregate Currency Amount of the outstanding principal balance of each Selected Obligation actually Delivered on the Delivery Date related to that Calculation Date, or deemed Delivered pursuant to Sections 9.3 or 9.9 of the Credit Derivatives Definitions, as applicable, divided by the Specified Delivery Amount.</span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Specified Delivery Amount:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>The aggregate Currency Amount of the outstanding principal balance of each Selected Obligation as specified in the related Notice of Physical Settlement. </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Incurred Loss Amount: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>With respect to a Reference Entity and a Calculation Date, an amount, calculated on that Calculation Date, equal to the lowest of: </span></p>
+  <p><span style='font-size:10.0pt'>(a)	the Loss Amount; </span></p>
+  <p><span style='font-size:10.0pt'> (b)the Aggregate Loss Amount (including the related Loss Amount for that Reference Entity and Calculation Date) minus the Loss Threshold Amount (subject to a minimum of zero); and</span></p>
+  <p><span style='font-size:10.0pt'>(c)	the Outstanding Swap Notional Amount (prior to any reduction thereto in respect of that Reference Entity and Calculation Date). </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Loss Amount:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> With respect to a Reference Entity and a Calculation Date, an amount calculated on that Calculation Date equal to (a) (100% minus the Weighted Average Final Price for that Reference Entity and Calculation Date) multiplied by (b) the Reference Entity Notional Amount for that Reference Entity multiplied by (c) the Delivered Proportion for that Reference Entity and Calculation Date (subject to a minimum of zero).</span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Aggregate Loss Amount:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> At any time on any day, the aggregate of all Loss Amounts calculated hereunder with respect to all Reference Entities.</span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Incurred Recovery Amount: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>With respect to a Reference Entity and a Calculation Date, an amount, calculated on that Calculation Date, equal to the lowest of: </span></p>
+<p> <span style='font-size:10.0pt'> (a)	the Recovery Amount;</span></p>
+<p> <span style='font-size:10.0pt'> (b)	the Aggregate Recovery Amount (including the related Recovery Amount for that Reference Entity and Calculation Date) minus the Recovery Threshold Amount (subject to a minimum of zero); and </span></p>
+<p> <span style='font-size:10.0pt'> (c)	the Outstanding Swap Notional Amount (prior to any reduction thereto in respect of that Reference Entity and Calculation Date).</span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Recovery Amount: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>With respect to a Reference Entity and a Calculation Date, an amount calculated on that Calculation Date equal to (a) the lesser of 100% and the Weighted Average Final Price for that Reference Entity and Calculation Date multiplied by (b) the Reference Entity Notional Amount for that Reference Entity multiplied by (c) the Delivered Proportion for that Reference Entity and Calculation Date provided that in relation to any Calculation Date which is a Cut-Off Date, the Recovery Amount shall equal (i) the Reference Entity Notional Amount for that Reference Entity multiplied by (ii) the excess of 100% over the aggregate of the Delivered Proportions in respect of that Reference Entity on each preceding Calculation Date. </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Aggregate Recovery Amount: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> At any time on any day, the aggregate of all Recovery Amounts calculated hereunder with respect to all Reference Entities.</span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Final Price: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Notwithstanding Section 7.4 of the Credit Derivatives Definitions, (a) with respect to each Selected Obligation Delivered on a Delivery Date, the price of such Selected Obligation, expressed as a percentage, determined in accordance with the applicable Valuation Method (treating such Selected Obligation as the Reference Obligation for such purpose and for purposes of other relevant provisions of Article VII or Section 9.8 of the Credit Derivatives Definitions, as applicable) and (b) with respect to each Selected Obligation in respect of which a Buy-in Price has been determined, such Buy-in Price plus any reasonable brokerage costs incurred by Seller in connection with the purchases by it of the Relevant Bonds as part of the buy-in (expressed as a percentage of the outstanding principal balance of the Relevant Bonds). </span></p>
+  </td>
+ </tr>
+
+
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Weighted Average Final Price: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>(a) With respect to a Calculation Date and a Delivery Date, the weighted average of the Final Prices determined for each Selected Obligation actually Delivered, or deemed Delivered pursuant to Section 9.3 of the Credit Derivatives Definitions, on such Delivery Date, weighted by reference to the Currency Amount of the outstanding principal balance of each such Selected Obligation actually Delivered or deemed Delivered, as appropriate, and (b) with respect to a Calculation Date and a Buy-in Period, the weighted average of the Final Prices determined for each Selected Obligation in respect of which a Buy-in Price has been determined during such Buy-in Period, weighted by reference to the Currency Amount of the outstanding principal balance of each such Selected Obligation in respect of which a Buy-in Price has been determined. </span></p>
+  </td>
+ </tr>
+</table>
+
+<p><b><u><span style='font-size:10.0pt'>6. Additional Provisions: </span></u></b></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;'>(a)	Section 2.31 of the Credit Derivatives Definitions shall not apply to this Transaction. </span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;'>(b)	Section 3.9 of the Credit Derivatives Definitions is deleted and replaced in its entirety by the following: </span></p>
+
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>&quot;Section 3.9 Credit Event Notice After Restructuring.</B></span></p>
+
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(a)	In the event that Restructuring is the only Credit Event specified in a Credit Event Notice, the Notifying Party shall specify the portion (an &quot;Exercise Amount&quot;) of the Reference Entity Notional Amount in respect of which the Conditions to Settlement are being satisfied in such Credit Event Notice.  Such Exercise Amount shall be determined in the sole discretion of the Notifying Party but shall be an amount that is at least 1,000,000 units of the currency (or, if Japanese Yen, 100,000,000 units of the currency) in which the Reference Entity Notional Amount is denominated or an integral multiple thereof or the entire then outstanding Reference Entity Notional Amount.  In no case may the Exercise Amount exceed the Reference Entity Notional Amount.</span></p>
+
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b)	For the purposes of Paragraph 5 (Settlement Terms) above, the Reference Entity Notional Amount of the relevant Reference Entity shall be deemed to be the Exercise Amount.</span></p>
+
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(c)	In the event that the Conditions to Settlement are satisfied with respect to any Reference Entity and the Exercise Amount is less than the relevant Reference Entity Notional Amount, that Reference Entity shall continue to be a Reference Entity for the purposes of the Transaction and:</span></p>
+
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(i)	shall have a Reference Entity Notional Amount equal to its Reference Entity Notional Amount immediately prior to the relevant Event Determination Date minus that Exercise Amount; and</span></p>
+
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (ii)	shall have a Reference Entity Credit Position equal to its Reference Entity Notional Amount (as determined pursuant to (i) above) divided by the Implicit Portfolio Size and such Reference Entity Credit Position shall be applicable for all purposes (including for any provision relating to Successors); and</span></p>
+
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (iii)	the Conditions to Settlement may be satisfied on one or more future occasions with respect to that Reference Entity (including without limitation, with respect to a Restructuring Credit Event in relation to which a Settlement Date has already occurred on one or more previous occasions), provided in each case that the Reference Entity Credit Position of that Reference Entity prior to such satisfaction is greater than zero.&quot; </span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;'>(c)	 Notwithstanding Section 1.7 of the Credit Derivatives Definitions or any provisions of Sections 9.9 or 9.10 of the Credit Derivatives Definitions to the contrary, but without prejudice to Section 9.3 of the Credit Derivatives Definitions, if Buyer has not Delivered Selected Obligation(s) to Seller in an amount equal to the outstanding principal balance of each Selected Obligation as specified in the Notice of Physical Settlement on or prior to the date that is 60 Business Days following the Physical Settlement Date, such 60th Business Day shall be deemed to be the &quot;Cut-Off Date&quot; with respect to the relevant Selected Obligation(s) (the &quot;Affected Deliverable Obligation(s)&quot;) unless: </span></p>
+
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(i)	a valid notice of Buy-in Price has been delivered that is effective fewer than three Business Days prior to such 60th Business Day, in which case the Cut-Off Date for such Affected Deliverable Obligation(s) shall be the third Business Day following the date on which such notice is effective; or</span></p>
+
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ii)	Buyer has purchased but not Delivered on or prior to such 60th Business Day Selected Obligation(s) validly specified by Seller pursuant to Section 9.10(b), in which case the Cut-Off Date in respect of such Selected Obligation(s) shall be the tenth Business Day following the date on which Seller validly specified such Selected Obligation(s) to Buyer.</span></p>
+
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Following the occurrence of a Cut-Off Date in respect of any Selected Obligation(s), Buyer and Seller shall have no further rights or obligations with respect to Delivery in relation to such Selected Obligation(s).</span></p>
+
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;'> (d)	In the event of any inconsistency between Schedule 1 (as amended from time to time) and the Index published by the Index Sponsor, Schedule 1 (as so amended) shall govern.</span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;'> (e)	Schedule 1 will be deemed amended from time to time to reflect any modifications required under Section 2.2 of the Credit Derivatives Definitions (as amended hereby) and the "Reference Obligation(s)" and "Successors" provisions above.</span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;'>(f)	The Calculation Agent will inform the parties as soon as reasonably practicable following the determination thereof of the amount of (i) any Loss Amount or Recovery Amount in respect of a Reference Entity, irrespective of whether or not the Aggregate Loss Amount or Aggregate Recovery Amount, as applicable, is less than or equal to the Loss Threshold Amount or Recovery Threshold Amount, respectively, and (ii) any Incurred Loss Amount or Incurred Recovery Amount in respect of a Reference Entity.  </span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;'> (g)	For the avoidance of doubt, where the Currency Amount of the outstanding principal balance of any Selected Obligation actually Delivered on the relevant Delivery Date, plus the Currency Amount of the outstanding principal balance of any of the same Selected Obligation actually Delivered or deemed Delivered on any earlier date, exceeds the portion of the Specified Delivery Amount attributable to that Selected Obligation, the excess shall be ignored for the purposes of calculating (i) the relevant Delivered Proportion, (ii) the relevant Weighted Average Final Price, and (iii) the relevant Quotation Amount. </span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;'> [(h)	Where: </span></p>
+
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (i)	STMicroelectronics NV is a Reference Entity;</span></p>
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (ii)	the USD 1,217,000,000 Zero Coupon Senior Convertible Bond due 2013 issued by STMicroelectronics NV is a Selected Obligation; and </span></p>
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (iii)	such Selected Obligation is not immediately due and payable as of the relevant Delivery Date,</span></p>
+<p><span style='font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the outstanding principal balance of such Selected Obligation shall be deemed to be the amount payable on the scheduled maturity date of such Selected Obligation.] </span></p>
+
+
+<p><b><u><span style='font-size:10.0pt'>7. Notice and Account Details: </span></u></b></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;'> Telephone, Telex and/or Facsimile Number and Contact Details for Notice:</span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=560 style='width:420.0pt;
+ mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+<tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Market Dealer: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |SENDER_FULL_NAME| </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Telephone No.: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>  |SENDER_PHONE| </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Facsimile No.: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |SENDER_FAX|  </span></p>
+  </td>
+ </tr>
+</table>
+
+<table border=0 cellspacing=0 cellpadding=0 width=560 style='width:420.0pt;
+ mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Counterparty: </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>  |RECEIVER_FULL_NAME| </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Telephone No.:  </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |RECEIVER_PHONE| </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'>Facsimile No.:   </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |RECEIVER_FAX| </span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;'>  Account Details: </span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=560 style='width:420.0pt;
+ mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Account Details of Market Dealer:    </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |PO_INSTRUCTIONS| </span></p>
+  </td>
+ </tr>
+</table>
+
+<table border=0 cellspacing=0 cellpadding=0 width=560 style='width:420.0pt;
+ mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr>
+  <td width="35%" style='width:35.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p> <span style='font-size:10.0pt'> Account Details of Counterparty:    </span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'> |COUNTERPARTY_INSTRUCTIONS| </span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify;mso-layout-grid-align:none;
+text-autospace:none'><span style='font-size:10.0pt'> Please confirm your agreement to be bound by the terms of the foregoing by executing a copy of this Confirmation and returning it to us at the contact information listed above. </span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-layout-grid-align:none;
+text-autospace:none'><span style='font-size:10.0pt'> Very truly yours,</span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-layout-grid-align:none;
+text-autospace:none'><span style='font-size:10.0pt'> |SENDER_FULL_NAME| </span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-layout-grid-align:none;
+text-autospace:none'><span style='font-size:10.0pt'>By [_______________________________]</span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-layout-grid-align:none;
+text-autospace:none'><span style='font-size:10.0pt'>Name: </span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt'>Title: </span></p>
+
+
+<p class=MsoNormal style='text-align:justify;mso-layout-grid-align:none;
+text-autospace:none'><span style='font-size:10.0pt'> Agreed and Accepted by: </span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-layout-grid-align:none;
+text-autospace:none'><span style='font-size:10.0pt'> |RECEIVER_FULL_NAME|</span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-layout-grid-align:none;
+text-autospace:none'><span style='font-size:10.0pt'>By [______________________________] </span></p>
+
+<p class=MsoNormal style='text-align:justify;mso-layout-grid-align:none;
+text-autospace:none'><span style='font-size:10.0pt'>Name: </span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:10.0pt'>Title: </span></p>
+
+
+<p><span style='font-size:8.0pt'> iTraxx is a registered trade mark of International Index Company Limited.</span></p>
+<p><span style='font-size:8.0pt'>iTraxx is a trade mark of International Index Company Limited and has been licensed for the use by [Name of Customer].  International Index Company Limited does not approve, endorse or recommend [Name of Customer] or iTraxx derivatives products. </span></p>
+<p><span style='font-size:8.0pt'> iTraxx derivatives products are derived from a source considered reliable, but neither International Index Company Limited nor any of its employees, suppliers, subcontractors and agents (together iTraxx Associates) guarantees the veracity, completeness or accuracy of iTraxx derivatives products or other information furnished in connection with iTraxx derivatives products.  No representation, warranty or condition, express or implied, statutory or otherwise, as to condition, satisfactory quality, performance, or fitness for purpose are given or assumed by International Index Company Limited or any of the iTraxx Associates in respect of iTraxx derivatives products or any data included in such iTraxx derivatives products or the use by any person or entity of iTraxx derivatives products or that data and all those representations, warranties and conditions are excluded save to the extent that such exclusion is prohibited by law.</span></p>
+<p><span style='font-size:8.0pt'>None of International Index Company Limited nor any of the iTraxx Associates shall have any liability or responsibility to any person or entity for any loss, damages, costs, charges, expenses or other liabilities whether caused by the negligence of International Index Company Limited or any of the iTraxx Associates or otherwise, arising in connection with the use of iTraxx derivatives products or the iTraxx� indices. </span></p>
+
+

@@ -1,0 +1,184 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This Confirmation evidences the terms of binding
+ agreement between the Seller and the Buyer named below regarding the Transaction described
+ in this Confirmation.This Confirmation is subject to the terms and conditions of the Emissions Trading Master Agreement
+ for the EU Scheme entered between the Seller and the Buyer and dated
+<!--calypso>
+if ( Trade.getLongId() > 0)
+    inline "|TRADE_DATE|";
+</calypso-->
+</p>
+
+<p>
+<table CELLSPACING="2" BORDER="0" WIDTH="*">
+<tr>
+	<td width="40%">Seller:</td>
+	<td width="60%">|TRADE_SELLER_NAME|</td>
+</tr>
+<tr>
+	<td>Buyer:</td>
+	<td>|TRADE_BUYER_NAME|</td>
+</tr>
+<tr>
+	<td>Date Transaction Agreed:</td>
+	<td>|TRADE_DATE|</td>
+</tr>
+<tr>
+	<td>Trade Time:</td>
+	<td>|TRADE_TIME|</td>
+</tr>
+<tr>
+	<td>Trade Venue:</td>
+	<td>OTC</td>
+</tr>
+<tr>
+	<td>Allowance Type:</td>
+	<td>|COMMODITY_ALLOWANCE_TYPE|</td>
+</tr>
+<!--calypso> 
+if (|COMMODITY_COMPLIANCE_PERIOD| != "")
+	inline "
+<tr>
+	<td>Specified Compliance Period(s):</td>
+	<td>|COMMODITY_COMPLIANCE_PERIOD|</td>
+</tr>";
+</calypso>
+
+<tr>
+	<td>CPTA Quantity (for each Specified CompliancePeriod)
+	<br>Expressed in Number of Allowances:</td>
+	<td>|COMMODITY_QUANTITY|</td>
+</tr>
+<tr>
+	<td>Delivery Date(for each CPTA Quantity):</td>
+	<td>|COMMODITY_DELIVERY_DATE|</td>
+</tr>
+
+<!--calypso>
+if (|IS_FIXED_RATE| == "true")
+inline"
+<tr>
+	<td>Contract Price(/Allowance)
+	for each Specified Compliance Period:</td>
+	<td>|COMMODITY_UNADJ_PRICE|</td>
+</tr>
+<tr>
+	<td>Total Amount:</td>
+	<td>|TRADE_SETTLECCY| |TRADE_SETTLEMENT_AMOUNT|</td>
+</tr>
+";
+else
+inline"
+<tr>
+	<td><b>Floating Price Calculation:</b></td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td>Commodity Reference Price:</td>
+	<td>|COMMODITY_REFERENCE_PRICE|</td>
+</tr>
+<tr>
+	<td>Calculation Period:</td>
+	<td>|COMMODITY_CALC_PERIOD|</td>
+</tr>
+<tr>
+	<td>Pricing Dates:</td>
+	<td>|COMMODITY_PRICING_DATES|</td>
+</tr>
+<tr>
+	<td>Contract Price(/Allowance)
+	for each Specified Compliance Period:</td>
+	<td>To be determined in accordance with the details of the floating price calculation.</td>
+</tr>
+<tr>
+	<td>Total Amount:</td>
+	<td>The final contract price multiplied by the CPTA Quantity</td>
+</tr>
+";
+</calypso-->
+
+<tr>
+	<td>Broker(if Applicable)</td>
+	<td>|BROKER_FULL_NAME|</td>
+</tr>
+<tr>
+	<td>Payment Date:</td>
+	<td>|FINAL_PAYMENT_DATE|</td>
+</tr>
+</table>
+
+</p>
+
+<p>
+
+<b><u>Account Details:</u></b>
+</p>
+
+<p>
+<table border=0 cellspacing=0 cellpadding=0 width=650>
+ <tr>
+  <td width="30%" align="LEFT" valign="TOP">
+  <p>Payments to |SENDER_CODE|:</p>
+  </td>
+  <td width="70%" align="LEFT" valign="TOP">
+  <p>|PO_INSTRUCTIONS|</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="30%" align="LEFT" valign="TOP">
+  <!-- This forces a line break by printing the TAB char.  BR will cause a line break that looks too large. -->
+  &nbsp
+  </td>
+  <td width="70%" align="LEFT" valign="TOP">
+  </td>
+ </tr>
+ <tr>
+  <td width="30%" align="LEFT" valign="TOP">
+  <p>Payments to |RECEIVER_CODE|:</p>
+  </td>
+  <td width="70%" align="LEFT" valign="TOP">
+  <p>|COUNTERPARTY_INSTRUCTIONS|</p>
+  </td>
+ </tr>
+</table>
+</p>
+
+<br>
+<br>
+<!--calypso>
+if ( "LE_CREDITDOC(Y/N)" like "Y%" )
+    inline "
+<p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |RECEIVER_FULL_NAME| agrees to provide the following Credit
+Support Document:
+
+</p>
+<p>
+
+Offices:<br>
+(a)&nbsp;&nbsp;&nbsp; The Office of Party A for the Swap Transaction is |SENDER_ADDRESS| |SENDER_CITY| |SENDER_STATE| |SENDER_ZIPCODE| |SENDER_COUNTRY|; and<br>
+(b)&nbsp;&nbsp;&nbsp; The Office of Party B for the Swap Transaction is |RECEIVER_ADDRESS| |RECEIVER_CITY| |RECEIVER_STATE| |RECEIVER_ZIPCODE| |RECEIVER_COUNTRY|.
+</p>
+    ";
+</calypso-->
+
+<p>
+
+Please confirm that the foregoing correctly sets forth the terms of our agreement
+by executing the copy of this Confirmation enclosed for that purpose and returning
+it to us or by sending us a letter substantially similar to this letter, which letter
+sets forth the material terms of the Transaction to which this Confirmation
+relates and indicates agreement to those terms.
+</p>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->
+
+

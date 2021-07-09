@@ -1,0 +1,97 @@
+<!-- ############################ -->
+<!-- #### Start Exhibit II-C #### -->
+<!-- ############################ -->
+
+
+<p>The terms of the particular Transaction to which this Confirmation relates are as follows:</p>
+
+<table width='100%'>
+<tr>
+	<td width="30%">Notional Amount:</td>
+	<td width='68%'>|PRODUCT_CURRENCY#NOVATED_TRADE| |PRODUCT_PRINCIPAL#NOVATED_TRADE|</td>
+</tr>
+<tr>
+	<td>Trade Date:</td>
+	<td>|TRADE_DATE#NOVATED_TRADE|</td>
+</tr>
+<tr>
+	<td>Effective Date:</td>
+	<td>|SETTLE_DATE#NOVATED_TRADE|</td>
+</tr>
+<tr>
+	<td>Termination Date:</td>
+	<td>|PRODUCT_MATURITYDATE#NOVATED_TRADE|, subject to adjustment in accordance with the Modified Following Business Day Convention.</td>
+</tr>
+<tr>
+	<td>Fixed Rate Payer:</td>
+	<td>|FIX_PAYER_CODE#NOVATED_TRADE|</td>
+</tr>
+<tr>
+	<td>Fixed Rate:</td>
+	<td>|FRA_FIXED_RATE#NOVATED_TRADE| %</td>
+</tr>
+<tr>
+	<td>Floating Rate Payer:</td>
+	<td>|FLT_PAYER_CODE#NOVATED_TRADE|</td>
+<tr>
+	<td>Payment Date(s):</td>
+	<td>|FRA_PAYMENT_DATE#NOVATED_TRADE| subject to adjustment in accordance with the |FRA_CPN_DATE_ROLL#NOVATED_TRADE| Business Day convention.</td>
+</tr>
+<tr>
+	<td>Floating Rate Option:</td>
+	<td>|FLT_RATE_INDEX#NOVATED_TRADE|</td>
+</tr>
+<tr>
+	<td>Designated Maturity:</td>
+	<td>|FLT_INDEX_TENOR#NOVATED_TRADE|</td>
+</tr>
+<tr>
+	<td>Spread:</td>
+	<td>None</td>
+</tr>
+<tr>
+	<td>Floating Rate Day Count Fraction:</td>
+	<td>|FLT_DAY_COUNT#NOVATED_TRADE|</td>
+</tr>
+<tr>
+	<td>Reset Dates:</td>
+	<td>|FRA_FIXING_DATE#NOVATED_TRADE|</td>
+</tr>
+<tr>
+	<td>FRA Discounting:</td>
+	<td>|FRA_DISCOUNTING#NOVATED_TRADE|</td>
+<tr>
+	<td>Business Days:</td>
+	<td>|FRA_CPN_HOL#NOVATED_TRADE|</td>
+</tr>
+<tr>
+	<td>Calculation Agent:</td>
+	<td>|SENDER_CODE|, unless otherwise stated in the Agreement</td>
+</tr>
+<!--calypso>
+if ( Product.getInterpolatedB() == true )
+    inline "
+<tr>
+	<td>Interpolated:</td>
+	<td>Applicable</td>
+</tr>
+<tr>
+	<td>From Tenor:</td>
+	<td>|INTERPOLATED_FROM#NOVATED_TRADE|</td>
+</tr>
+<tr>
+	<td>To Tenor:</td>
+	<td>|INTERPOLATED_TO#NOVATED_TRADE|</td>
+</tr>
+    ";
+</calypso-->
+</table>
+</p>
+
+<p>|LA_SPECIAL_CLAUSE|</p>
+
+<!-- ########################## -->
+<!-- #### End Exhibit II-C #### -->
+<!-- ########################## -->
+
+

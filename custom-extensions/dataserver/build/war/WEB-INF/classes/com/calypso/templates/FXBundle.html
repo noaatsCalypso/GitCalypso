@@ -1,0 +1,74 @@
+<table CELLSPACING=1 WIDTH=623>
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE">Trade Date</td>	
+		<td WIDTH="59%" VALIGN="MIDDLE">|TRADE_DATE|</td>
+	</tr>	
+<!--calypso>
+if (|PRODUCT_TYPE| == "FXSwap") {
+	inline "
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td><u>Near Leg Details:</u></td>
+		</tr>
+		";
+	}
+</calypso-->
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE">Amount and currency payable by Party A</td>
+		<td WIDTH="59%" VALIGN="MIDDLE">|FX_BUY_CURRENCY| |FX_BUY_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE">Amount and currency payable by Party B</td>
+		<td WIDTH="59%" VALIGN="MIDDLE">|FX_SELL_CURRENCY| |FX_SELL_AMOUNT|</td>
+	</tr>
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE">Settlement Date</td>
+		<td WIDTH="59%" VALIGN="MIDDLE">|SETTLE_DATE|</td>
+	</tr>
+<!--calypso>
+if (|IS_FX_SPLIT_DATE| == "true") {
+inline "
+	<tr>
+		<td>Split Settlement Date</td>
+		<td>|FX_SPLIT_DATE|</td>
+	</tr>
+";
+}
+</calypso-->
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE">FX Rate</td>
+		<td WIDTH="59%" VALIGN="MIDDLE">|FX_NEGOCIATEDPRICE|</td>
+	</tr>
+</table>
+<!--calypso>
+if (|PRODUCT_TYPE| == "FXSwap") {
+	inline "<table>
+		<tr>
+			<td width='30%'>&nbsp;</td>
+		</tr>
+		<tr>
+			<td><u>Far Leg Details:</u></td>
+		</tr>
+		<tr>
+			<td WIDTH='39%' VALIGN='MIDDLE'>Amount and currency payable by Party A</td>
+			<td WIDTH='59%' VALIGN='MIDDLE'>|FX_SELL_CURRENCY| |FXFWD_BUY_AMOUNT|</td>
+		</tr>
+		<tr>
+			<td WIDTH='39%' VALIGN='MIDDLE'>Amount and currency payable by Party B</td>
+			<td WIDTH='59%' VALIGN='MIDDLE'>|FX_BUY_CURRENCY| |FXFWD_SELL_AMOUNT|</td>
+		</tr>
+		<tr>
+			<td WIDTH='39%' VALIGN='MIDDLE'>Settlement Date</td>
+			<td WIDTH='59%' VALIGN='MIDDLE'>|FWD_SETTLE_DATE|</td>
+		</tr>
+		<tr>
+			<td WIDTH='39%' VALIGN='MIDDLE'>FX Rate</td>
+			<td WIDTH='59%' VALIGN='MIDDLE'>|FXFWD_NEGOCIATEDPRICE|</td>
+		</tr>	
+	</table>";
+	}
+</calypso-->
+<hr>
+<br><br>

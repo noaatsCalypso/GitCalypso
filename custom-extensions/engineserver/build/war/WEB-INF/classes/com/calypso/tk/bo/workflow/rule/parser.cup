@@ -1,0 +1,179 @@
+/*
+ *
+ * Copyright (c) 2000 by Calypso Technology, Inc.
+ * 595 Market Street, Suite 1980, San Francisco, CA  94105, U.S.A.
+ * All rights reserved.
+ *
+ * This software is the confidential and proprietary information
+ * of Calypso Technology, Inc. ("Confidential Information").  You
+ * shall not disclose such Confidential Information and shall use
+ * it only in accordance with the terms of the license agreement
+ * you entered into with Calypso Technology.
+ *
+ */
+// NOPMD: this is generated
+
+package com.calypso.tk.bo.workflow.rule;
+
+import com.calypso.tk.core.Log;
+import java.util.*;
+import java_cup.runtime.*;
+
+parser code {: 
+    public void report_error(String message, Object info) {
+        if(Log.isCategoryLogged(Log.PARSER)) {
+            Log.error(this, new Exception());
+            System.out.println(message);
+            System.out.println("Info = "+info);
+        }
+    }
+:}
+
+/* Terminals (tokens returned by the scanner). */
+terminal             PLUS, MINUS, MULT, DIV, COMMA;
+terminal             UMINUS, LPAREN, RPAREN, POW;
+terminal	     ABS, CEIL, ROUND, FLOOR;
+terminal	     LT, GT, LTE, GTE, EQ, NEQ;
+terminal	     AND, OR, NOT;
+terminal	     QMARK, SEMIC, MAX, MIN;
+terminal RuleToken   NUMBER, CONST, RULEREF, STRING, BOOLEAN;
+terminal RuleToken   TRADETOKEN, MESSAGETOKEN, TRANSFERTOKEN, CUSTOMTOKEN;
+terminal RuleToken   TIME, DATE, FILTER;
+
+/* Non terminals */
+non terminal RuleToken      expr;
+non terminal RuleToken	    boolexpr;
+
+/* Precedences */
+precedence left  EQ, NEQ;
+precedence left  AND, OR;
+precedence left  LT, GT, LTE, GTE;
+precedence left  PLUS, MINUS;
+precedence left  MULT, DIV;
+precedence left  NOT;
+precedence right POW;
+precedence left  UMINUS, LPAREN;
+
+/* The grammar */
+boolexpr  ::= BOOLEAN:b
+	      {: RESULT = b; :}
+	      |
+	      NOT boolexpr:b
+	      {: RESULT = new RuleUnaryOp(sym.NOT, b); :}
+	      |
+	      FILTER:f
+	      {: RESULT = f; :}
+	      |
+	      expr:e1 GT expr:e2
+	      {: RESULT = new RuleBinaryOp(e1, sym.GT, e2); :}
+	      |
+	      expr:e1 LT expr:e2
+	      {: RESULT = new RuleBinaryOp(e1, sym.LT, e2); :}
+	      |
+	      expr:e1 GTE expr:e2
+	      {: RESULT = new RuleBinaryOp(e1, sym.GTE, e2); :}
+	      |
+	      expr:e1 LTE expr:e2
+	      {: RESULT = new RuleBinaryOp(e1, sym.LTE, e2); :}
+	      |
+	      expr:e1 EQ expr:e2
+	      {: RESULT = new RuleBinaryOp(e1, sym.EQ, e2); :}
+	      |
+	      expr:e1 NEQ expr:e2
+	      {: RESULT = new RuleBinaryOp(e1, sym.NEQ, e2); :}
+	      |
+	      boolexpr:b1 EQ boolexpr:b2
+	      {: RESULT = new RuleBinaryOp(b1, sym.EQ, b2); :}
+	      |
+	      boolexpr:b1 NEQ boolexpr:b2
+	      {: RESULT = new RuleBinaryOp(b1, sym.NEQ, b2); :}
+	      |
+	      boolexpr:b1 AND boolexpr:b2
+	      {: RESULT = new RuleBinaryOp(b1, sym.AND, b2); :}
+	      |
+	      boolexpr:b1 OR boolexpr:b2
+	      {: RESULT = new RuleBinaryOp(b1, sym.OR, b2); :}
+	      |
+	      RULEREF:r
+	      {: RESULT = r; :}
+	      |	      
+	      LPAREN boolexpr:b RPAREN
+	      {: RESULT = b; :}
+	      |
+	      LPAREN boolexpr:cond RPAREN QMARK boolexpr:e1 SEMIC boolexpr:e2
+	      {: RESULT = new RuleCondition(cond, e1, e2); :}
+	      ;
+
+expr      ::= expr:e1 PLUS expr:e2
+	      {: RESULT = new RuleBinaryOp(e1, sym.PLUS, e2); :}
+	      |
+              expr:e1 MINUS expr:e2
+	      {: RESULT = new RuleBinaryOp(e1, sym.MINUS, e2); :}
+	      |
+              expr:e1 MULT expr:e2
+	      {: RESULT = new RuleBinaryOp(e1, sym.MULT, e2); :}
+	      |
+              expr:e1 DIV expr:e2
+	      {: RESULT = new RuleBinaryOp(e1, sym.DIV, e2); :}
+	      |
+	      expr:e1 POW expr:e2
+	      {: RESULT = new RuleBinaryOp(e1, sym.POW, e2); :}
+	      |
+              NUMBER:n
+	      {: RESULT = n; :}
+	      |
+	      CONST:k
+	      {: RESULT = k; :}
+	      |
+	      STRING:s
+	      {: RESULT = s; :}
+	      |
+	      TRADETOKEN:t
+	      {: RESULT = t; :}
+	      |
+	      MESSAGETOKEN:t
+	      {: RESULT = t; :}
+	      |
+	      TRANSFERTOKEN:t
+	      {: RESULT = t; :}
+	      |
+	      CUSTOMTOKEN:t
+	      {: RESULT = t; :}
+	      |
+	      TIME:t
+	      {: RESULT = t; :}
+	      |
+	      DATE:d
+	      {: RESULT = d; :}
+	      |
+              MINUS expr:e
+	      {: RESULT = new RuleUnaryOp(sym.UMINUS, e); :}
+	      %prec UMINUS
+	      |
+	      ABS expr:e RPAREN
+	      {: RESULT = new RuleUnaryOp(sym.ABS, e); :}
+	      |
+	      CEIL expr:e RPAREN
+	      {: RESULT = new RuleUnaryOp(sym.CEIL, e); :}
+	      |
+	      ROUND expr:e RPAREN
+	      {: RESULT = new RuleUnaryOp(sym.ROUND, e); :}
+	      |
+	      ROUND expr:e COMMA NUMBER:x RPAREN
+	      {: RESULT = new RuleUnaryOp(sym.ROUND, e); ((RuleUnaryOp)RESULT).setRoundPrec(x.getDoubleValue()); :}
+	      |
+	      ROUND expr:e COMMA MINUS NUMBER:x RPAREN
+	      {: RESULT = new RuleUnaryOp(sym.ROUND, e); ((RuleUnaryOp)RESULT).setRoundPrec(-x.getDoubleValue()); :}
+	      |
+	      FLOOR expr:e RPAREN
+	      {: RESULT = new RuleUnaryOp(sym.FLOOR, e); :}
+	      |
+	      MAX expr:e1 COMMA expr:e2 RPAREN
+	      {: RESULT = new RuleBinaryOp(e1, sym.MAX, e2); :}
+	      |
+	      MIN expr:e1 COMMA expr:e2 RPAREN
+	      {: RESULT = new RuleBinaryOp(e1, sym.MIN, e2); :}
+	      |
+              LPAREN expr:e RPAREN
+	      {: RESULT = e; :}
+	      ;

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Confirmations>
+<Group id="FXD_FX">
+	<Email>
+		<FromDest>
+			<address>|MESSAGE_SENDERADDRESSCODE|</address>
+		</FromDest>
+		<ToName>|RECEIVER_CONTACT_NAME|</ToName>
+		<ToDest>
+			<address>|RECEIVER_EMAIL|</address>
+		</ToDest>
+		<MsgSubject>|MESSAGE_CREATIONDATE#yyyyMMdd| - PrivateBank and Trust: |MESSAGE_TYPE_COMMENT| for |RECEIVER_FULL_NAME| - |MESSAGE_EFFECTIVEDATE#yyyyMMdd|.</MsgSubject>
+		<attachments>
+			<attachment filename="|MESSAGE_SENDER|_|PRODUCT_FAMILY|_|PRODUCT_TYPE|_|MESSAGE_TRADEID|_|MESSAGE_CREATIONDATE#yyMMdd|.PDF"/>
+		</attachments>
+	</Email>
+</Group>
+</Confirmations>
+

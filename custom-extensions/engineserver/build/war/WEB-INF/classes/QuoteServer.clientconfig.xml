@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd" default-lazy-init="true" >
+
+
+ 	<bean id="QuoteServer" class="com.calypso.infra.rmi.BaseServerConnection" lazy-init="true">
+ 		<property name="instanceName" value="QuoteServer" />
+ 		<property name="serviceURL" value="rmi://${QUOTE_SERVER_HOST}:${QUOTE_SERVER_RMI_PORT}/" />
+		<property name="rmiProxyProps">
+			<bean parent="rmiClientProperties">
+				<property name="deployedServerName" value="QuoteServer" />
+			</bean>
+		</property>
+		<property name="remoteInvocationFactory">
+			<bean
+				class="com.calypso.infra.authentication.context.rmi.ContextPropagatingRemoteInvocationFactory">
+				<property name="tokenRetriever">
+					<bean
+						class="com.calypso.infra.authentication.context.rmi.StaticTokenRetriever">
+						<property name="tokenFactory" ref="tokenFactory" />
+					</bean>
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+</beans>

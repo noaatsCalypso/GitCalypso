@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+    <contents>
+        <element name="AppHdr">
+            <attributes>
+                <attribute name="xmlns">
+                    <value>
+                        <text>
+                            <value>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</value>
+                        </text>
+                    </value>
+                </attribute>
+            </attributes>
+            <contents>
+                <element name="Fr">
+                    <contents>
+                        <element name="FIId">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents>
+                                        <element name="BICFI">
+                                            <contents>
+                                                <report>
+                                                    <column>Sender.Swift</column>
+                                                    <transformations>
+                                                        <transformation type="function">
+                                                            <to>completeSwiftBranch</to>
+                                                        </transformation>
+                                                    </transformations>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="To">
+                    <contents>
+                        <element name="FIId">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents>
+                                        <element name="BICFI">
+                                            <contents>
+                                                <report>
+                                                    <column>Receiver.Swift</column>
+                                                    <transformations>
+                                                        <transformation type="function">
+                                                            <to>completeSwiftBranch</to>
+                                                        </transformation>
+                                                    </transformations>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="BizMsgIdr">
+                    <contents>
+                        <report>
+                            <column>MESSAGE_ID</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="MsgDefIdr">
+                    <contents>
+                        <report>
+                            <column>MessageIdentifier</column>
+                            <transformations>
+                                <transformation type="regexp">
+                                    <from>.T2S</from>
+                                    <to></to>
+                                </transformation>
+                            </transformations>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CreDt">
+                    <contents>
+                        <report>
+                            <column>ORIGINAL_DATE</column>
+                        </report>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

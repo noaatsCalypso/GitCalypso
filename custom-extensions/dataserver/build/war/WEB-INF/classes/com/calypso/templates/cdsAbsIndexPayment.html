@@ -1,0 +1,108 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+
+<p>I am pleased to confirm the following Payment Advice. For value date, |TRANSFER_VALUEDATE|, we will |TRANSFER_PAYRECEIVE|
+|TRANSFER_SETTLEMENTCCY| |TRANSFER_SETTLEMENTAMOUNT| (|TRANSFER_TYPE|).</p>
+
+<p class='header2'>Trade Details</p>
+
+<table>
+<tr><th class="smallfont">Ccy</th>
+    <th class="smallfont">Trade Date</th>
+    <th class="smallfont">Effective Date</th>
+    <th class="smallfont">Original Face</th>
+    <th class="smallfont">Trade Dt Notional</th>
+</tr>
+<tr><td class='smallfont'>|TRADE_CURRENCY|</td>
+    <td class='smallfont'>|TRADE_DATE|</td>
+    <td class='smallfont'>|EFFECTIVE_DATE|</td>
+    <td class='smallfont'>|CD_NOTIONAL|</td>
+    <td class='smallfont'>|TRADE_DATE_NOT|</td>
+</tr>
+
+</table>
+
+<br>
+<p class=header2>Principal Shortfall/Reimbursement Details:</p>
+<br>
+<table>
+<tr>
+    <th class="smallfont">Period Start Date</th>
+    <th class="smallfont">Payment Date</th>
+    <th class="smallfont">Principal Shortfall</th>
+</tr>
+<!--calypso>
+iterator ( "TransferDetails" )
+    inline "
+<tr>
+    <td class='smallfont'>|CASHFLOW_START_DATE|</td>
+    <td class='smallfont'>|CASHFLOW_PAYMENT_DATE|</td>
+    <td class='smallfont'>|PRINCIPAL_SHORTFALL|</td></tr>";
+</calypso-->
+</table>
+
+<br>
+<p class=header2>Writedown Shortfall/Reimbursement Details:</p>
+<br>
+<table>
+<tr>
+    <th class="smallfont">Period Start Date</th>
+    <th class="smallfont">Payment Date</th>
+    <th class="smallfont">Writedown</th>
+</tr>
+<!--calypso>
+iterator ( "TransferDetails" )
+    inline "
+<tr>
+    <td class='smallfont'>|CASHFLOW_START_DATE|</td>
+    <td class='smallfont'>|CASHFLOW_PAYMENT_DATE|</td>
+    <td class='smallfont'>|WRITEDOWN|</td>
+</tr>
+    ";
+</calypso-->
+</table>
+
+<br>
+<p class=header2>Interest Shortfall/Reimbursement Details:</p>
+<br>
+<table>
+<tr>
+    <th class="smallfont">Period Start Date</th>
+    <th class="smallfont">Payment Date</th>
+    <th class="smallfont">Interest Shortfall</th>
+</tr>
+<!--calypso>
+iterator ( "TransferDetails" )
+    inline "
+<tr>
+    <td class='smallfont'>|CASHFLOW_START_DATE|</td>
+    <td class='smallfont'>|CASHFLOW_PAYMENT_DATE|</td>
+    <td class='smallfont'>|INTEREST_SHORTFALL|</td>
+</tr>
+    ";
+</calypso-->
+</table>
+
+<p class=header2>Settlement Instructions are as follows:</p>
+<!--calypso>
+iterator("AdviceTransferRules")
+    inline "<table>
+    <tr><th colspan='2'>|SETTLEMENT_ACTION|</th></tr>
+    <tr><td width='30%'>To:</td><td>|SETTLEMENT_TO|</td></tr>
+    <tr><td>|SETTLEMENT_ROUTING|</td><td>|SETTLEMENT_METHOD|</td></tr>
+    <tr><td>Favor of:</td><td>|SETTLEMENT_FAVOR_OF|</td></tr>
+    <tr><td>Account Number:</td><td>|SETTLEMENT_ACCOUNT_NUMBER|</td></tr>
+</table>";
+</calypso-->
+
+<p>Please refer to our reference number |TRANSFER_ID| in your correspondence concerning this
+payment.</p>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

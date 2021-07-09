@@ -1,0 +1,114 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header_contact.html";
+</calypso-->
+
+<!--calypso>
+if ((|PRODUCT_TYPE| == "Swap") || (|PRODUCT_TYPE| == "CappedSwap"))
+   set TRANSACTION_TYPE = "Interest Rate Swap";
+else  if (|PRODUCT_TYPE| == "SwapCrossCurrency" || |PRODUCT_TYPE| == "XCcySwap")
+   set TRANSACTION_TYPE = "Cross-Currency Rate Swap";
+else if (|PRODUCT_TYPE| == "FRA")
+   set TRANSACTION_TYPE = "Forward Rate Agreement";
+else if (|PRODUCT_TYPE| == "SwapNonDeliverable")
+   set TRANSACTION_TYPE = "Non-Deliverable Interest Rate Swap";
+else
+   set TRANSACTION_TYPE = |PRODUCT_TYPE|;
+</calypso-->
+
+<p class="header1">|TRANSACTION_TYPE| Confirmation</p>
+
+<br>
+<p>Our Transaction Reference: |TRADE_ID|</p>
+<br>
+
+<p class="indented">
+The purpose of this
+<!--calypso>
+if ( Message.getAddressMethod() == "FAX" )
+    inline "facsimile";
+else
+    inline "letter";
+</calypso-->
+(this "Confirmation") is to confirm the terms and conditions of the Swap Transaction
+entered into between us on the Trade Date specified below.
+</p>
+
+<p class="indented">The definitions and provisions contained in the 2006 ISDA
+Definitions, as published by the International Swaps and Derivatives Association, Inc.,
+are incorporated into this Confirmation.
+In the event of any inconsistency between those
+definitions and provisions and this Confirmation, this Confirmation will govern.
+</p>
+
+<p class="indented">
+<!--calypso>
+if ( |MASTER_AGREEMENT| == "ISDA" && |LA_STATUS| != "SIGNED" ) {
+    inline "This Confirmation evidences a complete and binding agreement between you
+and us as to the terms of the Swap Transaction to which this Confirmation relates.  In addition, you and
+we agree to use all reasonable efforts promptly to negotiate, execute and deliver an agreement in the
+form of the ISDA Master Agreement (Multicurrency-Cross Border) (the &quot;ISDA Form&quot;), with such
+modifications as you and we will in good faith agree.  Upon the execution by you and us of such an agreement,
+this Confirmation will supplement, form a part of and be subject to that agreement.  All provisions contained
+in or incorporated by reference in that agreement upon its execution will govern this Confirmation except as
+expressly modified below.  Until we execute and deliver that agreement, this Confirmation, together with all
+other documents referring to the ISDA Form (each a &quot;Confirmation&quot;) confirming transactions (each a
+&quot;Transaction&quot;) entered into between us (notwithstanding anything to the contrary in a Confirmation),
+shall supplement, form a part of, and be subject to, an agreement in the form of the ISDA Form as if we had
+executed an agreement in such form (but without any Schedule except for the election of
+|LA_LEGAL_JURISDICTION| as the governing law and |TRADE_CURRENCY| as the Termination Currency) on the Trade
+Date of the first such Transaction between us.  In the event of any inconsistency between the provisions of
+that agreement and this Confirmation, this Confirmation will prevail for purposes of this Swap Transaction.
+    ";
+}
+if ( |MASTER_AGREEMENT| != "ISDA" || |LA_STATUS| == "SIGNED" ) {
+    inline "This Confirmation constitutes a &quot;Confirmation&quot; as referred to in, and
+supplements, forms part of, and is subject to, the |LA_ISDA_AGREEMENT|
+dated as of |LA_AGREEMENT_DATE|, as amended and supplemented from time to time (the &quot;Agreement&quot;),
+between you and us. All provisions contained in the Agreement govern this Confirmation except as expressly
+modified below.
+    ";
+}
+</calypso-->
+
+<!-- Insert relevant additional provisions from exhibits II-A Through II-G to the 2000 ISDA Definitions -->
+<!--calypso>
+if ( |PRODUCT_FAMILY| == "Swap" )
+    include "exhibit_2a.html";
+	else if ( |PRODUCT_FAMILY| like "%FRA%" )
+    include "exhibit_2c.html";
+</calypso-->
+</p>
+<p class='header2'>Account Details:</p>
+	<table width='100%'>
+		<tr>
+			<td width="30%"><b>Payments to |SENDER_CODE|:</b></td>
+			<td width='68%'>|PO_INSTRUCTIONS|</td>
+		</tr>
+		<tr>
+			<td><b>Payments to |RECEIVER_CODE|:</b></td>
+			<td>To be advised</td>
+		</tr>
+	</table>
+
+<!--calypso>
+if ( |LE_CREDITDOC| == "Y" )
+    inline "<p class='indented'>|RECEIVER_FULL_NAME#PARENT_TRADE| agrees to provide the following Credit Support Document:</p>
+	<p>Offices:<br>
+(a)&nbsp;&nbsp;&nbsp; The Office of Party A for the Swap Transaction is |SENDER_ADDRESS| |SENDER_CITY| |SENDER_STATE| |SENDER_ZIPCODE| |SENDER_COUNTRY|; and<br>
+(b)&nbsp;&nbsp;&nbsp; The Office of Party B for the Swap Transaction is |RECEIVER_ADDRESS#PARENT_TRADE| |RECEIVER_CITY#PARENT_TRADE| |RECEIVER_STATE#PARENT_TRADE| |RECEIVER_ZIPCODE#PARENT_TRADE| |RECEIVER_COUNTRY#PARENT_TRADE|.
+	</p>";
+</calypso-->
+
+<p>
+Please confirm that the foregoing correctly sets forth the terms of our agreement
+by executing the copy of this Confirmation enclosed for that purpose and returning
+it to us or by sending us a letter substantially similar to this letter, which letter
+sets forth the material terms of the Swap Transaction to which this Confirmation
+relates and indicates your agreement to those terms.
+</p>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer_body.html";
+</calypso-->

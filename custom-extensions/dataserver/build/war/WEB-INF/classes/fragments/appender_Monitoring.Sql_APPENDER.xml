@@ -1,0 +1,10 @@
+<RollingFile fileName="${calypsoUserDir}${fileSeparator}${calypsoExtendedAppName}_${calypsoEnvName}_SQL_${calypsoVersion}.log" filePattern="${calypsoUserDir}${fileSeparator}${calypsoExtendedAppName}_${calypsoEnvName}_SQL_${calypsoVersion}.log.%i.zip" name="Monitoring.Sql_APPENDER">
+  <PatternLayout header="START_TIME|EXECUTE_TIME|LOG_CATEGORY|NUM_OF_ROWS_READ|RESULTSET_OPEN_TIME|RESULTSET_CREATE_TIME|RESULTSET_LAST_FETCH_TIME|CLIENT_HOST|CLIENT_DESCRIPTION|REQUEST_ID|SQL_STATEMENT|INVOCATIONDEPTH%n" pattern="%X{SQLSTARTTIME}${sys:calypso.logdelim}%X{SQLEXECUTETIME}${sys:calypso.logdelim}%c${sys:calypso.logdelim}%X{SQLNOOFROWSREAD}${sys:calypso.logdelim}%X{SQLRESULTSETOPENTIME}${sys:calypso.logdelim}%X{SQLRESULTSETCREATETIME}${sys:calypso.logdelim}%X{SQLRESULTSETLASTFETCHTIME}${sys:calypso.logdelim}%X{clientHost}${sys:calypso.logdelim}%X{clientDesc}${sys:calypso.logdelim}%X{REQUESTID}${sys:calypso.logdelim}%m${sys:calypso.logdelim}%X{INVOCATIONDEPTH}%n"></PatternLayout>
+  <Policies>
+    <OnStartupTriggeringPolicy/>
+    <SizeBasedTriggeringPolicy size="${sys:calypso.maxfilesize}"/>
+  
+          <!-- TODO: unit (allowed B (default), KB, MB, GB) -->
+        </Policies>
+  <DefaultRolloverStrategy max="${sys:calypso.maxbackupindex}" min="1"/>
+</RollingFile>

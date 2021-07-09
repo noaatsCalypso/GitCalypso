@@ -1,0 +1,16 @@
+PSEventMessage;NONE;NEW;PENDING;true;false;false;TRIOPTIMA_REDUCE;ALL;;;false;true;;;false;false;false;false;
+PSEventMessage;PENDING;VALIDATE_NEW;VERIFIED;true;false;false;TRIOPTIMA_REDUCE;ALL;CheckLink,Validate;;false;true;;TriOptima New Trades;false;false;false;false;
+PSEventMessage;PENDING;VALIDATE_TERM;VERIFIED;true;false;false;TRIOPTIMA_REDUCE;ALL;;;false;true;;TriOptima Terminations;false;false;false;false;
+PSEventMessage;PENDING_VALID;LOAD;COMPLETED;true;true;false;TRIOPTIMA_REDUCE;ALL;CheckLink,Loader;;false;true;;;false;false;false;false;
+PSEventMessage;TO PROCESS;COMPLETE;COMPLETED;true;true;false;TRIOPTIMA_REDUCE;ALL;TrioptimaReduce;;false;true;;;false;false;false;false;
+PSEventMessage;VERIFIED;AUTHORIZE;TO PROCESS;true;true;false;TRIOPTIMA_REDUCE;ALL;;;false;true;;TriOptima Terminations;false;false;false;false;
+PSEventMessage;VERIFIED;CANCEL;CANCELED;true;false;false;TRIOPTIMA_REDUCE;ALL;;;false;false;;;false;false;false;false;
+PSEventMessage;VERIFIED;LOAD;PENDING_VALID;true;true;false;TRIOPTIMA_REDUCE;ALL;;;false;true;;TriOptima New Trades;false;false;false;false;
+StaticDataFilterConfig
+1;TriOptima UploadAction is NEW;;ANY;
+MSG_ATTRIBUTE.UploadObjectAction;IN;NEW;
+1;TriOptima New Trades;;ANY;
+MSG_ATTRIBUTE.UploadObjectAction;IN;NEW;
+1;TriOptima Terminations;;ANY;
+IN Static Data Filter;NOT_IN;TriOptima UploadAction is NEW;
+StaticDataFilterConfig

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+  	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+	<bean id="sqlInitializer" class="com.calypso.tk.core.sql.SQLInitializer" init-method="init">
+		<property name="driver" value="${DRIVER}" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="managedTransaction" value="true" />
+		<property name="databaseSessionHandler" ref="dbSessionHandler" />
+	</bean>
+		
+	<bean name="rmiRegistryConfig" class="com.calypso.infra.rmi.DefaultRMIRegistryConfig">
+			<property name="registryHost" value="${AUTHSERVERHOST}" />
+			<property name="registryPort" value="${AUTHSERVER_RMI_REGISTRY_PORT}" />
+	</bean>
+		
+	<bean id="tokenGenerator"
+		class="com.calypso.infra.authentication.service.DefaultTokenGenerator" />
+
+	<bean id="authServerSessionFactory" class="com.calypso.authentication.userdetails.token.AuthServerSessionFactory">
+		<property name="hostName" value="${AUTHSERVERHOST}" />
+		<property name="port" value="${AUTHSERVER_RMI_REGISTRY_PORT}" />
+		<property name="serviceId" value="${AUTHSERVICEGROUPID:}" />
+	</bean>
+			
+	<bean id="tokenManagerSQL" class="com.calypso.authentication.userdetails.token.TokenManagerSQL" >
+		<property name="expiryTimeInMinutes" value="${SESSIONTIMEOUT_INMINUTES}" />
+		<property name="serviceId">
+			<bean factory-bean="authServerSessionFactory" factory-method="getServiceId" />
+		</property>
+
+	</bean> 
+	<!--
+		Maintains the tokens and handles verification of tokens(duplicate,
+		timeout etc)
+	-->
+	<bean id="tokenManager"
+		class="com.calypso.authentication.userdetails.token.CalypsoTokenManager" init-method="init">
+		<property name="sessionTimeOutInMinutes" value="${SESSIONTIMEOUT_INMINUTES}" />
+		<property name="forbidMultipleLoginAppNameString" value="${FORBID_MULTIPLE_LOGIN}" />
+		<property name="tokenManagerSql" ref="tokenManagerSQL" />
+	</bean>
+
+	<bean id="authServiceImpl"
+		class="com.calypso.infra.authentication.service.AuthenticationServiceImpl" >
+		<property name="authenticationManager" ref="authenticationManager" />
+		<property name="tokenManager" ref="tokenManager" />
+		<property name="tokenGenerator" ref="tokenGenerator" />
+		<property name="authenticationEventHandler" ref="defaultAuthEventHandler" />
+		<property name="shutdownHandler" ref="applicationShutdownHandler"/>
+	</bean>
+
+	<bean id="authenticationManager" class="org.springframework.security.authentication.ProviderManager">
+		<property name="providers">
+			<list>
+				<!-- 
+					Custom authentication providers may be added here
+				 	to enable additional authentication mechanisms.  To link to an external 
+				 	system identity, this can be used or the user detail service specified
+				 	in the daoAuthenticationProvider if the identity system supports
+				 	loading user info.
+				 -->
+				<ref bean="defaultAuthenticationProvider" />
+			</list>
+		</property>
+	</bean>
+
+	<bean parent="rmiServiceExporter" >
+		<property name="service" ref="authServiceImpl" />
+		<property name="namingQualifier">
+			<bean class="com.calypso.infra.rmi.StandAloneNamingQualifier" />
+		</property> 
+		<meta key="serviceInterface" value="com.calypso.infra.authentication.service.AuthenticationService" />
+		<meta key="secured" value="false" />
+	</bean>
+	
+	<bean id="authService" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces"
+			value="com.calypso.infra.authentication.service.AuthenticationService" />
+		<property name="target" ref="authServiceImpl" />
+		<property name="interceptorNames">
+			<list>
+				<value>transactionManager</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<!--
+		Handles the authenctication success and failure events - Kind of an
+		extension to authentication to handle calypso specific authentication
+		mechanism and to handle authentication audit information
+	-->
+    <bean id="userSQL" class="com.calypso.tk.refdata.sql.UserSQL" >
+    </bean>
+    
+    <bean id="groupSQL" class="com.calypso.tk.refdata.sql.GroupSQL" >
+    </bean>
+    
+	<bean id="defaultAuthEventHandler"
+		class="com.calypso.authentication.eventhandler.DefaultAuthenticationEventHandler">
+		<property name="eventPublisher" ><null/></property>
+        <property name="userSQL" ref="userSQL" />
+        <property name="groupSQL" ref="groupSQL" />
+	</bean><!--
+	
+	<bean id="authServerTokenPurger" class="com.calypso.authentication.userdetails.token.AuthServerTokenPurger" 
+			depends-on="sqlInitializer"  init-method="validate" >
+			<property name="registry" ref="rmiRegistry" />
+			<property name="tokenManagerSQL" ref="tokenManagerSQL" />
+	</bean>
+	
+	--><bean id="loginHandler" class="com.calypso.infra.authentication.service.LoginTask"  init-method="perform">
+		<property name="authenticationService" ref="authService" />
+		<property name="userServiceable" ref="userServiceable" />
+		<property name="appName" value="${APPLICATION_NAME}" />
+		<property name="instanceName" value="${INSTANCE_NAME}" />
+	</bean>
+
+	<bean id="defaultAuthenticationProvider"
+		class="com.calypso.infra.authentication.providers.CalypsoAuthenticationProvider">
+		<property name="userDetailsService" ref="userDetailsService" />
+		<property name="passwordEncoder" ref="passwordEncoder" />
+	</bean>
+
+	<bean id="passwordEncoder"
+		class="com.calypso.authentication.providers.encoding.CalypsoPasswordEncoder" />
+
+	<!-- Comment out the defaultAuthenticationProvider and passwordEncoder above, uncomment 
+	     the bean below and provide the correct ldapURL to enable the MSAD authentication support.
+	
+	<bean id="defaultAuthenticationProvider"
+		class="com.calypso.infra.authentication.providers.CalypsoMSADAuthenticationProvider" init-method="init">
+		<property name="ldapURL" value="ldap://localhost:389" />
+		<property name="userDetailsService" ref="userDetailsService" />
+		<property name="authenticationService" ref="authServiceImpl" />
+	</bean>
+
+	 -->
+
+	<bean id="userDetailsService"
+		class="com.calypso.authentication.userdetails.CalypsoUserDetailsService">
+		<property name="userSQL" ref="userSQL" />
+	</bean>
+	
+	<!--  Need to handle publishing of events by AuthService  -->
+	<bean name="messagingInit" depends-on="loginHandler" class="com.calypso.authentication.eventhandler.AuthServiceInitializer" init-method="init">
+		<constructor-arg ref="messagingConnectionFactory"/>
+		<constructor-arg ref="defaultAuthEventHandler"/>
+		<constructor-arg ref="authServiceImpl"/>
+		<constructor-arg value="${waitTimeBetweenBuildingPSConnection}"/>
+		<constructor-arg ref="tokenManager"></constructor-arg>
+	</bean>
+
+
+	<!-- Scheduling related config need to clean up -->
+	
+	<bean id="tokenCleanupTask" class="com.calypso.infra.authentication.service.TokenCleanupTask" >
+		<property name="tokenManager" ref="tokenManager" />
+	</bean>
+	 <bean id="tokenCleanupTrigger" class="com.calypso.infra.scheduling.CalypsoSimpleTriggerBean">	
+	    <property name="jobDetail">
+	    	<bean  parent="methodInvokingJob">
+			  <property name="targetObject" ref="tokenCleanupTask" />
+			  <property name="targetMethod" value="run" />
+			</bean>	
+		</property>
+	    <property name="startDelay" value="5000" />
+	   	<property name="repeatInterval">
+			<bean parent="exprEvaluator" >
+			  <property name="arguments">
+			    <list>
+			      <value>(${SESSIONTIMEOUT_INMINUTES})*60000</value>
+			    </list>
+			  </property>
+			</bean>
+	    </property>
+	</bean>
+	
+	<!--<bean parent="schedulingFactory">
+	    <property name="triggers">
+	        <list>
+	             <ref bean="tokenRenewTrigger" />
+	            <ref bean="tokenCleanupTrigger" />
+	        </list>
+	    </property>
+    </bean>-->
+    
+	<bean id="applicationShutdownHandler" class="com.calypso.infra.starter.AuthenticationServerShutdownHandler">
+		<property name="tokenManager" ref="tokenManager" />
+	</bean>
+
+	<bean name="servicePortBean" class="com.calypso.infra.rmi.ServicePortBean">
+		<property name="servicePortRangeStart" value="${AUTH_SERVICE_PORT_RANGE_START}" />
+	</bean>
+	
+	<bean name="tokenFactory" class="com.calypso.infra.authentication.service.TokenFactory" depends-on="loginHandler" init-method="init"/>
+		
+</beans>

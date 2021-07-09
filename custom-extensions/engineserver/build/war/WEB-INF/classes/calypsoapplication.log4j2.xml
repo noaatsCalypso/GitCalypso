@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Default configuration for non-engine applications -->
+<Configuration xmlns:xi="http://www.w3.org/2001/XInclude" status="WARN">
+  <!-- Definition of properties: mapping mandatory with Log4J2 -->
+  <xi:include href="fragments/properties.log4j2.xml"/>
+  <!-- Definition of appenders --> 
+  <Appenders>
+     <xi:include href="fragments/appender_alert_APPENDER.xml"/>
+     <xi:include href="fragments/appender_default.xml"/>
+     <xi:include href="fragments/appender_ElasticSearch_APPENDER.xml"/>
+     <xi:include href="fragments/appender_event.xml"/>
+     <xi:include href="fragments/appender_ThirdParty.xml"/>
+  </Appenders>
+  <Loggers>
+    <Logger name="com.calypso" level="ERROR" additivity="false">
+	  <AppenderRef ref="default"/>
+	  <AppenderRef ref="event"/>
+	  <AppenderRef ref="ElasticSearch_APPENDER"/>
+    </Logger>
+    <Logger name="com.calypso.alert" level="INFO" additivity="false">
+	  <AppenderRef ref="alert_APPENDER"/>
+    </Logger>
+    <!-- Logger for tracing CalypsoCache activity -->
+    <Logger name="com.calypso.tk.util.cache.CalypsoCacheTracer" level="debug" additivity="false">
+      <AppenderRef ref="default"/>
+    </Logger>
+    <!-- Definition of the root looger -->
+    <xi:include href="fragments/root_logger.log4j2.xml"/>
+  </Loggers>
+</Configuration>

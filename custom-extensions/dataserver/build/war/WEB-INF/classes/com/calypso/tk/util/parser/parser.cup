@@ -1,0 +1,212 @@
+/*
+ *
+ * Copyright (c) 2000 by Calypso Technology, Inc.
+ * 595 Market Street, Suite 1980, San Francisco, CA  94105, U.S.A.
+ * All rights reserved.
+ *
+ * This software is the confidential and proprietary information
+ * of Calypso Technology, Inc. ("Confidential Information").  You
+ * shall not disclose such Confidential Information and shall use
+ * it only in accordance with the terms of the license agreement
+ * you entered into with Calypso Technology.
+ *
+ */
+// NOPMD: this is generated
+
+package com.calypso.tk.util.parser;
+
+import java.util.*;
+import java_cup.runtime.*;
+
+parser code {: public void report_error(String message, Object info) {} :}
+
+/* Terminals (tokens returned by the scanner). */
+terminal         PLUS, MINUS, MULT, DIV, COMMA, LITERAL;
+terminal         UMINUS, LARRAY, RARRAY, LPAREN, RPAREN, POW;
+terminal	     COS, SIN, TAN, ACOS, ASIN, ATAN;
+terminal	     EXP, LOG, ABS, SQRT;
+terminal	     CEIL, ROUND, FLOOR, SUM, ROUNDRATE, ROUNDFRAC;
+terminal	     LT, GT, LTE, GTE, EQ, NEQ;
+terminal	     AND, OR, ROUNDUP, ROUNDDOWN, CHANGEOF;
+terminal	     QMARK, SEMIC, MAX, MIN;
+terminal	     GAUSS, GAUSS2D, NORMALD;
+terminal Expression  NUMBER, VAR, CONST;
+
+/* Non terminals */
+non terminal Expression     expr;
+non terminal Vector         arglist;
+non terminal ExprBoolean    boolexpr;
+
+/* Precedences */
+precedence left  AND, OR;
+precedence left  PLUS, MINUS;
+precedence left  MULT, DIV;
+precedence right POW;
+precedence left  UMINUS, LPAREN;
+
+/* The grammar */
+expr      ::= expr:e1 PLUS expr:e2
+	      {: RESULT = new ExprBinaryOp(e1, Symbols.PLUS, e2); :}
+	      |
+              expr:e1 MINUS expr:e2
+	      {: RESULT = new ExprBinaryOp(e1, Symbols.MINUS, e2); :}
+	      |
+              expr:e1 MULT expr:e2
+	      {: RESULT = new ExprBinaryOp(e1, Symbols.MULT, e2); :}
+	      |
+              expr:e1 DIV expr:e2
+	      {: RESULT = new ExprBinaryOp(e1, Symbols.DIV, e2); :}
+	      |
+	      expr:e1 POW expr:e2
+	      {: RESULT = new ExprBinaryOp(e1, Symbols.POW, e2); :}
+	      |
+              NUMBER:n
+	      {: RESULT = n; :}
+	      |
+	      VAR:x
+	      {: RESULT = x; :}
+	      |
+	      CONST:k
+	      {: RESULT = k; :}
+	      |
+              MINUS expr:e
+	      {: RESULT = new ExprUnaryOp(Symbols.UMINUS, e); :}
+	      %prec UMINUS
+	      |
+	      COS expr:e RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.COS, e); :}
+	      |
+	      SIN expr:e RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.SIN, e); :}
+	      |
+	      TAN expr:e RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.TAN, e); :}
+	      |
+	      ACOS expr:e RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.ACOS, e); :}
+	      |
+	      ASIN expr:e RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.ASIN, e); :}
+	      |
+	      ATAN expr:e RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.ATAN, e); :}
+	      |
+	      EXP expr:e RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.EXP, e); :}
+	      |
+	      LOG expr:e RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.LOG, e); :}
+	      |
+	      ABS expr:e RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.ABS, e); :}
+	      |
+	      SQRT expr:e RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.SQRT, e); :}
+	      |
+	      CEIL expr:e RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.CEIL, e); :}
+	      |
+	      ROUND expr:e RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.ROUND, e); :}
+	      |
+	      ROUND expr:e COMMA NUMBER:x RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.ROUND, e); ((ExprUnaryOp)RESULT).setRoundPrec(x.getValue()); :}
+	      |
+	      ROUND expr:e COMMA MINUS NUMBER:x RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.ROUND, e); ((ExprUnaryOp)RESULT).setRoundPrec(-x.getValue()); :}
+	      |
+	      ROUNDRATE expr:e COMMA NUMBER:x RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.ROUNDRATE, e); ((ExprUnaryOp)RESULT).setRoundPrec(x.getValue()); :}
+	      |
+	      ROUNDFRAC expr:e COMMA NUMBER:x RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.ROUNDFRAC, e); ((ExprUnaryOp)RESULT).setRoundPrec(x.getValue()); :}
+	      |
+	      FLOOR expr:e RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.FLOOR, e); :}
+	      |
+	      MAX expr:e1 COMMA expr:e2 RPAREN
+	      {: RESULT = new ExprBinaryOp(e1, Symbols.MAX, e2); :}
+	      |
+	      MIN expr:e1 COMMA expr:e2 RPAREN
+	      {: RESULT = new ExprBinaryOp(e1, Symbols.MIN, e2); :}
+	      |
+	      MAX expr:e1 RPAREN
+	      {: RESULT = new ExprBinaryOp(e1, Symbols.MAX, true); :}
+	      |
+	      MIN expr:e1 RPAREN
+	      {: RESULT = new ExprBinaryOp(e1, Symbols.MIN, true); :}
+	      |
+	      GAUSS expr:e RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.GAUSS, e); :}
+	      |
+	      NORMALD expr:e RPAREN
+	      {: RESULT = new ExprUnaryOp(Symbols.NORMALD, e); :}
+	      |
+	      GAUSS2D expr:e1 COMMA expr:e2 COMMA expr:rho RPAREN
+	      {: RESULT = new ExprBinaryOp(e1, Symbols.GAUSS2D, e2); ((ExprBinaryOp)RESULT).setRho(rho.getValue()); :}
+	      |
+	      VAR:f LPAREN arglist:l RPAREN
+	      {: RESULT = new ExprFunctionPointer(((ExprVariable)f).getName(), l); :}
+	      |
+	      VAR:f LPAREN RPAREN
+	      {: RESULT = new ExprFunctionPointer(((ExprVariable)f).getName(), new Vector()); :}
+	      |
+              LPAREN expr:e RPAREN
+	      {: RESULT = e; :}
+	      |
+	      LPAREN boolexpr:cond RPAREN QMARK expr:e1 SEMIC expr:e2
+	      {: RESULT = new ExprCondition(cond, e1, e2); :}
+	      |
+	      SUM expr:e1 COMMA expr:e2 COMMA expr:e3 RPAREN
+	      {: RESULT = new ExprSum(e1, e2, e3); :}
+	      |
+	      SUM expr:e1 COMMA expr:e2 COMMA expr:e3 COMMA VAR:f RPAREN
+	      {: RESULT = new ExprSum(e1, e2, e3, ((ExprVariable)f).getName()); :}
+	      |
+	      VAR:f LARRAY expr:e1 RARRAY
+	      {: RESULT = new ExprArrayOf(f, e1); :}
+	      |
+	      ROUNDUP expr:e1 COMMA expr:e2 RPAREN
+	      {: RESULT = new ExprRound(e1, e2, true); :}
+	      |
+	      ROUNDDOWN expr:e1 COMMA expr:e2 RPAREN
+	      {: RESULT = new ExprRound(e1, e2, false); :}
+	      |
+	      CHANGEOF expr:e1 COMMA expr:e2 RPAREN
+	      {: RESULT = new ExprChangeOf(e1, e2); :}
+	      ;
+
+arglist   ::= expr:e
+	      {: RESULT = new Vector(); RESULT.addElement(e); :}
+	      |
+	      arglist:l COMMA expr:e
+	      {: RESULT = l; RESULT.addElement(e); :}
+	      ;
+
+boolexpr  ::= expr:e1 GT expr:e2
+	      {: RESULT = new ExprBoolean(e1, Symbols.GT, e2); :}
+	      |
+	      expr:e1 LT expr:e2
+	      {: RESULT = new ExprBoolean(e1, Symbols.LT, e2); :}
+	      |
+	      expr:e1 GTE expr:e2
+	      {: RESULT = new ExprBoolean(e1, Symbols.GTE, e2); :}
+	      |
+	      expr:e1 LTE expr:e2
+	      {: RESULT = new ExprBoolean(e1, Symbols.LTE, e2); :}
+	      |
+	      expr:e1 EQ expr:e2
+	      {: RESULT = new ExprBoolean(e1, Symbols.EQ, e2); :}
+	      |
+	      expr:e1 NEQ expr:e2
+	      {: RESULT = new ExprBoolean(e1, Symbols.NEQ, e2); :}
+	      |
+	      boolexpr:b1 AND boolexpr:b2
+	      {: RESULT = new ExprBoolean(b1, Symbols.AND, b2); :}
+	      |
+	      boolexpr:b1 OR boolexpr:b2
+	      {: RESULT = new ExprBoolean(b1, Symbols.OR, b2); :}
+	      |
+	      LPAREN boolexpr:b RPAREN
+	      {: RESULT = b; :}
+	      ;

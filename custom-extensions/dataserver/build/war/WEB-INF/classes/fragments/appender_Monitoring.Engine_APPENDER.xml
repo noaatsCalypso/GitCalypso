@@ -1,0 +1,10 @@
+<RollingFile fileName="${calypsoUserDir}${fileSeparator}${calypsoExtendedAppName}_${calypsoEnvName}_ENGINE_${calypsoVersion}.log" filePattern="${calypsoUserDir}${fileSeparator}${calypsoExtendedAppName}_${calypsoEnvName}_ENGINE_${calypsoVersion}.log.%i.zip" name="Monitoring.Engine_APPENDER">
+  <PatternLayout header="START_TIME|EXECUTION_TIME|ENGINE_NAME|EVENT_ID|EVENT_DESCRIPTION|LOG_CATEGORY%n" pattern="%m${sys:calypso.logdelim}%c%n"></PatternLayout>
+  <Policies>
+    <OnStartupTriggeringPolicy/>
+    <SizeBasedTriggeringPolicy size="${sys:calypso.maxfilesize}"/>
+  
+          <!-- TODO: unit (allowed B (default), KB, MB, GB) -->
+        </Policies>
+  <DefaultRolloverStrategy max="${sys:calypso.maxbackupindex}" min="1"/>
+</RollingFile>

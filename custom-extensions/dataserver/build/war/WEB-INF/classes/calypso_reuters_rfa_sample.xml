@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE preferences SYSTEM 'http://java.sun.com/dtd/preferences.dtd'>
+<preferences EXTERNAL_XML_VERSION="1.0">
+	<root type="user">
+		<map/>
+		<node name="com">
+			<map/>
+			<node name="reuters">
+				<map/>
+				<node name="rfa"><!-- com/reuters/rfa defines the RFA configuration root node -->
+					<map/>
+					<node name="NAMESPACE"><!-- The value in this placeholder should be provided in the Calypso Feed Configuration Window against the corresponding property (i.e. NAMESPACE) -->
+						<map/>
+						<node name="Connections">
+							<map/>
+							<node name="CONNECTION_NAME">
+								<map>
+									<entry key="connectionType" value="SSL"/><!-- set to RSSL for rfa jar (v8.x and above) else set to SSL for lower versions -->
+									<entry key="userName" value="dacsUserName" /><!-- this user name will be used for DACS entitlement check on TREP, if it is enabled -->
+									<entry key="dacs_CbeEnabled" value="false"/><!-- set to true only when native DACS is needed -->
+									<entry key="dacs_GenerateLocks" value="false"/><!-- set to true only when native DACS is needed -->
+									<entry key="dacs_SbePubEnabled" value="false"/><!-- set to true only when native DACS is needed -->
+									<entry key="dacs_SbeSubEnabled" value="false"/><!-- set to true only when native DACS is needed -->
+									<entry key="downloadDataDict" value="true"/>
+									<entry key="ipcTraceFlags" value="0"/><!-- Enables detailed event and data tracing -->
+									<entry key="portNumber" value="port0"/><!-- Refers to the rmds_ssl_sink port on P2PS server.  Port number used when connecting to each server in the serverList.  Optionally used when port is not specified in the serverList. -->
+									<entry key="serverList" value="host1:port1,host2:port2,host3"/><!-- A comma-separated list of host names and/or IP addresses used to configure redundant source applications. -->
+									<entry key="serviceList" value="Service_Name1"/><!-- A comma delimited string that lists services available.  Refer to one of the services defined under "Services" below. -->
+									<entry key="logFileName" value="%h/Calypso/RFA_userLog%u.log" /><!-- Filename pattern telling the RFA Java where the log should be written. -->
+									<entry key="tunnelingType" value="None" /><!-- Defines type of tunneling for this connection. Possible values are None, http and https -->
+									<entry key="tunnelingHTTPproxy" value="false" /><!-- set to true to enable connecting to an HTTP Proxy -->
+									<entry key="tunnelingHTTPproxyHostName" value="" /><!-- Defines the hostname of the HTTP Proxy -->
+									<entry key="tunnelingHTTPproxyPort" value="" /><!-- Defines the port number of the HTTP Proxy -->
+									<!-- Additional parameters for tunneling type 'https'-->
+									<entry key="tunnelingKeystoreType" value="" /><!-- Defines the type of Java keystore -->
+									<entry key="tunnelingKeystoreFile" value="" /><!-- Defines the filename of Java keystore -->
+									<entry key="tunnelingKeystorePassword" value="" /><!-- Password used when creating the Java keystaore. It may be empty. -->
+									<entry key="tunnelingSecurityProvider" value="" /><!-- Specifies the Java Security Provider to use -->
+									<entry key="tunnelingKeyManagerAlgorithm" value="" /><!-- Specifies the key management alogorithm used -->
+									<entry key="tunnelingTrustManagerAlgorithm" value="" /><!-- Specifies the trust management algorithm used -->
+								</map>
+							</node>
+						</node>
+						<node name="Sessions">
+							<map/>
+							<node name="SESSION_NAME"><!-- The value in this placeholder should be provided in the Calypso Feed Configuration Window against the corresponding property (i.e. SESSION_NAME) -->
+								<map>
+									<entry key="connectionList" value="NAMESPACE::CONNECTION_NAME"/><!-- The value for this key must follow the convention as given.  NAMESPACE and CONNECTION_NAME must match the values provided above, in the corresponding placeholders. -->
+								</map>
+							</node>
+						</node>
+						<!-- The OpenDACSConfig node is mandatory only for clients who are using the OpenDACS functionality of the RFA module -->
+						<node name="OpenDACSConfig">
+							<map/>
+							<node name="globals">
+								<map>
+									<entry key="usageLoggingType" value="ALWAYS"/>
+									<entry key="appId" value="301"/>
+									<entry key="defaultSite" value="site_1"/><!-- Refer to one of the sites defined under "sites" below.  If Open DACS site is not defined in Calypso user attributes, the site written in this field will be used for entitlement checking -->
+								</map>
+							</node>
+							<node name="sites"><!-- Reuters Open DACS Site in Calypso user attribute must match one of the site names (e.g. site_1, site_2) below. -->
+								<map/>
+								<node name="site_1">
+									<map>
+										<entry key="dacs.daemon" value="hostname_1:port"/><!--  Host name and port of a remote DACS daemon to be connected (Port number refers to the dacs_lib port on the Reuters DACS Server). -->
+										<entry key="dacs.forceUserNameLowerCase" value="true"/><!-- Convert the user name to lower case before sending it to DACS. -->
+										<entry key="dacs.retry-rate" value="10"/><!-- Time (in seconds) at which the DACS Library will attempt to reconnect to the DACS Daemon. -->
+									</map>
+								</node>
+								<node name="site_2">
+									<map>
+										<entry key="dacs.daemon" value="hostname_2:port"/>
+										<entry key="dacs.forceUserNameLowerCase" value="true"/>
+									</map>
+								</node>
+							</node>
+						</node>
+					</node>
+					<node name="_System">
+						<map/>
+						<node name="Services">
+							<map/>
+							<node name="Service_Name1"><!-- _System/Services/<Service_Name> describes each concrete service in the RFA system -->
+								<map>
+									<entry key="dataFormat" value="1"/>
+									<entry key="feedName" value="Feed_Name"/><!-- The actual name of the concrete service received from the network -->
+								</map>
+								<node name="QoS">
+									<map>
+										<entry key="rate" value="0"/>
+										<entry key="timeliness" value="0"/>
+									</map>
+								</node>
+							</node>
+						</node>
+					</node>
+				</node>
+			</node>
+		</node>
+	</root>
+</preferences>

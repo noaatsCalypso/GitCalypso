@@ -1,0 +1,28 @@
+<calypso-logging>
+    <aggregation>
+        <!-- enabling or disabling aggregation -->
+        <enabled>true</enabled>
+        <!-- Defining internal cache capacity (default=10000 entries) -->
+        <cache-capacity>10000</cache-capacity>
+        <!-- Defining the aggregation timeout (default 2 minutes) -->
+        <!-- units can be "milliseconds", "seconds", "minutes" -->
+        <timeout units="seconds">60</timeout>
+        <!-- Defining the aggregation factor (here publishing 1 of 100 similar items) -->
+        <factor>100</factor>
+    </aggregation>
+    <stacktrace-pruning>
+        <!-- enabling or disabling aggregation -->
+        <enabled>true</enabled>
+        <!-- Forcing the 2 first items of each stack-trace block to be visible -->
+        <!-- default is 1 -->
+        <forced-visibility-depth>2</forced-visibility-depth>
+        <!-- The packages to be blacklisted -->
+        <blacklist>
+            <package>org.junit</package>
+            <package>sun</package>
+            <package>org.jboss</package>
+            <package>org.wildfly</package>
+            <package>java</package>
+        </blacklist>
+    </stacktrace-pruning>
+</calypso-logging>

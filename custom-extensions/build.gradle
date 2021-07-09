@@ -1,0 +1,138 @@
+apply plugin : "java"
+
+if(!project.hasProperty("calypsoHome")) {
+    ext.calypsoHome=project.file("..").canonicalPath
+}
+
+task createDistributionStructure(type: GradleBuild) {
+	description "Creates distribution structure of custom-projects"
+	group "Build"
+
+	startParameter = project.gradle.startParameter.newInstance()
+	startParameter.setTaskNames(["createDistributionStructure"])	
+	buildFile = project.file("custom-projects/build.gradle")
+	
+	doFirst {
+		logger.lifecycle("Creating distribution structure for custom-projects")			
+	}	
+}
+
+task copyCPC(type: Copy, dependsOn: [createDistributionStructure]) {
+	from project.projectDir, {
+		include "*.cpc"
+	}	
+	into file("custom-projects/build/tmp/distribution/")
+}
+
+
+task distribution(type: GradleBuild, dependsOn: [createDistributionStructure,copyCPC]) {
+	description "Creates a distribution of custom-projects"
+	group "Build"
+
+	startParameter = project.gradle.startParameter.newInstance()
+	startParameter.setTaskNames(["distribution"])
+	buildFile = project.file("custom-projects/build.gradle")
+	doFirst {
+		logger.lifecycle("Creating distribution for custom-projects")
+	}
+}
+
+task createCup(type: Zip, dependsOn: [distribution]) {
+	description "Creates a cup file containing the distribution of a custom-projects."
+	group "Build"
+	ext.cpcDirectory = "custom-projects/build/tmp/cpc"
+
+	baseName = "custom-projects"
+	appendix = "distribution"
+	extension = "cup"
+	from "custom-projects/build/distributions"
+        from cpcDirectory, {
+		into ".metadata"
+	}
+	doFirst {
+		logger.lifecycle("Creating cpc file for cup")
+		def cdfName = new XmlParser().parse(project.fileTree("custom-projects/build/tmp/distribution/.metadata/distributions").getSingleFile()).attributes().get("name")
+
+		def commandXml = new XmlParser().parseText("<commands/>")
+		commandXml.appendNode("install", ["name":cdfName])
+
+		File cpcFile = project.file(cpcDirectory + "/MODULE.cpc")
+		cpcFile.parentFile.mkdirs()
+		def cpcWriter = new FileWriter(cpcFile)
+		def printWriter = new PrintWriter(cpcWriter)
+		printWriter.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n")
+
+		def printer = new XmlNodePrinter(printWriter)
+		printer.preserveWhitespace = true
+		printer.print(commandXml)
+
+		logger.lifecycle("Creating cup file distribution for custom-projects")
+	}
+
+	doLast {
+		logger.lifecycle("Created cup file at " + archivePath.absolutePath)
+	}
+}
+
+task deploy(type: GradleBuild, dependsOn: [createCup]) {
+	description "Deploys custom-projects artifacts into the current installation"
+	group "Deploy"
+
+	buildFile="${project.calypsoHome}/tools/calypso-patcher/wrapper.gradle"
+	dir="${project.calypsoHome}/tools/calypso-patcher"
+	tasks=["patch"]
+	startParameter.setLogLevel LogLevel.QUIET
+	startParameter.addInitScript project.file("${project.calypsoHome}/tools/calypso-patcher/init.gradle")
+
+	doFirst {
+		// Check to see if the distribution and cup exists
+		if(project.tasks.createCup.source.isEmpty()) {
+			logger.lifecycle "No files have been included in custom-projects, skipping deployment task"
+			throw new StopExecutionException("No files have been included in custom-projects, skipping deployment task")
+		}
+
+		// Find selected distribution name
+
+		startParameter.setProjectProperties(["patchFile": project.tasks.createCup.archivePath.absolutePath,
+						"force": "true",
+						"unattended": "true"])
+
+		// Put all passed in project properties in the patcher wrapper
+		startParameter.getProjectProperties().putAll(project.gradle.startParameter.projectProperties)
+	}
+}
+
+task eclipse(type: GradleBuild) {
+	description "Creates eclipse configuration files"
+	group "IDE"
+
+	startParameter = project.gradle.startParameter.newInstance()
+	startParameter.setTaskNames(["eclipse"])
+	buildFile = project.file("custom-projects/build.gradle")
+	doFirst {
+		logger.lifecycle("Creating eclipse configuration files")
+	}	
+}
+
+task idea(type: GradleBuild) {
+	description "Generates IDEA project files (IML, IPR, IWS)"
+	group "IDE"
+
+	startParameter = project.gradle.startParameter.newInstance()
+	startParameter.setTaskNames(["idea"])
+	buildFile = project.file("custom-projects/build.gradle")
+	doFirst {
+		logger.lifecycle("Creating idea configuration files")
+	}
+}
+
+task cleanEclipse(type: GradleBuild) {
+	startParameter = project.gradle.startParameter.newInstance()
+	startParameter.setTaskNames(["clean"])
+	buildFile = project.file("custom-projects/build.gradle")
+	
+	doFirst {
+		logger.lifecycle("Removing eclipse project files")
+	}
+}
+

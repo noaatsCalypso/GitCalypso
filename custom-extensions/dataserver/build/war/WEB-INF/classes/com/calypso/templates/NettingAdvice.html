@@ -1,0 +1,63 @@
+<!--calypso>
+if (|TRANSFER_ID| != "")
+    include "message_header.html";
+</calypso-->
+
+<br>
+<br>
+<p class='header1'>Netting Payment Advice</p>
+
+<p class="header2">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" || |MESSAGE_SUBACTION|== "CANCEL")
+	inline  "Amend and Cancel the previous advice";
+</calypso-->
+</p>
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND")
+	set MESSAGE_ACTION = "amend";
+else if (|MESSAGE_SUBACTION|== "CANCEL")
+	set MESSAGE_ACTION = "cancel";
+else if (|MESSAGE_SUBACTION|== "NONE")
+	set MESSAGE_ACTION = "confirm";
+</calypso-->
+<br>
+<br>
+
+<p>We |MESSAGE_ACTION| the following Payment Advice. For value date, |TRANSFER_VALUEDATE|, we will
+<b> |TRANSFER_PAYRECEIVE| |TRANSFER_SETTLEMENTCCY| |TRANSFER_SETTLEMENTAMOUNT|</b> </p>
+
+<!--calypso>
+if (|TRANSFER_NETTINGTYPE| == "CounterParty") {
+    inline "<p class=header2>Netting Details</p>";
+    inline "
+	<table>
+	<tr>
+    <th>Product Type</th>
+	<th>Trade Id</th>
+    <th>Transfer Type</th>
+    <th>Ccy</th>
+    <th>Amount</th>
+	</tr>";
+    iterator ("NettedTransferCashflow") {
+        inline "
+        <tr>
+		<td class='smallfont'>|CASHFLOW_PRODUCTTYPE|</td>
+		<td class='smallfont'>|CASHFLOW_TRADEID|</td>
+        <td class='smallfont'>|CASHFLOW_TYPE|</td>
+        <td class='smallfont'>|CASHFLOW_CURRENCY|</td>		
+        <td class='smallfont'>|CASHFLOW_AMOUNT|</td>
+		</tr>";
+    }
+    inline "</table>";
+}
+</calypso-->
+
+<p>Please refer to our reference number |TRANSFER_ID| in your correspondence concerning this
+payment.</p>
+
+
+<!--calypso>
+if (|TRANSFER_ID| != "")
+    include "confirm_footer.html";
+</calypso-->

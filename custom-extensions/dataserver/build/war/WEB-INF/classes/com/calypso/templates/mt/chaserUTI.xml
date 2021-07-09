@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<FieldTemplate>
+	<Switch condition="|USE_SWIFT_SENDER_BIC|">
+		<Target condition="True">MESSAGE FROM |MESSAGE_SENDERADDRESSCODE| |SENDER_FULL_NAME|
+		</Target>
+	</Switch>
+    <Switch condition="ANY">
+	        <Target condition="(.)*">ATTN: 
+REGARDING YOUR CONFIRMATION REF |MSG_ATTR_CntpRef|
+YOU ARE THE UTI GENERATING PARTY
+FOR THIS TRADE BUT WE ARE NOT INFORMED
+ABOUT YOUR UTI NUMBER.
+UNTIL YOU CONTACT US WE HAVE
+GENERATED THE UTI INFORMED IN
+OUR CONFIRMATION.
+PLEASE AMEND YOUR RECORDS ACCORDINGLY.
+ 
+REGARDS 
+|SENDER_FULL_NAME|</Target>
+	</Switch>
+</FieldTemplate>

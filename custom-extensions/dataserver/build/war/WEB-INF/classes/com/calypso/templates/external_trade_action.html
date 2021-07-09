@@ -1,0 +1,77 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header_ET.html";
+</calypso-->
+
+<p class="header2">Trade Information</p>
+<table>
+ <tr>
+  <td width="30%">Processing Organization</td>
+  <td>|TRADE_PROCESSING_ORGANIZATION|</td>
+ </tr>
+  <tr>
+  <td>Trade Date</td>
+  <td>|TRADE_DATE|</td>
+ </tr>
+ <tr>
+  <td>CounterParty</td>
+  <td>|TRADE_COUNTERPARTY|</td>
+ </tr>
+ </table>
+
+<br /><br />
+
+<p class="header2">Product Details</p>
+
+                                                   
+<br>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+  include "ExternalTrade_inc.html";
+</calypso-->
+
+<br />
+
+<p class="header2">Trade Event Actions</p>
+
+<table>
+<tr>
+    <th class="smallfont">Event Action</th>
+    <th class="smallfont">Agreement Date</th>
+    <th class="smallfont">Effective Date</th>
+    <th class="smallfont">Action Amount</th>
+    <th class="smallfont">Currency</th>
+    <th class="smallfont">Termination Reason</th>
+    <th class="smallfont">Termination Type</th>
+    <th class="smallfont">FFCP Option</th>
+    <th class="smallfont">Novation Type</th>
+    <th class="smallfont">Transferor</th>
+    <th class="smallfont">Transferee</th>
+</tr>
+<!--calypso>
+iterator ( "LatestExternalTradeAction" )
+    inline "
+<tr>
+    <td>|EVENT_ACTION|</td>
+    <td>|AGREEMENT_DATE|</td>
+    <td>|EFFECTIVE_DATE|</td>
+    <td>|AMOUNT|</td>
+    <td>|CURRENCY|</td>
+    <td>|TERMINATION_REASON|</td>
+    <td>|TERMINATION_TYPE|</td>
+    <td>|FFCP_OPTION|</td>
+    <td>|NOVATION_TYPE|</td>
+    <td>|TRANSFEROR|</td>
+    <td>|TRANSFEREE|</td>
+</tr>
+    ";
+</calypso-->
+</table>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

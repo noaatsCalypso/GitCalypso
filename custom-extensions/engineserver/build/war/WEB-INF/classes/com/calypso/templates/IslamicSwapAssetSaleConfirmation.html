@@ -1,0 +1,179 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+
+<!--calypso>
+if ((|PRODUCT_TYPE| == "IslamicSwap")&& (|RECEIVELEG_TYPE| == "Float"))
+   set TRANSACTION_TYPE = "FLPR";
+else
+   set TRANSACTION_TYPE = "FPR";
+</calypso-->
+
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" || |MESSAGE_SUBACTION|== "CANCEL")
+	inline  "Amend and Cancel";
+</calypso-->
+</p>
+
+<p class="header1"> Murabaha |TRANSACTION_TYPE| Asset Sale Confirmation</p>
+
+
+<br>
+<p>Our Transaction Reference: |TRADE_ID|</p>
+<br>
+
+
+<p class="indented">
+<br>
+<p>Dear:</p>
+<br>
+<p class="indented">
+The purpose of this 
+<!--calypso>
+if ( Message.getAddressMethod() == "FAX" )
+    inline "facsimile";
+else
+    inline "letter";
+</calypso-->
+(this &quot;Murabaha |TRANSACTION_TYPE| Asset Sale Confirmation&quot) is to confirm the
+terms and conditions of the Murabaha (or sale) transaction entered into between us (the, or this,
+&quot;Transaction&quot) pursuant to the terms of a DFT Terms Agreement evidence by a DFT Terms
+confirmation dated |TRADE_DATE|(the &quot;|TRANSACTION_TYPE|&quot).
+</p
+
+<p class="indented">
+The definitions and provisions contained in the |TRANSACTION_TYPE| DFT Terms confirmation are incorporated
+in this Murabaha |TRANSACTION_TYPE| Asset Confirmation.
+</p>
+
+
+<p class="indented">
+This Murabaha |TRANSACTION_TYPE| Asset Confirmation constitutes a Confirmation as referred to in, and
+supplements, form part of, and is subject to, the |LA_ISDA_AGREEMENT| (ISDA/IIFM Tahawwut
+Master Agreement) dated as of |LA_AGREEMENT_DATE|, as amended and supplemented from time to time (the &quot;Agreement&quot;), 
+between you and us. All provisions contained in the Agreement govern this Murabaha |TRANSACTION_TYPE| Asset Confirmaiton.
+</p>
+
+
+<p class="indented">
+Pursuant to the DFT Terms Agreement evidenced by the DFT Terms confirmation, the
+Seller has delivered to the Buyer an Exercise Notice dated |XFER_ATTR_ExerciseDate| (the "Exercise Notice") and the Buyer
+has granted the Seller a Buyer's Undertaking under which the Buyer has undertaken to purchase from
+the Seller the |TRANSACTION_TYPE| Assets specified in the Exercise Notice (the "Relevant Shari'ah Compliant
+ Assets").
+ </p>
+
+<p class="indented">
+The terms of this Transaction are as follow:
+</p>
+
+<p class="indented">
+1. Sale of Relevant Shari'ah Compliant Assets
+</p>
+<br>
+<p class="indented">
+1.1 The Seller hereby sells to the Buyer and the Buyer hereby purchases the Relevant Shari'ah
+Compliant Assets for delivery to the Buyer on the Purchase Date and for payment by the Buyer of the
+Payment Amount (together with any applicable VAT) on the Payment Date, into the account number
+of the Seller, such Payment Amount being comprised of Cost Price plus Profit, where:
+</p>
+
+<br>
+
+
+<TABLE CELLSPACING=1 WIDTH=623>
+
+<TR><TD WIDTH='39%' VALIGN="MIDDLE">
+<p>Cost Price</TD>
+<TD WIDTH='59%' VALIGN="MIDDLE">
+<p>|SWAP_NOTIONAL|</TD>
+</TR>
+
+<TR><TD WIDTH='39%' VALIGN="MIDDLE">
+<p>Profit</TD>
+<TD WIDTH='59%' VALIGN="MIDDLE">
+<p>|TRANSFER_SETTLEMENTCCY| |TRANSFER_SETTLEMENTAMOUNT|</TD>
+</TR>
+
+
+<TABLE CELLSPACING=1 WIDTH=623>
+
+<p class="indented">
+1.2 Details of the Relevant Shari'ah Compliant Assets are as follows:
+</p>
+<TABLE CELLSPACING=1 WIDTH=623>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Assets</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|RECEIVELEG_UNDERLYING_NAME|</TD>
+</TR>
+
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Asset Quantity</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|RECEIVELEG_UNDERLYING_QUANTITY|</TD>
+</TR>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Asset Price</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|RECEIVELEG_UNDERLYING_PRICE|</TD>
+</TR>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Asset Value</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|RECEIVELEG_UNDERLYING_VALUE|</TD>
+</TR>
+<TABLE CELLSPACING=1 WIDTH=623>
+
+<p class="indented">
+1.3 The Seller represents and warrants to the Buyer that the title to the Relevant Shari'ah Compliant
+Assets is free and clear of any encumbrance whether or not created by or through or as a result of any
+action or inaction of the Seller and the Buyer acknowledges that the Relevant Shari'ah Compliant
+Assets are being sold on an "as is where is" basis without any other representation or warranty
+whatsoever whether arising by implication, by law or otherwise and without prejudice to the generality
+of the foregoing, without any warranties as to condition, merchantability, fitness for purpose, and
+adequacy of use of whatever nature from the Seller. Each of the Seller and the Buyer acknowledges that
+any such representation or warranty is expressly excluded to the extent permitted by law. The United
+Nations Convention on Contracts for the International Sale of Goods shall not apply to this Transaction.
+</p>
+<p class="indented">
+To accept the Seller's offer to enter into the Murabaha Sale of the |TRANSACTION_TYPE|
+DFT Terms confirmation, the Buyer may telephone or email the Seller at:
+</p>
+
+<TABLE CELLSPACING=1 WIDTH=623>
+
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Telephone</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|SENDER_PHONE|</TD>
+</TR>
+
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Email</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|SENDER_CODE_EMAIL|</TD>
+</TR>
+<TR><TD WIDTH='39%' VALIGN='MIDDLE'>
+<p>Attention</TD>
+<TD WIDTH='59%' VALIGN='MIDDLE'>
+<p>|SENDER_CONTACT_NAME|</TD>
+</TR>
+
+<TABLE CELLSPACING=1 WIDTH=623>
+
+<p class="indented">
+In addition, please confirm that the foregoing correctly sets forth the terms of the Transaction by
+executing this Confirmation and the enclosed duplicate enclosed for that purpose and returning one
+executed original to us as required by the |TRANSACTION_TYPE| DFT Terms confirmation.
+</p>
+
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

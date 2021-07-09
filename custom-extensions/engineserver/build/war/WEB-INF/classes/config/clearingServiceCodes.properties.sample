@@ -1,0 +1,23 @@
+# 
+# Clearing Service Codes
+#
+# Arbitrary codes that identify Clearing Services. Initially, a clearing service
+# would identify a product, or family of products (product type) that are usually
+# margined together, although in the future this definition could change
+#
+# Current supported syntax is
+#
+#   <CCP>.<Product type>=<Service Code>
+#
+# where
+#
+#   <CCP> : CCP LE short name
+#
+# Uncomment and redefine, if needed
+#  
+#CME.IRD=01
+#CME.NDF=02
+#LCH.IRD=03
+#ICE\u0020CLEAR\u0020\CREDIT.CDX=04
+#ICE\u0020CLEAR\u0020\EUROPE.CDX=05
+

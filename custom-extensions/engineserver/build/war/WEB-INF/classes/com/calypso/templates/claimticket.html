@@ -1,0 +1,121 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+<p class="header2">Trade Information</p>
+<table>
+ <tr>
+  <td width="30%">Processing Organization</td>
+  <td>|TRADE_PROCESSING_ORGANIZATION|</td>
+ </tr>
+ <tr>
+  <td>Input Date</td>
+  <td>|TRADE_ENTEREDDATE|</td>
+ </tr>
+ <tr>
+  <td>Trade Date</td>
+  <td>|TRADE_DATE|</td>
+ </tr>
+ <tr>
+  <td>Settle Date</td>
+  <td>|SETTLE_DATE|</td>
+ </tr>
+ <tr>
+  <td>CounterParty</td>
+  <td>|TRADE_COUNTERPARTY|</td>
+ </tr>
+ <tr>
+  <td>Trade Status</td>
+  <td>|TRADE_STATUS|</td>
+ </tr>
+ <tr>
+  <td>Currency</td>
+  <td>|TRADE_CURRENCY|</td>
+ </tr>
+</table>
+
+<br /><br />
+
+<p class="header2">Product Details</p>
+<table>
+ <tr>
+  <td>Product Type</td>
+  <td>|PRODUCT_TYPE|</td>
+ </tr>
+ <tr>
+  <td>Product Description</td>
+  <td>|PRODUCT_DESCRIPTION|</td>
+ </tr>
+ <tr>
+  <td>Currency</td>
+  <td>|PRODUCT_CURRENCY|</td>
+ </tr>
+</table>
+                                                   
+<br>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0 && |PRODUCT_TYPE| == "EquityLinkedSwap") {
+  inline "<!-- FIXME: workout a way to allow dynamic includes to avoid hard links-->";
+  inline "<br><b>|PRODUCT_TYPE| specific keywords</b><br>";
+  include "EquityLinkedSwap_inc.html";
+} else if (Trade.getLongId() > 0 && |PRODUCT_TYPE| == "EquityStructuredOption") {
+  inline "<br><b>|PRODUCT_TYPE| specific keywords</b><br>";
+  include "EquityStructuredOption_inc.html";
+} else if (Trade.getLongId() > 0 && |PRODUCT_TYPE| == "ExternalTrade") {
+  include "ExternalTrade_inc.html";
+}
+
+if (Trade.isTerminated() == true || Trade.isTransfered() == true) {
+  include "termination_trade_keywords_inc.html";
+}
+</calypso-->
+
+<br /><br />
+
+<p class="header">Trade Flows</p>
+
+<table width='100%'>
+<tr>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Date</th>
+    <th>Reset Date</th>
+    <th>Day Count</th>
+    <th>Days</th>
+    <th>Rate</th>
+    <th>Spread</th>
+    <th>Amount</th>
+    <th>Currency</th>
+    <th>Notional</th>
+    <th>Type</th>
+</tr>
+<!--calypso>
+iterator ( "CashFlow" )
+    inline "
+<tr>
+    <td>|CASHFLOW_DATE|</td>
+    <td>|CASHFLOW_AMOUNT|</td>
+    <td>|CASHFLOW_CURRENCY|</td>
+    <td>|CASHFLOW_NOTIONAL|</td>
+    <td>|CASHFLOW_TYPE|</td>
+</tr>
+    ";
+</calypso-->
+</table>
+
+<br /><br />
+
+
+
+<h3>This is to certify that this claim in respect of the above CA has been approved by our BO
+Please confirm the amount and proceed to the payment of |TRADE_SETTLEMENT_AMOUNT| |TRADE_SETTLECCY|</h3>
+
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

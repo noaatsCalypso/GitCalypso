@@ -1,0 +1,57 @@
+<template encoding="UTF-8">
+    <contents>
+        <element name="SISMSG" hideifempty="true">
+            <contents>
+                <element name="SEGCAB">
+                    <contents>
+                        <element name="CD_LEGADO">
+                            <contents>
+                                <report>
+                                    <column>CD_LEGADO</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="CD_STATUS">
+                            <contents>
+                                <report>
+                                    <column>CD_STATUS</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="TP_MANUT">
+                            <contents>
+                                <report>
+                                    <column>TP_MANUT</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="NR_OPERACAO">
+                            <contents>
+                                <report>
+                                    <column>MESSAGE_ID</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="FL_DEB_CRED">
+                            <condition>
+                                <expression>getReportValue("FL_DEB_CRED") != null</expression>
+                            </condition>
+                            <contents>
+                                <report>
+                                    <column>FL_DEB_CRED</column>
+                                </report>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element>
+                    <contents>
+                        <include>
+                            <path>CAM0005.xml</path>
+                        </include>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

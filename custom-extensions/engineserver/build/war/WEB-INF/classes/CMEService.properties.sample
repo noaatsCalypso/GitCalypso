@@ -1,0 +1,37 @@
+uploadSource=CME
+# The Value of this attribute indicates from where the message originates; do not change the value of this attribute in the files supplied by Calypso. 
+# This value is used by the translator to identify the mappings in the Calypso Mapping Window.
+
+uploadFormat=
+# The Value of this attribute indicates the format; do not change the value of this attribute in the files supplied by Calypso. 
+# This value is used by the Data Uploader framework to identify the translator to translate the message. It is valid for this attribute to be left empty in certain cases.
+
+ExternalURIPrefix=upload
+# The Value of this attribute specifies the config name [Spring bean] to use from the file datauploaderExternalURI.xml This XML file contains Messaging definitions to
+# connect to the CCP using JMS, IBM MQ, etc. The config name used in this XML file to create the Messaging definitions is the value to be assigned to this attribute. 
+
+ExternalIncomingURI=queue.cme.calypso
+# Please change the value of this attribute to the queue name from which the CCP sends the message to the Clearing Member.
+
+ExternalOutgoingURI=queue.calypso.cme
+# Please change the value of this attribute to the queue name which the CCP expects the acknowledgement
+
+BusinessFlow=FCM
+# The Value of this attribute indicates whether the Credit Check (Collateral and LimitCheck) is part of the Clearing Member Solution. The Possible values are 
+# a) FCM (No Head Room Check) b) HRC (Head Room Check is used for Risk). Note HRC will be replaced by FCMHRC in the next release (to allow for CCPHRC flows) This value is important as
+# the Trade workflow is different for these solutions. And based on this, the the Update manager listens to different Trade Status Messages
+
+Features=AuditOn,AutoRejectOn
+# AuditOn specifies that a copy of all Incoming & Outgoing messages should be saved as BO Messages. When set to AuditOff, in cases where an error or warning occurs during
+# message processing, the BO Message will still be saved. Please do not change this without advice from Calypso
+# AutoRejectOff/AutoRejectOn is an advanced feature and Calypso advice should be sought before changing this value.
+
+#DaysForBackloadedTrade=0
+#The value of this parameter indicates the number of days. This property is used to determine if a trade is a backloading trade, if the difference in the days between the trade date of the incoming message and today is greater than the value of this parameter, the trade will be treated as backloading trade.
+
+ExternalIncomingURIParams=
+# The value should be left empty unless a value is provided by Calypso out of the box. This attribute is mandatory to be present even if its value is empty
+# If 'logMessages' property is true, then transformation files will be generated.
+# By default 'messageFileDir' is an optional field. If messageFileDir is not provided then transformation file will be generated in CALYPSO_HOME\source_name(CME) folder
+logMessages=true
+#messageFileDir=<UserDefinedLocation>

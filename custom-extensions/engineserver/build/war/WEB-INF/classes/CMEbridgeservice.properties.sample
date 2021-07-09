@@ -1,0 +1,99 @@
+##########################################						#
+#                                         						#
+# FpML to calypsoUploadDocument XSLT file 						#
+# If not set, system will try to look at XSLT class specified  	#
+# If XSLT class also not found, system will check the default 	#
+# XSLT file/class by naming convention							#								
+##########################################						#
+
+REQUESTCONSENT_SWAP_BRIDGE_XSLT=CME_REQUESTCONSENT_SWAP.xslt
+CLEARINGCONFIRMED_SWAP_BRIDGE_XSLT=CME_CLEARINGCONFIRMED_SWAP.xslt
+CLEARINGREFUSED_SWAP_BRIDGE_XSLT=CME_CLEARINGREFUSED_SWAP.xslt
+REQUESTCONSENT_FRA_BRIDGE_XSLT=CME_REQUESTCONSENT_FRA.xslt
+CLEARINGCONFIRMED_FRA_BRIDGE_XSLT=CME_CLEARINGCONFIRMED_FRA.xslt
+CLEARINGREFUSED_FRA_BRIDGE_XSLT=CME_CLEARINGREFUSED_FRA.xslt
+REQUESTCONSENT_FXNDF_BRIDGE_XSLT=CME_FXNDF_REQUESTCONSENT_FXNDF.xslt
+CLEARINGCONFIRMED_FXNDF_BRIDGE_XSLT=CME_FXNDF_CLEARINGCONFIRMED_FXNDF.xslt
+
+
+KEYWORDS_REQUESTCONSENT_SWAP_XSLT=
+KEYWORDS_REQUESTCONSENT_FRA_XSLT=
+KEYWORDS_REQUESTCONSENT_FXNDF_XSLT
+
+KEYWORDS_CLEARINGCONFIRMED_SWAP_XSLT=
+KEYWORDS_CLEARINGCONFIRMED_FRA_XSLT=
+KEYWORDS_CLEARINGCONFIRMED_FXNDF_XSLT
+###########################################
+#                                         #
+# FpML to calypsoUploadDocument XSLT class#
+#   									  #	
+###########################################
+
+REQUESTCONSENT_SWAP_BRIDGE_XSLT_CLASS=
+CLEARINGCONFIRMED_SWAP_BRIDGE_XSLT_CLASS=
+CLEARINGREFUSED_SWAP_BRIDGE_XSLT_CLASS=
+REQUESTCONSENT_FXNDF_BRIDGE_XSLT_CLASS=
+REQUESTCONSENT_FRA_BRIDGE_XSLT_CLASS=
+CLEARINGCONFIRMED_FRA_BRIDGE_XSLT_CLASS=
+CLEARINGREFUSED_FRA_BRIDGE_XSLT_CLASS=
+
+# RuleHandler/Transformer classes
+
+SWAPTION_TRANSFORMER_CLASS=com.calypso.tk.bo.bridge.transformer.CMESWAPTIONMappingTransformer
+SWAP_TRANSFORMER_CLASS=com.calypso.tk.bo.bridge.transformer.CMESWAPMappingTransformer
+FRA_TRANSFORMER_CLASS=com.calypso.tk.bo.bridge.transformer.CMEFRAMappingTransformer
+FXNDF_TRANSFORMER_CLASS=com.calypso.tk.bo.bridge.transformer.CME_FXNDFFXNDFMappingTransformer
+RULE_HANDLER=com.calypso.tk.bo.bridge.handler.CMERuleHandler
+
+KEYWORDS_CLEARINGCONFIRMED_SWAP_XSLT=
+KEYWORDS_CLEARINGREFUSED_SWAP_XSLT=
+KEYWORDS_REQUESTCONSENT_SWAP_XSLT=
+KEYWORDS_CLEARINGCONFIRMED_FRA_XSLT=
+KEYWORDS_CLEARINGREFUSED_FRA_XSLT=
+KEYWORDS_REQUESTCONSENT_FRA_XSLT=
+KEYWORDS_REQUESTCONSENT_FXNDF_XSLT=
+KEYWORDS_REQUESTCONSENT_SWAP_XSLT=
+#bridge.counterparty.attribute.identifier=BLOOMBERG_IFIX_CPTY
+bridge.counterparty.attribute.identifier=CME_CPTY
+
+#bridge.book.attribute.identifier=BLOOMBERG_IFIX_BOOK
+bridge.book.attribute.identifier=CME_ACCOUNT
+
+###########################################
+#										  #
+# Bridge original, work in progrress and  #
+# final transformation directory of the   #
+# incoming message.						  #
+# If this property is not set,            #
+# <CALYPSO_HOME>/<Connector>              #
+# folder will be created and used 	      #	
+###########################################
+#file.bridge.log.directory=C:\\CME
+#file.bridge.log.directory=C:\\BLOOMBERG_IFIX
+
+###########################################
+#										  #
+# BRIDGE BO Messages default sender and   #
+# receiver.                               #
+#                                         #
+###########################################
+BridgeMessageDefaultSender=CME
+BridgeMessageDefaultReceiver=Calypso
+
+###########################################
+#										  #
+# Configure no. of thread for             #
+# BRIDGE_MESSAGE_LOADER Scheduled Task    #
+#                                         #
+###########################################
+ThreadPoolSize=5
+
+###########################################
+#										  #
+# Message validator list                  #
+# A list of xslt files located in         #
+# /resources/calypso/mapping/             #
+# for incoming message validation by      #
+#  message structure					  #
+###########################################
+ValidatorFiles=exchange_feed_cme_clearing_confirmed_check_fpml5.0.xslt,exchange_feed_cme_request_consent_check_fpml5.0.xslt,exchange_feed_cme_clearing_refused_check_fpml5.0.xslt,exchange_feed_cme_request_consent_check_fixml.xslt

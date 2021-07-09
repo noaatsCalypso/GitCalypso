@@ -1,0 +1,1331 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database xmlns="http://www.calypso.com/schemer">
+
+    <table name="domain_values" xmlns="">
+        <!-- Domain Name-->
+        <row cat="CLS Demo">
+            <column name="name">domainName</column>
+            <column name="value">clsRecoTolerance.CALYPARSMCB</column>
+            <column name="description"/>
+        </row>
+        <row cat="CLS Demo">
+            <column name="name">domainName</column>
+            <column name="value">clsSinglePmtTolerance.CALYPARSMCB</column>
+            <column name="description"/>
+        </row>
+        <!-- MQ Demo -->
+        <row cat="CLS Demo">
+            <column name="name">clsParameters</column>
+            <column name="value">demoNoMQ</column>
+            <column name="description"/>
+        </row>
+        <row cat="CLS Demo">
+            <column name="name">clsParameters</column>
+            <column name="value">ResponderDN</column>
+            <column name="description">cn:clsqa,cn:corexml,ou:clsqa,o:clsbus33,o:swift</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="name">clsParameters</column>
+            <column name="value">SenderBic</column>
+            <column name="description">VENDPRP1XXX</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="name">clsParameters</column>
+            <column name="value">SenderBic</column>
+            <column name="description"/>
+        </row>
+        <row cat="CLS Demo">
+            <column name="name">clsParameters</column>
+            <column name="value">cutoffTime</column>
+            <column name="description">2300</column>
+        </row>
+        <!-- Book Demo -->
+        <row cat="CLS Demo">
+            <column name="name">clsParameters</column>
+            <column name="value">allegedBook.CALYPARSMCB</column>
+            <column name="description">CLS_CONTROL_BRANCH_BOOK</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="name">clsParameters</column>
+            <column name="value">ioswapBook.CALYPARSMCB</column>
+            <column name="description">CLS_CONTROL_BRANCH_BOOK</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="name">clsParameters</column>
+            <column name="value">payInCallBook.CALYPARSMCB</column>
+            <column name="description"/>
+        </row>
+        <row cat="CLS Demo">
+            <column name="name">clsParameters</column>
+            <column name="value">payInOutBook.CALYPARSMCB</column>
+            <column name="description">CLS_TRANSFERAGENT_BOOK</column>
+        </row>
+        <!-- -->
+        <row cat="CLS Demo">
+            <column name="name">clsRecoTolerance.CALYPARSMCB</column>
+            <column name="value">ANY</column>
+            <column name="description">1000</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="name">clsSinglePmtTolerance.CALYPARSMCB</column>
+            <column name="value">ANY</column>
+            <column name="description">1000</column>
+        </row>
+    </table>
+
+    <table name="legal_entity" xmlns="">
+        <row cat="CLS Demo">
+            <column name="legal_entity_id">2</column>
+            <column name="short_name">CALYPARSMCB</column>
+            <column name="long_name">Calypso Paris Control Branch</column>
+            <column name="parent_le_id">0</column>
+            <column name="classification">1</column>
+            <column name="comments">Control Branch CLS Demo</column>
+            <column name="le_status">Enabled</column>
+            <column name="country">FRANCE</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="legal_entity_id">3</column>
+            <column name="short_name">CALYPARSMSB</column>
+            <column name="long_name">Calypso Paris Submission Branch</column>
+            <column name="parent_le_id">0</column>
+            <column name="classification">1</column>
+            <column name="comments">Control Branch CLS Demo</column>
+            <column name="le_status">Enabled</column>
+            <column name="country">FRANCE</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="legal_entity_id">4</column>
+            <column name="short_name">CLS CPTY DEMO</column>
+            <column name="long_name">CLS Counterparty Demo</column>
+            <column name="parent_le_id">0</column>
+            <column name="classification">1</column>
+            <column name="comments">CLS Counterparty Demo</column>
+            <column name="le_status">Enabled</column>
+            <column name="country">FRANCE</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="legal_entity_id">5</column>
+            <column name="short_name">CLS_BONY</column>
+            <column name="long_name">CLS_BONY</column>
+            <column name="parent_le_id">0</column>
+            <column name="classification">1</column>
+            <column name="comments">CLS Agent Bony</column>
+            <column name="le_status">Enabled</column>
+            <column name="country">FRANCE</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="legal_entity_id">6</column>
+            <column name="short_name">CLS BANK</column>
+            <column name="long_name">CLS BANK</column>
+            <column name="parent_le_id">0</column>
+            <column name="classification">1</column>
+            <column name="comments">CLS Bank</column>
+            <column name="le_status">Enabled</column>
+            <column name="country">UNITED KINGDOM</column>
+        </row>
+    </table>
+
+    <table name="legal_entity_role" xmlns="">
+        <!-- CALYPARSMCB -->
+        <row cat="CLS Demo">
+            <column name="legal_entity_id">2</column>
+            <column name="role_name">ProcessingOrg</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="legal_entity_id">2</column>
+            <column name="role_name">Agent</column>
+        </row>
+        <!-- CALYPARSMSB -->
+        <row cat="CLS Demo">
+            <column name="legal_entity_id">3</column>
+            <column name="role_name">ProcessingOrg</column>
+        </row>
+        <!-- CLS CPTY DEMO -->
+        <row cat="CLS Demo">
+            <column name="legal_entity_id">4</column>
+            <column name="role_name">CounterParty</column>
+        </row>
+        <!-- BONY -->
+        <row cat="CLS Demo">
+            <column name="legal_entity_id">5</column>
+            <column name="role_name">ProcessingOrg</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="legal_entity_id">5</column>
+            <column name="role_name">Agent</column>
+        </row>
+        <!-- CLS BANK -->
+        <row cat="CLS Demo">
+            <column name="legal_entity_id">6</column>
+            <column name="role_name">ProcessingOrg</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="legal_entity_id">6</column>
+            <column name="role_name">Agent</column>
+        </row>
+    </table>
+
+    <table name="le_attribute" xmlns="">
+        <!-- CALYPARSMCB -->
+        <row cat="CLS Demo">
+            <column name="le_attribute_id">1</column>
+            <column name="legal_entity_id">2</column>
+            <column name="processing_org_id">0</column>
+            <column name="legal_entity_role">ALL</column>
+            <column name="attribute_type">CLSPartyId</column>
+            <column name="attribute_value">VEND FOU</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="le_attribute_id">2</column>
+            <column name="legal_entity_id">2</column>
+            <column name="processing_org_id">0</column>
+            <column name="legal_entity_role">ALL</column>
+            <column name="attribute_type">CLSBranchId</column>
+            <column name="attribute_value">VEND FOU</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="le_attribute_id">3</column>
+            <column name="legal_entity_id">2</column>
+            <column name="processing_org_id">0</column>
+            <column name="legal_entity_role">ALL</column>
+            <column name="attribute_type">REUTERS</column>
+            <column name="attribute_value">VEND FOU</column>
+        </row>
+        <!-- CALYPARSMSB -->
+        <row cat="CLS Demo">
+            <column name="le_attribute_id">4</column>
+            <column name="legal_entity_id">3</column>
+            <column name="processing_org_id">0</column>
+            <column name="legal_entity_role">ALL</column>
+            <column name="attribute_type">CLSControlBranch</column>
+            <column name="attribute_value">CALYPARSMCB</column>
+        </row>
+        <!-- CLS CPTY DEMO -->
+        <row cat="CLS Demo">
+            <column name="le_attribute_id">5</column>
+            <column name="legal_entity_id">4</column>
+            <column name="processing_org_id">2</column>
+            <column name="legal_entity_role">ALL</column>
+            <column name="attribute_type">CLS Best Practice</column>
+            <column name="attribute_value">YES</column>
+        </row>
+        <!-- BONY -->
+        <row cat="CLS Demo">
+            <column name="le_attribute_id">6</column>
+            <column name="legal_entity_id">5</column>
+            <column name="processing_org_id">0</column>
+            <column name="legal_entity_role">Agent</column>
+            <column name="attribute_type">CLSMT298Format</column>
+            <column name="attribute_value">tagged</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="le_attribute_id">7</column>
+            <column name="legal_entity_id">5</column>
+            <column name="processing_org_id">0</column>
+            <column name="legal_entity_role">Agent</column>
+            <column name="attribute_type">CLSMT298Trigger</column>
+            <column name="attribute_value">revised</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="le_attribute_id">8</column>
+            <column name="legal_entity_id">5</column>
+            <column name="processing_org_id">0</column>
+            <column name="legal_entity_role">Agent</column>
+            <column name="attribute_type">CLSMT202TimeTag72</column>
+            <column name="attribute_value">true</column>
+        </row>
+    </table>
+
+    <table name="le_legal_agreement" xmlns="">
+        <!-- CALYPARSMCB / CLS CPTY DEMO -->
+        <row cat="CLS Demo">
+            <column name="legal_agreement_id">1</column>
+            <column name="processing_org_id">2</column>
+            <column name="legal_entity_id">4</column>
+            <column name="product_family">FX</column>
+            <column name="agreement_type">CLS</column>
+            <column name="agreement_date">2010-01-01 00:00:00.0</column>
+            <column name="agreement_status">SIGNED</column>
+            <column name="product_type">ALL</column>
+            <column name="ext_le_role">Guarantor</column>
+            <column name="is_master_b">1</column>
+            <column name="haircut_quote_type">DirtyPrice</column>
+            <column name="haircut_type">Regular</column>
+            <column name="callable_by">NONE</column>
+            <column name="allocation_type">Over - Price Adjustment</column>
+        </row>
+    </table>
+
+    <table name="le_contact" xmlns="">
+        <!-- CALYPARSMCB -->
+        <row cat="CLS Demo">
+            <column name="contact_id">1</column>
+            <column name="legal_entity_id">2</column>
+            <column name="legal_entity_role">ALL</column>
+            <column name="contact_type">Default</column>
+            <column name="po_id">0</column>
+            <column name="city">Paris</column>
+            <column name="zipcode">75008</column>
+            <column name="country">FRANCE</column>
+            <column name="swift">VENDPRP1XXX</column>
+            <column name="product_list">ALL</column>
+        </row>
+        <!-- CALYPARSMSB -->
+        <row cat="CLS Demo">
+            <column name="contact_id">5</column>
+            <column name="legal_entity_id">3</column>
+            <column name="legal_entity_role">ALL</column>
+            <column name="contact_type">Default</column>
+            <column name="po_id">0</column>
+            <column name="city">Paris</column>
+            <column name="zipcode">75008</column>
+            <column name="country">FRANCE</column>
+            <column name="swift">VENDPRP1XXX</column>
+            <column name="product_list">ALL</column>
+        </row>
+        <!-- CLS CPTY DEMO -->
+        <row cat="CLS Demo">
+            <column name="contact_id">6</column>
+            <column name="legal_entity_id">4</column>
+            <column name="legal_entity_role">ALL</column>
+            <column name="contact_type">Default</column>
+            <column name="po_id">0</column>
+            <column name="city">Paris</column>
+            <column name="zipcode">75008</column>
+            <column name="country">FRANCE</column>
+            <column name="swift">CPTYDEMOXXX</column>
+            <column name="product_list">ALL</column>
+        </row>
+        <!-- BONY -->
+        <row cat="CLS Demo">
+            <column name="contact_id">7</column>
+            <column name="legal_entity_id">5</column>
+            <column name="legal_entity_role">ALL</column>
+            <column name="contact_type">Default</column>
+            <column name="po_id">0</column>
+            <column name="city">Paris</column>
+            <column name="zipcode">75008</column>
+            <column name="country">FRANCE</column>
+            <column name="swift">BONYFRPPXXX</column>
+            <column name="product_list">ALL</column>
+        </row>
+        <!-- CLS BANK-->
+        <row cat="CLS Demo">
+            <column name="contact_id">8</column>
+            <column name="legal_entity_id">6</column>
+            <column name="legal_entity_role">ALL</column>
+            <column name="contact_type">Default</column>
+            <column name="po_id">0</column>
+            <column name="city">Paris</column>
+            <column name="zipcode">75008</column>
+            <column name="country">FRANCE</column>
+            <column name="swift">CLSBUS30XXX</column>
+            <column name="product_list">ALL</column>
+        </row>
+    </table>
+
+    <table name="le_settle_delivery" xmlns="">
+        <!-- CALYPARSMCB -->
+        <row cat="CLS Demo">
+            <column name="sdi_id">10</column>
+            <column name="sdi_type">0</column>
+            <column name="name">SWIFT/BONY/CALYPARSMCB EUR NOSTRO ACCOUNT AT BONY</column>
+            <column name="agent_le">5</column>
+            <column name="agent_contact">Default</column>
+            <column name="agent_account">CALYPARSMCB EUR NOSTRO ACCOUNT AT BONY</column>
+            <column name="message_to_agent">1</column>
+            <column name="int_le">0</column>
+            <column name="message_to_int">0</column>
+            <column name="bene_le">2</column>
+            <column name="bene_contact">Default</column>
+            <column name="gl_account_id">72</column>
+            <column name="direct_b">0</column>
+            <column name="comments">CLS Demo</column>
+            <column name="method">SWIFT</column>
+            <column name="currency_list">EUR</column>
+            <column name="product_list">TransferAgent</column>
+            <column name="le_role">ProcessingOrg</column>
+            <column name="preferred_b">1</column>
+            <column name="pay_receive">0</column>
+            <column name="priority">0</column>
+            <column name="reference">10</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sdi_id">9</column>
+            <column name="sdi_type">0</column>
+            <column name="name">SWIFT/BONY/CALYPARSMCB AUD NOSTRO ACCOUNT AT BONY</column>
+            <column name="agent_le">5</column>
+            <column name="agent_contact">Default</column>
+            <column name="agent_account">CALYPARSMCB AUD NOSTRO ACCOUNT AT BONY</column>
+            <column name="message_to_agent">1</column>
+            <column name="int_le">0</column>
+            <column name="message_to_int">0</column>
+            <column name="bene_le">2</column>
+            <column name="bene_contact">Default</column>
+            <column name="gl_account_id">72</column>
+            <column name="direct_b">0</column>
+            <column name="comments">CLS Demo</column>
+            <column name="method">SWIFT</column>
+            <column name="currency_list">AUD</column>
+            <column name="product_list">TransferAgent</column>
+            <column name="le_role">ProcessingOrg</column>
+            <column name="preferred_b">1</column>
+            <column name="pay_receive">0</column>
+            <column name="priority">0</column>
+            <column name="reference">9</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sdi_id">8</column>
+            <column name="sdi_type">0</column>
+            <column name="name">SWIFT/BONY/CALYPARSMCB JPY NOSTRO ACCOUNT AT BONY</column>
+            <column name="agent_le">5</column>
+            <column name="agent_contact">Default</column>
+            <column name="agent_account">CALYPARSMCB JPY NOSTRO ACCOUNT AT BONY</column>
+            <column name="message_to_agent">1</column>
+            <column name="int_le">0</column>
+            <column name="message_to_int">0</column>
+            <column name="bene_le">2</column>
+            <column name="bene_contact">Default</column>
+            <column name="gl_account_id">72</column>
+            <column name="direct_b">0</column>
+            <column name="comments">CLS Demo</column>
+            <column name="method">SWIFT</column>
+            <column name="currency_list">JPY</column>
+            <column name="product_list">TransferAgent</column>
+            <column name="le_role">ProcessingOrg</column>
+            <column name="preferred_b">1</column>
+            <column name="pay_receive">0</column>
+            <column name="priority">0</column>
+            <column name="reference">8</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sdi_id">5</column>
+            <column name="sdi_type">0</column>
+            <column name="name">SWIFT/BONY/CALYPARSMCB GBP NOSTRO ACCOUNT AT BONY</column>
+            <column name="agent_le">5</column>
+            <column name="agent_contact">Default</column>
+            <column name="agent_account">CALYPARSMCB GBP NOSTRO ACCOUNT AT BONY</column>
+            <column name="message_to_agent">1</column>
+            <column name="int_le">0</column>
+            <column name="message_to_int">0</column>
+            <column name="bene_le">2</column>
+            <column name="bene_contact">Default</column>
+            <column name="gl_account_id">72</column>
+            <column name="direct_b">0</column>
+            <column name="comments">CLS Demo</column>
+            <column name="method">SWIFT</column>
+            <column name="currency_list">GBP</column>
+            <column name="product_list">TransferAgent</column>
+            <column name="le_role">ProcessingOrg</column>
+            <column name="preferred_b">1</column>
+            <column name="pay_receive">0</column>
+            <column name="priority">0</column>
+            <column name="reference">5</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sdi_id">2</column>
+            <column name="sdi_type">0</column>
+            <column name="name">SWIFT/BONY/CALYPARSMCB USD NOSTRO ACCOUNT AT BONY</column>
+            <column name="agent_le">5</column>
+            <column name="agent_contact">Default</column>
+            <column name="agent_account">CALYPARSMCB USD NOSTRO ACCOUNT AT BONY</column>
+            <column name="message_to_agent">1</column>
+            <column name="int_le">0</column>
+            <column name="message_to_int">0</column>
+            <column name="bene_le">2</column>
+            <column name="bene_contact">Default</column>
+            <column name="gl_account_id">72</column>
+            <column name="direct_b">0</column>
+            <column name="comments">CLS Demo</column>
+            <column name="method">SWIFT</column>
+            <column name="currency_list">USD</column>
+            <column name="product_list">TransferAgent</column>
+            <column name="le_role">ProcessingOrg</column>
+            <column name="preferred_b">1</column>
+            <column name="pay_receive">0</column>
+            <column name="priority">0</column>
+            <column name="reference">2</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sdi_id">4</column>
+            <column name="sdi_type">1</column>
+            <column name="name">SWIFT/CLS BANK</column>
+            <column name="agent_le">6</column>
+            <column name="agent_contact">Default</column>
+            <column name="agent_account"></column>
+            <column name="message_to_agent">1</column>
+            <column name="int_le">0</column>
+            <column name="message_to_int">0</column>
+            <column name="bene_le">2</column>
+            <column name="bene_contact">Default</column>
+            <column name="gl_account_id">77</column>
+            <column name="direct_b">0</column>
+            <column name="comments">CLS Demo</column>
+            <column name="method">SWIFT</column>
+            <column name="currency_list">AUD,CAD,CHF,DKK,EUR,GBP,HKD,ILS,JPY,KRW,MXN,NOK,NZD,SEK,SGD,USD,ZAR</column>
+            <column name="product_list">TransferAgent</column>
+            <column name="le_role">ProcessingOrg</column>
+            <column name="preferred_b">1</column>
+            <column name="pay_receive">0</column>
+            <column name="priority">0</column>
+            <column name="reference">4</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sdi_id">3</column>
+            <column name="sdi_type">0</column>
+            <column name="name">SWIFT/BONY</column>
+            <column name="agent_le">5</column>
+            <column name="agent_contact">Default</column>
+            <column name="agent_account"></column>
+            <column name="message_to_agent">1</column>
+            <column name="int_le">0</column>
+            <column name="message_to_int">0</column>
+            <column name="bene_le">2</column>
+            <column name="bene_contact">Default</column>
+            <column name="gl_account_id">72</column>
+            <column name="direct_b">0</column>
+            <column name="comments">CLS Demo</column>
+            <column name="method">SWIFT</column>
+            <column name="currency_list">AUD,CAD,CHF,DKK,EUR,GBP,HKD,ILS,JPY,KRW,MXN,NOK,NZD,SEK,SGD,USD,ZAR</column>
+            <column name="product_list">FX,FXForward,FXNDF,FXSwap</column>
+            <column name="le_role">ProcessingOrg</column>
+            <column name="preferred_b">1</column>
+            <column name="pay_receive">0</column>
+            <column name="priority">0</column>
+            <column name="reference">3</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sdi_id">1</column>
+            <column name="sdi_type">0</column>
+            <column name="name">CLS/CLS BANK</column>
+            <column name="agent_le">6</column>
+            <column name="agent_contact">Default</column>
+            <column name="agent_account"/>
+            <column name="message_to_agent">1</column>
+            <column name="int_le">0</column>
+            <column name="message_to_int">0</column>
+            <column name="bene_le">2</column>
+            <column name="bene_contact">Default</column>
+            <column name="gl_account_id">77</column>
+            <column name="direct_b">0</column>
+            <column name="comments">CLS Demo</column>
+            <column name="method">CLS</column>
+            <column name="currency_list">AUD,CAD,CHF,DKK,EUR,GBP,HKD,ILS,JPY,KRW,MXN,NOK,NZD,SEK,SGD,USD,ZAR</column>
+            <column name="product_list">FX,FXForward,FXNDF,FXSwap</column>
+            <column name="le_role">ProcessingOrg</column>
+            <column name="preferred_b">1</column>
+            <column name="pay_receive">0</column>
+            <column name="priority">0</column>
+            <column name="reference">1</column>
+        </row>
+        <!-- CALYPARSMCB sweeping -->
+        <row cat="CLS Demo">
+            <column name="sdi_id">11</column>
+            <column name="sdi_type">0</column>
+            <column name="name">SWIFT/CREDILIONPAR/CALYPARSMCB EUR NOSTRO ACCOUNT AT CREDILIONPAR</column>
+            <column name="agent_le">61</column>
+            <column name="agent_contact">Default</column>
+            <column name="agent_account">CALYPARSMCB EUR NOSTRO ACCOUNT AT CREDILIONPAR</column>
+            <column name="message_to_agent">1</column>
+            <column name="int_le">0</column>
+            <column name="message_to_int">0</column>
+            <column name="bene_le">2</column>
+            <column name="bene_contact">Default</column>
+            <column name="gl_account_id">75</column>
+            <column name="direct_b">0</column>
+            <column name="comments">CLS Demo</column>
+            <column name="method">SWIFT</column>
+            <column name="currency_list">EUR</column>
+            <column name="product_list">TransferAgent</column>
+            <column name="le_role">ProcessingOrg</column>
+            <column name="preferred_b">1</column>
+            <column name="pay_receive">0</column>
+            <column name="priority">0</column>
+            <column name="reference">11</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sdi_id">12</column>
+            <column name="sdi_type">0</column>
+            <column name="name">SWIFT/SOCGEN/CALYPARSMCB AUD ACCOUNT AT SOCGEN</column>
+            <column name="agent_le">204</column>
+            <column name="agent_contact">Default</column>
+            <column name="agent_account">CALYPARSMCB AUD ACCOUNT AT SOCGEN</column>
+            <column name="message_to_agent">1</column>
+            <column name="int_le">0</column>
+            <column name="message_to_int">0</column>
+            <column name="bene_le">2</column>
+            <column name="bene_contact">Default</column>
+            <column name="gl_account_id">76</column>
+            <column name="direct_b">0</column>
+            <column name="comments">CLS Demo</column>
+            <column name="method">SWIFT</column>
+            <column name="currency_list">AUD</column>
+            <column name="product_list">TransferAgent</column>
+            <column name="le_role">ProcessingOrg</column>
+            <column name="preferred_b">1</column>
+            <column name="pay_receive">0</column>
+            <column name="priority">0</column>
+            <column name="reference">12</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sdi_id">13</column>
+            <column name="sdi_type">0</column>
+            <column name="name">SWIFT/TOKYO/CALYPARSMCB JPY ACCOUNT AT TOKYO</column>
+            <column name="agent_le">320</column>
+            <column name="agent_contact">Default</column>
+            <column name="agent_account">CALYPARSMCB JPY ACCOUNT AT TOKYO</column>
+            <column name="message_to_agent">1</column>
+            <column name="int_le">0</column>
+            <column name="message_to_int">0</column>
+            <column name="bene_le">2</column>
+            <column name="bene_contact">Default</column>
+            <column name="gl_account_id">73</column>
+            <column name="direct_b">0</column>
+            <column name="comments">CLS Demo</column>
+            <column name="method">SWIFT</column>
+            <column name="currency_list">JPY</column>
+            <column name="product_list">TransferAgent</column>
+            <column name="le_role">ProcessingOrg</column>
+            <column name="preferred_b">1</column>
+            <column name="pay_receive">0</column>
+            <column name="priority">0</column>
+            <column name="reference">13</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sdi_id">14</column>
+            <column name="sdi_type">0</column>
+            <column name="name">SWIFT/CITIBANK LDN/CALYPARSMCB GBP ACCOUNT AT CITIBANK LDN</column>
+            <column name="agent_le">403</column>
+            <column name="agent_contact">Default</column>
+            <column name="agent_account">CALYPARSMCB GBP ACCOUNT AT CITIBANK LDN</column>
+            <column name="message_to_agent">1</column>
+            <column name="int_le">0</column>
+            <column name="message_to_int">0</column>
+            <column name="bene_le">2</column>
+            <column name="bene_contact">Default</column>
+            <column name="gl_account_id">74</column>
+            <column name="direct_b">0</column>
+            <column name="comments">CLS Demo</column>
+            <column name="method">SWIFT</column>
+            <column name="currency_list">GBP</column>
+            <column name="product_list">TransferAgent</column>
+            <column name="le_role">ProcessingOrg</column>
+            <column name="preferred_b">1</column>
+            <column name="pay_receive">0</column>
+            <column name="priority">0</column>
+            <column name="reference">14</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sdi_id">15</column>
+            <column name="sdi_type">0</column>
+            <column name="name">SWIFT/CHASE NY/CALYPARSMCB USD ACCOUNT AT CHASE NY</column>
+            <column name="agent_le">409</column>
+            <column name="agent_contact">Default</column>
+            <column name="agent_account">CALYPARSMCB USD ACCOUNT AT CHASE NY</column>
+            <column name="message_to_agent">1</column>
+            <column name="int_le">0</column>
+            <column name="message_to_int">0</column>
+            <column name="bene_le">2</column>
+            <column name="bene_contact">Default</column>
+            <column name="gl_account_id">71</column>
+            <column name="direct_b">0</column>
+            <column name="comments">CLS Demo</column>
+            <column name="method">SWIFT</column>
+            <column name="currency_list">USD</column>
+            <column name="product_list">TransferAgent</column>
+            <column name="le_role">ProcessingOrg</column>
+            <column name="preferred_b">1</column>
+            <column name="pay_receive">0</column>
+            <column name="priority">0</column>
+            <column name="reference">15</column>
+        </row>
+        <!-- CLS CPTY DEMO -->
+        <row cat="CLS Demo">
+            <column name="sdi_id">6</column>
+            <column name="sdi_type">1</column>
+            <column name="name">CLS/CLS BANK</column>
+            <column name="agent_le">6</column>
+            <column name="agent_contact">Default</column>
+            <column name="agent_account"/>
+            <column name="message_to_agent">1</column>
+            <column name="int_le">0</column>
+            <column name="message_to_int">0</column>
+            <column name="bene_le">4</column>
+            <column name="bene_contact">Default</column>
+            <column name="gl_account_id">0</column>
+            <column name="direct_b">0</column>
+            <column name="comments">CLS Demo</column>
+            <column name="method">CLS</column>
+            <column name="currency_list">AUD,CAD,CHF,DKK,EUR,GBP,HKD,ILS,JPY,KRW,MXN,NOK,NZD,SEK,SGD,USD,ZAR</column>
+            <column name="product_list">FX,FXForward,FXNDF,FXSwap</column>
+            <column name="le_role">CounterParty</column>
+            <column name="preferred_b">1</column>
+            <column name="pay_receive">0</column>
+            <column name="priority">1</column>
+            <column name="reference">6</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sdi_id">7</column>
+            <column name="sdi_type">1</column>
+            <column name="name">SWIFT/CALYPARSMCB</column>
+            <column name="agent_le">2</column>
+            <column name="agent_contact">Default</column>
+            <column name="agent_account"/>
+            <column name="message_to_agent">1</column>
+            <column name="int_le">0</column>
+            <column name="message_to_int">0</column>
+            <column name="bene_le">4</column>
+            <column name="bene_contact">Default</column>
+            <column name="gl_account_id">0</column>
+            <column name="direct_b">0</column>
+            <column name="comments">CLS Demo</column>
+            <column name="method">SWIFT</column>
+            <column name="currency_list">AUD,CAD,CHF,DKK,EUR,GBP,HKD,ILS,JPY,KRW,MXN,NOK,NZD,SEK,SGD,USD,ZAR</column>
+            <column name="product_list">FX,FXForward,FXNDF,FXSwap</column>
+            <column name="le_role">CounterParty</column>
+            <column name="preferred_b">1</column>
+            <column name="pay_receive">0</column>
+            <column name="priority">0</column>
+            <column name="reference">7</column>
+        </row>
+    </table>
+
+    <table name="acc_account" xmlns="">
+        <!-- CALYPARSMCB -->
+        <row cat="CLS Demo">
+            <column name="acc_account_id">71</column>
+            <column name="acc_account_name">USD MAIN NOSTRO @ CHASE NY</column>
+            <column name="acc_type">SETTLE</column>
+            <column name="description">USD Nostro Account</column>
+            <column name="external_name"></column>
+            <column name="statement">0</column>
+            <column name="statement_b">0</column>
+            <column name="stmt_frequency">DLY</column>
+            <column name="statement_day">1</column>
+            <column name="stmt_date_roll">FOLLOWING</column>
+            <column name="original_account">0</column>
+            <column name="interface_rule">Aggregate</column>
+            <column name="automatic_b">0</column>
+            <column name="le_id">409</column>
+            <column name="le_role">ALL</column>
+            <column name="po_id">2</column>
+            <column name="currency">USD</column>
+            <column name="stmt_date_rule">0</column>
+            <column name="acc_engine_only_b">0</column>
+            <column name="version_num">0</column>
+            <column name="closing_account_id">0</column>
+            <column name="interest_bearing">0</column>
+            <column name="billing_b">0</column>
+            <column name="limit_b">0</column>
+            <column name="trade_date_b">0</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="acc_account_id">72</column>
+            <column name="acc_account_name">CALYPARSMCB MAIN NOSTRO @ BONY</column>
+            <column name="acc_type">SETTLE</column>
+            <column name="description">Main Nostro</column>
+            <column name="external_name"></column>
+            <column name="statement">0</column>
+            <column name="statement_b">0</column>
+            <column name="stmt_frequency">DLY</column>
+            <column name="statement_day">1</column>
+            <column name="stmt_date_roll">FOLLOWING</column>
+            <column name="original_account">0</column>
+            <column name="interface_rule">Aggregate</column>
+            <column name="automatic_b">0</column>
+            <column name="le_id">5</column>
+            <column name="le_role">Agent</column>
+            <column name="po_id">2</column>
+            <column name="currency">ANY</column>
+            <column name="stmt_date_rule">0</column>
+            <column name="acc_engine_only_b">0</column>
+            <column name="version_num">0</column>
+            <column name="closing_account_id">0</column>
+            <column name="interest_bearing">0</column>
+            <column name="billing_b">0</column>
+            <column name="limit_b">0</column>
+            <column name="trade_date_b">0</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="acc_account_id">73</column>
+            <column name="acc_account_name">JPY MAIN NOSTRO @ TOKYO</column>
+            <column name="acc_type">SETTLE</column>
+            <column name="description">JPY Nostro Account</column>
+            <column name="external_name"></column>
+            <column name="statement">0</column>
+            <column name="statement_b">0</column>
+            <column name="stmt_frequency">DLY</column>
+            <column name="statement_day">1</column>
+            <column name="stmt_date_roll">FOLLOWING</column>
+            <column name="original_account">0</column>
+            <column name="interface_rule">Aggregate</column>
+            <column name="automatic_b">0</column>
+            <column name="le_id">320</column>
+            <column name="le_role">ALL</column>
+            <column name="po_id">2</column>
+            <column name="currency">JPY</column>
+            <column name="stmt_date_rule">0</column>
+            <column name="acc_engine_only_b">0</column>
+            <column name="version_num">0</column>
+            <column name="closing_account_id">0</column>
+            <column name="interest_bearing">0</column>
+            <column name="billing_b">0</column>
+            <column name="limit_b">0</column>
+            <column name="trade_date_b">0</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="acc_account_id">74</column>
+            <column name="acc_account_name">GBP MAIN NOSTRO @ CITIBANK</column>
+            <column name="acc_type">SETTLE</column>
+            <column name="description">GBP Nostro Account</column>
+            <column name="external_name"></column>
+            <column name="statement">0</column>
+            <column name="statement_b">0</column>
+            <column name="stmt_frequency">DLY</column>
+            <column name="statement_day">1</column>
+            <column name="stmt_date_roll">FOLLOWING</column>
+            <column name="original_account">0</column>
+            <column name="interface_rule">Aggregate</column>
+            <column name="automatic_b">0</column>
+            <column name="le_id">403</column>
+            <column name="le_role">ALL</column>
+            <column name="po_id">2</column>
+            <column name="currency">GBP</column>
+            <column name="stmt_date_rule">0</column>
+            <column name="acc_engine_only_b">0</column>
+            <column name="version_num">0</column>
+            <column name="closing_account_id">0</column>
+            <column name="interest_bearing">0</column>
+            <column name="billing_b">0</column>
+            <column name="limit_b">0</column>
+            <column name="trade_date_b">0</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="acc_account_id">75</column>
+            <column name="acc_account_name">EUR MAIN NOSTRO @ CREDILIONPAR</column>
+            <column name="acc_type">SETTLE</column>
+            <column name="description">EUR Nostro Account</column>
+            <column name="external_name"></column>
+            <column name="statement">0</column>
+            <column name="statement_b">0</column>
+            <column name="stmt_frequency">DLY</column>
+            <column name="statement_day">1</column>
+            <column name="stmt_date_roll">FOLLOWING</column>
+            <column name="original_account">0</column>
+            <column name="interface_rule">Aggregate</column>
+            <column name="automatic_b">0</column>
+            <column name="le_id">61</column>
+            <column name="le_role">ALL</column>
+            <column name="po_id">2</column>
+            <column name="currency">EUR</column>
+            <column name="stmt_date_rule">0</column>
+            <column name="acc_engine_only_b">0</column>
+            <column name="version_num">0</column>
+            <column name="closing_account_id">0</column>
+            <column name="interest_bearing">0</column>
+            <column name="billing_b">0</column>
+            <column name="limit_b">0</column>
+            <column name="trade_date_b">0</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="acc_account_id">76</column>
+            <column name="acc_account_name">AUD MAIN NOSTRO @ SOCGEN</column>
+            <column name="acc_type">SETTLE</column>
+            <column name="description">AUD Nostro Account</column>
+            <column name="external_name"></column>
+            <column name="statement">0</column>
+            <column name="statement_b">0</column>
+            <column name="stmt_frequency">DLY</column>
+            <column name="statement_day">1</column>
+            <column name="stmt_date_roll">FOLLOWING</column>
+            <column name="original_account">0</column>
+            <column name="interface_rule">Aggregate</column>
+            <column name="automatic_b">0</column>
+            <column name="le_id">204</column>
+            <column name="le_role">ALL</column>
+            <column name="po_id">2</column>
+            <column name="currency">AUD</column>
+            <column name="stmt_date_rule">0</column>
+            <column name="acc_engine_only_b">0</column>
+            <column name="version_num">0</column>
+            <column name="closing_account_id">0</column>
+            <column name="interest_bearing">0</column>
+            <column name="billing_b">0</column>
+            <column name="limit_b">0</column>
+            <column name="trade_date_b">0</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="acc_account_id">77</column>
+            <column name="acc_account_name">CALYPARSMCB @CLS</column>
+            <column name="acc_type">SETTLE</column>
+            <column name="description">CALYPARSMCB@CLS</column>
+            <column name="external_name"></column>
+            <column name="statement">0</column>
+            <column name="statement_b">0</column>
+            <column name="stmt_frequency">DLY</column>
+            <column name="statement_day">1</column>
+            <column name="stmt_date_roll">FOLLOWING</column>
+            <column name="original_account">0</column>
+            <column name="interface_rule">Aggregate</column>
+            <column name="automatic_b">0</column>
+            <column name="le_id">6</column>
+            <column name="le_role">Agent</column>
+            <column name="po_id">2</column>
+            <column name="currency">ANY</column>
+            <column name="stmt_date_rule">0</column>
+            <column name="acc_engine_only_b">0</column>
+            <column name="version_num">0</column>
+            <column name="closing_account_id">0</column>
+            <column name="interest_bearing">0</column>
+            <column name="billing_b">0</column>
+            <column name="limit_b">0</column>
+            <column name="trade_date_b">0</column>
+        </row>
+    </table>
+
+    <table name="le_contact_attr" xmlns="">
+        <row cat="CLS Demo">
+            <column name="contact_id">8</column>
+            <column name="attribute_name">SWIFT</column>
+            <column name="attribute_value">CLSBUS30XXX</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="contact_id">1</column>
+            <column name="attribute_name">SWIFT</column>
+            <column name="attribute_value">VENDPRP1XXX</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="contact_id">7</column>
+            <column name="attribute_name">SWIFT</column>
+            <column name="attribute_value">BONYFRPPXXX</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="contact_id">6</column>
+            <column name="attribute_name">SWIFT</column>
+            <column name="attribute_value">CPTYDEMOXXX</column>
+        </row>
+    </table>
+
+    <table name="sdi_attribute" xmlns="">
+        <row cat="CLS Demo">
+            <column name="sdi_id">11</column>
+            <column name="attribute_name">ClsUsage</column>
+            <column name="attribute_value">sweep</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sdi_id">12</column>
+            <column name="attribute_name">ClsUsage</column>
+            <column name="attribute_value">sweep</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sdi_id">13</column>
+            <column name="attribute_name">ClsUsage</column>
+            <column name="attribute_value">sweep</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sdi_id">14</column>
+            <column name="attribute_name">ClsUsage</column>
+            <column name="attribute_value">sweep</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sdi_id">15</column>
+            <column name="attribute_name">ClsUsage</column>
+            <column name="attribute_value">sweep</column>
+        </row>
+    </table>
+
+    <table name="acc_book" xmlns="">
+        <row cat="CLS Demo">
+            <column name="acc_book_id">3</column>
+            <column name="acc_book_name">CLS</column>
+            <column name="comments">CLS Demo Data</column>
+        </row>
+    </table>
+
+    <table name="book" xmlns="">
+        <row cat="CLS Demo">
+            <column name="book_id">2</column>
+            <column name="book_name">CLS_TRANSFERAGENT_BOOK</column>
+            <column name="acc_book_id">3</column>
+            <column name="legal_entity_id">2</column>
+            <column name="activity">Control Branch Book</column>
+            <column name="location">GMT</column>
+            <column name="comments">CLS Demo Data</column>
+            <column name="base_currency">USD</column>
+            <column name="user_name"></column>
+            <column name="eod_time">2359</column>
+            <column name="holidays">NYC</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="book_id">3</column>
+            <column name="book_name">CLS_PAYINCALLS_BOOK</column>
+            <column name="acc_book_id">3</column>
+            <column name="legal_entity_id">2</column>
+            <column name="activity">Control Branch Book</column>
+            <column name="location">GMT</column>
+            <column name="comments">CLS Demo Data</column>
+            <column name="base_currency">USD</column>
+            <column name="user_name"></column>
+            <column name="eod_time">2359</column>
+            <column name="holidays">NYC</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="book_id">4</column>
+            <column name="book_name">CLS_CONTROL_BRANCH_BOOK</column>
+            <column name="acc_book_id">3</column>
+            <column name="legal_entity_id">2</column>
+            <column name="activity">Control Branch Book</column>
+            <column name="location">GMT</column>
+            <column name="comments">CLS Demo Data</column>
+            <column name="base_currency">USD</column>
+            <column name="user_name"/>
+            <column name="eod_time">2359</column>
+            <column name="holidays">NYC</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="book_id">5</column>
+            <column name="book_name">CLS_SUB_BRANCH_BOOK</column>
+            <column name="acc_book_id">3</column>
+            <column name="legal_entity_id">2</column>
+            <column name="activity">Submission Branch Book</column>
+            <column name="location">GMT</column>
+            <column name="comments">CLS Demo Data</column>
+            <column name="base_currency">USD</column>
+            <column name="user_name"/>
+            <column name="eod_time">2359</column>
+            <column name="holidays">NYC</column>
+        </row>
+    </table>
+
+    <table name="sd_filter" xmlns="">
+        <row cat="CLS Demo">
+            <column name="sd_filter_name">IS_CLS</column>
+            <column name="comments">Is valid CLS Trade</column>
+            <column name="user_name"/>
+            <column name="version_num">0</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sd_filter_name">IS_CLS_BestPractice</column>
+            <column name="comments"></column>
+            <column name="user_name"/>
+            <column name="version_num">0</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sd_filter_name">NOT_CLS_BestPractice</column>
+            <column name="comments"></column>
+            <column name="user_name"/>
+            <column name="version_num">0</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sd_filter_name">XferAgentNotInCLS</column>
+            <column name="comments"></column>
+            <column name="user_name"/>
+            <column name="version_num">0</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sd_filter_name">CLS_WORKFLOW</column>
+            <column name="comments"></column>
+            <column name="user_name"/>
+            <column name="version_num">0</column>
+        </row>
+    </table>
+
+    <table name="sd_filter_element" xmlns="">
+        <row cat="CLS Demo">
+            <column name="sd_filter_name">IS_CLS</column>
+            <column name="element_name">IS_CLS</column>
+            <column name="element_type">8</column>
+            <column name="min_value"/>
+            <column name="max_value"/>
+            <column name="is_value">1</column>
+            <column name="like_value"/>
+            <column name="domain_value"/>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sd_filter_name">IS_CLS_BestPractice</column>
+            <column name="element_name">IS_CLSBestPractice</column>
+            <column name="element_type">8</column>
+            <column name="min_value"/>
+            <column name="max_value"/>
+            <column name="is_value">1</column>
+            <column name="like_value"/>
+            <column name="domain_value"/>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sd_filter_name">NOT_CLS_BestPractice</column>
+            <column name="element_name">IS_CLSBestPractice</column>
+            <column name="element_type">8</column>
+            <column name="min_value"/>
+            <column name="max_value"/>
+            <column name="is_value">0</column>
+            <column name="like_value"/>
+            <column name="domain_value"/>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sd_filter_name">XferAgentNotInCLS</column>
+            <column name="element_name">Xfer Our Agent</column>
+            <column name="element_type">2</column>
+            <column name="min_value"/>
+            <column name="max_value"/>
+            <column name="is_value">0</column>
+            <column name="like_value"/>
+            <column name="domain_value"/>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sd_filter_name">CLS_WORKFLOW</column>
+            <column name="element_name">Xfer Our Method</column>
+            <column name="element_type">1</column>
+            <column name="min_value"/>
+            <column name="max_value"/>
+            <column name="is_value">0</column>
+            <column name="like_value"/>
+            <column name="domain_value"/>
+        </row>
+    </table>
+
+    <table name="sd_filter_domain" xmlns="">
+        <row cat="CLS Demo">
+            <column name="sd_filter_name">CLS_WORKFLOW</column>
+            <column name="element_name">Xfer Our Method</column>
+            <column name="element_type">1</column>
+            <column name="domain_value">CLS</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="sd_filter_name">XferAgentNotInCLS</column>
+            <column name="element_name">Xfer Our Agent</column>
+            <column name="element_type">2</column>
+            <column name="domain_value">CLS BANK</column>
+        </row>
+    </table>
+
+    <table name="advice_config" xmlns="">
+        <!-- FXNDF -->
+        <row cat="CLS Demo">
+            <column name="advice_config_id">120</column>
+            <column name="po_id">2</column>
+            <column name="event_type">VERIFIED_TRADE</column>
+            <column name="product_type">FXNDF</column>
+            <column name="message_type">CLSCONFIRM</column>
+            <column name="send_contact_type">Default</column>
+            <column name="receiver_role">CounterParty</column>
+            <column name="rec_contact_type">Default</column>
+            <column name="default_language">English</column>
+            <column name="address_method">SWIFT</column>
+            <column name="gateway">SWIFT</column>
+            <column name="always_send">0</column>
+            <column name="template_name">MT300</column>
+            <column name="matching">0</column>
+            <column name="inactive">0</column>
+            <column name="format_type">SWIFT</column>
+            <column name="sd_filter">NOT_CLS_BestPractice</column>
+            <column name="receiver_id">6</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="advice_config_id">119</column>
+            <column name="po_id">2</column>
+            <column name="event_type">VERIFIED_TRADE</column>
+            <column name="product_type">FXNDF</column>
+            <column name="message_type">CLSCONFIRM</column>
+            <column name="send_contact_type">Default</column>
+            <column name="receiver_role">Agent</column>
+            <column name="rec_contact_type">Default</column>
+            <column name="default_language">English</column>
+            <column name="address_method">SWIFT</column>
+            <column name="gateway">SWIFT</column>
+            <column name="always_send">0</column>
+            <column name="template_name">MT304</column>
+            <column name="matching">0</column>
+            <column name="inactive">0</column>
+            <column name="format_type">SWIFT</column>
+            <column name="sd_filter">IS_CLS_BestPractice</column>
+            <column name="receiver_id">6</column>
+        </row>
+        <!-- FXSwap -->
+        <row cat="CLS Demo">
+            <column name="advice_config_id">118</column>
+            <column name="po_id">2</column>
+            <column name="event_type">VERIFIED_TRADE</column>
+            <column name="product_type">FXSwap</column>
+            <column name="message_type">CLSCONFIRM</column>
+            <column name="send_contact_type">Default</column>
+            <column name="receiver_role">CounterParty</column>
+            <column name="rec_contact_type">Default</column>
+            <column name="default_language">English</column>
+            <column name="address_method">SWIFT</column>
+            <column name="gateway">SWIFT</column>
+            <column name="always_send">0</column>
+            <column name="template_name">MT300</column>
+            <column name="matching">0</column>
+            <column name="inactive">0</column>
+            <column name="format_type">SWIFT</column>
+            <column name="sd_filter">NOT_CLS_BestPractice</column>
+            <column name="receiver_id">6</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="advice_config_id">117</column>
+            <column name="po_id">2</column>
+            <column name="event_type">VERIFIED_TRADE</column>
+            <column name="product_type">FXSwap</column>
+            <column name="message_type">CLSCONFIRM</column>
+            <column name="send_contact_type">Default</column>
+            <column name="receiver_role">Agent</column>
+            <column name="rec_contact_type">Default</column>
+            <column name="default_language">English</column>
+            <column name="address_method">SWIFT</column>
+            <column name="gateway">SWIFT</column>
+            <column name="always_send">0</column>
+            <column name="template_name">MT304</column>
+            <column name="matching">0</column>
+            <column name="inactive">0</column>
+            <column name="format_type">SWIFT</column>
+            <column name="sd_filter">IS_CLS_BestPractice</column>
+            <column name="receiver_id">6</column>
+        </row>
+        <!-- FXForward -->
+        <row cat="CLS Demo">
+            <column name="advice_config_id">116</column>
+            <column name="po_id">2</column>
+            <column name="event_type">VERIFIED_TRADE</column>
+            <column name="product_type">FXForward</column>
+            <column name="message_type">CLSCONFIRM</column>
+            <column name="send_contact_type">Default</column>
+            <column name="receiver_role">CounterParty</column>
+            <column name="rec_contact_type">Default</column>
+            <column name="default_language">English</column>
+            <column name="address_method">SWIFT</column>
+            <column name="gateway">SWIFT</column>
+            <column name="always_send">0</column>
+            <column name="template_name">MT300</column>
+            <column name="matching">0</column>
+            <column name="inactive">0</column>
+            <column name="format_type">SWIFT</column>
+            <column name="sd_filter">NOT_CLS_BestPractice</column>
+            <column name="receiver_id">6</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="advice_config_id">115</column>
+            <column name="po_id">2</column>
+            <column name="event_type">VERIFIED_TRADE</column>
+            <column name="product_type">FXForward</column>
+            <column name="message_type">CLSCONFIRM</column>
+            <column name="send_contact_type">Default</column>
+            <column name="receiver_role">Agent</column>
+            <column name="rec_contact_type">Default</column>
+            <column name="default_language">English</column>
+            <column name="address_method">SWIFT</column>
+            <column name="gateway">SWIFT</column>
+            <column name="always_send">0</column>
+            <column name="template_name">MT304</column>
+            <column name="matching">0</column>
+            <column name="inactive">0</column>
+            <column name="format_type">SWIFT</column>
+            <column name="sd_filter">IS_CLS_BestPractice</column>
+            <column name="receiver_id">6</column>
+        </row>
+        <!-- FX -->
+        <row cat="CLS Demo">
+            <column name="advice_config_id">114</column>
+            <column name="po_id">2</column>
+            <column name="event_type">VERIFIED_TRADE</column>
+            <column name="product_type">FX</column>
+            <column name="message_type">CLSCONFIRM</column>
+            <column name="send_contact_type">Default</column>
+            <column name="receiver_role">CounterParty</column>
+            <column name="rec_contact_type">Default</column>
+            <column name="default_language">English</column>
+            <column name="address_method">SWIFT</column>
+            <column name="gateway">SWIFT</column>
+            <column name="always_send">0</column>
+            <column name="template_name">MT300</column>
+            <column name="matching">0</column>
+            <column name="inactive">0</column>
+            <column name="format_type">SWIFT</column>
+            <column name="sd_filter">NOT_CLS_BestPractice</column>
+            <column name="receiver_id">6</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="advice_config_id">113</column>
+            <column name="po_id">2</column>
+            <column name="event_type">VERIFIED_TRADE</column>
+            <column name="product_type">FX</column>
+            <column name="message_type">CLSCONFIRM</column>
+            <column name="send_contact_type">Default</column>
+            <column name="receiver_role">Agent</column>
+            <column name="rec_contact_type">Default</column>
+            <column name="default_language">English</column>
+            <column name="address_method">SWIFT</column>
+            <column name="gateway">SWIFT</column>
+            <column name="always_send">0</column>
+            <column name="template_name">MT304</column>
+            <column name="matching">0</column>
+            <column name="inactive">0</column>
+            <column name="format_type">SWIFT</column>
+            <column name="sd_filter">IS_CLS_BestPractice</column>
+            <column name="receiver_id">6</column>
+        </row>
+        <!-- TransferAgent -->
+        <row cat="CLS Demo">
+            <column name="advice_config_id">112</column>
+            <column name="po_id">0</column>
+            <column name="event_type">VERIFIED_PAYMENT</column>
+            <column name="product_type">FX</column>
+            <column name="message_type">PAYMENTMSG</column>
+            <column name="send_contact_type">Default</column>
+            <column name="receiver_role">Agent</column>
+            <column name="rec_contact_type">Default</column>
+            <column name="default_language">English</column>
+            <column name="address_method">SWIFT</column>
+            <column name="gateway">SWIFT</column>
+            <column name="always_send">0</column>
+            <column name="template_name">Payment.selector</column>
+            <column name="matching">0</column>
+            <column name="inactive">0</column>
+            <column name="format_type">SWIFT</column>
+            <column name="sd_filter">XferAgentNotInCLS</column>
+            <column name="receiver_id">6</column>
+        </row>
+        <row cat="CLS Demo">
+            <column name="advice_config_id">111</column>
+            <column name="po_id">2</column>
+            <column name="event_type">VERIFIED_PAYMENT</column>
+            <column name="product_type">TransferAgent</column>
+            <column name="message_type">PAYMENTMSG</column>
+            <column name="send_contact_type">Default</column>
+            <column name="receiver_role">Agent</column>
+            <column name="rec_contact_type">Default</column>
+            <column name="default_language">English</column>
+            <column name="address_method">SWIFT</column>
+            <column name="gateway">SWIFT</column>
+            <column name="always_send">0</column>
+            <column name="template_name">MT202XferAgent</column>
+            <column name="matching">0</column>
+            <column name="inactive">0</column>
+            <column name="format_type">SWIFT</column>
+            <column name="sd_filter">NONE</column>
+            <column name="receiver_id">0</column>
+        </row>
+        <!-- Nostro Advice -->
+        <row cat="CLS Demo">
+            <column name="advice_config_id">110</column>
+            <column name="po_id">2</column>
+            <column name="event_type">STATEMENT</column>
+            <column name="product_type">N/A</column>
+            <column name="message_type">CLS_NOSTRO_ADVICE</column>
+            <column name="send_contact_type">Default</column>
+            <column name="receiver_role">Agent</column>
+            <column name="rec_contact_type">Default</column>
+            <column name="default_language">English</column>
+            <column name="address_method">SWIFT</column>
+            <column name="gateway">SWIFT</column>
+            <column name="always_send">0</column>
+            <column name="template_name">MT298</column>
+            <column name="matching">0</column>
+            <column name="inactive">0</column>
+            <column name="format_type">SWIFT</column>
+            <column name="sd_filter">NONE</column>
+            <column name="receiver_id">6</column>
+        </row>
+    </table>
+
+</database>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<calypso:calypsoDocument xmlns:liquidityrule="http://www.calypso.com/liquidityrule" xmlns:liquiditycriteria="http://www.calypso.com/liquiditycriteria" xmlns:liquidityposition="http://www.calypso.com/liquidityposition" xmlns:ns3="http://www.calypso.com/edealing/common" xmlns:matching="http://www.calypso.com/matching" xmlns:scheduler="http://www.calypso.com/scheduler" xmlns:liquidityreporting="http://www.calypso.com/liquidityreporting" xmlns:kpiservice="http://www.calypso.com/kpiservice" xmlns:assumption="http://www.calypso.com/assumption" xmlns:swift="http://www.calypso.com/swift" xmlns:bondexoticnote="http://www.calypso.com/bondexoticnote" xmlns:customereng="http://www.calypso.com/customereng" xmlns:datauploader="http://www.calypso.com/datauploader" xmlns:ftp="http://www.calypso.com/ftp" xmlns:pricingscript="http://www.calypso.com/pricingscript" xmlns:am="http://www.calypso.com/am" xmlns:scriptableOTC="http://www.calypso.com/scriptableOTC" xmlns:pricingsheet="http://www.calypso.com/pricingsheet" xmlns:pricingeng="http://www.calypso.com/pricingeng" xmlns:taskstation="http://www.calypso.com/taskstation" xmlns:ns23="http://www.calypso.com/HedgeAccounting" xmlns:liquiditycore="http://www.calypso.com/liquiditycore" xmlns:calypso="http://www.calypso.com/xml" xmlns:rateengine="http://www.calypso.com/rateengine" xmlns:liquidityclassification="http://www.calypso.com/liquidityclassification" xmlns:collateral="http://www.calypso.com/collateral" xmlns:calculationserver="http://www.calypso.com/calculationserver">
+    <calypso:calypsoObject xsi:type="rateengine:RateEngineConfig" version="14-0" action="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <rateengine:configName>DemoRateEngine</rateengine:configName>
+        <rateengine:configRules version="14-0">
+            <rateengine:configName>DemoRateEngine</rateengine:configName>
+            <rateengine:configID>-1</rateengine:configID>
+            <rateengine:configVersion>1</rateengine:configVersion>
+            <rateengine:ruleParameters>
+                <rateengine:configName>DemoRateEngine</rateengine:configName>
+                <rateengine:ruleName>SingleSrc</rateengine:ruleName>
+                <rateengine:ruleType>Blending</rateengine:ruleType>
+                <rateengine:filterType>Default</rateengine:filterType>
+                <rateengine:filterValue>Default</rateengine:filterValue>
+                <rateengine:quoteType>3</rateengine:quoteType>
+                <rateengine:isActive>true</rateengine:isActive>
+                <rateengine:marketSrcs>Random</rateengine:marketSrcs>
+            </rateengine:ruleParameters>
+        </rateengine:configRules>
+        <rateengine:listOfRateEngineQuoteInfo version="14-0">
+            <rateengine:configName>DemoRateEngine</rateengine:configName>
+            <rateengine:quoteName>FX.EUR.USD</rateengine:quoteName>
+            <rateengine:instrumentType>FXSpot</rateengine:instrumentType>
+            <rateengine:displayName>FX.EUR.USD</rateengine:displayName>
+            <rateengine:versionNum>1</rateengine:versionNum>
+        </rateengine:listOfRateEngineQuoteInfo>
+        <rateengine:listOfRateEngineQuoteInfo version="14-0">
+            <rateengine:configName>DemoRateEngine</rateengine:configName>
+            <rateengine:quoteName>FX.EUR.USD.1M</rateengine:quoteName>
+            <rateengine:instrumentType>FXForward</rateengine:instrumentType>
+            <rateengine:displayName>FX.EUR.USD.1M</rateengine:displayName>
+            <rateengine:versionNum>1</rateengine:versionNum>
+        </rateengine:listOfRateEngineQuoteInfo>
+        <rateengine:listOfRateEngineQuoteInfo version="14-0">
+            <rateengine:configName>DemoRateEngine</rateengine:configName>
+            <rateengine:quoteName>FX.EUR.USD.ON</rateengine:quoteName>
+            <rateengine:instrumentType>FXForward</rateengine:instrumentType>
+            <rateengine:displayName>FX.EUR.USD.ON</rateengine:displayName>
+            <rateengine:versionNum>1</rateengine:versionNum>
+        </rateengine:listOfRateEngineQuoteInfo>
+        <rateengine:listOfRateEngineQuoteInfo version="14-0">
+            <rateengine:configName>DemoRateEngine</rateengine:configName>
+            <rateengine:quoteName>FX.EUR.USD.TN</rateengine:quoteName>
+            <rateengine:instrumentType>FXForward</rateengine:instrumentType>
+            <rateengine:displayName>FX.EUR.USD.TN</rateengine:displayName>
+            <rateengine:versionNum>1</rateengine:versionNum>
+        </rateengine:listOfRateEngineQuoteInfo>
+        <rateengine:listOfRateEngineQuoteInfo version="14-0">
+            <rateengine:configName>DemoRateEngine</rateengine:configName>
+            <rateengine:quoteName>FX.USD.JPY</rateengine:quoteName>
+            <rateengine:instrumentType>FXSpot</rateengine:instrumentType>
+            <rateengine:displayName>FX.USD.JPY</rateengine:displayName>
+            <rateengine:versionNum>1</rateengine:versionNum>
+        </rateengine:listOfRateEngineQuoteInfo>
+        <rateengine:listOfRateEngineQuoteInfo version="14-0">
+            <rateengine:configName>DemoRateEngine</rateengine:configName>
+            <rateengine:quoteName>FX.USD.JPY.1M</rateengine:quoteName>
+            <rateengine:instrumentType>FXForward</rateengine:instrumentType>
+            <rateengine:displayName>FX.USD.JPY.1M</rateengine:displayName>
+            <rateengine:versionNum>1</rateengine:versionNum>
+        </rateengine:listOfRateEngineQuoteInfo>
+        <rateengine:listOfRateEngineQuoteInfo version="14-0">
+            <rateengine:configName>DemoRateEngine</rateengine:configName>
+            <rateengine:quoteName>FX.USD.JPY.ON</rateengine:quoteName>
+            <rateengine:instrumentType>FXForward</rateengine:instrumentType>
+            <rateengine:displayName>FX.USD.JPY.ON</rateengine:displayName>
+            <rateengine:versionNum>1</rateengine:versionNum>
+        </rateengine:listOfRateEngineQuoteInfo>
+        <rateengine:listOfRateEngineQuoteInfo version="14-0">
+            <rateengine:configName>DemoRateEngine</rateengine:configName>
+            <rateengine:quoteName>FX.USD.JPY.TN</rateengine:quoteName>
+            <rateengine:instrumentType>FXForward</rateengine:instrumentType>
+            <rateengine:displayName>FX.USD.JPY.TN</rateengine:displayName>
+            <rateengine:versionNum>1</rateengine:versionNum>
+        </rateengine:listOfRateEngineQuoteInfo>
+        <rateengine:listOfFeedAddresses version="14-0">
+            <calypso:name>
+                <calypso:domainValue>
+                    <calypso:type>com.calypso.tk.refdata.DomainValueAdapter</calypso:type>
+                    <calypso:separator>#</calypso:separator>
+                    <calypso:identifier code="feed#DemoRateEngine" codifier="convention"/>
+                    <calypso:calypsoBusinessKey>
+                        <calypso:propertyName>domainName</calypso:propertyName>
+                        <calypso:propertyValue>feed</calypso:propertyValue>
+                    </calypso:calypsoBusinessKey>
+                    <calypso:calypsoBusinessKey>
+                        <calypso:propertyName>value</calypso:propertyName>
+                        <calypso:propertyValue>DemoRateEngine</calypso:propertyValue>
+                    </calypso:calypsoBusinessKey>
+                </calypso:domainValue>
+            </calypso:name>
+            <calypso:type>
+                <calypso:domainValue>
+                    <calypso:type>com.calypso.tk.refdata.DomainValueAdapter</calypso:type>
+                    <calypso:separator>#</calypso:separator>
+                    <calypso:identifier code="feedType#RateEngine" codifier="convention"/>
+                    <calypso:calypsoBusinessKey>
+                        <calypso:propertyName>domainName</calypso:propertyName>
+                        <calypso:propertyValue>feedType</calypso:propertyValue>
+                    </calypso:calypsoBusinessKey>
+                    <calypso:calypsoBusinessKey>
+                        <calypso:propertyName>value</calypso:propertyName>
+                        <calypso:propertyValue>RateEngine</calypso:propertyValue>
+                    </calypso:calypsoBusinessKey>
+                </calypso:domainValue>
+            </calypso:type>
+            <calypso:params>
+                <calypso:name>FEED_TYPE</calypso:name>
+                <calypso:value xsi:type="ns29:string" xmlns:ns29="http://www.w3.org/2001/XMLSchema">RateEngine</calypso:value>
+            </calypso:params>
+            <calypso:params>
+                <calypso:name>RATE_ENGINE_FEED_SOURCE_NAMES</calypso:name>
+                <calypso:value xsi:type="ns29:string" xmlns:ns29="http://www.w3.org/2001/XMLSchema">RandomFeedDemo</calypso:value>
+            </calypso:params>
+            <calypso:isDefault>false</calypso:isDefault>
+        </rateengine:listOfFeedAddresses>
+        <rateengine:listOfFeedAddresses version="14-0">
+            <calypso:name>
+                <calypso:domainValue>
+                    <calypso:type>com.calypso.tk.refdata.DomainValueAdapter</calypso:type>
+                    <calypso:separator>#</calypso:separator>
+                    <calypso:identifier code="feed#RandomFeedDemo" codifier="convention"/>
+                    <calypso:calypsoBusinessKey>
+                        <calypso:propertyName>domainName</calypso:propertyName>
+                        <calypso:propertyValue>feed</calypso:propertyValue>
+                    </calypso:calypsoBusinessKey>
+                    <calypso:calypsoBusinessKey>
+                        <calypso:propertyName>value</calypso:propertyName>
+                        <calypso:propertyValue>RandomFeedDemo</calypso:propertyValue>
+                    </calypso:calypsoBusinessKey>
+                </calypso:domainValue>
+            </calypso:name>
+            <calypso:type>
+                <calypso:domainValue>
+                    <calypso:type>com.calypso.tk.refdata.DomainValueAdapter</calypso:type>
+                    <calypso:separator>#</calypso:separator>
+                    <calypso:identifier code="feedType#Random" codifier="convention"/>
+                    <calypso:calypsoBusinessKey>
+                        <calypso:propertyName>domainName</calypso:propertyName>
+                        <calypso:propertyValue>feedType</calypso:propertyValue>
+                    </calypso:calypsoBusinessKey>
+                    <calypso:calypsoBusinessKey>
+                        <calypso:propertyName>value</calypso:propertyName>
+                        <calypso:propertyValue>Random</calypso:propertyValue>
+                    </calypso:calypsoBusinessKey>
+                </calypso:domainValue>
+            </calypso:type>
+            <calypso:params>
+                <calypso:name>ConfigFile</calypso:name>
+                <calypso:value xsi:type="ns29:string" xmlns:ns29="http://www.w3.org/2001/XMLSchema">QuoteGenTest.txt</calypso:value>
+            </calypso:params>
+            <calypso:params>
+                <calypso:name>FEED_TYPE</calypso:name>
+                <calypso:value xsi:type="ns29:string" xmlns:ns29="http://www.w3.org/2001/XMLSchema">Random</calypso:value>
+            </calypso:params>
+            <calypso:isDefault>false</calypso:isDefault>
+        </rateengine:listOfFeedAddresses>
+    </calypso:calypsoObject>
+</calypso:calypsoDocument>

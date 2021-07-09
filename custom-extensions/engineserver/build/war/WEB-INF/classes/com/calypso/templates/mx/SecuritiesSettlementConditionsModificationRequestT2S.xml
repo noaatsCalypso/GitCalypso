@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+	<contents>
+		<element name="SctiesSttlmCondsModReq">
+			<contents>
+				<element name="AcctOwnr">
+					<condition>
+                        <expression>isIBRC()</expression>
+                    </condition>
+					<contents>
+						<element name="Id">
+							<contents>
+								<element name="AnyBIC">
+									<contents>
+										<report>
+											<column>Sender.Swift</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="SfkpgAcct">
+					<contents>
+						<element name="Id">
+							<contents>
+								<report>
+									<column>Xfer Our Agent Account</column>
+								</report>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="ReqDtls">
+					<contents>
+						<element name="Ref">
+							<contents>
+								<element name="MktInfrstrctrTxId" hideifempty="true">
+									<contents>
+										<report>
+											<column>XferAttributes.T2S_Ref</column>
+										</report>
+									</contents>
+								</element>
+								<element name="AcctOwnrTxId" hideifempty="true">
+									<contents>
+										<report>
+											<column>XferAttributes.Reference</column>
+										</report>
+									</contents>
+								</element>
+								<element name="PrcrTxId" hideifempty="true">
+									<contents>
+										<report>
+											<column>XferAttributes.PTCI_Reference</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="Lkg" hideifempty="true">
+							<contents>
+								<element name="Cd" hideifempty="true">
+									<contents>
+										<report>
+											<column>XferAttributes.LinkAction</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="Prty" hideifempty="true">
+							<contents>
+								<element name="Nmrc" hideifempty="true">
+									<contents>
+										<report>
+											<column>XferAttributes.PRIROverride</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="PrtlSttlmInd" hideifempty="true">
+							<contents>
+								<report>
+									<column>XferAttributes.PARTIAL_INDICATOROverride</column>
+								</report>
+							</contents>
+						</element>
+						<element name="HldInd" hideifempty="true">
+							<contents>
+								<element name="Ind" hideifempty="true">
+									<contents max="1">
+										<text>
+											<condition>
+												<expression>getReportValue("XferAttributes.HoldReleaseOverride")== "NPRE"</expression>
+											</condition>
+											<value>true</value>
+										</text>
+										<text>
+											<value>false</value>
+										</text>
+									</contents>
+								</element>
+								<element name="Rsn">
+									<condition>
+										<expression>!isEmpty("XferAttributes.HoldReason")</expression>
+									</condition>
+									<contents>
+										<element name="Cd">
+											<contents>
+												<element name="Cd">
+													<contents>
+														<report>
+															<column>XferAttributes.HoldReason</column>
+														</report>
+													</contents>
+												</element>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="Lnkgs">
+							<condition>
+								<expression>hasLinkReferenceOrOverride()</expression>
+							</condition>
+							<contents>
+								<element name="PrcgPos">
+									<contents>
+										<element name="Cd">
+											<contents max="1">
+												<report>
+													<condition>
+														<expression>!isEmpty(getReportValue("XferAttributes.LinkQualifierOverride"))</expression>
+													</condition>
+													<column>XferAttributes.LinkQualifierOverride</column>
+												</report>
+												<report>
+													<condition>
+														<expression>!isEmpty(getReportValue("XferAttributes.LinkQualifier"))</expression>
+													</condition>
+													<column>XferAttributes.LinkQualifier</column>
+												</report>
+											</contents>
+										</element>
+									</contents>
+								</element>
+								<element name="Ref">
+									<contents>
+										<element name="SctiesSttlmTxId">
+											<contents max="1">
+												<report>
+													<condition>
+														<expression>!isEmpty(getReportValue("XferAttributes.LinkReferenceOverride"))</expression>
+													</condition>
+													<column>XferAttributes.LinkReferenceOverride</column>
+												</report>
+												<report>
+													<condition>
+														<expression>!isEmpty(getReportValue("XferAttributes.LinkReference"))</expression>
+													</condition>
+													<column>XferAttributes.LinkReference</column>
+												</report>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+			</contents>
+		</element>
+	</contents>
+</template>

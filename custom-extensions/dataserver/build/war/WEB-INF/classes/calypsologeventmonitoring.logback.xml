@@ -1,0 +1,12 @@
+<included>
+
+	<logger name="com.calypso.Monitoring.Events" additivity="false">
+	      <level value="debug"/>
+	      <appender-ref ref="Monitoring.Events_APPENDER"/>
+	</logger>
+  <logger name="com.calypso.Monitoring.MethodProfile" additivity="false">
+        <level value="debug"/>
+        <appender-ref ref="Monitoring.MethodProfile_APPENDER"/>
+  </logger>
+  
+</included>

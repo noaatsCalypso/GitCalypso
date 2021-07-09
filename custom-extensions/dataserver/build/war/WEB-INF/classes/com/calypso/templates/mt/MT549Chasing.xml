@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MT 549 Request for Status Advice -->
+<SwiftMsgDef>
+	<Name>MT549</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="GENL" value="GENL" modes="MMM"/>
+		<SwiftField name="Sender's Reference" tag=":20C:" format=":4!c//16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Function of the Message" tag=":23G:" format="4!c[/4!c]" value="MESSAGE_SUBACTION" modes="MMM"/>
+		<SwiftField name="Requested Message Type" tag=":13A:" format=":4!c//3!c" value="NUMBER_IDENTIFICATION_MT549" modes="MMM"/>
+		<SwiftField name="Safekeeping Account" tag=":97A:" format=":4!c//35x" value="AGENT_ACCOUNT" modes="MMM"/>
+		<SwiftField name="End of Block" tag=":16S:" format="GENL" value="GENL" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Repetitive Optional Sequence C by Instruction Reference" modes="---" condition="noStatusReason()">
+		<SwiftField name="Start of Block" tag=":16R:" format="REF" value="REF" modes="MMM"/>
+		<SwiftField name="Reference" tag=":20C:" format=":4!c//16x" value="PREVIOUS_REFERENCE" modes="MMM"/>
+		<SwiftField name="End of Block" tag=":16S:" format="REF" value="REF" modes="MMM"/>
+	</SwiftSequence>
+</SwiftMsgDef>

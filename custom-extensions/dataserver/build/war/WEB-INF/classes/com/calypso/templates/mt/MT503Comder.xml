@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<SwiftMsgDef>
+	<Name>MT503</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="GENL" value="GENL" modes="MMM"/>
+		<SwiftField name="Sender's Reference" tag=":20C:" format=":4!c//16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Sender's Collateral Transaction Reference" tag=":20C:" format=":4!c//16x" value="SEND_TRADE_ID" modes="OOO"/>
+		<SwiftField name="Receiver's Collateral Transaction Reference" tag=":20C:" format=":4!c//16x" value="RECV_TRADE_ID" modes="---" condition="isSecurity()" />
+		<SwiftField name="Function of the Message" tag=":23G:" format="4!c[/4!c]" value="MESSAGE_SUBACTION" modes="MMM"/>
+		<SwiftField name="Start of Block" tag=":16R:" format="AGRE" value="AGRE" modes="MMM"/>
+		<SwiftField name="Collateral Instruction Narrative" tag=":70C:" format=":4!c//10*35x" value="NARRATIVE" modes="OOO"/>
+		<SwiftField name="End of Block" tag=":16S:" format="AGRE" value="AGRE" modes="MMM"/>
+		<SwiftField name="Preparation Date/Time" tag=":98A:" format=":4!c//8!n" value="MESSAGE_CREATIONDATE" modes="OOO"/>
+		<SwiftField name="Indicator" tag=":22H:" format=":4!c//4!c" value="GENERAL_INDICATOR_COLA" modes="MMM"/>
+		<SwiftField name="Indicator" tag=":22H:" format=":4!c//4!c" value="GENERAL_INDICATOR_COAL" modes="MMM"/>
+		<SwiftField name="Party A" tag=":95P:" format=":4!c//4!a2!a2!c[3!c]" value="PARTY_A" modes="MMM"/>
+		<SwiftField name="Party B" tag=":95P:" format=":4!c//4!a2!a2!c[3!c]" value="PARTY_B" modes="MMM"/>
+		<SwiftField name="End of Block" tag=":16S:" format="GENL" value="GENL" modes="MMM"/>
+	</SwiftSequence>
+	
+	<SwiftSequence name="B:Summary" modes="MMM" >
+		<SwiftField name="Start of Block" tag=":16R:" format="SUMM" value="SUMM" modes="MMM"/>
+		<SwiftField name="Exposed Party" tag=":95R:" format=":4!c/3!c/4*35x" value="EXPOSED_PARTY" modes="OOO"/>
+		<SwiftField name="Amonut" tag=":19B:" format=":4!c//3!a15d" value="AMONUT_COVA" modes="MMM"/>
+		<SwiftField name="Amonut" tag=":19B:" format=":4!c//3!a15d" value="AMONUT_CCAL" modes="MMM"/>
+		<SwiftField name="Amonut" tag=":19B:" format=":4!c//3!a15d" value="AMONUT_TEXA" modes="MMM"/>
+		<SwiftField name="End of Block" tag=":16S:" format="SUMM" value="SUMM" modes="MMM"/>		
+	</SwiftSequence>
+	
+	<SwiftSequence name="C: Collateral Details" modes="OOO" >
+		<SwiftField name="Start of Block" tag=":16R:" format="COLD" value="COLD" modes="MMM"/>
+		<SwiftField name="Collateral Reference For Cash" tag=":20C:" format=":4!c//16x" value="COLLATERAL_REFERENCE_CASH" modes="---" condition="isCash()" />
+		<SwiftField name="Collateral Reference For Security" tag=":20C:" format=":4!c//16x" value="COLLATERAL_REFERENCE_SEC" modes="---" condition="isSecurity()" />
+		<SwiftField name="Indicator" tag=":22H:" format=":4!c//4!c" value="INDICATOR_COLL" modes="MMM"/>
+		<SwiftField name="Indicator" tag=":22H:" format=":4!c//4!c" value="INDICATOR_INOU" modes="MMM"/>
+		<SwiftField name="Indicator" tag=":22H:" format=":4!c//4!c" value="INDICATOR_TYCO" modes="MMM"/>
+		<SwiftSequence name="C1:Optional Sequence C1 Security Collateral Details" modes="---" condition="isSecurity()" >
+			<SwiftField name="Start of Block" tag=":16R:" format="SCOL" value="SCOL" modes="MMM"/>
+			<SwiftField name="Identification of the Financial Instrument" tag=":35B:" format=":[ISIN1!e12!c][\n][4*35x]" value="SECURITY_DESCRIPTION" modes="MMM"/>
+			<SwiftField name="Quantity of Financial Instrument to be Registered Nominal" tag=":36B:" format=":4!c//4!c/15d" value="NOMINAL_FAMT" modes="MMM"/>
+			<SwiftField name="End of Block" tag=":16S:" format="SCOL" value="SCOL" modes="MMM"/>		
+		</SwiftSequence>
+		
+		<SwiftSequence name="C2:Optional Sequence C2 Cash Collateral Details" modes="---" condition="isCash()">
+			<SwiftField name="Start of Block" tag=":16R:" format="CCOL" value="CCOL" modes="MMM"/>
+			<SwiftField name="Transaction Amount" tag=":19B:" format=":4!c//[N]3!a15d" value="PRINCIPAL_AMOUNT" modes="MMM"/>
+			<SwiftField name="Type of Deposit Indicator" tag=":22H:" format=":4!c//4!c" value="DEPOSIT_INDICATOR" modes="MMM"/>
+			<SwiftField name="End of Block" tag=":16S:" format="CCOL" value="CCOL" modes="MMM"/>
+		</SwiftSequence>
+		<SwiftField name="End of Block" tag=":16S:" format="COLD" value="COLD" modes="MMM"/>	
+	</SwiftSequence>
+	
+	<SwiftSequence name="D:Additional Information" modes="OOO" >
+		<SwiftField name="Start of Block" tag=":16R:" format="ADDINFO" value="ADDINFO" modes="MMM"/>
+		<SwiftField name="Party" tag=":95R:" format=":4!c/8c/34x" value="COLLATERAL_ACCOUNT" modes="OOO"/>
+		<SwiftField name="End of Block" tag=":16S:" format="ADDINFO" value="ADDINFO" modes="MMM"/>		
+	</SwiftSequence>
+	
+</SwiftMsgDef>

@@ -1,0 +1,2613 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<calypso:database xmlns:calypso="http://www.calypso.com/schemer">
+  <table name="table_comment">
+    <row cat="comments">
+      <column name="table_name">acc_account</column>
+      <column name="table_comment">An account in the general ledger or an account with a custodian or agent</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">acc_book</column>
+      <column name="table_comment">An accounting book. A trade's membership in an accounting book determines how it is accounted for. Every trading book belongs to one and only one accounting book. An accounting book may contain many trading books. Used to find acc_book_rule_links.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">acc_book_rule_link</column>
+      <column name="table_comment">Links a trade to an acc_rule based on the acc_book of the trade and the product family of the trade.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">acc_event_config</column>
+      <column name="table_comment">The definition of an accounting event type. Has a name and retroactivity rule and contains a list of the types of triggering events which can cause it.  The set of all records in this table represents your universe of types of accounting events.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">acc_rule</column>
+      <column name="table_comment">A rule that establishes accounting handling for a particular line of business.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">acc_rule_config</column>
+      <column name="table_comment">Instructions for posting to a GL account for a combination of accting rule/accting event type/flow direction. One such combination may have many acc_rule_configs. The set of all records in this table represents your chart of accounts.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">acc_rule_date</column>
+      <column name="table_comment">A closing date in an inventory accounting rule indicating when the inventory must be updated (usu. marked-to-market)</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">acc_trig_event</column>
+      <column name="table_comment">The triggering events which require a recomputation of this accounting event and which should trigger its accounting. All events of type INVENTORY should be set up with the value TRADE_VALUATION.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">access_book_product</column>
+      <column name="table_comment">Access permissions rule allowing a product type to be traded in a book</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">access_product</column>
+      <column name="table_comment">Access permissions rule allowing a user group to carry out an Action on a certain type of deal in a certain trade status</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">account_trans</column>
+      <column name="table_comment">A segment of an automatic Account name or number for use in accounting</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">advice_config</column>
+      <column name="table_comment">Specifies trigger events for each advice doc, recipient org type for each doc (cpty, broker, etc.), and formatting instructions and recipient department for each doc. See also advice_specific, which specifies formatting rules for a specific recipient.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">advice_doc_hist</column>
+      <column name="table_comment">Stores Archive Records of Advice Docs</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">advice_document</column>
+      <column name="table_comment">A saved copy of a formatted advice message. Formatted messages are only saved if so configured.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">advice_specific</column>
+      <column name="table_comment">Advice set-up rule that specifies how, for a particular recipient, each document should be formatted/produced</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">alive_dataservers</column>
+      <column name="table_comment">List of Dataserver that are Currently Running</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_bh_bucket</column>
+      <column name="table_comment">Bucket Hedge Analysis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_bh_hedge</column>
+      <column name="table_comment">Bucket Hedge Analysis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_bhng_bucket</column>
+      <column name="table_comment">Bucket Hedge Analysis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_bhng_rp_hedges</column>
+      <column name="table_comment">Bucket Hedge Report Analysis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_bhng_ulbucket</column>
+      <column name="table_comment">Bucket Hedge Report Analysis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_bond_report</column>
+      <column name="table_comment">Bond Analysis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_bond_rp_hedges</column>
+      <column name="table_comment">Bond Report Analysis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_display_name</column>
+      <column name="table_comment">Used in scenario</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_ldrparam_items</column>
+      <column name="table_comment">FX Ladder Analysis Param Items</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_output_header</column>
+      <column name="table_comment">Stores the column names for the saved analysis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_output_total</column>
+      <column name="table_comment">Stores the totals of the columns for the saved analysis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_output_value</column>
+      <column name="table_comment">A cell in a saved Analysis Report</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_output_zip</column>
+      <column name="table_comment">Stores the blob output for the saved analysis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_param_item</column>
+      <column name="table_comment">An actual parameter value in an analysis_param pricing preferences set for calculating Analysis Reports</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_param_item_mul</column>
+      <column name="table_comment">Analysis Param Items Multiple When there is Vector of values</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_param_items</column>
+      <column name="table_comment">Analysis Param  Items</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_synth_hedge</column>
+      <column name="table_comment">Synthetic Hedge Analysis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">an_viewer_config</column>
+      <column name="table_comment">A rule specifying what AnalysisViewer will be used to display a certain type of Analysis Report</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">analysis_output</column>
+      <column name="table_comment">Tabular Analysis Report results that can be displayed in an Analysis Viewer.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">analysis_output_header</column>
+      <column name="table_comment">Column headings and column datatypes for a saved Analysis Report</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">analysis_param</column>
+      <column name="table_comment">Header information for a set of pricing preferences used to run a valuation or risk Analysis Report</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">arch_cre_tmp</column>
+      <column name="table_comment">Scratch table to store ids of cre to be archived/deleted.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">arch_message</column>
+      <column name="table_comment">Messages for netting transfers to be archived by the scheduled task ARCHIVE_TRADE</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">arch_trade</column>
+      <column name="table_comment">Trades to be archived by the scheduled task ARCHIVE_TRADE</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">arch_transfer</column>
+      <column name="table_comment">Netting transfers to be archived by the scheduled task ARCHIVE_TRADE</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">asian_parameters</column>
+      <column name="table_comment">Parameters for Asian style option.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">asian_reset_dates</column>
+      <column name="table_comment">Customized reset date(s) or manually added reset date(s) for Asian style option.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">auth_class_config</column>
+      <column name="table_comment">Full class Name associated with particular authorizable  object</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">barrier_parameters</column>
+      <column name="table_comment">Parameters for barrier option.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">basic_prod_keyword</column>
+      <column name="table_comment">Keywords associated with Basic Products</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">basic_product</column>
+      <column name="table_comment">A generic product traded in a structured product deal</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_audit</column>
+      <column name="table_comment">Audit trail record for a back office object</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_audit_hist</column>
+      <column name="table_comment">Audit  related Archived Records</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_cre</column>
+      <column name="table_comment">Like bo_posting, this is to keep the posting record of cre event.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_in_message</column>
+      <column name="table_comment">Like bo_message, this is to keep the record of incoming event.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_message</column>
+      <column name="table_comment">A trade advice like a payment message, or other message. Only the details are saved here, not the formatted document.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_message_hist</column>
+      <column name="table_comment">Archive Records of Back Office Messages</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_pl_config</column>
+      <column name="table_comment">Settings for running a back office profit and loss report.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_posting</column>
+      <column name="table_comment">A general ledger accounting posting</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_posting_hist</column>
+      <column name="table_comment">Archive Records of Back Office Postings</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_task</column>
+      <column name="table_comment">A back office task such as setting a rate, sending an advice, or verifying a trade.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_task_hist</column>
+      <column name="table_comment">Archive Records of Back Office Tasks</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_transfer</column>
+      <column name="table_comment">A payment or security transfer with links to its settlement instructions</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_transfer_hist</column>
+      <column name="table_comment">Archive Records of Back Office Payments</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_ts_book</column>
+      <column name="table_comment">Book associated with Task Station Config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_ts_color</column>
+      <column name="table_comment">Colors associated with Task Station Config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_ts_dates</column>
+      <column name="table_comment">Dates associated with Task Station Config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_ts_event_type</column>
+      <column name="table_comment">Events Types associated with Task Station Config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_ts_intref</column>
+      <column name="table_comment">Internal References associated with Task Station Config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_ts_item</column>
+      <column name="table_comment">Tab associated with Task Station Config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_ts_priority</column>
+      <column name="table_comment">Tab Order with Task Station Config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_wfw_dates</column>
+      <column name="table_comment">A user's default relative date range used to load tasks into the Task Station</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_wfw_event_type</column>
+      <column name="table_comment">A task-type to be loaded into a user's custom-defined tab in the Task Station. See bo_wfw_item for the definition of the tab itself.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_wfw_item</column>
+      <column name="table_comment">A user's custom-defined tab in the Task Station. See bo_wfw_event_type for the specifications of what task types will be loaded in each tab.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bo_workflow_rule</column>
+      <column name="table_comment">A workflow rule that will be evaluated to determine whether a trade, payment, or advice message may move from one lifecycle stage to the next. Each workflow step in the Calypso back office workflow can contain 0, 1, or many rules.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bond_asset_backed</column>
+      <column name="table_comment">Type of bond partially amortizing during its lifecycle, by reducing face value amount or interest paid.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bond_benchmark</column>
+      <column name="table_comment">Mapping of benchmark name to physical bond</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bond_cln</column>
+      <column name="table_comment">Table for Product BondCLN</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bond_convertible</column>
+      <column name="table_comment">Bond Convertible Securities</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bond_defaults</column>
+      <column name="table_comment">Default financial definition of a type of bond, such as the 91-day US Treasury bill. Defaults will be used by all saved, tradeable bonds that share the bond_name of the defaults. Tradeable bonds are saved in product_bond.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bond_dm</column>
+      <column name="table_comment">Table for Product BondDanishMortgage</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bond_exotic_note</column>
+      <column name="table_comment">Table for Product BondExoticNote</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bond_guarantee</column>
+      <column name="table_comment">Bond Guarantee Securities</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bond_info</column>
+      <column name="table_comment">Product Bond related Information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bond_info_syndic</column>
+      <column name="table_comment">Syndhicate Bond related Information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bond_pool_factor</column>
+      <column name="table_comment">Pool Factor associated with Bond</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">bond_struct_note</column>
+      <column name="table_comment">Table for Product BondStructuredNote</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">book</column>
+      <column name="table_comment">A trading book. Has a name and an id number and it belongs to one and only one accounting book. A book also carries labels indicating the organization that owns it, its location, and the activity that generates trades in the book.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">book_attr_value</column>
+      <column name="table_comment">User-defined label applied to a books to categorize it. A book_attr_value is used to sort Books (and their trades) in Book Hierarchies. See org_name and org_node.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">book_attribute</column>
+      <column name="table_comment">Name of a user-defined field added to books to categorize them. A book may contain any number of user-defined fields. A book_attribute value is used to sort Books (and their trades) in Book Hierarchies. See org_name and org_node.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">book_eod_time</column>
+      <column name="table_comment">Book variable EOD time.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">book_val_ccy</column>
+      <column name="table_comment">Store the Currency that should be displayed for particular valuation and particular product type and particular book</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">brk_fee_disc</column>
+      <column name="table_comment">Brokerage fee discount scheudle</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">c_flw_coupon_hist</column>
+      <column name="table_comment">Archive Cash Flow Coupon Related</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">c_flw_optcpn_hist</column>
+      <column name="table_comment">Archive Cash Flow Option Coupon Related</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">c_flw_option_hist</column>
+      <column name="table_comment">Archive Cash Flow Option Related</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">calypso_cache</column>
+      <column name="table_comment">Limits on the size of the Calypso Data Server memory caches, expressed in numbers of objects</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">calypso_datatype</column>
+      <column name="table_comment">Future Use</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">calypso_info</column>
+      <column name="table_comment">The Calypso version number and release date for this version</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">calypso_seed</column>
+      <column name="table_comment">Starting id numbers for Calypso objects of various types. Some seed numbers are shared by a number of object types.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">calypso_table_ext</column>
+      <column name="table_comment">Future Use</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cap_swap_ext_info</column>
+      <column name="table_comment">Extra information Associated with Cap/Swap product</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cash_f_prchg_hist</column>
+      <column name="table_comment">Cash Flow Pricing Archive Records</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cash_flow_compound</column>
+      <column name="table_comment">A cash flow that pays compounding interest</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cash_flow_coupon</column>
+      <column name="table_comment">A bond cash flow, which can be priuncipal or interest</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cash_flow_div</column>
+      <column name="table_comment">Dividend Cash Flow</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cash_flow_optcpn</column>
+      <column name="table_comment">Option Coupon Cash Flow</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cash_flow_option</column>
+      <column name="table_comment">A option cash flow</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cash_flow_prichg</column>
+      <column name="table_comment">Pricing Cash Flow</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cash_flow_prin_adj</column>
+      <column name="table_comment">Principal adjustments for XCCy swap.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cash_flow_simple</column>
+      <column name="table_comment">Any cashflow, such as a swap interest flow. Keep in mind that for most swaps, the cashflows are not saved.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cash_flw_div_hist</column>
+      <column name="table_comment">Cash Flow Dividend Archive Records</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cash_flw_sim_hist</column>
+      <column name="table_comment">Cash Flow Simple Archive Records</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cash_set_dt_hist</column>
+      <column name="table_comment">Dates associated with Archive Products Cash Settle Information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cash_settle_date</column>
+      <column name="table_comment">Dates associated with Products Cash Settle Information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cash_settle_dflt</column>
+      <column name="table_comment">Financial definition of cash settlement values for a currency and rate index, as per ISDA Cash Settlement Matrix.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cash_settle_hist</column>
+      <column name="table_comment">Cash Settle Information Archive Records</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cash_settle_info</column>
+      <column name="table_comment">Cash Settle Information of the products</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cdsbasket_events</column>
+      <column name="table_comment">Credit events for credit default swap basket.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cfd_contract</column>
+      <column name="table_comment">Contract For Difference Contract information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cfd_contract_attr</column>
+      <column name="table_comment">Contract For Difference Attributes Contract</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cfd_country</column>
+      <column name="table_comment">Contract For Difference Country</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cfd_country_attr</column>
+      <column name="table_comment">Contract For Difference Countries Attributes</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cfd_data</column>
+      <column name="table_comment">Ability to buy or sell equity without having the stock and to receive the dividend (or part of the dividend) against a commission.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cfd_deposit</column>
+      <column name="table_comment">Deposit currency for the given contract. Currency in which collateral deposits are made by the client.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cfd_detail</column>
+      <column name="table_comment">Contract detail record for CFD contained in the detail grid.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cfd_detail_rdate</column>
+      <column name="table_comment">Reset date of CFD contract.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cfd_fin_grid</column>
+      <column name="table_comment">The Financial grid (linked to the contract).  Definition of general conditions of trading for the CFD Provider.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">commodity_leg2</column>
+      <column name="table_comment">fx_reset_id and fx_calendar columns are not used anymore, only here for migration purpose</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">contract_ext_ref</column>
+      <column name="table_comment">External reference for contract.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">conversion_reset</column>
+      <column name="table_comment">Reset record for conversation.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">corr_first_ax_hist</column>
+      <column name="table_comment">Correlation Matrix First Axis Archive related</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">corr_first_axis</column>
+      <column name="table_comment">Correlation Matrix First Axis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">corr_mat_data_hist</column>
+      <column name="table_comment">Archive Related Correlation Matrix Data</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">corr_mat_p_hist</column>
+      <column name="table_comment">Archive Related Correlation Matrix Param Data</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">corr_matrix_data</column>
+      <column name="table_comment">Correlation Matrix Data</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">corr_matrix_hist</column>
+      <column name="table_comment">Archive related Correlation Matrix</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">corr_matrix_param</column>
+      <column name="table_comment">Customs Params pertaining to Correlation Matrix</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">corr_secnd_ax_hist</column>
+      <column name="table_comment">Archive Related Correlation Second Axis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">corr_second_axis</column>
+      <column name="table_comment">Correlation Second Axis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">corr_tenor_ax_hist</column>
+      <column name="table_comment">Archive Related Correlation Tenor Axis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">corr_tenor_axis</column>
+      <column name="table_comment">Correlation Tenor Axis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">correlation_matrix</column>
+      <column name="table_comment">Correlation Matrix Market Data</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">country</column>
+      <column name="table_comment">Countries related attributes like iso,active_from</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cov_mat_data_hist</column>
+      <column name="table_comment">Archive Related Covariance Matrix Data</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cov_matrix_data</column>
+      <column name="table_comment">Covariance Matrix Data</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cqe_config</column>
+      <column name="table_comment">Customer Quote Engine - Configuration header info</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cqe_qt_max_size</column>
+      <column name="table_comment">Customer Quote Engine - Quote Max Deal Size Configuration Data</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cqe_r_simple</column>
+      <column name="table_comment">Customer Quote Engine - Simple customer spread rule parameters</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cqe_r_tiervol</column>
+      <column name="table_comment">Customer Quote Engine - Tier x volatility customer spread rule parameters</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cqe_r_volume</column>
+      <column name="table_comment">Customer Quote Engine - Volume customer spread rule parameters</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cqe_rule_hdr</column>
+      <column name="table_comment">Customer Quote Engine - Customer spread rule header info</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cqe_tiervol</column>
+      <column name="table_comment">Customer Quote Engine - Default settings for tier x volatility spreads</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cre_amount</column>
+      <column name="table_comment">Amount index, amount, anc currency code for a cre event.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cre_attribute</column>
+      <column name="table_comment">Attribute name and its value for a particular cre event.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">credit_event</column>
+      <column name="table_comment">Credit events occur for a particular issuer.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">credit_limit</column>
+      <column name="table_comment">Criteria for credit limit setting.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">credit_rating</column>
+      <column name="table_comment">Credit Rating Values used by various Credit Rating Agencies</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cu_basis_swap</column>
+      <column name="table_comment">An interest rate basis swap to be used as a curve underlying</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cu_bond</column>
+      <column name="table_comment">A bond to be used as a curve underlying</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cu_bondspread</column>
+      <column name="table_comment">A bond spread instrument to be used as a curve underlying</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cu_cds</column>
+      <column name="table_comment">Curve Underlying CD</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cu_eq_index_fut</column>
+      <column name="table_comment">Curve Underlying Equity Index Future</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cu_equity_index</column>
+      <column name="table_comment">Curve Underlying Equity Index</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cu_eto</column>
+      <column name="table_comment">Curve Underlying ETO</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cu_fra</column>
+      <column name="table_comment">A curve underlying FRA (forward rate agreement).</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cu_future</column>
+      <column name="table_comment">A future to be used as a curve underlying</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cu_fx_fixed</column>
+      <column name="table_comment">Curve Underlying FX Forward Fixed</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cu_fx_forward</column>
+      <column name="table_comment">Curve Underlying FX Forward Tenor</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cu_moneymarket</column>
+      <column name="table_comment">A relative money market instrument (no specific start and end dates) to be used as a curve underlying</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cu_payout_formula</column>
+      <column name="table_comment">Curve Underlying Payout Formula</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cu_specific_mmkt</column>
+      <column name="table_comment">A specific money market instrument (with specific start and end dates) to be used as a curve underlying</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cu_swap</column>
+      <column name="table_comment">An interest rate swap to be used as a curve underlying</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cur_roll_timing</column>
+      <column name="table_comment">FX position rollover timing config (Beginning of Day/ EOD)</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cur_rollover</column>
+      <column name="table_comment">FX position rollover config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">cur_split</column>
+      <column name="table_comment">FX currency split config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curpair_risk_param</column>
+      <column name="table_comment">Risk parameters for various ccy pr based risk analysis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">currency_benchmark</column>
+      <column name="table_comment">Benchmark bonds for a currency</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">currency_default</column>
+      <column name="table_comment">Specifications for quoting each currency</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">currency_pair</column>
+      <column name="table_comment">Specifications for converting each currency pair</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve</column>
+      <column name="table_comment">Basic identifying information about a saved curve</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_bas_hdr_hist</column>
+      <column name="table_comment">Archive information for Curve Basis Header</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_basis_header</column>
+      <column name="table_comment">Basic identifying information about a saved basis curve</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_commodity_hdr</column>
+      <column name="table_comment">Header for commodity curve.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_def_data</column>
+      <column name="table_comment">Curve Definition like points,underlying stored as Blob</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_default</column>
+      <column name="table_comment">Curve Default</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_div_ex_div</column>
+      <column name="table_comment">Dividend curve.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_div_hdr</column>
+      <column name="table_comment">Extra information specific to Curve Dividend</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_div_hdr_hist</column>
+      <column name="table_comment">Archive information of Curve_div_hdr  table</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_fx_hdr_hist</column>
+      <column name="table_comment">Archive information of curve_fx_header  table</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_fx_header</column>
+      <column name="table_comment">Basic identifying information about a saved FX curve</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_fxd_hdr_hist</column>
+      <column name="table_comment">Archive information of curve_fxd_header(Zero Curve FX Derived)  table</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_fxd_header</column>
+      <column name="table_comment">Extra information specific to Curve Zero FX Derived</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_hist</column>
+      <column name="table_comment">Curve  Archive information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_mem_rt_hist</column>
+      <column name="table_comment">Archive Related   information for curve_member_rt table(rule)</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_member</column>
+      <column name="table_comment">List of underlyings for a saved curve</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_member_hist</column>
+      <column name="table_comment">Archive Related Curve Member information(curves underlying data)</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_member_link</column>
+      <column name="table_comment">A formula to replace an instrument in a curve. Usually set by the user in the Formula column of the Underlying tab of the new Zero Curve window.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_member_rt</column>
+      <column name="table_comment">Rule that specifies, for a certain underlying in a certain curve, which real time quote for that instrument should be loaded, like BID, CLOSE, etc.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_memlink_hist</column>
+      <column name="table_comment">Archive Related information for curve_member_link table</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_param_hist</column>
+      <column name="table_comment">Archive Related Curve Parameter information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_parameter</column>
+      <column name="table_comment">Custom-defined curve generation parameters not tied to an individual input quote or output point. You can add as many as you require, and user can set them in the curve generation window</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_pnt_adj_hist</column>
+      <column name="table_comment">Archive Related Curve Point Adjustment</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_point</column>
+      <column name="table_comment">A generated point on a curve</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_point_adj</column>
+      <column name="table_comment">Curve Point Adjustments</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_point_hist</column>
+      <column name="table_comment">Archive Related Curve Point</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_prc_hdr_hist</column>
+      <column name="table_comment">Archive information for Curve Pricing Header</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_prepay</column>
+      <column name="table_comment">Curve Prepayment</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_price_hdr</column>
+      <column name="table_comment">Extra information specific to Curve Pricing</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_prob_hist</column>
+      <column name="table_comment">Archive Probability Curve related info</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_probability</column>
+      <column name="table_comment">Probability Curve related info</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_qt_adj_hist</column>
+      <column name="table_comment">Archive related Curve Quotes Adjustment</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_qt_val_hist</column>
+      <column name="table_comment">Archive related Curve Values</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_quote_adj</column>
+      <column name="table_comment">Curve Quote Adjustment</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_quote_value</column>
+      <column name="table_comment">A pricer or rate quote for a curve underlying instrument, saved when the curve is saved</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_recov_hist</column>
+      <column name="table_comment">Archive related Curve Recovery</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_recovery</column>
+      <column name="table_comment">Curve Recovery</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_repo_header</column>
+      <column name="table_comment">Extra information specific to Curve Repo</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_repohdr_hist</column>
+      <column name="table_comment">Archive information for Curve Repo</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_spc_date</column>
+      <column name="table_comment">A specific, fixed curve point date on a simple curve</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_temp</column>
+      <column name="table_comment">Temporary table used while loading Pricer Config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_tenor</column>
+      <column name="table_comment">A relative curve point tenor on a simple curve, expressed in days</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_tenor_hist</column>
+      <column name="table_comment">Tenor related Curve Information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">curve_underlying</column>
+      <column name="table_comment">Basic identifying information about a curve underlying instrument. The complete definition of the underlying will be found in the appropriate curve_underlying_xx table.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">custom_curve_qt</column>
+      <column name="table_comment">Customized curve quotes.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">customer_call</column>
+      <column name="table_comment">A record of a call, generally from a person at a counterparty, inquiring about some aspect of a trade, rate reset, payment, or advice message.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">date_rule</column>
+      <column name="table_comment">Date Rule that user creates</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">del_char_ref_ent</column>
+      <column name="table_comment">Deliverable Characteristics Reference Entity used by OTC products</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">del_characteristic</column>
+      <column name="table_comment">Deliverable Characteristics used by OTC products</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">disp_calc</column>
+      <column name="table_comment">The network location of a Calculator in the Calypso Distributed Processing System. See also disp_config.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">disp_config</column>
+      <column name="table_comment">The network location of the Dispatcher in the Calypso Distributed Processing System. See also disp_calc.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">dividend</column>
+      <column name="table_comment">A dividend payment from an equity share</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">doc_region</column>
+      <column name="table_comment">A HTML Document region definition used for Document Security Management</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">doc_region_value</column>
+      <column name="table_comment">Document Management Security Parameters</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">domain_constraint</column>
+      <column name="table_comment">Min and Max Permissible size for each new domain values</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">domain_values</column>
+      <column name="table_comment">Static data values to populate Calypso combno boxes, etc. This table contains nearly all of the Calypso domains</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">drawing_schedule</column>
+      <column name="table_comment">Drawing Schedule</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">dual_ccy_mm_ext_info</column>
+      <column name="table_comment">Extended information for a dual currency cash instrument</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">eco_pl_col_name</column>
+      <column name="table_comment">Column name for econcomic PL analysis.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">engine_config</column>
+      <column name="table_comment">Configuration for engine.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">engine_param</column>
+      <column name="table_comment">Parameters for engine.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">entity_attributes</column>
+      <column name="table_comment">Attributes for legal entity.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">entity_state</column>
+      <column name="table_comment">State where legal entity resides.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">eq_linked_leg</column>
+      <column name="table_comment">Equity linked leg of a equity linked swap.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">eto_contract</column>
+      <column name="table_comment">Exchange Traded Option Contract.  Exchange traded equity options are "physical delivery" options.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">event_purge</column>
+      <column name="table_comment">To keep the ids for the events that have been purged.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">event_type_action</column>
+      <column name="table_comment">Event type action for products such as call notice or security lending.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fee_definition</column>
+      <column name="table_comment">Definition of a trade fee type, such as a premium or brokerage fee. Actual fees are stored in trade_fee.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fee_grid</column>
+      <column name="table_comment">Fee type and amount defined between PO and a legal entity.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fee_grid_attr</column>
+      <column name="table_comment">Attributes for fee grid.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">feed_address</column>
+      <column name="table_comment">The page address to be used to retrieve a given quote from a given real time feed</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">feed_default</column>
+      <column name="table_comment">The default feed system</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">feed_handler_log</column>
+      <column name="table_comment">Log created for the feed is stored here</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">feed_params</column>
+      <column name="table_comment">A parameter to be fed to the reat time feed system</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">filter_set</column>
+      <column name="table_comment">A set of criteria for loading (or excluding) trades. Each criterion is a filter_set_element. Used in the Workspace (as an Exclusion Filter) and in the Process Trades window. Not to be confused with a trade_filter.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">filter_set_domain</column>
+      <column name="table_comment">Vector values associates with Filter set elements</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">filter_set_element</column>
+      <column name="table_comment">A criterion for loading (or excluding) trades. Part of a filter_set.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">flow_cmp_period</column>
+      <column name="table_comment">A compounding period for a cash flow that pays compound interest (for example, a swap cash flow)</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">flow_config</column>
+      <column name="table_comment">For a given floating interest rate index, indicates the class name of a specialized, index-dedicated cashflow class that provides more efficient handling of cashflows for floating rate trades and trade legs.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">folder</column>
+      <column name="table_comment">Folder for Various Trades</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">folder_shortcut</column>
+      <column name="table_comment">ShortCut key information for various folders</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">folder_trades</column>
+      <column name="table_comment">Trade associated with folders.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">funding_rate</column>
+      <column name="table_comment">Funding rate defined between a PO and a legal entity.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">future_contract</column>
+      <column name="table_comment">A general, contract-wide definition of a future contract. Individual, tradeable expiry months of the contract are saved in product_future.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">future_ctd</column>
+      <column name="table_comment">A cheapest-to-deliver underlying (usually a bond) on a future</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_arb_config</column>
+      <column name="table_comment">Used to store templates for the fx arbitrage window</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_cash_flow</column>
+      <column name="table_comment">FX Cash product</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_fund_rate</column>
+      <column name="table_comment">Funding Rate for FX Spot Position Rollover</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_margin_hedge</column>
+      <column name="table_comment">Used to store configurations used by the fx margin hedge scheduled task</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_margin_hedge_attr</column>
+      <column name="table_comment">Used to store individual configurations used by the fx margin hedge scheduled task</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_opt_exp_tz</column>
+      <column name="table_comment">FX Option Expiry Time definition</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_opt_vol_beta</column>
+      <column name="table_comment">FX Option Volatility Beta Matrix</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_opt_vol_hol_wgt</column>
+      <column name="table_comment">Holiday weight factors used by volatility calculation that uses trading day time as opposed to calendar day time</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_position</column>
+      <column name="table_comment">A long or short position in a currency pair</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_rate_spreads</column>
+      <column name="table_comment">Spread amt config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_reset</column>
+      <column name="table_comment">Reset Information associate with FX</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_rollover_trades_template</column>
+      <column name="table_comment">Used to store templates for the fx rollover window</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_spot_risk_trans</column>
+      <column name="table_comment">FX Spot Risk Transfer config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_spotres_vd_sch</column>
+      <column name="table_comment">FX Spot Reserve set ValDate Schedule</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_trades_alloc</column>
+      <column name="table_comment">FX Trade Allocation template</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_user_favorites</column>
+      <column name="table_comment">Trading Pad app user prefrences</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_vol_event_weight</column>
+      <column name="table_comment">Event weight factors used by volatility calculation that uses trading day time as opposed to calendar day time</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_vol_event_weight_rule</column>
+      <column name="table_comment">Handy rules to generate event weight factors in a batch</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_vol_holiday_definition</column>
+      <column name="table_comment">Holiday duration definition used by volatility calculation that uses trading day time as opposed to calendar day time</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fx_vol_weekend_weight</column>
+      <column name="table_comment">Weekend weight factors used by volatility calculation that uses trading day time as opposed to calendar day time</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fxlinked_book_substitution</column>
+      <column name="table_comment">Configuration table used to substitute books in trade routing</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">fxorder_ex_entry</column>
+      <column name="table_comment">FX Order execution entries</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">generic_comment</column>
+      <column name="table_comment">Stores full text comments attached to objects such as trades, transfers, messages, postings, etc</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">group_access</column>
+      <column name="table_comment">A set of access permissions rule giving a user group the right to use a specific trading data: books, functions, pricing environments, data filters...</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">haircut</column>
+      <column name="table_comment">Haircut rules can be used to specify discounts for margin calls and repos.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">holiday_code</column>
+      <column name="table_comment">The basic definition of a city holiday calendar. The calendar's individual holiday dates are stored in holiday_date and its holiday generating rules are listed in holiday_code_rule.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">holiday_code_rule</column>
+      <column name="table_comment">Links a calendar to its holiday date generating rules. These rules are optional for a calendar, as it may consist entirely of holiday_dates.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">holiday_date</column>
+      <column name="table_comment">A holiday date for a holiday calendar. The calendar must first be established in holiday_code.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">holiday_rule</column>
+      <column name="table_comment">A holiday date generating rule</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">incoming_config</column>
+      <column name="table_comment">Configuration for incoming message.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">incoming_document</column>
+      <column name="table_comment">A saved copy of a document associated with an advice and/or a trade, such as a signed agreement or other legal document.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">industry_hierarchy</column>
+      <column name="table_comment">Industry Hierarchy Definition name, effective date etc.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">industry_hierarchy_attribute</column>
+      <column name="table_comment">Industry Hierarchy attributes (various information pertaining to Industry Hierarchy, Industry Hierarchy Node and Industry Hierarchy Map.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">industry_hierarchy_map</column>
+      <column name="table_comment">Industry Hierarchy map contains the relationship between a node and a legal entity or a product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">industry_hierarchy_node</column>
+      <column name="table_comment">Industry Hierarchy Node (a classification for the hierarchy)</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">inv_cash_position</column>
+      <column name="table_comment">A position (total amount of cash long or short) in a specific currency, in a specific Book, in a specific account.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">inv_cashpos_hist</column>
+      <column name="table_comment">Archived cash inventory positions</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">inv_cashposition</column>
+      <column name="table_comment">cash inventory position</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">inv_sec_position</column>
+      <column name="table_comment">A position (number of contracts long or short) in a specific contract (a Product, in a specific Book, in a specific account</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">inv_secpos_hist</column>
+      <column name="table_comment">Archived security inventory positions</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">inv_secposition</column>
+      <column name="table_comment">security inventory position</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">kickoff_config</column>
+      <column name="table_comment">Task kickoff and cutoff times for a particulat type of task in the Calypso workflow</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">le_agr_child</column>
+      <column name="table_comment">Children of the counterparty for which the Legal Entity Agreement applies.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">le_agreement_field</column>
+      <column name="table_comment">A user-added field saved in a le_legal_agreement</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">le_attribute</column>
+      <column name="table_comment">A user-added field saved in a legal_entity. The user may restrict it for use only in the contaxt of certain roles or when dealing with certain Processing Orgs.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">le_contact</column>
+      <column name="table_comment">A contact person for trading and trade advices. The contact person is usually identified based on his department (contact_type) and provides address information for the advices.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">le_legal_agreement</column>
+      <column name="table_comment">A legal agreement between a Processing Org and a counterparty or other organization. For example, a signed ISDA agreement with addenda. May contain user-defined le_agreement_fields.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">le_rating</column>
+      <column name="table_comment">A credit rating or other rating for an organization</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">le_registration</column>
+      <column name="table_comment">Registration information for the legal entity</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">le_relation</column>
+      <column name="table_comment">Restricts access to only the Counterparties defined for a Processing Organization. This will be tested at trade level.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">le_role_disabled</column>
+      <column name="table_comment">Disabled Roles of particular legal entity</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">le_settle_delivery</column>
+      <column name="table_comment">A saved settlement instruction that may be applied to many deals</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">legal_entity</column>
+      <column name="table_comment">An organization of any kind, internal or external</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">legal_entity_role</column>
+      <column name="table_comment">Roles of each legalentity</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">limit_adjustment</column>
+      <column name="table_comment">temporary adjustment for a limit facility</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">limit_cfg_criterion</column>
+      <column name="table_comment">A label used to define a trading limits bucket upon which a limit will be placed.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">limit_config</column>
+      <column name="table_comment">A trading limits configuration hierarchy</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">limit_config_limit</column>
+      <column name="table_comment">Limits on the exposure of the organization to particular sources of risk. Commonly used criteria for configuration include counterparty, credit rating, book, product type, currency and location.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">limit_config_node</column>
+      <column name="table_comment">A node in a trading limits configuration hierarchy, with set minimum, warning, and maximum limits</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">limit_crit_group</column>
+      <column name="table_comment">limit filter that uses inclusion/exclusin with a group</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">limit_crit_min_max</column>
+      <column name="table_comment">limit filter that uses min and max range</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">limit_keyword</column>
+      <column name="table_comment">user-defined keyword that is applied to a limit facility</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">limit_usage</column>
+      <column name="table_comment">amount of a limit facility used by a trade between two dates</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">liq_position</column>
+      <column name="table_comment">The details of a liquidation, specifically the number of contracts liquidated and the price at which the contracts were traded initially and in the liquidation</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">list_opt_contract</column>
+      <column name="table_comment">Contract for listed option.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">lottery_win_date</column>
+      <column name="table_comment">the date that a bond pays a lottery winner redemption</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">main_entry_prop</column>
+      <column name="table_comment">Main Entry Tab related information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">manual_sdi</column>
+      <column name="table_comment">Manual Settlement and Delivery Instructions</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">mapping_status</column>
+      <column name="table_comment">Mapping status for incoming message.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">market_data_item</column>
+      <column name="table_comment">Basic record saved to indicate the existence of any type of market data item</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">master_confirmation</column>
+      <column name="table_comment">A contract between a Processing Org and a counterparty. For example, a signed ISDA2003CreditNorthAmerican agreement. May contain user-defined master_confirmation_fields.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">master_confirmation_field</column>
+      <column name="table_comment">A user-added field saved in a master_confirmation</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">mess_attr_hist</column>
+      <column name="table_comment">Archived Bo Message attributes</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">mess_attributes</column>
+      <column name="table_comment">Bo Message attributes</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">message_comment</column>
+      <column name="table_comment">Comment taken on a particular message id.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">message_grouping</column>
+      <column name="table_comment">Configuration keys for Message Grouping</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">mime_type</column>
+      <column name="table_comment">Description of MIME Type File Formats</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">mrgcall_cashpos</column>
+      <column name="table_comment">Margin call cash position.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">mrgcall_config</column>
+      <column name="table_comment">Margin call configuration between PO and a legal entity.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">mrgcall_field</column>
+      <column name="table_comment">Margin call field and it value.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">mrgcall_secpos</column>
+      <column name="table_comment">Margin call security position.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">mutation</column>
+      <column name="table_comment">Mutation information that is tied to a particular contract.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">mutation_attr</column>
+      <column name="table_comment">Attribute name and its value for a particular mutation event.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">mutation_flow</column>
+      <column name="table_comment">Flows generated by mutation event.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">netting_config</column>
+      <column name="table_comment">Netting method to net payments of a specified deal type. Each netting method is defined by its unique combination of netting keys. A netting key is an attribute of a transfer used to find matching transfers that can be netted against that transfer.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">netting_method</column>
+      <column name="table_comment">Netting Configuration associated with particular product type,legal entity and processing org</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">notional_schedule</column>
+      <column name="table_comment">Scheduled principal structure.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">object_version</column>
+      <column name="table_comment">Version infomation associated with object like Holiday,Domain Values</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">observation</column>
+      <column name="table_comment">Observable details for a mutation event.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">option_contract</column>
+      <column name="table_comment">Option contract.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">org_name</column>
+      <column name="table_comment">A book hierarchy name. See org_node.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">org_node</column>
+      <column name="table_comment">A node in a book hierarchy. A book is sorted into a node based on its book_attr_values.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">passwd_history</column>
+      <column name="table_comment">User password Audit change associated</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">payout_formula</column>
+      <column name="table_comment">Payout formula.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_abs</column>
+      <column name="table_comment">Pricer configuration for abs securities (ABS panel).</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_commodity</column>
+      <column name="table_comment">Pricer configuration for commodity product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_correlation</column>
+      <column name="table_comment">Pricer Config Correlation Matrix mapping</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_credit</column>
+      <column name="table_comment">Pricer Config Credit</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_credit_issuer</column>
+      <column name="table_comment">Pricer configuration for credit issuer (Credit panel).</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_credit_rating</column>
+      <column name="table_comment">Pricer configuration for credit rating (Credit panel).</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_credit_rating_attribute</column>
+      <column name="table_comment">Attributes linked with pc_credit_rating.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_credit_spread</column>
+      <column name="table_comment">Pricer Config Credit Spread MarketData mapping</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_discount</column>
+      <column name="table_comment">A discount curve assignment saved in a pricer_config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_forecast</column>
+      <column name="table_comment">An index forecasting curve assignment saved in a pricer_config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_fx</column>
+      <column name="table_comment">Pricer Config FX Curves mapping</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_info</column>
+      <column name="table_comment">Information for Prcier Configuration saved for easier retrieval purposes.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_param</column>
+      <column name="table_comment">A Pricer-specific pricing parameter value saved in a pricer_config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_pricer</column>
+      <column name="table_comment">A Product-Pricer assignment saved in a pricer_config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_probability</column>
+      <column name="table_comment">Pricer Config Probability Curves mapping</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_prod_specific</column>
+      <column name="table_comment">Pricer Config Product Specific MarketData mapping</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_recovery</column>
+      <column name="table_comment">Pricer Config Curve Recovery mapping</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_repo</column>
+      <column name="table_comment">Pricer Config Curve Repo mapping</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_specific</column>
+      <column name="table_comment">A specific Pricer/market data assignment saved in a pricer_config for a combination of currency/Product type/Product subtype</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pc_surface</column>
+      <column name="table_comment">A volatility surface assignment saved in a pricer_config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pend_modif_audit</column>
+      <column name="table_comment">Audit of pending modification accepted in authorization mode</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pending_modif</column>
+      <column name="table_comment">A to-be-approved edit to an Authorizable object, or a to-be-approved creation or deletion of an Authorizable object.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">performance_leg</column>
+      <column name="table_comment">Performance leg of credit default swap.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">perm_book_cur_pair</column>
+      <column name="table_comment">Access Permission related to Book curreny Pair</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">perm_book_currency</column>
+      <column name="table_comment">Access permissions rule allowing a currency to be traded in a book</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">perm_book_product</column>
+      <column name="table_comment">Access Permission related to Product Accessible by book</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">perm_trading_pad</column>
+      <column name="table_comment">Trading Pad Permission config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">perm_webfx_user</column>
+      <column name="table_comment">Web FX permission config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pl_position</column>
+      <column name="table_comment">The liquidated and remaining open position in a particular instrument, along with profit and loss information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pricer_config</column>
+      <column name="table_comment">A user's set of curves, market data, and Pricers which he or she prefers to use in pricing financial instruments</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pricer_config_fx</column>
+      <column name="table_comment">An FX curve assignment saved in a pricer_config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pricer_measure</column>
+      <column name="table_comment">A Pricer Measure's name and the class used to calculate it. A Pricer Measure is a distinct valuation type that you can pass to a Product's Pricer class for calculation.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pricing_env</column>
+      <column name="table_comment">A Pricing Environment containing a user's set of market data and pricing parameters. Contains a pricer_config, a pricing_param, a quote_set, and a base currency.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pricing_param</column>
+      <column name="table_comment">A user's PricingParameters set containing parameter settings for his/her pricing models. Made up of pricing_param_items.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pricing_param_item</column>
+      <column name="table_comment">A single parameter setting saved in a pricing_param set.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pricing_param_name</column>
+      <column name="table_comment">Domain table that establishes the name, datatype, and domain of alowed values for each pricing parameter that can be saved in a pricing_param</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pricing_sheet_cfg</column>
+      <column name="table_comment">Configuration for pricing sheet.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">prod_exch_code</column>
+      <column name="table_comment">Exchange Code specific to product and Exchange</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_adr</column>
+      <column name="table_comment">For ADR product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_asset_swap</column>
+      <column name="table_comment">Table for Product AssetSwap</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_basket</column>
+      <column name="table_comment">For basket production information.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_billing</column>
+      <column name="table_comment">Stores a new type of product called Billing. A Billing Trade is a collection of Billing Fees. A Billing Fee can be a fee charged to a CPTY for an account management for instance</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_bond</column>
+      <column name="table_comment">A bond</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_bond_opt</column>
+      <column name="table_comment">For OTC bond option product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_bondspread</column>
+      <column name="table_comment">A bond spread instrument</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_bsb</column>
+      <column name="table_comment">A buy and sell-back instrument, similar to a repo</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_ca</column>
+      <column name="table_comment">A corporate action product, used to provide complete back office processing when a corporate action (like a coupon payment) is done</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_call_not</column>
+      <column name="table_comment">For call notice product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_cap_floor</column>
+      <column name="table_comment">An interest rate cap or floor</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_cash</column>
+      <column name="table_comment">A cash instrument</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_cds</column>
+      <column name="table_comment">For credit default swap product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_cds_option</column>
+      <column name="table_comment">For credit default swap option product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_cdsnthdflt</column>
+      <column name="table_comment">For credit default swap Nth default product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_cdsnthloss</column>
+      <column name="table_comment">For credit default swap Nth loss product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_cfd</column>
+      <column name="table_comment">A Contract For Difference product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_cmpd_opt</column>
+      <column name="table_comment">A Compound Option product, which is an option with an option as its underlying product</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_code</column>
+      <column name="table_comment">Primarily for fixed income products for the definition of product code.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_collateral</column>
+      <column name="table_comment">A collateral instrument used to secure a loan. Not for repos or security lending. See product_repo_collateral and product_seclending_col.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_commod_mm</column>
+      <column name="table_comment">For commodity money market product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_commodity</column>
+      <column name="table_comment">For commodity product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_commodity_otcoption2</column>
+      <column name="table_comment">averaging_policy and avg_rounding_policy columns are not used anymore, only here for migration purpose</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_commodity_swap2</column>
+      <column name="table_comment">averaging_policy and avg_rounding_policy columns are not used anymore, only here for migration purpose</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_commodity_swap</column>
+      <column name="table_comment">For commodity swap product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_custxfer</column>
+      <column name="table_comment">For customer trransfer product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_desc</column>
+      <column name="table_comment">Description of a financial Product. There is one record here for each saved Product in the system.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_els</column>
+      <column name="table_comment">For equity linked swap product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_equity</column>
+      <column name="table_comment">A corporate share issue</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_equity_idx</column>
+      <column name="table_comment">For equity index product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_eto</column>
+      <column name="table_comment">Table for Product ETO</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_fac_repo</column>
+      <column name="table_comment">For facility repo product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_facility</column>
+      <column name="table_comment">For facility product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_fra</column>
+      <column name="table_comment">A forward rate agreement</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_fut_opt</column>
+      <column name="table_comment">For future option product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_future</column>
+      <column name="table_comment">The tradeable future for a given expiry month. May be a bond or money market future.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_fx</column>
+      <column name="table_comment">A spot FX deal</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_fx_cash</column>
+      <column name="table_comment">For FX cash product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_fx_forward</column>
+      <column name="table_comment">An FX forward deal</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_fx_ndf</column>
+      <column name="table_comment">FX NDF product</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_fx_opt_fwd</column>
+      <column name="table_comment">FX Option Forward product</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_fx_opt_swp</column>
+      <column name="table_comment">FX Option Swap product</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_fx_option</column>
+      <column name="table_comment">An FX option</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_fx_order</column>
+      <column name="table_comment">FX Order</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_fx_spotres</column>
+      <column name="table_comment">FX Spot Reserve product</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_fx_swap</column>
+      <column name="table_comment">An FX swap</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_fx_takeup</column>
+      <column name="table_comment">FX Take up Product</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_fx_ttm</column>
+      <column name="table_comment">FX TTM product</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_fxoptstrip</column>
+      <column name="table_comment">A Strip deal of FX Options</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_generic_option</column>
+      <column name="table_comment">An option on a product. May have American, European, or Bermudan-style exercise.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_holding</column>
+      <column name="table_comment">For holding product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_intra_mm</column>
+      <column name="table_comment">An IntraDay loan or deposit</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_issuance</column>
+      <column name="table_comment">For issuance product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_jgb_repo</column>
+      <column name="table_comment">For JGB repo product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_keyword</column>
+      <column name="table_comment">A free-form, user-added label on a product</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_letter</column>
+      <column name="table_comment">For letter of credit product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_list_opt</column>
+      <column name="table_comment">For listed option product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_loan</column>
+      <column name="table_comment">A loan product used as a collateral in a facility repo</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_mmkt</column>
+      <column name="table_comment">A tradeable money market instrument</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_order_stgy</column>
+      <column name="table_comment">Order Strategy</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_otc_commodity_opt</column>
+      <column name="table_comment">For OTC commodity Option production information.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_otceq_opt</column>
+      <column name="table_comment">For OTC equity option product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_otceqtyopt</column>
+      <column name="table_comment">For OTC equity option product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_otcoption</column>
+      <column name="table_comment">For OTC option product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_pledge</column>
+      <column name="table_comment">A pledge of collateral between two dates</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_pool</column>
+      <column name="table_comment">A collateral pool product used as collateral in security lending trades</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_rating</column>
+      <column name="table_comment">A credit rating on a Product</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_repo</column>
+      <column name="table_comment">A repurchase agreement</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_reset</column>
+      <column name="table_comment">For reset product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_scot</column>
+      <column name="table_comment">Table for Product ScriptableOTCProduct</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_sec_basket</column>
+      <column name="table_comment">For security basket product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_sec_code</column>
+      <column name="table_comment">A user-defined identifying code or keyword saved as a label on a saved Product. For example, a CUSIP number.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_sec_lending</column>
+      <column name="table_comment">A security lending deal. Collateral instruments are saved in product_seclending_col.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_seclending</column>
+      <column name="table_comment">For security lending product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_simple_mm</column>
+      <column name="table_comment">A simple loan or deposit</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_simple_repo</column>
+      <column name="table_comment">A simple repurchase agreement</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_simplerepo</column>
+      <column name="table_comment">For simple repo product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_simplexfer</column>
+      <column name="table_comment">A transfer of cash or a security</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_spr_cap_fl</column>
+      <column name="table_comment">For spread cap floor product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_stockloan</column>
+      <column name="table_comment">For stock loan product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_structured</column>
+      <column name="table_comment">A structured interest rate derivatives deal</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_swap</column>
+      <column name="table_comment">An interest rate swap</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_swaption</column>
+      <column name="table_comment">An option on an interest rate swap. May have American, European, or Bermudan-style exercise.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_tlock</column>
+      <column name="table_comment">For treasury lock product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_trs</column>
+      <column name="table_comment">For total return swap product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_trs_basket</column>
+      <column name="table_comment">For total return swap basket product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_variable</column>
+      <column name="table_comment">eXSP Product Variable which either refer to an eXSP formula or a scalar product characteristic</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_variance_swap</column>
+      <column name="table_comment">A variance or volatility or gamma swap</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_xferagent</column>
+      <column name="table_comment">For transfer agent product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">product_xsp_extended_type</column>
+      <column name="table_comment">An eXSP type described as an eXSP product instance</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">ps_event</column>
+      <column name="table_comment">Event message used to communicate an event in the system, such as the saving of a trade or the setting of a floating rate. Events will be saved here only when their delivery must be guaranteed. Table should be purged regularly using the Admin Monitor.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">ps_event_cfg_name</column>
+      <column name="table_comment">Basic information about a saved Event Config, which will contain subscriptions saved as ps_event_config records.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">ps_event_config</column>
+      <column name="table_comment">Part of a ps_event_cfg_name, a ps_event_config establishes a subscription of the specified Engine to a specified type of ps_event</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">ps_event_filter</column>
+      <column name="table_comment">An event filter</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">ps_event_handling</column>
+      <column name="table_comment">Each row in this table represents one consumer of a saved ps_event. A record should only be purged from ps_event once all its ps_event_handling records have had their processed_b set to true.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">ps_event_inst</column>
+      <column name="table_comment">Persistent event stored as blob for which this is no individual table like Rate Reset</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">put_call_date</column>
+      <column name="table_comment">Expiry dates and delivery dates for various swaptions.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">put_call_schedule</column>
+      <column name="table_comment">A put or call option schedule on a trade</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">pvar_override</column>
+      <column name="table_comment">Optional Overrides for a Product Variable for a specific eXSP Product</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">qe_config</column>
+      <column name="table_comment">Quote Engine - Configuration header info</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">qe_qp_hierarchy</column>
+      <column name="table_comment">Quote Engine - Hierarchy src quote processor parameters</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">qe_qp_param</column>
+      <column name="table_comment">Quote Engine - Single/blended src quote processor parameters</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">qe_qproc_hdr</column>
+      <column name="table_comment">Quote Engine - Quote processor header info</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">qe_rule_hdr</column>
+      <column name="table_comment">Quote Engine - Validation and spread rule header info</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">qe_rule_param</column>
+      <column name="table_comment">Quote Engine - Validation and spread rule parameters</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">qs_monitor_cfg</column>
+      <column name="table_comment">Quote Server Monitor Config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">qs_request_log</column>
+      <column name="table_comment">Quote Server User Log</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">quotable_variable</column>
+      <column name="table_comment">eXSP Quotable Variable representing an item which is quotable in the market e.g. Interest Rate,FX,Equity</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">quote_name</column>
+      <column name="table_comment">Definition of quote type and decimals for a particular quote name.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">quote_set</column>
+      <column name="table_comment">A set of price and rate quotes. Each quote is saved as a quote_value.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">quote_value</column>
+      <column name="table_comment">A saved price or rate quote in a quote_set</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">quote_value_hist</column>
+      <column name="table_comment">Archive related Quote Value</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">qvar_override</column>
+      <column name="table_comment">Optional Overrides for a Quotable Variable for a specific eXSP Product</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">rate_index</column>
+      <column name="table_comment">A distinct currency and tenor of an index, such as USD 6-month LIBOR. Firther financial details for the rate index are saved in rate_index_default</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">rate_index_default</column>
+      <column name="table_comment">Financial definition of a rate index, such as LIBOR. Actual tenors of the index are saved in rate_index.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">recon_inven_row</column>
+      <column name="table_comment">One entry in the run of the depository reconcilliation report</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">recon_inven_run</column>
+      <column name="table_comment">A run of the depository reconcilliatioin report</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">reference_object</column>
+      <column name="table_comment">An object that is referred to by another object (see referring_object), such as StaticDataFilter, FilterSet, Curve</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">referring_object</column>
+      <column name="table_comment">All objects that can refer to an object specified in the reference_object table.  Ex:  A StaticDataFilter can be referenced by TaskWorkflowConfig or another StaticDataFilter.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">repo_collateral</column>
+      <column name="table_comment">Indicates the collateral instrument for a saved repo deal</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">report_browser_config</column>
+      <column name="table_comment">Store the user configuration for the report browser</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">report_browser_tree_node</column>
+      <column name="table_comment">Report browser tree node</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">report_panel_def</column>
+      <column name="table_comment">Report panel definition (used by Report Framework)</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">report_template</column>
+      <column name="table_comment">Report Template information for various reporting windows like Trade Audit Window,TradingReport window etc</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">report_view</column>
+      <column name="table_comment">Report view definition (used by the Report Framework)</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">report_win_def</column>
+      <column name="table_comment">Report window definition (used by the Report Framework)</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">risk_config</column>
+      <column name="table_comment">A risk analysis set containing a set of risk reports to be run and instructions for running each. Each row in the list of reports to be run is saved as a risk_config_item record.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">risk_config_item</column>
+      <column name="table_comment">Part of a risk_config, a risk_config_item contains the name of a risk report to be run and the instructions for how to run it and what deals to run it on.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">risk_on_demand_config</column>
+      <column name="table_comment">On-demand config details</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">risk_on_demand_item</column>
+      <column name="table_comment">Details for each on-demand risk item</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">risk_runner_config</column>
+      <column name="table_comment">Contains global calculation server settings</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">risk_shortcuts</column>
+      <column name="table_comment">Customized speed buttons created by individual user for launching risk analysis reports.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">sales_b2b_trd_cfg</column>
+      <column name="table_comment">Sale B2B Trade config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">scenario_items</column>
+      <column name="table_comment">Item of a rule in Scenario risk analysis.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">scenario_report</column>
+      <column name="table_comment">User configuration for scenario risk analyis report.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">scenario_rule</column>
+      <column name="table_comment">A rule in Scenario risk analysis.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">scenario_view</column>
+      <column name="table_comment">A view of a Scenario risk analysis report.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">sched_task</column>
+      <column name="table_comment">Scheduled task information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">sched_task_attr</column>
+      <column name="table_comment">Scheduled task Attribute information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">sched_task_exec</column>
+      <column name="table_comment">Scheduled task execution information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">sd_filter</column>
+      <column name="table_comment">Access Permission related to Product Accessible by book</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">sd_filter_element</column>
+      <column name="table_comment">Static Data Filter elements</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">sec_lend_country</column>
+      <column name="table_comment">The mapping of countries and security lending legal agreements</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">sec_lend_legal</column>
+      <column name="table_comment">The aspects of a legal agreement specific to a security lending trade</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">seclending_col</column>
+      <column name="table_comment">Indicates the collateral instrument for a product_sec_lending deal</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">send_config</column>
+      <column name="table_comment">Configuration for sender engine.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">sender_config</column>
+      <column name="table_comment">A configuration specifying which DocumentSenders will respond to which Message Event Types. For example, you might want the EMAILDocumentSender to respond to VERIFIED_TICKETs, e-mailing trade tickets to the responsible people on the desk.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">settle_method</column>
+      <column name="table_comment">store the possible settlement methods and the info in order for a settlement method to be used. Only valid in case the SDISelector is set to 'SDISelectorAlternate'</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">settle_msg_sending</column>
+      <column name="table_comment">rule for specifying how are the receivers of a settlement message (the agent, the agent of the cpty). If set, override the logic set at the Settlement Instruction</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">settle_position</column>
+      <column name="table_comment">position maintained by the PositionEngine</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">sort_order</column>
+      <column name="table_comment">Customized Sort order per user for use in reports</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">speed_button</column>
+      <column name="table_comment">Speed Button information to capture often used trade or risk data, used in CWS</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">surface_spc_date</column>
+      <column name="table_comment">A specific date point on a simple volatility surface</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">swap_leg</column>
+      <column name="table_comment">A leg of an interest rate swap. Always has a parent swap deal saved in product_swap.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">table_comment</column>
+      <column name="table_comment">Holds documentation like this</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">task_book_config</column>
+      <column name="table_comment">Used with task_event_config to specify what tasks a user group can see in the Task Station. Provides a list of the books whose tasks are visible to the user group.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">task_completion</column>
+      <column name="table_comment">Auxiliary table to complete linked tasks at TaskEngine start.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">task_event_config</column>
+      <column name="table_comment">Used with bo_task_book_config to specify what tasks a user group can see in the Task Station. Provides a list of the event types whose tasks are visible to the user group.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">template_dates</column>
+      <column name="table_comment">Product Template related Tenor information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">template_product</column>
+      <column name="table_comment">Used to specify that a saved product_ record (as indicated by the product_id in this table) is actually a trade template rather than a traded Product.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">termination_date</column>
+      <column name="table_comment">Predefined termination date(s) for a swap with early termination option, regardless it is mandatory or not.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">tf_temp_table</column>
+      <column name="table_comment">Temp table used to load non-cached trades by trade filters.This table is not used if all trades are cached.It holds requestId,tradeId, and version at time of selection.Rows are removed per request id after loading the TF.All rows are dropped at startup</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">ticker_keyword</column>
+      <column name="table_comment">Entries for trade allocation</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade</column>
+      <column name="table_comment">A trade</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade_bundle</column>
+      <column name="table_comment">A set of bundled trades. Any number of any type of trades may be bundled.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade_fee</column>
+      <column name="table_comment">A fee on a trade. To find the details of the fee type, see the table fee_definition.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade_fee_hist</column>
+      <column name="table_comment">Archive related Trade Fee</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade_filt_min_max</column>
+      <column name="table_comment">Min Max Criteria related to Trade Filter Attribute</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade_filter</column>
+      <column name="table_comment">A set of criteria for loading trades. Each criterion is a trade_filter_crit. Used in the Portfolio Manager, the Position Keeper, and in running Risk Analyses. Not to be confused with a filter_set.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade_filter_crit</column>
+      <column name="table_comment">A criterion for loading trades. Part of a trade_filter.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade_hist</column>
+      <column name="table_comment">Archive Trade Related Information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade_keyword</column>
+      <column name="table_comment">A free-form, user-added label on a trade</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade_keyword_hist</column>
+      <column name="table_comment">Archive related Trade Keyword</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade_note</column>
+      <column name="table_comment">Note or comment taken for a particular trade.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade_open_qty</column>
+      <column name="table_comment">A trade's remaining open position, which the system will add to all the other trade_open_quantities of a given Product, Book, or Currency in order to compute a pl_position.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade_openqty_hist</column>
+      <column name="table_comment">Archived remaining open positions</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade_role_alloc</column>
+      <column name="table_comment">An allocation of a specified amount of a trade's value to a certain LegalEntity. Used for notation only and does not affect actual payments or NPV calculations.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade_tmpl_keyword</column>
+      <column name="table_comment">Trade Template Keywords that can be used</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade_transfer_rule</column>
+      <column name="table_comment">The rules for generating a particular type of cashflow or security transfer for a certain trade. A trade will have as many TradeTransferRule objects as it has distinct types of cashflows/security transfers.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trade_xfer_rule</column>
+      <column name="table_comment">Trade Custom  Transfer rule</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trd_xfer_rule_hist</column>
+      <column name="table_comment">Archive related Trade TRADE_XFER_RULE</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">tree_name</column>
+      <column name="table_comment">Name of a tree structure used in the definition of a Scenario risk analysis (scenario params).</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">tree_node</column>
+      <column name="table_comment">A node of a tree structure used in the definition of a Scenario risk analysis (scenario params).</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trfilter_minmax_dt</column>
+      <column name="table_comment">Min Max Dates Criteria related to Trade Filter Attribute</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">trigger_info</column>
+      <column name="table_comment">TriggerSwaption table to store Trigger Information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">ttm_rate</column>
+      <column name="table_comment">TTM rate.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">ttm_spread</column>
+      <column name="table_comment">TTM spread.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_attribute</column>
+      <column name="table_comment">Attributes for user.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_defaults</column>
+      <column name="table_comment">A user's application default settings, used primarily to set trading and valuation defaults</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_group_name</column>
+      <column name="table_comment">A Calypso user group. See user_group_member for a list of the members in each group.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_last_login</column>
+      <column name="table_comment">User last login information</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_login_att</column>
+      <column name="table_comment">Login information of user logining into dataserver using various clients application</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_name</column>
+      <column name="table_comment">A Calypso user. The user must be assigned to a user group in order to gain application usage permissions.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_password</column>
+      <column name="table_comment">A Calypso user's encrypted password.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_viewer_book</column>
+      <column name="table_comment">A rule specifying that a user will be able to view a Book and its contents from his Trade Viewer window.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_viewer_bundle</column>
+      <column name="table_comment">A rule specifying that a user will be able to view a trade bundle and its contents from his Trade Viewer window.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_viewer_column</column>
+      <column name="table_comment">A user's saved column configuration for his/her workspace blotter</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_viewer_def</column>
+      <column name="table_comment">Definition of viewer of a particular user.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_viewer_default</column>
+      <column name="table_comment">A user's real time settings, as set in the Trade Viewer. The timer_interval is the frequency, in milliseconds, with which the val datetime will be made current. The real_time_b indicates whether the user will be alerted when market data changes.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_viewer_le</column>
+      <column name="table_comment">A rule specifying that a user will be able to view a Legal Entity and its contents from his Trade Viewer window.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_viewer_mitem</column>
+      <column name="table_comment">A user's custom menu item in the Trade Viewer window</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_viewer_port</column>
+      <column name="table_comment">A rule specifying that a user will be able to view a portfolio (a trade_filter) and its contents from his Trade Viewer window.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_viewer_prop</column>
+      <column name="table_comment">A user's preference setting for his/her workspace blotter. This free-form table allows all types of settings.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">user_viewer_ws</column>
+      <column name="table_comment">A specification that a user will see a certain workspace. A user can see any workspace but can only modfy his/her own. See work_space and related tables for the definition of each workspace.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">usr_access_perm</column>
+      <column name="table_comment">User Access permission Version Number</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">var_dataset</column>
+      <column name="table_comment">A value at risk dataset</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">var_dataset_corr</column>
+      <column name="table_comment">A VaR correlation matrix</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">var_dataset_data</column>
+      <column name="table_comment">A data member in a VaR dataset</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">var_dataset_factor</column>
+      <column name="table_comment">Establishes membership of a risk factor (an asset, for example) in a VaR dataset</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">var_dataset_vol</column>
+      <column name="table_comment">Volatility measures for a risk factor in a VaR dataset</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">var_risk_factor</column>
+      <column name="table_comment">A risk factor such as an asset which will be used in VaR analysis</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_pt_blob</column>
+      <column name="table_comment">Store Vol Surface Point as blob if propery SAVE_PTS_AS_BLOB is true</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_pt_blob_hist</column>
+      <column name="table_comment">Archive related information for VOL_PT_BLOB table</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_srfexpten_hist</column>
+      <column name="table_comment">Archive related information for vol_surf_exptenor table</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surf_exptenor</column>
+      <column name="table_comment">A point on the term-to-option-expiry axis of a volatility surface</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surf_mem_hist</column>
+      <column name="table_comment">Archive related information for vol_surface_member table</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surf_param</column>
+      <column name="table_comment">A user-added parameter used in generating a volatility surface</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surf_pnt_hist</column>
+      <column name="table_comment">Archive related information for vol_surface_point table</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surf_pointadj</column>
+      <column name="table_comment">Point adjustment of Volatility surface</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surf_qtvalue</column>
+      <column name="table_comment">A price or rate quote used to generate a derived volatility surface</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surf_strk_hist</column>
+      <column name="table_comment">An underlying option used to generate a derived volatility surface</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surf_und</column>
+      <column name="table_comment">General header information about a vol surface underlying instrument. The definition of each underlying can be found in one of the vol_surface_under_ tables.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surf_und_cap</column>
+      <column name="table_comment">An underlying cap or floor used to generate a derived volatility surface</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surf_und_fopt</column>
+      <column name="table_comment">An underlying future option used to generate a derived volatility surface</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surf_und_fxopt</column>
+      <column name="table_comment">Underlying fx option for volatility surface generation.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surf_und_opt</column>
+      <column name="table_comment">An underlying option used to generate a derived volatility surface</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surf_und_swpt</column>
+      <column name="table_comment">An underlying swaption used to generate a derived volatility surface</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surface</column>
+      <column name="table_comment">A volatility surface</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surface_hist</column>
+      <column name="table_comment">Archive related information for VOL_SURFACE_HIST table</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surface_member</column>
+      <column name="table_comment">Membership of an underlying instrument in a derived volatility surface. The definition of each underlying can be found in one of the vol_surface_under_ tables.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surface_point</column>
+      <column name="table_comment">A plotted volatility value at a point on a volatility surface</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surface_strike</column>
+      <column name="table_comment">A point on the option-strike axis of a volatility surface</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surface_tenor</column>
+      <column name="table_comment">A point on the tenor-of-underlying axis of a volatility surface</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surfparam_hist</column>
+      <column name="table_comment">Archive related information for vol_surf_param table</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surfptadj_hist</column>
+      <column name="table_comment">Archive related information for vol_surf_pointadj table</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surfqtval_hist</column>
+      <column name="table_comment">Archive related information for vol_surf_qtvalue table</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">vol_surftenor_hist</column>
+      <column name="table_comment">Archive related information for vol_surface_tenor table</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">watch_memory_para</column>
+      <column name="table_comment">Table used to store the Watcher (Administrative Tool) memory setting</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">watcher_parameters</column>
+      <column name="table_comment">Table used to store the Watcher (Administrative Tool)  setting</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">webfx_server_attrs</column>
+      <column name="table_comment">Web FX server config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">webfx_user_attrs</column>
+      <column name="table_comment">Web FX user config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">webfx_user_name</column>
+      <column name="table_comment">Web FX user list</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">wfw_custom_rules</column>
+      <column name="table_comment">Custom Rule that can be specified in WorkSpace</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">wfw_transition</column>
+      <column name="table_comment">A workflow step establishing one possible transition that can move a trade, payment, or message from one lifecycle stage to another. For example, the step PENDING/AUTHORIZE/VERIFIED creates the AUTHORIZE action to move trades from PENDING to VERIFIED.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">work_space</column>
+      <column name="table_comment">A saved Calypso workspace, which is a blotter that provides context for working with trades and helps the user track his/her trades. The details of the workspace are saved in the work_space_ tables.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">work_space_books</column>
+      <column name="table_comment">A rule specifying that trades in the specified trading book should be displayed in the workspace, provided the user has clicked the Show All Trades checkbox ON.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">work_space_bundles</column>
+      <column name="table_comment">A rule specifying that trades in the specified trade bundles should be displayed in the workspace, provided the user has clicked the Show All Trades checkbox ON.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">work_space_child</column>
+      <column name="table_comment">A rule specifying that speficied workspaces  should be displayed in the workspace.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">work_space_filters</column>
+      <column name="table_comment">A rule specifying that trades that match the specified filter set should be displayed in the workspace, provided the user has clicked the Use Excl Filter checkbox ON.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">work_space_port</column>
+      <column name="table_comment">A rule specifying that trades in the specified portfolios (trade filters) should be displayed in the workspace, provided the user has clicked the Show All Trades checkbox ON.</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">work_space_trades</column>
+      <column name="table_comment">A rule specifying that a trade should be displayed in a workspace</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">xccy_spot_mismatch</column>
+      <column name="table_comment">Cross Ccy spot mismatch config</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">xccy_swap_ext_info</column>
+      <column name="table_comment">Additioanl data for Xccy Swap product</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">xfer_attr_hist</column>
+      <column name="table_comment">Archive Table for XFER_ATTRIBUTES</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">xfer_attributes</column>
+      <column name="table_comment">Attributes of Transfer</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">xsp_compute_config</column>
+      <column name="table_comment">eXSP Type detailed configuration</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">xsp_qvar</column>
+      <column name="table_comment">eXSP Quotable Variables</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">xsp_type_mapping</column>
+      <column name="table_comment">Maps eXSP subtypes to a specific eXSP type</column>
+    </row>
+    <row cat="comments">
+      <column name="table_name">xsp_variable_setting</column>
+      <column name="table_comment">Settings for Template Variable for a specific eXSP product</column>
+    </row>
+  </table>
+</calypso:database>

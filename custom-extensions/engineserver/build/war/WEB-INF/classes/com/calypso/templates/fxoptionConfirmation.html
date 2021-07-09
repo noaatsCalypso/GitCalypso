@@ -1,0 +1,131 @@
+<!--calypso>
+if (|IS_TOP_LEVEL| == "true" && Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+
+<p>This trade carries our trade id number |TRADE_ID| and the details are as follows:
+</p>
+
+<p class="header2">Trade details:</p> 
+
+<table>
+<!--calypso>
+if (|PRODUCT_TYPE| == "FXOption")
+    inline "
+    <tr>
+        <td>Our Trade Id</td>
+        <td>|TRADE_ID|</td>
+    </tr>
+    <tr>
+        <td>Instrument Description</td>
+        <td>|PRODUCT_DESCRIPTION|</td>
+    </tr>
+    <tr>
+        <td>Buyer</td>
+        <td>|TRADE_BUYER_NAME|</td>
+    </tr>
+    <tr>
+        <td>Seller</td>
+        <td>|TRADE_SELLER_NAME|</td>
+    </tr>
+    <tr>
+        <td>Trade Date</td>
+        <td>|TRADE_DATE|</td>
+    </tr>
+    ";
+</calypso-->
+ <tr>
+  <td width="30%">Option Type/Style</td>
+  <td>|FXOPTION_TYPE| (|FXOPTION_STYLE|)</td>
+ </tr>
+ <tr>
+  <td>Exercise Date</td>
+  <td>|FXOPTION_EXPIRY_DATE|</td>
+ </tr>
+ <tr>
+  <td>Delivery Date</td>
+  <td>|FXOPTION_DELIVERY_DATE|</td>
+ </tr>
+ <tr>
+  <td>Bought Amount</td>
+  <td>|FXOPTION_BUY_CURRENCY| |FXOPTION_BUY_AMOUNT|</td>
+ </tr>
+ <tr>
+  <td>Sold Amount</td>
+  <td>|FXOPTION_SELL_CURRENCY| |FXOPTION_SELL_AMOUNT|</td>
+ </tr>
+ <tr>
+  <td>Strike Price</td>
+  <td>|FXOPTION_STRIKE|</td>
+ </tr>
+ <tr>
+  <td>Barrier Dates</td>
+  <td>|FXOPTION_BARRIER_STARTDATE| <!--calypso>if (|FXOPTION_BARRIER_STARTDATE| != "None") { inline "/"; }</calypso--> |FXOPTION_BARRIER_ENDDATE|</td>
+ </tr>
+ <tr>
+  <td>Barrier Up (if any)</td>
+  <td>|FXOPTION_BARRIER_UPVALUE|</td>
+ </tr>
+ <tr>
+  <td>Barrier Down (if any)</td>
+  <td>|FXOPTION_BARRIER_DOWNVALUE|</td>
+ </tr>
+ <tr>
+  <td>Digital PayOff</td>
+  <td>|FXOPTION_DIGITALPAYOUT|</td>
+ </tr>
+  <td>Premium Date</td>
+  <td>|PREMIUM_DATE|</td>
+ </tr>
+ <tr>
+  <td>Premium Amount</td>
+  <td>|PREMIUM_CURRENCY| |PREMIUM_AMOUNT|</td>
+ </tr>
+ <tr>
+</table>
+
+<br><br>
+
+<!--calypso>
+if(|HAS_ADDITIONAL_FIXED_AMOUNT| != "No") {
+    inline "<p class=header2>Additional Fixed Amount</p>";
+    inline "<table>";
+    iterator("FixedFees")
+        inline "    <tr><td width=30%>Fixed Rate Payer:</td><td>|ADDITIONAL_FIXED_AMOUNT_PAYER|</td></tr>
+        <tr><td>Fixed Rate Amount:</td><td>|ADDITIONAL_FIXED_AMOUNT_AMOUNT|</td></tr>
+        <tr><td>Fixed Rate Payment Date:</td><td>|ADDITIONAL_FIXED_AMOUNT_DATE|</td></tr>";
+    inline "</table>";
+}
+</calypso-->
+
+<!--calypso>
+if (|PRODUCT_TYPE| == "FXOption")
+    inline "
+<p class='header2'>Settlement Instructions</p>
+
+<table>
+ <tr>
+  <td width='30%'>Payment to |SENDER_CODE|:</td>
+  <td>|PO_INSTRUCTIONS|</td>
+ </tr>
+ <tr>
+  <td>Payment to |RECEIVER_CODE|:</td>
+  <td>|COUNTERPARTY_INSTRUCTIONS|</td>
+ </tr>
+</table>
+
+<br><br>
+
+<p>Please sign and return this Confirmation at your earliest convenience.
+Because of the importance of confirming transactions promptly and accurately,
+we regret that any Confirmations which are not signed and returned as soon
+as possible may result in a delay in payments.</p>
+    ";
+</calypso-->
+
+
+<!--calypso>
+if (|IS_TOP_LEVEL| == "true" && Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

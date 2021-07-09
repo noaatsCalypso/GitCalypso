@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    <contents>
+        <element name="DataPDU">
+            <attributes>
+                <attribute name="xmlns">
+                    <value>
+                        <text>
+                            <value>urn:swift:saa:xsd:saa.2.0</value>
+                        </text>
+                    </value>
+                </attribute>
+                <attribute name="xmlns:xsi">
+                    <value>
+                        <text>
+                            <value>http://www.w3.org/2001/XMLSchema-instance</value>
+                        </text>
+                    </value>
+                </attribute>
+            </attributes>
+            <contents>
+                <element name="Revision">
+                    <contents>
+                        <text>
+                            <value>2.0.5</value>
+                        </text>
+                    </contents>
+                </element>
+                <element name="Header">
+                    <contents>
+                        <element name="Message">
+                            <contents>
+                                <element name="SenderReference">
+                                    <contents>
+                                        <report>
+                                            <column>MESSAGE_ID</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <element name="MessageIdentifier">
+                                    <contents>
+                                        <report>
+                                            <column>MessageIdentifier</column>
+                                            <transformations>
+                                                <transformation type="regexp">
+                                                    <from>\.CBPR</from>
+                                                    <to></to>
+                                                </transformation>
+                                                <transformation type="regexp">
+                                                    <from>\.T2S</from>
+                                                    <to></to>
+                                                </transformation>
+                                                <transformation type="regexp">
+                                                    <from>\.T2</from>
+                                                    <to></to>
+                                                </transformation>
+                                                <transformation type="regexp">
+                                                    <from>\.COV</from>
+                                                    <to></to>
+                                                </transformation>
+                                                <transformation type="regexp">
+                                                    <from>\.CHAPS</from>
+                                                    <to></to>
+                                                </transformation>
+                                                <transformation type="regexp">
+                                                    <from>\.SIX</from>
+                                                    <to></to>
+                                                </transformation>
+                                            </transformations>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <element name="Format">
+                                    <contents>
+                                        <report>
+                                            <column>Format Type</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <element name="Sender">
+                                    <contents>
+                                        <element name="DN">
+                                            <contents max="1">
+                                                <include>
+                                                    <context>
+                                                        <to>SenderContact</to>
+                                                    </context>
+                                                    <condition>
+                                                        <expression>contains(getReportValue("TEMPLATE_NAME") , "CBPR")</expression>
+                                                    </condition>
+                                                    <path>ResponderDN.CBPR.xml</path>
+                                                </include>
+                                                <include>
+                                                    <context>
+                                                        <to>SenderContact</to>
+                                                    </context>
+                                                    <condition>
+                                                        <expression>!contains(getReportValue("TEMPLATE_NAME") , "CBPR")</expression>
+                                                    </condition>
+                                                    <path>ResponderDN.xml</path>
+                                                </include>
+                                            </contents>
+                                        </element>
+                                        <element name="FullName">
+                                            <contents>
+                                                <element name="X1">
+                                                    <contents>
+                                                        <report>
+                                                            <column>Sender.Swift</column>
+                                                            <transformations>
+                                                                <transformation type="function">
+                                                                    <to>completeSwiftBranch</to>
+                                                                </transformation>
+                                                            </transformations>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                                <element name="Receiver">
+                                    <contents>
+                                        <element name="DN">
+                                            <contents max="1">
+                                                <include>
+                                                    <context>
+                                                        <to>ReceiverContact</to>
+                                                    </context>
+                                                    <condition>
+                                                        <expression>contains(getReportValue("TEMPLATE_NAME") , "CBPR")</expression>
+                                                    </condition>
+                                                    <path>ResponderDN.CBPR.xml</path>
+                                                </include>
+                                                <include>
+                                                    <condition>
+                                                        <expression>contains(getReportValue("TEMPLATE_NAME") , "T2")</expression>
+                                                    </condition>
+                                                    <path>ResponderDN.T2.xml</path>
+                                                </include>
+                                                <include>
+                                                    <context>
+                                                        <to>ReceiverContact</to>
+                                                    </context>
+                                                    <condition>
+                                                        <expression>!contains(getReportValue("TEMPLATE_NAME") , "CBPR")</expression>
+                                                    </condition>
+                                                    <path>ResponderDN.xml</path>
+                                                </include>
+                                            </contents>
+                                        </element>
+                                        <element name="FullName">
+                                            <contents>
+                                                <element name="X1">
+                                                    <contents max="1">
+                                                        <report>
+                                                            <condition>
+                                                                <expression>contains(getReportValue("TEMPLATE_NAME") , "T2")</expression>
+                                                            </condition>
+                                                            <column>ESMIG_SWIFT</column>
+                                                        </report>
+                                                        <report>
+                                                            <condition>
+                                                                <expression>!contains(getReportValue("TEMPLATE_NAME") , "T2")</expression>
+                                                            </condition>
+                                                            <column>Receiver.Swift</column>
+                                                            <transformations>
+                                                                <transformation type="function">
+                                                                    <to>completeSwiftBranch</to>
+                                                                </transformation>
+                                                            </transformations>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                                <element name="InterfaceInfo">
+                                    <contents>
+                                        <element name="UserReference">
+                                            <contents>
+                                                <report>
+                                                    <column>MESSAGE_ID</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                                <element name="NetworkInfo">
+                                    <contents>
+                                        <element name="Service">
+                                            <context>
+                                                  <to>SenderContact</to>
+                                            </context>
+                                            <contents max="1">
+                                            	<report>
+                                                    <column>AdressMethod.MXNetInfoService</column>
+                                            	</report>
+                                            	<report>
+                                                    <column>LegalEntity.Attribute.MXNetInfoService</column>
+                                            	</report>
+                                                <text>
+                                                    <value>swift.eni</value>
+                                                </text>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                                <element name="SecurityInfo">
+                                    <contents>
+                                        <element name="SWIFTNetSecurityInfo"/>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <include>
+                    <path>MX.xml</path>
+                </include>
+            </contents>
+        </element>
+    </contents>
+</template>

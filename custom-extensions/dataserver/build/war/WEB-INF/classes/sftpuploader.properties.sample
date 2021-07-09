@@ -1,0 +1,26 @@
+# SFTP File Watcher
+# This takes files from a directory and transfer them to an SFTP site
+
+HostName=securefiletransfer.customer.com
+UserName=user
+Password=pass
+# Optional directory where files are to be uploaded after login
+Destination=
+
+# File Watcher Properties
+#This is the folder where we read the files.
+fileDir=/jail/customer/download/
+interval=10000
+fileAge=30000
+
+#This tells the file watcher to call the SFTP Publisher
+fileWatcherType=sftp
+
+#This tells the file watcher to monitor CSV & XML Files only
+fileFilter=csv,xml
+
+#Retry count if ftp connect fails
+ftpRetryCount=3
+
+#Sleep interval between ftp retries
+ftpRetryInterval=30000

@@ -1,0 +1,9 @@
+Message\ Id=//Document/LqdtyCdtTrf/MsgHdr/MsgId/text()
+Creation\ Date\ Time=//Document/LqdtyCdtTrf/MsgHdr/CreDtTm/text()
+Instruction\ Id=//Document/LqdtyCdtTrf/LqdtyCdtTrf/LqdtyTrfId/InstrId/text()
+EndToEnd\ Id=//Document/LqdtyCdtTrf/LqdtyCdtTrf/LqdtyTrfId/EndToEndId/text()
+Creditor\ Member\ ID=//Document/LqdtyCdtTrf/LqdtyCdtTrf/Cdtr/FinInstnId/ClrSysMmbId/MmbId/text()
+Settlement\ Amount=//Document/LqdtyCdtTrf/LqdtyCdtTrf/TrfdAmt/AmtWthCcy/text()
+Currency=//Document/LqdtyCdtTrf/LqdtyCdtTrf/TrfdAmt/AmtWthCcy/@Ccy
+Debtor\ Member\ ID=//Document/LqdtyCdtTrf/LqdtyCdtTrf/Dbtr/FinInstnId/ClrSysMmbId/MmbId/text()
+Settlement\ Date=//Document/LqdtyCdtTrf/LqdtyCdtTrf/SttlmDt/text()

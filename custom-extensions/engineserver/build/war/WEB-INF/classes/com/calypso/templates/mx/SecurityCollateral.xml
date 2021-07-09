@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+	<contents>
+		<element name="SctiesColl">
+			<contents>
+				<element name="SctyId">
+					<contents>
+						<element name="ISIN">
+							<contents>
+								<report>
+									<column>Underlying.Product Code.ISIN</column>
+								</report>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="Qty">
+					<contents>
+						<element name="FaceAmt">
+							<contents>
+								<report>
+									<column>Nominal</column>
+								</report>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="ValDt">
+					<contents>
+						<report>
+							<column>Trade Settle Date</column>
+						</report>
+					</contents>
+				</element>
+				<element name="SfkpgAcct" hideifempty="true">
+					<contents>
+						<element name="Id" hideifempty="true">
+							<contents max="1">
+								<report>
+                                    <condition>
+                                        <expression>getReportValue("Buy/Sell") == "Sell"  &amp;&amp; getReportValue("Receiver.Intermediary2.Name") != "" </expression>
+                                    </condition>
+									<column>Receiver.Intermediary.Account</column>
+								</report>
+								<report>
+                                    <condition>
+                                        <expression>getReportValue("Buy/Sell") == "Sell" </expression>
+                                    </condition>
+									<column>Receiver.Agent.Account</column>
+								</report>
+                                <report>
+                                    <condition>
+                                        <expression>getReportValue("Buy/Sell") == "Buy" &amp;&amp; getReportValue("Payer.Intermediary2.Name") != ""</expression>
+                                    </condition>
+                                    <column>Payer.Intermediary.Account</column>
+                                </report>
+                                <report>
+                                    <condition>
+                                        <expression>getReportValue("Buy/Sell") == "Buy" </expression>
+                                    </condition>
+                                    <column>Payer.Agent.Account</column>
+                                </report>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="SfkpgPlc">
+					<contents>
+						<element name="TpAndId">
+							<contents>
+								<element name="SfkpgPlcTp">
+									<contents>
+										<text>
+											<value>SHHE</value>
+										</text>
+									</contents>
+								</element>
+								<element name="Id">
+									<contents max="1">
+                                        <report>
+                                            <condition>
+                                                <expression>getReportValue("Buy/Sell") == "Sell"  &amp;&amp; getReportValue("Receiver.Intermediary2.Name") != "" </expression>
+                                            </condition>
+                                            <column>Receiver.Intermediary.Swift</column>
+                                        </report>
+                                        <report>
+                                            <condition>
+                                                <expression>getReportValue("Buy/Sell") == "Sell" </expression>
+                                            </condition>
+                                            <column>Receiver.Agent.Swift</column>
+                                        </report>
+                                        <report>
+                                            <condition>
+                                                <expression>getReportValue("Buy/Sell") == "Buy" &amp;&amp; getReportValue("Payer.Intermediary2.Name") != ""</expression>
+                                            </condition>
+                                            <column>Payer.Intermediary.Swift</column>
+                                        </report>
+                                        <report>
+                                            <condition>
+                                                <expression>getReportValue("Buy/Sell") == "Buy" </expression>
+                                            </condition>
+                                            <column>Payer.Agent.Swift</column>
+                                        </report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="SttlmParams">
+					<condition>
+						<expression>!isTransfer()</expression>
+					</condition>
+					<contents>
+						<element name="TradDt">
+							<contents>
+								<report>
+									<column>Trade Date</column>
+								</report>
+							</contents>
+						</element>
+						<element name="SttlmPties">
+							<contents max="1">
+								<element>
+									<condition>
+										<expression>isBuy()</expression>
+									</condition>
+									<contents>
+										<include>
+											<path>ReceiveParties.xml</path>
+										</include>
+									</contents>
+								</element>
+								<element>
+									<contents>
+										<include>
+											<path>DeliveryParties.xml</path>
+										</include>
+									</contents>
+								</element>
+							</contents>	
+						</element>							
+						<element name="CollOwnrsh">
+							<contents>
+								<element name="Prtry">
+									<context>
+										<to>MarginCallConfig</to>
+									</context>
+									<contents>
+										<report>
+											<column>ADDITIONAL_FIELD.CCP_ORIGIN_CODE</column>
+											<transformations>
+												<transformation>
+													<from>C</from>
+													<to>false</to>
+												</transformation>
+												<transformation>
+													<from>CLIENT</from>
+													<to>false</to>
+												</transformation>
+												<transformation>
+													<from>H</from>
+													<to>true</to>
+												</transformation>
+												<transformation>
+													<from>HOUSE</from>
+													<to>true</to>
+												</transformation>
+											</transformations>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+			</contents>	
+		</element>
+	</contents>
+</template>

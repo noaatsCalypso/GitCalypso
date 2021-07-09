@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type x99: Free Format Message -->
+<SwiftMsgDef>
+    <Name>MTx99</Name>
+    <ModeSelectionList>
+        <ModeSelection qualifier="NEW" />
+        <ModeSelection qualifier="AMEND" />
+        <ModeSelection qualifier="CANCEL" />
+    </ModeSelectionList>
+    <SwiftSequence name="A:General Information" modes="MMM">
+        <SwiftField name="Transaction Reference Number" tag=":20:" format="16x" value="TRADE_ID" modes="MMM" />
+        <SwiftField name="Related Reference" tag=":21:" format="16x" value="TRADE_INTERNALREFERENCE" modes="OOO" />
+        <SwiftField name="Narrative" tag=":79:" format="35*50x" template="" modes="MMM" />
+    </SwiftSequence>
+</SwiftMsgDef>

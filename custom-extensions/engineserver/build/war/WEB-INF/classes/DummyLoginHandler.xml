@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!--
+		Login handler to handle the Authentication based on Calypso default user details provided from args etc
+		as part of spring initialization
+	 -->	
+	<bean id="loginHandler" class="test.com.calypso.infra.authentication.service.DummyLoginTask" init-method="perform">
+  	</bean>
+
+	<bean name="tokenFactory" class="com.calypso.infra.authentication.service.TokenFactory" depends-on="loginHandler"/>
+</beans>

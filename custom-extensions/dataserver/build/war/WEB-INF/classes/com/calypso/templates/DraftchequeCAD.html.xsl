@@ -1,0 +1,1924 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                xmlns:html="http://www.w3.org/1999/xhtml">
+
+  <xsl:output method="xml"
+              version="1.0"
+              encoding="UTF-8"
+              indent="no"/>
+
+  <!--======================================================================
+      Parameters
+  =======================================================================-->
+
+  <!-- page size -->
+  <xsl:param name="page-width">8.5in</xsl:param>
+  <xsl:param name="page-height">11in</xsl:param>
+  <xsl:param name="page-margin-top">1in</xsl:param>
+  <xsl:param name="page-margin-bottom">1in</xsl:param>
+  <xsl:param name="page-margin-left">0.3in</xsl:param>
+  <xsl:param name="page-margin-right">0.3in</xsl:param>
+
+  <!-- page header and footer -->
+  <xsl:param name="page-header-margin">0.5in</xsl:param>
+  <xsl:param name="page-footer-margin">0.5in</xsl:param>
+  <xsl:param name="title-print-in-header">false</xsl:param>
+  <xsl:param name="page-number-print-in-footer">false</xsl:param>
+
+  <!-- multi column -->
+  <xsl:param name="column-count">1</xsl:param>
+  <xsl:param name="column-gap">12pt</xsl:param>
+
+  <!-- writing-mode: lr-tb | rl-tb | tb-rl -->
+    <xsl:param name="writing-mode">lr-tb</xsl:param>
+
+    <xsl:param name="font-family">Helvetica</xsl:param>
+
+  <!-- text-align: justify | start -->
+  <xsl:param name="text-align">start</xsl:param>
+
+  <!-- hyphenate: true | false -->
+  <xsl:param name="hyphenate">false</xsl:param>
+
+
+  <!--======================================================================
+      Attribute Sets
+  =======================================================================-->
+
+  <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+       Root
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+  <xsl:attribute-set name="root">
+    <xsl:attribute name="writing-mode"><xsl:value-of select="$writing-mode"/></xsl:attribute>
+    <xsl:attribute name="hyphenate"><xsl:value-of select="$hyphenate"/></xsl:attribute>
+      <xsl:attribute name="text-align"><xsl:value-of select="$text-align"/></xsl:attribute>
+      <xsl:attribute name="font-family">
+          <xsl:if test="$font-family and string-length($font-family) &gt; 0">
+              <xsl:value-of select="$font-family"/>
+          </xsl:if>
+      </xsl:attribute>
+      <!--xsl:attribute name="font-family"><xsl:value-of select="$font-family"/></xsl:attribute -->
+    <!-- specified on fo:root to change the properties' initial values -->
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="page">
+    <xsl:attribute name="page-width"><xsl:value-of select="$page-width"/></xsl:attribute>
+    <xsl:attribute name="page-height"><xsl:value-of select="$page-height"/></xsl:attribute>
+      <xsl:attribute name="master-name">all-pages</xsl:attribute>
+    <!-- specified on fo:simple-page-master -->
+  </xsl:attribute-set>
+    <xsl:attribute-set name="pagesequence">
+        <xsl:attribute name="master-reference">all-pages</xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="xsl-region-body">
+        <xsl:attribute name="flow-name">xsl-region-body</xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="flowname-page-footer">
+        <xsl:attribute name="flow-name">page-footer</xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="flowname-page-header">
+        <xsl:attribute name="flow-name">page-header</xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="region-before-lr-tb">
+        <xsl:attribute name="region-name">page-header</xsl:attribute>
+        <xsl:attribute name="display-align">before</xsl:attribute>
+        <xsl:attribute name="extent"><xsl:value-of select="$page-margin-top"/></xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="region-before-rl-tb">
+        <xsl:attribute name="region-name">page-header</xsl:attribute>
+        <xsl:attribute name="display-align">before</xsl:attribute>
+        <xsl:attribute name="extent"><xsl:value-of select="$page-margin-top"/></xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="region-before-tb-rl">
+        <xsl:attribute name="precedence">true</xsl:attribute>
+        <xsl:attribute name="extent"><xsl:value-of select="$page-margin-right"/></xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="region-after-tb-rl">
+        <xsl:attribute name="precedence">true</xsl:attribute>
+        <xsl:attribute name="extent"><xsl:value-of select="$page-margin-left"/></xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="region-start-tb-rl">
+        <xsl:attribute name="region-name">page-header</xsl:attribute>
+        <xsl:attribute name="writing-mode">lr-tb</xsl:attribute>
+        <xsl:attribute name="display-align">before</xsl:attribute>
+        <xsl:attribute name="extent"><xsl:value-of select="$page-margin-top"/></xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="region-end-tb-rl">
+        <xsl:attribute name="region-name">page-footer</xsl:attribute>
+        <xsl:attribute name="writing-mode">lr-tb</xsl:attribute>
+        <xsl:attribute name="display-align">after</xsl:attribute>
+        <xsl:attribute name="extent"><xsl:value-of select="$page-margin-bottom"/></xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="region-after-rl-tb">
+        <xsl:attribute name="region-name">page-footer</xsl:attribute>
+        <xsl:attribute name="display-align">after</xsl:attribute>
+        <xsl:attribute name="extent"><xsl:value-of select="$page-margin-bottom"/></xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="region-start-rl-tb">
+        <xsl:attribute name="extent"><xsl:value-of select="$page-margin-right"/></xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="region-end-rl-tb">
+        <xsl:attribute name="extent"><xsl:value-of select="$page-margin-left"/></xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="region-start-lr-tb">
+        <xsl:attribute name="extent"><xsl:value-of select="$page-margin-left"/></xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="region-end-lr-tb">
+        <xsl:attribute name="extent"><xsl:value-of select="$page-margin-bottom"/></xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="region-after-lr-tb">
+        <xsl:attribute name="region-name">page-footer</xsl:attribute>
+        <xsl:attribute name="display-align">after</xsl:attribute>
+        <xsl:attribute name="extent"><xsl:value-of select="$page-margin-bottom"/></xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="region-body">
+        <xsl:attribute name="margin-top"><xsl:value-of select="$page-margin-top"/></xsl:attribute>
+        <xsl:attribute name="margin-right"><xsl:value-of select="$page-margin-right"/></xsl:attribute>
+        <xsl:attribute name="margin-bottom"><xsl:value-of select="$page-margin-bottom"/></xsl:attribute>
+        <xsl:attribute name="margin-left"><xsl:value-of select="$page-margin-left"/></xsl:attribute>
+        <xsl:attribute name="column-count"><xsl:value-of select="$column-count"/></xsl:attribute>
+        <xsl:attribute name="column-gap"><xsl:value-of select="$column-gap"/></xsl:attribute>
+    </xsl:attribute-set>
+	
+	<xsl:attribute-set name="body">
+		<xsl:attribute name="font-size">small</xsl:attribute>
+	<!-- 
+		<xsl:attribute name="background-image">
+			url("data:image/png;base64,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49xxxx0cO3aMBQsW8M477/Anf/InfPDBB+Tk5BCLxXjggQdUNBG5ilqARGT+7bk5HFRVVeF0Okkmkxw5coREIsH69esZGRlhamoKt9tNYWEhmUxGBRORq7cjKoGIzCeZTIZMJoPX62Xz5s2k02kCgQCFhYXk5uZimiaJRIKamhpCoRA2m/bzRORq2jKIyLzS09PD5s2b6ezs/GgvzuHgscce4+zZs6RSKerq6mhsbKS1tZXKykoVTEQ+llqARGReqa2tpba29ornysrK+OpXv5p9fPvtt6tQIvIbqQVIREREFIBEREREFIBEREREFIBEREREFIBEREREFIBEREREFIBEREREFIBEREREFIBEREREFIBEREREFIBERERErhGNBSYiN62BgQESiYQKcR0MDw+Tl5eH3W5XMeSWYFkWmUxGAUhE5v/GbMGCBeTn56sY10EgECAvLw+HQz8DcmvIZDKMj48rAInI/GYYBrm5ueTl5akYCkAin2mnyTAMBSARuTWNj48TDAb/byPmcLB8+fKrpovFYvj9/iueGxgY4PTp0zz88MMqpMiXnE6CFpF5ZXBwkKKiIs6cOYPT6WRmZgbTNEkkEszOzpLJZAiFQuzdu5dUKpV93jRNcnNz6e3tVRFFRC1AIjK/NDU1AeD1evH7/dTW1jI5OcnevXvx+XzYbDbKysro7u4mFArx+uuvU1ZWRkFBAU1NTZ+riVxEbl1qARKRee/06dOsXLmS+++/nxMnTuD1eqmurqasrIwNGzYQDocZGRlRoUREAUhE5rdkMollWQD4/X4GBgbIZDIUFhbicrkwTZNQKERXVxf33nsvqVQK0zQxTVPFExEFIBGZf0ZHRxkbG6Ojo4N0Os2aNWuIx+McPnyYBx98kIqKCizLIplMYhgGo6OjZDIZLl26hNfrJRwOq4giX3I6B0hE5p3S0lL+6q/+6ornHn300Sse//Ef/zEAVVVVAGzcuBGA1atXq4AiohYgERERUQASERERUQASERERUQASERERUQASERERUQASERERUQASERERUQASERERUQASERERUQASERERuW40FIaI3JQMw+Ds2bMMDw+rGNdBV1cXpmlit9tVDLklWJaFYRgKQCIyvxUVFXH//ferENfJunXrVAS5JXecFIBEZN6z2XSUXkSu0/ZFJRAREREFIBEREREFIBEREREFIBEREZF5bd6dBJ3JZAiFQiQSCS09kRskEolgmqYKISIKQF8EwzBYtmwZr7322ufq6iYivxvLsli+fLkKISK3jP8HX3MwZ0OE79EAAAAASUVORK5CYII=")
+		</xsl:attribute>
+		<xsl:attribute name="background-repeat">no-repeat</xsl:attribute>
+		 -->
+	</xsl:attribute-set>
+	
+  <xsl:attribute-set name="page-header">
+    <!-- specified on (page-header)fo:static-content's only child fo:block -->
+    <xsl:attribute name="font-size">small</xsl:attribute>
+    <xsl:attribute name="text-align">center</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="page-footer">
+    <!-- specified on (page-footer)fo:static-content's only child fo:block -->
+    <xsl:attribute name="font-size">small</xsl:attribute>
+    <xsl:attribute name="text-align">center</xsl:attribute>
+  </xsl:attribute-set>
+
+  <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+       Block-level
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+  <xsl:attribute-set name="h1">
+    <xsl:attribute name="font-size">2em</xsl:attribute>
+    <xsl:attribute name="font-weight">bold</xsl:attribute>
+    <xsl:attribute name="space-before">0.67em</xsl:attribute>
+    <xsl:attribute name="space-after">0.67em</xsl:attribute>
+    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
+    <xsl:attribute name="keep-together.within-column">always</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="h2">
+    <xsl:attribute name="font-size">1.5em</xsl:attribute>
+    <xsl:attribute name="font-weight">bold</xsl:attribute>
+    <xsl:attribute name="space-before">0.83em</xsl:attribute>
+    <xsl:attribute name="space-after">0.83em</xsl:attribute>
+    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
+    <xsl:attribute name="keep-together.within-column">always</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="h3">
+    <xsl:attribute name="font-size">1.17em</xsl:attribute>
+    <xsl:attribute name="font-weight">bold</xsl:attribute>
+    <xsl:attribute name="space-before">1em</xsl:attribute>
+    <xsl:attribute name="space-after">1em</xsl:attribute>
+    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
+    <xsl:attribute name="keep-together.within-column">always</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="h4">
+    <xsl:attribute name="font-size">1em</xsl:attribute>
+    <xsl:attribute name="font-weight">bold</xsl:attribute>
+    <xsl:attribute name="space-before">1.17em</xsl:attribute>
+    <xsl:attribute name="space-after">1.17em</xsl:attribute>
+    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
+    <xsl:attribute name="keep-together.within-column">always</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="h5">
+    <xsl:attribute name="font-size">0.83em</xsl:attribute>
+    <xsl:attribute name="font-weight">bold</xsl:attribute>
+    <xsl:attribute name="space-before">1.33em</xsl:attribute>
+    <xsl:attribute name="space-after">1.33em</xsl:attribute>
+    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
+    <xsl:attribute name="keep-together.within-column">always</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="h6">
+    <xsl:attribute name="font-size">0.67em</xsl:attribute>
+    <xsl:attribute name="font-weight">bold</xsl:attribute>
+    <xsl:attribute name="space-before">1.67em</xsl:attribute>
+    <xsl:attribute name="space-after">1.67em</xsl:attribute>
+    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
+    <xsl:attribute name="keep-together.within-column">always</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="p">
+    <xsl:attribute name="space-before">1em</xsl:attribute>
+      <xsl:attribute name="space-after">1em</xsl:attribute>
+    <!-- e.g.,
+    <xsl:attribute name="text-indent">1em</xsl:attribute>
+    -->
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="p-initial" use-attribute-sets="p">
+    <!-- initial paragraph, preceded by h1..6 or div -->
+    <!-- e.g.,
+    <xsl:attribute name="text-indent">0em</xsl:attribute>
+    -->
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="p-initial-first" use-attribute-sets="p-initial">
+    <!-- initial paragraph, first child of div, body or td -->
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="blockquote">
+    <xsl:attribute name="start-indent">inherited-property-value(start-indent) + 24pt</xsl:attribute>
+    <xsl:attribute name="end-indent">inherited-property-value(end-indent) + 24pt</xsl:attribute>
+    <xsl:attribute name="space-before">1em</xsl:attribute>
+    <xsl:attribute name="space-after">1em</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="pre">
+    <xsl:attribute name="font-size">0.83em</xsl:attribute>
+    <xsl:attribute name="font-family">monospace</xsl:attribute>
+    <xsl:attribute name="white-space">pre</xsl:attribute>
+    <xsl:attribute name="space-before">1em</xsl:attribute>
+    <xsl:attribute name="space-after">1em</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="address">
+    <xsl:attribute name="font-style">italic</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="hr">
+    <xsl:attribute name="border">1px inset</xsl:attribute>
+    <xsl:attribute name="space-before">0.67em</xsl:attribute>
+    <xsl:attribute name="space-after">0.67em</xsl:attribute>
+  </xsl:attribute-set>
+
+  <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+       List
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+  <xsl:attribute-set name="ul">
+    <xsl:attribute name="space-before">1em</xsl:attribute>
+    <xsl:attribute name="space-after">1em</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="ul-nested">
+    <xsl:attribute name="space-before">0pt</xsl:attribute>
+    <xsl:attribute name="space-after">0pt</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="ol">
+    <xsl:attribute name="space-before">1em</xsl:attribute>
+    <xsl:attribute name="space-after">1em</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="ol-nested">
+    <xsl:attribute name="space-before">0pt</xsl:attribute>
+    <xsl:attribute name="space-after">0pt</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="ul-li">
+    <!-- for (unordered)fo:list-item -->
+    <xsl:attribute name="relative-align">baseline</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="ol-li">
+    <!-- for (ordered)fo:list-item -->
+    <xsl:attribute name="relative-align">baseline</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="dl">
+    <xsl:attribute name="space-before">1em</xsl:attribute>
+    <xsl:attribute name="space-after">1em</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="dt">
+    <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
+    <xsl:attribute name="keep-together.within-column">always</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="dd">
+    <xsl:attribute name="start-indent">inherited-property-value(start-indent) + 24pt</xsl:attribute>
+  </xsl:attribute-set>
+
+  <!-- list-item-label format for each nesting level -->
+
+  <xsl:param name="ul-label-1">&#x2022;</xsl:param>
+  <xsl:attribute-set name="ul-label-1">
+    <xsl:attribute name="font">1em serif</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:param name="ul-label-2">o</xsl:param>
+  <xsl:attribute-set name="ul-label-2">
+    <xsl:attribute name="font">0.67em monospace</xsl:attribute>
+    <xsl:attribute name="baseline-shift">0.25em</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:param name="ul-label-3">-</xsl:param>
+  <xsl:attribute-set name="ul-label-3">
+    <xsl:attribute name="font">bold 0.9em sans-serif</xsl:attribute>
+    <xsl:attribute name="baseline-shift">0.05em</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:param name="ol-label-1">1.</xsl:param>
+  <xsl:attribute-set name="ol-label-1"/>
+
+  <xsl:param name="ol-label-2">a.</xsl:param>
+  <xsl:attribute-set name="ol-label-2"/>
+
+  <xsl:param name="ol-label-3">i.</xsl:param>
+  <xsl:attribute-set name="ol-label-3"/>
+
+  <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+       Table
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+  <xsl:attribute-set name="inside-table">
+    <!-- prevent unwanted inheritance -->
+    <xsl:attribute name="start-indent">0pt</xsl:attribute>
+    <xsl:attribute name="end-indent">0pt</xsl:attribute>
+    <xsl:attribute name="text-indent">0pt</xsl:attribute>
+    <xsl:attribute name="last-line-end-indent">0pt</xsl:attribute>
+    <xsl:attribute name="text-align">start</xsl:attribute>
+    <xsl:attribute name="text-align-last">relative</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="table-and-caption" >
+    <!-- horizontal alignment of table itself
+    <xsl:attribute name="text-align">center</xsl:attribute>
+    -->
+    <!-- vertical alignment in table-cell -->
+    <xsl:attribute name="display-align">center</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="table">
+      <!--
+    <xsl:attribute name="border-collapse">separate</xsl:attribute>
+    <xsl:attribute name="border-spacing">2px</xsl:attribute>
+    -->
+    <xsl:attribute name="border">1px</xsl:attribute>
+    <xsl:attribute name="table-layout">fixed</xsl:attribute>
+    <!--
+    <xsl:attribute name="border-style">outset</xsl:attribute>
+    -->
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="table-caption" use-attribute-sets="inside-table">
+    <xsl:attribute name="text-align">center</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="table-column">
+      <xsl:attribute name="column-width">auto</xsl:attribute>
+  </xsl:attribute-set>
+  
+  <xsl:attribute-set name="table-row">
+      <xsl:attribute name="row-height">50</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="thead" use-attribute-sets="inside-table">
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="tfoot" use-attribute-sets="inside-table">
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="tbody" use-attribute-sets="inside-table">
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="tr">
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="th">
+    <xsl:attribute name="font-weight">bold</xsl:attribute>
+    <xsl:attribute name="text-align">center</xsl:attribute>
+    <xsl:attribute name="border">1px</xsl:attribute>
+    <!--
+    <xsl:attribute name="border-style">inset</xsl:attribute>
+    -->
+    <xsl:attribute name="padding">1px</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="td">
+    <xsl:attribute name="border">1px</xsl:attribute>
+    <!--
+    <xsl:attribute name="border-style">inset</xsl:attribute>
+    -->
+    <xsl:attribute name="padding">1px</xsl:attribute>
+  </xsl:attribute-set>
+
+  <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+       Inline-level
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+  <xsl:attribute-set name="b">
+    <xsl:attribute name="font-weight">bold</xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="strong">
+    <xsl:attribute name="font-weight">bold</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="strong-em">
+    <xsl:attribute name="font-weight">bold</xsl:attribute>
+    <xsl:attribute name="font-style">italic</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="i">
+    <xsl:attribute name="font-style">italic</xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="cite">
+    <xsl:attribute name="font-style">italic</xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="em">
+    <xsl:attribute name="font-style">italic</xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="var">
+    <xsl:attribute name="font-style">italic</xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="dfn">
+    <xsl:attribute name="font-style">italic</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="tt">
+    <xsl:attribute name="font-family">monospace</xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="code">
+    <xsl:attribute name="font-family">monospace</xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="kbd">
+    <xsl:attribute name="font-family">monospace</xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="samp">
+    <xsl:attribute name="font-family">monospace</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="big">
+    <xsl:attribute name="font-size">larger</xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="small">
+    <xsl:attribute name="font-size">smaller</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="sub">
+    <xsl:attribute name="baseline-shift">sub</xsl:attribute>
+    <xsl:attribute name="font-size">smaller</xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="sup">
+    <xsl:attribute name="baseline-shift">super</xsl:attribute>
+    <xsl:attribute name="font-size">smaller</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="s">
+    <xsl:attribute name="text-decoration">line-through</xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="strike">
+    <xsl:attribute name="text-decoration">line-through</xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="del">
+    <xsl:attribute name="text-decoration">line-through</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="u">
+    <xsl:attribute name="text-decoration">underline</xsl:attribute>
+  </xsl:attribute-set>
+  <xsl:attribute-set name="ins">
+    <xsl:attribute name="text-decoration">underline</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="abbr">
+    <!-- e.g.,
+    <xsl:attribute name="font-variant">small-caps</xsl:attribute>
+    <xsl:attribute name="letter-spacing">0.1em</xsl:attribute>
+    -->
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="acronym">
+    <!-- e.g.,
+    <xsl:attribute name="font-variant">small-caps</xsl:attribute>
+    <xsl:attribute name="letter-spacing">0.1em</xsl:attribute>
+    -->
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="q"/>
+  <xsl:attribute-set name="q-nested"/>
+
+  <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+       Image
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+  <xsl:attribute-set name="img">
+  </xsl:attribute-set>
+<!-- 
+	<xsl:attribute-set name="bg-img">
+		<xsl:attribute name="background-image">data:image/png;base64,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eAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjcAAAAAAJUgeAMAAAAAUAmCNwAAAAAAlSB4AwAAAABQCYI3AAAAAACVIHgDAAAAAFAJgjdcwYqicBIAAAAAqAzBG65gtVpN9AYAAACgMgRvuMLVajUnAYArig97AQCgun7PKQBEbwCutPc90RsAqsl7PCB4A34oAOCKfv9rfvArhAPAB5vBXEBiShMAAK4gS4O2X4wB4Mp53weuDII3AABXjKWB2y/CAHDlvO8DVwbBG3hPvRdhYa3nEDYA8IswAABUl+ANvC9czhC9Vry42Pys69mPqampDA0NXTSSrLatjRyrQA8AAACwfoI3sCkjIyOp1WrruvX19ZXrrRaJ38sRdhcL4muZmprKSy+9lLGxsYt/g92yZcXz0by/s7MzQ0NDmZqaKsO2uWUBAAAANk/wBjZl3759mZ+fT39/f5Lk0KFDKYpi2e2JJ564pOdpNBob2sa7PSK6p6cne/fuTVtb27r2ZWZmpvz7iy++mPPnz6coiszOzuahhx7K+Ph4brzxxkxMTCQRuAEAAAAuheANbFp7e3s++clPrrnM7t2785d/+ZcX3dZqI5yPHj2at99+e9379F4F4+3bt695HE1/+Id/mN7e3gvfcP93ZHeSdHR0pL+/Pz/5yU+SJLt27WqJ4wAAAABsnOANvOt279697L7mCPCmZgheHKzHx8czPDy8bL33s7WC+0rTlXR1dZVB/NSpU5t6TvN8AwAAAFwgeAPvqampqQwODmbHjh2p1WoZGRnJ1q1bU6vVcv/995fLjYyMZNeuXUmS4eHhci7wZlBuNBoZGhoq1922bVumpqbK9RuNRo4cOZLOzs5MTk5mfHw8W7duzbZt29JoNJIkMzMzGRgYKOfWHhgYyNzc3LJ9npmZya5du8rlhoaGym2sZD0Beq1lls71vXgO9KmpqZb5wIuiMA0KAAAAwP8SvIF31cjISBl3Z2Zm8vzzz5dzch84cCDXXnttnnvuuXR3d+fhhx8uo/W+ffsyOTmZ5J35wU+ePJnkQszu6+vLddddl3PnzuW1117LwsJCbrzxxnJakGPHjuWpp57K7OxsXnrppfzgBz/I1q1bMz09nd/+9reZmZnJ7bffni996UspiiLHjx/PxMREbr311paY/bOf/Sw333xz2traMj8/n9nZ2bz66quZnp5e9ZjXE6Cby5w7dy6nTp1KrVbLDTfckCSZnZ1Nd3d3kqS/v7887uTCHOLHjx9PvV7P/Py82A0AAACwiOANvGtGRkaSvBN3u7q68vDDDydJXn311dx9990ZGBhIT09PHnvssSTJmTNnlm1npXm9r7nmmuzbt6/c7je/+c0kyde//vUkF6ZRufPOO5MkL7zwQiYmJvLyyy/ntddeS1dXV4aHh3PPPfdk586dSZIdO3Zk//79mZ2dzbFjx8rnuv3227N9+/aMjo6mvb09HR0d5QUmN+p3v/tdy99PnDhRTmeyZ8+e9PT0JLkwv/djjz226ijwM2fOZO/evWlvb/dFBgAAALCI4A1cFs1pR5rTcNRqtdx3331JVp6+Y9u2beno6Fh2f/MijostHcV88ODBfO5zn2u57yMf+UiSrBijm1OltLe3p6urKzMzMzl16lQZm5vPce211yZJfvCDHyS5EKTPnj2bu+66q2V7HR0dqdfrGz5HO3fubJmO5Lbbbsv09HQGBwczOjrasmxPT096e3vzve99b9k0K2NjY7njjjt80QEAAAAsIXgDl0Vz2pHz58+XF6Q8ePBgklzytBuL15+bm8vCwkL27NnTEo+vv/76lmXWet7XX389SfJHf/RHLdvYs2dPkuQXv/hFkuRHP/pRkuSjH/3osm10dnZu+DgmJyfLczM/P58f/ehH6e7uztjYWDo7O8vpWJofENx///0piiKPPvpouY3x8fHceuutRncDAAAArEDwBt41zSlHkvVdyHE1i9f97//+7yTJ8ePHy3i89NYcOb7ac/7mN79Jkrzxxhsrrj87O5uiKJaNrF5te5s5tvb29tx222159dVX09vbm9nZ2dx+++1J3gn1PT09qdfrGRsbK/fl6aefzpe+9CVfXAAAAAArELyBS7bWCO5m9F66zGZGfRdFkauuuirJynN9r9eHPvShJMnLL7+8oWNq3rc0cF/qCPavfOUrSS5crLI5yrvpoYceSpI8+uijmZuby9mzZ8t5xwEAAABoJXgDl6w5MnotBw4cWLbORtVqtXR1daWtrS0TExNpNBrLlhkfH7/odj796U8nSb7zne+s+HhzG5/61KeSJM8///yy/bicmgF+JQMDA+Uo70cffTT9/f0XfS0AAAAArlSCN7ApzbDa/O9aEXh8fLy8IORmnqP550ajkUajkYGBgczO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AACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApCB4AwAAAACQguANAAAAAEAKgjcAAAAAACkI3gAAAAAApHDVetzpycnJuOGGGzx7AAAAAADzOHv2bFx//fUb6nteNyO8y7Jc1OOKovCTDAAAAABsCHpos03r8Yl75pln5n3cYsM4AAAAAMB6d7Ee+swzz8Tk5OSGOh5FuQ4LsU8tAAAAAAAW9vrrr8cdd9zRdFtZlmkbq4tWAgAAAAAkNVfYzjyg+Kr1vPMvvPBC3HfffX5qAQAAAAD+Z3JyMm644YYN+b0b4Q0AAAAAsM5Nn7l6+p832vTQ6zp4m8sbAAAAAGD+VroOL+G4LOs6eG+0JwsAAAAAYCEbeaCwKU0AAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFARvAAAAAABSELwBAAAAAEhB8AYAAAAAIAXBGwAAAACAFATvK6gsyyuyLAAAAJDPzFagHQAbkeB9hU46ERFFUVzy+hrLOnkBAADA+rTS7+lntoLldAeA9UrwvkwnqtU6yTh5AQAAwPqkFQCsPMF7BSz0yelqjcIuy9IIbwAAAFhHFvs+fq7HLWfKEv0A2CgE7xU4UV3sk9OF7r9U9Xo9enp6orW1NYqiiK6urqjX654QAAAAWIOWOs3IXI+bedtSeoNR38BGIXgv01wnjLIso1arRVEUsWnTpiiKoumrVqvFwMDAnCe+xZ4ga7Va3HTTTXHu3Lk4dOhQjIyMxCuvvOIJAQAAgDXcD9bqSGsjwIEsBO9VOBkURRFDQ0MxPj7e9NiyLOPkyZNRr9dj165d0dvbW923lE94R0dHY2xsLD7zmc9ERMTu3bvj3LlzsXv3bk8KAAAArGGN9/XTB8Z1d3fP6gwdHR1Nj5mYmJh3nfNNeTpzHR0dHdHX1zdrYN7MAXsA65ngvcyT1MW0tbXF1q1bm27bsmVLDA4ORkTEvn37FrUeAAAAII9t27Y1RepDhw7FwMBAUx84c+ZMHD9+PHp7e6Msy2hra2tax/TAPV+obqwjImJ0dDTOnDkTe/bsibIso6OjI7q7u6v9KMuyeuymTZuir6/PEwWsS4L3KmttbZ11W+MkVZZlnDp1atb9fX19sXnz5iiKIm6++eamxxRFEdu3b4+IiO3bt1efDC+0bL1ej8OHD0dHR0eMjo7Gww8/HEVRxOHDh+dd9uTJk9Wyhw4dqpY9evRo9Snx/v37Z32K3NfXV93f0dERR48ebbr/1KlT1ZQvmzdvjv379/tBAQAAYEPq7OyMzs7O2LVrV9P7+5W2mAteNkJ8W1tb7N27d1X3B2C1CN6raL4pTxonjJaWltiyZUvTfT09PTE5ORnvvvtuNSXKHXfcUV2QcvonrsePH4+yLGPbtm0LLnvhwoW4cOFCjI+Px0svvRTbtm2Lzs7Oh24C5gAAIABJREFUuHDhwrzLfuELX6iWff/996tl33777XjxxRfj3nvvjQMHDsTp06er77WnpydefvnlGBkZiampqejo6Ii77rqr+tWrkydPxte+9rV45JFHoizLeOKJJ+LAgQM+OQYAAGDDGhoaioioBrhdTGNKksYUJKsRpV944YWIiHj88cer20x3AqwXgvcqmnkiqNfrMTAwEHfffXdERBw8eLDp/lOnTsXIyEgcPHgwWltbo62tLR577LE4f/58vPzyyxfd1sWW/eUvfxltbW3x+c9/PiIibrvttti5c2cMDQ3Fnj17LrrsK6+80rTsl770pdizZ09s27YtvvnNb0ZExL///e8oiiJOnToV/f39MTg4GG1tbdHa2hpf+cpXqsdERDzxxBPx+OOPV5F+9+7dsXXr1njyySf9wAAAALBhNQafdXR0zPuYvr6+eP7556spSHp7e2P79u1x5MiRFd2X7du3R3t7ewwPD1e3zTdPOMBaI3ivskb0LooiPvrRj8auXbtix44dcfLkyejq6mp67PDwcIyPjzddNOKuu+6KiIjTp09fdDsXW7YxNUljX6677rrqZLXQsjOnXLn66qtnbfu3v/1ttZ6IaJpXbPfu3VGWZTWS/Re/+EXs2rWraVtjY2Nx/vz5i16AAwAAADJra2uLI0eOxPj4eHURy+nv5SMi9u7d2zTqes+ePdHe3h6PPvronOtcbqA2ohtYjwTvVdY4uZRlGQMDAxHx4ae2jeg8U2dnZ9MFIxpfM0eDX8qy0/dl5omrs7MzPvjggwW3uxKf5jamYpn5NfMCHAAAALCRdHV1RXd3dxw6dKia+rPxPrwxdcl1113X9N78gQceqEaHz1QUxZLfx09/vBHdwHokeF9G9957b/T29sbY2FjUarVqXu7pJ6Lh4eFZt0dEdeHHi51sFlp2+nbmWvbcuXOz1j9zu4v5dHeuC3EODAxU63jttdcW3EcAAADYiA4ePBidnZ2xd+/e6jeqZ1rKyOuljtIuiiJOnDgR4+Pj0dnZ6QkB1h3Be5XNDNB79uyJ7u7uGBsbi69//etN9+/YsSMiYtavIk2PwUVRxPvvvz9rO52dnVEUxUWXnU/jBPboo482nQhnbncht956a0R8+CtW0x0+fDg+/elPR1EUce+990Z/f/+sKP6b3/zGDwsAAAAb0szBZ42LWE5/f33ttddGRMRLL73U9NjJyckVD9P33Xdf1QkA1purHILVMzExEWNjY9WfG1N2HDx4MN56660YGRmJWq0Wjz32WOzcuTO2bNlSBeGRkZF44IEHYnJyMiYmJppGRf/0pz+Noiji7bffri7+uGXLlrjnnntmLTs+Pl7Nrf3OO+9ERMSzzz4b27Zti7IsoyiKpu3+3//9XzzwwANx9uzZmJiYqE6yf/rTnyLiw/m6G9tshPcLFy5ExIfBu7OzM4aHh6OzszO++MUvxuTkZER8OJd3RMS+ffticHAwbrrppuju7o7rr78+nn/++XjxxRf9wAAAALAhNaYemT7YbHx8PNrb26u/t7W1RW9vb+zduzduu+226OrqiomJiejv74/jx4/PWufM9S3G8ePH47bbbouIiCNHjlQD2wDWlXIdiogyIsoXXnhhze5jZ2dntZ+Nr87Ozur+qampcuvWrbPum5qaKh9++OGypaWljIiyu7u7nJqamvW9T/9qqNfrs5b95z//WZZlWfb29s67Lwttd65l51vf1NRU2d3dXUZE2dLSUj788MOzjs3x48er772tra189dVXSwAAAMjsgw8+aPp7471z4+vIkSOzlnnppZfK3t7epuV7e3vLoiiq5c6cOTPvNtvb25u20d7eXvb19TXdNn1dc/WCmT0CWB/Onj1b/bs9duzYhvrei/+9aK27Tz4jIl544YXq12wAAAAAAPhwuqMbbrghIiKOHTsWt99++4b53s3hvQaV6/wqyKWrOAMAAAAAV4DgvQwrFXYXu57G465UUF7sdhtzj632cQMAAADmf699pTsCwJUgeC/DUi/+sNj1zLfexu0rtd1L2c/5TpIzb7/YPjbuc8IFAACAlXl/vJj34ZeyL/NFc+/pgbVK8L5MJ6bVOhFc7hPMQjF+JdblpAkAAMBGsloD21bivfp8g++u1GA8gIUI3pfpBDL9MUsNuhd7/ELbvtzx+FK3N305J00AAAAA4FII3itoKXNcL2U9ywnAl7LsUqL1cve1sbzIDQAAwEa2EgPIVnK9y10W4EoRvFfQas3pvZa/j+Xuq9ANAAAAl/7+eKHlLvcgOoArTfAGAAAAACAFwRsAAAAAgBQEbwAAAAAAUhC8AQAAAABIQfAGAAAAACAFwRsAAAAAgBQEbwAAAAAAUhC8AQAAAABIQfAGAAAAACAFwRsAAAAAgBQEbwAAAAAAUhC8AQAAAABIQfAGAAAAACAFwRsAAAAAgBQEbwAAAAAAUhC8AQAAAABIQfAGAAAAACAFwRsAAAAAgBQEbwAAAAAAUhC8AQAAAABIQfAGAAAAACAFwRsAAAAAgBQEbwAAAAAAUhC8AQAAAABIYd0F7//+97/Vnz/ykY94BgEAAAAAiIh1ErzLsqz+/I9//KP688c//nHPIAAAAAAAEbEOgndZllEURdPfAQAAAABgpjUfvKfH7sXeJ4oDAAAAAGw86/qilfOF7YtFcgAAAAAActrkEAAAAAAAkIHgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAkEpZlg4CwAYleAMAAACpFEXhIABsUII3AAAAsGi1Wi2Kopj3a/PmzVGr1aKvry8mJiYueTtlWS5ppLZR3QBECN4AAADAEgwNDcXU1FS0t7dHRER3d3dMTU1VgfrXv/51tLW1xd69e6O9vT36+vouaTuNgL7Y5Y3qBiBC8AYAAACWqLW1NR544IGIiPjkJz8Zra2t1X3btm2LgwcPxpEjRyIiYu/evXH48OF513Wxkdmjo6Px+uuvL7g/RncD0CB4AwAAAJdsvpHVXV1dcejQoYiIePDBB+ed3mSu5cuyjNOnT8fdd9+94PbLsjS6G4CK4A0AAACsit27d0dLS0tERPzkJz+pbq/X67F///7YvHlzNe/3/v37o16vR0TEa6+9FrfffnucP38+hoeHq+lNpuvr64uOjo7YtGlTdHR0zBpFPjExEZs3b46bb77ZEwGwgQjeAAAAwJItdlR1V1dXREQMDg5Wtz300EPR398fx44di7Iso6urKw4cOFBF8Z07d8a5c+ciIqKzs3PWBSx7enrij3/8Y7z55psxNTUVHR0d8eCDDzZF77/97W9x/vz5GB8f92QBbCCCNwAAALBki5k3uyzLuP766yMiYnx8vFpmcHAwbrnlltiyZUtERHz/+9+PiFjUfN2jo6MxMDAQzz33XLS2tkZra2v8/Oc/j4iIffv2VY/btm1bvPrqqzE2NubJAthABG8AAABgVcwcBd74e3t7e3z2s5+tbp9+0cuFPPvss7Fjx46mZVpbW6OlpSXOnz8fo6Oj1e07d+6MtrY2TwTABnKVQwAAAABcTmfOnImID0eADw4Oxg9/+MNFLzs2Nhbj4+PVFClFUTSNNv/rX//qAANsYEZ4AwAAAKtmcnIyIqJpRHdExOHDh6O1tTXeeOON+PGPf7zo9U1MTMT+/fureb0/+OCDpj835gwHYGMywhsAAAC4JDOnLCnLctZtAwMDERFxzz33VPf39PTE4OBgHDt2rJrHeyGNZa+55poYHh6Oxx9/fMH9AWDjMcIbAAAAuCQzL1w5Mzj39fXF+fPno6WlJe6///4oiiIGBgaiv78/Dhw4sKjY3Ri93Vj3jh07YmxsLE6dOjXrsRMTE3HixAlPDMAGJngDAAAAK6YRwQcGBuJ73/teREQcPHiwusjke++9N2uZer0+7+jsoiiq+yYmJuLLX/5yRETccccdTReorNfr0dPTE5/61Keq21577bWYmJjwpABsIKY0AQAAAJakXq/H888/P+d9J06ciJdeein6+/ujpaUlfvazn8XOnTur+z/3uc9FRMS+ffviE5/4RLz//vvxq1/9KsqyjN///vdx9OjRiIjYuXNntLe3x/DwcBw9ejROnDgR999/f3R1dcUbb7wR/f39sX379ti6dWu0trbG8PBwHDlypArro6OjsXPnzmhpaYlz58550gA2CCO8AQAAgEUpyzJqtVp87GMfq0ZO7927txqFXRRF3H333TE+Ph6HDh2Kd999tyl2R0Rs3749Hn744Th//nx84xvfiL/85S8xMDAQtVotIj4cAd5Y5kc/+lG0tLTEt771rbj11lujra0tIj4cMd7b2xstLS0xNjYW9Xo9Xn311aYLVl577bXR0tISt9xyy6oeDwDWlqJcZ6/Ok5OTccMNN0RExLFjx+L222/3LAIAAEBic10ME4D5beSGaoQ3AAAAsGbMNS5P7AZgsQRvAAAAYM1YTty+HL/EbhoTgLXNRSsBAACARVns1CJLmYJk5mPnWnax61utkeC7du2Kv//9734AgCUriqL6oOzYsWMOyGUgeAMAAACLstKxe651zhW/lxqyV3rO79/97ncxOTnpBwBgHRC8AQAAgBWzkqH5Ute10iO9z549O+ftjVGb5hgHLsaFdy8vc3gDAAAAa8r0ebKXO2f2as65fSmjz4GNx+vE5SV4AwAAAGvK9Di03FAkNAFsLII3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILgDQAAAABACoI3AAAAAAApCN4AAAAAAKQgeAMAAAAAkILg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BG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAUBG8AAAAAAFIQvAEAAAAASEHwBgAAAAAgBcEbAAAAAIAU6sG7KAqrAQAAAADAivX/ABbqdy1Nm/65AAAAAElFTkSuQmCC</xsl:attribute> 
+		<xsl:attribute name="background-size">576px 756px</xsl:attribute> 
+		<xsl:attribute name="background-repeat">no-repeat</xsl:attribute> 
+	</xsl:attribute-set>
+ -->
+  <xsl:attribute-set name="img-link">
+    <xsl:attribute name="border">2px solid</xsl:attribute>
+  </xsl:attribute-set>
+
+  <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+       Link
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+  <xsl:attribute-set name="a-link">
+    <xsl:attribute name="text-decoration">underline</xsl:attribute>
+    <xsl:attribute name="color">blue</xsl:attribute>
+  </xsl:attribute-set>
+
+
+  <!--======================================================================
+      Templates
+  =======================================================================-->
+
+  <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+       Root
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+  <xsl:template match="html">
+    <fo:root xsl:use-attribute-sets="root">
+      <xsl:call-template name="process-common-attributes"/>
+      <xsl:call-template name="make-layout-master-set"/>
+      <xsl:apply-templates/>
+    </fo:root>
+  </xsl:template>
+
+  <xsl:template name="make-layout-master-set">
+    <fo:layout-master-set>
+      <fo:simple-page-master xsl:use-attribute-sets="page">
+        <fo:region-body xsl:use-attribute-sets="region-body"/>
+        <xsl:choose>
+          <xsl:when test="$writing-mode = 'tb-rl'">
+            <fo:region-before xsl:use-attribute-sets="region-before-tb-rl"/>
+            <fo:region-after  xsl:use-attribute-sets="region-after-tb-rl"/>
+            <fo:region-start  xsl:use-attribute-sets="region-start-tb-rl"/>
+            <fo:region-end    xsl:use-attribute-sets="region-end-tb-rl"/>
+          </xsl:when>
+          <xsl:when test="$writing-mode = 'rl-tb'">
+            <fo:region-before  xsl:use-attribute-sets="region-before-rl-tb"/>
+            <fo:region-after   xsl:use-attribute-sets="region-after-rl-tb"/>
+            <fo:region-start  xsl:use-attribute-sets="region-start-rl-tb"/>
+            <fo:region-end    xsl:use-attribute-sets="region-end-rl-tb" />
+          </xsl:when>
+          <xsl:otherwise><!-- $writing-mode = 'lr-tb' -->
+            <fo:region-before  xsl:use-attribute-sets="region-before-lr-tb"/>
+            <fo:region-after  xsl:use-attribute-sets="region-after-lr-tb"/>
+            <fo:region-start   xsl:use-attribute-sets="region-start-lr-tb" />
+            <fo:region-end    xsl:use-attribute-sets="region-end-lr-tb"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </fo:simple-page-master>
+    </fo:layout-master-set>
+  </xsl:template>
+
+  <xsl:template match="head | script"/>
+
+  <xsl:template match="body">
+    <fo:page-sequence xsl:use-attribute-sets="pagesequence">
+      <fo:title>
+        <xsl:value-of select="/html/head/title"/>
+      </fo:title>
+      <fo:static-content xsl:use-attribute-sets="flowname-page-header">
+        <fo:block space-before.conditionality="retain"
+                  space-before="{$page-header-margin}"
+                  xsl:use-attribute-sets="page-header">
+          <xsl:if test="$title-print-in-header = 'true'">
+            <xsl:value-of select="/html/head/title"/>
+          </xsl:if>
+        </fo:block>
+      </fo:static-content>
+      <fo:static-content xsl:use-attribute-sets="flowname-page-footer">
+        <fo:block space-after.conditionality="retain"
+                  space-after="{$page-footer-margin}"
+                  xsl:use-attribute-sets="page-footer">
+          <xsl:if test="$page-number-print-in-footer = 'true'">
+            <xsl:text>- </xsl:text>
+            <fo:page-number/>
+            <xsl:text> -</xsl:text>
+          </xsl:if>
+        </fo:block>
+      </fo:static-content>
+      <fo:flow xsl:use-attribute-sets="xsl-region-body">
+        <fo:block xsl:use-attribute-sets="body">
+          <xsl:call-template name="process-common-attributes"/>
+          <xsl:apply-templates/>
+        </fo:block>
+
+      </fo:flow>
+    </fo:page-sequence>
+  </xsl:template>
+
+  <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+   process common attributes and children
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+  <xsl:template name="process-common-attributes-and-children">
+    <xsl:call-template name="process-common-attributes"/>
+    <xsl:apply-templates/>
+  </xsl:template>
+
+  <xsl:template name="process-common-attributes">
+    <xsl:attribute name="role">
+      <xsl:value-of select="concat('', local-name())"/>
+    </xsl:attribute>
+
+    <xsl:choose>
+      <xsl:when test="@xml:lang">
+        <xsl:attribute name="xml:lang">
+          <xsl:value-of select="@xml:lang"/>
+        </xsl:attribute>
+      </xsl:when>
+      <xsl:when test="@lang">
+        <xsl:attribute name="xml:lang">
+          <xsl:value-of select="@lang"/>
+        </xsl:attribute>
+      </xsl:when>
+    </xsl:choose>
+
+    <xsl:choose>
+      <xsl:when test="@id">
+        <xsl:attribute name="id">
+          <xsl:value-of select="@id"/>
+        </xsl:attribute>
+      </xsl:when>
+      <xsl:when test="self::a/@name">
+        <xsl:attribute name="id">
+          <xsl:value-of select="@name"/>
+        </xsl:attribute>
+      </xsl:when>
+    </xsl:choose>
+
+    <xsl:if test="@align">
+      <xsl:choose>
+        <xsl:when test="self::caption">
+        </xsl:when>
+        <xsl:when test="self::img or self::object">
+          <xsl:if test="@align = 'bottom' or @align = 'middle' or @align = 'top'">
+            <xsl:attribute name="vertical-align">
+              <xsl:value-of select="@align"/>
+            </xsl:attribute>
+          </xsl:if>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:call-template name="process-cell-align">
+            <xsl:with-param name="align" select="@align"/>
+          </xsl:call-template>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+    <xsl:if test="@valign">
+      <xsl:call-template name="process-cell-valign">
+        <xsl:with-param name="valign" select="@valign"/>
+      </xsl:call-template>
+    </xsl:if>
+
+    <xsl:if test="@style">
+      <xsl:call-template name="process-style">
+        <xsl:with-param name="style" select="@style"/>
+      </xsl:call-template>
+    </xsl:if>
+
+      <xsl:if test="@bgcolor">
+          <xsl:attribute name="background-color">
+              <xsl:value-of select="@bgcolor"/>
+          </xsl:attribute>
+      </xsl:if>
+<!--
+      <xsl:attribute name="font-family">
+          <xsl:value-of select="$font-family"/>
+      </xsl:attribute>
+    -->
+      <xsl:choose>
+          <xsl:when test="@font-family">
+              <xsl:attribute name="font-family">
+                  <xsl:value-of select="@font-family"/>
+              </xsl:attribute>
+          </xsl:when>
+      </xsl:choose>
+
+  </xsl:template>
+
+  <xsl:template name="process-style">
+    <xsl:param name="style"/>
+    <!-- e.g., style="text-align: center; color: red"
+         converted to text-align="center" color="red" -->
+    <xsl:variable name="name"
+                  select="normalize-space(substring-before($style, ':'))"/>
+    <xsl:if test="$name">
+      <xsl:variable name="value-and-rest"
+                    select="normalize-space(substring-after($style, ':'))"/>
+      <xsl:variable name="value">
+        <xsl:choose>
+          <xsl:when test="contains($value-and-rest, ';')">
+            <xsl:value-of select="normalize-space(substring-before(
+                                  $value-and-rest, ';'))"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$value-and-rest"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+      <xsl:choose>
+        <xsl:when test="$name = 'width' and (self::col or self::colgroup)">
+          <xsl:attribute name="column-width">
+            <xsl:value-of select="$value"/>
+          </xsl:attribute>
+        </xsl:when>
+        <xsl:when test="$name = 'vertical-align' and (
+                                 self::table or self::caption or
+                                 self::thead or self::tfoot or
+                                 self::tbody or self::colgroup or
+                                 self::col or self::tr or
+                                 self::th or self::td)">
+          <xsl:choose>
+            <xsl:when test="$value = 'top'">
+              <xsl:attribute name="display-align">before</xsl:attribute>
+            </xsl:when>
+            <xsl:when test="$value = 'bottom'">
+              <xsl:attribute name="display-align">after</xsl:attribute>
+            </xsl:when>
+            <xsl:when test="$value = 'middle'">
+              <xsl:attribute name="display-align">center</xsl:attribute>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:attribute name="display-align">auto</xsl:attribute>
+              <xsl:attribute name="relative-align">baseline</xsl:attribute>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:attribute name="{$name}">
+            <xsl:value-of select="$value"/>
+          </xsl:attribute>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+    <xsl:variable name="rest"
+                  select="normalize-space(substring-after($style, ';'))"/>
+    <xsl:if test="$rest">
+      <xsl:call-template name="process-style">
+        <xsl:with-param name="style" select="$rest"/>
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
+
+
+  <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+       Block-level
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+  <xsl:template match="h1">
+    <fo:block xsl:use-attribute-sets="h1">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="h2">
+    <fo:block xsl:use-attribute-sets="h2">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="h3">
+    <fo:block xsl:use-attribute-sets="h3">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="h4">
+    <fo:block xsl:use-attribute-sets="h4">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="h5">
+    <fo:block xsl:use-attribute-sets="h5">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="h6">
+    <fo:block xsl:use-attribute-sets="h6">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="p">
+    <fo:block xsl:use-attribute-sets="p">
+        <xsl:attribute name="font-size">
+            <xsl:choose>
+                <xsl:when test="@class">
+                    <xsl:choose>
+                        <xsl:when test="contains(@class, 'header1')">17px</xsl:when>
+                        <xsl:when test="contains(@class, 'header2')">13px</xsl:when>
+                        <xsl:when test="contains(@class, 'header3')">11px</xsl:when>
+                        <xsl:otherwise>9px</xsl:otherwise>
+                    </xsl:choose>
+                </xsl:when>
+                <xsl:otherwise>9px</xsl:otherwise>
+            </xsl:choose>
+        </xsl:attribute>
+        <xsl:attribute name="text-decoration">
+            <xsl:choose>
+                <xsl:when test="@class">
+                    <xsl:choose>
+                        <xsl:when test="contains(@class, 'header1')">underline</xsl:when>
+                        <xsl:when test="contains(@class, 'header2')">underline</xsl:when>
+                        <xsl:when test="contains(@class, 'header3')">no-underline</xsl:when>
+                        <xsl:otherwise>no-underline</xsl:otherwise>
+                    </xsl:choose>
+                </xsl:when>
+                <xsl:otherwise>no-underline</xsl:otherwise>
+            </xsl:choose>
+        </xsl:attribute>
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:block>
+  </xsl:template>
+
+  <!-- initial paragraph, preceded by h1..6 or div -->
+  <xsl:template match="p[preceding-sibling::*[1][
+                       self::h1 or self::h2 or self::h3 or
+                       self::h4 or self::h5 or self::h6 or
+                       self::div]]">
+    <fo:block xsl:use-attribute-sets="p-initial">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:block>
+  </xsl:template>
+
+  <!-- initial paragraph, first child of div, body or td -->
+  <xsl:template match="p[not(preceding-sibling::*) and (
+                       parent::div or parent::body or
+                       parent::td)]">
+    <fo:block xsl:use-attribute-sets="p-initial-first">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="blockquote">
+    <fo:block xsl:use-attribute-sets="blockquote">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="pre">
+    <fo:block xsl:use-attribute-sets="pre">
+      <xsl:call-template name="process-pre"/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template name="process-pre">
+    <xsl:call-template name="process-common-attributes"/>
+    <!-- remove leading CR/LF/CRLF char -->
+    <xsl:variable name="crlf"><xsl:text>&#xD;&#xA;</xsl:text></xsl:variable>
+    <xsl:variable name="lf"><xsl:text>&#xA;</xsl:text></xsl:variable>
+    <xsl:variable name="cr"><xsl:text>&#xD;</xsl:text></xsl:variable>
+    <xsl:for-each select="node()">
+      <xsl:choose>
+        <xsl:when test="position() = 1 and self::text()">
+          <xsl:choose>
+            <xsl:when test="starts-with(., $lf)">
+              <xsl:value-of select="substring(., 2)"/>
+            </xsl:when>
+            <xsl:when test="starts-with(., $crlf)">
+              <xsl:value-of select="substring(., 3)"/>
+            </xsl:when>
+            <xsl:when test="starts-with(., $cr)">
+              <xsl:value-of select="substring(., 2)"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:apply-templates select="."/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-templates select="."/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:for-each>
+  </xsl:template>
+
+  <xsl:template match="address">
+    <fo:block xsl:use-attribute-sets="address">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="hr">
+    <fo:block xsl:use-attribute-sets="hr">
+      <xsl:call-template name="process-common-attributes"/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="div">
+    <!-- need fo:block-container? or normal fo:block -->
+    <xsl:variable name="need-block-container">
+      <xsl:call-template name="need-block-container"/>
+    </xsl:variable>
+    <xsl:choose>
+      <xsl:when test="$need-block-container = 'true'">
+        <fo:block-container>
+          <xsl:if test="@dir">
+            <xsl:attribute name="writing-mode">
+              <xsl:choose>
+                <xsl:when test="@dir = 'rtl'">rl-tb</xsl:when>
+                <xsl:otherwise>lr-tb</xsl:otherwise>
+              </xsl:choose>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:call-template name="process-common-attributes"/>
+          <fo:block start-indent="0pt" end-indent="0pt">
+            <xsl:apply-templates/>
+          </fo:block>
+        </fo:block-container>
+      </xsl:when>
+      <xsl:otherwise>
+        <!-- normal block -->
+        <fo:block>
+          <xsl:call-template name="process-common-attributes"/>
+          <xsl:apply-templates/>
+        </fo:block>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template name="need-block-container">
+    <xsl:choose>
+      <xsl:when test="@dir">true</xsl:when>
+      <xsl:when test="@style">
+        <xsl:variable name="s"
+                      select="concat(';', translate(normalize-space(@style),
+                                                    ' ', ''))"/>
+        <xsl:choose>
+          <xsl:when test="contains($s, ';width:') or
+                          contains($s, ';height:') or
+                          contains($s, ';position:absolute') or
+                          contains($s, ';position:fixed') or
+                          contains($s, ';writing-mode:')">true</xsl:when>
+          <xsl:otherwise>false</xsl:otherwise>
+        </xsl:choose>
+      </xsl:when>
+      <xsl:otherwise>false</xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template match="center">
+    <fo:block text-align="center">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="fieldset | form | dir | menu">
+    <fo:block space-before="1em" space-after="1em">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:block>
+  </xsl:template>
+
+  <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+       List
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+  <xsl:template match="ul">
+    <fo:list-block xsl:use-attribute-sets="ul">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:list-block>
+  </xsl:template>
+
+  <xsl:template match="li//ul">
+    <fo:list-block xsl:use-attribute-sets="ul-nested">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:list-block>
+  </xsl:template>
+
+  <xsl:template match="ol">
+    <fo:list-block xsl:use-attribute-sets="ol">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:list-block>
+  </xsl:template>
+
+  <xsl:template match="li//ol">
+    <fo:list-block xsl:use-attribute-sets="ol-nested">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:list-block>
+  </xsl:template>
+
+  <xsl:template match="ul/li">
+    <fo:list-item xsl:use-attribute-sets="ul-li">
+      <xsl:call-template name="process-ul-li"/>
+    </fo:list-item>
+  </xsl:template>
+
+  <xsl:template name="process-ul-li">
+    <xsl:call-template name="process-common-attributes"/>
+    <fo:list-item-label end-indent="label-end()"
+                        text-align="end" wrap-option="no-wrap">
+      <fo:block>
+        <xsl:variable name="depth" select="count(ancestor::ul)" />
+        <xsl:choose>
+          <xsl:when test="$depth = 1">
+            <fo:inline xsl:use-attribute-sets="ul-label-1">
+              <xsl:value-of select="$ul-label-1"/>
+            </fo:inline>
+          </xsl:when>
+          <xsl:when test="$depth = 2">
+            <fo:inline xsl:use-attribute-sets="ul-label-2">
+              <xsl:value-of select="$ul-label-2"/>
+            </fo:inline>
+          </xsl:when>
+          <xsl:otherwise>
+            <fo:inline xsl:use-attribute-sets="ul-label-3">
+              <xsl:value-of select="$ul-label-3"/>
+            </fo:inline>
+          </xsl:otherwise>
+        </xsl:choose>
+      </fo:block>
+    </fo:list-item-label>
+    <fo:list-item-body start-indent="body-start()">
+      <fo:block>
+        <xsl:apply-templates/>
+      </fo:block>
+    </fo:list-item-body>
+  </xsl:template>
+
+  <xsl:template match="ol/li">
+    <fo:list-item xsl:use-attribute-sets="ol-li">
+      <xsl:call-template name="process-ol-li"/>
+    </fo:list-item>
+  </xsl:template>
+
+  <xsl:template name="process-ol-li">
+    <xsl:call-template name="process-common-attributes"/>
+    <fo:list-item-label end-indent="label-end()"
+                        text-align="end" wrap-option="no-wrap">
+      <fo:block>
+        <xsl:variable name="depth" select="count(ancestor::ol)" />
+        <xsl:choose>
+          <xsl:when test="$depth = 1">
+            <fo:inline xsl:use-attribute-sets="ol-label-1">
+              <xsl:number format="{$ol-label-1}"/>
+            </fo:inline>
+          </xsl:when>
+          <xsl:when test="$depth = 2">
+            <fo:inline xsl:use-attribute-sets="ol-label-2">
+              <xsl:number format="{$ol-label-2}"/>
+            </fo:inline>
+          </xsl:when>
+          <xsl:otherwise>
+            <fo:inline xsl:use-attribute-sets="ol-label-3">
+              <xsl:number format="{$ol-label-3}"/>
+            </fo:inline>
+          </xsl:otherwise>
+        </xsl:choose>
+      </fo:block>
+    </fo:list-item-label>
+    <fo:list-item-body start-indent="body-start()">
+      <fo:block>
+        <xsl:apply-templates/>
+      </fo:block>
+    </fo:list-item-body>
+  </xsl:template>
+
+  <xsl:template match="dl">
+    <fo:block xsl:use-attribute-sets="dl">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="dt">
+    <fo:block xsl:use-attribute-sets="dt">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="dd">
+    <fo:block xsl:use-attribute-sets="dd">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:block>
+  </xsl:template>
+
+  <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+       Table
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+    <!--
+  <xsl:template match="table">
+    <fo:table-and-caption xsl:use-attribute-sets="table-and-caption">
+      <xsl:call-template name="make-table-caption"/>
+      <fo:table xsl:use-attribute-sets="table">
+        <xsl:call-template name="process-table"/>
+      </fo:table>
+    </fo:table-and-caption>
+  </xsl:template>
+
+  <xsl:template name="make-table-caption">
+    <xsl:if test="caption/@align">
+      <xsl:attribute name="caption-side">
+        <xsl:value-of select="caption/@align"/>
+      </xsl:attribute>
+    </xsl:if>
+    <xsl:apply-templates select="caption"/>
+  </xsl:template>
+
+  <xsl:template name="process-table">
+      -->
+  <xsl:template match="table">
+      <!--
+    <xsl:if test="@width">
+      <xsl:attribute name="inline-progression-dimension">
+        <xsl:choose>
+          <xsl:when test="contains(@width, '%')">
+            <xsl:value-of select="@width"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="@width"/>px</xsl:otherwise>
+        </xsl:choose>
+      </xsl:attribute>
+    </xsl:if>
+    <xsl:if test="@border or @frame">
+      <xsl:choose>
+        <xsl:when test="@border &gt; 0">
+          <xsl:attribute name="border">
+            <xsl:value-of select="@border"/>px</xsl:attribute>
+        </xsl:when>
+      </xsl:choose>
+      <xsl:choose>
+        <xsl:when test="@border = '0' or @frame = 'void'">
+          <xsl:attribute name="border-style">hidden</xsl:attribute>
+        </xsl:when>
+        <xsl:when test="@frame = 'above'">
+          <xsl:attribute name="border-style">outset hidden hidden hidden</xsl:attribute>
+        </xsl:when>
+        <xsl:when test="@frame = 'below'">
+          <xsl:attribute name="border-style">hidden hidden outset hidden</xsl:attribute>
+        </xsl:when>
+        <xsl:when test="@frame = 'hsides'">
+          <xsl:attribute name="border-style">outset hidden</xsl:attribute>
+        </xsl:when>
+        <xsl:when test="@frame = 'vsides'">
+          <xsl:attribute name="border-style">hidden outset</xsl:attribute>
+        </xsl:when>
+        <xsl:when test="@frame = 'lhs'">
+          <xsl:attribute name="border-style">hidden hidden hidden outset</xsl:attribute>
+        </xsl:when>
+        <xsl:when test="@frame = 'rhs'">
+          <xsl:attribute name="border-style">hidden outset hidden hidden</xsl:attribute>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:attribute name="border-style">outset</xsl:attribute>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+    <xsl:if test="@cellspacing">
+      <xsl:attribute name="border-spacing">
+        <xsl:value-of select="@cellspacing"/>px</xsl:attribute>
+      <xsl:attribute name="border-collapse">separate</xsl:attribute>
+    </xsl:if>
+    <xsl:if test="@rules and (@rules = 'groups' or
+                      @rules = 'rows' or
+                      @rules = 'cols' or
+                      @rules = 'all' and (not(@border or @frame) or
+                          @border = '0' or @frame and
+                          not(@frame = 'box' or @frame = 'border')))">
+      <xsl:attribute name="border-collapse">collapse</xsl:attribute>
+      <xsl:if test="not(@border or @frame)">
+        <xsl:attribute name="border-style">hidden</xsl:attribute>
+      </xsl:if>
+    </xsl:if>
+
+      <xsl:call-template name="process-common-attributes"/>
+      <xsl:apply-templates select="col | colgroup"/>
+      <xsl:apply-templates select="thead"/>
+      <xsl:apply-templates select="tfoot"/>
+      -->
+      <xsl:if test="count(tr) &gt; 0">
+        <fo:table xsl:use-attribute-sets="table">
+            <xsl:if test="@width">
+                <xsl:attribute name="inline-progression-dimension">
+                    <xsl:choose>
+                        <xsl:when test="contains(@width, '%')">
+                            <xsl:value-of select="@width"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="@width"/>px
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@break-after">
+                <xsl:attribute name="break-after">page</xsl:attribute>
+            </xsl:if>
+            <xsl:if test="count(tr[1]/td) &gt; 0">
+                <xsl:for-each select="tr[1]/td">
+                        <xsl:choose>
+                            <xsl:when test="@width">
+                                <fo:table-column>
+                                    <xsl:attribute name="column-width">
+                                        <xsl:value-of select="@width"/>
+                                    </xsl:attribute>
+                                </fo:table-column>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <fo:table-column xsl:use-attribute-sets="table-column"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                </xsl:for-each>
+            </xsl:if>
+            <!-- In Case the first row is composed of th -->
+            <xsl:if test="count(tr[1]/th) &gt; 0">
+                <xsl:for-each select="tr[1]/th">
+                    <xsl:choose>
+                        <xsl:when test="@width">
+                            <fo:table-column>
+                                <xsl:attribute name="column-width">
+                                    <xsl:value-of select="@width"/>
+                                </xsl:attribute>
+                            </fo:table-column>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <fo:table-column xsl:use-attribute-sets="table-column"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:for-each>
+            </xsl:if>
+            <fo:table-body>
+                <xsl:apply-templates select="tr"/>
+            </fo:table-body>
+        </fo:table>
+      </xsl:if>
+    </xsl:template>
+
+  <xsl:template match="caption">
+    <fo:table-caption xsl:use-attribute-sets="table-caption">
+      <xsl:call-template name="process-common-attributes"/>
+      <fo:block>
+        <xsl:apply-templates/>
+      </fo:block>
+    </fo:table-caption>
+  </xsl:template>
+
+  <xsl:template match="thead">
+    <fo:table-header xsl:use-attribute-sets="thead">
+      <xsl:call-template name="process-table-rowgroup"/>
+    </fo:table-header>
+  </xsl:template>
+
+  <xsl:template match="tfoot">
+    <fo:table-footer xsl:use-attribute-sets="tfoot">
+      <xsl:call-template name="process-table-rowgroup"/>
+    </fo:table-footer>
+  </xsl:template>
+
+  <xsl:template match="tbody">
+    <fo:table-body xsl:use-attribute-sets="tbody">
+      <xsl:call-template name="process-table-rowgroup"/>
+    </fo:table-body>
+  </xsl:template>
+
+  <xsl:template name="process-table-rowgroup">
+    <xsl:if test="ancestor::table[1]/@rules = 'groups'">
+      <xsl:attribute name="border">1px solid</xsl:attribute>
+    </xsl:if>
+    <xsl:call-template name="process-common-attributes-and-children"/>
+  </xsl:template>
+
+  <xsl:template match="colgroup">
+    <fo:table-column xsl:use-attribute-sets="table-column">
+      <xsl:call-template name="process-table-column"/>
+    </fo:table-column>
+  </xsl:template>
+
+  <xsl:template match="colgroup[col]">
+    <xsl:apply-templates/>
+  </xsl:template>
+
+  <xsl:template match="col">
+    <fo:table-column xsl:use-attribute-sets="table-column">
+      <xsl:call-template name="process-table-column"/>
+    </fo:table-column>
+  </xsl:template>
+
+  <xsl:template name="process-table-column">
+    <xsl:if test="parent::colgroup">
+      <xsl:call-template name="process-col-width">
+        <xsl:with-param name="width" select="../@width"/>
+      </xsl:call-template>
+      <xsl:call-template name="process-cell-align">
+        <xsl:with-param name="align" select="../@align"/>
+      </xsl:call-template>
+      <xsl:call-template name="process-cell-valign">
+        <xsl:with-param name="valign" select="../@valign"/>
+      </xsl:call-template>
+    </xsl:if>
+    <xsl:if test="@span">
+      <xsl:attribute name="number-columns-repeated">
+        <xsl:value-of select="@span"/>
+      </xsl:attribute>
+    </xsl:if>
+    <xsl:call-template name="process-col-width">
+      <xsl:with-param name="width" select="@width"/>
+      <!-- it may override parent colgroup's width -->
+    </xsl:call-template>
+    <xsl:if test="ancestor::table[1]/@rules = 'cols'">
+      <xsl:attribute name="border">1px solid</xsl:attribute>
+    </xsl:if>
+    <xsl:call-template name="process-common-attributes"/>
+    <!-- this processes also align and valign -->
+  </xsl:template>
+
+    <xsl:template match="tr">
+        <xsl:if test="count(td) &gt; 0">
+        <fo:table-row xsl:use-attribute-sets="tr">
+            <xsl:call-template name="process-table-row"/>
+        </fo:table-row>
+        </xsl:if>
+    </xsl:template>
+
+    <xsl:template match="tr[parent::table and th and not(td)]">
+        <fo:table-row xsl:use-attribute-sets="tr" keep-with-next="always">
+            <xsl:call-template name="process-table-row"/>
+        </fo:table-row>
+    </xsl:template>
+
+    <xsl:template name="process-table-row">
+        <xsl:if test="ancestor::table[1]/@rules = 'rows'">
+            <xsl:attribute name="border">1px solid</xsl:attribute>
+        </xsl:if>
+        <xsl:call-template name="process-common-attributes-and-children"/>
+    </xsl:template>
+
+    <xsl:template match="th">
+        <fo:table-cell xsl:use-attribute-sets="th">
+            <xsl:if test="@width">
+                <xsl:attribute name="inline-progression-dimension">
+                    <xsl:choose>
+                        <xsl:when test="contains(@width, '%')">
+                            <xsl:value-of select="@width"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="@width"/>px
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:attribute name="font-size">
+                <xsl:choose>
+                    <xsl:when test="@font-size">
+                        <xsl:value-of select="@font-size"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>10px</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:attribute>
+            <xsl:call-template name="process-table-cell"/>
+        </fo:table-cell>
+    </xsl:template>
+
+  <xsl:template match="td">"
+      <fo:table-cell xsl:use-attribute-sets="td">
+        <xsl:if test="@width">
+            <xsl:attribute name="inline-progression-dimension">
+                <xsl:choose>
+                    <xsl:when test="contains(@width, '%')">
+                        <xsl:value-of select="@width"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="@width"/>px</xsl:otherwise>
+                </xsl:choose>
+            </xsl:attribute>
+        </xsl:if>
+          <xsl:attribute name="color">
+              <xsl:choose>
+                  <xsl:when test="@color">
+                      <xsl:value-of select="@color"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                      <xsl:text>black</xsl:text>
+                  </xsl:otherwise>
+              </xsl:choose>
+          </xsl:attribute>
+        <xsl:attribute name="font-size">
+            <xsl:choose>
+                <xsl:when test="@font-size">
+                    <xsl:value-of select="@font-size"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>10px</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:attribute>
+        <!-- <xsl:attribute name="font-size">5px</xsl:attribute>-->
+      <xsl:call-template name="process-table-cell"/>
+    </fo:table-cell>
+  </xsl:template>
+
+  <xsl:template name="process-table-cell">
+    <xsl:if test="@colspan">
+      <xsl:attribute name="number-columns-spanned">
+        <xsl:value-of select="@colspan"/>
+      </xsl:attribute>
+    </xsl:if>
+    <xsl:if test="@rowspan">
+      <xsl:attribute name="number-rows-spanned">
+        <xsl:value-of select="@rowspan"/>
+      </xsl:attribute>
+    </xsl:if>
+    <xsl:for-each select="ancestor::table[1]">
+      <xsl:if test="(@border or @rules) and (@rules = 'all' or
+                    not(@rules) and not(@border = '0'))">
+        <xsl:attribute name="border-style">inset</xsl:attribute>
+      </xsl:if>
+      <xsl:if test="@cellpadding">
+        <xsl:attribute name="padding">
+          <xsl:choose>
+            <xsl:when test="contains(@cellpadding, '%')">
+              <xsl:value-of select="@cellpadding"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="@cellpadding"/>px</xsl:otherwise>
+          </xsl:choose>
+        </xsl:attribute>
+      </xsl:if>
+    </xsl:for-each>
+    <xsl:if test="not(@align or ../@align or
+                      ../parent::*[self::thead or self::tfoot or
+                      self::tbody]/@align) and
+                  ancestor::table[1]/*[self::col or
+                      self::colgroup]/descendant-or-self::*/@align">
+      <xsl:attribute name="text-align">from-table-column()</xsl:attribute>
+    </xsl:if>
+    <xsl:if test="not(@valign or ../@valign or
+                      ../parent::*[self::thead or self::tfoot or
+                      self::tbody]/@valign) and
+                  ancestor::table[1]/*[self::col or
+                      self::colgroup]/descendant-or-self::*/@valign">
+      <xsl:attribute name="display-align">from-table-column()</xsl:attribute>
+      <xsl:attribute name="relative-align">from-table-column()</xsl:attribute>
+    </xsl:if>
+    <xsl:call-template name="process-common-attributes"/>
+    <fo:block>
+      <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template name="process-col-width">
+    <xsl:param name="width"/>
+    <xsl:if test="$width and $width != '0*'">
+      <xsl:attribute name="column-width">
+        <xsl:choose>
+          <xsl:when test="contains($width, '*')">
+            <xsl:text>proportional-column-width(</xsl:text>
+            <xsl:value-of select="substring-before($width, '*')"/>
+            <xsl:text>)</xsl:text>
+          </xsl:when>
+          <xsl:when test="contains($width, '%')">
+            <xsl:value-of select="$width"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$width"/>px</xsl:otherwise>
+        </xsl:choose>
+      </xsl:attribute>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="process-cell-align">
+    <xsl:param name="align"/>
+    <xsl:if test="$align">
+      <xsl:attribute name="text-align">
+        <xsl:choose>
+          <xsl:when test="$align = 'char'">
+            <xsl:choose>
+              <xsl:when test="$align/../@char">
+                <xsl:value-of select="$align/../@char"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="'.'"/>
+                <!-- todo: it should depend on xml:lang ... -->
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$align"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:attribute>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="process-cell-valign">
+    <xsl:param name="valign"/>
+    <xsl:if test="$valign">
+      <xsl:attribute name="display-align">
+        <xsl:choose>
+          <xsl:when test="$valign = 'middle'">center</xsl:when>
+          <xsl:when test="$valign = 'bottom'">after</xsl:when>
+          <xsl:when test="$valign = 'baseline'">auto</xsl:when>
+          <xsl:otherwise>before</xsl:otherwise>
+        </xsl:choose>
+      </xsl:attribute>
+      <xsl:if test="$valign = 'baseline'">
+        <xsl:attribute name="relative-align">baseline</xsl:attribute>
+      </xsl:if>
+    </xsl:if>
+  </xsl:template>
+
+  <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+       Inline-level
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+  <xsl:template match="b">
+    <fo:inline xsl:use-attribute-sets="b">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="strong">
+    <fo:inline xsl:use-attribute-sets="strong">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="strong//em | em//strong">
+    <fo:inline xsl:use-attribute-sets="strong-em">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="i">
+    <fo:inline xsl:use-attribute-sets="i">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="cite">
+    <fo:inline xsl:use-attribute-sets="cite">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="em">
+    <fo:inline xsl:use-attribute-sets="em">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="var">
+    <fo:inline xsl:use-attribute-sets="var">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="dfn">
+    <fo:inline xsl:use-attribute-sets="dfn">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="tt">
+    <fo:inline xsl:use-attribute-sets="tt">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="code">
+    <fo:inline xsl:use-attribute-sets="code">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="kbd">
+    <fo:inline xsl:use-attribute-sets="kbd">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="samp">
+    <fo:inline xsl:use-attribute-sets="samp">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="big">
+    <fo:inline xsl:use-attribute-sets="big">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="small">
+    <fo:inline xsl:use-attribute-sets="small">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="sub">
+    <fo:inline xsl:use-attribute-sets="sub">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="sup">
+    <fo:inline xsl:use-attribute-sets="sup">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="s">
+    <fo:inline xsl:use-attribute-sets="s">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="strike">
+    <fo:inline xsl:use-attribute-sets="strike">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="del">
+    <fo:inline xsl:use-attribute-sets="del">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="u">
+    <fo:inline xsl:use-attribute-sets="u">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="ins">
+    <fo:inline xsl:use-attribute-sets="ins">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="abbr">
+    <fo:inline xsl:use-attribute-sets="abbr">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="acronym">
+    <fo:inline xsl:use-attribute-sets="acronym">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="span">
+    <fo:inline>
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="span[@dir]">
+    <fo:bidi-override direction="{@dir}" unicode-bidi="embed">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:bidi-override>
+  </xsl:template>
+
+  <xsl:template match="span[@style and contains(@style, 'writing-mode')]">
+    <fo:inline-container alignment-baseline="central"
+                         text-indent="0pt"
+                         last-line-end-indent="0pt"
+                         start-indent="0pt"
+                         end-indent="0pt"
+                         text-align="center"
+                         text-align-last="center">
+      <xsl:call-template name="process-common-attributes"/>
+      <fo:block wrap-option="no-wrap" line-height="1">
+        <xsl:apply-templates/>
+      </fo:block>
+    </fo:inline-container>
+  </xsl:template>
+
+  <xsl:template match="bdo">
+    <fo:bidi-override direction="{@dir}" unicode-bidi="bidi-override">
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:bidi-override>
+  </xsl:template>
+
+  <xsl:template match="br">
+    <fo:block>
+      <xsl:call-template name="process-common-attributes"/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="q">
+    <fo:inline xsl:use-attribute-sets="q">
+      <xsl:call-template name="process-common-attributes"/>
+      <xsl:choose>
+        <xsl:when test="lang('ja')">
+          <xsl:text>「</xsl:text>
+          <xsl:apply-templates/>
+          <xsl:text>」</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+          <!-- lang('en') -->
+          <xsl:text>“</xsl:text>
+          <xsl:apply-templates/>
+          <xsl:text>”</xsl:text>
+          <!-- todo: other languages ...-->
+        </xsl:otherwise>
+      </xsl:choose>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="q//q">
+    <fo:inline xsl:use-attribute-sets="q-nested">
+      <xsl:call-template name="process-common-attributes"/>
+      <xsl:choose>
+        <xsl:when test="lang('ja')">
+          <xsl:text>『</xsl:text>
+          <xsl:apply-templates/>
+          <xsl:text>』</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+          <!-- lang('en') -->
+          <xsl:text>‘</xsl:text>
+          <xsl:apply-templates/>
+          <xsl:text>’</xsl:text>
+        </xsl:otherwise>
+      </xsl:choose>
+    </fo:inline>
+  </xsl:template>
+
+  <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+       Image
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+  <xsl:template match="img">
+    <fo:external-graphic xsl:use-attribute-sets="img">
+      <xsl:call-template name="process-img"/>
+    </fo:external-graphic>
+  </xsl:template>
+
+  <xsl:template match="img[ancestor::a/@href]">
+    <fo:external-graphic xsl:use-attribute-sets="img-link">
+      <xsl:call-template name="process-img"/>
+    </fo:external-graphic>
+  </xsl:template>
+
+  <xsl:template name="process-img">
+    <xsl:attribute name="src">
+      <xsl:text>url('</xsl:text>
+      <xsl:value-of select="@src"/>
+      <xsl:text>')</xsl:text>
+    </xsl:attribute>
+    <xsl:if test="@alt">
+      <xsl:attribute name="role">
+        <xsl:value-of select="@alt"/>
+      </xsl:attribute>
+    </xsl:if>
+    <xsl:if test="@width">
+      <xsl:choose>
+        <xsl:when test="contains(@width, '%')">
+          <xsl:attribute name="width">
+            <xsl:value-of select="@width"/>
+          </xsl:attribute>
+          <xsl:attribute name="content-width">scale-to-fit</xsl:attribute>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:attribute name="content-width">
+            <xsl:value-of select="@width"/>px</xsl:attribute>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+    <xsl:if test="@height">
+      <xsl:choose>
+        <xsl:when test="contains(@height, '%')">
+          <xsl:attribute name="height">
+            <xsl:value-of select="@height"/>
+          </xsl:attribute>
+          <xsl:attribute name="content-height">scale-to-fit</xsl:attribute>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:attribute name="content-height">
+            <xsl:value-of select="@height"/>px</xsl:attribute>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+    <xsl:if test="@border">
+      <xsl:attribute name="border">
+        <xsl:value-of select="@border"/>px solid</xsl:attribute>
+    </xsl:if>
+    <xsl:call-template name="process-common-attributes"/>
+  </xsl:template>
+
+  <xsl:template match="object">
+    <xsl:apply-templates/>
+  </xsl:template>
+
+  <xsl:template match="param"/>
+  <xsl:template match="map"/>
+  <xsl:template match="area"/>
+  <xsl:template match="label"/>
+  <xsl:template match="input"/>
+  <xsl:template match="select"/>
+  <xsl:template match="optgroup"/>
+  <xsl:template match="option"/>
+  <xsl:template match="textarea"/>
+  <xsl:template match="legend"/>
+  <xsl:template match="button"/>
+
+  <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+       Link
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+  <xsl:template match="a">
+    <fo:inline>
+      <xsl:call-template name="process-common-attributes-and-children"/>
+    </fo:inline>
+  </xsl:template>
+
+  <xsl:template match="a[@href]">
+    <fo:basic-link xsl:use-attribute-sets="a-link">
+      <xsl:call-template name="process-a-link"/>
+    </fo:basic-link>
+  </xsl:template>
+
+  <xsl:template name="process-a-link">
+    <xsl:call-template name="process-common-attributes"/>
+    <xsl:choose>
+      <xsl:when test="starts-with(@href,'#')">
+        <xsl:attribute name="internal-destination">
+          <xsl:value-of select="substring-after(@href,'#')"/>
+        </xsl:attribute>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:attribute name="external-destination">
+          <xsl:text>url('</xsl:text>
+          <xsl:value-of select="@href"/>
+          <xsl:text>')</xsl:text>
+        </xsl:attribute>
+      </xsl:otherwise>
+    </xsl:choose>
+    <xsl:if test="@title">
+      <xsl:attribute name="role">
+        <xsl:value-of select="@title"/>
+      </xsl:attribute>
+    </xsl:if>
+    <xsl:apply-templates/>
+  </xsl:template>
+
+  <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+       Ruby
+  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+  <xsl:template match="ruby">
+    <fo:inline-container alignment-baseline="central"
+                         block-progression-dimension="1em"
+                         text-indent="0pt"
+                         last-line-end-indent="0pt"
+                         start-indent="0pt"
+                         end-indent="0pt"
+                         text-align="center"
+                         text-align-last="center">
+      <xsl:call-template name="process-common-attributes"/>
+      <fo:block font-size="50%"
+                wrap-option="no-wrap"
+                line-height="1"
+                space-before.conditionality="retain"
+                space-before="-1.1em"
+                space-after="0.1em"
+                role="rt">
+        <xsl:for-each select="rt | rtc[1]/rt">
+          <xsl:call-template name="process-common-attributes"/>
+          <xsl:apply-templates/>
+        </xsl:for-each>
+      </fo:block>
+      <fo:block wrap-option="no-wrap" line-height="1" role="rb">
+        <xsl:for-each select="rb | rbc[1]/rb">
+          <xsl:call-template name="process-common-attributes"/>
+          <xsl:apply-templates/>
+        </xsl:for-each>
+      </fo:block>
+      <xsl:if test="rtc[2]/rt">
+        <fo:block font-size="50%"
+                  wrap-option="no-wrap"
+                  line-height="1"
+                  space-before="0.1em"
+                  space-after.conditionality="retain"
+                  space-after="-1.1em"
+                  role="rt">
+          <xsl:for-each select="rt | rtc[2]/rt">
+            <xsl:call-template name="process-common-attributes"/>
+            <xsl:apply-templates/>
+          </xsl:for-each>
+        </fo:block>
+      </xsl:if>
+    </fo:inline-container>
+  </xsl:template>
+</xsl:stylesheet>

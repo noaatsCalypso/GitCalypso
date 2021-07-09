@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+	<contents>
+		<element name="PmtRtr">
+			<contents>
+				<element name="GrpHdr">
+					<contents>
+						<element name="MsgId">
+							<contents>
+								<report>
+									<column>MESSAGE_ID</column>
+								</report>
+							</contents>
+						</element>
+						<element name="CreDtTm">
+							<contents>
+								<report>
+									<column>CREATION_SYSTEM_DATE_ISOVERSION</column>
+								</report>
+							</contents>
+						</element>
+						<element name="NbOfTxs">
+							<contents>
+								<text>
+									<value>1</value>
+								</text>
+							</contents>
+						</element>
+						<element name="IntrBkSttlmDt">
+							<contents>
+								<report format="yyyy-MM-dd">
+									<column>Value Date</column>
+								</report>
+							</contents>
+						</element>
+						<element name="SttlmInf">
+							<contents>
+								<element name="SttlmMtd">
+									<contents>
+										<text>
+											<value>CLRG</value>
+										</text>
+									</contents>
+								</element>
+								<element name="ClrSys">
+									<contents>
+										<element name="Prtry">
+											<contents>
+												<text>
+													<value>CSTRTN</value>
+												</text>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="InstgAgt" hideifempty="true">
+							<contents>
+								<element name="FinInstnId">
+									<contents>
+										<element name="BIC" hideifempty="true">
+											<contents>
+												<report>
+													<condition>
+														<expression>isEmpty(getReportValue("XferAttributes.InstgAgt_SIXMmbId_ID"))</expression>
+													</condition>
+													<column>XferAttributes.ReturnInstructingAgentBIC</column>
+												</report>
+											</contents>
+										</element>
+										<element name="ClrSysMmbId" hideifempty="true">
+											<contents>
+												<element name="ClrSysId">
+													<contents>
+														<element name="Cd">
+															<contents>
+																<report>
+																	<column>XferAttributes.InstgAgt_SIXClrSysID_Code</column>
+																</report>
+															</contents>
+														</element>
+													</contents>
+												</element>
+												<element name="MmbId">
+													<contents>
+														<report>
+															<column>XferAttributes.InstgAgt_SIXMmbId_ID</column>
+														</report>
+													</contents>
+												</element>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="InstdAgt" hideifempty="true">
+							<contents>
+								<element name="FinInstnId">
+									<contents>
+										<element name="BIC" hideifempty="true">
+											<contents>
+												<report>
+													<condition>
+														<expression>isEmpty(getReportValue("XferAttributes.InstdAgt_SIXMmbId_ID"))</expression>
+													</condition>
+													<column>XferAttributes.ReturnInstructedAgentBIC</column>
+												</report>
+											</contents>
+										</element>
+										<element name="ClrSysMmbId" hideifempty="true">
+											<contents>
+												<element name="ClrSysId">
+													<contents>
+														<element name="Cd">
+															<contents>
+																<report>
+																	<column>XferAttributes.InstdAgt_SIXClrSysID_Code</column>
+																</report>
+															</contents>
+														</element>
+													</contents>
+												</element>
+												<element name="MmbId">
+													<contents>
+														<report>
+															<column>XferAttributes.InstdAgt_SIXMmbId_ID</column>
+														</report>
+													</contents>
+												</element>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="TxInf">
+					<contents>
+						<element name="RtrId">
+							<contents>
+								<report>
+									<column>MESSAGE_ID</column>
+								</report>
+							</contents>
+						</element>
+						<element name="OrgnlInstrId">
+							<contents>
+								<report>
+									<condition>
+										<expression>getReportValue("TRADE_KEYWORD.MXPaymentType") == "CSTPMT"</expression>
+									</condition>
+									<column>XferAttributes.LinkedInstructionId</column>
+								</report>
+							</contents>
+						</element>
+						<element name="OrgnlEndToEndId">
+							<contents>
+								<report>
+									<column>XferAttributes.LinkedEndToEndId</column>
+								</report>
+							</contents>
+						</element>
+						<element name="OrgnlTxId">
+							<contents>
+								<report>
+									<column>XferAttributes.LinkedTxId</column>
+								</report>
+							</contents>
+						</element>
+						<element name="RtrdIntrBkSttlmAmt">
+							<attributes>
+								<attribute name="Ccy">
+									<value>
+										<report>
+											<column>SettleCurrency</column>
+										</report>
+									</value>
+								</attribute>
+							</attributes>
+							<contents>
+								<report format="############0.00###;#">
+									<column>Settle Amount</column>
+								</report>
+							</contents>
+						</element>
+						<element name="RtrRsnInf">
+							<contents>
+								<element name="Orgtr">
+									<contents>
+										<element name="Id">
+											<contents>
+												<element name="OrgId">
+													<contents>
+														<element name="BICOrBEI">
+															<contents>
+																<report>
+																	<column>Sender.Swift</column>
+																</report>
+															</contents>
+														</element>
+													</contents>
+												</element>
+											</contents>
+										</element>
+										<element name="Nm">
+											<contents>
+												<report>
+													<condition>
+														<expression>isEmpty(getReportValue("Sender.Swift"))</expression>
+													</condition>
+													<column>PO_BENEFICIARY_NAME</column>
+												</report>
+											</contents>
+										</element>
+									</contents>
+								</element>
+								<element name="Rsn">
+									<contents>
+										<element name="Cd" hideifempty="true">
+											<contents>
+												<report>
+													<column>XferAttributes.ReturnReason</column>
+												</report>
+											</contents>
+										</element>
+									</contents>
+								</element>
+								<element name="AddtlInf">
+									<contents>
+										<report>
+											<column>XferAttributes.ReturnAdditionalInformation</column>
+										</report>
+									</contents>
+								</element>
+							</contents>
+						</element>
+						<element name="OrgnlTxRef">
+							<contents>
+								<element name="IntrBkSttlmDt">
+									<contents>
+										<report format="yyyy-MM-dd">
+											<column>LINKED_INTERBANK_SETTLE_DATE</column>
+										</report>
+									</contents>
+								</element>
+								<element name="Dbtr">
+									<contents>
+										<element name="Id">
+											<contents>
+												<element name="OrgId">
+													<contents>
+														<element name="BICOrBEI">
+															<contents>
+																<report>
+																	<column>XferAttributes.LinkedDebtorBIC</column>
+																</report>
+															</contents>
+														</element>
+													</contents>
+												</element>
+											</contents>
+										</element>
+										<element name="Nm">
+											<contents>
+												<report>
+													<condition>
+														<expression>isEmpty(getReportValue("XferAttributes.LinkedDebtorBIC"))</expression>
+													</condition>
+													<column>XferAttributes.LinkedDebtorNm</column>
+												</report>
+											</contents>
+										</element>
+										<element name="PstlAdr">
+											<condition>
+												<expression>isEmpty(getReportValue("XferAttributes.LinkedDebtorBIC"))</expression>
+											</condition>
+											<contents>
+												<element name="TwnNm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>XferAttributes.LinkedDebtorTwnNm</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="Ctry">
+                                                    <contents>
+                                                        <report>
+                                                            <column>XferAttributes.LinkedDebtorCtry</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+			</contents>
+		</element>
+	</contents>
+</template>
+

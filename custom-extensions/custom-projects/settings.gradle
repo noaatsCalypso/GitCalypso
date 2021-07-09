@@ -1,0 +1,7 @@
+include ':custom-shared-lib'
+include ':custom-dataserver-services'
+include ':custom-engine'
+include ':custom-client'
+include ':custom-cattexecutor-client'
+
+includeFlat 'dataserver', 'engineserver'

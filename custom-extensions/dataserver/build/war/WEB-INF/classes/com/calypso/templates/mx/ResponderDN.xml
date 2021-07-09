@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- context SenderContact or ReceiverContact -->
+<template>
+	<contents max="1">
+		<report>
+			<column>AdressMethod.MXDistinguishedName</column>
+		</report>
+		<report>
+			<column>LegalEntity.Attribute.MXDistinguishedName</column>
+		</report>
+		<element>
+			<contents>
+				<text>
+					<value>o=</value>
+				</text>
+				<report>
+					<column>Swift</column>
+					<transformations>
+						<transformation type="substring">
+							<to>8</to>
+						</transformation>
+						<transformation type="function">
+							<to>lower</to>
+						</transformation>
+					</transformations>
+				</report>
+				<text>
+					<value>,o=swift</value>
+				</text>
+			</contents>
+		</element>
+	</contents>
+</template>

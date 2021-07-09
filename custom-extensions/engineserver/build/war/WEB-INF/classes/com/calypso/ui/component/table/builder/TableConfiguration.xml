@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+  	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	<!-- Editors -->
+
+	<!-- JDate -->
+	<bean id="TableBuilder.DefaultTableConfiguration.Editor.JDate"
+		class="javax.swing.JTextField" />
+	<bean id="TableBuilder.DefaultTableConfiguration.Editor.JDate.config"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetClass" value="com.calypso.apps.util.AppUtil" />
+		<property name="targetMethod" value="addDateListener" />
+		<property name="arguments">
+			<ref bean="TableBuilder.DefaultTableConfiguration.Editor.JDate" />
+		</property>
+	</bean>
+
+	<!-- DisplayDatetime : CAL-73868 allow editing a DisplayDatetime typed field -->
+	<bean id="TableBuilder.DefaultTableConfiguration.Editor.DisplayDatetime"
+		class="com.calypso.apps.util.CalypsoTextField" />
+	<bean
+		id="TableBuilder.DefaultTableConfiguration.Editor.DisplayDatetime.config"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetClass" value="com.calypso.apps.util.AppUtil" />
+		<property name="targetMethod" value="addDateTimeListener" />
+		<property name="arguments">
+			<ref bean="TableBuilder.DefaultTableConfiguration.Editor.DisplayDatetime" />
+		</property>
+	</bean>
+
+	<!-- Amount -->
+	<bean id="TableBuilder.DefaultTableConfiguration.Editor.Amount"
+		class="javax.swing.JTextField" />
+	<bean id="TableBuilder.DefaultTableConfiguration.Editor.Amount.config"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetClass" value="com.calypso.apps.util.AppUtil" />
+		<property name="targetMethod" value="addNumberListener" />
+		<property name="arguments">
+			<ref bean="TableBuilder.DefaultTableConfiguration.Editor.Amount" />
+		</property>
+	</bean>
+
+	<!-- Rate -->
+	<bean id="TableBuilder.DefaultTableConfiguration.Editor.Rate"
+		class="javax.swing.JTextField" />
+	<bean id="TableBuilder.DefaultTableConfiguration.Editor.Rate.config"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetClass" value="com.calypso.apps.util.AppUtil" />
+		<property name="targetMethod" value="addRateListener" />
+		<property name="arguments">
+			<ref bean="TableBuilder.DefaultTableConfiguration.Editor.Rate" />
+		</property>
+	</bean>
+
+	<!-- Spread -->
+	<bean id="TableBuilder.DefaultTableConfiguration.Editor.Spread"
+		class="javax.swing.JTextField" />
+	<bean id="TableBuilder.DefaultTableConfiguration.Editor.Spread.config"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetClass" value="com.calypso.apps.util.AppUtil" />
+		<property name="targetMethod" value="addSpreadListener" />
+		<property name="arguments">
+			<ref bean="TableBuilder.DefaultTableConfiguration.Editor.Spread" />
+		</property>
+	</bean>
+
+	<!-- Renderers -->
+	<bean id="TableBuilder.DefaultTableConfiguration.Renderer.Default"
+		class="com.calypso.ui.component.table.cellrenderer.DefaultCalypsoTableCellRenderer" />
+
+	<!-- Default Table Configuration -->
+
+	<bean id="TableBuilder.DefaultTableConfiguration"
+		class="com.calypso.ui.component.table.builder.TableConfiguration">
+		<property name="editors">
+			<map>
+				<entry key="com.calypso.tk.core.Amount">
+					<bean class="com.calypso.apps.util.CalypsoCellEditor"
+						depends-on="TableBuilder.DefaultTableConfiguration.Editor.Amount.config">
+						<constructor-arg
+							ref="TableBuilder.DefaultTableConfiguration.Editor.Amount" />
+					</bean>
+				</entry>
+				<entry key="com.calypso.tk.core.BAAmount">
+					<bean class="com.calypso.apps.util.CalypsoCellEditor">
+						<constructor-arg>
+							<bean class="javax.swing.JTextField" />
+						</constructor-arg>
+					</bean>
+				</entry>
+				<entry key="com.calypso.tk.core.DisplayDatetime">
+					<bean class="com.calypso.apps.util.CalypsoCellEditor"
+						depends-on="TableBuilder.DefaultTableConfiguration.Editor.DisplayDatetime.config">
+						<constructor-arg
+							ref="TableBuilder.DefaultTableConfiguration.Editor.DisplayDatetime" />
+					</bean>
+				</entry>
+				<entry key="com.calypso.tk.core.DisplayValue">
+					<bean class="com.calypso.apps.util.CalypsoCellEditor">
+						<constructor-arg>
+							<bean class="javax.swing.JTextField" />
+						</constructor-arg>
+					</bean>
+				</entry>
+				<entry key="com.calypso.tk.core.JDate">
+					<bean class="com.calypso.apps.util.CalypsoCellEditor"
+						depends-on="TableBuilder.DefaultTableConfiguration.Editor.JDate.config">
+						<constructor-arg
+							ref="TableBuilder.DefaultTableConfiguration.Editor.JDate" />
+					</bean>
+				</entry>
+				<entry key="com.calypso.tk.core.Rate">
+					<bean class="com.calypso.apps.util.CalypsoCellEditor"
+						depends-on="TableBuilder.DefaultTableConfiguration.Editor.Rate.config">
+						<constructor-arg
+							ref="TableBuilder.DefaultTableConfiguration.Editor.Rate" />
+					</bean>
+				</entry>
+				<entry key="com.calypso.tk.core.Spread">
+					<bean class="com.calypso.apps.util.CalypsoCellEditor"
+						depends-on="TableBuilder.DefaultTableConfiguration.Editor.Spread.config">
+						<constructor-arg
+							ref="TableBuilder.DefaultTableConfiguration.Editor.Spread" />
+					</bean>
+				</entry>
+				<entry key="com.calypso.tk.core.Tenor">
+					<bean class="com.calypso.apps.util.CalypsoCellEditor">
+						<constructor-arg>
+							<bean class="javax.swing.JTextField" />
+						</constructor-arg>
+					</bean>
+				</entry>
+				<entry key="java.lang.Boolean">
+					<bean class="javax.swing.DefaultCellEditor">
+						<constructor-arg>
+							<bean class="javax.swing.JCheckBox">
+								<!-- SwingConstants.CENTER = 0 -->
+								<property name="horizontalAlignment" value="0" />
+							</bean>
+						</constructor-arg>
+					</bean>
+				</entry>
+				<entry key="java.lang.Number">
+					<bean class="com.calypso.apps.util.CalypsoCellEditor">
+						<constructor-arg>
+							<bean class="javax.swing.JTextField" />
+						</constructor-arg>
+					</bean>
+				</entry>
+				<entry key="java.lang.String">
+					<bean class="com.calypso.apps.util.CalypsoCellEditor">
+						<constructor-arg>
+							<bean class="javax.swing.JTextField" />
+						</constructor-arg>
+					</bean>
+				</entry>
+			</map>
+		</property>
+		<property name="renderers">
+			<map>
+				<entry key="com.calypso.tk.core.JDate">
+					<bean
+						class="com.calypso.ui.component.table.cellrenderer.DateCellRenderer">
+						<constructor-arg>
+							<null />
+						</constructor-arg>
+					</bean>
+				</entry>
+				<entry key="com.calypso.tk.core.DisplayValue">
+					<ref bean="TableBuilder.DefaultTableConfiguration.Renderer.Default" />
+				</entry>
+				<entry key="com.calypso.tk.core.Rating">
+					<bean
+						class="com.calypso.ui.component.table.cellrenderer.RatingCellRenderer" />
+				</entry>
+				<entry key="com.calypso.tk.core.Tenor">
+					<ref bean="TableBuilder.DefaultTableConfiguration.Renderer.Default" />
+				</entry>
+				<entry key="java.lang.Boolean">
+					<bean class="com.jidesoft.grid.BooleanCheckBoxCellRenderer" />
+				</entry>
+				<entry key="java.lang.Double">
+					<bean
+						class="com.calypso.ui.component.table.cellrenderer.NumberCellRenderer" />
+				</entry>
+				<entry key="java.lang.Integer">
+					<ref bean="TableBuilder.DefaultTableConfiguration.Renderer.Default" />
+				</entry>
+				<entry key="java.lang.Long">
+					<ref bean="TableBuilder.DefaultTableConfiguration.Renderer.Default" />
+				</entry>
+				<entry key="java.lang.String">
+					<ref bean="TableBuilder.DefaultTableConfiguration.Renderer.Default" />
+				</entry>
+				<entry key="java.util.Date">
+					<bean
+						class="com.calypso.ui.component.table.cellrenderer.DateCellRenderer">
+						<constructor-arg>
+							<null />
+						</constructor-arg>
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+</beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+    <contents>
+        <element name="Pmt">
+            <contents>
+                <report>
+                    <column>Delivery Type</column>
+                    <transformations>
+                        <transformation>
+                            <from>DAP</from>
+                            <to>APMT</to>
+                        </transformation>
+                        <transformation>
+                            <from>DFP</from>
+                            <to>FREE</to>
+                        </transformation>
+                    </transformations>
+                </report>
+            </contents>
+        </element>
+    </contents>
+</template>

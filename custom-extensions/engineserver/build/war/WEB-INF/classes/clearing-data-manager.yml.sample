@@ -1,0 +1,65 @@
+# 
+# Clearing External Data Manager configuration
+# This is a YAML file: http://yaml.org/
+#
+# Unused properties can be safely removed or commented out: default values will apply
+# 
+# The --- marks the end of YAML directives 
+---
+# Local cache: where the downloaded files are placed, and where to check before attempting
+# download
+localCacheBaseFolder: '/path/to/cache/folder'
+
+# Data locations: a list of local or remote resource URLs where to attempt to gather data from
+# Order is relevant 
+locations:
+  # Each list element begins with hyphen
+  
+  # Only url is mandatory when using local
+- url: 'file:/local/folder/to/be/used/first'
+
+  # Secondary fallback remote location, with SSL keystore provided  
+- url: 'https://remote.location/url'
+  keyAlias: 'alias'
+  keyPass: 'pasphrase'
+  keyStorePass: 'thePassword'
+  keyStoreUrl: 'classpath:/class/path/to/keystore'
+  # Trust store is optional: only required if the CA is not already one
+  # of the trusted ones (e.g. included in Java's cacerts)
+  trustStorePass: 'thePassword'
+  trustStoreUrl: 'file:/path/to/truststore'
+
+# Global number of retries (across all locations) before giving up on a resource
+maxDownloadAttempts: 50
+
+# Global timeout for downloads, in milliseconds
+# To disable the clearing data manager's own timeout, set to zero
+# JVM/OS/network timeouts may still apply
+downloadTimeoutMillis: 3600000
+
+# Connection timeout for downloads, when applicable, 
+# in milliseconds. Set to zero to disable
+downloadConnectionTimeoutMillis: 10000
+
+# Global number of (natural) days worth of cached files
+# to keep. After each download request, a cache sweep is
+# requested, and this parameter will govern how many days
+# worth of cached data are kept locally. A negative value
+# disables the sweeping
+cacheDaysToKeep: 5
+
+# Signals the data manager to save the down/loaded data in DB, for future use
+# The default path for managed data is
+# 
+#   external location (local filesystem or remote server) -> local cache -> DB
+#
+# If persistInputData is false, the data manager won't attempt to store the data in DB
+# when down/loading it. The data manager will still attempt to read it from DB.
+# Default is true
+persistInputData: true
+
+# Hint for the data manager to go back a certain number of natural days when
+# a risk parameter is missing
+# Set the -1 to disable
+# Maximum is 30 days
+maxFallbackDays: 10

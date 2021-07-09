@@ -1,0 +1,8 @@
+RegOpCaml=//RegOpCaml/text()
+Code\ Message=//CodMsg/text()
+RegOpCaml1=(//Grupo_CAM0012R1_Contr/RegOpCaml/text())[1]
+RegOpCaml2=(//Grupo_CAM0012R1_Contr/RegOpCaml/text())[2]
+ccy1=(//Grupo_CAM0012R1_Contr/CodMoedaISOPos/text())[1]
+ccy2=(//Grupo_CAM0012R1_Contr/CodMoedaISOPos/text())[2]
+tpopcam1=(//Grupo_CAM0012R1_Contr/TpOpCAM/text())[1]
+tpopcam2=(//Grupo_CAM0012R1_Contr/TpOpCAM/text())[2]

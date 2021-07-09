@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="ApplicationConfiguration.SchedulingEngine" parent="ApplicationConfiguration.engine">
+	 	 	<property name="configurations">
+	 		<list merge="true">
+	 			<value>classpath:${computegrid.impl:calypso}-computegrid-client.xml</value>
+	 			<value>DataSource.config.xml</value>
+	 			<value>NoTXSQLInitializer.config.xml</value>
+	 			<value>classpath:${datagrid.impl:hazelcast}-gridclient-base.xml</value>
+	 			<value>GridCacheConfig.xml</value>
+	 		</list>
+	 		</property>
+	</bean>
+
+</beans>

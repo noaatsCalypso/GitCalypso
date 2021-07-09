@@ -1,0 +1,21 @@
+# Sender Engine (MQ)
+
+mq.dtcc.hostname=localhost
+mq.dtcc.port=1414
+mq.dtcc.appiddatauser=12345678
+mq.dtcc.appiddatapass=ABCDEFGH
+mq.dtcc.queuemanager=CALYPSO
+mq.dtcc.channel=DTCC.CHANNEL.C1
+output.queue.name=CalypsoToDTCC
+CalypsoToDTCC.queue.setContext=true
+
+
+# Import Message Engine (JMS)
+
+jms.url=file://localhost/c:/tools/ibm/mqs/binding
+jms.modetypeclass=com.sun.jndi.fscontext.RefFSContextFactory
+jms.queue.connectionFactory=QueueConnectionFactory
+input.queue.name=DTCCToCalypso
+DTCCToCalypso.queue.ackType=auto
+DTCCToCalypso.queue.persist=true
+DTCCToCalypso.queue.transacted=false

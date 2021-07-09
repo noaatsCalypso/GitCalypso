@@ -1,0 +1,6 @@
+ISIN=//Document/SctiesTxCxlReqStsAdvc/TxDtls/FinInstrmId/ISIN/text()
+Cash\ Amount=//Document/SctiesTxCxlReqStsAdvc/TxDtls/SttlmAmt/Amt/text()
+Nominal\ Amount=//Document/SctiesTxCxlReqStsAdvc/TxDtls/SttlmQty/Qty/FaceAmt/text()
+DeliveryType=//Document/SctiesTxCxlReqStsAdvc/TxId/AcctOwnrTxId/SctiesSttlmTxId/Pmt/text()
+MvtType=//Document/SctiesTxCxlReqStsAdvc/TxId/AcctOwnrTxId/SctiesSttlmTxId/SctiesMvmntTp/text()
+AgentRef=//Document/SctiesTxCxlReqStsAdvc/TxId/AcctSvcrTxId/text()

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+    <contents>
+        <element name="FIToFIPmtCxlReq">
+            <contents>
+                <element name="Assgnmt">
+                    <contents>
+                        <element name="Id">
+                            <contents>
+                                <text>
+                                    <value>NONREF</value>
+                                </text>
+                            </contents>
+                        </element>
+                        <element name="Assgnr">
+                            <contents>
+                                <element name="Agt">
+                                    <contents>
+                                        <element name="FinInstnId">
+                                            <contents>
+                                                <element name="BICFI">
+                                                    <contents>
+                                                        <report>
+                                                            <column>Sender.Swift</column>
+                                                            <transformations>
+                                                                <transformation type="function">
+                                                                    <to>completeSwiftBranch</to>
+                                                                </transformation>
+                                                            </transformations>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="Assgne">
+                            <contents>
+                                <element name="Agt">
+                                    <contents>
+                                        <element name="FinInstnId">
+                                            <contents>
+                                                <element name="BICFI">
+                                                    <contents>
+                                                        <report>
+                                                            <column>Receiver.Swift</column>
+                                                            <transformations>
+                                                                <transformation type="function">
+                                                                    <to>completeSwiftBranch</to>
+                                                                </transformation>
+                                                            </transformations>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="CreDtTm">
+                            <contents>
+                                <report>
+                                    <column>CREATION_SYSTEM_DATE_ISOVERSION</column>
+                                </report>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="Undrlyg">
+                    <contents>
+                        <element name="TxInf">
+                            <contents>
+                                <element name="OrgnlGrpInf">
+                                    <contents>
+                                        <element name="OrgnlMsgId">
+                                            <contents>
+                                                <report>
+                                                    <column>RELATED_MSG_ID</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="OrgnlMsgNmId">
+                                            <contents>
+                                                <report>
+                                                    <column>RELATED_MSG_TEMPLATE</column>
+                                                    <transformations>
+                                                        <transformation type="regexp">
+                                                            <from>.T2</from>
+                                                            <to></to>
+                                                        </transformation>
+                                                    </transformations>
+                                                </report>
+                                            </contents>
+                                        </element>
+
+                                        <element name="OrgnlCreDtTm">
+                                            <contents>
+                                                <report>
+                                                    <column>RELATED_MSG_CREATION_SYSTEM_DATE_ISOVERSION</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                                <element name="OrgnlInstrId">
+                                    <contents>
+                                        <report>
+                                            <column>RELATED_MSG_RELATED_ID</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <element name="OrgnlEndToEndId">
+                                    <contents>
+                                        <report>
+                                            <column>RELATED_MSG_MESSAGE_ID</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <element name="OrgnlUETR">
+                                    <contents>
+                                        <report>
+                                            <column>RELATED_MSG_UETR</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <element name="OrgnlIntrBkSttlmAmt">
+                                    <attributes>
+                                        <attribute name="Ccy">
+                                            <value>
+                                                <report>
+                                                    <column>RELATED_MSG_ORIGINAL_CCY</column>
+                                                </report>
+                                            </value>
+                                        </attribute>
+                                    </attributes>
+                                    <contents>
+                                        <report format="######.######">
+                                            <column>RELATED_MSG_ORIGINAL_AMOUNT</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <element name="OrgnlIntrBkSttlmDt">
+                                    <contents>
+                                        <report format="yyyy-MM-dd">
+                                            <column>RELATED_MSG_BK_STTL_DATE</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <element name="CxlRsnInf">
+                                    <contents>
+                                        <element name="Orgtr">
+                                            <contents>
+                                                <element name="Id">
+                                                    <contents>
+                                                        <element name="OrgId">
+                                                            <contents>
+                                                                <element name="AnyBIC">
+                                                                    <contents>
+                                                                        <report>
+                                                                            <column>Sender.Swift</column>
+                                                                        </report>
+                                                                    </contents>
+                                                                </element>
+                                                            </contents>
+                                                        </element>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                        <element name="Rsn">
+                                            <contents>
+                                                <element name="Cd">
+                                                    <contents>
+                                                        <report>
+                                                            <column>Msg_Attr.CancellationReason</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

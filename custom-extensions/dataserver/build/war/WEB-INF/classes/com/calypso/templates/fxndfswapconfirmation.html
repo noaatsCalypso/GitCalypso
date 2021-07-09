@@ -1,0 +1,348 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "message_header.html";
+</calypso-->
+
+
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" )
+                inline  "AMEND AND CANCEL";
+                else if (|MESSAGE_SUBACTION|== "CANCEL")
+                inline "CANCEL";
+</calypso-->
+</p>
+<br><br>
+<p class="header1">Non-Deliverable FX Confirmation</p>
+
+<br>
+<p><b>Our Transaction Reference: |TRADE_ID|</b></p>
+<br>
+
+<p class="indented">
+The purpose of this letter agreement (this &quot;Confirmation&quot;) is to confirm the terms and conditions of the Transaction
+entered into between us on the Trade Date specified below (the &quot;Transaction&quot;).
+</p>
+<!--calypso>
+	if (|MESSAGE_SUBACTION|== "AMEND")
+	 inline "<br><p>This Confirmation cancels and supersedes the previous confirmation under the same reference.</p>";
+	else if (|MESSAGE_SUBACTION|== "CANCEL")
+	 inline "<p>This Confirmation cancels the previous confirmation under the same reference.</p>";
+</calypso-->
+<!--calypso>
+if ( |MASTER_AGREEMENT| == "ISDA" && |LA_STATUS| != "SIGNED" )
+	inline "<br><p>This Confirmation constitutes a &quot;Confirmation&quot; as referred to in the Agreement specified below</p>";
+</calypso-->
+<p>
+The definitions and provisions contained in the 1998 FX and Currency Option Definitions (as published by the
+International Swaps and Derivatives Association, Inc., the Emerging Markets Traders Association and the Foreign Exchange
+Commitee) are incorporated into this Confirmation. In the event of any inconsistency between those definitions and
+provisions and this Confirmation, this Confirmation will govern.
+</p>
+<p class="indented">
+<!--calypso>
+if ( |MASTER_AGREEMENT| == "ISDA" && |LA_STATUS| != "SIGNED" ) {
+    inline "This Confirmation evidences a complete and binding agreement between you
+and us as to the terms of the Transaction to which this Confirmation relates.  In addition, you and
+we agree to use all reasonable efforts promptly to negotiate, execute and deliver an agreement in the
+form of the ISDA Master Agreement (the &quot;Master Form&quot;), with such modifications as you and we
+will in good faith agree.  Upon the execution by you and us of such an agreement, this Confirmation 
+will supplement, form part of, and be subject to that agreement.  All provisions contained
+in or incorporated by reference in that agreement upon its execution will govern this Confirmation except as
+expressly modified below.  Until we execute and deliver that agreement, this Confirmation, together with all
+other documents referring to the ISDA Form (each a &quot;Confirmation&quot;) confirming transactions (each a
+&quot;Transaction&quot;) entered into between us (notwithstanding anything to the contrary in a Confirmation),
+shall supplement, form a part of, and be subject to an agreement in the form of the ISDA Form as if we had
+executed an agreement in such form (but without any Schedule except for the election of
+|LA_LEGAL_JURISDICTION| as the governing law and |TRADE_CURRENCY| as the Termination Currency) on the Trade
+Date of the first such Transaction between us.  In the event of any inconsistency between the provisions of
+that agreement and this Confirmation, this Confirmation will prevail for purposes of this Swap Transaction.
+    ";
+}
+if ( |MASTER_AGREEMENT| != "ISDA" || |LA_STATUS| == "SIGNED" ) {
+    inline "This Confirmation supplements, forms a part of, and is subject to, the |LA_ISDA_AGREEMENT| 
+dated as of |LA_AGREEMENT_DATE|, as amended and supplemented from time to time (the &quot;Agreement&quot;), 
+between <b>|TRADE_BUYER_NAME| (the &quot;Party A&quot;) </b> and <b>|TRADE_SELLER_NAME| (the &quot;Party B&quot;)</b>.
+All provisions contained in the Agreement govern this Confirmation except as expressly modified below.  
+    ";
+}
+</calypso-->
+</p>
+<br>
+<b><u><p>The terms of the particular Transaction to which this Confirmation relates are as follows:</p></u></b>
+<br>
+<b><u><p>General Terms:</p></u></b>
+<br>
+<TABLE CELLSPACING=1 WIDTH=623>
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE">Trade Date</td>	
+		<td WIDTH="59%" VALIGN="MIDDLE">|TRADE_DATE|</td>
+	</tr>	
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE"><FONT SIZE=2><p>Reference Currency Buyer</FONT></td>
+		<td WIDTH="59%" VALIGN="MIDDLE"><FONT SIZE=2><p>|TRADE_BUYER_NAME|</FONT></td>
+	</tr>
+	<tr>
+		<td WIDTH="39%" VALIGN="MIDDLE"><FONT SIZE=2><p>Reference Currency Seller</FONT></td>
+		<td WIDTH="59%" VALIGN="MIDDLE"><FONT SIZE=2><p>|TRADE_SELLER_NAME|</FONT></td>
+	</tr>
+</TABLE>
+
+<b><u><p>Near Leg Details</p></u></b>
+<TABLE CELLSPACING=1 WIDTH=623>
+	<!--calypso>
+		if (|IS_QUANTO| == "false") {
+			inline "
+				<tr>
+					<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Settlement Currency</FONT></td>
+					<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_SETTLE_CCY_NEAR|</FONT></td>
+				</tr>
+				<tr>
+					<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Settlement Notional Amount</FONT></td>
+					<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_SETTLE_CCY_NEAR| |FXNDF_DELIVERABLE_AMOUNT_NEAR|</FONT></td>
+				</tr>
+				<tr>
+					<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Settlement Date</FONT></td>
+					<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|SETTLE_DATE_NEAR|</FONT></td>
+				</tr>
+				<tr>
+					<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Settlement</FONT></td>
+					<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>Non-Deliverable.</FONT></td>
+				</tr>
+				<tr>
+					<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Rate Reset Source</FONT></td>
+					<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_RESET_SOURCE_NEAR|</FONT></td>
+				</tr>
+				<tr>
+					<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Valuation Date</FONT></td>
+					<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_RESET_DATETIME_NEAR| </FONT></td>
+				</tr>
+				<tr>
+					<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Relevant City for Business Day for Valuation Date</FONT></td>
+					<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_RESET_TIMEZONE_NEAR|</FONT></td>
+				</tr>
+				<tr>
+					<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Relevant City for Business Day for Settlement Date</FONT></td>
+					<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_SETTLE_CCY_TIMEZONE_NEAR|</FONT></td>
+				</tr>";
+		}
+	</calypso-->
+	<!--calypso>
+	if (|IS_QUANTO| == "true") {
+		inline "
+			<tr>
+				<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Fixing Currency</FONT></td>
+				<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_SETTLE_CCY_NEAR|</FONT></td>
+			</tr>
+			<tr>
+				<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Fixing Notional Amount</FONT></td>
+				<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_SETTLE_CCY_NEAR| |FXNDF_DELIVERABLE_AMOUNT_NEAR|</FONT></td>
+			</tr>
+			<tr>
+				<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Fixing Rate Reset Source</FONT></td>
+				<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_RESET_SOURCE_NEAR|</FONT></td>
+			</tr>
+			<tr>
+				<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Fixing Valuation Date</FONT></td>
+				<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_RESET_DATETIME_NEAR|</FONT></td>
+			</tr>
+			<tr>
+				<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Relevant City for Business Day for Fixing Valuation Date</FONT></td>
+				<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_RESET_TIMEZONE_NEAR|</FONT></td>
+			</tr>
+			<tr>
+				<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Quanto Settlement Currency</FONT></td>
+				<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_QUANTO_CCY_NEAR|</FONT></td>
+			</tr>
+			<tr>
+				<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Quanto Rate Reset Source</FONT></td>
+				<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_QUANTO_RESET_SOURCE_NEAR|</FONT></td>
+			</tr>
+			<tr>
+				<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Quanto Valuation Date</FONT></td>
+				<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_QUANTO_RESET_DATETIME_NEAR|</FONT></td>
+			</tr>
+			<tr>
+				<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Relevant City for Business Day for Quanto Valuation Date</FONT></td>
+				<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_QUANTO_RESET_TIMEZONE_NEAR|</FONT></td>
+			</tr>
+			<tr>
+				<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Settlement Date</FONT></td>
+				<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|SETTLE_DATE_NEAR|</FONT></td>
+			</tr>
+			<tr>
+				<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Settlement</FONT></td>
+				<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>Non-Deliverable.</FONT></td>
+			</tr>
+			<tr>
+				<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Relevant City for Business Day for Settlement Date</FONT></td>
+				<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_QUANTO_SETTLE_CCY_TIMEZONE_NEAR|</FONT></td>
+			</tr>";
+		}
+	</calypso-->
+</TABLE>
+
+<u><p>Far Leg Details</p></u>
+<TABLE CELLSPACING=1 WIDTH=623>
+<!--calypso>
+	if (|IS_QUANTO| == "false") {
+	inline "
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Settlement Currency</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_SETTLE_CCY_FAR|</FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Settlement Notional Amount</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_SETTLE_CCY_FAR| |FXNDF_DELIVERABLE_AMOUNT_FAR|</FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Settlement Date</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|SETTLE_DATE_FAR|</FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Settlement</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>Non-Deliverable.</FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Rate Reset Source</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_RESET_SOURCE_FAR|</FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Valuation Date</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_RESET_DATETIME_FAR|</FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Relevant City for Business Day for Valuation Date</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_RESET_TIMEZONE_FAR|</FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Relevant City for Business Day for Settlement Date</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_SETTLE_CCY_TIMEZONE_FAR|</FONT></td>
+		</tr>";
+	}
+</calypso-->
+<!--calypso>
+	if (|IS_QUANTO| == "true") {
+	inline "
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Fixing Currency</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_SETTLE_CCY_FAR|</FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Fixing Notional Amount</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_SETTLE_CCY_FAR| |FXNDF_DELIVERABLE_AMOUNT_NEAR|</FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Fixing Rate Reset Source</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_RESET_SOURCE_FAR|</FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Fixing Valuation Date</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_RESET_DATETIME_FAR| </FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Relevant City for Business Day for Fixing Valuation Date</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_RESET_TIMEZONE_FAR|</FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Quanto Settlement Currency</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_QUANTO_CCY_FAR|</FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Quanto Rate Reset Source</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_QUANTO_RESET_SOURCE_FAR|</FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Quanto Valuation Date</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_QUANTO_RESET_DATETIME_FAR|</FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Relevant City for Business Day for Quanto Valuation Date</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_QUANTO_RESET_TIMEZONE_FAR|</FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Settlement Date</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|SETTLE_DATE_FAR|</FONT></td>
+		</tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Settlement</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>Non-Deliverable.</FONT></td></tr>
+		<tr>
+			<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Relevant City for Business Day for Settlement Date</FONT></td>
+			<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|FXNDF_QUANTO_SETTLE_CCY_TIMEZONE_FAR|</FONT></td></tr>";
+	}
+</calypso-->
+</TABLE>
+
+<b><u><p>Other Details</p></u></b>
+<table CELLSPACING=1 WIDTH=623>
+	<tr>
+		<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Calculation Agent</FONT></td>
+		<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|SENDER_CODE|, unless otherwise stated in the Agreement</FONT></td>
+	</tr>		
+	<tr>
+		<td WIDTH=39% VALIGN=MIDDLE><FONT SIZE=2><p>Broker</FONT></td>
+		<td WIDTH=59% VALIGN=MIDDLE><FONT SIZE=2><p>|BROKER_FULL_NAME|</FONT></td>
+	</tr>
+</table>
+<br>
+<b><u><p>Account Details:</u> <br/></p></b>
+<!--calypso>
+	iterator("TransferRules")
+		inline "<table width='100%'>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>
+					<table width='100%'>
+						<tr>
+							<th width='39%'>|SETTLEMENT_TO_PAYREC|</th>
+							<th width='59%'>&nbsp;</th>
+						</tr>
+						<tr>
+							<td width='39%'>Currency</td>
+							<td width='59%'>|SETTLEMENT_TO_CURRENCY|</td>
+						</tr>
+						<tr>
+							<td width='39%'>To</td>
+							<td>|SETTLEMENT_TO_AGENT|</td>
+						</tr>
+						<tr>
+							<td width='39%'>Code</td>
+							<td>|SETTLEMENT_METHOD|</td>
+						</tr>						
+						<tr>
+							<td width='39%'>Favor of</td>
+							<td>|SETTLEMENT_FAVOR_OF|</td>
+						</tr>
+						<tr>
+							<td width='39%'>Account Number</td>
+							<td>|SETTLEMENT_ACCOUNT_NUMBER|</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	";
+</calypso-->
+
+<p>Offices:<br>
+(a)&nbsp;&nbsp;&nbsp; The Office of Party A for the Transaction is |SENDER_ADDRESS| |SENDER_CITY| |SENDER_STATE| |SENDER_ZIPCODE| |SENDER_COUNTRY|; and<br>
+(b)&nbsp;&nbsp;&nbsp; The Office of Party B for the Transaction is |RECEIVER_ADDRESS| |RECEIVER_CITY| |RECEIVER_STATE| |RECEIVER_ZIPCODE| |RECEIVER_COUNTRY|.
+</p>		
+<br>
+<p>This Confirmation supersedes and replaces any other confirmation (including a SWIFT MT300 or phone confirmation),
+if any, sent in connection with this Transaction on or prior to the date hereof.
+<br>
+Please confirm that the foregoing correctly sets forth the terms of our agreement
+by executing the copy of this Confirmation enclosed for that purpose and returning
+it to us or by sending us a letter substantially similar to this letter, which letter
+sets forth the material terms of the Swap Transaction to which this Confirmation
+relates and indicates your agreement to those terms.
+</p>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

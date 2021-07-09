@@ -1,0 +1,47 @@
+#
+#  JMS properties file
+#
+#jms.modetypeclass=com.sun.jndi.fscontext.RefFSContextFactory
+#jms.url=file:/c:/LCH/JNDI
+#jms.queue.connectionFactory=LCH_CONN
+#jms.channels=TO.CALYPSO, CME.TO.CALYPSO2
+# monitor for the queue channel listed above, in terms of second
+monitor.frequency = 60
+
+#  JMSQueueIEAdaptor properties
+#
+#    Note: if queue.ackType is not set to auto then 
+#          failed messages are not acknowledged to JMS and
+#          will be reconsumed when the engine restarts
+#	
+#	Queue-specific properties are prefixed by the queue name
+#
+input.queue.name=JQUEUE.LCH_FRA.CALYPSO
+JQUEUE.LCH_FRA.CALYPSO.queue.ackType=auto
+JQUEUE.LCH_FRA.CALYPSO.queue.persist=false
+JQUEUE.LCH_FRA.CALYPSO.queue.transacted=false
+
+output.queue.name=JQUEUE.CALYPSO.LCH_FRA
+JQUEUE.CALYPSO.LCH_FRA.queue.ackType=auto
+JQUEUE.CALYPSO.LCH_FRA.queue.persist=false
+JQUEUE.CALYPSO.LCH_FRA.queue.transacted=false
+
+
+
+jms.queue.hostname=localhost
+jms.queue.port=1419
+jms.queue.connectionUserName=mq_admin
+jms.queue.connectionPassword=calypso
+jms.queue.transportType=MQJMS_TP_CLIENT_MQ_TCPIP
+jms.queue.queueManager=QM.LCH_FRA.CALYPSO
+jms.queue.channel=SYSTEM.ADMIN.SVRCONN
+
+#output.queue.name=JQUEUE.CME.CALYPSO
+#JQUEUE.CME.CALYPSO.queue.ackType=auto
+#LQUEUE.CALYPSO.CME.queue.persist=false
+#LQUEUE.CALYPSO.CME.queue.transacted=false
+
+#input.queue.name=LQUEUE.CME.CALYPSO.FUTURES
+#LQUEUE.CME.CALYPSO.queue.ackType=auto
+#LQUEUE.CME.CALYPSO.queue.persist=false
+#LQUEUE.CME.CALYPSO.queue.transacted=false

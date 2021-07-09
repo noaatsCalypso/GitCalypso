@@ -1,0 +1,309 @@
+<!-- Start Swap FIX/FLOAT -->
+
+<!--calypso>
+if (|FIX_PAYMENT_ACCRUAL| == "ADJUSTED")
+   set FIX_ADJUSTMENT = "adjustment";
+else set FIX_ADJUSTMENT = "No adjustment";
+if (|FLT_PAYMENT_ACCRUAL| == "ADJUSTED")
+   set FLT_ADJUSTMENT = "adjustment";
+else set FLT_ADJUSTMENT = "No adjustment";
+</calypso-->
+
+<table CELLSPACING=0 BORDER=0 WIDTH="100%">
+<tr>
+	<td width="30%">Business Days:</td>
+	<td width="68%">|FLT_CPN_HOL|</td>
+</tr>
+<tr>
+	<td>Calculation Agent:</td>
+	<td>|SENDER_CODE|, unless otherwise stated in the Agreement</td>
+</tr>
+</table>
+
+<div style="page-break-inside:avoid">
+<p class='header2'>Fixed Amounts:</p>
+
+<!---Fixed Swap Leg Table-->
+
+<table CELLSPACING=0 BORDER=0 WIDTH="100%">
+<tr>
+	<td width="30%">Fixed Rate Payer:</td>
+	<td  width="68%">|FIX_PAYER_CODE|</td>
+</tr>
+<tr>
+	<td width="30%">Fixed Currency Amount:</td>
+	<td>|FIX_NOTIONAL_CCY| |FIX_NOTIONAL_VALUE|</td>
+</tr>
+<!--calypso>
+if ( |FLT_CPN_OFFSET| like "0%" )
+    inline "
+    <tr>
+        <td>Fixed Rate Payer Payment Dates:</td>
+        <td>|FIX_CPN_FREQ| on the |FIX_ROLL_DAY_NB|, starting |FIX_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |FIX_CPN_DATE_ROLL| Business Day convention.</td>
+    </tr>
+    ";
+else
+    inline "
+    <tr>
+        <td>Fixed Rate Payer Payment Dates:</td>
+        <td>|FIX_CPN_FREQ| on the |FIX_ROLL_DAY_NB|, starting |FIX_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |FIX_CPN_DATE_ROLL| Business Day convention.</td>
+    </tr>
+	<tr>
+        <td>Fixed Rate Period End Dates:</td>
+        <td>|FIX_CPN_FREQ| on the |FIX_ROLL_DAY_NB|, starting |FIX_FIRST_PERIODEND_DATE| subject to |FIX_ADJUSTMENT| in accordance with the Business Day convention.</td>
+    </tr>
+    <tr>
+        <td>Payment Lag:</td>
+        <td>|FLT_CPN_OFFSET_VALUE|  |FLT_CPN_OFFSET_DAYS|</td>
+    </tr>
+    ";
+</calypso-->
+<tr>
+	<td width="30%">Fixed Rate:</td>
+	<td>|FIX_FIXED_RATE| %</td>
+</tr>
+<tr>
+	<td width="30%">Fixed Rate Day Count Fraction:</td>
+	<td>|FIX_DAY_COUNT|</td>
+</tr>
+</table>
+</div>
+<br>
+<!--calypso>
+if ( |HAS_SCHEDULE#PAYLEG#RATE| != "No" ){
+	inline "<p>Rate Schedule</p>";
+    inline "<table width='100%'>";
+    iterator("Schedule#PAYLEG#RATE") {
+        inline "
+        <tr>
+			<td width='30%'>Date:</td><td width='68%'>|SCHEDULE_DATE|</td>
+			<td>Value:</td><td>|SCHEDULE_VALUE|</td>
+		</tr>";
+    }
+    inline "</table>";
+}
+if ( |HAS_SCHEDULE#RECEIVELEG#RATE| != "No" ){
+	inline "<p>Rate Schedule</p>";
+    inline "<table  width='100%'>";
+    iterator("Schedule#RECEIVELEG#RATE") {
+        inline "
+        <tr>
+			<td width='30%'>Date:</td><td width='68%'>|SCHEDULE_DATE|</td>
+			<td>Value:</td><td>|SCHEDULE_VALUE|</td>
+		</tr>";
+    }
+    inline "</table>";
+}
+</calypso-->
+
+<!---End Fixed Swap Leg Table-->
+
+<div style="page-break-inside:avoid">
+<p class="header2">Floating Amounts:</p>
+
+<!---Floating Swap Leg Table-->
+<table CELLSPACING=0 BORDER=0 WIDTH="100%">
+<tr>
+	<td width='30%'>Floating Rate Payer:</td>
+	<td width='68%'>|FLT_PAYER_CODE|</td>
+</tr>
+<tr>
+	<td width="30%">Floating Currency Amount:</td>
+	<td>|FLT_NOTIONAL_CCY| |FLT_NOTIONAL_VALUE|</td>
+</tr>
+<!--calypso>
+if ( |FLT_CPN_OFFSET| like "0%" )
+    inline "
+    <tr>
+        <td>Floating Rate Payer Payment Dates:</td>
+        <td>|FLT_CPN_FREQ| on the |FLT_ROLL_DAY_NB|, starting |FLT_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |FLT_CPN_DATE_ROLL| Business Day convention.</td>
+    </tr>
+    ";
+else
+    inline "
+    <tr>
+        <td>Floating Rate Payer Payment Dates:</td>
+        <td>|FLT_CPN_FREQ| on the |FLT_ROLL_DAY_NB|, starting |FLT_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |FLT_CPN_DATE_ROLL| Business Day convention.</td>
+    </tr>
+	<tr>
+        <td>Floating Rate Period End Dates:</td>
+        <td>|FLT_CPN_FREQ| on the |FLT_ROLL_DAY_NB|, starting |FLT_FIRST_PERIODEND_DATE| subject to |FLT_ADJUSTMENT| in accordance with the Business Day convention.</td>
+    </tr>
+    <tr>
+        <td>Payment Lag:</td>
+        <td>|FLT_CPN_OFFSET_VALUE|  |FLT_CPN_OFFSET_DAYS|</td>
+    </tr>
+    ";
+</calypso-->
+<!--calypso>
+if ( |FLT_MANUAL_RESET| == "true" )
+    inline "
+    <tr>
+        <td>Floating Rate for Initial Calculation Period:</td>
+        <td>|FLT_FIRST_RESET_RATE|</td>
+    </tr>
+    ";
+</calypso-->
+<tr>
+	<td width="30%">Floating Rate Option:</td>
+	<td>|FLT_RATE_INDEX|</td>
+</tr>
+<!--calypso>
+if ( |FLT_RATE_FACTOR| != 1 )
+    inline "
+    <tr>
+        <td>Rate Index Factor:</td>
+        <td>|FLT_RATE_FACTOR|</td>
+    </tr>
+    ";
+</calypso-->
+<tr>
+	<td width="30%">Designated Maturity:</td>
+	<td>|FLT_INDEX_TENOR|</td>
+</tr>
+<!--calypso>
+if (|PRODUCT_TYPE| == "CappedSwap")
+    inline "
+    <tr>
+        <td>|FLT_CAP_TYPE| Rate:</td>
+        <td>|FLT_CAP_RATE| %</td>
+    </tr>
+	<tr>
+	<td>Include Spread in |FLT_CAP_TYPE| Rate:</td>
+	<td>|FLT_INCLUDE_SPREAD|</td>
+	</tr>
+	<tr>
+	<td>Exclude |FLT_CAP_TYPE| Rate in First Period:</td>
+		<td>|FLT_EXCLUDE_FIRST_PERIOD|</td>
+	</tr>
+    ";
+</calypso-->
+<tr>
+	<td width="30%">Spread:</font></td>
+<!--calypso>
+if ( |FLT_SPREAD_VALUE| != "None" )
+    inline "
+        <td>|FLT_SPREAD_VALUE| Basis Points</td>";
+	else
+	inline "
+		<td>|FLT_SPREAD_VALUE|</td>";
+</calypso-->
+	</tr>
+</table>
+<br>
+
+<!--calypso>
+if ( |HAS_SCHEDULE#PAYLEG#SPREAD| != "No" ){
+	inline "<p>Spread Schedule</p>";
+    inline "<table width='100%'>";
+    iterator("Schedule#PAYLEG#SPREAD") {
+        inline "
+        <tr>
+			<td width='30%'>Date:</td><td width='68%'>|SCHEDULE_DATE|</td>
+			<td>Value:</td><td>|SCHEDULE_VALUE|</td>
+		</tr>";
+    }
+    inline "</table>";
+	}
+if ( |HAS_SCHEDULE#RECEIVELEG#SPREAD| != "No" ){
+	inline "<p>Spread Schedule</p>";
+    inline "<table width='100%'>";
+    iterator("Schedule#RECEIVELEG#SPREAD") {
+        inline "
+        <tr>
+			<td width='30%'>Date:</td><td width='68%'>|SCHEDULE_DATE|</td>
+			<td>Value:</td><td>|SCHEDULE_VALUE|</td>
+		</tr>";
+    }
+    inline "</table>";
+}
+</calypso-->
+<table CELLSPACING=0 BORDER=0 WIDTH="100%">
+	<tr>
+		<td width="30%">Floating Rate Day Count Fraction:</td>
+		<td width='68%'>|FLT_DAY_COUNT|</td>
+	</tr>
+	<!--calypso>
+		if ((|FLT_AVERAGING_RESET| == "false") && (|FLT_RATE_RESET_DAY_TIMING| == "At Start"))
+		inline "
+			<tr>
+				<td>Floating Amount I Reset Dates:</td>
+				<td>The first day of each Calculation Period</td>
+			</tr>";
+		if ((|FLT_AVERAGING_RESET| == "false") && (|FLT_RATE_RESET_DAY_TIMING| == "In Arrears"))
+		inline "
+			<tr>
+		<td>Floating Amount I Reset Dates:</td>
+		<td>The last day of each Calculation Period</td>
+	</tr>";
+</calypso-->
+<!--calypso>
+	if (( |FLT_AVERAGING_RESET| == "true" ) && (|AVERAGING_FREQUENCY|== "DLY"))
+		inline "
+			<tr>
+				<td>Floating Amount I Reset Dates:</td>
+				<td>Each |FLT_RATE_RESET_HOL|  business days in each Calculation Period</td>
+			</tr>";
+	if 	(( |FLT_AVERAGING_RESET| == "true" ) && (|AVERAGING_FREQUENCY|== "WK"))
+		inline "
+			<tr>
+				<td>Floating Amount I Reset Dates:</td>
+				<td>Each |FLT_RATE_RESET_DAY_WEK|, or if such day is not a |FLT_RATE_RESET_HOL| business day, then the next succeeding |FLT_RATE_RESET_HOL| during the Calculation Period</td>
+			</tr>";
+	if 	(( |FLT_AVERAGING_RESET| == "true" ) && (|AVERAGING_FREQUENCY|== "MTH"))
+		inline "
+			<tr>
+				<td>Floating Amount I Reset Dates:</td>
+				<td>Each |FLT_RATE_RESET_DAY_MTH|, or if such day is not a |FLT_RATE_RESET_HOL| business day, then the next succeeding |FLT_RATE_RESET_HOL| during the Calculation Period</td>
+			</tr>";
+	if ( |FLT_AVERAGING_RESET| == "true" )
+		inline "
+			<tr>
+				<td>Method of Averaging:</td>
+				<td>|AVERAGING_METHOD|</td>
+			</tr>";
+if ( |FLT_COMPOUNDING| == "true" )
+    inline "
+    <tr>
+		<td>Compounding Type:</td>
+		<td>|FLT_COMPOUND_TYPE|</td>
+    </tr>
+    <tr>
+		<td>Compounding:</td>
+		<td>|FLT_COMPOUND_FREQ|</td>
+	</tr>
+    ";
+</calypso-->
+</table>
+</div>
+
+<!---End Floating Swap Leg Table-->
+<!--calypso>
+if(|HAS_PRINCIPAL_EXCHANGE| != "No") {
+inline "<p class='header2'>Principal Exchange Schedule</p>
+<table width='100%'>
+<tr>
+	<th width='20%'>Date</th>
+	<th width='18%'>Currency</th>
+	<th width='20%'>Amount</th>
+	<th width='40%'>Payer</th>
+</tr>";
+iterator("SwapPrincipalCashFlows")
+	inline "<tr>
+		<td>|PRINCIPAL_EXCHANGE_DATE|</td>
+		<td>|PRINCIPAL_EXCHANGE_CURRENCY|</td>
+		<td>|PRINCIPAL_EXCHANGE_AMOUNT|</td>
+		<td>|PRINCIPAL_EXCHANGE_PAYER|</td>
+	</tr>";
+inline "</table>
+<p>
+Interim Exchange:<br/>
+Interim Exchange Date:|RECEIVELEG_CPN_FREQ| on the |RECEIVELEG_ROLL_DAY_NB|, starting |RECEIVELEG_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the |RECEIVELEG_CPN_DATE_ROLL| Business Day convention.
+</p>
+";
+}
+</calypso-->
+
+<!-- End Swap FIX/FLOAT -->
+
+

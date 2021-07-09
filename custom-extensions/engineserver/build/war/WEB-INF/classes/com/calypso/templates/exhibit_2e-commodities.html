@@ -1,0 +1,98 @@
+<!---Start Exhibit II-E -->
+<p>
+
+The terms of the particular Transaction to which this Confirmation
+relates are as follows:
+
+</p>
+
+<table CELLSPACING="2" BORDER="0" WIDTH="*">
+
+<tr>
+	<td width="30%">Seller:</td>
+	<td width="70%">|TRADE_SELLER_NAME|</td>
+</tr>
+<tr>
+	<td>Buyer:</td>
+	<td>|TRADE_BUYER_NAME|</td>
+</tr>
+<tr>
+	<td>Date Transaction Agreed:</td>
+	<td>|TRADE_DATE|</td>
+</tr>
+<tr>
+	<td>Trade Time:</td>
+	<td>|TRADE_TIME|</td>
+</tr>
+<tr>
+	<td>Trade Venue:</td>
+	<td>OTC</td>
+</tr>
+<tr>
+    <td>Commodity:</td>
+    <td>|COMMODITY_NAME|</td>
+</tr>
+<tr>
+	<td>Quantity:</td>
+	<td>|COMMODITY_QUANTITY|</td>
+</tr>
+<tr>
+	<td>Delivery Date:</td>
+	<td>|COMMODITY_DELIVERY_DATE|</td>
+</tr>
+
+<!--calypso>
+if (|IS_FIXED_RATE| == "true")
+inline"
+<tr>
+	<td>Commodity Price:</td>
+	<td>|COMMODITY_UNADJ_PRICE|</td>
+</tr>
+<tr>
+	<td>Total Amount:</td>
+	<td>|TRADE_SETTLECCY| |TRADE_SETTLEMENT_AMOUNT|</td>
+</tr>
+";
+else
+inline"
+<tr>
+	<td><b>Floating Price Calculation:</b></td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td>Commodity Reference Price:</td>
+	<td>|COMMODITY_REFERENCE_PRICE|</td>
+</tr>
+<tr>
+	<td>Calculation Period:</td>
+	<td>|COMMODITY_CALC_PERIOD|</td>
+</tr>
+<tr>
+	<td>Pricing Dates:</td>
+	<td>|COMMODITY_PRICING_DATES|</td>
+</tr>
+<tr>
+	<td>Contract Price:</td>
+	<td>To be determined in accordance with the details of the floating price calculation.</td>
+</tr>
+<tr>
+	<td>Total Amount:</td>
+	<td>The final contract price multiplied by the Quantity</td>
+</tr>
+";
+</calypso-->
+
+<tr>
+	<td>Broker(if Applicable)</td>
+	<td>|BROKER_FULL_NAME|</td>
+</tr>
+<tr>
+	<td>Payment Date:</td>
+	<td>|FINAL_PAYMENT_DATE|</td>
+</tr>
+
+
+
+</table>
+
+<!---End Exhibit II-E -->

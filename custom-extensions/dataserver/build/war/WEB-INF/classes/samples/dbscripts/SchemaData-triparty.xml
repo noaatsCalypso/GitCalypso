@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<calypso:database xmlns:calypso="http://www.calypso.com/schemer">
+  <table name="domain_values">
+    <row cat="triparty">
+      <column name="name">tradeKeyword</column>
+      <column name="value">ReversedAllocationTrade</column>
+      <column name="description">Indicates the triparty trade being reversed</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">tradeKeyword</column>
+      <column name="value">FromTripartyAllocation</column>
+      <column name="description">Keyword created by the triparty allocation process</column>
+    </row>
+	<row cat="triparty">
+      <column name="name">domainName</column>
+      <column name="value">DeleteOldAllocationMode</column>
+      <column name="description">Allocation Mode to be applied by TripartyAllocationScheduledTask</column>
+    </row>
+	<row cat="triparty">
+      <column name="name">domainName</column>
+      <column name="value">TripartyUnderCollateralization</column>
+      <column name="description">Settings for Triparty Under Allocation Exceptions</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">domainName</column>
+      <column name="value">MessageMatchingAttribute.BONYPRC</column>
+      <column name="description">Generic scheduled task TripartyAllocationScheduledTask for BONY US</column>
+    </row>
+	    <row cat="triparty">
+      <column name="name">domainName</column>
+      <column name="value">MessageMatchingAttribute.BONYPRCEU</column>
+      <column name="description">Generic scheduled task TripartyAllocationScheduledTask for BONY Europe</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">domainName</column>
+      <column name="value">MessageMatchingAttribute.EUROCLEAR</column>
+      <column name="description">Generic scheduled task TripartyAllocationScheduledTask for EUROCLEAR</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">domainName</column>
+      <column name="value">MessageMatchingAttribute.FICC</column>
+      <column name="description">Generic scheduled task TripartyAllocationScheduledTask for JPM FICC</column>
+    </row>
+	<row cat="triparty">
+      <column name="name">DeleteOldAllocationMode</column>
+      <column name="value">false</column>
+      <column name="description">Set it to false to keep history of Allocations</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRC</column>
+      <column name="value">Format</column>
+      <column name="description">txt</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRC</column>
+      <column name="value">Delimiter</column>
+      <column name="description">,</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRC</column>
+      <column name="value">Text Delimiter</column>
+      <column name="description">N/A</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRC</column>
+      <column name="value">Headers</column>
+      <column name="description">2</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRC</column>
+      <column name="value">Footers</column>
+      <column name="description">1</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRC</column>
+      <column name="value">Date Format</column>
+      <column name="description">MM/dd/yyyy</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRC</column>
+      <column name="value">Time Format</column>
+      <column name="description">HH:mm:ss</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRC</column>
+      <column name="value">Number Separator</column>
+      <column name="description">.</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRC</column>
+      <column name="value">Trade Reference</column>
+      <column name="description">Trade Id</column>
+    </row>
+	<row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRC</column>
+      <column name="value">TripartyAgent</column>
+      <column name="description">BONY</column>
+    </row>
+	<row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRCEU</column>
+      <column name="value">Format</column>
+      <column name="description">txt</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRCEU</column>
+      <column name="value">Delimiter</column>
+      <column name="description">,</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRCEU</column>
+      <column name="value">Text Delimiter</column>
+      <column name="description">N/A</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRCEU</column>
+      <column name="value">Headers</column>
+      <column name="description">2</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRCEU</column>
+      <column name="value">Footers</column>
+      <column name="description">1</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRCEU</column>
+      <column name="value">Date Format</column>
+      <column name="description">MM/dd/yyyy</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRCEU</column>
+      <column name="value">Time Format</column>
+      <column name="description">HH:mm:ss</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRCEU</column>
+      <column name="value">Number Separator</column>
+      <column name="description">.</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRCEU</column>
+      <column name="value">Trade Reference</column>
+      <column name="description">Trade Id</column>
+    </row>
+	<row cat="triparty">
+      <column name="name">MessageMatchingAttribute.BONYPRCEU</column>
+      <column name="value">TripartyAgent</column>
+      <column name="description">BONY EUROPE</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.EUROCLEAR</column>
+      <column name="value">Format</column>
+      <column name="description">csv</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.EUROCLEAR</column>
+      <column name="value">Delimiter</column>
+      <column name="description">,</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.EUROCLEAR</column>
+      <column name="value">Text Delimiter</column>
+      <column name="description">""</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.EUROCLEAR</column>
+      <column name="value">Headers</column>
+      <column name="description">1</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.EUROCLEAR</column>
+      <column name="value">Footers</column>
+      <column name="description">0</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.EUROCLEAR</column>
+      <column name="value">Date Format</column>
+      <column name="description">ddMMMyyyy</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.EUROCLEAR</column>
+      <column name="value">Time Format</column>
+      <column name="description">HH:mm</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.EUROCLEAR</column>
+      <column name="value">Number Separator</column>
+      <column name="description">.</column>
+    </row>
+	<row cat="triparty">
+      <column name="name">MessageMatchingAttribute.EUROCLEAR</column>
+      <column name="value">TripartyAgent</column>
+      <column name="description">EUROCLEAR</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.FICC</column>
+      <column name="value">Format</column>
+      <column name="description">txt</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.FICC</column>
+      <column name="value">Delimiter</column>
+      <column name="description">Tab</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.FICC</column>
+      <column name="value">Text Delimiter</column>
+      <column name="description">N/A</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.FICC</column>
+      <column name="value">Headers</column>
+      <column name="description">Yes</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.FICC</column>
+      <column name="value">Footers</column>
+      <column name="description">Yes</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.FICC</column>
+      <column name="value">Date Format</column>
+      <column name="description">dd-MMM-yyyy</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.FICC</column>
+      <column name="value">Time Format</column>
+      <column name="description">HH:mm:ss.SS</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">MessageMatchingAttribute.FICC</column>
+      <column name="value">Number Separator</column>
+      <column name="description">.</column>
+    </row>
+	<row cat="triparty">
+      <column name="name">MessageMatchingAttribute.FICC</column>
+      <column name="value">TripartyAgent</column>
+      <column name="description">JPM</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">incomingType</column>
+      <column name="value">EUROCLEAR</column>
+      <column name="description">INC_ALLOCATION</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">incomingType</column>
+      <column name="value">FICC</column>
+      <column name="description">INC_ALLOCATION</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">incomingType</column>
+      <column name="value">BONYPRC</column>
+      <column name="description">INC_ALLOCATION</column>
+    </row>
+	<row cat="triparty">
+      <column name="name">incomingType</column>
+      <column name="value">BONYPRCEU</column>
+      <column name="description">INC_ALLOCATION</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">incomingType</column>
+      <column name="value">MT569</column>
+      <column name="description">INC_ALLOCATION</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">formatType</column>
+      <column name="value">FICC</column>
+      <column name="description">text/plain</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">formatType</column>
+      <column name="value">BONYPRC</column>
+      <column name="description">text/plain</column>
+    </row>
+	    <row cat="triparty">
+      <column name="name">formatType</column>
+      <column name="value">BONYPRCEU</column>
+      <column name="description">text/plain</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">formatType</column>
+      <column name="value">EUROCLEAR</column>
+      <column name="description">text/plain</column>
+    </row>
+    <row cat="triparty">
+      <column name="name">leAttributeType</column>
+      <column name="value">RequireTripartyRepoAgreement</column>
+      <column name="description"/>
+    </row>
+    <row cat="triparty">
+      <column name="name">domainName</column>
+      <column name="value">leAttributeType.RequireTripartyRepoAgreement</column>
+      <column name="description"/>
+    </row>
+    <row cat="triparty">
+      <column name="name">leAttributeType.RequireTripartyRepoAgreement</column>
+      <column name="value">false</column>
+      <column name="description"/>
+    </row>
+    <row cat="triparty">
+      <column name="name">leAttributeType.RequireTripartyRepoAgreement</column>
+      <column name="value">true</column>
+      <column name="description"/>
+    </row>
+    <row cat="triparty">
+      <column name="name">ExternalMessageField.MessageMapper</column>
+      <column name="value">MT527</column>
+      <column name="description"/>
+    </row>
+    <row cat="triparty">
+      <column name="name">ExternalMessageField.MessageMapper</column>
+      <column name="value">MT569</column>
+      <column name="description"/>
+    </row>
+    <row cat="triparty">
+      <column name="name">REPORT.Types</column>
+      <column name="value">TripartyCollateralAllocation</column>
+      <column name="description"/>
+    </row>
+  </table>
+  <table name="bo_workflow_rule">
+    <row cat="triparty">
+      <column name="id">479</column>
+      <column name="rule_name">CheckIncomingFormat</column>
+    </row>
+    <row cat="triparty">
+      <column name="id">487</column>
+      <column name="rule_name">CheckEmptyFile</column>
+    </row>
+    <row cat="triparty">
+      <column name="id">491</column>
+      <column name="rule_name">CheckIncomingProcess</column>
+    </row>
+    <row cat="triparty">
+      <column name="id">495</column>
+      <column name="rule_name">ReprocessIncoming</column>
+    </row>
+  </table>
+  <table name="sd_filter">
+    <row cat="triparty">
+      <column name="sd_filter_name">TripartyTransactionGroupReference_Null</column>
+      <column name="user_name">calypso_user</column>
+      <column name="groups">ANY</column>
+    </row>
+    <row cat="triparty">
+      <column name="sd_filter_name">TripartyTransactionGroupReference_Not_Null</column>
+      <column name="user_name">calypso_user</column>
+      <column name="groups">ANY</column>
+    </row>
+  </table>
+  <table name="sd_filter_element">  
+    <row cat="triparty">
+      <column name="sd_filter_name">TripartyTransactionGroupReference_Not_Null</column>
+      <column name="element_name">MSG_ATTRIBUTE.TripartyTransactionGroupReference</column>
+      <column name="element_type">9</column>
+      <column name="is_value">0</column>
+      <column name="like_value">%</column>
+      <column name="is_min_inclusive">0</column>
+      <column name="is_max_inclusive">0</column>
+    </row>      
+    <row cat="triparty">
+      <column name="sd_filter_name">TripartyTransactionGroupReference_Null</column>
+      <column name="element_name">IN Static Data Filter</column>
+      <column name="element_type">2</column>
+      <column name="is_value">0</column>
+      <column name="like_value"></column>
+      <column name="is_min_inclusive">0</column>
+      <column name="is_max_inclusive">0</column>
+    </row>
+  </table>
+  <table name="sd_filter_domain">  
+    <row cat="triparty">
+      <column name="sd_filter_name">TripartyTransactionGroupReference_Null</column>
+      <column name="element_name">IN Static Data Filter</column>
+      <column name="element_type">2</column>
+      <column name="domain_value">TripartyTransactionGroupReference_Not_Null</column>
+    </row>
+  </table>
+  <table name="wfw_transition">
+    <row cat="triparty">
+      <column name="workflow_id">479</column>
+      <column name="event_class">PSEventMessage</column>
+      <column name="status">INVALID</column>
+      <column name="possible_action">AUTHORIZE</column>
+      <column name="resulting_status">PENDING</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="use_stp_b">1</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">INC_ALLOCATION</column>
+      <column name="sd_filter">TripartyTransactionGroupReference_Null</column>
+    </row>
+    <row cat="triparty">
+      <column name="workflow_id">481</column>
+      <column name="event_class">PSEventMessage</column>
+      <column name="status">INVALID</column>
+      <column name="possible_action">AUTHORIZE</column>
+      <column name="resulting_status">PENDING_SUB</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="use_stp_b">1</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">INC_ALLOCATION</column>
+      <column name="sd_filter">TripartyTransactionGroupReference_Not_Null</column>
+    </row>
+    <row cat="triparty">
+      <column name="workflow_id">483</column>
+      <column name="event_class">PSEventMessage</column>
+      <column name="status">NONE</column>
+      <column name="possible_action">NEW</column>
+      <column name="resulting_status">INVALID</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">INC_ALLOCATION</column>
+    </row>
+    <row cat="triparty">
+      <column name="workflow_id">485</column>
+      <column name="event_class">PSEventMessage</column>
+      <column name="status">PENDING</column>
+      <column name="possible_action">AUTHORIZE</column>
+      <column name="resulting_status">PROCESSED</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">INC_ALLOCATION</column>
+      <column name="sd_filter">TripartyTransactionGroupReference_Null</column>
+    </row>
+    <row cat="triparty">
+      <column name="workflow_id">487</column>
+      <column name="event_class">PSEventMessage</column>
+      <column name="status">PENDING</column>
+      <column name="possible_action">PROCESS</column>
+      <column name="resulting_status">PROCESSED</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="use_stp_b">1</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">INC_ALLOCATION</column>
+      <column name="sd_filter">TripartyTransactionGroupReference_Null</column>
+    </row>
+    <row cat="triparty">
+      <column name="workflow_id">489</column>
+      <column name="event_class">PSEventMessage</column>
+      <column name="status">PENDING</column>
+      <column name="possible_action">REJECT</column>
+      <column name="resulting_status">REJECTED</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">INC_ALLOCATION</column>
+      <column name="sd_filter">TripartyTransactionGroupReference_Null</column>
+    </row>
+    <row cat="triparty">
+      <column name="workflow_id">491</column>
+      <column name="event_class">PSEventMessage</column>
+      <column name="status">PENDING_SUB</column>
+      <column name="possible_action">PROCESS</column>
+      <column name="resulting_status">PROCESSED_SUB</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="use_stp_b">1</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">INC_ALLOCATION</column>
+      <column name="sd_filter">TripartyTransactionGroupReference_Not_Null</column>
+    </row>
+    <row cat="triparty">
+      <column name="workflow_id">493</column>
+      <column name="event_class">PSEventMessage</column>
+      <column name="status">PENDING_SUB</column>
+      <column name="possible_action">REMOVE</column>
+      <column name="resulting_status">REMOVED</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">INC_ALLOCATION</column>
+      <column name="sd_filter">TripartyTransactionGroupReference_Not_Null</column>
+    </row>
+    <row cat="triparty">
+      <column name="workflow_id">495</column>
+      <column name="event_class">PSEventMessage</column>
+      <column name="status">PENDING_SUB</column>
+      <column name="possible_action">REPROCESS</column>
+      <column name="resulting_status">PENDING_SUB</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">INC_ALLOCATION</column>
+      <column name="sd_filter">TripartyTransactionGroupReference_Not_Null</column>
+    </row>
+    <row cat="triparty">
+      <column name="workflow_id">497</column>
+      <column name="event_class">PSEventMessage</column>
+      <column name="status">PROCESSED</column>
+      <column name="possible_action">AMEND</column>
+      <column name="resulting_status">INVALID</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">INC_ALLOCATION</column>
+      <column name="sd_filter">TripartyTransactionGroupReference_Null</column>
+    </row>
+    <row cat="triparty">
+      <column name="workflow_id">499</column>
+      <column name="event_class">PSEventMessage</column>
+      <column name="status">PROCESSED_SUB</column>
+      <column name="possible_action">AMEND</column>
+      <column name="resulting_status">PENDING_SUB</column>
+      <column name="kick_cutoff_b">0</column>
+      <column name="update_only_b">0</column>
+      <column name="use_stp_b">0</column>
+      <column name="same_user_b">1</column>
+      <column name="product_type">ALL</column>
+      <column name="msg_type">INC_ALLOCATION</column>
+      <column name="sd_filter">TripartyTransactionGroupReference_Not_Null</column>
+    </row>
+  </table>
+</calypso:database>

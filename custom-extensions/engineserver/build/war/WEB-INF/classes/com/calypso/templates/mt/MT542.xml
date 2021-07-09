@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MT 542 Deliver Free -->
+<SwiftMsgDef>
+	<Name>MT542</Name>
+	<CancellationName>MT54C</CancellationName>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="GENL" value="GENL" modes="MMM"/>
+		<SwiftField name="Sender's Reference" tag=":20C:" format=":4!c//16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Function of the Message" tag=":23G:" format="4!c[/4!c]" value="MESSAGE_SUBACTION" modes="MMM"/>
+		<SwiftField name="Preparation Date/Time" tag=":98C:" format=":4!c//8!n6!n" value="MESSAGE_CREATIONDATE" modes="OOO"/>
+	</SwiftSequence>
+	<SwiftSequence name="Repetitive Optional Subsequence A1 Linkages " modes="---" condition="isCancel()">
+		<SwiftField name="Start of Block" tag=":16R:" format="LINK" value="LINK" modes="MMM"/>
+		<SwiftField name="Reference" tag=":20C:" format=":4!c//16x" value="MESSAGE_LINKED_ID" modes="---"/>
+		<SwiftField name="End of Block" tag=":16S:" format="LINK" value="LINK" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Repetitive Optional Subsequence A1 Linkages " modes="---" condition="hasLinkReference()">
+		<SwiftField name="Start of Block" tag=":16R:" format="LINK" value="LINK" modes="MMM"/>
+		<SwiftField name="Qualifier" tag=":22F:" format=":4!c//4!c" value="LINK_QUALIFIER" modes="OOO"/>
+		<SwiftField name="Message Type" tag=":13A:" format=":4!c//3!c" value="LINK_TYPE" modes="---"/>
+		<SwiftField name="Reference" tag=":20C:" format=":4!c//16x" value="LINK_REFERENCE" modes="---"/>
+		<SwiftField name="End of Block" tag=":16S:" format="LINK" value="LINK" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Repetitive Optional Subsequence A1 Linkages " modes="---" condition="hasUTIReference()">
+		<SwiftField name="Start of Block" tag=":16R:" format="LINK" value="LINK" modes="MMM"/>
+		<SwiftField name="Reference" tag=":20U:" format=":4!c//52x" value="UTI_REFERENCE" modes="---"/>
+		<SwiftField name="End of Block" tag=":16S:" format="LINK" value="LINK" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Repetitive Optional Subsequence A1 Linkages " modes="---" condition="hasCOMMReference()">
+		<SwiftField name="Start of Block" tag=":16R:" format="LINK" value="LINK" modes="MMM"/>
+		<SwiftField name="Reference" tag=":20C:" format=":4!c//52x" value="COMM_REF" modes="---"/>
+		<SwiftField name="End of Block" tag=":16S:" format="LINK" value="LINK" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="End of Block" tag=":16S:" format="GENL" value="GENL" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Mandatory Sequence B Trade Details " modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="TRADDET" value="TRADDET" modes="MMM"/>
+		<SwiftField name="Place" tag=":94a:" value="PLACE_TRADE" modes="OOO">
+			<SwiftFieldOption letter="B" format=":4!c/[8c]/4!c[/30x]" />
+			<SwiftFieldOption letter="L" format=":4!c//18!c2!n" />
+		</SwiftField> 
+		<SwiftField name="Settle Date" tag=":98A:" format=":4!c//8!n" value="SEC_SETTLE_DATE" modes="MMM"/>
+		<SwiftField name="Trade Date" tag=":98A:" format=":4!c//8!n" value="SEC_TRADE_DATE" modes="MMM"/>
+		<SwiftField name="Deal Price" tag=":90a:" value="DEAL_PRICE" modes="---" condition="!isIBRC()">
+			<SwiftFieldOption letter="A" format=":4!c//4!c/[N]15d" />
+			<SwiftFieldOption letter="B" format=":4!c//4!c/3!a15d" />
+		</SwiftField>
+		<SwiftField name="Number Accrued" tag=":99A:" format=":4!c//[N]3!n" value="DAYS_ACCRUED" modes="---" condition="!isIBRC()"/>
+ 		<SwiftField name="Identification of the Financial Instrument" tag=":35B:" format="ISIN1!e12!c[\n][4*35x]" value="SECURITY_ISIN" modes="+++" condition="hasISINCode()"/>
+ 		<SwiftField name="Identification of the Financial Instrument" tag=":35B:" format="4*35x" value="SECURITY_CUSIP" modes="+++" condition="!hasISINCode() AND hasCUSIPCode()"/>
+		<SwiftField name="Identification of the Financial Instrument" tag=":35B:" format="4*35x" value="SECURITY_DESCRIPTION" modes="+++" condition="!hasISINCode() AND !hasCUSIPCode()"/>
+		<SwiftField name="Priority Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="PRIR" modes="OOO"/>
+		<SwiftField name="Trade Condition Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="TTCO" modes="OOO"/>
+		<SwiftField name="Narative" tag=":70E:" format=":4!c//10*35x" value="SPRO" modes="OOO"/>
+		<SwiftField name="Status" tag=":25D:" format=":4!c/[8c]/4!c" value="MATCHING_STATUS" modes="OOO"/>
+		<SwiftField name="End of Block" tag=":16S:" format="TRADDET" value="TRADDET" modes="MMM"/>
+		<!-- <SwiftField name="Preparation Date/Time" tag=":72:" format=":4!c//8!n" modes="OOO"/> -->
+	</SwiftSequence>
+	<SwiftSequence name="Repetitive Mandatory Sequence C Financial Instrument/Account " modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="FIAC" value="FIAC" modes="MMM"/>
+		<SwiftField name="Quantity of Financial Instrument to be Settled" tag=":36B:" format=":4!c//4!c/15d" value="NOMINAL_AMOUNT" modes="MMM"/>
+		<SwiftField name="Number Indentification" tag=":13B:" format=":4!c/[8c]/30x" value="CERTIFICATE_NUMBER" modes="OOO"/>
+		<SwiftField name="Account Owner" tag=":95P:" format=":4!c//4!a2!a2!c[3!c]" value="ACCOUNT_OWNER" modes="OOO"/>
+		<SwiftField name="Account Number" tag=":97a:"  value="AGENT_ACCOUNT" modes="OOO">
+			<SwiftFieldOption letter="A" format=":4!c//35x" />
+			<SwiftFieldOption letter="B" format=":4!c/[8c]/4!c/35x" />
+		</SwiftField>
+		<SwiftField name="Place of Safekeeping" tag=":94F:" format=":4!c//4!c/4!a2!a2!c[3!c]" value="PLACE_SAFE" modes="OOO"/>
+		<SwiftField name="End of Block" tag=":16S:" format="FIAC" value="FIAC" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Optional Sequence D Repo Details " modes="---" condition="isRepoBased() AND !isIBRC()">
+		<SwiftField name="Start of Block" tag=":16R:" format="REPO" value="REPO" modes="MMM"/>
+		<SwiftField name="Closing Date/Time" tag=":98a:" value="CLOSING_DATE" modes="OOO">
+			<SwiftFieldOption letter="A" format=":4!c//8!n" />
+			<SwiftFieldOption letter="B" format=":4!c/[8c]/4!c" />
+			<SwiftFieldOption letter="C" format=":4!c//8!n6!n" />
+		</SwiftField>
+		<SwiftField name="Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="REPURCHASE_RATE_TYPE" modes="OOO"/>
+		<SwiftField name="Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="METHOD_DAY_COUNT" modes="OOO"/>
+		<SwiftField name="rate" tag=":92A:" format=":4!c//[N]15d" value="FIXED_RATE" condition="isFixedRate()" modes="---"/>
+		<SwiftField name="rate" tag=":92A:" format=":4!c//[N]15d" value="SPREAD" condition="!isFixedRate()" modes="---"/>
+		<SwiftField name="rate" tag=":92C:" format=":4!c/[8c]/24x" value="RATE_INDEX" condition="!isFixedRate()" modes="---"/>
+		<SwiftField name="Number Count" tag=":99B:" format=":4!c//3!n" value="NOTICE_DAYS" modes="OOO"/>
+		<SwiftField name="End of Block" tag=":16S:" format="REPO" value="REPO" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Mandatory Sequence E Settlement Details " modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="SETDET" value="SETDET" modes="MMM"/>
+		<SwiftField name="Securities Account Restriction Type" tag=":22F:" format=":4!c/[8c]/4!c" value="SSBT" modes="OOO"/>
+		<SwiftField name="Settlement Transaction Condition Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="PARTIAL_IND" modes="OOO"/>
+		<SwiftField name="Opt Out Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="STCO_OUT" modes="OOO"/>
+		<SwiftField name="Opt Out Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="STCO" modes="OOO"/>
+		<SwiftField name="Opt Out Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="DLWM" modes="OOO"/>
+		<SwiftField name="Opt Out Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="TRIP" modes="OOO"/>
+		<SwiftField name="Type of Settlement Transaction Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="INDICATOR" modes="MMM"/>
+		<SwiftField name="Securities Real-Time Gross Settlement Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="RTGS" modes="OOO"/>
+		<SwiftField name="CCP Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="CCP_INDICATOR" modes="OOO"/>
+		<SwiftField name="Opt Out Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="COLA" modes="OOO"/>
+		<SwiftField name="Tracking Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="TRACKING_INDICATOR" modes="OOO"/>
+	</SwiftSequence>
+	<SwiftSequence name=" E1" modes="MMM" iterator="SettlementDetailIterator">
+		<SwiftField name="Start of Block" tag=":16R:" format="SETPRTY" value="SETPRTY" modes="MMM"/>
+		<SwiftField name="party" tag=":95a:" value="SETTLEMENT_PARTY" modes="MMM">
+			<SwiftFieldOption letter="C" format=":4!c//2!a" />
+			<SwiftFieldOption letter="P" format=":4!c//4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="Q" format=":4!c//4*35x" />
+			<SwiftFieldOption letter="R" format=":4!c/8c/34x" />
+			<SwiftFieldOption letter="S" format=":4!c/[8c]/4!c/2!a/30x" />
+		</SwiftField>
+		<SwiftField name="Party LEI" tag=":95L:" format=":4!c//18!c2!n" value="SETTLEMENT_PARTY_LEI" modes="OOO"/>
+		<SwiftField name="safekeeping account" tag=":97a:" value="SAFEKEEP_ACCOUNT" modes="OOO">
+			<SwiftFieldOption letter="A" format=":4!c//35x" />
+			<SwiftFieldOption letter="B" format=":4!c/[8c]/4!c/35x" />
+		</SwiftField>
+		<SwiftField name="Processing Reference" tag=":20C:" format=":4!c//16x" value="PROC_REF" modes="OOO"/>
+		<SwiftField name="Registration Details" tag=":70D:" format=":4!c//6*35x" value="SETTLEMENT_PARTY_DETAIL" modes="OOO"/>
+		<SwiftField name="End of Block" tag=":16S:" format="SETPRTY" value="SETPRTY" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Optional E3" modes="---" condition="isUNIT">
+		<SwiftField name="Start of Block" tag=":16R:" format="AMT" value="AMT" modes="MMM"/>
+		<SwiftField name="amount" tag=":19A:" format=":4!c//[N]3!a15d" value="DEAL_AMT" modes="MMM"/>
+		<SwiftField name="End of Block" tag=":16S:" format="AMT" value="AMT" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Mandatory Sequence E Settlement Details " modes="MMM">
+		<SwiftField name="End of Block" tag=":16S:" format="SETDET" value="SETDET" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Optional Sequence F Other Parties " modes="---" condition="isCCPEligible()">		
+		<SwiftField name="Start of Block" tag=":16R:" format="OTHRPRTY" value="OTHRPRTY" modes="MMM"/>
+		<SwiftField name="party" tag=":95P:" format=":4!c//4!a2!a2!c[3!c]" value="CCP" modes="MMM"/>
+		<SwiftField name="End of Block" tag=":16S:" format="OTHRPRTY" value="OTHRPRTY" modes="MMM"/>	
+		<SwiftField name="Start of Block" tag=":16R:" format="OTHRPRTY" value="OTHRPRTY" modes="MMM"/>
+		<SwiftField name="party" tag=":95P:" format=":4!c//4!a2!a2!c[3!c]" value="CCP_BROKER" modes="MMM"/>
+		<SwiftField name="Account Number" tag=":97A:" format=":4!c//35x" value="CCP_ACCOUNT" modes="OOO"/>
+		<SwiftField name="End of Block" tag=":16S:" format="OTHRPRTY" value="OTHRPRTY" modes="MMM"/>
+	</SwiftSequence>
+</SwiftMsgDef>

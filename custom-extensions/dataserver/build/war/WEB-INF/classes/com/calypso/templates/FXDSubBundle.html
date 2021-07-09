@@ -1,0 +1,7 @@
+<!--calypso>
+if (|PRODUCT_TYPE|=="FXOption")
+	include "FXOBundle.html";
+else if ((|PRODUCT_TYPE|=="FX") || (|PRODUCT_TYPE|=="FXForward") || (|PRODUCT_TYPE|=="FXSwap"))
+	include "FXBundle.html";
+else include "OtherBundle.html";
+</calypso-->

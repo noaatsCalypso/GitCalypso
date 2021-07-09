@@ -1,0 +1,182 @@
+<html>
+   <head>
+      <title>Bond Deal Ticket</title>
+   </head>
+   <body>
+     <p> <b>Using Bond Deal Ticket Template 1</b></p>
+      <p><b>Product Details of |BOND_NAME| </b></p>
+<table width="100%">
+<tr>
+  <td width="30%">Bond Type</td>
+  <td width="68%">|BOND_TYPE|</td>
+ </tr>
+ <tr>
+  <td width="30%">Bond Sub Type</td>
+  <td>|BOND_SUBTYPE|</td>
+ </tr>
+ <tr>
+  <td width="30%">Issuer</td>
+  <td>|BOND_ISSUER|</td>
+ </tr>
+ <tr>
+  <td>Issuer Country</td>
+  <td>|BOND_ISSUER_COUNTRY|</td>
+ </tr>
+ <tr>
+  <td>Issue Date</td>
+  <td>|BOND_ISSUE_DATE|</td>
+ </tr>
+ <tr>
+  <td>Dated Date</td>
+  <td>|BOND_DATED_DATE|</td>
+ </tr>
+ <tr>
+  <td>Maturity Date</td>
+  <td>|BOND_MATURITY_DATE|</td>
+ </tr>
+ <tr>
+  <td>Issue Price</td>
+  <td>|BOND_ISSUE_PRICE|</td>
+ </tr>
+<tr>
+  <td>Currency</td>
+  <td>|BOND_CURRENCY|</td>
+ </tr>
+<tr>
+  <td>Redemption Price</td>
+  <td>|BOND_REDEMPTION_PRICE|</td>
+ </tr>
+<tr>
+  <td>Redemption Currency</td>
+  <td>|BOND_REDEMPTION_CCY|</td>
+ </tr>
+<tr>
+  <td>Redemption FX Rate</td>
+  <td>|BOND_REDEMPTION_FX_RATE|</td>
+ </tr>
+<tr>
+  <td>Total Issued</td>
+  <td>|BOND_TOTAL_ISSUED|</td>
+ </tr>
+<tr>
+  <td>Face Value</td>
+  <td>|BOND_FACE_VALUE|</td>
+ </tr>
+<tr>
+  <td>Minimum Purchase Amount</td>
+  <td>|BOND_MIN_PURCH_AMT|</td>
+ </tr>
+<tr>
+  <td>Coupon Day Count</td>
+  <td>|BOND_CPN_DAYCOUNT|</td>
+ </tr>
+<tr>
+  <td>Coupon Currency</td>
+  <td>|BOND_CPN_CCY|</td>
+ </tr>
+<tr>
+  <td>Holidays</td>
+  <td>|BOND_PAYMENT_HOL|</td>
+ </tr>
+<tr>
+  <td>Payment Rule</td>
+  <td>|BOND_PAYMENT_RULE|</td>
+ </tr>
+<tr>
+  <td>Frequency</td>
+  <td>|BOND_PAYMENT_FREQ|</td>
+ </tr>
+<tr>
+  <td>Roll Day</td>
+  <td>|BOND_ROLL_DAY|</td>
+ </tr>
+<tr>
+  <td>Date Roll</td>
+  <td>|BOND_DATE_ROLL|</td>
+ </tr>
+<tr>
+  <td>Flipper Date</td>
+  <td>|BOND_FLIPPER_DATE|</td>
+ </tr>
+<tr>
+  <td>Floating Rate Day Count</td>
+  <td>|BOND_FLT_RATE_DAYCOUNT|</td>
+ </tr>
+<tr>
+  <td>Floating Rate Spread</td>
+  <td>|BOND_FLT_RATE_SPREAD|</td>
+ </tr>
+<tr>
+  <td>Floating Rate Index</td>
+  <td>|BOND_FLT_RATE_INDEX|</td>
+ </tr>
+<tr>
+  <td>Reset Days</td>
+  <td>|BOND_RESET_DAYS|</td>
+ </tr>
+ <tr>
+  <td>Rate Index Factor</td>
+  <td>|BOND_RATE_IDX_FACTOR|</td>
+ </tr>
+</table>
+<p> </p>
+<p><b>Bond Sec Codes</b></p>
+<table width="100%">
+<tr>
+  <td width="30%">CUSIP</td>
+  <td width="68%">|BOND_SEC_CODES_CUSIP|</td>
+ </tr>
+ </table>
+
+
+<p> </p>
+<p><b>Bond Cash Flows</b></p>
+
+<table width="100%">
+<tr>
+    <th width="25%">Pmt Begin</th>
+    <th width="25%">Pmt End</th>
+    <th width="25%">Pmt Date</th>
+    <th width="25%">Notional</th>
+</tr>
+<!--calypso>
+iterator ( "BondCashFlow" )
+    inline "
+<tr>
+    <td>|BONDCF_PMT_BEGIN|</td>
+    <td>|BONDCF_PMT_END|</td>
+    <td>|BONDCF_PMT_DATE|</td>
+    <td>|BONDCF_NOTIONAL|</td>
+</tr>
+    ";
+</calypso-->
+</table>
+
+<p> </p>
+<p><b>Bond Call Schedule</b></p>
+
+<table width="100%">
+<tr>
+    <th>Option Type</th>
+    <th>Exercise Type</th>
+    <th>Redemption Date</th>
+    <th>Notification Date</th>
+    <th>Price</th>
+</tr>
+<!--calypso>
+iterator ( "BondCallSchedule" )
+    inline "
+<tr>
+    <td>|BONDCALLSCH_OPTION_TYPE|</td>
+    <td>|BONDCALLSCH_EXERCISE_TYPE|</td>
+    <td>|BONDCALLSCH_REDEMPTION_DATE|</td>
+    <td>|BONDCALLSCH_NOTIFICATION_DATE|</td>
+     <td>|BONDCALLSCH_PRICE|</td>
+</tr>
+    ";
+</calypso-->
+</table>
+
+
+   </body>
+</html>

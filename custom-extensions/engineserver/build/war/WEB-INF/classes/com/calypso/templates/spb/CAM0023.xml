@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+    <contents>
+        <element name="CAM0023" hideifempty="true">
+            <contents>
+                <element name="CodMsg">
+                    <contents>
+                        <text>
+                            <value>CAM0023</value>
+                        </text>
+                    </contents>
+                </element>
+                <element name="NumCtrlIF">
+                    <contents>
+                        <report>
+                            <column>MESSAGE_ID</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJBaseIF">
+                    <contents>
+                        <report>
+                            <column>FXCNPJBaseIF</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJBaseCortr">
+                    <condition>
+                        <expression>getReportValue("CNPJCORTR") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>CNPJCORTR</column>
+                            <transformations>
+                                <transformation type="substring">
+                                    <from>0</from>
+                                    <to>8</to>
+                                </transformation>
+                            </transformations>
+                        </report>
+                    </contents>
+                </element>
+                <element name="NumSeqEdic">
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.NumSeqEdic</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtMovto">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>TODAY</column>
+                        </report>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

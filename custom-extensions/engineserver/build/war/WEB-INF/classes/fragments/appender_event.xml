@@ -1,0 +1,4 @@
+<EventAppender appName="${calypsoAppName}" name="event">
+  <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+  <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSSZ} %-5p [%c] (%t) [%X{clientHost}-%X{clientDesc}] [%X{Aggregation}] %m%n"/>
+</EventAppender>

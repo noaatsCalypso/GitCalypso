@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+    <contents>
+        <element name="FIToFICstmrCdtTrf">
+            <contents>
+                <element name="GrpHdr">
+                    <contents>
+                        <element name="MsgId">
+                            <contents>
+								<report>
+									<column>MESSAGE_ID</column>
+								</report>
+                            </contents>
+                        </element>
+                        <element name="CreDtTm">
+                            <contents>
+                                <report>
+                                    <column>CREATION_SYSTEM_DATE_ISOVERSION</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="NbOfTxs">
+                            <contents>
+                                <text>
+                                    <value>1</value>
+                                </text>
+                            </contents>
+                        </element>
+						<element name="IntrBkSttlmDt">
+							<contents>
+								<report format="yyyy-MM-dd">
+									<column>Settle Date</column>
+								</report>
+							</contents>
+						</element>                        
+                        <element name="SttlmInf">
+                            <contents>
+                                <element name="SttlmMtd">
+                                    <contents>
+                                        <text>
+                                            <value>CLRG</value>
+                                        </text>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+						<element name="InstgAgt">
+							<contents>
+								<element name="FinInstnId">
+                                    <contents max="1">
+                                        <element name="ClrSysMmbId" hideifempty="true">
+                                            <contents>
+                                                <element name="ClrSysId">
+                                                    <contents>
+                                                        <element name="Cd">
+                                                            <contents>
+                                                                <report>
+                                                                	<column>PO_CLEARING_SYS_ID</column>
+                                                                </report>
+                                                            </contents>
+                                                        </element>
+                                                    </contents>
+                                                </element>
+                                                <element name="MmbId" hideifempty="true">
+                                                    <contents>
+                                                        <report>
+                                                        	<condition>
+																<expression>!isEmpty(getReportValue("PO_CLEARING_SYS_ID"))</expression>
+	                                                        </condition>
+                                                            <column>PO_CLEARING_MEMBER_ID</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                        <element name="BIC">
+                                            <contents>
+                                                <report>
+                                                    <column>PO_CONTACT_BIC_CODE</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                    </contents>
+								</element>
+							</contents>
+						</element>
+						<element name="InstdAgt">
+							<contents>
+								<element name="FinInstnId">
+                                    <contents max="1">
+                                        <element name="ClrSysMmbId" hideifempty="true">
+                                            <contents>
+                                                <element name="ClrSysId">
+                                                    <contents>
+                                                        <element name="Cd">
+                                                            <contents>
+                                                                <report>
+                                                                	<column>CPTY_AGENT_CLEARING_SYS_ID</column>
+                                                                </report>
+                                                            </contents>
+                                                        </element>
+                                                    </contents>
+                                                </element>
+                                                <element name="MmbId" hideifempty="true">
+                                                    <contents>
+                                                        <report>
+                                                        	<condition>
+                                                        		<expression>!isEmpty(getReportValue("CPTY_AGENT_CLEARING_SYS_ID"))</expression>
+                                                        	</condition>
+                                                            <column>CPTY_AGENT_CLEARING_MEMBER_ID</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                        <element name="BIC">
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_RECEIVING_AGENT_BIC_CODE</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                    </contents>
+								</element>
+							</contents>
+						</element>						
+                    </contents>
+                </element>
+                <element name="CdtTrfTxInf">
+                    <contents>
+                        <element name="PmtId">
+                            <contents>
+								<element name="InstrId" hideifempty="true">
+									<condition>
+										<expression>getReportValue("TRADE_KEYWORD.MXPaymentType") != "ESRDEB"  &amp;&amp; getReportValue("TRADE_KEYWORD.MXPaymentType") != "ESRPMT"  &amp;&amp; getReportValue("TRADE_KEYWORD.MXPaymentType") != "IPIDEB"</expression>
+									</condition>								
+									<contents>
+										<text>
+											<condition>
+												<expression>!isEmpty(getReportValue("Msg_Attr.UETR"))</expression>
+											</condition>
+                                    		<value>UET</value>
+										</text>
+										<report>
+											<column>Msg_Attr.UETR</column>
+												<transformations>
+													<transformation type="regexp">
+														<from>\-</from>
+														<to></to>
+													</transformation>
+												</transformations>
+										</report>
+									</contents>
+								</element>
+                                <element name="EndToEndId">
+                                    <contents>
+                                        <report>
+                                            <column>Trade Id</column>
+                                        </report>
+                                    </contents>
+                                </element>
+								<element name="TxId">
+									<contents>
+										<report>
+											<column>MESSAGE_ID</column>
+										</report>
+									</contents>
+								</element>
+                            </contents>
+                        </element>
+						<element name="PmtTpInf">
+							<contents>
+								<element name="SvcLvl" hideifempty="true">
+									<condition>
+										<expression>getReportValue("TRADE_KEYWORD.MXPaymentType") != "ESRDEB"  &amp;&amp; getReportValue("TRADE_KEYWORD.MXPaymentType") != "ESRPMT"  &amp;&amp; getReportValue("TRADE_KEYWORD.MXPaymentType") != "IPIDEB"  &amp;&amp; getReportValue("TRADE_KEYWORD.MXPaymentType") != "SEPPMT"</expression>
+									</condition>
+									<contents max="1">
+										<element name="Prtry" hideifempty="true">
+											<contents>
+												<report>
+													<column>TRADE_KEYWORD.ServiceLvlPmtCode</column>
+												</report>
+											</contents>
+										</element>
+										<element name="Prtry" hideifempty="true">
+											<contents>
+												<text>
+													<value>CRED</value>
+												</text>
+											</contents>
+										</element>
+									</contents>
+								</element>
+								<element name="LclInstrm">
+									<contents max="1">
+										<element name="Prtry" hideifempty="true">
+											<contents>
+												<report>
+													<column>TRADE_KEYWORD.MXPaymentType</column>
+												</report>
+											</contents>
+										</element>
+										<element name="Prtry">
+											<contents>
+												<text>
+													<value>CSTPMT</value>
+												</text>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>                        
+                        <element name="IntrBkSttlmAmt">
+                            <attributes>
+                                <attribute name="Ccy">
+                                    <value>
+                                        <report>
+                                            <column>SettleCurrency</column>
+                                        </report>
+                                    </value>
+                                </attribute>
+                            </attributes>
+                            <contents>
+                                <report>
+                                    <column>Settle Amount</column>
+                                </report>
+                            </contents>
+                        </element>
+						<element name="ChrgBr">
+							<contents>
+								<report>
+									<column>DETAILS_OF_CHARGE</column>
+								</report>
+							</contents>
+						</element>                        
+                        <element name="IntrmyAgt1" hideifempty="true">
+                        	<condition>
+                        		<expression>!isTrue(getReportValue("INSTDAGT_EQUALS_CDTRAGT"))</expression>
+                        	</condition>
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents>
+                                        <element name="BIC" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_RECEIVING_INT1_BIC_CODE</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Nm" hideifempty="true">
+                                            <condition>
+                                                <expression>isEmpty(getReportValue("CPTY_RECEIVING_INT1_BIC_CODE"))
+                                                </expression>
+                                            </condition>
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_RECEIVING_INT1_SHORT_NAME</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="PstlAdr" hideifempty="true">
+                                            <condition>
+                                                <expression>isEmpty(getReportValue("CPTY_RECEIVING_INT1_BIC_CODE"))
+                                                </expression>
+                                            </condition>                                        
+                                            <contents>
+                                                <element name="TwnNm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_RECEIVING_INT1_CITY</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="Ctry">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_RECEIVING_INT1_COUNTRY</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="IntrmyAgt1Acct" hideifempty="true">
+                        	<condition>
+                        		<expression>!isTrue(getReportValue("INSTDAGT_EQUALS_CDTRAGT"))  &amp;&amp; getReportValue("TRADE_KEYWORD.MXPaymentType") != "ESRDEB"  &amp;&amp; getReportValue("TRADE_KEYWORD.MXPaymentType") != "ESRPMT"  &amp;&amp; getReportValue("TRADE_KEYWORD.MXPaymentType") != "IPIDEB"  &amp;&amp; getReportValue("TRADE_KEYWORD.MXPaymentType") != "SEPPMT"</expression>
+                        	</condition>	
+                            <contents>
+                                <element name="Id">
+                                    <contents max="1">
+                                        <element name="IBAN" hideifempty="true">
+                                            <condition>
+                                                <expression>isTrue(getReportValue("Receiver.SDIAttributes.IBAN.Intermediary2"))</expression>
+                                            </condition>
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_RECEIVING_INT1_ACC</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Othr">
+                                            <contents>
+                                                <element name="Id">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_RECEIVING_INT1_ACC</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="Dbtr" hideifempty="true">
+                            <contents>
+                                <element name="Nm" hideifempty="true">
+									<condition>
+										<expression>isEmpty(getReportValue("PO_BENEFICIARY_BIC_CODE"))</expression>
+									</condition>
+                                    <contents>
+                                        <report><!-- Benef.Name value of the PO SDI
+                                                    if Benef.Name = null then set PO's Short Name. -->
+                                            <column>PO_BENEFICIARY_NAME</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <element name="PstlAdr" hideifempty="true">
+									<condition>
+										<expression>isEmpty(getReportValue("PO_BENEFICIARY_BIC_CODE"))</expression>
+									</condition>                                
+                                    <contents>
+                                        <element name="TwnNm">
+                                            <contents>
+                                                <report>
+                                                    <column>PO_BENEFICIARY_CONTACT_TOWN_NAME</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Ctry">
+                                            <contents>
+                                                <report>
+                                                    <column>PO_BENEFICIARY_CONTACT_COUNTRY</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                                <element name="Id">
+                                    <contents>
+                                        <!-- This will be present if there is Swift code in the contact used in 
+                                            the PO SDI. -->
+                                        <element name="OrgId">
+                                            <contents>
+                                                <element name="BICOrBEI">
+                                                    <contents>
+                                                        <report>
+                                                            <!--Swift Code/Bic of the Contact used in the PO SDI -->
+                                                            <column>PO_BENEFICIARY_BIC_CODE</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="DbtrAcct" hideifempty="true">
+                            <contents>
+                                <element name="Id">
+                                    <contents max="1">
+                                        <element name="IBAN" hideifempty="true">
+                                            <condition>
+                                                <expression>isTrue(getReportValue("Payer.SDIAttributes.IBAN.Agent"))</expression>
+                                            </condition>
+                                            <contents>
+                                                <report>
+                                                    <column>PO_AGENT_ACCT</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Othr">
+                                            <contents>
+                                                <element name="Id">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_AGENT_ACCT</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="DbtrAgt">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents>
+                                        <element name="ClrSysMmbId" hideifempty="true">
+                                            <contents>
+                                                <element name="ClrSysId">
+                                                    <contents>
+                                                        <element name="Cd">
+                                                            <contents>
+                                                                <report>
+                                                                	<column>PO_AGENT_CLEARING_SYS_ID</column>
+                                                                </report>
+                                                            </contents>
+                                                        </element>
+                                                    </contents>
+                                                </element>
+                                                <element name="MmbId" hideifempty="true">
+                                                    <contents>
+                                                        <report>
+                                                        	<condition>
+                                                        		<expression>!isEmpty(getReportValue("PO_AGENT_CLEARING_SYS_ID"))</expression>
+                                                        	</condition>
+                                                            <column>PO_AGENT_CLEARING_MEMBER_ID</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                        <element name="BIC" hideifempty="true">
+											<condition>
+												<expression>isEmpty(getReportValue("PO_AGENT_CLEARING_SYS_ID"))</expression>
+											</condition>                                        
+                                            <contents>
+                                                <report>
+                                                    <column>Payer.Agent.Swift</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Nm" hideifempty="true">
+                                            <condition>
+                                                <expression>isEmpty(getReportValue("Payer.Agent.Swift"))</expression>
+                                            </condition>
+                                            <contents>
+                                                <report>
+                                                    <column>PO_AGENT_SHORT_NAME</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="PstlAdr" hideifempty="true">
+                                            <condition>
+                                                <expression>isEmpty(getReportValue("Payer.Agent.Swift"))</expression>
+                                            </condition>                                        
+                                            <contents>
+                                                <element name="TwnNm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_AGENT_CONTACT_TOWN_NAME</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="Ctry">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_AGENT_CONTACT_COUNTRY</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="DbtrAgtAcct" hideifempty="true">
+                        	<condition>
+                        		<expression>!isTrue(getReportValue("ESRPMT_WITH_CCY_CHF"))</expression>
+                        	</condition>
+                            <contents>
+                                <element name="Id">
+                                    <contents max="1">
+                                        <element name="IBAN" hideifempty="true">
+                                            <condition>
+                                                <expression>isTrue(getReportValue("Payer.SDIAttributes.IBAN.Agent"))</expression>
+                                            </condition>
+                                            <contents>
+                                                <report>
+                                                    <column>PO_INT1_ACCT</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Othr">
+                                            <contents>
+                                                <element name="Id">
+                                                    <contents>
+                                                        <report>
+                                                            <column>PO_INT1_ACCT</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="CdtrAgt">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents>
+                                        <element name="ClrSysMmbId" hideifempty="true">
+                                            <contents>
+                                                <element name="ClrSysId">
+                                                    <contents>
+                                                        <element name="Cd">
+                                                            <contents>
+                                                                <report>
+                                                                	<column>CPTY_RECEIVING_AGENT_CLEARING_SYS_ID</column>
+                                                                </report>
+                                                            </contents>
+                                                        </element>
+                                                    </contents>
+                                                </element>
+                                                <element name="MmbId" hideifempty="true">
+                                                    <contents>
+                                                        <report>
+                                                        	<condition>
+                                                        		<expression>!isEmpty(getReportValue("CPTY_RECEIVING_AGENT_CLEARING_SYS_ID"))</expression>
+                                                        	</condition>
+                                                            <column>CPTY_RECEIVING_AGENT_CLEARING_MEMBER_ID</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>                                    
+                                        <element name="BIC" hideifempty="true">
+											<condition>
+												<expression>isEmpty(getReportValue("CPTY_RECEIVING_AGENT_CLEARING_SYS_ID"))</expression>
+											</condition>
+                                            <contents>
+                                                <report>
+                                                    <column>Receiver.Agent.Swift</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Nm" hideifempty="true">
+                                            <condition>
+                                                <expression>isEmpty(getReportValue("Receiver.Agent.Swift"))</expression>
+                                            </condition>
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_RECEIVING_AGENT_SHORT_NAME</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="PstlAdr" hideifempty="true">
+                                            <condition>
+                                                <expression>isEmpty(getReportValue("Receiver.Agent.Swift"))</expression>
+                                            </condition>
+                                            <contents>
+                                                <element name="TwnNm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_RECEIVING_AGENT_TOWN_NAME</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="Ctry">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_RECEIVING_AGENT_COUNTRY</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="CdtrAgtAcct" hideifempty="true">
+                        	<condition>
+                        		<expression>getReportValue("TRADE_KEYWORD.MXPaymentType") != "ESRPMT"</expression>
+                        	</condition>
+                            <contents>
+                                <element name="Id">
+                                    <contents max="1">
+                                        <element name="IBAN" hideifempty="true">
+                                            <condition>
+                                                <expression>isTrue(getReportValue("Receiver.SDIAttributes.IBAN.Intermediary"))</expression>
+                                            </condition>
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_RECEIVING_INT1_ACC</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Othr">
+                                            <contents>
+                                                <element name="Id">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_RECEIVING_INT1_ACC</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="Cdtr" hideifempty="true">
+                            <contents>
+                                <element name="Nm" hideifempty="true">
+									<condition>
+										<expression>isEmpty(getReportValue("CPTY_BENEFICIARY_BIC_CODE"))</expression>
+									</condition>                                
+                                    <contents>
+                                        <report><!-- Benef.Name value of the PO SDI
+                                                    if Benef.Name = null then set PO's Short Name. -->
+                                            <column>CPTY_BENEFICIARY_NAME</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <element name="PstlAdr" hideifempty="true">
+									<condition>
+										<expression>isEmpty(getReportValue("CPTY_BENEFICIARY_BIC_CODE"))</expression>
+									</condition>                                  
+                                    <contents>
+                                        <element name="TwnNm">
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_BENEFICIARY_CONTACT_TOWN_NAME</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Ctry">
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_BENEFICIARY_CONTACT_COUNTRY</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                                <element name="Id">
+                                    <contents>
+                                        <!-- This will be present if there is Swift code in the contact used in 
+                                            the PO SDI. -->
+                                        <element name="OrgId">
+                                            <contents>
+                                                <element name="BICOrBEI">
+                                                    <contents>
+                                                        <report>
+                                                            <!--Swift Code/Bic of the Contact used in the PO SDI -->
+                                                            <column>CPTY_BENEFICIARY_BIC_CODE</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="CdtrAcct" hideifempty="true">
+                            <contents>
+                                <element name="Id">
+                                    <contents max="1">
+                                        <element name="IBAN" hideifempty="true">
+                                            <condition>
+                                                <expression>isTrue(getReportValue("Receiver.SDIAttributes.IBAN.Agent"))</expression>
+                                            </condition>
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_AGENT_ACCT</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Othr">
+                                            <contents>
+                                                <element name="Id">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_AGENT_ACCT</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+												<element name="SchmeNm">
+                                                    <contents>
+                                                    	<element name="Prtry">
+                                                    		<contents>
+																<text>
+                                    								<value>PRTRY</value>
+                                								</text>
+                                							</contents>
+                                                    	</element>
+                                                    </contents>
+                                                </element>                                                
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="RmtInf" hideifempty="true">
+                            <contents>
+                                <element name="Ustrd" hideifempty="true">
+									<condition>
+										<!-- if Trade Keyword MXPaymentType is Empty it means that CdtTrfTxInf/PmtTpInf/LclInstrm/Prtry is  CSTPMT -->
+										<expression>isEmpty(getReportValue("TRADE_KEYWORD.MXPaymentType")) || getReportValue("TRADE_KEYWORD.MXPaymentType") == "CSTPMT"</expression>
+									</condition>
+                                    <contents>
+                                        <report>
+                                            <column>REMITTANCE_INFO</column>
+                                        </report>
+                                    </contents>
+								</element>
+                                <element name ="Strd" hideifempty="true">
+                                	<contents>
+                                		<element name="CdtrRefInf">
+	                                		<condition>
+												<expression>getReportValue("TRADE_KEYWORD.MXPaymentType") == "ESRPMT"</expression>
+											</condition>
+                                			<contents>
+                                				<element name="Tp">
+                                					<contents>
+                                						<element name="CdOrPrtry">
+                                							<contents>
+                                								<element name ="Prtry">
+                                									<contents>
+																		<text>
+                                											<value>ESR</value>
+                                										</text>
+                                									</contents>
+                                								</element>
+                                							</contents>
+                                						</element>
+                                					</contents>
+                                				</element>
+                                				<element name="Ref">
+                                					<contents max="1">
+                                						<report>
+	                                						<condition>
+																<expression>!isEmpty(getReportValue("Receiver.SDIAttributes.Remittance_Information_Ref"))</expression>
+															</condition>
+															<column>Receiver.SDIAttributes.Remittance_Information_Ref</column>
+														</report>
+                                						<text>
+                                							<value>100000000000000000000000000</value>
+                                						</text>
+                                					</contents>
+                                				</element>
+                                			</contents>
+                                		</element>
+                                	</contents>
+                                </element>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<FieldTemplate>
+    <Switch condition="|REPORT#Sender.Attribute.TAG21SWITCH|;|REPORT#XferAttributes.FEE_ID|;|REPORT#Product Type|;|REPORT#TRADE_KEYWORD.collateralAllocationType|;|MC_CONTRACT_TYPE|;|REPORT#Buy/Sell|;|MC_CONTRACT_ATTR_Prd_Family|;|REPORT#Transfer Type|">
+	<Target condition=";(.)*;(.)*;(.)*;(.)*;(.)*;(.)*;(.)*">|RELATED_REF|</Target>
+    <Target condition="(.+);(.+);(.)*;(.)*;(.)*;(.)*;(.)*;(.)*">SWUF/|TRADE_ID|</Target>
+	<Target condition="(.+);;MarginCall;Margin;ISDA;Sell;(.)*;(.)*">SWCC/|TRADE_ID|</Target>
+	<Target condition="(.+);;MarginCall;Substitution;ISDA;Buy;(.)*;(.)*">SWCC/|TRADE_ID|</Target>
+	<Target condition="(.+);;MarginCall;Return;ISDA;Buy;(.)*;(.)*">SWCC/|TRADE_ID|</Target>	
+	<Target condition="(.+);;MarginCall;Margin;ISDA;Buy;(.)*;(.)*">SWBC/|TRADE_ID|</Target>
+	<Target condition="(.+);;MarginCall;Substitution;ISDA;Sell;(.)*;(.)*">SWBC/|TRADE_ID|</Target>
+	<Target condition="(.+);;MarginCall;Return;ISDA;Sell;(.)*;(.)*">SWBC/|TRADE_ID|</Target>		
+	<Target condition="(.+);;MarginCall;(.)*;IM;(.)*;Future;(.)*">MGCC/|TRADE_ID|</Target>
+	<Target condition="(.+);;MarginCall;(.)*;IM;(.)*;Cleared;(.)*">CCPC/|TRADE_ID|</Target>
+	<Target condition="(.+);;MarginCall;(.)*;VM;(.)*;Future;(.)*">MARG/|TRADE_ID|</Target>
+	<Target condition="(.+);;MarginCall;(.)*;VM;(.)*;Cleared;(.)*">CCPM/|TRADE_ID|</Target>
+    <Target condition="(.+);;(.)*;FX;(.+);(.)*;(.)*;(.)*;(.)*;(.)*">NETT</Target>
+	<Target condition="(.+);;(.)*;(.)*;(.)*;(.)*;(.)*;PRINCIPAL">|TRADE_ID|</Target>
+	<Target condition="(.+);;(.)*;(.)*;(.)*;(.)*;(.)*;(.)*">SWRS/|TRADE_ID|</Target>	
+	</Switch>
+</FieldTemplate>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 920: Request Message  -->
+<SwiftMsgDef>
+	<Name>MT920</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Transaction Reference Number" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM"/>
+      </SwiftSequence>
+     <SwiftSequence name="B:General Information" modes="MMM">
+		<SwiftField name="Message Requested" tag=":12:" format="3!n" value="NUMBER_IDENTIFICATION_MT920" modes="MMM"/>
+		<SwiftField name="Account Identification" tag=":25:" format="35x" value="SAFEKEEP_ACCOUNT" modes="MMM"/>
+	</SwiftSequence>
+</SwiftMsgDef>

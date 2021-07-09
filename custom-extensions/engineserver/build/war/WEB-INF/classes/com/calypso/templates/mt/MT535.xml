@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MT 535 Client Confirmation of Purchase or Sale  -->
+<SwiftMsgDef>
+	<Name>MT535</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MM">
+		<SwiftField name="Start of Block" tag=":16R:" format="GENL" value="GENL" modes="MM"/>
+		<SwiftField name="Page Number/Continuation Indicator" tag=":28E:" format="5n/4!c" value="|SEQUENCE_NUMBER|/|SEQUENCE_INFO|" modes="MM"/>
+		<SwiftField name="Statement Number" tag=":13A:" format=":4!c//3!c" value=":STAT//|STATEMENT_NUMBER|" modes="MM"/>
+		<SwiftField name="Sender's Reference" tag=":20C:" format=":4!c//16x" value=":SEME//|MESSAGE_ID|" modes="MM"/>
+		<SwiftField name="Function of the Message" tag=":23G:" format="4!c[/4!c]" value="MESSAGE_SUBACTION" modes="MM"/>
+		<SwiftField name="Preparation Date/Time" tag=":98C:" format=":4!c//8!n6!n" value=":PREP//|MESSAGE_CREATIONDATE|" modes="MM"/>
+		<SwiftField name="Statement Date" tag=":98A:" format=":4!c//8!n" value=":STAT//|STATEMENT_DATE|" modes="MM"/>
+		<SwiftField name="Statement Frequency" tag=":22F:" format=":4!c/[8c]/4!c" value=":SFRE//|STATEMENT_FREQUENCY|" modes="OO"/>
+		<SwiftField name="Statement Type" tag=":22F:" format=":4!c/[8c]/4!c" value="CONST#:STTY//CUST" modes="OO"/>
+		<SwiftField name="Complete/Updates Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="CONST#:CODE//COMP" modes="OO"/>
+		<SwiftField name="Statement Basis" tag=":22F:" format=":4!c/[8c]/4!c" value=":STBA//|STATEMENT_BASIS|" modes="OO"/>
+		<SwiftField name="Account Identification" tag=":97A:" format=":4!c//35x" value=":SAFE//|ACCOUNT_ID|" modes="MM"/>
+		<SwiftField name="Activity Flag" tag=":17B:" format=":4!c//1!a" value="CONST#:ACTI//Y" modes="MM"/>
+		<SwiftField name="Consolidated Statement" tag=":17B:" format=":4!c//1!a" value="CONST#:CONS//N" modes="MM"/>
+		<SwiftField name="End of Block" tag=":16S:" format="GENL" value="GENL" modes="MM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Repetitive Optional Sequence B Sub-safekeeping Account" modes="OO">
+		<SwiftField name="Start of Block" tag=":16R:" format="SUBSAFE" value="SUBSAFE" modes="MM"/>
+		<SwiftSequence name="Repetitive Optional Subsequence B1 Financial Instrument" modes="MM" iterator="MT535">
+			<SwiftField name="Start of Block" tag=":16R:" format="FIN" value="FIN" modes="MM"/>
+			<SwiftField name="Identification of the Financial Instrument" tag=":35B:" format="[ISIN1!e12!c][\n][4*35x]" value="SECURITY_CODE_AND_TYPE" modes="MM"/>
+			<SwiftField name="Aggregate balance" tag=":93B:" format=":4!c/[8c]/4!c/[N]15d" value=":AGGR//|AGG_BALANCE|" modes="MM"/>
+				
+			<SwiftField name="End of Block" tag=":16S:" format="FIN" value="FIN" modes="MM"/>
+    		 </SwiftSequence>
+		<SwiftField name="End of Block" tag=":16S:" format="SUBSAFE" value="SUBSAFE" modes="MM"/>
+	</SwiftSequence>
+</SwiftMsgDef>

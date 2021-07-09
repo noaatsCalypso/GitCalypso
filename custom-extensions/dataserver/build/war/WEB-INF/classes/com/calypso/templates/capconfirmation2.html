@@ -1,0 +1,90 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The purpose of this communication is to confirm the terms and conditions of the transaction (the "Transaction") entered into between |SENDER_FULL_NAME| and |RECEIVER_FULL_NAME| on the trade date specified below. This communication constitutes a "Confirmation" as referred to in the ISDA Master Agreement specified below. </P>
+<OL>
+
+<LI>This transaction is subject to the definitions and conditions contained in the 1991 ISDA Definitions, as published by the International Swaps and Derivatives Association, Inc. (the "Definitions"). In the event of any inconsistency between those definitions and the provisions and this Confirmation, this Confirmation will govern.This Confirmation supplements, forms part of, and is subject to, the |MASTER_AGREEMENT| Master Agreement dated as of |MASTER_AG_DATE|, as amended and supplemented from time to time (the "Agreement"), between you and us. All provisions contained in the Agreement govern this Confirmation except as expressly modified below. </LI>
+<LI>The terms of the particular Transaction to which this Confirmation relates are as follows: </LI></OL>
+</FONT>
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=560>
+<TR><TD WIDTH="19%" VALIGN="MIDDLE">
+<P><FONT SIZE=2>Notional</FONT></TD>
+<TD WIDTH="81%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>|CAP_NOTIONAL|</FONT></TD>
+</TR>
+<TR><TD WIDTH="19%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Trade Date:</FONT></TD>
+<TD WIDTH="81%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>|TRADE_DATE|</FONT></TD>
+</TR>
+<TR><TD WIDTH="19%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Effective Date:</FONT></TD>
+<TD WIDTH="81%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>|SETTLE_DATE|</FONT></TD>
+</TR>
+<TR><TD WIDTH="19%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Termination Date:</FONT></TD>
+<TD WIDTH="81%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>|PRODUCT_MATURITYDATE|, subject to adjustment in accordance with the Modified Following Business Day Convention.</FONT></TD>
+</TR>
+</TABLE>
+
+<P>&nbsp;<FONT SIZE=2>|AMORTIZING_SCHEDULE|<!---End Swap General Table--></P>
+
+<!--calypso>
+if ( Product.isCollar() == true && trade.getQuantity() == 1)
+    include "cap_buycollar.html";
+if ( Product.isCollar() == true && trade.getQuantity() != 1)
+    include "cap_sellcollar.html";
+if ( Product.isCollar() == false ) 
+    include "cap_normal.html";
+</calypso-->
+
+<P><!---BizDays Table--></P>
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=624>
+<TR><TD WIDTH="23%" VALIGN="MIDDLE">
+<P><FONT SIZE=2>Business Days:</FONT></TD>
+<TD WIDTH="77%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>|FLT_CPN_HOL|</FONT></TD>
+</TR>
+<TR><TD WIDTH="23%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Calculation Agent:</FONT></TD>
+<TD WIDTH="77%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>|SENDER_CODE|</FONT></TD>
+</TR>
+</TABLE>
+
+<P><!---End BizDays Table--><FONT SIZE=2>3. Account Details </P></FONT>
+<TABLE CELLSPACING=0 BORDER=0 WIDTH=624>
+<TR><TD WIDTH="38%" VALIGN="MIDDLE">
+<P><FONT SIZE=2>Payment to |SENDER_CODE| :</FONT></TD>
+<TD WIDTH="62%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>|PO_INSTRUCTIONS|</FONT></TD>
+</TR>
+<TR><TD WIDTH="38%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>Payment to |RECEIVER_CODE| :</FONT></TD>
+<TD WIDTH="62%" VALIGN="MIDDLE">
+<FONT SIZE=2><P>|COUNTERPARTY_INSTRUCTIONS|</FONT></TD>
+</TR>
+</TABLE>
+
+<P>&nbsp; </P>
+<P><!---End Account Details Table--><FONT SIZE=2>Please sign and return this Confirmation at your earliest convenience. Because of the importance of confirming transactions promptly and accurately, we regret that any Confirmations which are not signed and returned within ten days may result in a delay in payments. </P>
+<P><BR>
+Please confirm that the foregoing correctly sets forth the terms of our agreement by executing this Confirmation and returning it to us.</P>
+</FONT>
+
+
+
+
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+    <contents>
+        <element name="FICdtTrf">
+            <contents>
+                <element name="GrpHdr">
+                    <contents>
+                        <element name="MsgId">
+                            <contents>
+                                <report>
+                                    <column>MESSAGE_ID</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="CreDtTm">
+                            <contents>
+                                <report format="yyyy-MM-dd hh:mm:ss">
+                                    <column>ORIGINAL_DATE</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="NbOfTxs">
+                            <contents>
+                                <text>
+                                    <value>1</value>
+                                </text>
+                            </contents>
+                        </element>
+                        <element name="SttlmInf">
+                            <contents>
+                                <element name="SttlmMtd">
+                                    <contents>
+                                        <text>
+                                            <value>COVE</value>
+                                        </text>
+                                    </contents>
+                                </element>
+                                <element name="InstgRmbrsmntAgt"> <!--  BranchAndFinancialInstitutionIdentification5 -->
+                                    <contents>
+                                        <element name="FinInstnId"> <!-- FinancialInstitutionIdentification8 -->
+                                            <contents>
+                                                <element name="BICFI">     <!-- BICFIIdentifier -->
+                                                    <contents>
+                                                        <report>
+                                                            <column>Payer.Agent.Swift</column>
+                                                            <transformations>
+                                                                <transformation type="function">
+                                                                    <to>completeSwiftBranch</to>
+                                                                </transformation>
+                                                            </transformations>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="Nm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>Payer.Agent.Short Name</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="PstlAdr">   <!-- PostalAddress6 -->
+                                                    <contents>
+                                                            <report>
+                                                                <column>PO_AGENT_CONTACT_ADDRESS</column>
+                                                            </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                                <element name="InstgRmbrsmntAgtAcct">   <!-- CashAccount24 -->
+                                    <contents>
+                                        <element name="Id"> <!--   AccountIdentification4Choice -->
+                                            <contents>
+                                                <element name="Othr"> <!-- GenericAccountIdentification1 -->
+                                                    <contents>
+                                                        <element name="Id">
+                                                            <contents>
+                                                                <report>
+                                                                    <column>PO_AGENT_ACCT</column>
+                                                                </report>
+                                                            </contents>
+                                                        </element>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                                <element name="InstdRmbrsmntAgt">  <!-- BranchAndFinancialInstitutionIdentification5 -->
+                                    <contents>
+                                        <element name="FinInstnId"> <!-- FinancialInstitutionIdentification8 -->
+                                            <contents>
+                                                <element name="BICFI">     <!-- BICFIIdentifier -->
+                                                    <contents>
+                                                        <report>
+                                                            <column>FINAL_CPTY_CONTACT_BIC_CODE</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="Nm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>FINAL_CPTY_SHORT_NAME</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="PstlAdr">   <!-- PostalAddress6 -->
+                                                    <contents>
+                                                            <report>
+                                                                <column>FINAL_CPTY_CONTACT_ADDRESS</column>
+                                                            </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                                <element name="InstdRmbrsmntAgtAcct">  <!-- CashAccount24 -->
+                                    <contents>
+                                        <element name="Id"> <!--   AccountIdentification4Choice -->
+                                            <contents>
+                                                <element name="Othr"> <!-- GenericAccountIdentification1 -->
+                                                    <contents>
+                                                        <element name="Id">
+                                                            <contents>
+                                                                <report>
+                                                                    <column>FINAL_CPTY_ACCT</column>
+                                                                </report>
+                                                            </contents>
+                                                        </element>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="CdtTrfTxInf">
+                    <contents>
+                        <element name="PmtId">
+                            <contents>
+                                <element name="EndToEndId">
+                                    <contents>
+                                        <report>
+                                            <column>RELATED_ID</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                <element name="TxId">
+                                    <contents>
+                                        <report>
+                                            <column>MESSAGE_ID</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="IntrBkSttlmAmt">
+                            <attributes>
+                                <attribute name="Ccy">
+                                    <value>
+                                        <report>
+                                            <column>SettleCurrency</column>
+                                        </report>
+                                    </value>
+                                </attribute>
+                            </attributes>
+                            <contents>
+                                <report>
+                                    <column>Settle Amount</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="IntrBkSttlmDt">
+                            <contents>
+                                <report format="yyyy-MM-dd">
+                                    <column>Settle Date</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="SttlmTmIndctn" hideifempty="true">
+                            <contents>
+                                <report>
+                                    <column>TRADE_KEYWORD.13CTimeIndication</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="CLSTm" hideifempty="true">
+                            <contents>
+                                <report>
+                                    <column>Cntp_Attr.CLSMT202TimeTag72</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="Dbtr" hideifempty="true">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents max="1">
+                                        <element name="BICFI">
+                                            <contents>
+                                                <report>
+                                                    <column>Sender.Swift</column>
+                                                    <transformations>
+                                                        <transformation type="function">
+                                                            <to>completeSwiftBranch</to>
+                                                        </transformation>
+                                                    </transformations>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="PstlAdr">
+                                            <contents>
+                                                <element name="Ctry">
+                                                    <contents>
+                                                        <report>
+                                                            <column>Sender.Country</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="DbtrAcct" hideifempty="true">
+                            <contents>
+                                <element name="Id">
+                                    <contents>
+                                        <report>
+                                            <!--
+                                            <condition>
+                                                <expression>isCoverMessageRequired() &amp;&amp; !isCoverMessage()</expression>
+                                            </condition>
+                                            <column>Payer.Agent.Account</column>
+                                            -->
+                                        </report>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="DbtrAgt">   <!-- This one is to check in case we do not have the SWIFT -->
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents max="1">
+                                        <element name="BICFI" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>Payer.Agent.Swift</column>
+                                                    <transformations>
+                                                        <transformation type="function">
+                                                            <to>completeSwiftBranch</to>
+                                                        </transformation>
+                                                    </transformations>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="PstlAdr">
+                                            <contents>
+                                                <element name="Nm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>Payer.Agent.Short Name</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="Ctry">
+                                                    <contents>
+                                                        <report>
+                                                            <column>Payer.Agent.Country</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="DbtrAgtAcct" hideifempty="true">
+                            <contents>
+                                <element name="Id">
+                                    <contents>
+                                        <report>
+                                            <column>Payer.Intermediary.Account</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="CdtrAgt">
+                            <contents>
+                                <element name="FinInstnId">
+                                    <contents max="1">
+                                        <element name="BICFI" hideifempty="true">
+                                            <contents>
+                                                <report>
+                                                    <column>Receiver.Agent.Swift</column>
+                                                    <transformations>
+                                                        <transformation type="function">
+                                                            <to>completeSwiftBranch</to>
+                                                        </transformation>
+                                                    </transformations>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="PstlAdr">
+                                            <contents>
+                                                <element name="Nm">
+                                                    <contents>
+                                                        <report>
+                                                            <column>Receiver.Agent.Short Name</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                                <element name="Ctry">
+                                                    <contents>
+                                                        <report>
+                                                            <column>Receiver.Agent.Country</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="CdtrAgtAcct" hideifempty="true">
+                            <contents max="1">
+                                <!--
+                                <element name="Id">
+                                    <contents>
+                                        <report>
+                                            <condition>
+                                                <expression>isMEPS()</expression>
+                                            </condition>
+                                            <column>CPTY_RECEIVING_AGENT</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                                -->
+                                <element name="Id">
+                                    <contents>
+                                        <report>
+                                            <!--
+                                            <condition>
+                                                <expression>!isMEPS() &amp;&amp; !isCoverMessage()</expression>
+                                            </condition>
+                                            -->
+                                            <column>CPTY_RECEIVING_AGENT</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="Cdtr"> <!-- BranchAndFinancialInstitutionIdentification5 -->
+                            <contents>
+                                <element name="FinInstnId"> <!-- FinancialInstitutionIdentification8 -->
+                                    <contents>
+                                        <element name="BICFI">     <!-- BICFIIdentifier -->
+                                            <contents>
+                                                <report>
+                                                    <column>CPTY_BENEFICIARY_BIC_CODE</column>
+                                                    <transformations>
+                                                        <transformation type="function">
+                                                            <to>completeSwiftBranch</to>
+                                                        </transformation>
+                                                    </transformations>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="Nm">
+                                            <contents>
+                                                <report>
+                                                    <column>CounterParty.Short Name</column>
+                                                </report>
+                                            </contents>
+                                        </element>
+                                        <element name="PstlAdr">   <!-- PostalAddress6 -->
+                                            <contents>
+                                                    <report>
+                                                        <column>CPTY_BENEFICIARY_CONTACT_ADDRESS</column>
+                                                    </report>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="CdtrAcct" hideifempty="true"> <!-- CashAccount24 -->
+                            <contents>
+                                <element name="Id"> <!--   AccountIdentification4Choice -->
+                                    <contents>
+                                        <element name="Othr"> <!-- GenericAccountIdentification1 -->
+                                            <contents>
+                                                <element name="Id">
+                                                    <contents>
+                                                        <report>
+                                                            <column>CPTY_AGENT_ACCT</column>
+                                                        </report>
+                                                    </contents>
+                                                </element>
+                                            </contents>
+                                        </element>
+                                    </contents>
+                                </element>
+
+                            </contents>
+                        </element>
+                        <element name="InstrForCdtrAgt"> <!--    InstructionForCreditorAgent2 -->
+                            <contents>
+                                <element name="InstrInf">
+                                    <contents>
+                                        <report>
+                                            <column>ADDITIONAL_INFO</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="InstrForNxtAgt"><!-- InstructionForNextAgent1 -->
+                            <contents>
+                                <element name="InstrInf">
+                                    <contents>
+                                        <report>
+                                            <column>ADDITIONAL_INFO</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <element name="RmtInf">  <!-- RemittanceInformation2 -->
+                            <contents>
+                                <element name="Ustrd">
+                                    <contents>
+                                        <report>
+                                            <column>REMITTANCE_INFO</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

@@ -1,0 +1,173 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+<p class=c-body>
+
+
+
+I am pleased to 
+<!--calypso>
+if (|MESSAGE_ACTION| == "amend") {
+  inline "confirm the details of the following amended Credit Facility (|LOAN_OR_DEPOSIT|)";
+} else {
+  inline "|MESSAGE_ACTION| the details of the following Credit Facility";
+}
+</calypso-->
+</p>
+
+<p class=c-indent><u><span>Trade
+details:</span></u></p>
+
+<table border=0 cellpadding=0 style='mso-cellspacing:1.5pt;margin-left:25.0pt;
+ mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Our Trade Number</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_ID|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Operation Type</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|PRODUCT_TYPE|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span>Instrument
+  Description</span></p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span>|PRODUCT_DESCRIPTION|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Trade Date</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|TRADE_DATE|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Credit Facility name</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|CF_NAME|</p>
+  </td>
+ </tr>
+  <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Credit Facility type</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|CF_TYPE|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Credit Facility start date</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|CF_START_DATE|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Credit Facility end date</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|CF_END_DATE|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Credit Facility purpose</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|CF_PURPOSE|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Credit Facility currency</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|CF_CURRENCY|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Credit Facility limit</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|CF_LIMIT|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Credit Facility agent</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|CF_AGENT|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Credit Facility is Syndicated</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|CF_IS_SYNDICATED|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Credit Facility is secured</p>
+  </td>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|CF_IS_SECURED|</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Credit Facility syndicate members</p>
+  </td>
+ <tr>
+  <td width=339 style='width:254.35pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>|CF_SYNDICATE_MEMBERS|</p>
+  </td>
+ </tr>
+</table>
+<br>&nbsp;
+
+<br>
+
+</div>
+
+</body>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->
+
+</html>

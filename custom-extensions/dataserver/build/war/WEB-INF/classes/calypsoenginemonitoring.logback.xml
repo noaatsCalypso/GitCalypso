@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<<!DOCTYPE SYSTEM  [
+<!ENTITY appenders SYSTEM "appenders.logback.xml">
+]>
+<configuration>
+	&appenders;
+	<logger name="com.calypso.Monitoring.ClientRequest" additivity="false">
+	      <level value="debug"/>
+	      <appender-ref ref="Monitoring.ClientRequest_APPENDER"/>
+	</logger>  
+	<logger name="com.calypso.Monitoring.Engine" additivity="false">
+	      <level value="debug"/>
+	      <appender-ref ref="Monitoring.Engine_APPENDER"/>
+	</logger>  
+	 <logger name="com.calypso.Monitoring.MethodProfile" additivity="false">
+	       <level value="debug"/>
+	       <appender-ref ref="Monitoring.MethodProfile_APPENDER"/>
+	 </logger>
+	
+</configuration>

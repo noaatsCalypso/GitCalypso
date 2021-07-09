@@ -1,0 +1,12 @@
+# Gateway Service Properties
+ 
+# All BO Messages need a sender and a receiver. Use these properties for that
+# GatewayServiceClientName,GatwayServiceHostName: Indicate the BOMessage Receiver & Sender
+GatewayServiceClientName=CLIENT
+GatwayServiceHostName=CALYPSO
+
+# Determines the number of threads to be created when processing messages
+ThreadPoolSize=5
+
+# Determines the size of cache to hold PricingEnv, by default its size is 10.
+PricingEnvCacheSize=10

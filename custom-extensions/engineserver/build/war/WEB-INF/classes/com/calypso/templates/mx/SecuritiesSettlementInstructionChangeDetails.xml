@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+    <contents>
+        <element name="SctiesSttlmCondsModReq">
+            <contents>
+                <element name="AcctOwnr">
+                    <contents>
+                        <element name="Id">
+                            <contents>
+                                <report>
+                                    <column>Sender.Swift</column>
+                                </report>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <include>
+                    <path>SafekeepingAccount.xml</path>
+                </include>
+                <element name="ReqDtls">
+                    <contents>
+                        <element name="Ref">
+                            <contents>
+                                <element name="AcctOwnrTxId">
+                                    <contents>
+                                        <report>
+                                            <column>XferAttributes.Reference</column>
+                                        </report>
+                                    </contents>
+                                </element>
+                            </contents>
+                        </element>
+                        <include>
+                            <path>ExecutionPriority.xml</path>
+                            <transformations>
+                                <transformation type="regexp">
+                                    <from>\.PRIR</from>
+                                    <to>\.PRIROverride</to>
+                                </transformation>
+                            </transformations>
+                        </include>
+                        <include>
+                            <path>PartialSettlementIndicator.xml</path>
+                            <transformations>
+                                <transformation type="regexp">
+                                    <from>\.PARTIAL_INDICATOR</from>
+                                    <to>\.PARTIAL_INDICATOROverride</to>
+                                </transformation>
+                            </transformations>
+                        </include>
+                        <include>
+                            <path>SecuritiesRTGS.xml</path>
+                            <transformations>
+                                <transformation type="regexp">
+                                    <from>\.RTGS</from>
+                                    <to>\.RTGSOverride</to>
+                                </transformation>
+                            </transformations>
+                        </include>
+                        <include>
+                            <path>HoldIndicator.xml</path>
+                            <transformations>
+                                <transformation type="regexp">
+                                    <from>\.HoldRelease</from>
+                                    <to>\.HoldReleaseOverride</to>
+                                </transformation>
+                            </transformations>
+                        </include>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

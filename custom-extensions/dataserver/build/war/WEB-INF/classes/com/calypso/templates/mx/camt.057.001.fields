@@ -1,0 +1,13 @@
+Message\ Id=//Document/NtfctnToRcv/GrpHdr/MsgId/text()
+Creation\ Date\ Time=//Document/NtfctnToRcv/GrpHdr/CreDtTm/text()
+Identification=//Document/NtfctnToRcv/Ntfctn/Id/text()
+Item\ Identification=//Document/NtfctnToRcv/Ntfctn/Itm/Id/text()
+EndToEnd\ Id=//Document/NtfctnToRcv/Ntfctn/Itm/EndToEndId/text()
+Creditor\ Account\ Id=//Document/NtfctnToRcv/Ntfctn/Itm/Acct/Id/IBAN/text()|//Document/NtfctnToRcv/Ntfctn/Itm/Acct/Id/Othr/Id/text()
+Amount=//Document/NtfctnToRcv/Ntfctn/Itm/Amt/text()
+Currency=//Document/NtfctnToRcv/Ntfctn/Itm/Amt/@Ccy
+Expected\ Value\ Date=//Document/NtfctnToRcv/Ntfctn/Itm/XpctdValDt/text()
+Debtor\ Name=//Document/NtfctnToRcv/Ntfctn/Itm/Dbtr/Pty/Nm/text()|//Document/NtfctnToRcv/Ntfctn/Itm/Dbtr/Agt/FinInstnId/BICFI/text()
+Debtor\ Postal\ Address=concat(//Document/NtfctnToRcv/Ntfctn/Itm/Dbtr/Pty/PstlAdr/StrtNm/text(),' ',//Document/NtfctnToRcv/Ntfctn/Itm/Dbtr/Pty/PstlAdr/PstCd/text(),' ', //Document/NtfctnToRcv/Ntfctn/Itm/Dbtr/Pty/PstlAdr/TwnNm/text(),' ', //Document/NtfctnToRcv/Ntfctn/Itm/Dbtr/Pty/PstlAdr/Ctry/text())
+Debtor\ Agt\ BIC=//Document/NtfctnToRcv/Ntfctn/Itm/DbtrAgt/FinInstnId/BICFI/text()|//Document/NtfctnToRcv/Ntfctn/Itm/DbtrAgt/FinInstnId/Nm/text()|Document/FIToFICstmrCdtTrf/CdtTrfTxInf/DbtrAgt/FinInstnId/PstlAdr/StrtNm/text()
+IntrmyAgt\ BIC=//Document/NtfctnToRcv/Ntfctn/Itm/IntrmyAgt/FinInstnId/BICFI/text()|//Document/NtfctnToRcv/Ntfctn/Itm/IntrmyAgt/FinInstnId/Nm/text()|Document/FIToFICstmrCdtTrf/CdtTrfTxInf/IntrmyAgt/FinInstnId/PstlAdr/StrtNm/text()

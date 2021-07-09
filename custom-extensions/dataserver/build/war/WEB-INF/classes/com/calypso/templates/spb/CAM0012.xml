@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template encoding="UTF-8">
+    <contents>
+        <element name="CAM0012" hideifempty="true">
+            <contents>
+                <element name="CodMsg">
+                    <contents>
+                        <text>
+                            <value>CAM0012</value>
+                        </text>
+                    </contents>
+                </element>
+                <element name="NumCtrlIF">
+                    <contents>
+                        <report>
+                            <column>MESSAGE_ID</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJBaseIF">
+                    <contents>
+                        <report>
+                            <column>FXCNPJBaseIF</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CNPJIF">
+                    <contents>
+                        <report>
+                            <column>FXCNPJIF</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="Grupo_CAM0012_ParcrExtr">
+                    <condition>
+                        <expression>!getReportValue("ISBRAZILIANCPTY")</expression>
+                    </condition>
+                    <contents>
+                        <element name="NomParcrExtr">
+                            <contents>
+                                <report>
+                                    <column>CounterParty.Full Name</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="NomCidParcrExtr">
+                            <contents>
+                                <report>
+                                    <column>RECEIVERCITY</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="CodPaisParcrExtr">
+                            <contents>
+                                <report>
+                                    <column>CODPAISCPTY</column>
+                                </report>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="Grupo_CAM0012_Contr">
+                    <contents>
+                        <element name="TpOpCAM">
+                            <contents>
+                                <text>
+                                    <value>C</value>
+                                </text>
+                            </contents>
+                        </element>
+                        <element name="CodMoedaISO">
+                            <contents>
+                                <report>
+                                    <column>CAM1213BUYCCY</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="VlrME">
+                            <contents>
+                                <report>
+                                   <column>CAM1213BUYCCYAMT</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="TaxCam">
+                            <contents>
+                                <report format="###.###############">
+                                    <column>CAM1213TAXCAMBUYCCY</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="DtEntrME">
+                            <contents max="1">
+                                <report format="yyyy-MM-dd">
+                                    <column>CAM1213BUYCCYSETTLEDATE</column>
+                                </report>
+                                <report format="yyyy-MM-dd">
+                                    <column>Settle Date</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="CodFormaEntrMoeda">
+                            <contents>
+                                <report>
+                                    <column>CAM1213BUYCODFORMAENTRMOEDA</column>
+                                </report>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="Grupo_CAM0012_Contr">
+                    <contents>
+                        <element name="TpOpCAM">
+                            <contents>
+                                <text>
+                                    <value>V</value>
+                                </text>
+                            </contents>
+                        </element>
+                        <element name="CodMoedaISO">
+                            <contents>
+                                <report>
+                                    <column>CAM1213SELLCCY</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="VlrME">
+                            <contents>
+                                <report>
+                                    <column>CAM1213SELLCCYAMT</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="TaxCam">
+                            <contents>
+                                <report format="###.###############">
+                                    <column>CAM1213TAXCAMSELLCCY</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="DtEntrME">
+                            <contents max="1">
+                                <report format="yyyy-MM-dd">
+                                    <column>CAM1213SELLCCYSETTLEDATE</column>
+                                </report>
+                                <report format="yyyy-MM-dd">
+                                    <column>Settle Date</column>
+                                </report>
+                            </contents>
+                        </element>
+                        <element name="CodFormaEntrMoeda">
+                            <contents>
+                                <report>
+                                    <column>CAM1213SELLCODFORMAENTRMOEDA</column>
+                                </report>
+                            </contents>
+                        </element>
+                    </contents>
+                </element>
+                <element name="VlrMN">
+                    <contents>
+                        <report>
+                            <column>BRLBUYAMOUNT</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="DtLiquid">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>DTLIMLIQUID</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodFatoNatu">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.CodFatoNatu") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodFatoNatu</column>
+                        </report>
+
+                    </contents>
+                </element>
+                <element name="CodCliNatu">
+                    <condition>
+                        <expression>getReportValue("Cntp_Attr.CodCliNatu") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>Cntp_Attr.CodCliNatu</column>
+                        </report>
+
+                    </contents>
+                </element>
+                <element name="IndrAvalNatu">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.IndrAvalNatu") != null </expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.IndrAvalNatu</column>
+                        </report>
+                    </contents>
+                </element>
+                <element name="CodPagdr_RecbdrExtrNatu">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.CodPagdr_RecbdrExtrNatu") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodPagdr_RecbdrExtrNatu</column>
+                        </report>
+
+                    </contents>
+                </element>
+                <element name="CodGrpNatu">
+                    <condition>
+                        <expression>getReportValue("TRADE_KEYWORD.CodGrpNatu") != null</expression>
+                    </condition>
+                    <contents>
+                        <report>
+                            <column>TRADE_KEYWORD.CodGrpNatu</column>
+                        </report>
+
+                    </contents>
+                </element>
+                <element name="DtMovto">
+                    <contents>
+                        <report format="yyyy-MM-dd">
+                            <column>TODAY</column>
+                        </report>
+                    </contents>
+                </element>
+            </contents>
+        </element>
+    </contents>
+</template>

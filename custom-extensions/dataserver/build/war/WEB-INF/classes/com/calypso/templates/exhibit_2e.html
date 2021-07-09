@@ -1,0 +1,158 @@
+<!-- ############################ -->
+<!-- #### Start Exhibit II-E #### -->
+<!-- ############################ -->
+
+
+<p>The Swap Transaction to which this Confirmation relates is a Swaption, the terms of
+which are as follows:</p>
+
+<p class="header2">Swaption Terms:</p>
+
+<table width='100%'>
+<tr>
+	<td width="30%">Trade Date:</td>
+	<td width='68%'>|TRADE_DATE|</td>
+</tr>
+<tr>
+	<td>Option Style:</td>
+	<td>|OPTION_TYPE|</td>
+</tr>
+<tr>
+	<td>Seller:</td>
+	<td>|OPTION_SELLER|</td>
+</tr>
+<tr>
+	<td>Buyer:</td>
+	<td>|OPTION_BUYER|</td>
+</tr>
+<tr>
+	<td>Premium:</td>
+	<td>|PREMIUM_CURRENCY| |PREMIUM_AMOUNT|</td>
+</tr>
+<tr>
+	<td>Premium Payment Date:</td>
+	<td>|PREMIUM_DATE|</td>
+</tr>
+<tr>
+	<td>Calculation Agent:</td>
+	<td>|SENDER_CODE|</td>
+</tr>
+</table>
+
+<p>|LA_SPECIAL_CLAUSE|</p>
+
+<p class="header2">Procedure for Exercise:</p>
+
+<table width='100%'>
+<!--calypso>
+if ( |OPTION_TYPE| == "American" &&
+     |COMMENCEMENT_DATE_APPLIED| == "true" )
+    inline "
+<tr>
+	<td width='30%'>Commencement Date:</td>
+	<td width='68%'>|FIRST_EXERCISE_DATE|</td>
+</tr>
+    ";
+if ( |OPTION_TYPE| == "Bermudan" )
+    inline "
+<tr>
+	<td>Bermudan Option Exercise Dates:</td>
+	<td>|BERMUDA_EXERCISE_DATES|</td>
+</tr>
+    ";
+</calypso-->
+<tr>
+	<td width="30%">Expiration Date:</td>
+	<td>|EXPIRATION_DATE|</td>
+</tr>
+<!--calypso>
+if ( Product.getSettlementType() != "Physical" )
+    inline "
+<tr>
+	<td>Earliest Exercise Time:</td>
+	<td>As per the 2000 ISDA Definitions (the 'Cash Settlement Matrix')</td>
+</tr>
+<tr>
+	<td>Expiration Time:</td>
+	<td>As per the 2000 ISDA Definitions (the 'Cash Settlement Matrix')</td>
+</tr>
+    ";
+else
+    inline "
+<tr>
+	<td>Earliest Exercise Time:</td>
+	<td>|EARLIEST_EXERCISE_TIME|</td>
+</tr>
+<tr>
+	<td>Expiration Time:</td>
+	<td>|EXPIRATION_TIME|</td>
+</tr>
+    ";
+</calypso-->
+</table>
+
+<p class="header2">Settlement Terms:</p>
+
+<table width='100%'>
+<tr>
+	<td width='30%'>Settlement:</td>
+	<td width='68%'>|SETTLEMENT_TYPE|</td>
+</tr>
+<!--calypso>
+if ( Product.getSettlementType() != "Physical" )
+    inline "
+<tr>
+	<td>Cash Settlement Valuation Time:</td>
+	<td>As per the 2000 ISDA Definitions (the 'Cash Settlement Matrix')</td>
+</tr>
+<tr>
+	<td>Cash Settlement Valuation Date:</td>
+	<td>As per the 2000 ISDA Definitions (the 'Cash Settlement Matrix')</td>
+</tr>
+<tr>
+	<td>Valuation Business Days:</td>
+	<td>As per the 2000 ISDA Definitions (the 'Cash Settlement Matrix')</td>
+</tr>
+<tr>
+	<td>Cash Settlement Payment Date:</td>
+	<td>As per the 2000 ISDA Definitions (the 'Cash Settlement Matrix')</td>
+</tr>
+    ";
+</calypso-->
+<tr>
+	<td>Business Day Convention for Cash Settlement Payment Date:</td>
+	<td>|FLT_DAY_COUNT|</td>
+</tr>
+<!--calypso>
+if ( Product.getSettlementType() != "Physical" )
+    inline "
+<tr>
+	<td>Cash Settlement Method:</td>
+	<td>|CASH_SETTLEMENT_METHOD|</td>
+</tr>
+<tr>
+	<td>Cash Settlement Currency:</td>
+	<td>|CASH_SETTLE_PAYMENT_CURRENCY_1|</td>
+</tr>
+    ";
+</calypso-->
+</table>
+
+<br><br>
+
+<p>The particular terms of the Underlying Swap Transaction to which the Swaption relates are as follows:</p>
+
+<!-- Include provisions for the relevant form of Confirmation
+     for the type of Swap Transaction to which the Swaption relates.
+-->
+
+<!--calypso>
+include "exhibit_2a.html";
+</calypso-->
+
+
+<!-- ########################## -->
+<!-- #### End Exhibit II-E #### -->
+<!-- ########################## -->
+
+

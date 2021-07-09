@@ -1,0 +1,5 @@
+Sending\ Institution\ BIC=//AppHdr/Fr/FIId/FinInstnId/BICFI/text()
+Receiving\ Institution\ BIC=//AppHdr/To/FIId/FinInstnId/BICFI/text()
+Business\ Message\ Identifier=//AppHdr/BizMsgIdr/text()
+Creation\ Datetime=//AppHdr/CreDt/text()
+Message\ Definition\ Identifier=//AppHdr/MsgDefIdr/text()

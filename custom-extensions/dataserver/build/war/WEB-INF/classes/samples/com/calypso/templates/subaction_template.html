@@ -1,0 +1,8 @@
+<!--calypso>
+if (|MESSAGE_SUBSTATUS| == "NONE")
+    include "fxforwardconfirmation.html";
+else if (|MESSAGE_SUBSTATUS| == "AMEND")
+    include "amendconfirmation.html";
+else if (|MESSAGE_SUBSTATUS| == "CANCEL")
+    include "cancelconfirmation.html";
+</calypso-->

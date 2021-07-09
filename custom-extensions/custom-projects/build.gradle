@@ -1,0 +1,56 @@
+buildscript {
+	dependencies {
+		classpath files("../lib/calypso-extension-plugins-5.1.0.jar")
+	}
+}
+
+// Change version here
+allprojects {
+	if(project.hasProperty("repoUrl") && project.repoUrl) {
+		boolean credentialsRequired = project.hasProperty("repoUsername") && project.hasProperty("repoPassword") && project.repoUsername && project.repoPassword
+		repositories {
+			maven {
+				url repoUrl
+				if(credentialsRequired) {
+					credentials {
+						username repoUsername
+						password repoPassword
+					}
+				}
+			}
+		}
+	}
+	// Add maven central repository
+	repositories {
+		mavenCentral()
+	}
+}
+
+if(!project.hasProperty("calypsoHome")) {
+    ext.calypsoHome=project.file("../..").canonicalPath
+}
+
+project(":dataserver") {
+	apply plugin: 'calypso-exploded-war'
+	
+	warProject.targetWarFile="${project.calypsoHome}/deploy/dataserver.war"
+
+	dependencies {
+		deploy project(':custom-shared-lib')
+		deploy project(':custom-dataserver-services')
+	}
+}
+
+project(":engineserver") {
+	apply plugin: 'calypso-exploded-war'
+	
+	warProject.targetWarFile="${project.calypsoHome}/deploy/engineserver.war"
+
+	dependencies {
+		deploy project(':custom-shared-lib')
+		deploy project(':custom-engine')
+	}
+}
+
+evaluationDependsOnChildren()
+apply plugin: 'calypso-distribution'

@@ -1,0 +1,73 @@
+<!--calypso>
+	if (Trade.getLongId() > 0)
+		include "message_header.html";
+</calypso-->
+
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" )
+	inline  "AMEND AND CANCEL";
+	else if (|MESSAGE_SUBACTION|== "CANCEL")
+	inline "CANCEL";
+</calypso-->
+</p>
+<br>
+<p class="header2">Our Reference: |TRADE_BUNDLEID|</p>
+<br>
+<p class="header1">CONFIRMATION OF MULTIPLE TRANSACTIONS</p>
+<br>
+
+<p>Dear |SALUTATION|,</p>
+
+<p class="indented">
+The purpose of this
+<!--calypso>
+if ( Message.getAddressMethod() == "FAX" )
+    inline "facsimile";
+else
+    inline "letter";
+</calypso-->
+(this "Confirmation") is to confirm the terms and conditions of the Transactions
+entered into between us on the Trade Date specified below.
+</p>
+<!--calypso>
+	if (|MESSAGE_SUBACTION|== "AMEND")
+	 inline "<p>This Confirmation cancels and supersedes the previous confirmation under the same reference.</p>";
+	else if (|MESSAGE_SUBACTION|== "CANCEL")
+	 inline "<p>This Confirmation cancels the previous confirmation under the same reference.</p>";
+</calypso-->
+<br>
+
+<p class="header2">Trades Details:&nbsp; </p>
+
+<TABLE CELLSPACING=1 WIDTH=623>
+<br>
+<!--calypso>
+iterator("TradeBundleTrades")
+	include "FXDSubBundle.html";
+</calypso-->
+
+<p class="header2">Settlement Instructions</p>
+<TABLE width='100%'>
+	<TR>
+		<TD WIDTH="39%" VALIGN="MIDDLE">Payment to |SENDER_CODE| :</TD>
+		<TD WIDTH="59%" VALIGN="MIDDLE">Settlement Instructions to be advised</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="39%" VALIGN="MIDDLE">Payment to |RECEIVER_CODE| :</TD>
+		<TD WIDTH="59%" VALIGN="MIDDLE">Settlement Instructions to be advised</TD>
+	</TR>
+</TABLE>
+
+<p>&nbsp; </p>
+<p>Please confirm that the foregoing correctly sets forth the terms of our agreement
+by executing the copy of this Confirmation enclosed for that purpose and returning
+it to us or by sending us a letter substantially similar to this letter, which letter
+sets forth the material terms of the Swap Transaction to which this Confirmation
+relates and indicates your agreement to those terms.</p>
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

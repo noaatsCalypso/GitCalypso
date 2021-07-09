@@ -1,0 +1,101 @@
+<!---Start Exhibit II-G -->
+
+<p class="header2">1- Early Termination:</p>
+<table width='100%'>
+<tr>
+	<td width="30%">Mandatory Early Termination:</td>
+	<td width='68%'>Applicable</td>
+</tr>
+</table>
+
+<p class="header2">2- Settlement Terms:</p>
+
+<table width='100%'>
+<tr>
+	<td width="30%">Cash Settlement:</td>
+	<td width='68%'>Applicable</td>
+</tr>
+<tr>
+	<td>Cash Settlement Valuation Time:</td>
+	<td>|CASH_SETTLE_VALUATION_TIME|</td>
+</tr>
+<tr>
+	<td>Cash Settlement Valuation Date:</td>
+	<td>|CASH_SETTLE_VALUATION_DATE|</td>
+</tr>
+<tr>
+	<td>Valuation Business Days:</td>
+	<td>|CASH_SETTLE_EXERCISE_BUS_DAYS_NUM| days,  prior to the Cash Settlement Payment Date</td>
+</tr>
+<tr>
+	<td>Cash Settlement Payment Date:</td>
+	<td>|CASH_SETTLE_PAYMENT_DATE|</td>
+</tr>
+<tr>
+	<td>Business Day Convention for Cash Settlement Payment Date:</td>
+	<td>|CASH_SETTLE_PAYMENT_DATE_CONVENTION|</td>
+</tr>
+<tr>
+	<td>Cash Settlement Method:</td>
+	<td>|CASH_SETTLE_METHOD|</td>
+</tr>
+<tr>
+	<td>Cash Settlement Currency:</td>
+	<td>|CASH_SETTLE_PAYMENT_CURRENCY_1|</td>
+</tr>
+<!--calypso>
+if ( |CASH_SETTLE_METHOD| like "ISDA" ) {
+    inline "
+	<tr>
+        <td>Settlement Rate:</td>
+        <td>|CASH_SETTLE_RATE|</td>
+    </tr>";
+} else if ( |CASH_SETTLE_METHOD| like "OTHER" ) {
+	inline "
+		<tr>
+			<td>Settlement Rate:</td>
+			<td>|CASH_SETTLE_RATE|</td>
+		</tr>
+	    <tr>
+			<td>Settlement Rate:</td>
+			<td>|CASH_SETTLE_RATE_INDEX|</td>
+    </tr>
+	";
+} else {
+	inline "
+		<tr>
+			<td>Settlement Rate:</td>
+			<td>Reference Banks</td>
+		</tr>
+		<tr>
+			<td>Ref Bank 1:</td>
+			<td>To be Determined</td>
+		</tr>
+		<tr>
+			<td>Ref Bank 2:</td>
+			<td>To be Determined</td>
+		</tr>
+		<tr>
+			<td>Ref Bank 3:</td>
+			<td>To be Determined</td>
+		</tr>
+		<tr>
+			<td>Ref Bank 4:</td>
+			<td>To be Determined</td>
+		</tr>
+		<tr>
+			<td>Ref Bank 5:</td>
+			<td>To be Determined</td>
+		</tr>
+	";
+}
+</calypso-->
+<tr>
+	<td>Quotation Rate:</td>
+	<td>|CASH_SETTLE_QUOTE_TYPE|</td>
+</tr>
+</table>
+
+<!---End Exhibit II-G -->
+
+

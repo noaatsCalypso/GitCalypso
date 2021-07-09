@@ -1,0 +1,1334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:util="http://www.springframework.org/schema/util"
+   xsi:schemaLocation="
+			  http://www.springframework.org/schema/util
+			  http://www.springframework.org/schema/util/spring-util-3.0.xsd
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+   default-init-method="init" default-destroy-method="destroy">
+   
+   <bean id="clearingStatementCalculator" class="com.calypso.tk.bo.clearing.statement.calculator.impl.ClearingStatementCalculator">
+   	<property name="statementName" value="Statement" />
+   	<property name="sectionCalculators">
+   		<list>
+            <bean id="clearingCashFlowsSectionCalc"
+               class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.SectionWrapperCalculator">
+               <property name="sectionName" value="financialSummary" />
+               <property name="sectionElementCalculators">
+                  <list>
+                     <bean id="cashFlowsTableCalc"
+                        class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.ClearingCashFlowsSummaryTableCalculator">
+                        <property name="createHeader" value="true" />
+                        <property name="name" value="clearingCashFlowsSummaryTable" />
+                        <property name="rowCalculators">
+                           <list>
+                           	  <ref bean="fxRatesCalc" />
+                           	  <ref bean="intradayFundingAmountCalc" />
+                           	  <ref bean="startingBalanceActivityCalc" />
+                              <ref bean="nonPendingFCMCommissionsCalc" />
+                              <ref bean="nonPendingCCPFeesCalc" />
+                              <ref bean="nonPendingPAICalc" />
+                              <ref bean="nonPendingCouponCalc" />
+                              <ref bean="nonPendingFRASettlements" />
+                              <ref bean="nonPendingFXSettlements" />
+                              <ref bean="nonPendingUpfrontFeesCalc" />
+                              <ref bean="nonPendingInterestCalc" />
+                              <ref bean="nonPendingCashMovementsActivityCalc" />
+                              <ref bean="endingBalanceActivityCalc" />
+                              <ref bean="nonPendingCmeIrsNPVXferCalc" />
+                              <ref bean="nonPendingCmeNdfNPVXferCalc" />
+                              <ref bean="nonPendingLchIrsNPVXferCalc" />
+                              <ref bean="nonPendingEurexIrsNPVXferCalc" />
+                              <ref bean="netVmExcessDeficitCalc" />
+                              <ref bean="pendingCashFlowCalc" />
+                              <ref bean="netVmExcessDeficitIncludingPendingCalc" />
+                           </list>
+                      	</property>
+                     </bean>
+                     <bean id="imSummaryTableGenerator"
+                        class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.InitialMarginSummaryTableListCalculator">
+                        <property name="name" value="initialMarginSummaryTables" />
+                        <property name="createHeader" value="true" />
+                        <property name="rowCalculators"> <!-- More like template ... -->
+                           <list>
+                           	<ref bean="initialMarginCalc" />
+                           	<ref bean="contractualBufferMarginCalc" />
+                           	<ref bean="fcmBufferMarginCalc" />
+                           	<ref bean="totalInitialMarginRequirementCalc" />
+                           	<ref bean="imCashCollateralCalc" />
+                           	<ref bean="imSecurityCollateralCalc" />
+                           	<ref bean="totalImCollatCalc" />
+                           	<ref bean="netImExcessDeficit" />
+                           	<ref bean="pendingImCashCollateralCalc" />
+                           	<ref bean="pendingImSecurityCollateralCalc" />
+                           	<ref bean="totalImPendingImCollatCalc" />
+                           	<ref bean="netImExcessDeficitIncludingPending" />
+                           </list>
+                        </property>
+                     </bean>
+                     <bean id="separateSettlementSummaryTableGenerator"
+                        class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.SeparateSettlementSummaryTableListCalculator">
+                        <property name="name" value="separateSettlementSummaryTable" />
+                        <property name="createHeader" value="true" />
+                        <property name="rowCalculators"> <!-- More like template ... -->
+                           <list>
+                              <ref bean="totalSeparateSettlementExcessDeficitCalc" />
+                           </list>
+                        </property>
+                        <property name="attributes">
+                           <list>
+                              <value>CCP</value>
+                              <value>PRODUCT_TYPE</value>
+                              <value>INCLUDED_VM_FLOWS</value>
+                           </list>
+                        </property>
+                     </bean>
+                  </list>
+               </property>
+            </bean>
+            <bean id="reportOutputSectionCalc"
+               class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.SectionWrapperCalculator">
+               <property name="sectionName" value="reportOutput" />
+               <property name="sectionElementCalculators">
+                  <list>
+                     <ref bean="newTradesIrsTableCalc" />
+                     <ref bean="newTradesNdfTableCalc" />
+                     <ref bean="newTradesCreditDerivativesTableCalc" />
+                     <ref bean="openTradesIrsTableCalc" />
+                     <ref bean="openTradesNdfTableCalc" />
+                     <ref bean="openTradesCreditDerivativesTableCalc" />
+                     <ref bean="termTradesIrsTableCalc" />
+                     <ref bean="termTradesNdfTableCalc" />
+                     <ref bean="termTradesCreditDerivativesTableCalc" />
+                     <ref bean="maturedTradesIrsTableCalc" />
+                     <ref bean="maturedTradesNdfTableCalc" />
+                     <ref bean="maturedTradesCreditDerivativesTableCalc" />
+                     <ref bean="activityReportTableCalc" />
+                     <ref bean="marginCallPositionsTableCalc" />
+                     <ref bean="pendingMarginCallActivityTableCalc" />
+                     <ref bean="marginCallActivityTableCalc" />
+                  </list>
+               </property>
+            </bean>
+         </list>
+      </property>
+   </bean>
+   
+   <!-- ROW CALCULATORS -->
+   
+   <bean id="defaultCachingKeyFactory" class="com.calypso.tk.bo.clearing.statement.calculator.impl.DefaultCachingKeyFactory" />
+ 
+   <!-- Use this caching key factory instead of the default one for all row calculators use in separate settlements -->  
+   <bean id="separateSettlementsCachingKeyFactory" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.SeparateSettlementCachingKeyFactory" />
+
+   <!-- Use this factory, instead of the default one, for all row calculators within the initial margin summary section -->   
+   <bean id="initialMarginSummaryCachingKeyFactory" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.margin.InitialMarginSummaryCachingKeyFactory" />
+
+   <bean id="abstractRowCalculator" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.AbstractRowCalculator"
+      abstract="true">
+      <property name="rowName" value="" />
+      <property name="datatypeAdapter">
+         <bean class="com.calypso.tk.util.xml.DatatypeAdapter" />
+      </property>
+      <property name="propertyExpander">
+      	<bean class="com.calypso.tk.clearing.util.PropertyExpander" />
+      </property>
+      <property name="cachingKeyFactory" ref="defaultCachingKeyFactory" />
+   </bean>
+
+   <bean id="abstractSummaryRowCalculator" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.AbstractSummaryRowCalculator"
+      parent="abstractRowCalculator" abstract="true">
+      <property name="pending" value="false" />
+   </bean>
+   
+   <bean id="fxRatesCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.FXRatesRowCalculator"
+      parent="abstractSummaryRowCalculator">
+      <property name="rowName" value="FX Rates" />
+   </bean>
+   
+   <bean id="intradayFundingAmountCalc" 
+   	class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.IntradayFundingAmountRowCalculator"
+   	parent="abstractSummaryRowCalculator">
+   	<property name="rowName" value="Intraday Funding Amount" />
+   </bean>
+   
+   <bean id="startingBalanceActivityCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.BeginningCashFlowBalanceRowCalculator"
+      parent="abstractSummaryRowCalculator">
+      <property name="rowName" value="Beginning Cash Balance" />
+      <property name="useSettleLag" value="true" />
+   </bean>
+   
+   <bean id="nonPendingFCMCommissionsCalc"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+		parent="abstractSummaryRowCalculator">
+   	<property name="rowName" value="${FCM} Commissions" />
+   	<property name="accountActivityTypes">
+   		<list>
+   			<value>LCH_TRANS_FEE</value>
+   			<value>LCH_IM_FEE</value>
+   			<value>LCH_CUSTODY_FEE</value>
+   			<value>EUREX_TRANS_FEE</value>
+   			<value>EUREX_MAINT_FEE</value>
+   			<value>EUREX_IM_FEE</value>
+   			<value>CUSTODY_FEE</value>
+   			<value>LCH_MAINT_FEE</value>
+   		</list>
+   	</property>
+   	<property name="filters">
+   		<list>
+   			<bean class="com.calypso.tk.bo.clearing.statement.filter.SettleDateOnOrAfterStartDateTransferFilter" />
+   			<bean class="com.calypso.tk.bo.clearing.statement.filter.SettleDateOnOrBeforeStatementDateTransferFilter" />
+   		</list>
+   	</property>
+   </bean>
+   
+   <bean id="nonPendingCCPFeesCalc"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+		parent="abstractSummaryRowCalculator">
+		<property name="rowName" value="CCP Fees" />
+		<property name="accountActivityTypes">
+			<list>
+				<value>IM_BASED_FEE</value>
+			</list>
+		</property>
+		<property name="filters">
+			<list>
+				<bean class="com.calypso.tk.clearing.transfer.filter.SettleDateEqualsAvailableDateTransferFilter" />
+			</list>
+		</property>
+   </bean>
+   
+   <bean id="nonPendingPAICalc"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+		parent="abstractSummaryRowCalculator">
+		<property name="rowName" value="PAI" />
+		<property name="accountActivityTypes">
+			<list>
+				<value>CS_PAI</value>
+                <value>CS_PAI_ADJ</value>
+				<value>PAI</value>
+			</list>
+		</property>		
+   </bean>
+   
+   <bean id="nonPendingFRASettlements"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+		parent="abstractSummaryRowCalculator">
+		<property name="rowName" value="FRA Settlements" />
+		<property name="accountActivityTypes">
+			<list>
+				<value>CS_FRA_PAYMENT</value>
+				<value>FRA_PAYMENT</value>
+			</list>
+		</property>
+   </bean>
+   
+   <bean id="nonPendingUpfrontFeesCalc"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+		parent="abstractSummaryRowCalculator">
+		<property name="rowName" value="Upfront Fees" />
+		<property name="accountActivityTypes">
+			<list>
+				<value>UPFRONT_FEES</value>
+				<value>CS_UPFRONT_FEE</value>
+				<value>CS_FEES</value>
+				<value>CS_CONSIDERATN</value>
+				<value>CS_PREM_PAYMENT</value>
+			</list>
+		</property>
+   </bean>
+   
+   <bean id="nonPendingInterestCalc"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+		parent="abstractSummaryRowCalculator">
+		<property name="rowName" value="Interest" />
+		<property name="accountActivityTypes">
+			<list>
+				<value>INTEREST</value>
+			</list>
+		</property>
+		<property name="filters">
+			<list>
+				<bean class="com.calypso.tk.clearing.transfer.filter.SettleDateEqualsAvailableDateTransferFilter" />
+			</list>
+		</property>
+   </bean>
+   
+   <bean id="nonPendingCashMovementsActivityCalc"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+		parent="abstractSummaryRowCalculator">
+		<property name="rowName" value="Cash Movements" />
+		<property name="startingBalance" value="false" />
+		<property name="accountActivityTypes">
+			<list>
+				<value>CASHSWEEPING</value>
+				<value>PAYDOWN</value>
+				<value>COLLATERAL</value>
+				<value>SUBSTITUTION</value>
+				<value>MARGIN_CALL</value>
+			</list>
+		</property>
+   	<property name="filters">
+			<list>
+				<bean class="com.calypso.tk.clearing.transfer.filter.SettleDateEqualsAvailableDateTransferFilter" />
+			</list>
+		</property>
+   </bean>
+   
+   <bean id="nonPendingCouponCalc"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+		parent="abstractSummaryRowCalculator">
+		<property name="rowName" value="Coupons" />
+		<property name="accountActivityTypes">
+			<list>
+				<value>CS_COUPON</value>
+                <value>CS_COUPON_ADJ</value>
+				<value>COUPON</value>
+				<value>CS_CASH_DELIVERY</value>
+				<value>CS_INTERESTS</value>
+				<value>CASH_DELIVERY</value>
+			</list>
+		</property>
+   </bean>
+   
+   <bean id="nonPendingFXSettlements"
+   	class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+   	parent="abstractSummaryRowCalculator">
+   	<property name="rowName" value="FX Settlements" />
+   	<property name="accountActivityTypes">
+			<list>
+				<value>PRINCIPAL</value>
+			</list>
+		</property>
+   </bean>
+   
+   <bean id="endingBalanceActivityCalc"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.AggregateRowCalculator"
+		parent="abstractSummaryRowCalculator">
+   	<property name="rowName" value="Ending Cash Balance" />
+   	<property name="calculators">
+   		<list>
+				<ref bean="startingBalanceActivityCalc" />
+				<ref bean="nonPendingFCMCommissionsCalc" />
+				<ref bean="nonPendingCCPFeesCalc" />
+				<ref bean="nonPendingPAICalc" />
+				<ref bean="nonPendingCouponCalc" />
+				<ref bean="nonPendingFRASettlements" />
+				<ref bean="nonPendingFXSettlements" />
+				<ref bean="nonPendingUpfrontFeesCalc" />
+				<ref bean="nonPendingInterestCalc" />
+				<ref bean="nonPendingCashMovementsActivityCalc" />
+			</list>
+   	</property>
+   </bean>
+   
+   <bean id="nonPendingCmeIrsNPVXferCalc"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+		parent="abstractSummaryRowCalculator">
+      <property name="rowName" value="CME - IRD NPV" />
+      <property name="collapseIfEmpty" value="true" />
+      <property name="accountActivityTypes">
+         <list>
+            <value>CS_NPV_ADJUSTED</value>
+            <value>NPV_ADJUSTED</value>
+         </list>
+      </property>
+      <property name="ccpFilterTypes">
+         <list>
+            <value>CME</value>
+         </list>
+      </property>
+      <property name="servicesFilterTypes">
+         <list>
+            <value>IRD</value>
+         </list>
+      </property>
+      <property name="filters">
+      	<list>
+				<bean class="com.calypso.tk.bo.clearing.statement.filter.TradeDateOnStatementDateTransferFilter" />
+			</list>
+      </property>
+   </bean>
+   
+   <bean id="nonPendingCmeNdfNPVXferCalc"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+		parent="abstractSummaryRowCalculator">
+      <property name="rowName" value="CME - NDF NPV" />
+      <property name="collapseIfEmpty" value="true" />
+      <property name="accountActivityTypes">
+         <list>
+            <value>CS_NPV_ADJUSTED</value>
+            <value>NPV_ADJUSTED</value>
+         </list>
+      </property>
+      <property name="ccpFilterTypes">
+         <list>
+            <value>CME</value>
+         </list>
+      </property>
+      <property name="servicesFilterTypes">
+         <list>
+            <value>NDF</value>
+         </list>
+      </property>
+      <property name="filters">
+      	<list>
+				<bean class="com.calypso.tk.bo.clearing.statement.filter.TradeDateOnStatementDateTransferFilter" />
+			</list>
+      </property>
+   </bean>
+   
+   <bean id="nonPendingEurexIrsNPVXferCalc" 
+   	class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+      parent="abstractSummaryRowCalculator">
+      <property name="rowName" value="EUREX - IRD NPV" />
+      <property name="collapseIfEmpty" value="true" />
+      <property name="accountActivityTypes">
+         <list>
+            <value>CS_NPV_ADJUSTED</value>
+         </list>
+      </property>
+      <property name="ccpFilterTypes">
+         <list>
+            <value>EUREX</value>
+         </list>
+      </property>
+      <property name="servicesFilterTypes">
+         <list>
+            <value>IRD</value>
+         </list>
+      </property>
+      <property name="filters">
+      	<list>
+				<bean class="com.calypso.tk.bo.clearing.statement.filter.TradeDateOnStatementDateTransferFilter" />
+			</list>
+      </property>
+   </bean>
+   
+   <bean id="nonPendingLchIrsNPVXferCalc"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+		parent="abstractSummaryRowCalculator">
+      <property name="rowName" value="LCH - IRD NPV" />
+      <property name="collapseIfEmpty" value="true" />
+      <property name="accountActivityTypes">
+         <list>
+            <value>CS_NPV_ADJUSTED</value>
+            <value>NPV_ADJUSTED</value>
+         </list>
+      </property>
+      <property name="ccpFilterTypes">
+         <list>
+            <value>LCH</value>
+         </list>
+      </property>
+      <property name="servicesFilterTypes">
+         <list>
+            <value>IRD</value>
+         </list>
+      </property>
+      <property name="filters">
+      	<list>
+				<bean class="com.calypso.tk.bo.clearing.statement.filter.TradeDateOnStatementDateTransferFilter" />
+			</list>
+      </property>
+   </bean>
+   
+   <bean id="netVmExcessDeficitCalc"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.AggregateRowCalculator"
+		parent="abstractSummaryRowCalculator">
+   	<property name="rowName" value="Net VM Excess/Deficit" />
+   	<property name="calculators">
+   		<list>
+   			<ref bean="endingBalanceActivityCalc" />
+			<ref bean="nonPendingCmeIrsNPVXferCalc" />
+			<ref bean="nonPendingCmeNdfNPVXferCalc" />
+			<ref bean="nonPendingLchIrsNPVXferCalc" />
+			<ref bean="nonPendingEurexIrsNPVXferCalc" />
+   		</list>
+   	</property>
+   </bean>
+   
+   <bean id="pendingFeesCalc"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+		parent="abstractSummaryRowCalculator">
+   	<property name="rowName" value="Fees (Pending)" />
+   	<property name="pending" value="true" />
+   	<property name="filters">
+   		<list>
+			<bean class="com.calypso.tk.clearing.transfer.filter.BlacklistXferTypeTransferFilter">
+				<constructor-arg type="java.util.Set">
+					<set value-type="java.lang.String">
+						<value>CS_NPV_ADJUSTED</value>
+	 					<value>NPV_ADJUSTED</value>
+	 					<value>CS_NPV_REV</value>
+	 					<value>NPV_REV</value>
+	 					<value>INTEREST</value>
+	 					<value>PAYDOWN</value>
+	 					<value>COLLATERAL</value>
+	 					<value>SUBSTITUTION</value>
+	 					<value>MARGIN_CALL</value>
+					</set>
+				</constructor-arg>
+			</bean>
+			<bean class="com.calypso.tk.bo.clearing.statement.filter.AvailableDateAfterStatementDateTransferFilter" />
+			<bean class="com.calypso.tk.clearing.transfer.filter.SettleDateAfterAvailableDateTransferFilter" />
+   		</list>
+   	</property>
+   </bean>
+   
+   <bean id="pendingNpvXferCalc"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+		parent="abstractSummaryRowCalculator">
+		<property name="rowName" value="NPV (Pending)" />
+		<property name="pending" value="true" />
+		<property name="accountActivityTypes">
+			<list>
+				<value>CS_NPV_ADJUSTED</value>
+				<value>NPV_ADJUSTED</value>
+			</list>
+		</property>
+		<property name="filters">
+			<list>
+				<bean class="com.calypso.tk.bo.clearing.statement.filter.AvailableDateAfterStatementDateTransferFilter" />
+				<bean class="com.calypso.tk.bo.clearing.statement.filter.TradeDateOnStatementDateTransferFilter" />
+			</list>
+		</property>
+   </bean>
+   
+   <bean id="pendingCashMovementsCalc"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+		parent="abstractSummaryRowCalculator">
+   	<property name="rowName" value="Cash Movements (Pending)" />
+   	<property name="pending" value="true" />
+   	<property name="startingBalance" value="false" />
+   	<property name="accountActivityTypes">
+   		<list>
+   			<value>CASHSWEEPING</value>
+   			<value>INTEREST</value>
+			<value>PAYDOWN</value>
+   			<value>COLLATERAL</value>
+			<value>SUBSTITUTION</value>
+			<value>MARGIN_CALL</value>
+   		</list>
+   	</property>
+   </bean>
+   
+   <bean id="pendingCashFlowCalc"
+   	class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.AggregateRowCalculator" 
+   	parent="abstractSummaryRowCalculator">
+   	<property name="rowName" value="Pending Settlements" />
+   	<property name="calculators">
+   		<list>
+   			<ref bean="pendingFeesCalc" />
+   			<ref bean="pendingNpvXferCalc" />
+   			<ref bean="pendingCashMovementsCalc" />
+   		</list>
+   	</property>
+   </bean>
+   
+   <bean id="netVmExcessDeficitIncludingPendingCalc"
+   	class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.AggregateRowCalculator" 
+   	parent="abstractSummaryRowCalculator">
+   	<property name="rowName" value="Net VM Excess/Deficit (Incl. Pending)" />
+   	<property name="calculators">
+   		<list>
+   			<ref bean="netVmExcessDeficitCalc" />
+   			<ref bean="pendingCashFlowCalc" />
+   		</list>
+   	</property>
+   </bean>
+   
+   <!-- IM Calculators (already broken down by CCP and Clearing Service, so no need to configure as properties) -->
+   <bean id="abstractInitialMarginSummaryRowCalculator"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.margin.AbstractInitialMarginSummaryRowCalculator"
+      parent="abstractRowCalculator" abstract="true">
+      <property name="pending" value="false" />
+      <property name="cachingKeyFactory" ref="initialMarginSummaryCachingKeyFactory" />
+   </bean>
+   
+   <bean id="abstractInitialMarginSummaryRowAggregatorCalculator"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.AggregateRowCalculator"
+      parent="abstractRowCalculator" abstract="true">
+      <property name="cachingKeyFactory" ref="initialMarginSummaryCachingKeyFactory" />
+   </bean>
+   
+   <bean id="initialMarginCalc"
+		class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.margin.InitialMarginRawNetBalanceRowCalculator"
+		parent="abstractInitialMarginSummaryRowCalculator">
+   	<property name="rowName" value="Margin Requirement" />
+   	<property name="pending" value="false" />
+   </bean>
+   
+   <bean id="contractualBufferMarginCalc" 
+   	class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.margin.InitialMarginContractualBufferRowCalculator"
+   	parent="abstractInitialMarginSummaryRowCalculator">
+   	<property name="rowName" value="${FCM} IM (%)" />
+   	<property name="pending" value="false" />
+   </bean>
+   
+   <bean id="fcmBufferMarginCalc" 
+   	class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.margin.InitialMarginDiscretionaryBufferRowCalculator"
+   	parent="abstractInitialMarginSummaryRowCalculator">
+   	<property name="rowName" value="${FCM} Buffer" />
+   	<property name="pending" value="false" />
+   </bean>
+   
+   <bean id="totalInitialMarginRequirementCalc" parent="abstractInitialMarginSummaryRowAggregatorCalculator">
+   	<property name="rowName" value="Total IM Requirement" />
+   	<property name="pending" value="false" />
+   	<property name="calculators">
+   		<list>
+   			<ref bean="initialMarginCalc" />
+   			<ref bean="contractualBufferMarginCalc" />
+   			<ref bean="fcmBufferMarginCalc" />
+   		</list>
+   	</property>
+   </bean>
+   
+   <bean id="imCashCollateralCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.margin.DefaultCollateralRowCalculator"
+      parent="abstractInitialMarginSummaryRowCalculator">
+      <property name="rowName" value="IM Cash Balance" />
+      <property name="pending" value="false" />
+      <property name="marginTypes">
+         <list value-type="com.calypso.tk.clearing.collateral.MarginType">
+            <value>IM</value>
+         </list>
+      </property>
+      <property name="underlyingTypes">
+         <list>
+            <value>Cash</value>
+         </list>
+      </property>
+   </bean>
+   
+   <bean id="imSecurityCollateralCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.margin.DefaultCollateralRowCalculator"
+      parent="abstractInitialMarginSummaryRowCalculator">
+      <property name="rowName" value="IM Non-Cash Balance" />
+      <property name="pending" value="false" />
+      <property name="marginTypes">
+         <list value-type="com.calypso.tk.clearing.collateral.MarginType">
+            <value>IM</value>
+         </list>
+      </property>
+      <property name="underlyingTypes">
+         <list>
+            <value>Security</value>
+         </list>
+      </property>
+   </bean>
+   
+   <bean id="totalImCollatCalc" parent="abstractInitialMarginSummaryRowAggregatorCalculator">
+      <property name="rowName" value="Total Collateral" />
+      <property name="pending" value="false" />
+      <property name="calculators">
+         <list>
+            <ref bean="imCashCollateralCalc" />
+            <ref bean="imSecurityCollateralCalc" />
+         </list>
+      </property>
+   </bean>
+   
+   <bean id="netImExcessDeficit" parent="abstractInitialMarginSummaryRowAggregatorCalculator">
+   	<property name="rowName" value="Net IM Excess/Deficit" />
+   	<property name="pending" value="false" />
+   	<property name="calculators">
+   		<list>
+   			<ref bean="totalInitialMarginRequirementCalc" />
+   			<ref bean="totalImCollatCalc" />
+   		</list>
+   	</property>   
+   </bean>
+   
+   <bean id="pendingImCashCollateralCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.margin.DefaultCollateralRowCalculator"
+      parent="abstractInitialMarginSummaryRowCalculator">
+      <property name="rowName" value="IM Cash (Pending)" />
+      <property name="pending" value="true" />
+      <property name="marginTypes">
+         <list value-type="com.calypso.tk.clearing.collateral.MarginType">
+            <value>IM</value>
+         </list>
+      </property>
+      <property name="underlyingTypes">
+         <list>
+            <value>Cash</value>
+         </list>
+      </property>
+   </bean>
+
+   <bean id="pendingImSecurityCollateralCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.margin.DefaultCollateralRowCalculator"
+      parent="abstractInitialMarginSummaryRowCalculator">
+      <property name="rowName" value="IM Non-Cash (Pending)" />
+      <property name="pending" value="true" />
+      <property name="marginTypes">
+         <list value-type="com.calypso.tk.clearing.collateral.MarginType">
+            <value>IM</value>
+         </list>
+      </property>
+      <property name="underlyingTypes">
+         <list>
+            <value>Security</value>
+         </list>
+      </property>
+   </bean>
+   
+   <bean id="totalImPendingImCollatCalc" parent="abstractInitialMarginSummaryRowAggregatorCalculator">
+      <property name="rowName" value="Total IM Collateral (Pending)" />
+      <property name="calculators">
+         <list>
+            <ref bean="pendingImCashCollateralCalc" />
+            <ref bean="pendingImSecurityCollateralCalc" />
+         </list>
+      </property>
+   </bean>
+   
+   <bean id="netImExcessDeficitIncludingPending" parent="abstractInitialMarginSummaryRowAggregatorCalculator">
+      <property name="rowName" value="Net IM Excess/Deficit (Incl. Pending)" />
+      <property name="calculators">
+         <list>
+            <ref bean="netImExcessDeficit" />
+            <ref bean="totalImPendingImCollatCalc" />
+         </list>
+      </property>
+   </bean>
+   
+   <bean id="netExcessDeficit" 
+   	class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.AggregateRowCalculator" 
+   	parent="abstractSummaryRowCalculator">
+		<property name="rowName" value="Net Excess/Deficit" />
+		<property name="calculators">
+			<list>
+				<ref bean="netImExcessDeficitIncludingPending" />
+				<ref bean="netVmExcessDeficitIncludingPendingCalc" />
+			</list>
+		</property>
+   </bean>
+   
+   <!-- SeparateSettlementRowCalcs -->
+   <bean id="marginCallValuationStartingBalanceActivityCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.MarginCallValuationBeginningCashFlowBalanceRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="rowName" value="Beginning Separate Settlements Balance" />
+   </bean>
+   <bean id="nonPendingCommissionsXferForSeparateSettlementCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+      parent="abstractSummaryRowCalculator">
+      <property name="rowName" value="Comissions/Fees" />
+      <property name="separateSettlement" value="true" />
+      <property name="startingBalance" value="false" />
+      <property name="accountActivityTypes">
+         <list>
+            <value>COMMISSION</value>
+            <value>TERM_FEES</value>
+            <value>FEE</value>
+            <value>IM_BILLING_FEE</value>
+         </list>
+      </property>
+   </bean>
+   <bean id="nonPendingPAIXferForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.TransferFeesRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="rowName" value="PAI" />
+      <property name="startingBalance" value="false" />
+      <property name="separateSettlement" value="true" />
+      <property name="feeTypes">
+         <list>
+            <value>CS_PAI</value>
+            <value>CS_PAI_ADJ</value>
+            <value>PAI</value>
+         </list>
+      </property>
+   </bean>
+   <bean id="nonPendingCouponsXferForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.TransferFeesRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="rowName" value="Coupons" />
+      <property name="startingBalance" value="false" />
+      <property name="separateSettlement" value="true" />
+      <property name="feeTypes">
+         <list>
+            <value>CS_COUPON</value>
+            <value>CS_COUPON_ADJ</value>
+            <value>COUPON</value>
+            <value>CS_CASH_DELIVERY</value>
+            <value>CS_INTERESTS</value>
+            <value>CASH_DELIVERY</value>
+         </list>
+      </property>
+   </bean>
+   <bean id="nonPendingFRAXferForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.TransferFeesRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="rowName" value="FRA Settlements" />
+      <property name="startingBalance" value="false" />
+      <property name="separateSettlement" value="true" />
+      <property name="feeTypes">
+         <list>
+            <value>CS_FRA_PAYMENT</value>
+            <value>FRA_PAYMENT</value>
+         </list>
+      </property>
+   </bean>
+   <bean id="nonPendingUpfrontXferForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.TransferFeesRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="rowName" value="Upfront Fees" />
+      <property name="startingBalance" value="false" />
+      <property name="separateSettlement" value="true" />
+      <property name="feeTypes">
+         <list>
+            <value>UPFRONT_FEES</value>
+            <value>CS_UPFRONT_FEE</value>
+            <value>CS_FEES</value>
+            <value>CS_CONSIDERATN</value>
+            <value>CS_PREM_PAYMENT</value>
+         </list>
+      </property>
+   </bean>
+   <bean id="nonPendingCashMovementsActivityForSeparateSettlementCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="rowName" value="Cash Movements" />
+      <property name="separateSettlement" value="true" />
+      <property name="startingBalance" value="false" />
+      <property name="accountActivityTypes">
+         <list>
+         	<value>CASHSWEEPING</value>
+            <value>INTEREST</value>
+            <value>PAYDOWN</value>
+            <value>COLLATERAL</value>
+            <value>SUBSTITUTION</value>
+            <value>MARGIN_CALL</value>
+         </list>
+      </property>
+   </bean>
+
+   <bean id="nonPendingCreditPremiumXferForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.TransferFeesRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="rowName" value="Credit Premium" />
+      <property name="startingBalance" value="false" />
+      <property name="separateSettlement" value="true" />
+      <property name="feeTypes">
+         <list>
+            <value>CS_CREDIT_PREM</value>
+         </list>
+      </property>
+   </bean>
+   <bean id="nonPendingCreditEventXferForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.TransferFeesRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="rowName" value="Credit Event" />
+      <property name="startingBalance" value="false" />
+      <property name="separateSettlement" value="true" />
+      <property name="feeTypes">
+         <list>
+            <value>CS_CREDIT_EVENT</value>
+         </list>
+      </property>
+   </bean>
+   <bean id="nonPendingCreditCouponXferForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.TransferFeesRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="rowName" value="Credit Event Coupon" />
+      <property name="startingBalance" value="false" />
+      <property name="separateSettlement" value="true" />
+      <property name="feeTypes">
+         <list>
+            <value>CS_CREDIT_COUPON</value>
+         </list>
+      </property>
+   </bean>
+   <bean id="nonPendingCreditRebateXferForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.TransferFeesRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="rowName" value="Credit Event Rebate" />
+      <property name="startingBalance" value="false" />
+      <property name="separateSettlement" value="true" />
+      <property name="feeTypes">
+         <list>
+            <value>CS_CREDIT_REBATE</value>
+         </list>
+      </property>
+   </bean>
+
+   <bean id="endingCashBalanceForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.AggregateRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="rowName" value="Ending Separate Settlements Balance" />
+      <property name="calculators">
+         <list>
+            <ref bean="marginCallValuationStartingBalanceActivityCalc" />
+            <ref bean="nonPendingCommissionsXferForSeparateSettlementCalc" />
+            <ref bean="nonPendingPAIXferForSeparateSettlementCalc" />
+            <ref bean="nonPendingCouponsXferForSeparateSettlementCalc" />
+            <ref bean="nonPendingFRAXferForSeparateSettlementCalc" />
+            <ref bean="nonPendingUpfrontXferForSeparateSettlementCalc" />
+            <ref bean="nonPendingCreditPremiumXferForSeparateSettlementCalc" />
+            <ref bean="nonPendingCreditEventXferForSeparateSettlementCalc" />
+            <ref bean="nonPendingCreditCouponXferForSeparateSettlementCalc" />
+            <ref bean="nonPendingCreditRebateXferForSeparateSettlementCalc" />
+            <ref bean="nonPendingCashMovementsActivityForSeparateSettlementCalc" />
+         </list>
+      </property>
+   </bean>
+   <bean id="pendingCommissionsXferForSeparateSettlementCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="pending" value="true" />
+      <property name="collapseIfEmpty" value="true" />
+      <property name="separateSettlement" value="true" />
+      <property name="startingBalance" value="false" />
+      <property name="rowName" value="Pending Commissions/Fees" />
+      <property name="accountActivityTypes">
+         <list>
+            <value>COMMISSION</value>
+            <value>TERM_FEES</value>
+            <value>FEE</value>
+            <value>IM_BILLING_FEE</value>
+         </list>
+      </property>
+   </bean>
+   <bean id="pendingPAIXferForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.TransferFeesRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="pending" value="true" />
+      <property name="collapseIfEmpty" value="true" />
+      <property name="separateSettlement" value="true" />
+      <property name="startingBalance" value="false" />
+      <property name="rowName" value="Pending PAI" />
+      <property name="feeTypes">
+         <list>
+            <value>CS_PAI</value>
+            <value>CS_PAI_ADJ</value>
+            <value>PAI</value>
+         </list>
+      </property>
+   </bean>
+   <bean id="pendingFutureCouponsXferForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.TransferFeesRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="pending" value="true" />
+      <property name="collapseIfEmpty" value="true" />
+      <property name="separateSettlement" value="true" />
+      <property name="startingBalance" value="false" />
+      <property name="rowName" value="Pending Coupons" />
+      <property name="feeTypes">
+         <list>
+            <value>CS_COUPON</value>
+            <value>CS_COUPON_ADJ</value>
+            <value>COUPON</value>
+            <value>CS_CASH_DELIVERY</value>
+            <value>CS_INTERESTS</value>
+            <value>CASH_DELIVERY</value>
+         </list>
+      </property>
+   </bean>
+   <bean id="pendingFRAXferForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.TransferFeesRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="pending" value="true" />
+      <property name="collapseIfEmpty" value="true" />
+      <property name="separateSettlement" value="true" />
+      <property name="startingBalance" value="false" />
+      <property name="rowName" value="Pending FRA Settlements" />
+      <property name="feeTypes">
+         <list>
+            <value>CS_FRA_PAYMENT</value>
+            <value>FRA_PAYMENT</value>
+         </list>
+      </property>
+   </bean>
+   <bean id="pendingUpfrontFeesXferForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.TransferFeesRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="pending" value="true" />
+      <property name="collapseIfEmpty" value="true" />
+      <property name="separateSettlement" value="true" />
+      <property name="startingBalance" value="false" />
+      <property name="rowName" value="Pending Upfront Fees" />
+      <property name="feeTypes">
+         <list>
+            <value>UPFRONT_FEES</value>
+            <value>CS_UPFRONT_FEE</value>
+            <value>CS_FEES</value>
+            <value>CS_CONSIDERATN</value>
+            <value>CS_PREM_PAYMENT</value>
+         </list>
+      </property>
+   </bean>
+   <bean id="pendingCashMovementsActivityForSeparateSettlementCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.AccountActivityRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="pending" value="true" />
+      <property name="collapseIfEmpty" value="true" />
+      <property name="separateSettlement" value="true" />
+      <property name="startingBalance" value="false" />
+      <property name="rowName" value="Pending Cash Movements" />
+      <property name="accountActivityTypes">
+         <list>
+         	<value>CASHSWEEPING</value>
+            <value>INTEREST</value>
+            <value>PAYDOWN</value>
+            <value>COLLATERAL</value>
+            <value>SUBSTITUTION</value>
+            <value>MARGIN_CALL</value>
+         </list>
+      </property>
+   </bean>
+
+   <bean id="pendingCreditPremiumXferForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.TransferFeesRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="pending" value="true" />
+      <property name="collapseIfEmpty" value="true" />
+      <property name="separateSettlement" value="true" />
+      <property name="startingBalance" value="false" />
+      <property name="rowName" value="Pending Credit Premium" />
+      <property name="feeTypes">
+         <list>
+            <value>CS_CREDIT_PREM</value>
+         </list>
+      </property>
+   </bean>
+   <bean id="pendingCreditEventXferForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.TransferFeesRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="pending" value="true" />
+      <property name="collapseIfEmpty" value="true" />
+      <property name="separateSettlement" value="true" />
+      <property name="startingBalance" value="false" />
+      <property name="rowName" value="Pending Credit Event" />
+      <property name="feeTypes">
+         <list>
+            <value>CS_CREDIT_EVENT</value>
+         </list>
+      </property>
+   </bean>
+   <bean id="pendingCreditCouponXferForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.TransferFeesRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="pending" value="true" />
+      <property name="collapseIfEmpty" value="true" />
+      <property name="separateSettlement" value="true" />
+      <property name="startingBalance" value="false" />
+      <property name="rowName" value="Pending Credit Coupon" />
+      <property name="feeTypes">
+         <list>
+            <value>CS_CREDIT_COUPON</value>
+         </list>
+      </property>
+   </bean>
+   <bean id="pendingCreditRebateXferForSeparateSettlementCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.cashflow.TransferFeesRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="pending" value="true" />
+      <property name="collapseIfEmpty" value="true" />
+      <property name="separateSettlement" value="true" />
+      <property name="startingBalance" value="false" />
+      <property name="rowName" value="Pending Credit Rebate" />
+      <property name="feeTypes">
+         <list>
+            <value>CS_CREDIT_REBATE</value>
+         </list>
+      </property>
+   </bean>
+   
+   <bean id="abstractSeparateSettlementsSummaryRowCalculator"
+      parent="abstractSummaryRowCalculator" abstract="true">
+      <property name="cachingKeyFactory" ref="separateSettlementsCachingKeyFactory" />
+   </bean>
+
+   <bean id="totalSeparateSettlementExcessDeficitCalc" class="com.calypso.tk.bo.clearing.statement.calculator.impl.row.AggregateRowCalculator"
+      parent="abstractSeparateSettlementsSummaryRowCalculator">
+      <property name="rowName" value="Ending Balance plus Pending Separate Settlements" />
+      <property name="calculators">
+         <list>
+            <ref bean="endingCashBalanceForSeparateSettlementCalc" />
+            <ref bean="pendingCommissionsXferForSeparateSettlementCalc" />
+            <ref bean="pendingPAIXferForSeparateSettlementCalc" />
+            <ref bean="pendingFutureCouponsXferForSeparateSettlementCalc" />
+            <ref bean="pendingFRAXferForSeparateSettlementCalc" />
+            <ref bean="pendingUpfrontFeesXferForSeparateSettlementCalc" />
+            <ref bean="pendingCreditPremiumXferForSeparateSettlementCalc" />
+            <ref bean="pendingCreditEventXferForSeparateSettlementCalc" />
+            <ref bean="pendingCreditCouponXferForSeparateSettlementCalc" />
+            <ref bean="pendingCreditRebateXferForSeparateSettlementCalc" />
+            <ref bean="pendingCashMovementsActivityForSeparateSettlementCalc" />
+         </list>
+      </property>
+   </bean>
+   
+   
+   <!-- END ROW CALCULATORS -->
+   
+   <!-- REPORT OUTPUTS -->
+   <bean id="defaultReportOutputTableCalculator"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.DefaultReportOutputTableCalculator"
+      abstract="true">
+      <property name="name" value="" />
+      <property name="createHeader" value="false" />
+      <property name="datatypeAdapter">
+         <bean class="com.calypso.tk.util.xml.DatatypeAdapter" />
+      </property>
+   </bean>
+   
+   <!-- Trades -->
+   <bean id="newTradesIrsTableCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator"
+      parent="defaultReportOutputTableCalculator">
+      <property name="name" value="newTradesIRS" />
+      <property name="templateResolver" ref="newTradesIrsReportSTTemplateResolver" />
+      <property name="createHeader" value="true" />
+      <property name="productType" value="IRD" />
+      <property name="tradingActivityType">
+         <value
+            type="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator$TradingActivityType">NEW</value>
+      </property>
+   </bean>
+   <bean id="newTradesNdfTableCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator"
+      parent="defaultReportOutputTableCalculator">
+      <property name="name" value="newTradesNDF" />
+      <property name="templateResolver" ref="newTradesNdfReportSTTemplateResolver" />
+      <property name="createHeader" value="true" />
+      <property name="productType" value="NDF" />
+      <property name="tradingActivityType">
+         <value
+            type="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator$TradingActivityType">NEW</value>
+      </property>
+   </bean>
+   <bean id="newTradesCreditDerivativesTableCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator"
+      parent="defaultReportOutputTableCalculator">
+      <property name="name" value="newTradesCreditDerivatives" />
+      <property name="templateResolver" ref="newTradesCreditDerivativesReportSTTemplateResolver" />
+      <property name="createHeader" value="true" />
+      <property name="productType" value="CreditDerivatives" />
+      <property name="tradingActivityType">
+         <value
+            type="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator$TradingActivityType">NEW</value>
+      </property>
+   </bean>
+   <bean id="openTradesIrsTableCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator"
+      parent="defaultReportOutputTableCalculator">
+      <property name="name" value="openTradesIRS" />
+      <property name="templateResolver" ref="openTradesIrsReportSTTemplateResolver" />
+      <property name="createHeader" value="true" />
+      <property name="productType" value="IRD" />
+      <property name="tradingActivityType">
+         <value
+            type="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator$TradingActivityType">OPEN</value>
+      </property>
+   </bean>
+   <bean id="openTradesNdfTableCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator"
+      parent="defaultReportOutputTableCalculator">
+      <property name="name" value="openTradesNDF" />
+      <property name="templateResolver" ref="openTradesNdfReportSTTemplateResolver" />
+      <property name="createHeader" value="true" />
+      <property name="productType" value="NDF" />
+      <property name="tradingActivityType">
+         <value
+            type="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator$TradingActivityType">OPEN</value>
+      </property>
+   </bean>
+   <bean id="openTradesCreditDerivativesTableCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator"
+      parent="defaultReportOutputTableCalculator">
+      <property name="name" value="openTradesCreditDerivatives" />
+      <property name="templateResolver" ref="openTradesCreditDerivativesReportSTTemplateResolver" />
+      <property name="createHeader" value="true" />
+      <property name="productType" value="CDX" />
+      <property name="tradingActivityType">
+         <value
+            type="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator$TradingActivityType">OPEN</value>
+      </property>
+   </bean>
+   <bean id="termTradesIrsTableCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator"
+      parent="defaultReportOutputTableCalculator">
+      <property name="name" value="terminatedTradesIRS" />
+      <property name="templateResolver" ref="termTradesIrsReportSTTemplateResolver" />
+      <property name="createHeader" value="true" />
+      <property name="productType" value="IRD" />
+      <property name="tradingActivityType">
+         <value
+            type="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator$TradingActivityType">TERMINATED</value>
+      </property>
+   </bean>
+   <bean id="termTradesNdfTableCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator"
+      parent="defaultReportOutputTableCalculator">
+      <property name="name" value="terminatedTradesNDF" />
+      <property name="templateResolver" ref="termTradesNdfReportSTTemplateResolver" />
+      <property name="createHeader" value="true" />
+      <property name="productType" value="NDF" />
+      <property name="tradingActivityType">
+         <value
+            type="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator$TradingActivityType">TERMINATED</value>
+      </property>
+   </bean>
+   <bean id="termTradesCreditDerivativesTableCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator"
+      parent="defaultReportOutputTableCalculator">
+      <property name="name" value="terminatedTradesCreditDerivatives" />
+      <property name="templateResolver" ref="termTradesCreditDerivativesReportSTTemplateResolver" />
+      <property name="createHeader" value="true" />
+      <property name="productType" value="CDX" />
+      <property name="tradingActivityType">
+         <value
+            type="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator$TradingActivityType">TERMINATED</value>
+      </property>
+   </bean>
+   <bean id="maturedTradesIrsTableCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator"
+      parent="defaultReportOutputTableCalculator">
+      <property name="name" value="maturedTradesIRS" />
+      <property name="templateResolver" ref="maturedTradesIrsReportSTTemplateResolver" />
+      <property name="createHeader" value="true" />
+      <property name="productType" value="IRD" />
+      <property name="tradingActivityType">
+         <value
+            type="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator$TradingActivityType">MATURED</value>
+      </property>
+   </bean>
+   <bean id="maturedTradesNdfTableCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator"
+      parent="defaultReportOutputTableCalculator">
+      <property name="name" value="maturedTradesNDF" />
+      <property name="templateResolver" ref="maturedTradesNdfReportSTTemplateResolver" />
+      <property name="createHeader" value="true" />
+      <property name="productType" value="NDF" />
+      <property name="tradingActivityType">
+         <value
+            type="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator$TradingActivityType">MATURED</value>
+      </property>
+   </bean>
+   <bean id="maturedTradesCreditDerivativesTableCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator"
+      parent="defaultReportOutputTableCalculator">
+      <property name="name" value="maturedTradesCreditDerivatives" />
+      <property name="templateResolver" ref="maturedTradesCreditDerivativesReportSTTemplateResolver" />
+      <property name="createHeader" value="true" />
+      <property name="productType" value="CDX" />
+      <property name="tradingActivityType">
+         <value
+            type="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.TradeReportOutputTableCalculator$TradingActivityType">MATURED</value>
+      </property>
+   </bean>
+
+   <!-- Account Activity -->
+   <bean id="activityReportTableCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.AccountActivityReportOutputTableCalculator"
+      parent="defaultReportOutputTableCalculator">
+      <property name="name" value="accountActivity" />
+      <property name="templateResolver" ref="activityReportSTTemplateResolver" />
+      <property name="createHeader" value="true" />
+      <property name="hideOpeningClosingBalances" value="true" />
+   </bean>
+
+   <!-- Collateral -->
+   <bean id="pendingMarginCallActivityTableCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.MarginCallAllocationReportOutputTableCalculator"
+      parent="defaultReportOutputTableCalculator">
+      <property name="name" value="pendingMarginCallActivity" />
+      <property name="templateResolver" ref="marginCallAllocSTTemplateResolver" />
+      <property name="createHeader" value="true" />
+      <property name="pending" value="true" />
+   </bean>
+   <bean id="marginCallActivityTableCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.MarginCallAllocationReportOutputTableCalculator"
+      parent="defaultReportOutputTableCalculator">
+      <property name="name" value="marginCallActivity" />
+      <property name="templateResolver" ref="marginCallAllocSTTemplateResolver" />
+      <property name="createHeader" value="true" />
+      <property name="pending" value="false" />
+   </bean>
+   <bean id="marginCallPositionsTableCalc"
+      class="com.calypso.tk.bo.clearing.statement.calculator.impl.section.report.MarginCallPositionReportOutputTableCalculator"
+      parent="defaultReportOutputTableCalculator">
+      <property name="name" value="marginsOnDeposit" />
+      <property name="templateResolver" ref="marginCallPositionsSTTemplateResolver" />
+      <property name="createHeader" value="true" />
+   </bean>
+
+   <!-- END REPORT OUTPUTS -->
+
+
+   <!-- TEMPLATE RESOLVERS -->
+
+   <bean id="abstractTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.AbstractTemplateResolver"
+      abstract="true" />
+
+   <bean id="newTradesIrsReportSTTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.impl.ScheduledTaskTemplateResolver"
+      parent="abstractTemplateResolver">
+      <property name="templateName" value="New Trades for IRS" />
+   </bean>
+
+   <bean id="newTradesNdfReportSTTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.impl.ScheduledTaskTemplateResolver"
+      parent="abstractTemplateResolver">
+      <property name="templateName" value="New Trades for FXNDF" />
+   </bean>
+
+   <bean id="newTradesCreditDerivativesReportSTTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.impl.ScheduledTaskTemplateResolver"
+      parent="abstractTemplateResolver">
+      <property name="templateName" value="New Trades for CDX" />
+   </bean>
+
+   <bean id="openTradesIrsReportSTTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.impl.ScheduledTaskTemplateResolver"
+      parent="abstractTemplateResolver">
+      <property name="templateName" value="Open Trades for IRS" />
+   </bean>
+
+   <bean id="openTradesNdfReportSTTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.impl.ScheduledTaskTemplateResolver"
+      parent="abstractTemplateResolver">
+      <property name="templateName" value="Open Trades for FXNDF" />
+   </bean>
+
+   <bean id="openTradesCreditDerivativesReportSTTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.impl.ScheduledTaskTemplateResolver"
+      parent="abstractTemplateResolver">
+      <property name="templateName" value="Open Trades for CDX" />
+   </bean>
+
+   <bean id="termTradesIrsReportSTTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.impl.ScheduledTaskTemplateResolver"
+      parent="abstractTemplateResolver">
+      <property name="templateName" value="Terminated Trades for IRS" />
+   </bean>
+
+   <bean id="termTradesNdfReportSTTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.impl.ScheduledTaskTemplateResolver"
+      parent="abstractTemplateResolver">
+      <property name="templateName" value="Terminated Trades for FXNDF" />
+   </bean>
+
+   <bean id="termTradesCreditDerivativesReportSTTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.impl.ScheduledTaskTemplateResolver"
+      parent="abstractTemplateResolver">
+      <property name="templateName" value="Terminated Trades for CDX" />
+   </bean>
+
+   <bean id="maturedTradesIrsReportSTTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.impl.ScheduledTaskTemplateResolver"
+      parent="abstractTemplateResolver">
+      <property name="templateName" value="Matured Trades for IRS" />
+   </bean>
+
+   <bean id="maturedTradesNdfReportSTTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.impl.ScheduledTaskTemplateResolver"
+      parent="abstractTemplateResolver">
+      <property name="templateName" value="Matured Trades for FXNDF" />
+   </bean>
+
+   <bean id="maturedTradesCreditDerivativesReportSTTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.impl.ScheduledTaskTemplateResolver"
+      parent="abstractTemplateResolver">
+      <property name="templateName" value="Matured Trades for CDX" />
+   </bean>
+
+   <bean id="activityReportSTTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.impl.ScheduledTaskTemplateResolver"
+      parent="abstractTemplateResolver">
+      <property name="templateName" value="Account Activity Template" />
+   </bean>
+
+   <bean id="imActivityReportSTTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.impl.ScheduledTaskTemplateResolver"
+      parent="abstractTemplateResolver">
+      <property name="templateName" value="Account Activity Template" />
+   </bean>
+
+   <bean id="marginCallAllocSTTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.impl.ScheduledTaskTemplateResolver"
+      parent="abstractTemplateResolver">
+      <property name="templateName" value="Collateral Allocation Template" />
+   </bean>
+
+   <bean id="marginCallPositionsSTTemplateResolver" class="com.calypso.tk.bo.clearing.statement.template.impl.ScheduledTaskTemplateResolver"
+      parent="abstractTemplateResolver">
+      <property name="templateName" value="Collateral Position Template" />
+   </bean>
+   
+   <!-- END TEMPLATE RESOLVERS -->
+</beans>

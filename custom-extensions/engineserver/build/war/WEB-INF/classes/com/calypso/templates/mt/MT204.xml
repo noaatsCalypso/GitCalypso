@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type 204: Multiple Request For debit/credit -->
+<SwiftMsgDef>
+	<Name>MT204</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Sender's Reference" tag=":20:" format="16x" value="SENDER_REFERENCE" modes="MMM"/>
+		<SwiftField name="Sum of Amounts" tag=":19:" format="17d" value="SUM_OF_AMOUNTS" modes="MMM"/>
+		<SwiftField name="Requested Execution Date" tag=":30:" format="6!n" value="VALUE_DATE" modes="MMM"/>
+		<SwiftField name="Account With Institution" tag=":57a:" value="ACCOUNT_WITH_INSTITUTION" modes="---" condition = "!isSamePOAgent()">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />			
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Beneficiary Institution" tag=":58a:" value="PO_BENEFICIARY" modes="---" condition = "isSamePOAgent()">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Sender to Receiver Information" tag=":72:" format="6*35x" value="ADDITIONAL_INFO" modes="---"/>
+	</SwiftSequence>
+	<SwiftSequence name="B:Transaction Details" modes="MMM" iterator="MessageGroup">
+		<SwiftField name="Sender's Reference" tag=":20:" format="16x" value="TRANSACTION_REFERENCE" modes="MMM"/>
+		<SwiftField name="Transaction Amount" tag=":32B:" format="3!a15d" value="CCY_AMOUNT" modes="MMM"/>
+		<SwiftField name="Debit Institution" tag=":53a:" value="DEBIT_INSTITUTION" modes="---">
+			<SwiftFieldOption letter="A" format="[[/1!a][/34x]\n]4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="B" format="[/1!a][/34x][\n][35x]" />
+			<SwiftFieldOption letter="D" format="[[/1!a][/34x]\n]4*35x" />
+		</SwiftField>
+		<SwiftField name="Sender to Receiver Information" tag=":72:" format="6*35x" value="ADDITIONAL_INFO" modes="---"/>
+	</SwiftSequence>	
+</SwiftMsgDef>

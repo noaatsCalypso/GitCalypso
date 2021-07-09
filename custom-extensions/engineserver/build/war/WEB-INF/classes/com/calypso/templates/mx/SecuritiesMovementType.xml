@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+    <contents>
+        <element name="SctiesMvmntTp">
+            <contents max="1">
+                <text>
+                    <condition>
+                        <expression>isReceiveTransfer()</expression>
+                    </condition>
+                    <value>RECE</value>
+                </text>
+                <text>
+                    <condition>
+                        <expression>isPayTransfer()</expression>
+                    </condition>
+                    <value>DELI</value>
+                </text>
+            </contents>
+        </element>
+    </contents>
+</template>

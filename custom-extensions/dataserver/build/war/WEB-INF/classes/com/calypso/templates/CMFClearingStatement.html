@@ -1,0 +1,43 @@
+<!--calypso>
+    include "ClearingStatementHeader.html";
+</calypso-->
+
+<h1>Statement at |STATEMENT_DATE| for account |ACCOUNT_ID|</h1>
+
+<h2>Financial Summary</h2>
+
+<table id="finsum">
+<tr><td>PAI</td><td>|FEE_PAI|</td></tr>
+<tr><td>Coupon</td><td>|FEE_COUPON|</td></tr>
+<tr><td>Variation Margin</td><td>|FEE_VARIATION_MARGIN|</td></tr>
+<tr><td>Upfront Fees</td><td>|FEE_UPFRONT|</td></tr>
+<tr><td>Termination Fees</td><td>|FEE_TERM|</td></tr>
+<tr><td><b>Cash Requ./Excess</b></td><td><b>|CASH_ADJUSTMENT|</b></td></tr>
+<tr><td>Initial Margin Requirement</td><td>|FEE_CLOSING_IM|</td></tr>
+<tr><td>Market Value of Collateral</td><td>|FEE_OPENING_IM|</td></tr>
+<tr><td><b>Collateral Requ./Excess</b></td><td><b>|INITIAL_MARGIN|</b></td></tr>
+</table>
+
+<h2>New Trades</h2>
+|NEW_TRADES|
+<br>
+
+<h2>Open Trades</h2>
+|OPEN_TRADES|
+<br>
+
+<h2>Terminated Trades</h2>
+|TERM_TRADES|
+<br>
+
+<h2>Account Activity</h2>
+|ACCOUNT_ACTIVITY|
+<br>
+
+<h2>Initial Margin Activity</h2>
+|INITIAL_MARGIN_TRADES|
+<br>
+
+<!--calypso>
+    include "ClearingStatementFooter.html";
+</calypso-->

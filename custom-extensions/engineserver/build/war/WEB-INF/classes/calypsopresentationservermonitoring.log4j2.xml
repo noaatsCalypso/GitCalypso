@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration xmlns:xi="http://www.w3.org/2001/XInclude" status="WARN">
+  <xi:include href="fragments/properties.log4j2.xml"/>
+  <Appenders>
+     <xi:include href="fragments/appender_Monitoring.ClientRequest_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.MethodProfile_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.PresentationServer_APPENDER.xml"/>
+     <xi:include href="fragments/appender_Monitoring.ServerRequest_APPENDER.xml"/>
+	 <xi:include href="fragments/appender_Monitoring.IncomingServerRequest_APPENDER.xml"/>
+     <xi:include href="fragments/appender_ElasticSearchRequest_APPENDER.xml"/>
+	 <xi:include href="fragments/appender_ElasticSearchIncomingRequest_APPENDER.xml"/>
+  </Appenders>
+  <Loggers>
+	<Logger name="com.calypso.Monitoring.ClientRequest" level="DEBUG" additivity="false">
+	  <AppenderRef ref="Monitoring.ClientRequest_APPENDER"/>
+	</Logger>
+	<Logger name="com.calypso.Monitoring.ServerRequest" level="DEBUG" additivity="false">
+	  <AppenderRef ref="Monitoring.ServerRequest_APPENDER"/>
+	  <AppenderRef ref="ElasticSearchRequest_APPENDER"/>
+	</Logger>
+	<Logger name="com.calypso.Monitoring.IncomingServerRequest" additivity="false" level="DEBUG">
+	  <AppenderRef ref="Monitoring.IncomingServerRequest_APPENDER"/>
+	  <AppenderRef ref="ElasticSearchIncomingRequest_APPENDER"/>
+    </Logger>
+	<Logger name="com.calypso.Monitoring.MethodProfile" level="DEBUG" additivity="false">
+	  <AppenderRef ref="Monitoring.MethodProfile_APPENDER"/>
+	</Logger>
+	<Logger name="com.calypso.Monitoring.PresentationServer" level="DEBUG" additivity="false">
+	  <AppenderRef ref="Monitoring.PresentationServer_APPENDER"/>
+	</Logger>
+  </Loggers>
+</Configuration>

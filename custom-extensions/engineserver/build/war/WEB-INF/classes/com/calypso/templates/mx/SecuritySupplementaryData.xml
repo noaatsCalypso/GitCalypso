@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template>
+	<contents>
+		<element name="SplmtryData">
+			<contents>
+				<element>
+					<!-- This anonymous element with a max content of 1 is used to create an if/else logic. -->
+					<contents max="1">
+						<element name="PlcAndNm">
+							<condition>
+								<expression>!isTransfer() &amp;&amp; isBuy()</expression>
+							</condition>
+							<contents>
+								<text>
+									<value>/MvmntDtls/Rtr/SctiesColl[</value>
+								</text>
+								<report>
+									<context>
+										<to>MessageContext</to>
+									</context>
+									<column>Iteration Count</column>
+								</report>
+								<text>
+									<value>]</value>
+								</text>
+							</contents>
+						</element>
+						<element name="PlcAndNm">
+							<contents>
+								<text>
+									<value>/MvmntDtls/CollMvmntDtls/Dlvr/SctiesColl[</value>
+								</text>
+								<report>
+									<context>
+										<to>MessageContext</to>
+									</context>
+									<column>Iteration Count</column>
+								</report>
+								<text>
+									<value>]</value>
+								</text>
+							</contents>
+						</element>
+					</contents>
+				</element>
+				<element name="Envlp">
+					<contents>
+						<element name="Document">
+							<attributes>
+								<attribute name="xmlns">
+									<value>
+										<text>
+											<value>urn:lch:xsd:supl.023.001.01</value>
+										</text>
+									</value>
+								</attribute>
+							</attributes>
+							<contents>
+								<element name="LCHCollPrpslSD1">
+									<contents>
+										<element name="SecColl">
+											<contents>
+												<element name="SfkpgPlc">
+													<contents>
+														<element name="Id">
+															<contents>
+																<element name="SfkpgPlcTp">
+																	<contents>
+																		<text>
+																			<value>SHHE</value>
+																		</text>
+																	</contents>
+																</element>
+																<element name="Id">
+																	<contents max="1">
+																		<report>
+																			<context>
+																				<to>PlaceOfSettlement</to>
+																			</context>
+																			<column>Party SDI PSET SWIFT</column>
+																		</report>
+																		<report>
+																			<column>Receiver.Intermediary2.Swift</column>
+																		</report>
+																		<report>
+																			<column>Receiver.Intermediary.Swift</column>
+																		</report>
+																		<report>
+																			<column>Receiver.Agent.Swift</column>
+																		</report>
+																	</contents>
+																</element>
+															</contents>
+														</element>
+													</contents>
+												</element>
+												<element name="SfkpgAcct">
+													<contents>
+														<element name="Id">
+															<contents max="1">
+																<report>
+																	<column>Receiver.Intermediary2.Identifier</column>
+																	<transformations>
+																		<transformation type="regexp">
+																			<from>^.*/</from>
+																			<to></to>
+																		</transformation>
+																	</transformations>
+																</report>
+																<report>
+																	<column>Receiver.Intermediary2.Account</column>
+																</report>
+																<report>
+																	<column>Receiver.Intermediary.Identifier</column>
+																	<transformations>
+																		<transformation type="regexp">
+																			<from>^.*/</from>
+																			<to></to>
+																		</transformation>
+																	</transformations>
+																</report>
+																<report>
+																	<column>Receiver.Intermediary.Account</column>
+																</report>
+																<report>
+																	<column>Receiver.Agent.Identifier</column>
+																	<transformations>
+																		<transformation type="regexp">
+																			<from>^.*/</from>
+																			<to></to>
+																		</transformation>
+																	</transformations>
+																</report>
+																<report>
+																	<column>Receiver.Agent.Account</column>
+																</report>
+															</contents>
+														</element>
+													</contents>
+												</element>
+												<element>
+													<condition>
+														<expression>!isTransfer()</expression>
+													</condition>
+													<contents>
+														<element name="TradDt">
+															<contents>
+																<report>
+																	<expression>toJDate(getReportValue("Trade Date"))</expression>
+																</report>
+															</contents>
+														</element>
+														<element name="CtrPty">
+															<contents max="1">
+																<element name="Sellr">
+																	<condition>
+																		<expression>isSell()</expression>
+																	</condition>
+																	<contents>
+																		<element name="Id">
+																			<contents>
+																				<element name="BIC">
+																					<contents>
+																						<report>
+																							<column>Sender.Swift</column>
+																						</report>
+																					</contents>
+																				</element>
+																			</contents>
+																		</element>
+																	</contents>
+																</element>
+																<element name="Buyr">
+																	<condition>
+																		<expression>isBuy()</expression>
+																	</condition>
+																	<contents>
+																		<element name="Id">
+																			<contents>
+																				<element name="BIC">
+																					<contents>
+																						<report>
+																							<column>Sender.Swift</column>
+																						</report>
+																					</contents>
+																				</element>
+																			</contents>
+																		</element>
+																	</contents>
+																</element>
+															</contents>
+														</element>
+														<element name="SttlmPties">
+															<contents>
+																<element name="Dpstry">
+																	<contents>
+																		<element name="BIC">
+																			<contents max="1">
+																				<report>
+																					<column>Payer.Intermediary2.Swift</column>
+																				</report>
+																				<report>
+																					<column>Payer.Intermediary.Swift</column>
+																				</report>
+																				<report>
+																					<column>Payer.Agent.Swift</column>
+																				</report>
+																			</contents>
+																		</element>
+																	</contents>
+																</element>
+																<element name="Pty1">
+																	<contents>
+																		<element name="PtyId">
+																			<contents>
+																				<element name="PrtryId">
+																					<contents>
+																						<element name="Id">
+																							<contents max="1">
+																								<report>
+																									<column>Receiver.Intermediary2.Identifier</column>
+																									<transformations>
+																										<transformation type="regexp">
+																											<from>^.*/</from>
+																											<to></to>
+																										</transformation>
+																									</transformations>
+																								</report>
+																								<report>
+																									<column>Receiver.Intermediary.Identifier</column>
+																									<transformations>
+																										<transformation type="regexp">
+																											<from>^.*/</from>
+																											<to></to>
+																										</transformation>
+																									</transformations>
+																								</report>
+																								<report>
+																									<column>Receiver.Agent.Identifier</column>
+																									<transformations>
+																										<transformation type="regexp">
+																											<from>^.*/</from>
+																											<to></to>
+																										</transformation>
+																									</transformations>
+																								</report>
+																								<report>
+																									<context>
+																										<to>PlaceOfSettlement</to>
+																									</context>
+																									<column>Party SDI Account</column>
+																								</report>
+																								<report>
+																									<column>Receiver.Intermediary2.Account</column>
+																								</report>
+																								<report>
+																									<column>Receiver.Intermediary.Account</column>
+																								</report>
+																								<report>
+																									<column>Receiver.Agent.Account</column>
+																								</report>
+																							</contents>
+																						</element>
+																						<element name="Issr">
+																							<contents max="1">
+																								<report>
+																									<column>Receiver.Intermediary2.Identifier</column>
+																									<transformations>
+																										<transformation type="regexp">
+																											<from>/.*$</from>
+																											<to></to>
+																										</transformation>
+																									</transformations>
+																								</report>
+																								<report>
+																									<column>Receiver.Intermediary.Identifier</column>
+																									<transformations>
+																										<transformation type="regexp">
+																											<from>/.*$</from>
+																											<to></to>
+																										</transformation>
+																									</transformations>
+																								</report>
+																								<report>
+																									<column>Receiver.Agent.Identifier</column>
+																									<transformations>
+																										<transformation type="regexp">
+																											<from>/.*$</from>
+																											<to></to>
+																										</transformation>
+																									</transformations>
+																								</report>
+																							</contents>
+																						</element>
+																					</contents>
+																				</element>
+																			</contents>
+																		</element>
+																	</contents>
+																</element>
+															</contents>
+														</element>
+														<element name="CollOwnrsh">
+															<condition>
+																<expression>isSell()</expression>
+															</condition>
+															<contents>
+																<element name="Prtry">
+																	<context>
+																		<to>MarginCallConfig</to>
+																	</context>
+																	<contents>
+																		<report>
+																			<column>ADDITIONAL_FIELD.CCP_ORIGIN_CODE</column>
+																			<transformations>
+																				<transformation>
+																					<from>C</from>
+																					<to>false</to>
+																				</transformation>
+																				<transformation>
+																					<from>CLIENT</from>
+																					<to>false</to>
+																				</transformation>
+																				<transformation>
+																					<from>H</from>
+																					<to>true</to>
+																				</transformation>
+																				<transformation>
+																					<from>HOUSE</from>
+																					<to>true</to>
+																				</transformation>
+																			</transformations>
+																		</report>
+																	</contents>
+																</element>
+															</contents>
+														</element>
+													</contents>
+												</element>
+											</contents>
+										</element>
+									</contents>
+								</element>
+							</contents>
+						</element>
+					</contents>
+				</element>
+			</contents>
+		</element>
+	</contents>
+</template>

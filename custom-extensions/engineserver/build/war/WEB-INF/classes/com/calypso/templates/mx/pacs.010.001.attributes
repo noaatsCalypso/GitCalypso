@@ -1,0 +1,11 @@
+BusinessMessageIdentifier=//AppHdr/BizMsgIdr/text()
+InstructionId=//Document/FIDrctDbt/CdtInstr/DrctDbtTxInf/PmtId/InstrId/text()
+EndToEndId=//Document/FIDrctDbt/CdtInstr/DrctDbtTxInf/PmtId/EndToEndId/text()
+UETR=//Document/FIDrctDbt/CdtInstr/DrctDbtTxInf/PmtId/UETR/text()
+SettlementAmount=//Document/FIDrctDbt/CdtInstr/DrctDbtTxInf/IntrBkSttlmAmt/text()
+SettlementAmountCcy=//Document/FIDrctDbt/CdtInstr/DrctDbtTxInf/IntrBkSttlmAmt/@Ccy
+SettlementDate=//Document/FIDrctDbt/CdtInstr/DrctDbtTxInf/IntrBkSttlmDt/text()
+InstructingAgentBIC=//Document/FIDrctDbt/CdtInstr/InstgAgt/FinInstnId/BICFI/text()
+InstructedAgentBIC=//Document/FIDrctDbt/CdtInstr/InstdAgt/FinInstnId/BICFI/text()
+Creditor=//Document/FIDrctDbt/CdtInstr/Cdtr/FinInstnId/BICFI/text()
+Debtor=//Document/FIDrctDbt/CdtInstr/DrctDbtTxInf/Dbtr/FinInstnId/BICFI/text()

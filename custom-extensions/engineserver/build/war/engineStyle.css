@@ -1,0 +1,49 @@
+.engineTable
+{
+	width: 1600px;
+	border-spacing: 1;
+	border-collapse: collapse;
+}
+
+.engineTable th
+{
+	padding: 3px 7px 1px 7px;
+	text-align: left;
+	border-bottom: thick solid black;
+	font-size: 20px;
+	font-style: bold;
+}
+
+.activeEngine
+{
+	padding: 3px 7px 2px 7px;
+	color:#000;
+	background-color:#EAF2D3;
+	border-top: 1px solid #98bf21;
+	border-bottom: 1px solid #98bf21;
+}
+
+.engineStatus
+{
+	text-align: center;
+}
+
+.inactiveEngine
+{
+	padding: 3px 7px 2px 7px;
+	color:#000;
+}
+
+.alreadyRunningEngine
+{
+	padding: 3px 7px 2px 7px;
+	color:#000;
+	background-color:#D0D0D0;
+	border-top: 1px solid #B0B0B0;
+	border-bottom: 1px solid #B0B0B0;
+}
+
+.total
+{
+	padding: 3px 7px 2px 7px;
+}

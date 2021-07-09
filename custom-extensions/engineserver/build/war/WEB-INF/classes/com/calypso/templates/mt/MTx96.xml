@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Message Type x96: Answers -->
+<SwiftMsgDef>
+    <Name>MTx96</Name>
+    <ModeSelectionList>
+        <ModeSelection qualifier="NEW" />
+        <ModeSelection qualifier="AMEND" />
+        <ModeSelection qualifier="CANCEL" />
+    </ModeSelectionList>
+    <SwiftSequence name="A:General Information" modes="MMM">
+        <SwiftField name="Sender's Reference" tag=":20:" format="16x" value="MESSAGE_ID" modes="MMM" />
+        <SwiftField name="Related Reference" tag=":21:" format="16x" value="MESSAGE_LINKEDID" modes="MMM" />
+	<SwiftField name="Answers" tag=":76:" format="6*35x" value="ANSWERS" modes="MMM" />
+        <SwiftField name="Narrative" tag=":77A:" format="20*35x" value="NARRATIVE" modes="MMM" />
+	<SwiftField name="MT and Date of the Original Message" tag=":11S:" format="3!n\n6!n[\n4!n6!n]" value="ORIGINAL_MT_AND_DATE" modes="OOO" />
+        <SwiftField name="Narrative Description of the Message to Which the Query Relates" tag=":79:" format="35*50x" template="" modes="OOO" />
+	<SwiftField name="Copy of at least the Mandatory Fields of the Original Message" tag="" value="COPY_OF_ORIGINAL" modes="OOO" />
+    </SwiftSequence>
+</SwiftMsgDef>

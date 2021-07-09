@@ -1,0 +1,15 @@
+mq.dtccgtr.hostname=localhost
+mq.dtccgtr.port=1414
+mq.dtccgtr.appiddatauser=12345678
+mq.dtccgtr.appiddatapass=ABCDEFGH
+mq.dtccgtr.queuemanager=U04T33100
+mq.dtccgtr.channel=SYSTEM.DEF.SVRCONN
+output.queue.name=SDR.FPML_RATES_IN.RMT01
+SDR.FPML_RATES_IN.RMT01.queue.setContext=true
+
+jms.url=file://localhost/c:/calypso/mq
+jms.modetypeclass=com.sun.jndi.fscontext.RefFSContextFactory
+jms.queue.connectionFactory=QueueConnectionFactory
+input.queue.name=RECV.GTR.RATES
+RECV.GTR.RATES.queue.ackType=auto
+RECV.GTR.RATES.queue.transacted=true

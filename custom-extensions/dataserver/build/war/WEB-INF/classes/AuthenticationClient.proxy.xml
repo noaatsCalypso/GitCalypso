@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!--
+		Beans that are used to get a handle to the Authentication Server 
+ 	-->
+	<bean id="authService" class="org.springframework.aop.framework.ProxyFactoryBean" >
+	<property name="interceptorNames">
+		<list>
+			<value>clientProfilingInterceptor</value>
+		</list>
+	</property>
+	  <property name="proxyInterfaces" value="com.calypso.infra.authentication.service.AuthenticationService" />
+	  <property name="target" ref="baseAuthService" />
+	</bean>
+
+</beans>

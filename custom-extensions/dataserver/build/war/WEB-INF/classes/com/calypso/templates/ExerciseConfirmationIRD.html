@@ -1,0 +1,161 @@
+<!--calypso>
+	if (Trade.getLongId() > 0)
+		include "message_header.html";
+	</calypso-->
+<br>
+
+<p class="header1">
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND" )
+	inline  "AMEND AND CANCEL";
+	else if (|MESSAGE_SUBACTION|== "CANCEL")
+	inline "CANCEL";
+</calypso-->
+</p>
+<!--calypso>
+if (|MESSAGE_SUBACTION|== "AMEND")
+	 inline "<p class='header2'>This Confirmation cancels and supersedes the previous confirmation under the same reference.</p>";
+	else if (|MESSAGE_SUBACTION|== "CANCEL")
+	 inline "<p class='header2'>This Confirmation cancels the previous confirmation under the same reference.</p>";
+</calypso-->
+
+<p class='header1'>EXERCISE of |PRODUCT_TYPE| Notice</p>
+<br>
+<b>Our Transaction Reference: |TRADE_ID|</b>
+<br>
+<p class="indented">
+The purpose of this 
+	<!--calypso>
+		if ( Message.getAddressMethod() == "FAX" )
+		inline "facsimile";
+	else
+		inline "letter";
+	</calypso-->
+is to notice to you that we have exercised our rights under the referenced |PRODUCT_TYPE| Transaction having the following terms: 
+</p>
+<br>
+<p class='header2'>Details of the initial Transaction are as follows:</p>
+<table CELLSPACING=0 BORDER=0 WIDTH=650>
+<!--calypso>
+	if (|PRODUCT_TYPE| != "SwapCrossCurrency")
+	inline "
+	<tr>
+		<td width='30%'>Notional Amount:</td>
+		<td>|TRADE_CURRENCY| |SWAP_NOTIONAL_VALUE|</td>
+	</tr>";
+		</calypso-->
+	<tr>
+		<td width='30%'>Trade Date:</td>
+		<td>|TRADE_DATE|</td>
+	</tr>
+	<tr>
+		<td width='30%'>Effective Date:</td>
+		<td>
+		<!--calypso>
+			if ( |PRODUCT_FAMILY| == "Swap" )
+				inline "|SETTLE_DATE|";
+			else if ( |PRODUCT_FAMILY| like "%Swaption%" )
+				inline "|UNDERLYING_SETTLE_DATE|";
+			</calypso-->
+		</td>
+	</tr>
+	<tr>
+		<td width='30%'>Termination Date:</td>
+		<td>
+		<!--calypso>
+			if ( |PRODUCT_FAMILY| == "Swap" )
+				inline "|PRODUCT_MATURITYDATE|, subject to adjustment in accordance with the Modified Following Business Day Convention.";
+			else if ( |PRODUCT_FAMILY| like "%Swaption%" )
+				inline "|UNDERLYING_MATURITYDATE|, subject to adjustment in accordance with the Modified Following Business Day Convention.";
+		</calypso-->
+		</td>
+	</tr>
+	<tr>
+		<td width='30%'>Buyer</td>
+        <td>|OPTION_BUYER|</td>
+    </tr>
+    <tr>
+        <td width='30%'>Seller</td>
+        <td>|OPTION_SELLER|</td>
+    </tr>
+    <tr>
+        <td width='30%'>Option Style</td>
+        <td>|OPTION_TYPE|</td>
+    </tr>
+	<!--calypso>
+		if (|PRODUCT_TYPE| != "Swap") {
+			inline "
+				<tr>
+					<td width='30%'>Settlement Terms</td>
+					<td>|SETTLEMENT_TYPE|</td>
+				</tr>
+			";
+		}
+	</calypso-->		
+</table>
+<br>
+
+<br>
+<p class='header2'>The terms of this exercise are as follows:</p>
+<!--calypso>
+	if ( |REPORT#Product Extendedtype| == "Cancellable" )
+		inline "
+	<p>Accordingly, |OPTION_BUYER| exercises his right to early terminate, which have the effect of releasing
+	and discharging both parties from their future obligations in respect of this Swap Transaction.</p>
+		";		
+</calypso-->
+<!--calypso>
+	if (|PRODUCT_TYPE|== "Swaption" && |SETTLEMENT_TYPE|=="Cash"){
+		inline "
+		<p>Accordingly, the Settlement Currency Amount is an amount equal to <b>|FEE_CURRENCY#CASH_SETTLE_FEE| |FEE_AMOUNT#CASH_SETTLE_FEE|</b>
+		to be paid by <b>|FEE_PAYER#CASH_SETTLE_FEE| to |FEE_RECEIVER#CASH_SETTLE_FEE| </b> on <b>|EXERCISE_FEE_DATE| </b></p>
+		";	
+		inline "<br><p><b><u>Settlement Instructions are as follows:</u></b></p>";}
+	if (|PRODUCT_TYPE|== "Swaption" && |SETTLEMENT_TYPE|=="Physical"){
+		inline "
+		<p>Accordingly, the Effective Date of the Swap Transaction is <b>|EXPIRATION_DATE|</b>. 
+		The reference of this Transaction is |KEYWORD_ExercisedUnder|</p>
+		";
+		include "exhibit_2a.html";
+}		
+</calypso-->	
+<!--calypso>
+if (|PRODUCT_TYPE|== "Swaption" && |SETTLEMENT_TYPE|=="Cash") {
+	inline "Settlement Instructions are as follows:";
+	iterator("TransferRules")
+		inline "<table width='100%'>
+			<tr>
+				<td width='30%'>Currency</td>
+				<td width='68%'>|SETTLEMENT_TO_CURRENCY|</td>
+			</tr>
+			<tr>
+				<td width='30%'>To</td>
+				<td>|SETTLEMENT_TO_AGENT|</td>
+			</tr>
+			<tr>
+				<td width='30%'>Code</td>
+				<td>|SETTLEMENT_METHOD|</td>
+			</tr>						
+			<tr>
+				<td width='30%'>Favor of</td>
+				<td>|SETTLEMENT_FAVOR_OF|</td>
+			</tr>
+			<tr>
+				<td width='30%'>Account Number</td>
+				<td>|SETTLEMENT_ACCOUNT_NUMBER|</td>
+			</tr>
+		</table>
+	";
+	}
+</calypso-->
+<br>
+<br>
+<p>Please confirm that the foregoing correctly sets forth the terms of our agreement by executing
+ a copy of this Confirmation and returning it to us, or by sending to us a facsimile or telex 
+ substantially similar to this facsimile which sets forth the material terms of the Transaction 
+ to which this Confirmation relates and indicates agreement to those terms.</p>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

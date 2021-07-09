@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MT 549 Request for Statement / Status Advice -->
+<SwiftMsgDef>
+	<Name>MT500</Name>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="Mandatory Sequence A General Information" modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="GENL" value="GENL" modes="MMM"/>
+		<SwiftField name="Sender's Reference" tag=":20C:" format=":4!c//16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Function of the Message" tag=":23G:" format="4!c[/4!c]" value="MESSAGE_SUBACTION" modes="MMM"/>
+		<SwiftField name="Preparation Date/Time" tag=":98A:" format=":4!c//8!n" value="PREP_DATE" modes="OOO"/>
+		<SwiftField name="Type of Instruction Indicator" tag=":22F:" format=":4!c/[8c]/4!c" value="INDICATOR" modes="MMM"/>	
+		<SwiftSequence name="Repetitive Optional Subsequence A1 Linkages " modes="---" condition="isCancel()">
+			<SwiftField name="Start of Block" tag=":16R:" format="LINK" value="LINK" modes="MMM"/>
+			<SwiftField name="Reference" tag=":20C:" format=":4!c//16x" value="MESSAGE_LINKED_ID" modes="---"/>
+			<SwiftField name=" " tag=":16S:" format="LINK" value="LINK" modes="MMM"/>
+		</SwiftSequence>
+		<SwiftField name="End of Block" tag=":16S:" format="GENL" value="GENL" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Mandatory Sequence B Registration Details" modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="REGDET" value="REGDET" modes="MMM"/>
+		<SwiftField name="Reference" tag=":20D:" format=":4!c//25x" value="ISSUER_REF_NUMBER" modes="MMM"/>	
+		<SwiftField name="Indicator" tag=":22F:" format=":4!c//4!c" value="TRUSTEE_OWNER" modes="MMM"/>	
+		<SwiftField name="Requested Registration Date/Time" tag=":98A:" format=":4!c//8!n" value="ISSUE_DATE_RREG" modes="OOO"/>
+		<SwiftField name="Identification of the Financial Instrument" tag=":35B:" format="[ISIN1!e12!c][\n][4*35x]" value="SECURITY_DESCRIPTION" modes="MMM"/>
+	</SwiftSequence>
+	
+	<SwiftSequence name="Optional Subsequence B1 Financial Instrument Attributes" modes="OOO">
+		<SwiftField name="Start of Block" tag=":16R:" format="FIA" value="FIA" modes="MMM"/>
+		<SwiftField name="Place of Listing" tag=":94B:" format=":4!c//4!c[/30x]" value="PLACE_OF_LISTING" modes="OOO"/>
+		<SwiftField name="Classification Type" tag=":12A:" format=":4!c/[8c]/30x" value="CLASSIFICATION_TYPE" modes="OOO"/>
+		<SwiftField name="Currency of Denomination" tag=":11A:" format=":4!c//3!a" value="ISSUE_CURRENCY" modes="OOO"/>
+		<SwiftField name="Issue Date" tag=":98A:" format=":4!c//8!n" value="ISSUE_DATE" modes="OOO"/>
+		<SwiftField name="Dated Date" tag=":98A:" format=":4!c//8!n" value="DATED_DATE" modes="OOO"/>	
+		<SwiftField name="Maturity Date" tag=":98A:" format=":4!c//8!n" value="MATURITY_DATE" modes="OOO"/>			
+		<SwiftField name="First Coupon Date" tag=":98A:" format=":4!c//8!n" value="FIRST_COUPON_DATE" modes="OOO"/>
+		<SwiftField name="Interest Rate" tag=":92A:" format=":4!c//[N]15d" value="COUPON_RATE" modes="OOO"/>
+		<SwiftField name="Coupon Number" tag=":13B:" format=":4!c//30x" value="COUPON_NUMBER" modes="OOO"/>		
+		<SwiftField name="Floating Rate Note Flag" tag=":17B:" format=":4!c//1!a" value="FLOATING_RATE" modes="OOO"/>		
+		<SwiftField name="Callable Flag" tag=":17B:" format=":4!c//1!a" value="CALLABLE_FLAG" modes="OOO"/>			
+		<SwiftField name="Putable Flag" tag=":17B:" format=":4!c//1!a" value="PUTABLE_FLAG" modes="OOO"/>			
+		<SwiftField name="End of Block" tag=":16S:" format="FIA" value="FIA" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Mandatory Subsequence B2 Financial Instrument/Account" modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="FIAC" value="FIAC" modes="MMM"/>
+		<SwiftField name="Quantity of Financial Instrument to be Registered Nominal" tag=":36B:" format=":4!c//4!c/15d" value="NOMINAL_FAMT" modes="MMM"/>
+		<SwiftField name="Safekeeping Account" tag=":97A:" format=":4!c//35x" value="SAFEKEEP_ACCOUNT" modes="MMM"/>
+		<SwiftField name="End of Block" tag=":16S:" format="FIAC" value="FIAC" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Mandatory Sequence B Registration Details" modes="MMM">
+		<SwiftField name="End of Block" tag=":16S:" format="REGDET" value="REGDET" modes="MMM"/>
+	</SwiftSequence>	
+	<SwiftSequence name="Optional Repetitive Sequence C Client Details" modes="OOO">
+		<SwiftField name="Start of Block" tag=":16R:" format="CLTDET" value="CLTDET" modes="OOO"/>
+	</SwiftSequence>	
+	<SwiftSequence name="Optional Subsequence C1 Address" modes="OOO">
+		<SwiftField name="Start of Block" tag=":16R:" format="ADDRESS" value="ADDRESS" modes="OOO"/>				
+		<SwiftField name="Flag" tag=":17B:" format=":4!c//1!a" value="PERM_Y" modes="MMM"/>
+		<SwiftField name="Party" tag=":95a:" value="PARTY" modes="OOO">
+			<SwiftFieldOption letter="P" format=":4!c//4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="U" format=":4!c//3*35x" />		
+		</SwiftField>
+		<SwiftField name="End of Block" tag=":16S:" format="ADDRESS" value="ADDRESS" modes="OOO"/>	
+	</SwiftSequence>	
+	<SwiftSequence name="Optional Repetitive Sequence C Client Details" modes="OOO">
+		<SwiftField name="End of Block" tag=":16S:" format="CLTDET" value="CLTDET" modes="OOO"/>
+	</SwiftSequence>	
+</SwiftMsgDef>

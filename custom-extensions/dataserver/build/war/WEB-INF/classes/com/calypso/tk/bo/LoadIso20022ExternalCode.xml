@@ -1,0 +1,21 @@
+<BONamedQueries>
+    <BONamedQuery name="LoadIso20022ExternalCode" paramCount="0">
+        <description>Prepared Statement Query to load ISO 20022 External Code</description>
+        <idColumn>iso_20022_external_code.iso_20022_external_code_id</idColumn>
+        <from>iso_20022_external_code</from>
+        <where><![CDATA[1=1]]></where>
+        <OptionalCondition name="type" paramCount="1">
+            <condition><![CDATA[iso_20022_external_code.type=?]]></condition>
+        </OptionalCondition>
+        <OptionalCondition name="code" paramCount="1">
+            <condition><![CDATA[iso_20022_external_code.code=?]]></condition>
+        </OptionalCondition>
+        <OptionalCondition name="jurisdiction" paramCount="1">
+            <condition><![CDATA[iso_20022_external_code.jurisdiction=?]]></condition>
+        </OptionalCondition>
+        <OptionalCondition name="noJurisdiction" paramCount="0">
+            <condition><![CDATA[iso_20022_external_code.jurisdiction is null]]></condition>
+        </OptionalCondition>        
+        <orderBy>iso_20022_external_code.iso_20022_external_code_id</orderBy>
+    </BONamedQuery>
+</BONamedQueries>

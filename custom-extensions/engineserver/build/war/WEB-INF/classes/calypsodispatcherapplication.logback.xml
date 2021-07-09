@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE SYSTEM  [
+<!ENTITY appenders SYSTEM "appenders.logback.xml">
+]>
+<configuration>
+	&appenders;
+	<include resource="calypsomonitoring.logback.xml"/>
+
+ <appender name="dispatcherJob" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- errorHandler class="com.calypso.tk.core.logging.CalypsoLoggingErrorHandler" /-->
+    <param name="file" value="${calypso.userdir}${file.separator}${calypso.appname}_JOB_${calypso.envname}_${calypso.version}.log" />
+    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+      <param name="activeFileName" value="${calypso.userdir}${file.separator}${calypso.appname}_JOB_${calypso.envname}_${calypso.version}.log" />
+      <param name="FileNamePattern" value="${calypso.userdir}${file.separator}${calypso.appname}_JOB_${calypso.envname}_${calypso.version}.log.%i.zip"/>
+      <param name="minIndex" value="1"/>
+      <param name="maxIndex" value="${calypso.maxbackupindex}"/>
+    </rollingPolicy>
+    
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+    	<param name="MaxFileSize" value="${calypso.maxfilesize}" />
+    </triggeringPolicy>
+    
+	<layout class="com.calypso.tk.core.logging.CalypsoLogbackLayout">
+      <pattern>"%d{ISO8601} %-5p [%c] \(%t\) [%X{clientHost}-%X{clientDesc}] %m%n"</pattern>
+      <param name="appName" value="${calypso.appname}" />
+      <param name="fileName" value="${calypso.logfilename}" />
+      <param name="patchVersionDate" value="${calypso.patchversiondate}" />
+      <param name="version" value="${calypso.version}" />
+      <param name="versionDate" value="${calypso.versiondate}" />
+      <param name="buildNumber" value="${calypso.buildnumber}" />
+      <param name="buildDate" value="${calypso.builddate}" />
+    </layout>
+  </appender>
+  
+  <logger name="com.calypso" additivity="false">
+	   	<level value="error"/>
+  	  	<appender-ref ref="default"/>
+    	<appender-ref ref="event"/>
+  </logger>
+ 
+   <logger name="com.calypso.cloud" additivity="false">
+   	<level value="error"/>
+  	<appender-ref ref="default"/>
+    	<appender-ref ref="event"/>
+  </logger>
+
+   <logger name="com.calypso.dispatcher.job" additivity="false">
+  	  	<appender-ref ref="dispatcherJob"/>
+   </logger>
+   <logger name="com.calypso.SYSTEM.dispatcher.job" additivity="false">
+  	  	<appender-ref ref="dispatcherJob"/>
+   </logger>
+
+	<logger name="com.calypso.microservice" level="error">
+	</logger>
+
+	<logger name="com.calypso.bean" level="error">
+	</logger>
+	
+	<logger name="com.calypso.liquibase" level="error">
+	</logger>
+	
+	<logger name="com.calypso.microservices" level="error">
+	</logger>
+	
+	<logger name="com.calypso.rest" level="error">
+	</logger>
+	
+	<logger name="com.calypso.persistence" level="error">
+	</logger>
+	
+   <root>
+  	<level value="error" />
+  	<appender-ref ref="ThirdParty" />
+  </root>
+ 
+ 
+ 
+</configuration>

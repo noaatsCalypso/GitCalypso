@@ -1,0 +1,162 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+<p class="indented">The purpose of this communication is to confirm the terms and conditions of the transaction (the "Transaction") entered into between |SENDER_FULL_NAME| and |RECEIVER_FULL_NAME| on the trade date specified below. This communication constitutes a "Confirmation".</p>
+
+<p>The terms of the particular Transaction to which this Confirmation relates are as follows:</p>
+
+<table width='100%'>
+<tr>
+    <td width="30%">Trade Date:</td>
+    <td width='68%'>|TRADE_DATE|</td>
+</tr>
+<tr>
+    <td>Buyer:</td>
+    <td>|TRADE_BUYER_NAME|</td>
+</tr>
+<tr>
+    <td>Seller:</td>
+    <td>|TRADE_SELLER_NAME|</td>
+</tr>
+
+<tr>
+    <td>Negociated Price Type:</td>
+    <td>|TRADE_NEGOCIATEDPRICETYPE|</td>
+</tr>
+<tr>
+    <td>Negociated Price</td>
+    <td>|TRADE_NEGOCIATEDPRICE|</td>
+</tr>
+<tr>
+    <td>Settlement Date:</td>
+    <td>|SETTLE_DATE|</td>
+</tr>
+<tr>
+    <td>Nominal</td>
+    <td>|TRADE_NOMINAL| |TRADE_SETTLECCY|</td>
+</tr>
+<tr>
+    <td>Underlying</td>
+    <td>|UNDERLYING|</td>
+</tr>
+<tr>
+    <td>Underlying ISIN</td>
+    <td>|PRODUCT_ISIN|</td>
+</tr>
+
+<tr>
+    <td>Lockout Date</td>
+    <td>|LOCKOUT_DATE|</td>
+</tr>
+<tr>
+    <td>Delivery Date</td>
+    <td>|DELIVERY_DATE|</td>
+</tr>
+<tr>
+    <td>Locked Yield</td>
+    <td>|LOCK_YIELD|</td>
+</tr>
+<tr>
+    <td>Locked Price</td>
+    <td>|LOCK_PRICE|</td>
+</tr>
+<tr>
+    <td>Delivery Type</td>
+    <td>|SETTLE_TYPE|</td>
+</tr>
+<tr>
+    <td>Settlement Lag</td>
+    <td>|SETTLEMENT_LAG| Business Days</td>
+</tr>
+<tr>
+    <td>Settlement Date</td>
+    <td>|SETTLE_DATE|</td>
+</tr>
+<tr>
+    <td>Settlement Holidays Calendar</td>
+    <td>|SETTLEMENT_HOLIDAYS|</td>
+</tr>
+<tr>
+    <td>Observation Type</td>
+    <td>|OBSERVATION_TYPE|</td>
+</tr>
+<tr>
+    <td>Observation Start Date</td>
+    <td>|OBSERVATION_START_DATE|</td>
+</tr>
+<tr>
+    <td>Observation End	Date</td>
+    <td>|OBSERVATION_END_DATE|</td>
+</tr>
+<tr>
+    <td>Duration</td>
+    <td>|DURATION|</td>
+</tr>
+<tr>
+    <td>Funding Rate</td>
+    <td>|FUNDING_RATE|</td>
+</tr>
+<tr>
+    <td>Observation End	Date</td>
+    <td>|OBSERVATION_END_DATE|</td>
+</tr>
+<tr>
+    <td>Settlement Accrual:</td>
+    <td>|SETTLEMENT_ACCRUAL|</td>
+</tr>
+<tr>
+    <td>Settlement Currency:</td>
+    <td>|SETTLEMENT_CURRENCY|</td>
+</tr>
+<!--calypso>
+iterator ( "CashFlow" )
+   inline "
+<tr>
+   <td>|TLOCK_FIXING_YIELD|</td>
+   <td>|TLOCK_FIXING_PRICE|</td>
+   <td>|TLOCK_FIXING_DATE|</td>
+</tr>
+   ";
+</calypso-->
+</table>
+
+<!--calypso>
+if(|HAS_ADDITIONAL_FIXED_AMOUNT| != "No") {
+    inline "<p class=header2>Additional Fixed Amount</p>";
+    inline "<table>";
+    iterator("FixedFees") {
+        inline "
+        <tr><td>Fixed Rate Payer:</td><td>|ADDITIONAL_FIXED_AMOUNT_PAYER|</td></tr>
+        <tr><td>Fixed Rate Amount:</td><td>|ADDITIONAL_FIXED_AMOUNT_AMOUNT|  |ADDITIONAL_FIXED_AMOUNT_CCY|</td></tr>
+        <tr><td>Fixed Rate Payment Date:</td><td>|ADDITIONAL_FIXED_AMOUNT_DATE|</td></tr>";
+    }
+    inline "</table>";
+}
+</calypso-->
+
+<p class='header2'>Account Details:</p>
+<table width='100%'>
+ <tr>
+  <td width="30%"><b>Payments to |SENDER_CODE|:</b></td>
+  <td width='68%'>|PO_INSTRUCTIONS|</td>
+ </tr>
+ <tr>
+  <td><b>Payments to |RECEIVER_CODE|:</b></td>
+  <td>|COUNTERPARTY_INSTRUCTIONS|</td>
+ </tr>
+</table>
+<br>
+<p>
+Please confirm that the foregoing correctly sets forth the terms of our agreement
+by executing the copy of this Confirmation enclosed for that purpose and returning
+it to us or by sending us a letter substantially similar to this letter, which letter
+sets forth the material terms of the Swap Transaction to which this Confirmation
+relates and indicates your agreement to those terms.
+</p>
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

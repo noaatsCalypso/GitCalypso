@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MT 370 Netting Position Advice -->
+<SwiftMsgDef>
+	<Name>MT370</Name>
+	<CancellationName>MT37C</CancellationName>
+	<ModeSelectionList>
+		<ModeSelection qualifier="NEW"/>
+		<ModeSelection qualifier="AMEND"/>
+		<ModeSelection qualifier="CANCEL"/>
+	</ModeSelectionList>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="GENL" value="GENL" modes="MMM"/>
+		<SwiftField name="Sender's Reference" tag=":20C:" format=":4!c//16x" value="MESSAGE_ID" modes="MMM"/>
+		<SwiftField name="Function of the Message" tag=":23G:" format="4!c[/4!c]" value="MESSAGE_SUBACTION" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Repetitive Optional Subsequence A1 Linkages " modes="---" condition="isCancelorAmend()">
+		<SwiftField name="Start of Block" tag=":16R:" format="LINK" value="LINK" modes="MMM"/>
+		<SwiftField name="Reference" tag=":20C:" format=":4!c//16x" value="MESSAGE_LINKED_ID" modes="---"/>
+		<SwiftField name="End of Block" tag=":16S:" format="LINK" value="LINK" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="A:General Information" modes="MMM">
+		<SwiftField name="Party A" tag=":95P:" format=":4!c//4!a2!a2!c[3!c]" value="PARTYA" modes="MMM"/>
+		<SwiftField name="Party B" tag=":95P:" format=":4!c//4!a2!a2!c[3!c]" value="PARTYB" modes="MMM"/>
+		<SwiftField name="End of Block" tag=":16S:" format="GENL" value="GENL" modes="MMM"/>
+	</SwiftSequence>
+	<SwiftSequence name="Mandatory Sequence B Netting Position Details " modes="MMM">
+		<SwiftField name="Start of Block" tag=":16R:" format="NETPOS" value="NETPOS" modes="MMM"/>
+		<SwiftField name="Netting Position Reference" tag=":20C:" format=":4!c//16x" value="TRANSFER_ID" modes="MMM"/>
+		<SwiftField name="Internal Account Identification" tag=":97A:" format=":4!c//35x" value="AGENT_ACCOUNT" modes="OOO"/>
+		<SwiftField name="Netting Amount" tag=":19A:" format=":4!c//[N]3!a15d" value="XFER_AMOUNT" modes="MMM"/>
+		<SwiftField name="Receive Pay Indicator" tag=":22H:" format=":4!c//4!c" value="PAYREC" modes="MMM"/>		
+		<SwiftField name="Value Date" tag=":98A:" format=":4!c//8!n" value="XFER_DATE" modes="MMM"/>		
+		<SwiftField name="Number of Trades" tag=":99a:" value="NUMBER_TRADES" modes="OOO">
+			<SwiftFieldOption letter="A" format=":4!c//3!n" />
+			<SwiftFieldOption letter="C" format=":4!c//6!n" />
+		</SwiftField>	
+	</SwiftSequence>		
+	<SwiftSequence name=" BB" modes="MMM" iterator="TypeOfTradeIterator">
+		<SwiftField name="Type of Underlying Trade" tag=":22F:" format=":4!c/[8c]/4!c" value="TRADE_TYPE" modes="OOO"/>		
+	</SwiftSequence>			
+	<SwiftSequence name=" B1" modes="MMM"  iterator="TransferPartiesIterator">
+		<SwiftField name="Start of Block" tag=":16R:" format="CSHPRTY" value="CSHPRTY" modes="MMM"/>
+		<SwiftField name="Party" tag=":95a:" value="PARTY" modes="MMM">
+			<SwiftFieldOption letter="P" format=":4!c//4!a2!a2!c[3!c]" />
+			<SwiftFieldOption letter="R" format=":4!c/8c/34x" />
+			<SwiftFieldOption letter="Q" format=":4!c//4*35x" />
+		</SwiftField>	
+		<SwiftField name="End of Block" tag=":16S:" format="CSHPRTY" value="CSHPRTY" modes="MMM"/>
+	</SwiftSequence>	
+	<SwiftSequence name="Mandatory Sequence B Netting Position Details " modes="MMM">
+		<SwiftField name="End of Block" tag=":16S:" format="NETPOS" value="NETPOS" modes="MMM"/>
+	</SwiftSequence>		
+</SwiftMsgDef>

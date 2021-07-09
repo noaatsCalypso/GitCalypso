@@ -1,0 +1,10 @@
+<RollingFile fileName="${calypsoUserDir}${fileSeparator}${calypsoExtendedAppName}_${calypsoEnvName}_REQUEST_${calypsoVersion}.log" filePattern="${calypsoUserDir}${fileSeparator}${calypsoExtendedAppName}_${calypsoEnvName}_REQUEST_${calypsoVersion}.log.%i.zip" name="Monitoring.ServerRequest_APPENDER">
+  <PatternLayout header="REQUEST_START_TIME|RESPONSE_TIME|SQL_TIME|NUM_OF_QUERIES_EXECUTED|NUM_OF_ROWS_READ|RESULTSET_OPEN_TIME|BEGIN_FREE_MEMORY|END_FREE_MEMORY|TOTAL_MEMORY|WORKFLOW_TIME|EVENTS|USED_JDBC_CONNECTIONS|AVAILABLE_JDBC_CONNECTIONS|CLIENT_HOST|CLIENT_DESCRIPTION|REQUEST_ID|SERVER_NAME|METHOD_NAME|INVOCATIONDEPTH%n" pattern="%X{REQUESTSTARTTIME}${sys:calypso.logdelim}%X{RESPONSETIME}${sys:calypso.logdelim}%X{REQUESTSQLTIME}${sys:calypso.logdelim}%X{REQUESTQUERYCOUNT}${sys:calypso.logdelim}%X{REQUESTSQLNOOFROWSREAD}${sys:calypso.logdelim}%X{REQUESTSQLRESULTSETOPENTIME}${sys:calypso.logdelim}%X{REQUESTBEGINFREEMEMORY}${sys:calypso.logdelim}%X{REQUESTENDFREEMEMORY}${sys:calypso.logdelim}%X{REQUESTTOTALMEMORY}${sys:calypso.logdelim}%X{REQUESTWFTIME}${sys:calypso.logdelim}%X{REQUESTEVENTS}${sys:calypso.logdelim}%X{REQUESTUSEDJDBCCONNECTIONS}${sys:calypso.logdelim}%X{REQUESTAVAILABLEJDBCCONNECTIONS}${sys:calypso.logdelim}%X{clientHost}${sys:calypso.logdelim}%X{clientDesc}${sys:calypso.logdelim}%X{REQUESTID}${sys:calypso.logdelim}%X{SERVERNAME}${sys:calypso.logdelim}%m${sys:calypso.logdelim}%X{INVOCATIONDEPTH}%n"></PatternLayout>
+  <Policies>
+    <OnStartupTriggeringPolicy/>
+    <SizeBasedTriggeringPolicy size="${sys:calypso.maxfilesize}"/>
+  
+          <!-- TODO: unit (allowed B (default), KB, MB, GB) -->
+        </Policies>
+  <DefaultRolloverStrategy max="${sys:calypso.maxbackupindex}" min="1"/>
+</RollingFile>

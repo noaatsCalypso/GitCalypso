@@ -1,0 +1,285 @@
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_header.html";
+</calypso-->
+
+<h1>This template is deprecated, please consider using derivatives.html instead.</h1>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The purpose of this communication is to
+confirm the terms and conditions of the transaction (the
+&quot;Transaction&quot;) entered into between |SENDER_FULL_NAME| and
+|RECEIVER_FULL_NAME| on the trade date specified below. </p>
+
+<p><b>Note : This communication cannot constitute a &quot;Confirmation&quot; as
+referred to the ISDA Master Agreement</b></p>
+
+<p><span style='font-size:10.0pt'>|SWAP_NOTIONAL|<!---Swap General Table--></span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=700 style='width:420.0pt;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr>
+  <td width="19%" style='width:19.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Trade Date:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|TRADE_DATE|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="19%" style='width:19.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Effective Date:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|SETTLE_DATE|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="19%" style='width:19.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Termination Date:</span></p>
+  </td>
+  <td width="81%" style='width:81.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|PRODUCT_MATURITYDATE|, subject to adjustment
+  in accordance with the Modified Following Business Day Convention.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p>&nbsp;<span style='font-size:10.0pt'>|AMORTIZING_SCHEDULE|<!---End Swap General Table--></span></p>
+
+<p><b><u><span style='font-size:10.0pt'>Fixed Amounts:</span></u></b></p>
+
+<p><span style='font-size:10.0pt'>|FIX_NOTIONAL|<!---Fixed Swap Leg Table--></span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=779 style='width:467.25pt;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr>
+  <td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Fixed Rate Payer:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=FR style='font-size:10.0pt;'>|FIX_PAYER_CODE|</span><span
+  lang=FR ></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Fixed Rate Payer Payment Dates:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FIX_CPN_FREQ| on the |FIX_ROLL_DAY|, starting
+  |FIX_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the
+  |FIX_CPN_DATE_ROLL| Business Day convention.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Fixed Rate:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FIX_FIXED_RATE| %</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="20%" valign=top style='width:20.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Fixed Rate Day Count Fraction:</span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FIX_DAY_COUNT|</span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-size:10.0pt'>|ADDITIONAL_FIXED_AMOUNT|</span></p>
+
+<p><!---End Fixed Swap Leg Table--><b><u><span style='font-size:10.0pt'>Floating
+Amounts:</span></u></b></p>
+
+<p><span style='font-size:10.0pt'>|FLT_NOTIONAL|<!---Floating Swap Leg Table--></span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=779 style='width:467.25pt;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr>
+  <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Floating Rate Payer:</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span lang=FR style='font-size:10.0pt;'>|FLT_PAYER_CODE|</span><span
+  lang=FR ></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Floating Rate Payer Payment Dates:</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FLT_CPN_FREQ| on the |FLT_ROLL_DAY|,
+  starting |FLT_FIRST_PAYMENT_DATE| subject to adjustment in accordance with the
+  |FLT_CPN_DATE_ROLL| Business Day convention.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Floating Rate for Initial Calculation
+  Period:</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FLT_FIRST_RESET_RATE|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Floating Rate Option:</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FLT_RATE_INDEX| </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Designated Maturity</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FLT_INDEX_TENOR|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Spread:</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FLT_SPREAD| </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Floating Rate Day Count Fraction:</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FLT_DAY_COUNT|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Floating Rate Determined:</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FLT_RATE_DETERMINED|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Reset Dates:</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>The first date of each calculation period.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="22%" valign=top style='width:22.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Compounding:</span></p>
+  </td>
+  <td width="78%" valign=bottom style='width:78.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FLT_COMPOUND_FREQ|</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><!---End Floating Swap Leg Table--><!---BizDays Table--><span
+style='display:none;mso-hide:all'><![if !supportEmptyParas]>&nbsp;<![endif]></span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=780 style='width:6.5in;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr>
+  <td width="23%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Business Days:</span></p>
+  </td>
+  <td width="77%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|FIX_CPN_HOL|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="23%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Calculation Agent:</span></p>
+  </td>
+  <td width="77%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|SENDER_CODE|</span></p>
+  </td>
+ </tr>
+</table>
+
+<!--calypso>
+if(|HAS_PRINCIPAL_EXCHANGE| != "No") {
+inline "<b><u>Principal Exchange Schedule</u></b>
+<table>
+<tr>
+	<th>Date</th>
+	<th>Currency</th>
+	<th>Amount</th>
+	<th>Payer</th>
+</tr>";
+iterator("SwapPrincipalCashFlows")
+	inline "<tr><td>|PRINCIPAL_EXCHANGE_DATE|</td>
+	<td>|PRINCIPAL_EXCHANGE_CURRENCY|</td>
+	<td>|PRINCIPAL_EXCHANGE_AMOUNT|</td>
+	<td>|PRINCIPAL_EXCHANGE_PAYER|</td></tr>";
+inline "</table>";
+}
+</calypso-->
+
+<!--calypso>
+if(|HAS_TERMINATION_DATES| != "No") {
+inline "<b><u>Termination Date Schedule</u></b>
+<table>
+<tr>
+	<th>Termination Date</th>
+	<th>Notification Date</th>
+</tr>";
+iterator("TerminationDates")
+	inline "<tr><td>|TERMINATION_DATES|</td>
+	<td>|NOTIFICATION_DATES|</td></tr>";
+}
+inline "</table>";
+</calypso-->
+
+<!---End BizDays Table-->3. Account Details </span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=780 style='width:6.5in;
+ mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr>
+  <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Payment to |SENDER_CODE| :</span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|PO_INSTRUCTIONS|</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="38%" style='width:38.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>Payment to |RECEIVER_CODE| :</span></p>
+  </td>
+  <td width="62%" style='width:62.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-size:10.0pt'>|COUNTERPARTY_INSTRUCTIONS|</span></p>
+  </td>
+ </tr>
+</table>
+
+<p>&nbsp; </p>
+
+<p><!---End Account Details Table--><span style='font-size:10.0pt'>Please sign
+and return this Confirmation at your earliest convenience. Because of the
+importance of confirming transactions promptly and accurately, we regret that
+any Confirmations which are not signed and returned within ten days may result
+in a delay in payments. </span></p>
+
+<p><span style='font-size:10.0pt'><br />
+Please confirm that the foregoing correctly sets forth the terms of our
+agreement by executing this Confirmation and returning it to us.</span></p>
+
+
+
+
+
+<!--calypso>
+if (Trade.getLongId() > 0)
+    include "confirm_footer.html";
+</calypso-->

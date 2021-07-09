@@ -1,0 +1,14 @@
+PSEventMessage;COMPLETED;AMEND;COMPLETED;true;false;false;BRIDGEMSG;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;COMPLETED;REDO;PENDING;true;false;false;BRIDGEMSG;ALL;RedoBridge;;false;false;;;false;false;false;false;0;
+PSEventMessage;NONE;NEW;PENDING;true;false;false;BRIDGEMSG;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;PENDING;CANCEL;CANCELED;true;false;false;BRIDGEMSG;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;PENDING;LOAD;COMPLETED;true;false;false;BRIDGEMSG;ALL;TransformBridge;;false;true;Swap_BRIDGE_XSLT=SWAP_DEFAULT.xslt||;;false;false;false;false;0;
+PSEventMessage;PENDING;MATCH;COMPLETED;true;true;false;BRIDGEMSG;ALL;MatchCollateralAllocationResponse;;false;true;Match the incoming LCH CVR response (collateralAllocationAcknowledge or collateralAllocationAccepted/Rejected) to the originating CVR_WORKSHEET message;isLCHCVRMessage;false;false;false;false;-1;
+PSEventMessage;PENDING;TRANSFORM;TRANSFORMED;true;true;false;BRIDGEMSG;ALL;TransformBridge;;false;true;Swap_BRIDGE_XSLT=SWAP_DEFAULT.xslt||;;false;false;false;false;0;
+PSEventMessage;TRANSFORMED;CANCEL;CANCELED;true;false;false;BRIDGEMSG;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;TRANSFORMED;LOAD;COMPLETED;true;false;false;BRIDGEMSG;ALL;MergeTradeId;;false;true;;;false;false;false;false;0;
+PSEventMessage;TRANSFORMED;REDO;PENDING;true;false;false;BRIDGEMSG;ALL;RedoBridge;;false;false;;;false;false;false;false;0;
+StaticDataFilterConfig
+1;isLCHCVRMessage;Accepts LCHCVR messages only;ANY;
+MSG_ATTRIBUTE.Connector;IN;LCHCVR;
+StaticDataFilterConfig

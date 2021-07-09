@@ -1,0 +1,348 @@
+<!-- Start Swap FLOAT/FLOAT -->
+
+<table CELLSPACING=0 BORDER=0 WIDTH=650>
+<tr>
+	<td width="30%">Business Days:</td>
+	<td>|PAYLEG_CPN_HOL#NOVATED_TRADE|</td>
+</tr>
+<tr>
+	<td>Calculation Agent:</td>
+	<td>|SENDER_CODE|, unless otherwise stated in the Agreement</td>
+</tr>
+</table>
+
+<p class="header2">Floating Amounts I:</p>
+
+<!---Floating Swap Leg Table-->
+<table CELLSPACING=0 BORDER=0 WIDTH=650>
+<tr>
+<tr>
+	<td width='30%'>Floating Amount I Rate Payer:</td>
+	<td>|PAYLEG_PAYER_CODE#NOVATED_TRADE|</td>
+</tr>
+<tr>
+	<td width='30%'>Floating Amount I Rate Payer Currency Amount:</td>
+	<td>|PAYLEG_NOTIONAL_CCY#NOVATED_TRADE| |PAYLEG_NOTIONAL_VALUE#NOVATED_TRADE|</td>
+</tr>
+	
+<!--calypso>
+if ( |PAYLEG_CPN_OFFSET#NOVATED_TRADE| like "0%" )
+    inline "
+    <tr>
+        <td>Floating Amount I Rate Payer Payment Dates:</td>
+        <td>|PAYLEG_CPN_FREQ#NOVATED_TRADE| on the |PAYLEG_ROLL_DAY_NB#NOVATED_TRADE|, starting |PAYLEG_FIRST_PAYMENT_DATE#NOVATED_TRADE| subject to adjustment in accordance with the |PAYLEG_CPN_DATE_ROLL#NOVATED_TRADE| Business Day convention.</td>
+    </tr>
+    ";
+else
+    inline "
+    <tr>
+        <td>Floating Amount I Rate Period End Dates:</td>
+        <td>|PAYLEG_CPN_FREQ#NOVATED_TRADE| on the |PAYLEG_ROLL_DAY_NB#NOVATED_TRADE|, starting |PAYLEG_FIRST_PAYMENT_DATE#NOVATED_TRADE| subject to adjustment in accordance with the |PAYLEG_CPN_DATE_ROLL#NOVATED_TRADE| Business Day convention.</td>
+    </tr>
+    <tr>
+        <td>Floating Amount I Payment Lag:</td>
+        <td>|PAYLEG_CPN_OFFSET_VALUE#NOVATED_TRADE| |PAYLEG_CPN_OFFSET_DAYS#NOVATED_TRADE| Days</td>
+    </tr>
+    ";
+</calypso-->
+<!--calypso>
+if ( |PAYLEG_MANUAL_RESET#NOVATED_TRADE| == "true" )
+    inline "
+    <tr>
+        <td>Floating Rate Amount I for Initial Calculation Period:</td>
+        <td>|PAYLEG_FIRST_RESET_RATE#NOVATED_TRADE|</td>
+    </tr>
+    ";
+</calypso-->
+<tr>
+	<td>Floating Amount I Rate Option:</td>
+	<td>|PAYLEG_RATE_INDEX#NOVATED_TRADE|</td>
+</tr>
+<!--calypso>
+if ( |PAYLEG_RATE_FACTOR#NOVATED_TRADE| != 1 )
+    inline "
+    <tr>
+        <td>Rate Index Factor:</td>
+        <td>|PAYLEG_RATE_FACTOR#NOVATED_TRADE|</td>
+    </tr>
+    ";
+</calypso-->
+<tr>
+	<td>Designated Maturity:</td>
+	<td>|PAYLEG_INDEX_TENOR#NOVATED_TRADE|</td>
+</tr>
+<!--calypso>
+if (|PRODUCT_TYPE| == "CappedSwap")
+    inline "
+    <tr>
+        <td>|PAYLEG_CAP_TYPE#NOVATED_TRADE| Rate:</td>
+        <td>|PAYLEG_CAP_RATE#NOVATED_TRADE| %</td>
+    </tr>
+	<tr>
+	<td>Include Spread in |PAYLEG_CAP_TYPE#NOVATED_TRADE| Rate:</td>
+	<td>|PAYLEG_INCLUDE_SPREAD#NOVATED_TRADE|</td>
+	</tr>
+	<tr>
+	<td>Exclude |PAYLEG_CAP_TYPE#NOVATED_TRADE| Rate in First Period:</td>
+		<td>|PAYLEG_EXCLUDE_FIRST_PERIOD#NOVATED_TRADE|</td>
+	</tr>	
+    ";
+</calypso-->
+<tr>
+	<td>Spread:</td>
+	<td>|PAYLEG_SPREAD_VALUE#NOVATED_TRADE| Basis Points</td>
+</tr>
+</table>
+<br><br>
+<table CELLSPACING=0 BORDER=0 WIDTH=650>
+<tr>
+	<td width='30%'>Floating Amount I Rate Day Count Fraction:</td>
+	<td>|PAYLEG_DAY_COUNT#NOVATED_TRADE|</td>
+</tr>
+<!--calypso>
+	if ((|PAYLEG_AVERAGING_RESET#NOVATED_TRADE| == "false") && (|PAYLEG_RATE_RESET_DAY_TIMING#NOVATED_TRADE| == "At Start"))
+		inline "
+			<tr>	
+				<td>Floating Amount I Reset Dates:</td>
+				<td>The first day of each Calculation Period</td>
+			</tr>";
+	if ((|PAYLEG_AVERAGING_RESET#NOVATED_TRADE| == "false") && (|PAYLEG_RATE_RESET_DAY_TIMING#NOVATED_TRADE| == "In Arrears"))
+		inline "
+			<tr>
+		<td>Floating Amount I Reset Dates:</td>
+		<td>The last day of each Calculation Period</td>
+	</tr>";
+</calypso-->
+<!--calypso>
+	if (( |PAYLEG_AVERAGING_RESET#NOVATED_TRADE| == "true" ) && (|PAYLEG_AVERAGING_FREQUENCY#NOVATED_TRADE|== "DLY"))
+		inline "
+			<tr>
+				<td>Floating Amount I Reset Dates:</td>
+
+
+				<td>Each |PAYLEG_RATE_RESET_HOL#NOVATED_TRADE|  business days in each Calculation Period</td>
+			</tr>";	
+	if 	(( |PAYLEG_AVERAGING_RESET#NOVATED_TRADE| == "true" ) && (|PAYLEG_AVERAGING_FREQUENCY#NOVATED_TRADE|== "WK"))
+		inline "
+			<tr>
+				<td>Floating Amount I Reset Dates:</td>
+				<td>Each |PAYLEG_RATE_RESET_DAY_WEK#NOVATED_TRADE|, or if such day is not a |PAYLEG_RATE_RESET_HOL#NOVATED_TRADE| business day, then the next succeeding |PAYLEG_RATE_RESET_HOL#NOVATED_TRADE| during the Calculation Period</td>
+			</tr>";
+	if 	(( |PAYLEG_AVERAGING_RESET#NOVATED_TRADE| == "true" ) && (|PAYLEG_AVERAGING_FREQUENCY#NOVATED_TRADE|== "MTH"))
+		inline "
+			<tr>
+
+
+				<td>Floating Amount I Reset Dates:</td>
+				<td>Each |PAYLEG_RATE_RESET_DAY_MTH#NOVATED_TRADE|, or if such day is not a |PAYLEG_RATE_RESET_HOL#NOVATED_TRADE| business day, then the next succeeding |PAYLEG_RATE_RESET_HOL#NOVATED_TRADE| during the Calculation Period</td>
+			</tr>";
+	if ( |PAYLEG_AVERAGING_RESET#NOVATED_TRADE| == "true" )
+		inline "
+			<tr>	
+
+				<td>Method of Averaging:</td>
+				<td>|PAYLEG_AVERAGING_METHOD#NOVATED_TRADE|</td>
+
+
+			</tr>";
+if ( |PAYLEG_COMPOUNDING#NOVATED_TRADE| == "true" )
+    inline "
+    <tr>
+	<td>Compounding Type:</td>
+	<td>|PAYLEG_COMPOUND_TYPE#NOVATED_TRADE|</td>
+    </tr>
+    <tr>
+	<td>Compounding:</td>
+	<td>|PAYLEG_COMPOUND_FREQ#NOVATED_TRADE|</td>
+	</tr>
+    ";
+</calypso-->
+
+</table>
+<br><br>
+<!---End Float Swap Leg Table-->
+
+<p class='header2'>Floating Amounts II:</p>
+
+<!---Floating Swap Leg Table-->
+<table CELLSPACING=0 BORDER=0 WIDTH=650>
+<tr>
+	<td width='30%'>Floating Amount II Rate Payer:</td>
+	<td>|RECEIVELEG_PAYER_CODE#NOVATED_TRADE|</td>
+</tr>
+<tr>
+	<td width='30%'>Floating Amount II Rate Payer Currency Amount:</td>
+	<td>|RECEIVELEG_NOTIONAL_CCY#NOVATED_TRADE| |RECEIVELEG_NOTIONAL_VALUE#NOVATED_TRADE|</td>
+</tr>
+
+<!--calypso>
+if ( |RECEIVELEG_CPN_OFFSET#NOVATED_TRADE| like "0%" )
+    inline "
+    <tr>
+        <td>Floating Amount II Rate Payer Payment Dates:</td>
+        <td>|RECEIVELEG_CPN_FREQ#NOVATED_TRADE| on the |RECEIVELEG_ROLL_DAY_NB#NOVATED_TRADE|, starting |RECEIVELEG_FIRST_PAYMENT_DATE#NOVATED_TRADE| subject to adjustment in accordance with the |RECEIVELEG_CPN_DATE_ROLL#NOVATED_TRADE| Business Day convention.</td>
+    </tr>
+    ";
+else
+    inline "
+    <tr>
+        <td>Floating Amount II Rate Period End Dates:</td>
+        <td>|RECEIVELEG_CPN_FREQ#NOVATED_TRADE| on the |RECEIVELEG_ROLL_DAY_NB#NOVATED_TRADE|, starting |RECEIVELEG_FIRST_PAYMENT_DATE#NOVATED_TRADE| subject to adjustment in accordance with the |RECEIVELEG_CPN_DATE_ROLL#NOVATED_TRADE| Business Day convention.</td>
+    </tr>
+    <tr>
+        <td>Floating Amount II Payment Lag:</td>
+        <td>|RECEIVELEG_CPN_OFFSET_VALUE#NOVATED_TRADE|  |RECEIVELEG_CPN_OFFSET_DAYS#NOVATED_TRADE| Days</td>
+    </tr>
+    ";
+</calypso-->
+
+<!--calypso>    
+if ( |RECEIVELEG_MANUAL_RESET#NOVATED_TRADE| == "true" )
+    inline "
+    <tr>
+        <td>Floating Amount II Rate for Initial Calculation Period:</td>
+        <td>|RECEIVELEG_FIRST_RESET_RATE#NOVATED_TRADE|</td>
+    </tr>
+    ";
+</calypso-->
+
+<tr>
+	<td>Floating Amount II Rate Option:</td>
+	<td>|RECEIVELEG_RATE_INDEX#NOVATED_TRADE|</td>
+</tr>
+<!--calypso>
+if ( |RECEIVELEG_RATE_FACTOR#NOVATED_TRADE| != 1 )
+    inline "
+    <tr>
+        <td>loating Amount II Rate Index Factor:</td>
+        <td>|RECEIVELEG_RATE_FACTOR#NOVATED_TRADE|</td>
+    </tr>
+    ";
+</calypso-->
+<tr>
+	<td>Designated Maturity:</td>
+	<td>|RECEIVELEG_INDEX_TENOR#NOVATED_TRADE|</td>
+</tr>
+<!--calypso>
+if (|PRODUCT_TYPE| == "CappedSwap")
+    inline "
+    <tr>
+        <td>|RECEIVELEG_CAP_TYPE#NOVATED_TRADE| Rate:</td>
+        <td>|RECEIVELEG_CAP_RATE#NOVATED_TRADE| %</td>
+    </tr>
+	<tr>
+	<td>Include Spread in |RECEIVELEG_CAP_TYPE#NOVATED_TRADE| Rate:</td>
+	<td>|RECEIVELEG_INCLUDE_SPREAD#NOVATED_TRADE|</td>
+	</tr>
+	<tr>
+	<td>Exclude |RECEIVELEG_CAP_TYPE#NOVATED_TRADE| Rate in First Period:</td>
+		<td>|RECEIVELEG_EXCLUDE_FIRST_PERIOD#NOVATED_TRADE|</td>
+	</tr>	
+    ";
+</calypso-->
+<tr>
+	<td>Spread:</td>
+	<td>|RECEIVELEG_SPREAD_VALUE#NOVATED_TRADE|</td>
+</tr>
+<tr>
+	<td width='30%'>Floating Amount II Rate Day Count Fraction:</td>
+	<td>|RECEIVELEG_DAY_COUNT#NOVATED_TRADE|</td>
+</tr>
+<!--calypso>
+	if ((|RECEIVELEG_AVERAGING_RESET#NOVATED_TRADE| == "false") && (|RECEIVELEG_RATE_RESET_DAY_TIMING#NOVATED_TRADE| == "At Start"))
+		inline "
+		<tr>	
+			<td>Floating Amount II Reset Dates:</td>
+			<td>The first day of each Calculation Period</td>
+		</tr>";
+	if ((|RECEIVELEG_AVERAGING_RESET#NOVATED_TRADE| == "false") && (|RECEIVELEG_RATE_RESET_DAY_TIMING#NOVATED_TRADE| == "In Arrears"))
+		inline "
+		<tr>
+			<td>Floating Amount II Reset Dates:</td>
+			<td>The last day of each Calculation Period</td>
+		</tr>";
+</calypso-->
+<!--calypso>
+	if (( |RECEIVELEG_AVERAGING_RESET#NOVATED_TRADE| == "true" ) && (|RECEIVELEG_AVERAGING_FREQUENCY#NOVATED_TRADE|== "DLY"))
+		inline "
+			<tr>
+				<td>Floating Amount II Reset Dates:</td>
+				<td>Each |RECEIVELEG_RATE_RESET_HOL#NOVATED_TRADE|  business days in each Calculation Period</td>
+			</tr>";	
+	if 	(( |RECEIVELEG_AVERAGING_RESET#NOVATED_TRADE| == "true" ) && (|RECEIVELEG_AVERAGING_FREQUENCY#NOVATED_TRADE|== "WK"))
+		inline "
+			<tr>
+				<td>Floating Amount II Reset Dates:</td>
+				<td>Each |RECEIVELEG_RATE_RESET_DAY_WEK#NOVATED_TRADE|, or if such day is not a |RECEIVELEG_RATE_RESET_HOL#NOVATED_TRADE| business day, then the next succeeding |RECEIVELEG_RATE_RESET_HOL| during the Calculation Period</td>
+			</tr>";
+	if 	(( |RECEIVELEG_AVERAGING_RESET#NOVATED_TRADE| == "true" ) && (|RECEIVELEG_AVERAGING_FREQUENCY#NOVATED_TRADE|== "MTH"))
+		inline "
+			<tr>
+				<td>Floating Amount II Reset Dates:</td>
+				<td>Each |RECEIVELEG_RATE_RESET_DAY_MTH#NOVATED_TRADE|, or if such day is not a |RECEIVELEG_RATE_RESET_HOL#NOVATED_TRADE| business day, then the next succeeding |RECEIVELEG_RATE_RESET_HOL| during the Calculation Period</td>
+			</tr>";
+	if ( |RECEIVELEG_AVERAGING_RESET#NOVATED_TRADE| == "true" )
+		inline "
+			<tr>	
+				<td>Method of Averaging:</td>
+				<td>|RECEIVELEG_AVERAGING_METHOD#NOVATED_TRADE|</td>
+			</tr>";
+</calypso-->		
+<!--calypso>
+if ( |RECEIVELEG_AVERAGING_RESET#NOVATED_TRADE| == "true" )
+    inline "
+    <tr>
+        <td>Rate Cut-off Dates:</td>
+        <td>|RECEIVELEG_RESET_CUTOFF_DATES#NOVATED_TRADE|</td>
+    </tr>
+    <tr>
+        <td>Method of Averaging:</td>
+        <td>|RECEIVELEG_AVERAGING_METHOD#NOVATED_TRADE|</td>
+    </tr>
+    <tr>
+        <td>Averaging Frequency:</td>
+        <td>|RECEIVELEG_AVERAGING_FREQUENCY#NOVATED_TRADE|</td>
+    </tr>    
+    ";
+if ( |RECEIVELEG_COMPOUNDING#NOVATED_TRADE| == "true" )
+    inline "
+    <tr>
+		<td>Compounding Type:</td>
+		<td>|RECEIVELEG_COMPOUND_TYPE#NOVATED_TRADE|</td>
+    </tr>
+    <tr>
+		<td>Compounding:</td>
+		<td>|RECEIVELEG_COMPOUND_FREQ#NOVATED_TRADE|</td>
+	</tr>
+    ";
+</calypso-->
+</table>
+
+<br><br>
+<!--calypso>
+if(|HAS_PRINCIPAL_EXCHANGE#NOVATED_TRADE| != "No") {
+inline "<p align='header2'>Principal Exchange Schedule</p>
+<table>
+<tr>
+	<th>Date</th>
+	<th>Currency</th>
+	<th>Amount</th>
+	<th>Payer</th>
+</tr>";
+iterator("SwapNovatedPrincipalCashFlows")
+	inline "   <tr><td>|PRINCIPAL_EXCHANGE_DATE#NOVATED_TRADE|</td>
+	<td>|PRINCIPAL_EXCHANGE_CURRENCY#NOVATED_TRADE|</td>
+	<td>|PRINCIPAL_EXCHANGE_AMOUNT#NOVATED_TRADE|</td>
+	<td>|PRINCIPAL_EXCHANGE_PAYER#NOVATED_TRADE|</td></tr>";
+inline "</table>
+<p>
+Interim Exchange:<br/>
+Interim Exchange Date:|RECEIVELEG_CPN_FREQ#NOVATED_TRADE| on the |RECEIVELEG_ROLL_DAY#NOVATED_TRADE|, starting |RECEIVELEG_FIRST_PAYMENT_DATE#NOVATED_TRADE| subject to adjustment in accordance with the |RECEIVELEG_CPN_DATE_ROLL#NOVATED_TRADE| Business Day convention.
+</p>
+";
+}
+</calypso-->
+
+<!-- End Swap FLOAT/FLOAT -->
+
+

@@ -1,0 +1,33 @@
+PSEventMessage;COMPLETED;UPDATE;COMPLETED;true;false;false;UPLOADSOURCEMSG;ALL;;;false;false;;;false;false;false;false;0;;;
+PSEventMessage;NONE;NEW;PENDING;true;true;false;UPLOADSOURCEMSG;ALL;;;false;false;;UploadModeLocal;false;false;false;false;0;;;
+PSEventMessage;NONE;NEW;TO_BE_LINKED;true;true;false;UPLOADSOURCEMSG;ALL;;;false;false;;UploadModeBOMessage;false;false;false;false;0;;;
+PSEventMessage;PENDING;CANCEL;CANCELED;true;false;false;UPLOADSOURCEMSG;ALL;;;false;false;;;false;false;false;false;0;;;
+PSEventMessage;PENDING;COMPLETE;COMPLETED;true;true;false;UPLOADSOURCEMSG;ALL;;;false;false;;UploadMessageCompleted;false;false;false;false;0;;;
+PSEventMessage;PENDING;REJECT;REJECTED;true;true;false;UPLOADSOURCEMSG;ALL;;;false;false;;UploadMessageRejected;false;false;false;false;0;;;
+PSEventMessage;PENDING;REPROCESS;REPROCESSING;true;false;false;UPLOADSOURCEMSG;ALL;CheckLink,UploadReprocess;;false;true;;;false;false;false;false;0;;;
+PSEventMessage;PENDING;UPDATE;PENDING;true;false;false;UPLOADSOURCEMSG;ALL;;;false;false;;;false;false;false;false;0;;;
+PSEventMessage;RECEIVED;CANCEL;CANCELED;true;false;false;UPLOADSOURCEMSG;ALL;;;false;false;;;false;false;false;false;0;;;
+PSEventMessage;RECEIVED;REJECT;REJECTED;true;true;false;UPLOADSOURCEMSG;ALL;;;false;true;Negate the translate message rule;RejectedUploadSourceMessage;false;false;false;false;0;;;
+PSEventMessage;RECEIVED;TRANSLATE;TRANSLATED;true;true;false;UPLOADSOURCEMSG;ALL;CheckLink,Translate;;false;true;;SuccessfulUploadSourceMessage;true;false;true;false;0;;;
+PSEventMessage;REPROCESSING;CANCEL;CANCELED;true;false;false;UPLOADSOURCEMSG;ALL;;;false;false;;;false;false;false;false;0;;;
+PSEventMessage;REPROCESSING;COMPLETE;COMPLETED;true;false;false;UPLOADSOURCEMSG;ALL;;;false;false;;UploadMessageCompleted;false;false;false;false;0;;;
+PSEventMessage;REPROCESSING;REJECT;PENDING;true;false;false;UPLOADSOURCEMSG;ALL;;;false;false;;;false;false;false;false;0;;;
+PSEventMessage;TO_BE_LINKED;CANCEL;CANCELED;true;false;false;UPLOADSOURCEMSG;ALL;;;false;false;;;false;false;false;false;0;;;
+PSEventMessage;TO_BE_LINKED;PROCESS;RECEIVED;true;true;false;UPLOADSOURCEMSG;ALL;;;false;false;;;false;false;false;false;0;;;
+PSEventMessage;TRANSLATED;CANCEL;CANCELED;true;false;false;UPLOADSOURCEMSG;ALL;;;false;false;;;false;false;false;false;0;;;
+PSEventMessage;TRANSLATED;LOAD;COMPLETED;true;true;false;UPLOADSOURCEMSG;ALL;;;false;true;;;false;false;false;false;0;;;
+PSEventMessage;TRANSLATED;REPROCESS;TRANSLATED;true;false;false;UPLOADSOURCEMSG;ALL;Translate;;false;false;;;false;false;false;false;0;;;
+StaticDataFilterConfig
+1;SuccessfulUploadSourceMessage;;ANY;
+MSG_ATTRIBUTE.UploadObjectStatus;NOT_LIKE;Rejected;
+1;RejectedUploadSourceMessage;;ANY;
+MSG_ATTRIBUTE.UploadObjectStatus;LIKE;Rejected;
+1;UploadMessageCompleted;;ANY;
+MSG_ATTRIBUTE.UploadObjectStatus;IN;Completed,Ignored;
+1;UploadModeBOMessage;;ANY;
+IN Static Data Filter;NOT_IN;UploadModeLocal;
+1;UploadMessageRejected;;ANY;
+MSG_ATTRIBUTE.UploadObjectStatus;LIKE;Rejected;
+1;UploadModeLocal;;ANY;
+MSG_ATTRIBUTE.UploadMode;LIKE;Local;
+StaticDataFilterConfig

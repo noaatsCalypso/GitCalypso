@@ -1,0 +1,36 @@
+
+##########################
+# API Interface Settings #
+##########################
+
+# DEALER, IA, FCM
+Mode=DUMMY_MODE
+
+# API logins
+ICELINK_URL=icelinkdemo.theice.com
+ICELINK_USER=DUMMY_USER
+ICELINK_PWD=DUMMY_PWD
+
+#
+#Valid combination for uploadMode and persistMessage
+#
+#							|----------------------------------------------------------------------|
+#							|						   PERSIST MESSAGES							   |
+#							|-----------------|-------------------------------|--------------------|
+#							|		None	  |		Failure					  |		All			   |
+#		|---|---------------|-----------------|-------------------------------|--------------------|
+#		| M	| Local			| No BOMessage	  |  BOMessage will be created	  |  BOMessage will be |
+#		| O	|				| will be created |   only in case of failure	  |  always created    |
+#		| D	|---------------|-----------------|-------------------------------|--------------------|
+#		| E	| BOMessage		| Not Applicable  | 	Not Applicable			  |	BOMessage will be  |
+#		| S	|				|				  |								  |	always created	   |
+#		|---|---------------|-----------------|-------------------------------|--------------------|
+#
+#	For better performance it is recommended to use uploadMode as Local with persistMessages as None.
+#
+uploadMode=Local
+persistMessages=All
+
+# If 'ICELINK_DEBUG_XML' log category is enabled, then transformation files will be generated.
+# By default 'messageFileDir' is an optional field. If messageFileDir is not provided then transformation file will be generated in <CALYPSO_USER_HOME>\ICELink folder
+#messageFileDir=C:\\icelink\\"

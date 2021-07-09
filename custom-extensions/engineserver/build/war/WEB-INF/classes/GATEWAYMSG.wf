@@ -1,0 +1,15 @@
+PSEventMessage;COMPLETED;RESEND;COMPLETED;true;false;false;GATEWAYMSG;ALL;;;false;true;;;false;false;false;false;0;;;On Failure;false;
+PSEventMessage;NONE;NEW;PENDING;true;true;false;GATEWAYMSG;ALL;;;false;false;;UploadModeLocal;false;false;false;false;0;;;On Failure;false;
+PSEventMessage;PENDING;CANCEL;CANCELED;true;false;false;GATEWAYMSG;ALL;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventMessage;PENDING;COMPLETE;COMPLETED;true;true;false;GATEWAYMSG;ALL;;;false;false;;UploadMessageCompleted;false;false;false;false;0;;;On Failure;false;
+PSEventMessage;PENDING;REPROCESS;REPROCESSING;true;false;false;GATEWAYMSG;ALL;UploadReprocess;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventMessage;PENDING;UPDATE;PENDING;true;false;false;GATEWAYMSG;ALL;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventMessage;REPROCESSING;CANCEL;CANCELED;true;false;false;GATEWAYMSG;ALL;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+PSEventMessage;REPROCESSING;COMPLETE;COMPLETED;true;false;false;GATEWAYMSG;ALL;;;false;false;;UploadMessageCompleted;false;false;false;false;0;;;On Failure;false;
+PSEventMessage;REPROCESSING;REJECT;PENDING;true;false;false;GATEWAYMSG;ALL;;;false;false;;;false;false;false;false;0;;;On Failure;false;
+StaticDataFilterConfig
+1;UploadMessageCompleted;;ANY;
+MSG_ATTRIBUTE.UploadObjectStatus;IN;Completed,Ignored;
+1;UploadModeLocal;;ANY;
+MSG_ATTRIBUTE.UploadMode;LIKE;Local;
+StaticDataFilterConfig

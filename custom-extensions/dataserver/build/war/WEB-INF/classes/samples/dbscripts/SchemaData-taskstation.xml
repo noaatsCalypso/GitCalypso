@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<calypso:database xmlns:calypso="http://www.calypso.com/schemer">
+  <table name="domain_values">
+    <row cat="taskstation">
+      <column name="name">function</column>
+      <column name="value">AddModifyTSTab</column>
+      <column name="description">Allow User to add or modify any TaskStation Tab</column>
+    </row>
+    <row cat="taskstation">
+      <column name="name">function</column>
+      <column name="value">ModifyTSCatalogOrdering</column>
+      <column name="description">Allow User to modify Task Station Catalog Ordering</column>
+    </row>
+    <row cat="taskstation">
+      <column name="name">function</column>
+      <column name="value">ModifyTSTabFiltering</column>
+      <column name="description">Allow User to display filter Panel</column>
+    </row>
+    <row cat="taskstation">
+      <column name="name">function</column>
+      <column name="value">ModifyTSTabPlan</column>
+      <column name="description">Allow User to modify part of Window Plan related to selected TaskStation Tab</column>
+    </row>
+    <row cat="taskstation">
+      <column name="name">function</column>
+      <column name="value">RemoveTSTab</column>
+      <column name="description">Allow User to delete any TaskStation Tab</column>
+    </row>
+  </table>
+</calypso:database>

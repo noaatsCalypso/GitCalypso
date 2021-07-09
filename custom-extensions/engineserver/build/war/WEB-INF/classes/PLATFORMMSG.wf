@@ -1,0 +1,14 @@
+PSEventMessage;NONE;NEW;PENDING;true;false;false;PLATFORMMSG;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;PENDING;PROCESS;TO_TRANSLATE;true;true;false;PLATFORMMSG;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;SENT;CANCEL;CANCELED;true;false;false;PLATFORMMSG;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;SENT;COMPLETE;COMPLETED;true;false;false;PLATFORMMSG;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;SENT;FAIL_SEND;TO_BE_SENT;true;false;false;PLATFORMMSG;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;TO_BE_SENT;CANCEL;CANCELED;true;false;false;PLATFORMMSG;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;TO_BE_SENT;RESEND;SENT;true;false;false;PLATFORMMSG;ALL;PlatformReprocess;;false;true;;;false;false;false;false;0;
+PSEventMessage;TO_TRANSLATE;CANCEL;CANCELED;true;false;false;PLATFORMMSG;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;TO_TRANSLATE;REPROCESS;TO_TRANSLATE;true;false;false;PLATFORMMSG;ALL;PlatformReprocess;;false;true;;;false;false;false;false;0;
+PSEventMessage;TO_TRANSLATE;TRANSLATE;TRANSLATED;true;false;false;PLATFORMMSG;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;TRANSLATED;CANCEL;CANCELED;true;false;false;PLATFORMMSG;ALL;;;false;false;;;false;false;false;false;0;
+PSEventMessage;TRANSLATED;FAILED;TO_TRANSLATE;true;false;false;PLATFORMMSG;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;TRANSLATED;FAIL_SEND;TO_BE_SENT;true;false;false;PLATFORMMSG;ALL;;;false;true;;;false;false;false;false;0;
+PSEventMessage;TRANSLATED;SEND;SENT;true;false;false;PLATFORMMSG;ALL;;;false;true;;;false;false;false;false;0;
